@@ -49,6 +49,7 @@ PLAYER_FIRST_NAME = "armando"
 
 requests_used = 0
 last_request_at = 0.0
+last_api_error = None    # último {"errors": ...} de la API, para diagnosticar sin logs
 MIN_SECONDS_BETWEEN_REQUESTS = 6.5   # plan gratuito: máx. 10 peticiones/min
 
 
@@ -71,7 +72,8 @@ def save_json(path, data):
 
 def api(endpoint, params, use_cache=True):
     """GET a la API con caché en disco. Devuelve la lista 'response'."""
-    global requests_used, last_request_at
+    global requests_used, last_request_at, last_api_error
+    last_api_error = None
     key = endpoint.strip("/").replace("/", "_") + "_" + "_".join(
         f"{k}-{v}" for k, v in sorted(params.items()))
     cache_file = CACHE_DIR / f"{key}.json"
@@ -110,6 +112,7 @@ def api(endpoint, params, use_cache=True):
 
     errors = data.get("errors")
     if errors:  # la API devuelve {} o [] cuando no hay errores
+        last_api_error = errors
         print(f"     ⚠️  La API respondió con error: {errors}")
         if cache_file.exists():
             cache_file.unlink()
@@ -148,8 +151,13 @@ def find_player(target, args, team_id):
     if args.player_id:
         check(target, "Hormiga (id manual)", True, f"id {args.player_id}")
         return args.player_id
-    players = api("/players", {"team": team_id, "season": target["season"],
-                               "search": PLAYER_SEARCH}, args.cache) or []
+    raw = api("/players", {"team": team_id, "season": target["season"],
+                           "search": PLAYER_SEARCH}, args.cache)
+    if raw is None and last_api_error:
+        check(target, "Hormiga encontrado en la plantilla", False,
+              f"error de API: {last_api_error}")
+        return None
+    players = raw or []
     for p in players:
         info = p["player"]
         full = norm(f"{info.get('firstname')} {info.get('lastname')} {info.get('name')}")
