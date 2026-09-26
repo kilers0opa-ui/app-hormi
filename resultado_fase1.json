@@ -11,9 +11,34 @@
           "detalle": "id 2278"
         },
         {
-          "check": "Hormiga encontrado en la plantilla",
+          "check": "Stats de temporada disponibles",
+          "ok": true,
+          "detalle": "3 goles, 1 asistencias, 726 minutos en total"
+        },
+        {
+          "check": "Calendario disponible",
+          "ok": true,
+          "detalle": "47 jugados, 0 por jugar"
+        },
+        {
+          "check": "Alineación incluye a la Hormiga",
+          "ok": true,
+          "detalle": "fue banca"
+        },
+        {
+          "check": "Evento de gol con minuto",
           "ok": false,
-          "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+          "detalle": "sin goles suyos en este partido"
+        },
+        {
+          "check": "Evento de asistencia",
+          "ok": false,
+          "detalle": "sin asistencias suyas en este partido"
+        },
+        {
+          "check": "Evento de cambio con minuto",
+          "ok": true,
+          "detalle": "90+4' entra"
         }
       ]
     },
@@ -28,9 +53,34 @@
           "detalle": "id 553"
         },
         {
-          "check": "Hormiga encontrado en la plantilla",
+          "check": "Stats de temporada disponibles",
+          "ok": true,
+          "detalle": "3 goles, 1 asistencias, 726 minutos en total"
+        },
+        {
+          "check": "Calendario disponible",
+          "ok": true,
+          "detalle": "57 jugados, 0 por jugar"
+        },
+        {
+          "check": "Alineación incluye a la Hormiga",
           "ok": false,
-          "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+          "detalle": "no aparece (no convocado o alineación no disponible)"
+        },
+        {
+          "check": "Evento de gol con minuto",
+          "ok": false,
+          "detalle": "sin goles suyos en este partido"
+        },
+        {
+          "check": "Evento de asistencia",
+          "ok": false,
+          "detalle": "sin asistencias suyas en este partido"
+        },
+        {
+          "check": "Evento de cambio con minuto",
+          "ok": false,
+          "detalle": "jugó completo o no participó"
         }
       ]
     },
@@ -45,9 +95,34 @@
           "detalle": "id 16"
         },
         {
-          "check": "Hormiga encontrado en la plantilla",
+          "check": "Stats de temporada disponibles",
+          "ok": true,
+          "detalle": "3 goles, 1 asistencias, 726 minutos en total"
+        },
+        {
+          "check": "Calendario disponible",
+          "ok": true,
+          "detalle": "13 jugados, 0 por jugar"
+        },
+        {
+          "check": "Alineación incluye a la Hormiga",
           "ok": false,
-          "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+          "detalle": "no aparece (no convocado o alineación no disponible)"
+        },
+        {
+          "check": "Evento de gol con minuto",
+          "ok": false,
+          "detalle": "sin goles suyos en este partido"
+        },
+        {
+          "check": "Evento de asistencia",
+          "ok": false,
+          "detalle": "sin asistencias suyas en este partido"
+        },
+        {
+          "check": "Evento de cambio con minuto",
+          "ok": false,
+          "detalle": "jugó completo o no participó"
         }
       ]
     }
