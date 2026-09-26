@@ -36,6 +36,8 @@ jobs:
           git add status.json hormi_estado.json hormi_horario.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: actualiza estado del chequeo [skip ci]"
+            # Por si otro workflow (fase1-manual) subió algo justo antes:
+            git pull --rebase origin main
             git push
           else
             echo "Sin cambios que subir."
