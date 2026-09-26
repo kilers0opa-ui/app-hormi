@@ -62,6 +62,7 @@ NOT_STARTED = {"NS", "TBD"}
 
 MIN_SECONDS_BETWEEN_REQUESTS = 6.5         # plan gratuito: 10 peticiones/min
 _last_request_at = 0.0
+last_api_error = None    # último {"errors": ...} de la API, para diagnosticar sin logs
 
 
 # ═══════════════════════════════════════════════════════ utilidades
@@ -84,7 +85,8 @@ def load_config():
 
 def api(endpoint, params, use_cache=False):
     """GET a API-Football. Misma caché que la Fase 1 (mismos nombres)."""
-    global _last_request_at
+    global _last_request_at, last_api_error
+    last_api_error = None
     key = endpoint.strip("/").replace("/", "_") + "_" + "_".join(
         f"{k}-{v}" for k, v in sorted(params.items()))
     cache_file = CACHE_DIR / f"{key}.json"
@@ -113,6 +115,7 @@ def api(endpoint, params, use_cache=False):
                 continue
             raise
     if data.get("errors"):
+        last_api_error = data["errors"]
         log(f"⚠️  La API respondió con error: {data['errors']}")
         return None
     CACHE_DIR.mkdir(exist_ok=True)
@@ -408,6 +411,8 @@ def refresh_schedule(target):
     last = api("/fixtures", {"team": team_id, "last": 1}) or []
     if last:
         return last[0], "último"
+    if last_api_error:
+        log(f"⚠️  {target['label']}: sin horario — error de API: {last_api_error}")
     return None, None
 
 
@@ -421,9 +426,11 @@ def check_once(target, config, notifier, sent_by_target, status_out, schedule):
     if schedule_stale(entry):
         fx_meta, why = refresh_schedule(target)
         if not fx_meta:
-            schedule[key] = {"refreshed_at": now_iso()}
+            schedule[key] = {"refreshed_at": now_iso(),
+                             "last_error": last_api_error}
             status_out[key] = {
-                "label": label, "emoji": emoji, "status": "sin_partido", "checked_at": now_iso()}
+                "label": label, "emoji": emoji, "status": "sin_partido", "checked_at": now_iso(),
+                "api_error": last_api_error}
             return
         entry = {
             "fixture_id": fx_meta["fixture"]["id"],
