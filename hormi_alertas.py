@@ -553,11 +553,24 @@ def chequeo(args, notifier, config, fcm=None):
     sent_by_target = {k: set(v) for k, v in state.get("sent", {}).items()}
     schedule = load_json(SCHEDULE_FILE, {})
 
+    valid_keys = {t["key"] for t in config["targets"]}
     targets = config["targets"]
     if args.solo:
         targets = [t for t in targets if t["key"] == args.solo]
 
     status_out = load_json(STATUS_FILE, {}).get("targets", {})
+    # Poda objetivos que ya no están en hormi_config.json (p.ej. el jugador
+    # cambió de equipo y se quitó el anterior) — si no, se quedan pegados en
+    # status.json para siempre y la app los sigue mostrando como si se
+    # siguieran vigilando.
+    removed = [k for k in list(status_out) if k not in valid_keys]
+    for k in removed:
+        del status_out[k]
+    sent_by_target = {k: v for k, v in sent_by_target.items() if k in valid_keys}
+    schedule = {k: v for k, v in schedule.items() if k in valid_keys}
+    if removed:
+        log(f"🧹 Se quitaron de status.json objetivos que ya no están en {CONFIG_FILE}: {', '.join(removed)}")
+
     for target in targets:
         try:
             check_once(target, config, notifier, sent_by_target, status_out, schedule, fcm)
