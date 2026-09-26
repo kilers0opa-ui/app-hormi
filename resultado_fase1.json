@@ -1,0 +1,55 @@
+{
+  "targets": [
+    {
+      "key": "chivas",
+      "label": "Chivas",
+      "team_id": 2278,
+      "checks": [
+        {
+          "check": "Equipo (id conocido)",
+          "ok": true,
+          "detalle": "id 2278"
+        },
+        {
+          "check": "Hormiga encontrado en la plantilla",
+          "ok": false,
+          "detalle": "resultados: ninguno. Si sale con otro nombre, pasa --player-id"
+        }
+      ]
+    },
+    {
+      "key": "olympiacos",
+      "label": "Olympiacos",
+      "team_id": 553,
+      "checks": [
+        {
+          "check": "Equipo (id conocido)",
+          "ok": true,
+          "detalle": "id 553"
+        },
+        {
+          "check": "Hormiga encontrado en la plantilla",
+          "ok": false,
+          "detalle": "resultados: ninguno. Si sale con otro nombre, pasa --player-id"
+        }
+      ]
+    },
+    {
+      "key": "seleccion",
+      "label": "Selección Mexicana",
+      "team_id": 16,
+      "checks": [
+        {
+          "check": "Selección encontrada",
+          "ok": true,
+          "detalle": "Mexico (id 16)"
+        },
+        {
+          "check": "Hormiga encontrado en la plantilla",
+          "ok": false,
+          "detalle": "resultados: ninguno. Si sale con otro nombre, pasa --player-id"
+        }
+      ]
+    }
+  ]
+}
