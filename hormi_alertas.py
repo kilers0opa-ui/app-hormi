@@ -33,6 +33,12 @@ Modos:
 
 Requisitos: Python 3.9+, sin librerías externas. Variable APIFOOTBALL_KEY
 (no se necesita en modo repetición, que usa solo la caché).
+
+Push real (opcional, además de ntfy):
+  Variable de entorno FCM_SERVICE_ACCOUNT_JSON con el JSON de una cuenta de
+  servicio de Firebase (requiere el paquete 'google-auth'), y la llave
+  "fcm_project_id" en hormi_config.json. Sin eso, el motor sigue mandando
+  las alertas por ntfy exactamente igual que antes.
 """
 
 import argparse
@@ -166,6 +172,79 @@ def get_topic(config):
     return config["ntfy_topic"]
 
 
+# ═══════════════════════════════════════════════════════ push real (FCM)
+class FcmSender:
+    """Push real vía Firebase Cloud Messaging, al tema 'hormi_alerts' (lo que
+    la app Android suscribe al arrancar). Manda mensajes SOLO de datos (sin
+    'notification'), así la app arma ella misma la notificación — incluso
+    con el teléfono bloqueado o la app cerrada — y puede mostrar la imagen
+    grande de '¡GOOOOL!' cuando type == 'goal'.
+
+    Necesita dos cosas, ninguna es obligatoria: si faltan, la app sigue
+    recibiendo alertas por ntfy como siempre, solo que sin push real.
+      - hormi_config.json: "fcm_project_id" (el project_id de Firebase,
+        no es secreto).
+      - Variable de entorno FCM_SERVICE_ACCOUNT_JSON: el JSON completo de
+        una clave de cuenta de servicio (Firebase Console → Configuración
+        del proyecto → Cuentas de servicio → Generar nueva clave privada).
+        ESO SÍ es secreto — va como GitHub Actions secret, nunca en el repo.
+    """
+    TOPIC = "hormi_alerts"
+    SCOPE = "https://www.googleapis.com/auth/firebase.messaging"
+
+    def __init__(self, project_id):
+        self.project_id = project_id
+        self.enabled = False
+        self._token = None
+
+        sa_json = os.environ.get("FCM_SERVICE_ACCOUNT_JSON")
+        if not project_id:
+            log("ℹ️  FCM: falta 'fcm_project_id' en hormi_config.json — push real desactivado.")
+            return
+        if not sa_json:
+            log("ℹ️  FCM: falta la variable FCM_SERVICE_ACCOUNT_JSON — push real desactivado.")
+            return
+        try:
+            from google.oauth2 import service_account
+            import google.auth.transport.requests
+            info = json.loads(sa_json)
+            creds = service_account.Credentials.from_service_account_info(
+                info, scopes=[self.SCOPE])
+            creds.refresh(google.auth.transport.requests.Request())
+            self._token = creds.token
+            self.enabled = True
+        except Exception as err:
+            log(f"⚠️  FCM: no se pudo autenticar con la cuenta de servicio — {err}")
+
+    def send(self, tipo, title, body):
+        """tipo: 'goal' (dispara la pantalla de ¡GOOOOL! en la app) o
+        cualquier otro string para una notificación normal."""
+        if not self.enabled:
+            return
+        url = f"https://fcm.googleapis.com/v1/projects/{self.project_id}/messages:send"
+        payload = {
+            "message": {
+                "topic": self.TOPIC,
+                "data": {"type": tipo, "title": title, "body": body},
+            }
+        }
+        req = urllib.request.Request(
+            url, data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json; charset=UTF-8",
+                     "Authorization": f"Bearer {self._token}"})
+        try:
+            urllib.request.urlopen(req, timeout=15).close()
+        except urllib.error.HTTPError as err:
+            body_txt = ""
+            try:
+                body_txt = err.read().decode("utf-8")
+            except Exception:
+                pass
+            log(f"⚠️  FCM: el envío falló ({err.code}) — {body_txt or err}")
+        except Exception as err:
+            log(f"⚠️  FCM: no se pudo enviar el push real — {err}")
+
+
 # ═══════════════════════════════════════════════════════ detector
 def analyze(data, player_id, prefix, emoji, label):
     """Recibe una 'foto' del partido (formato de /fixtures?id=...) y devuelve
@@ -267,11 +346,14 @@ def analyze(data, player_id, prefix, emoji, label):
                      "summary": summary}
 
 
-def dispatch(alerts, sent, notifier):
+def dispatch(alerts, sent, notifier, fcm=None):
     new = 0
     for key, title, message, priority in alerts:
         if key not in sent:
             notifier.send(title, message, priority)
+            if fcm:
+                tipo = "goal" if key.endswith(":gol") else "info"
+                fcm.send(tipo, title, message)
             sent.add(key)
             new += 1
     return new
@@ -291,7 +373,7 @@ def find_cached_fixture(args, team_id):
     return None
 
 
-def replay(args, notifier, config):
+def replay(args, notifier, config, fcm=None):
     target = next((t for t in config["targets"] if t["key"] == args.solo), None) \
         if args.solo else config["targets"][0]
     if not target:
@@ -333,7 +415,7 @@ def replay(args, notifier, config):
                     g["home" if e["team"]["id"] == home_id else "away"] += 1
             snap["goals"] = g
         alerts, _ = analyze(snap, player_id, target["key"], target["emoji"], target["label"])
-        dispatch(alerts, sent, notifier)
+        dispatch(alerts, sent, notifier, fcm)
         time.sleep(args.velocidad)
     print("\n✅ Repetición terminada.")
 
@@ -416,7 +498,7 @@ def refresh_schedule(target):
     return None, None
 
 
-def check_once(target, config, notifier, sent_by_target, status_out, schedule):
+def check_once(target, config, notifier, sent_by_target, status_out, schedule, fcm=None):
     label, emoji, key = target["label"], target["emoji"], target["key"]
     if not target.get("team_id"):
         log(f"⚠️  {label}: sin team_id en {CONFIG_FILE}, se salta (corre Fase 1).")
@@ -456,7 +538,7 @@ def check_once(target, config, notifier, sent_by_target, status_out, schedule):
 
     sent = sent_by_target.setdefault(key, set())
     alerts, info = analyze(snap, config["player_id"], key, emoji, label)
-    n = dispatch(alerts, sent, notifier)
+    n = dispatch(alerts, sent, notifier, fcm)
     if n:
         log(f"{emoji} {label}: {n} alerta(s) nueva(s)")
 
@@ -466,7 +548,7 @@ def check_once(target, config, notifier, sent_by_target, status_out, schedule):
     }
 
 
-def chequeo(args, notifier, config):
+def chequeo(args, notifier, config, fcm=None):
     state = load_json(STATE_FILE, {})
     sent_by_target = {k: set(v) for k, v in state.get("sent", {}).items()}
     schedule = load_json(SCHEDULE_FILE, {})
@@ -478,7 +560,7 @@ def chequeo(args, notifier, config):
     status_out = load_json(STATUS_FILE, {}).get("targets", {})
     for target in targets:
         try:
-            check_once(target, config, notifier, sent_by_target, status_out, schedule)
+            check_once(target, config, notifier, sent_by_target, status_out, schedule, fcm)
         except Exception as err:
             log(f"⚠️  {target['label']}: error en el chequeo — {err}")
 
@@ -507,14 +589,18 @@ def main():
     config = load_config()
     topic = None if args.solo_consola else get_topic(config)
     notifier = Notifier(topic, console_only=args.solo_consola)
+    fcm = None if args.solo_consola else FcmSender(config.get("fcm_project_id"))
 
     if args.modo == "prueba":
         notifier.send("🐜 App Hormi conectada",
                       "Si ves esto, las alertas llegarán a tu celular.", 4)
+        if fcm and fcm.enabled:
+            fcm.send("info", "🐜 App Hormi conectada",
+                     "El push real (FCM) también está funcionando.")
     elif args.modo == "repeticion":
-        replay(args, notifier, config)
+        replay(args, notifier, config, fcm)
     else:
-        chequeo(args, notifier, config)
+        chequeo(args, notifier, config, fcm)
 
 
 if __name__ == "__main__":

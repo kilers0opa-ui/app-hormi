@@ -24,9 +24,13 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Instalar dependencias (push real vía FCM)
+        run: pip install google-auth
+
       - name: Chequeo
         env:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+          FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
         run: python hormi_alertas.py chequeo
 
       - name: Guardar estado (status.json, hormi_estado.json, hormi_horario.json)
