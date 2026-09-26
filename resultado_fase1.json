@@ -13,7 +13,7 @@
         {
           "check": "Hormiga encontrado en la plantilla",
           "ok": false,
-          "detalle": "resultados: ninguno. Si sale con otro nombre, pasa --player-id"
+          "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
         }
       ]
     },
@@ -30,7 +30,7 @@
         {
           "check": "Hormiga encontrado en la plantilla",
           "ok": false,
-          "detalle": "resultados: ninguno. Si sale con otro nombre, pasa --player-id"
+          "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
         }
       ]
     },
@@ -40,14 +40,14 @@
       "team_id": 16,
       "checks": [
         {
-          "check": "Selección encontrada",
+          "check": "Equipo (id conocido)",
           "ok": true,
-          "detalle": "Mexico (id 16)"
+          "detalle": "id 16"
         },
         {
           "check": "Hormiga encontrado en la plantilla",
           "ok": false,
-          "detalle": "resultados: ninguno. Si sale con otro nombre, pasa --player-id"
+          "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
         }
       ]
     }
