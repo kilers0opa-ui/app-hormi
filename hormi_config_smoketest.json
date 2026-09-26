@@ -1,0 +1,33 @@
+{
+  "ntfy_topic": "hormi-1442d3118953",
+  "player_id": 291713,
+  "player_name": "Armando \"La Hormiga\" González",
+  "targets": [
+    {
+      "key": "chivas",
+      "label": "Chivas",
+      "emoji": "🔴⚪",
+      "team_id": 2278,
+      "season": 2024,
+      "kind": "club"
+    },
+    {
+      "key": "olympiacos",
+      "label": "Olympiacos",
+      "emoji": "🔴",
+      "team_id": 553,
+      "season": 2024,
+      "kind": "club"
+    },
+    {
+      "key": "seleccion",
+      "label": "Selección Mexicana",
+      "emoji": "🇲🇽",
+      "team_id": 16,
+      "season": 2024,
+      "kind": "seleccion",
+      "search": "Mexico",
+      "country": "Mexico"
+    }
+  ]
+}
