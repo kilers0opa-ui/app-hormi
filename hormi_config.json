@@ -93,6 +93,37 @@
           "country": "Mexico"
         }
       ]
+    },
+    {
+      "key": "mora",
+      "name": "Gilberto Mora",
+      "apodo": "Mora",
+      "player_id": null,
+      "player_search_term": "Mora",
+      "search_first_name": "gilberto",
+      "search_last_name": "mora",
+      "targets": [
+        {
+          "key": "tijuana",
+          "label": "Tijuana",
+          "emoji": "🔴",
+          "team_id": null,
+          "search": "Tijuana",
+          "country": "Mexico",
+          "season": 2026,
+          "kind": "club"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico"
+        }
+      ]
     }
   ]
 }
