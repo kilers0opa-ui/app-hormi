@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T19:19:10.597042-06:00",
+  "updated_at": "2026-09-26T19:36:26.112224-06:00",
   "player": {
     "id": 291713,
     "name": "Armando \"La Hormiga\" González"
@@ -9,13 +9,19 @@
       "label": "Olympiacos",
       "emoji": "🔴",
       "status": "sin_partido",
-      "checked_at": "2026-09-26T13:25:01.857267-06:00"
+      "checked_at": "2026-09-26T19:36:06.609131-06:00",
+      "api_error": {
+        "plan": "Free plans do not have access to the Last parameter."
+      }
     },
     "seleccion": {
       "label": "Selección Mexicana",
       "emoji": "🇲🇽",
       "status": "sin_partido",
-      "checked_at": "2026-09-26T13:25:21.357040-06:00"
+      "checked_at": "2026-09-26T19:36:26.111549-06:00",
+      "api_error": {
+        "plan": "Free plans do not have access to the Last parameter."
+      }
     }
   }
 }
