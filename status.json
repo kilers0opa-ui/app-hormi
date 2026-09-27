@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T17:20:07.452503-06:00",
+  "updated_at": "2026-09-27T17:35:59.064858-06:00",
   "app_name": "EuroGoalMX",
   "players": {
     "armando": {
@@ -50,6 +50,21 @@
           "emoji": "🇲🇽",
           "status": "sin_partido",
           "checked_at": "2026-09-27T15:26:01.463283-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        }
+      }
+    },
+    "mora": {
+      "name": "Gilberto Mora",
+      "player_id": null,
+      "targets": {
+        "seleccion": {
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "status": "sin_partido",
+          "checked_at": "2026-09-27T17:35:59.064595-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
