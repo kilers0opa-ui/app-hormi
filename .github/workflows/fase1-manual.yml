@@ -4,7 +4,17 @@ on:
   push:
     paths:
       - ".github/trigger-fase1"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      jugador:
+        description: "Limitar a un jugador (vacío = todos: armando, raul, quinones)"
+        type: choice
+        default: ""
+        options:
+          - ""
+          - armando
+          - raul
+          - quinones
 
 concurrency:
   group: hormi-chequeo   # mismo grupo que el motor: nunca corren al mismo tiempo (evita choques de git push)
@@ -23,13 +33,19 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Validar API (todos los targets)
+      - name: Validar API (todos los jugadores y objetivos, o el que se elija)
         env:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
-        # --player-id fijo: ya sabemos el id global de la Hormiga (291713),
-        # así nos ahorramos la búsqueda por nombre (que puede fallar si la
-        # API no cubre la temporada) y siempre siguen goles/asistencias/etc.
-        run: python hormiga_fase1_validar_api.py --player-id 291713
+        # Sin --jugador corre los 3 (armando, raul, quinones). Armando ya
+        # tiene su player_id guardado en hormi_config.json así que no
+        # vuelve a buscarlo por nombre; raul y quinones sí se buscan (y una
+        # vez encontrados, quedan guardados para las siguientes corridas).
+        run: |
+          if [ -n "${{ inputs.jugador }}" ]; then
+            python hormiga_fase1_validar_api.py --jugador "${{ inputs.jugador }}"
+          else
+            python hormiga_fase1_validar_api.py
+          fi
 
       - name: Subir hormi_config.json y resultado_fase1.json
         run: |
