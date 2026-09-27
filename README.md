@@ -51,9 +51,54 @@ sobrado. Si contratas el plan Pro puedes bajar `REFRESH_HORAS`,
 `VENTANA_ANTES`/`VENTANA_DESPUES` en `hormi_alertas.py` para vigilar más
 seguido.
 
-Cada corrida actualiza y sube (`git push`) tres archivos: `status.json`
+Cada corrida actualiza y sube (`git push`) cuatro archivos: `status.json`
 (lo que lee la app), `hormi_estado.json` (qué alertas ya se mandaron, para
-no repetirlas) y `hormi_horario.json` (caché de horarios).
+no repetirlas), `hormi_horario.json` (caché de horarios) y `player_stats.json`
+(ajuste "en vivo" del histórico — ver la sección de abajo).
+
+## Historial real por competición (Fase 3 · `player_stats.json`)
+
+La pantalla de Estadísticas de la app no usa datos de ejemplo: lee
+`player_stats.json`, que se arma y se mantiene al día con dos piezas que
+nunca se pisan entre sí:
+
+1. **`hormi_historial.py`** (Fase 3) — corre una vez al día
+   (`.github/workflows/historial.yml`, 03:00 hora de México) y llama a
+   `/players?id=<player_id>&season=<año>` de API-Football una vez por cada
+   año en `career_seasons` de cada jugador (`hormi_config.json`). Ese
+   endpoint ya trae, por temporada, el/los club(es) con los que jugó y sus
+   estadísticas por cada competición — así se cubre el historial completo
+   (transferencias, préstamos, selección, etc.) sin mantener a mano una
+   lista de equipos anteriores. Cada corrida **reemplaza por completo** los
+   datos de las temporadas que sí trajeron respuesta; si una temporada no
+   trae nada (el plan aún no la cubre, o la API falló un momento), se deja
+   tal cual estaba — nunca se borra lo bueno por un error puntual.
+2. **`apply_live_delta()`** dentro de `hormi_alertas.py` — cuando un
+   partido de un jugador **termina**, durante el chequeo de cada 5 min, le
+   suma minutos/goles/asistencias a la competición correspondiente en
+   `player_stats.json` al instante, usando el `fixture_id` para no contar
+   el mismo partido dos veces. Así Estadísticas no depende de que la Fase 3
+   vuelva a correr para verse al día. Ese ajuste queda pisado (correctamente)
+   la próxima vez que la Fase 3 traiga el total real y actualizado de la
+   API — por diseño nunca hay doble conteo: la Fase 3 siempre reemplaza,
+   nunca suma.
+
+Correr manualmente:
+
+```bash
+export APIFOOTBALL_KEY=tu_key
+python hormi_historial.py                     # todos los jugadores
+python hormi_historial.py --jugador raul       # solo uno
+python hormi_historial.py --jugador raul --temporada 2019   # un solo año, para pruebas
+```
+
+**Nota sobre el plan de API-Football**: con el plan gratuito, muchas
+temporadas (sobre todo 2025/2026 en adelante) no traen datos todavía — esas
+filas de `player_stats.json` simplemente no se llenan hasta contratar el
+plan Pro. En cuanto se pague el plan Pro, sin tocar nada más de código, la
+siguiente corrida de `historial.yml` y el próximo chequeo de `motor-alertas.yml`
+empiezan a traer y actualizar esas temporadas automáticamente — tanto el
+histórico como el "en vivo" quedan correctos sin ninguna migración manual.
 
 ## Limitación conocida: convocatoria
 

@@ -1,0 +1,68 @@
+name: Historial de estadisticas - App Hormi
+
+on:
+  schedule:
+    # Una vez al día. No compite con el chequeo de cada 5 min: gasta 1
+    # petición de la API por cada año de "career_seasons" de cada jugador
+    # (ver hormi_historial.py), así que una cadencia baja alcanza sin
+    # pelearse por cuota con el plan (100 peticiones/día en el gratuito).
+    - cron: "0 9 * * *"   # 03:00 hora de México (UTC-6)
+  workflow_dispatch:       # para poder correrlo manual desde la pestaña Actions
+    inputs:
+      jugador:
+        description: "Limitar a un jugador (vacío = todos: armando, raul, quinones, mora)"
+        type: choice
+        default: ""
+        options:
+          - ""
+          - armando
+          - raul
+          - quinones
+          - mora
+      temporada:
+        description: "Limitar a una sola temporada (vacío = todas las de career_seasons), útil para pruebas"
+        type: string
+        default: ""
+
+concurrency:
+  group: hormi-chequeo   # mismo grupo que el motor y fase1: nunca corren al mismo tiempo (evita choques de git push)
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # necesario para que el workflow pueda hacer commit/push de player_stats.json
+
+jobs:
+  historial:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Actualizar historial (player_stats.json)
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.jugador }}" ]; then
+            ARGS="$ARGS --jugador ${{ inputs.jugador }}"
+          fi
+          if [ -n "${{ inputs.temporada }}" ]; then
+            ARGS="$ARGS --temporada ${{ inputs.temporada }}"
+          fi
+          python hormi_historial.py $ARGS
+
+      - name: Subir player_stats.json
+        run: |
+          git config user.name "app-hormi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add player_stats.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: actualiza historial de estadisticas (Fase 3) [skip ci]"
+            git pull --rebase origin main
+            git push
+          else
+            echo "Sin cambios que subir."
+          fi

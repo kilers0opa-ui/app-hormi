@@ -63,6 +63,7 @@ CACHE_DIR = Path("cache_api")
 CONFIG_FILE = Path("hormi_config.json")
 STATE_FILE = Path("hormi_estado.json")     # qué alertas ya se mandaron
 STATUS_FILE = Path("status.json")          # lo que lee la app (dashboard)
+STATS_FILE = Path("player_stats.json")     # historial por competición (Estadísticas)
 
 LOCAL_TZ = timezone(timedelta(hours=-6))   # hora del centro de México
 
@@ -367,6 +368,51 @@ def analyze(data, player, target):
                      "summary": summary}
 
 
+def apply_live_delta(player, target, snap, info):
+    """Cuando un partido de un objetivo TERMINA, suma sus minutos/goles/
+    asistencias al histórico de player_stats.json — así Estadísticas no
+    depende de que hormi_historial.py (Fase 3) vuelva a correr para verse
+    al día; ese cálculo periódico simplemente reemplaza este ajuste con el
+    total real de la API la próxima vez que corra, así que nunca hay doble
+    conteo. Usa el fixture_id para no sumar el mismo partido dos veces —
+    check_once() lo sigue viendo hasta VENTANA_DESPUES después del final."""
+    summary = info.get("summary")
+    if not summary:
+        return
+
+    stats = load_json(STATS_FILE, {"updated_at": None, "players": {}})
+    stats.setdefault("players", {})
+    entry = stats["players"].setdefault(
+        player["key"], {"seasons": {}, "applied_fixtures": {}})
+    applied = entry.setdefault("applied_fixtures", {}).setdefault(target["key"], [])
+
+    fixture_id = snap["fixture"]["id"]
+    if fixture_id in applied:
+        return
+    applied.append(fixture_id)
+    del applied[:-500]  # no crecer sin límite
+
+    season_key = str(target["season"])
+    league = snap.get("league") or {}
+    rows = entry.setdefault("seasons", {}).setdefault(season_key, [])
+    row = next((r for r in rows if r.get("league_id") == league.get("id")), None)
+    if row is None:
+        row = {"league_id": league.get("id"), "league_name": league.get("name") or target["label"],
+               "team_id": target.get("team_id"), "team_name": target["label"],
+               "played": 0, "goals": 0, "assists": 0, "minutes": 0}
+        rows.append(row)
+    row["played"] += 1
+    row["goals"] += summary["goals"]
+    row["assists"] += summary["assists"]
+    row["minutes"] += summary["minutes"]
+
+    stats["updated_at"] = now_iso()
+    save_json(STATS_FILE, stats)
+    log(f"📊 {player['name']} · {target['label']}: histórico actualizado "
+        f"({league.get('name') or target['label']} {row['played']}PJ "
+        f"{row['goals']}G {row['assists']}A)")
+
+
 def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None):
     new = 0
     for key, title, message, priority in alerts:
@@ -566,6 +612,10 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     n = dispatch(alerts, sent, notifier, fcm, player["key"], key)
     if n:
         log(f"{emoji} {player['name']} · {label}: {n} alerta(s) nueva(s)")
+    try:
+        apply_live_delta(player, target, snap, info)
+    except Exception as err:
+        log(f"⚠️  {player['name']} · {label}: no se pudo actualizar el histórico — {err}")
 
     status_out[key] = {
         "label": label, "emoji": emoji, "checked_at": now_iso(),
