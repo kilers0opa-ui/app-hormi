@@ -1,26 +1,59 @@
 {
-  "updated_at": "2026-09-27T08:57:31.586305-06:00",
-  "player": {
-    "id": 291713,
-    "name": "Armando \"La Hormiga\" González"
-  },
-  "targets": {
-    "olympiacos": {
-      "label": "Olympiacos",
-      "emoji": "🔴",
-      "status": "sin_partido",
-      "checked_at": "2026-09-27T07:38:34.884141-06:00",
-      "api_error": {
-        "plan": "Free plans do not have access to the Last parameter."
+  "updated_at": "2026-09-27T09:19:02.066182-06:00",
+  "app_name": "EuroGoalMX",
+  "players": {
+    "armando": {
+      "name": "Armando \"La Hormiga\" González",
+      "player_id": 291713,
+      "targets": {
+        "olympiacos": {
+          "label": "Olympiacos",
+          "emoji": "🔴",
+          "status": "sin_partido",
+          "checked_at": "2026-09-27T09:18:03.709024-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        },
+        "seleccion": {
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "status": "sin_partido",
+          "checked_at": "2026-09-27T09:18:23.063278-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        }
       }
     },
-    "seleccion": {
-      "label": "Selección Mexicana",
-      "emoji": "🇲🇽",
-      "status": "sin_partido",
-      "checked_at": "2026-09-27T07:38:54.379242-06:00",
-      "api_error": {
-        "plan": "Free plans do not have access to the Last parameter."
+    "raul": {
+      "name": "Raúl Jiménez",
+      "player_id": null,
+      "targets": {
+        "seleccion": {
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "status": "sin_partido",
+          "checked_at": "2026-09-27T09:18:42.564941-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        }
+      }
+    },
+    "quinones": {
+      "name": "Julián Quiñones",
+      "player_id": null,
+      "targets": {
+        "seleccion": {
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "status": "sin_partido",
+          "checked_at": "2026-09-27T09:19:02.065635-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        }
       }
     }
   }
