@@ -1,26 +1,95 @@
 {
+  "app_name": "EuroGoalMX",
   "ntfy_topic": "hormi-1442d3118953",
   "fcm_project_id": "otakugoal-97932",
-  "player_id": 291713,
-  "player_name": "Armando \"La Hormiga\" González",
-  "targets": [
+  "players": [
     {
-      "key": "olympiacos",
-      "label": "Olympiacos",
-      "emoji": "🔴",
-      "team_id": 553,
-      "season": 2026,
-      "kind": "club"
+      "key": "armando",
+      "name": "Armando \"La Hormiga\" González",
+      "player_id": 291713,
+      "player_search_term": "Gonz",
+      "search_first_name": "armando",
+      "search_last_name": "gonzalez",
+      "targets": [
+        {
+          "key": "olympiacos",
+          "label": "Olympiacos",
+          "emoji": "🔴",
+          "team_id": 553,
+          "season": 2026,
+          "kind": "club"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico"
+        }
+      ]
     },
     {
-      "key": "seleccion",
-      "label": "Selección Mexicana",
-      "emoji": "🇲🇽",
-      "team_id": 16,
-      "season": 2026,
-      "kind": "seleccion",
-      "search": "Mexico",
-      "country": "Mexico"
+      "key": "raul",
+      "name": "Raúl Jiménez",
+      "player_id": null,
+      "player_search_term": "Jimenez",
+      "search_first_name": "raul",
+      "search_last_name": "jimenez",
+      "targets": [
+        {
+          "key": "wolves",
+          "label": "Wolverhampton Wanderers",
+          "emoji": "🐺",
+          "team_id": null,
+          "search": "Wolverhampton",
+          "country": "England",
+          "season": 2026,
+          "kind": "club"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico"
+        }
+      ]
+    },
+    {
+      "key": "quinones",
+      "name": "Julián Quiñones",
+      "player_id": null,
+      "player_search_term": "Quinones",
+      "search_first_name": "julian",
+      "search_last_name": "quinones",
+      "targets": [
+        {
+          "key": "al_qadsiah",
+          "label": "Al-Qadsiah",
+          "emoji": "🔴",
+          "team_id": null,
+          "search": "Qadsiah",
+          "country": "Saudi Arabia",
+          "season": 2026,
+          "kind": "club"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico"
+        }
+      ]
     }
   ]
 }

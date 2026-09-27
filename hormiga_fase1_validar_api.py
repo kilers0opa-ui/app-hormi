@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-App Hormi · Fase 1 — Validación de datos con API-Football (multi-entidad)
-==========================================================================
-Comprueba que la API trae todo lo que la app necesita para seguir a
-Armando "La Hormiga" González en varios equipos a la vez: sus clubes
-(Chivas, Olympiacos) y la Selección Mexicana.
+EuroGoalMX · Fase 1 — Validación de datos con API-Football (multi-jugador)
+============================================================================
+Comprueba que la API trae todo lo que la app necesita para seguir a varios
+futbolistas mexicanos en Europa (o donde sea que jueguen) a la vez — cada
+uno con sus propios clubes y su Selección. Los jugadores y sus equipos
+salen de hormi_config.json (clave "players").
 
-Por cada objetivo en hormi_config.json revisa:
+Por cada objetivo (jugador + equipo) revisa:
   1. Equipo (o Selección) y jugador
   2. Estadísticas de temporada por competición (goles, asistencias, minutos)
   3. Calendario de partidos (jugados y próximos)
@@ -16,14 +17,13 @@ Por cada objetivo en hormi_config.json revisa:
 Uso:
   export APIFOOTBALL_KEY="tu_api_key"        # Windows: set APIFOOTBALL_KEY=...
   python hormiga_fase1_validar_api.py                  # valida TODOS los
-                                                        # objetivos de
-                                                        # hormi_config.json
-  python hormiga_fase1_validar_api.py --solo chivas    # valida solo uno
-  python hormiga_fase1_validar_api.py --solo seleccion --no-cache
+                                                        # jugadores/objetivos
+  python hormiga_fase1_validar_api.py --jugador raul   # valida solo un jugador
+  python hormiga_fase1_validar_api.py --jugador raul --solo wolves
+  python hormiga_fase1_validar_api.py --jugador raul --player-id 12345
 
-Al terminar reescribe hormi_config.json con los team_id que encontró
-(por ejemplo el de la Selección Mexicana, que se detecta automáticamente),
-así que la siguiente fase ya no tiene que buscarlos.
+Al terminar reescribe hormi_config.json con los team_id/player_id que
+encontró, así que la siguiente fase ya no tiene que buscarlos.
 
 Las respuestas se guardan en ./cache_api/ para que volver a correr el script
 NO gaste cuota (el plan gratuito da 100 peticiones al día). Usa --no-cache
@@ -44,8 +44,6 @@ from pathlib import Path
 BASE_URL = "https://v3.football.api-sports.io"
 CACHE_DIR = Path("cache_api")
 CONFIG_FILE = Path("hormi_config.json")
-PLAYER_SEARCH = "Gonz"          # la API pide mínimo 4 caracteres
-PLAYER_FIRST_NAME = "armando"
 
 requests_used = 0
 last_request_at = 0.0
@@ -142,33 +140,42 @@ def find_team(target, args):
                   f"{team['name']} (id {team['id']})")
             target["team_id"] = team["id"]
             return team["id"]
-    check(target, "Equipo/Selección encontrado", False, "no apareció en la búsqueda")
+    names = ", ".join(f"{t['team']['name']} ({t['team'].get('country')})" for t in teams) or "ninguno"
+    check(target, "Equipo/Selección encontrado", False,
+          f"no coincidió con country='{target.get('country')}'. Resultados de la búsqueda: {names}")
     return None
 
 
-def find_player(target, args, team_id):
+def find_player(target, args, team_id, player):
     print("\n2) Jugador")
     if args.player_id:
-        check(target, "Hormiga (id manual)", True, f"id {args.player_id}")
+        check(target, f"{player['name']} (id manual)", True, f"id {args.player_id}")
         return args.player_id
+    if player.get("player_id"):
+        check(target, f"{player['name']} (id conocido)", True, f"id {player['player_id']}")
+        return player["player_id"]
+
+    search_term = player["player_search_term"]
     raw = api("/players", {"team": team_id, "season": target["season"],
-                           "search": PLAYER_SEARCH}, args.cache)
+                           "search": search_term}, args.cache)
     if raw is None and last_api_error:
-        check(target, "Hormiga encontrado en la plantilla", False,
+        check(target, f"{player['name']} encontrado en la plantilla", False,
               f"error de API: {last_api_error}")
         return None
     players = raw or []
+    first, last = player["search_first_name"], player["search_last_name"]
     for p in players:
         info = p["player"]
         full = norm(f"{info.get('firstname')} {info.get('lastname')} {info.get('name')}")
-        if PLAYER_FIRST_NAME in full and "gonzalez" in full:
-            check(target, "Hormiga encontrado en la plantilla", True,
+        if first in full and last in full:
+            check(target, f"{player['name']} encontrado en la plantilla", True,
                   f"{info['name']} · id {info['id']} · "
                   f"{info.get('nationality')} · {info.get('age')} años")
+            player["player_id"] = info["id"]
             return info["id"]
     names = ", ".join(p["player"]["name"] for p in players) or "ninguno"
-    check(target, "Hormiga encontrado en la plantilla", False,
-          f"resultados: {names}. Si sale con otro nombre, pasa --player-id")
+    check(target, f"{player['name']} encontrado en la plantilla", False,
+          f"resultados: {names}. Si sale con otro nombre, pasa --jugador {player['key']} --player-id <id>")
     return None
 
 
@@ -241,7 +248,7 @@ def find_goal_match(args, done, team_id, player_id, buscar):
     return None
 
 
-def lineup_and_events(target, args, match, player_id):
+def lineup_and_events(target, args, match, player_id, player):
     fx = match["fixture"]
     title = (f"{match['teams']['home']['name']} {match['goals']['home']}-"
              f"{match['goals']['away']} {match['teams']['away']['name']}")
@@ -254,7 +261,7 @@ def lineup_and_events(target, args, match, player_id):
             for p in team.get(slot) or []:
                 if p["player"]["id"] == player_id:
                     role = label
-    check(target, "Alineación incluye a la Hormiga", role is not None,
+    check(target, f"Alineación incluye a {player['name']}", role is not None,
           f"fue {role}" if role else "no aparece (no convocado o alineación no disponible)")
 
     events = api("/fixtures/events", {"fixture": fx["id"]}, args.cache) or []
@@ -289,14 +296,14 @@ def check(target, name, ok, detail=""):
 
 
 # ---------------------------------------------------------------- por objetivo
-def validate_target(target, args):
+def validate_target(target, args, player):
     print("\n" + "═" * 60)
-    print(f"🐜 {target['emoji']} {target['label']}")
+    print(f"⚽ {player['name']} · {target['emoji']} {target['label']}")
     print("═" * 60)
     team_id = find_team(target, args)
     if not team_id:
         return
-    player_id = args.player_id or find_player(target, args, team_id)
+    player_id = args.player_id or find_player(target, args, team_id, player)
     if not player_id:
         return
     season_stats(target, args, player_id)
@@ -306,34 +313,47 @@ def validate_target(target, args):
         match = find_goal_match(args, done, team_id, player_id, args.buscar_gol)
     match = match or pick_test_match(done)
     if match:
-        lineup_and_events(target, args, match, player_id)
+        lineup_and_events(target, args, match, player_id, player)
 
 
 # ---------------------------------------------------------------- main
 def main():
-    parser = argparse.ArgumentParser(description="Validación API · App Hormi (multi-entidad)")
+    parser = argparse.ArgumentParser(description="Validación API · EuroGoalMX (multi-jugador)")
     parser.add_argument("--config", default=str(CONFIG_FILE))
-    parser.add_argument("--solo", help="Valida solo un objetivo por su 'key' (chivas, olympiacos, seleccion)")
-    parser.add_argument("--player-id", type=int, help="Fuerza el id del jugador en vez de buscarlo")
+    parser.add_argument("--jugador", help="Limita a un jugador por su 'key' (armando, raul, quinones)")
+    parser.add_argument("--solo", help="Dentro de --jugador, limita a un objetivo por su 'key' (wolves, seleccion, ...)")
+    parser.add_argument("--player-id", type=int,
+                        help="Fuerza el id del jugador en vez de buscarlo (requiere --jugador)")
     parser.add_argument("--buscar-gol", type=int, default=0, metavar="N",
                         help="Revisa hasta N partidos para encontrar uno con gol/asistencia suya")
     parser.add_argument("--no-cache", dest="cache", action="store_false")
     args = parser.parse_args()
 
+    if args.player_id and not args.jugador:
+        sys.exit("--player-id necesita --jugador <key> (a qué jugador aplica el id).")
+    if args.solo and not args.jugador:
+        sys.exit("--solo necesita --jugador <key> (los objetivos se repiten entre jugadores, p.ej. 'seleccion').")
+
     config_path = Path(args.config)
     config = load_json(config_path, None)
     if config is None:
-        sys.exit(f"No encontré {config_path}. Debe existir con la lista de 'targets'.")
+        sys.exit(f"No encontré {config_path}. Debe existir con la lista de 'players'.")
 
-    targets = config["targets"]
-    if args.solo:
-        targets = [t for t in targets if t["key"] == args.solo]
-        if not targets:
-            sys.exit(f"No hay ningún target con key='{args.solo}' en {config_path}.")
+    players = config["players"]
+    if args.jugador:
+        players = [p for p in players if p["key"] == args.jugador]
+        if not players:
+            sys.exit(f"No hay ningún jugador con key='{args.jugador}' en {config_path}.")
 
-    print("🐜 App Hormi · Fase 1 — validando API-Football (multi-entidad)")
-    for target in targets:
-        validate_target(target, args)
+    print("⚽ EuroGoalMX · Fase 1 — validando API-Football (multi-jugador)")
+    for player in players:
+        targets = player["targets"]
+        if args.solo:
+            targets = [t for t in targets if t["key"] == args.solo]
+            if not targets:
+                sys.exit(f"No hay ningún objetivo con key='{args.solo}' para {player['key']}.")
+        for target in targets:
+            validate_target(target, args, player)
 
     report(config, config_path)
 
@@ -341,23 +361,32 @@ def main():
 def report(config, config_path):
     print("\n" + "─" * 60)
     all_checks = []
-    for t in config["targets"]:
-        for c in t.pop("_checks", []):
-            all_checks.append((t["label"], *c))
+    for player in config["players"]:
+        for t in player["targets"]:
+            for c in t.pop("_checks", []):
+                all_checks.append((f"{player['name']} · {t['label']}", *c))
     ok = sum(1 for _, _, good, _ in all_checks if good)
     print(f"Resultado global: {ok}/{len(all_checks)} comprobaciones OK · "
           f"{requests_used} peticiones gastadas en esta corrida")
 
-    # Guarda el config actualizado (con los team_id detectados, p.ej. Selección)
+    # Guarda el config actualizado (con los team_id/player_id detectados)
     save_json(config_path, config)
-    print(f"Config actualizado en {config_path} (revisa los team_id detectados).")
+    print(f"Config actualizado en {config_path} (revisa los team_id/player_id detectados).")
 
     Path("resultado_fase1.json").write_text(json.dumps(
-        {"targets": [
-            {"key": t["key"], "label": t["label"], "team_id": t.get("team_id"),
-             "checks": [{"check": c, "ok": o, "detalle": d}
-                        for label, c, o, d in all_checks if label == t["label"]]}
-            for t in config["targets"]
+        {"players": [
+            {
+                "key": player["key"], "name": player["name"],
+                "player_id": player.get("player_id"),
+                "targets": [
+                    {"key": t["key"], "label": t["label"], "team_id": t.get("team_id"),
+                     "checks": [{"check": c, "ok": o, "detalle": d}
+                                for label, c, o, d in all_checks
+                                if label == f"{player['name']} · {t['label']}"]}
+                    for t in player["targets"]
+                ],
+            }
+            for player in config["players"]
         ]}, ensure_ascii=False, indent=2), encoding="utf-8")
     print("Resumen guardado en resultado_fase1.json — mándamelo de vuelta.")
 
