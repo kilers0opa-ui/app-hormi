@@ -223,11 +223,13 @@ class FcmSender:
         except Exception as err:
             log(f"⚠️  FCM: no se pudo autenticar con la cuenta de servicio — {err}")
 
-    def send(self, tipo, title, body, player_key=None):
+    def send(self, tipo, title, body, player_key=None, team_key=None):
         """tipo: 'goal' (dispara la pantalla de ¡GOOOOL! en la app) o
         cualquier otro string para una notificación normal. player_key
         identifica de qué jugador es la alerta (p.ej. 'armando', 'raul',
-        'quinones'), para que la app filtre por Favoritos."""
+        'quinones'), para que la app filtre por Favoritos. team_key es el
+        objetivo (p.ej. 'olympiacos', 'seleccion', 'wolves'), para que la
+        app elija la imagen de fondo correcta en notificaciones de gol."""
         if not self.enabled:
             return
         url = f"https://fcm.googleapis.com/v1/projects/{self.project_id}/messages:send"
@@ -235,7 +237,7 @@ class FcmSender:
             "message": {
                 "topic": self.TOPIC,
                 "data": {"type": tipo, "title": title, "body": body,
-                         "player_key": player_key or ""},
+                         "player_key": player_key or "", "team_key": team_key or ""},
             }
         }
         req = urllib.request.Request(
@@ -365,14 +367,14 @@ def analyze(data, player, target):
                      "summary": summary}
 
 
-def dispatch(alerts, sent, notifier, fcm=None, player_key=None):
+def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None):
     new = 0
     for key, title, message, priority in alerts:
         if key not in sent:
             notifier.send(title, message, priority)
             if fcm:
                 tipo = "goal" if key.endswith(":gol") else "info"
-                fcm.send(tipo, title, message, player_key)
+                fcm.send(tipo, title, message, player_key, team_key)
             sent.add(key)
             new += 1
     return new
@@ -438,7 +440,7 @@ def replay(args, notifier, config, fcm=None):
                     g["home" if e["team"]["id"] == home_id else "away"] += 1
             snap["goals"] = g
         alerts, _ = analyze(snap, player, target)
-        dispatch(alerts, sent, notifier, fcm, player["key"])
+        dispatch(alerts, sent, notifier, fcm, player["key"], target["key"])
         time.sleep(args.velocidad)
     print("\n✅ Repetición terminada.")
 
@@ -561,7 +563,7 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
 
     sent = sent_by_target.setdefault(key, set())
     alerts, info = analyze(snap, player, target)
-    n = dispatch(alerts, sent, notifier, fcm, player["key"])
+    n = dispatch(alerts, sent, notifier, fcm, player["key"], key)
     if n:
         log(f"{emoji} {player['name']} · {label}: {n} alerta(s) nueva(s)")
 
