@@ -26,8 +26,8 @@
       "targets": [
         {
           "key": "wolves",
-          "label": "Wolverhampton Wanderers",
-          "team_id": 9006,
+          "label": "Wolves",
+          "team_id": 39,
           "checks": []
         },
         {
@@ -85,26 +85,30 @@
           "key": "genoa",
           "label": "Genoa",
           "team_id": 495,
+          "checks": []
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": []
+        }
+      ]
+    },
+    {
+      "key": "gimenez",
+      "name": "Santiago Giménez",
+      "player_id": null,
+      "targets": [
+        {
+          "key": "porto",
+          "label": "Porto",
+          "team_id": null,
           "checks": [
             {
-              "check": "Equipo encontrado",
-              "ok": true,
-              "detalle": "Genoa (id 495)"
-            },
-            {
-              "check": "Johan Vásquez encontrado (perfil, sin equipo/temporada todavía)",
-              "ok": true,
-              "detalle": "J. Vásquez · id 35544 · Mexico"
-            },
-            {
-              "check": "Stats de temporada disponibles",
+              "check": "Equipo/Selección encontrado",
               "ok": false,
-              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
-            },
-            {
-              "check": "Calendario disponible",
-              "ok": false,
-              "detalle": ""
+              "detalle": "no coincidió con country='Portugal'. Resultados de la búsqueda: ninguno"
             }
           ]
         },
@@ -119,21 +123,30 @@
               "detalle": "id 16"
             },
             {
-              "check": "Johan Vásquez (id conocido)",
-              "ok": true,
-              "detalle": "id 35544"
-            },
-            {
-              "check": "Stats de temporada disponibles",
+              "check": "Santiago Giménez encontrado en la plantilla",
               "ok": false,
-              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
-            },
-            {
-              "check": "Calendario disponible",
-              "ok": false,
-              "detalle": ""
+              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'} (tampoco se encontró por /players/profiles con nacionalidad mexicana)"
             }
           ]
+        }
+      ]
+    },
+    {
+      "key": "chavez",
+      "name": "Mateo Chávez",
+      "player_id": null,
+      "targets": [
+        {
+          "key": "az_alkmaar",
+          "label": "AZ Alkmaar",
+          "team_id": null,
+          "checks": []
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": []
         }
       ]
     }
