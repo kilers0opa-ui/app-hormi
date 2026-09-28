@@ -11,7 +11,11 @@ temporada y sus estadísticas por cada competición en la que participó — as�
 se cubre el historial completo (Raúl con América/Atlético/Benfica/
 Wolves/Fulham, Quiñones con Venados/Tigres/Lobos BUAP/Atlas/América/
 Al-Qadsiah, etc.) sin tener que mantener a mano una lista de equipos
-anteriores: basta con darle los años en career_seasons.
+anteriores: basta con darle los años en career_seasons. También trae la URL
+del escudo real de cada equipo/competición (team.logo / league.logo,
+hospedados en media.api-sports.io — gratis en cualquier plan), así que la
+app puede mostrar el escudo correcto de cualquier equipo, incluso uno que
+nunca le dimos artwork a mano.
 
 Qué escribe: player_stats.json — lo que lee la pantalla de Estadísticas de
 la app (StatsScreen.kt vía StatsViewModel). Cada corrida REEMPLAZA por
@@ -138,8 +142,10 @@ def season_rows(player_id, season):
             rows.append({
                 "league_id": league.get("id"),
                 "league_name": league.get("name") or "?",
+                "league_logo": league.get("logo"),
                 "team_id": team.get("id"),
                 "team_name": team.get("name") or "?",
+                "team_logo": team.get("logo"),
                 "played": played,
                 "goals": g,
                 "assists": a,
