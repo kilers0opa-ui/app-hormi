@@ -2,12 +2,14 @@ name: Deteccion de cambio de equipo - App Hormi
 
 on:
   schedule:
-    # Una vez al dia, en horario distinto a las demas fases para no
-    # juntar de golpe las peticiones (historial 03:00, tabla 06:00 hora
-    # de Mexico). La peticion es barata (1 por jugador), asi que revisar
-    # todos los dias en vez de solo "en ventana de pases" no gasta cuota
-    # de forma relevante.
-    - cron: "0 15 * * *"   # 09:00 hora de México (UTC-6)
+    # TEMPORAL (28-sep-2026, pedido del usuario): cada 5 dias en vez de
+    # diario, mientras el mercado de fichajes esta cerrado (no tiene
+    # caso gastar peticiones todos los dias si nadie puede cambiar de
+    # equipo). "*/5" en el campo dia-del-mes dispara los dias 1,6,11,16,
+    # 21,26,31 - un aproximado de "cada 5 dias" (el hueco real varia
+    # entre 4 y 6 dias segun donde caiga el fin de mes). Cuando se
+    # reabra la ventana de pases, volver a "0 15 * * *" (diario).
+    - cron: "0 15 */5 * *"   # 09:00 hora de México (UTC-6), cada ~5 días
   workflow_dispatch:       # para poder correrlo manual desde la pestaña Actions
     inputs:
       jugador:
