@@ -156,14 +156,30 @@ def find_player(target, args, team_id, player):
         return player["player_id"]
 
     search_term = player["player_search_term"]
+    first, last = player["search_first_name"], player["search_last_name"]
     raw = api("/players", {"team": team_id, "season": target["season"],
                            "search": search_term}, args.cache)
     if raw is None and last_api_error:
+        # El plan gratuito bloquea /players cuando season es una temporada
+        # que no cubre (p.ej. 2026: "Free plans do not have access to this
+        # season, try from 2022 to 2024"). /players/profiles NO pide season
+        # — solo busca el perfil del jugador (sin stats de equipo/temporada)
+        # — así que sirve de respaldo para encontrar su id aunque el plan
+        # todavía no cubra la temporada actual.
+        first_error = last_api_error
+        profiles = api("/players/profiles", {"search": search_term}, args.cache) or []
+        for p in profiles:
+            info = p["player"]
+            full = norm(f"{info.get('firstname')} {info.get('lastname')} {info.get('name')}")
+            if first in full and last in full:
+                check(target, f"{player['name']} encontrado (perfil, sin equipo/temporada todavía)", True,
+                      f"{info['name']} · id {info['id']} · {info.get('nationality')}")
+                player["player_id"] = info["id"]
+                return info["id"]
         check(target, f"{player['name']} encontrado en la plantilla", False,
-              f"error de API: {last_api_error}")
+              f"error de API: {first_error} (tampoco se encontró por /players/profiles)")
         return None
     players = raw or []
-    first, last = player["search_first_name"], player["search_last_name"]
     for p in players:
         info = p["player"]
         full = norm(f"{info.get('firstname')} {info.get('lastname')} {info.get('name')}")
