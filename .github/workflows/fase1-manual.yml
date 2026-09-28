@@ -17,6 +17,8 @@ on:
           - quinones
           - mora
           - vasquez
+          - gimenez
+          - chavez
 
 concurrency:
   group: hormi-chequeo   # mismo grupo que el motor: nunca corren al mismo tiempo (evita choques de git push)

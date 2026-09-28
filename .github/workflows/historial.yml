@@ -20,6 +20,8 @@ on:
           - quinones
           - mora
           - vasquez
+          - gimenez
+          - chavez
       temporada:
         description: "Limitar a una sola temporada (vacío = todas las de career_seasons), útil para pruebas"
         type: string

@@ -18,6 +18,8 @@ on:
           - quinones
           - mora
           - vasquez
+          - gimenez
+          - chavez
 
 concurrency:
   group: hormi-chequeo   # mismo grupo que las demás fases: nunca corren al mismo tiempo (evita choques de git push)

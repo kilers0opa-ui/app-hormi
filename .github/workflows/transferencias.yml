@@ -21,6 +21,8 @@ on:
           - quinones
           - mora
           - vasquez
+          - gimenez
+          - chavez
       backfill_crests:
         description: "Solo rellenar escudos faltantes (crest_url), sin revisar transferencias"
         type: boolean

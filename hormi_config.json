@@ -219,6 +219,88 @@
         2025,
         2026
       ]
+    },
+    {
+      "key": "gimenez",
+      "name": "Santiago Giménez",
+      "apodo": "Chaka",
+      "player_id": null,
+      "player_search_term": "Gimenez",
+      "search_first_name": "santiago",
+      "search_last_name": "gimenez",
+      "targets": [
+        {
+          "key": "porto",
+          "label": "Porto",
+          "emoji": "🔵",
+          "team_id": null,
+          "search": "Porto",
+          "country": "Portugal",
+          "season": 2026,
+          "kind": "club"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png"
+        }
+      ],
+      "career_seasons": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "key": "chavez",
+      "name": "Mateo Chávez",
+      "apodo": "Mateo",
+      "player_id": null,
+      "player_search_term": "Chavez",
+      "search_first_name": "mateo",
+      "search_last_name": "chavez",
+      "targets": [
+        {
+          "key": "az_alkmaar",
+          "label": "AZ Alkmaar",
+          "emoji": "🔴",
+          "team_id": null,
+          "search": "AZ Alkmaar",
+          "country": "Netherlands",
+          "season": 2026,
+          "kind": "club"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png"
+        }
+      ],
+      "career_seasons": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
     }
   ]
 }
