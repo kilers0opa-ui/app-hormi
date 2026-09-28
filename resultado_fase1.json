@@ -9,55 +9,13 @@
           "key": "olympiacos",
           "label": "Olympiacos",
           "team_id": 553,
-          "checks": [
-            {
-              "check": "Equipo (id conocido)",
-              "ok": true,
-              "detalle": "id 553"
-            },
-            {
-              "check": "Armando \"La Hormiga\" González (id conocido)",
-              "ok": true,
-              "detalle": "id 291713"
-            },
-            {
-              "check": "Stats de temporada disponibles",
-              "ok": false,
-              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
-            },
-            {
-              "check": "Calendario disponible",
-              "ok": false,
-              "detalle": ""
-            }
-          ]
+          "checks": []
         },
         {
           "key": "seleccion",
           "label": "Selección Mexicana",
           "team_id": 16,
-          "checks": [
-            {
-              "check": "Equipo (id conocido)",
-              "ok": true,
-              "detalle": "id 16"
-            },
-            {
-              "check": "Armando \"La Hormiga\" González (id conocido)",
-              "ok": true,
-              "detalle": "id 291713"
-            },
-            {
-              "check": "Stats de temporada disponibles",
-              "ok": false,
-              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
-            },
-            {
-              "check": "Calendario disponible",
-              "ok": false,
-              "detalle": ""
-            }
-          ]
+          "checks": []
         }
       ]
     },
@@ -70,62 +28,20 @@
           "key": "wolves",
           "label": "Wolverhampton Wanderers",
           "team_id": 9006,
-          "checks": [
-            {
-              "check": "Equipo (id conocido)",
-              "ok": true,
-              "detalle": "id 9006"
-            },
-            {
-              "check": "Raúl Jiménez encontrado (perfil, sin equipo/temporada todavía)",
-              "ok": true,
-              "detalle": "R. Jiménez · id 2887 · Mexico"
-            },
-            {
-              "check": "Stats de temporada disponibles",
-              "ok": false,
-              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
-            },
-            {
-              "check": "Calendario disponible",
-              "ok": false,
-              "detalle": ""
-            }
-          ]
+          "checks": []
         },
         {
           "key": "seleccion",
           "label": "Selección Mexicana",
           "team_id": 16,
-          "checks": [
-            {
-              "check": "Equipo (id conocido)",
-              "ok": true,
-              "detalle": "id 16"
-            },
-            {
-              "check": "Raúl Jiménez (id conocido)",
-              "ok": true,
-              "detalle": "id 2887"
-            },
-            {
-              "check": "Stats de temporada disponibles",
-              "ok": false,
-              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
-            },
-            {
-              "check": "Calendario disponible",
-              "ok": false,
-              "detalle": ""
-            }
-          ]
+          "checks": []
         }
       ]
     },
     {
       "key": "quinones",
       "name": "Julián Quiñones",
-      "player_id": 13361,
+      "player_id": null,
       "targets": [
         {
           "key": "al_qadsiah",
@@ -150,19 +66,9 @@
               "detalle": "id 16"
             },
             {
-              "check": "Julián Quiñones encontrado (perfil, sin equipo/temporada todavía)",
-              "ok": true,
-              "detalle": "J. Quiñónes · id 13361 · Colombia"
-            },
-            {
-              "check": "Stats de temporada disponibles",
+              "check": "Julián Quiñones encontrado en la plantilla",
               "ok": false,
-              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
-            },
-            {
-              "check": "Calendario disponible",
-              "ok": false,
-              "detalle": ""
+              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'} (tampoco se encontró por /players/profiles con nacionalidad mexicana)"
             }
           ]
         }
@@ -177,35 +83,13 @@
           "key": "tijuana",
           "label": "Tijuana",
           "team_id": 2280,
-          "checks": [
-            {
-              "check": "Equipo (id conocido)",
-              "ok": true,
-              "detalle": "id 2280"
-            },
-            {
-              "check": "Gilberto Mora encontrado en la plantilla",
-              "ok": false,
-              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'} (tampoco se encontró por /players/profiles)"
-            }
-          ]
+          "checks": []
         },
         {
           "key": "seleccion",
           "label": "Selección Mexicana",
           "team_id": 16,
-          "checks": [
-            {
-              "check": "Equipo (id conocido)",
-              "ok": true,
-              "detalle": "id 16"
-            },
-            {
-              "check": "Gilberto Mora encontrado en la plantilla",
-              "ok": false,
-              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'} (tampoco se encontró por /players/profiles)"
-            }
-          ]
+          "checks": []
         }
       ]
     }
