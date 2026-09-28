@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T13:02:11.649951-06:00",
+  "updated_at": "2026-09-28T13:23:31.436866-06:00",
   "app_name": "LegiónMX",
   "players": {
     "armando": {
@@ -45,8 +45,9 @@
         "wolves": {
           "label": "Wolves",
           "emoji": "🐺",
+          "crest_url": "https://media.api-sports.io/football/teams/39.png",
           "status": "sin_partido",
-          "checked_at": "2026-09-28T07:11:25.004117-06:00",
+          "checked_at": "2026-09-28T13:23:12.164004-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
@@ -86,8 +87,9 @@
         "tijuana": {
           "label": "Tijuana",
           "emoji": "🔴",
+          "crest_url": "https://media.api-sports.io/football/teams/2280.png",
           "status": "sin_partido",
-          "checked_at": "2026-09-28T07:11:44.484426-06:00",
+          "checked_at": "2026-09-28T13:23:31.436169-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
