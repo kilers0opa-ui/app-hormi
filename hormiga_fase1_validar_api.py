@@ -168,16 +168,35 @@ def find_player(target, args, team_id, player):
         # todavía no cubra la temporada actual.
         first_error = last_api_error
         profiles = api("/players/profiles", {"search": search_term}, args.cache) or []
+        # /players/profiles busca en TODA la base de la API, sin acotar por
+        # equipo — un nombre y apellido no bastan para identificar a la
+        # persona correcta (p.ej. "Julián Quiñones" también es un jugador
+        # colombiano; el filtro de nacionalidad evita ese falso positivo).
+        # Todos los jugadores que sigue esta app son mexicanos, así que se
+        # exige nationality == "Mexico"; si hay más de un candidato mexicano
+        # con ese nombre, no se adivina — hay que resolverlo a mano con
+        # --jugador <key> --player-id <id>.
+        candidates = []
         for p in profiles:
             info = p["player"]
             full = norm(f"{info.get('firstname')} {info.get('lastname')} {info.get('name')}")
-            if first in full and last in full:
-                check(target, f"{player['name']} encontrado (perfil, sin equipo/temporada todavía)", True,
-                      f"{info['name']} · id {info['id']} · {info.get('nationality')}")
-                player["player_id"] = info["id"]
-                return info["id"]
+            if first in full and last in full and norm(info.get("nationality") or "") == "mexico":
+                candidates.append(info)
+        if len(candidates) == 1:
+            info = candidates[0]
+            check(target, f"{player['name']} encontrado (perfil, sin equipo/temporada todavía)", True,
+                  f"{info['name']} · id {info['id']} · {info.get('nationality')}")
+            player["player_id"] = info["id"]
+            return info["id"]
+        if len(candidates) > 1:
+            ids = ", ".join(f"{c['name']} (id {c['id']})" for c in candidates)
+            check(target, f"{player['name']} encontrado en la plantilla", False,
+                  f"hay {len(candidates)} jugadores mexicanos con ese nombre — resuélvelo a mano: "
+                  f"{ids}. Pasa --jugador {player['key']} --player-id <id>")
+            return None
         check(target, f"{player['name']} encontrado en la plantilla", False,
-              f"error de API: {first_error} (tampoco se encontró por /players/profiles)")
+              f"error de API: {first_error} (tampoco se encontró por /players/profiles "
+              "con nacionalidad mexicana)")
         return None
     players = raw or []
     for p in players:
