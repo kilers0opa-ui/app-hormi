@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T17:35:59.064858-06:00",
+  "updated_at": "2026-09-27T18:36:43.158616-06:00",
   "app_name": "EuroGoalMX",
   "players": {
     "armando": {
@@ -28,7 +28,7 @@
     },
     "raul": {
       "name": "Raúl Jiménez",
-      "player_id": null,
+      "player_id": 2887,
       "targets": {
         "seleccion": {
           "label": "Selección Mexicana",
@@ -38,12 +38,21 @@
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
+        },
+        "wolves": {
+          "label": "Wolverhampton Wanderers",
+          "emoji": "🐺",
+          "status": "sin_partido",
+          "checked_at": "2026-09-27T18:36:23.660448-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
         }
       }
     },
     "quinones": {
       "name": "Julián Quiñones",
-      "player_id": null,
+      "player_id": 13361,
       "targets": {
         "seleccion": {
           "label": "Selección Mexicana",
@@ -65,6 +74,15 @@
           "emoji": "🇲🇽",
           "status": "sin_partido",
           "checked_at": "2026-09-27T17:35:59.064595-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        },
+        "tijuana": {
+          "label": "Tijuana",
+          "emoji": "🔴",
+          "status": "sin_partido",
+          "checked_at": "2026-09-27T18:36:43.157953-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
