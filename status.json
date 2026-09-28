@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T10:02:28.580566-06:00",
+  "updated_at": "2026-09-28T10:26:55.710141-06:00",
   "app_name": "LegiónMX",
   "players": {
     "armando": {
@@ -113,6 +113,38 @@
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
           "checked_at": "2026-09-28T09:45:50.344937-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        }
+      }
+    },
+    "gimenez": {
+      "name": "Santiago Giménez",
+      "player_id": null,
+      "targets": {
+        "seleccion": {
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png",
+          "status": "sin_partido",
+          "checked_at": "2026-09-28T10:26:36.201853-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        }
+      }
+    },
+    "chavez": {
+      "name": "Mateo Chávez",
+      "player_id": null,
+      "targets": {
+        "seleccion": {
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png",
+          "status": "sin_partido",
+          "checked_at": "2026-09-28T10:26:55.709483-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
