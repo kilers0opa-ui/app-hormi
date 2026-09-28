@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T11:57:56.715451-06:00",
+  "updated_at": "2026-09-28T12:23:24.833815-06:00",
   "app_name": "LegiónMX",
   "players": {
     "armando": {
@@ -76,8 +76,9 @@
         "seleccion": {
           "label": "Selección Mexicana",
           "emoji": "🇲🇽",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-09-28T05:58:11.726763-06:00",
+          "checked_at": "2026-09-28T12:23:24.734962-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
