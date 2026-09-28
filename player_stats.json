@@ -1,0 +1,66 @@
+{
+  "updated_at": "2026-09-27T18:24:36.807700-06:00",
+  "players": {
+    "armando": {
+      "seasons": {
+        "2022": [
+          {
+            "league_id": 263,
+            "league_name": "Liga de Expansión MX",
+            "team_id": 14278,
+            "team_name": "Tapatío",
+            "played": 5,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 79
+          }
+        ],
+        "2023": [
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "team_id": 2278,
+            "team_name": "Guadalajara Chivas",
+            "played": 8,
+            "goals": 0,
+            "assists": 1,
+            "minutes": 38
+          }
+        ],
+        "2024": [
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "team_id": 2278,
+            "team_name": "Guadalajara Chivas",
+            "played": 24,
+            "goals": 3,
+            "assists": 1,
+            "minutes": 643
+          },
+          {
+            "league_id": 16,
+            "league_name": "CONCACAF Champions League",
+            "team_id": 2278,
+            "team_name": "Guadalajara Chivas",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 30
+          },
+          {
+            "league_id": 772,
+            "league_name": "Leagues Cup",
+            "team_id": 2278,
+            "team_name": "Guadalajara Chivas",
+            "played": 2,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 53
+          }
+        ]
+      },
+      "applied_fixtures": {}
+    }
+  }
+}
