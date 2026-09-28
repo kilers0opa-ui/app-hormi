@@ -64,7 +64,7 @@
     {
       "key": "raul",
       "name": "Raúl Jiménez",
-      "player_id": null,
+      "player_id": 2887,
       "targets": [
         {
           "key": "wolves",
@@ -72,14 +72,24 @@
           "team_id": 9006,
           "checks": [
             {
-              "check": "Equipo encontrado",
+              "check": "Equipo (id conocido)",
               "ok": true,
-              "detalle": "Wolverhampton Casuals (id 9006)"
+              "detalle": "id 9006"
             },
             {
-              "check": "Raúl Jiménez encontrado en la plantilla",
+              "check": "Raúl Jiménez encontrado (perfil, sin equipo/temporada todavía)",
+              "ok": true,
+              "detalle": "R. Jiménez · id 2887 · Mexico"
+            },
+            {
+              "check": "Stats de temporada disponibles",
               "ok": false,
-              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
             }
           ]
         },
@@ -94,9 +104,19 @@
               "detalle": "id 16"
             },
             {
-              "check": "Raúl Jiménez encontrado en la plantilla",
+              "check": "Raúl Jiménez (id conocido)",
+              "ok": true,
+              "detalle": "id 2887"
+            },
+            {
+              "check": "Stats de temporada disponibles",
               "ok": false,
-              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
             }
           ]
         }
@@ -105,7 +125,7 @@
     {
       "key": "quinones",
       "name": "Julián Quiñones",
-      "player_id": null,
+      "player_id": 13361,
       "targets": [
         {
           "key": "al_qadsiah",
@@ -130,9 +150,19 @@
               "detalle": "id 16"
             },
             {
-              "check": "Julián Quiñones encontrado en la plantilla",
+              "check": "Julián Quiñones encontrado (perfil, sin equipo/temporada todavía)",
+              "ok": true,
+              "detalle": "J. Quiñónes · id 13361 · Colombia"
+            },
+            {
+              "check": "Stats de temporada disponibles",
               "ok": false,
-              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
             }
           ]
         }
@@ -149,14 +179,14 @@
           "team_id": 2280,
           "checks": [
             {
-              "check": "Equipo encontrado",
+              "check": "Equipo (id conocido)",
               "ok": true,
-              "detalle": "Club Tijuana (id 2280)"
+              "detalle": "id 2280"
             },
             {
               "check": "Gilberto Mora encontrado en la plantilla",
               "ok": false,
-              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'} (tampoco se encontró por /players/profiles)"
             }
           ]
         },
@@ -173,7 +203,7 @@
             {
               "check": "Gilberto Mora encontrado en la plantilla",
               "ok": false,
-              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'} (tampoco se encontró por /players/profiles)"
             }
           ]
         }
