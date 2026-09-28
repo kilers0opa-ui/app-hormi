@@ -1,128 +1,181 @@
 {
-  "targets": [
+  "players": [
     {
-      "key": "chivas",
-      "label": "Chivas",
-      "team_id": 2278,
-      "checks": [
+      "key": "armando",
+      "name": "Armando \"La Hormiga\" González",
+      "player_id": 291713,
+      "targets": [
         {
-          "check": "Equipo (id conocido)",
-          "ok": true,
-          "detalle": "id 2278"
+          "key": "olympiacos",
+          "label": "Olympiacos",
+          "team_id": 553,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 553"
+            },
+            {
+              "check": "Armando \"La Hormiga\" González (id conocido)",
+              "ok": true,
+              "detalle": "id 291713"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
         },
         {
-          "check": "Stats de temporada disponibles",
-          "ok": true,
-          "detalle": "3 goles, 1 asistencias, 726 minutos en total"
-        },
-        {
-          "check": "Calendario disponible",
-          "ok": true,
-          "detalle": "47 jugados, 0 por jugar"
-        },
-        {
-          "check": "Alineación incluye a la Hormiga",
-          "ok": true,
-          "detalle": "fue banca"
-        },
-        {
-          "check": "Evento de gol con minuto",
-          "ok": false,
-          "detalle": "sin goles suyos en este partido"
-        },
-        {
-          "check": "Evento de asistencia",
-          "ok": false,
-          "detalle": "sin asistencias suyas en este partido"
-        },
-        {
-          "check": "Evento de cambio con minuto",
-          "ok": true,
-          "detalle": "90+4' entra"
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Armando \"La Hormiga\" González (id conocido)",
+              "ok": true,
+              "detalle": "id 291713"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
         }
       ]
     },
     {
-      "key": "olympiacos",
-      "label": "Olympiacos",
-      "team_id": 553,
-      "checks": [
+      "key": "raul",
+      "name": "Raúl Jiménez",
+      "player_id": null,
+      "targets": [
         {
-          "check": "Equipo (id conocido)",
-          "ok": true,
-          "detalle": "id 553"
+          "key": "wolves",
+          "label": "Wolverhampton Wanderers",
+          "team_id": 9006,
+          "checks": [
+            {
+              "check": "Equipo encontrado",
+              "ok": true,
+              "detalle": "Wolverhampton Casuals (id 9006)"
+            },
+            {
+              "check": "Raúl Jiménez encontrado en la plantilla",
+              "ok": false,
+              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+            }
+          ]
         },
         {
-          "check": "Stats de temporada disponibles",
-          "ok": true,
-          "detalle": "3 goles, 1 asistencias, 726 minutos en total"
-        },
-        {
-          "check": "Calendario disponible",
-          "ok": true,
-          "detalle": "57 jugados, 0 por jugar"
-        },
-        {
-          "check": "Alineación incluye a la Hormiga",
-          "ok": false,
-          "detalle": "no aparece (no convocado o alineación no disponible)"
-        },
-        {
-          "check": "Evento de gol con minuto",
-          "ok": false,
-          "detalle": "sin goles suyos en este partido"
-        },
-        {
-          "check": "Evento de asistencia",
-          "ok": false,
-          "detalle": "sin asistencias suyas en este partido"
-        },
-        {
-          "check": "Evento de cambio con minuto",
-          "ok": false,
-          "detalle": "jugó completo o no participó"
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Raúl Jiménez encontrado en la plantilla",
+              "ok": false,
+              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+            }
+          ]
         }
       ]
     },
     {
-      "key": "seleccion",
-      "label": "Selección Mexicana",
-      "team_id": 16,
-      "checks": [
+      "key": "quinones",
+      "name": "Julián Quiñones",
+      "player_id": null,
+      "targets": [
         {
-          "check": "Equipo (id conocido)",
-          "ok": true,
-          "detalle": "id 16"
+          "key": "al_qadsiah",
+          "label": "Al-Qadsiah",
+          "team_id": null,
+          "checks": [
+            {
+              "check": "Equipo/Selección encontrado",
+              "ok": false,
+              "detalle": "no coincidió con country='Saudi Arabia'. Resultados de la búsqueda: ninguno"
+            }
+          ]
         },
         {
-          "check": "Stats de temporada disponibles",
-          "ok": true,
-          "detalle": "3 goles, 1 asistencias, 726 minutos en total"
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Julián Quiñones encontrado en la plantilla",
+              "ok": false,
+              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "mora",
+      "name": "Gilberto Mora",
+      "player_id": null,
+      "targets": [
+        {
+          "key": "tijuana",
+          "label": "Tijuana",
+          "team_id": 2280,
+          "checks": [
+            {
+              "check": "Equipo encontrado",
+              "ok": true,
+              "detalle": "Club Tijuana (id 2280)"
+            },
+            {
+              "check": "Gilberto Mora encontrado en la plantilla",
+              "ok": false,
+              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+            }
+          ]
         },
         {
-          "check": "Calendario disponible",
-          "ok": true,
-          "detalle": "13 jugados, 0 por jugar"
-        },
-        {
-          "check": "Alineación incluye a la Hormiga",
-          "ok": false,
-          "detalle": "no aparece (no convocado o alineación no disponible)"
-        },
-        {
-          "check": "Evento de gol con minuto",
-          "ok": false,
-          "detalle": "sin goles suyos en este partido"
-        },
-        {
-          "check": "Evento de asistencia",
-          "ok": false,
-          "detalle": "sin asistencias suyas en este partido"
-        },
-        {
-          "check": "Evento de cambio con minuto",
-          "ok": false,
-          "detalle": "jugó completo o no participó"
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Gilberto Mora encontrado en la plantilla",
+              "ok": false,
+              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+            }
+          ]
         }
       ]
     }
