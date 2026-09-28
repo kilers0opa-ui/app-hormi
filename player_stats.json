@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T18:24:36.807700-06:00",
+  "updated_at": "2026-09-27T18:34:47.536967-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -57,6 +57,328 @@
             "goals": 0,
             "assists": 0,
             "minutes": 53
+          }
+        ]
+      },
+      "applied_fixtures": {}
+    },
+    "raul": {
+      "seasons": {
+        "2022": [
+          {
+            "league_id": 667,
+            "league_name": "Friendlies Clubs",
+            "team_id": 39,
+            "team_name": "Wolves",
+            "played": 1,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 35
+          },
+          {
+            "league_id": 31,
+            "league_name": "World Cup - Qualification CONCACAF",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "played": 9,
+            "goals": 3,
+            "assists": 0,
+            "minutes": 688
+          },
+          {
+            "league_id": 39,
+            "league_name": "Premier League",
+            "team_id": 39,
+            "team_name": "Wolves",
+            "played": 15,
+            "goals": 0,
+            "assists": 1,
+            "minutes": 841
+          },
+          {
+            "league_id": 45,
+            "league_name": "FA Cup",
+            "team_id": 39,
+            "team_name": "Wolves",
+            "played": 2,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 147
+          },
+          {
+            "league_id": 48,
+            "league_name": "League Cup",
+            "team_id": 39,
+            "team_name": "Wolves",
+            "played": 3,
+            "goals": 3,
+            "assists": 0,
+            "minutes": 182
+          },
+          {
+            "league_id": 536,
+            "league_name": "CONCACAF Nations League",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 0
+          },
+          {
+            "league_id": 10,
+            "league_name": "Friendlies",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 0
+          },
+          {
+            "league_id": 1,
+            "league_name": "World Cup",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 56
+          }
+        ],
+        "2023": [
+          {
+            "league_id": 39,
+            "league_name": "Premier League",
+            "team_id": 36,
+            "team_name": "Fulham",
+            "played": 24,
+            "goals": 7,
+            "assists": 0,
+            "minutes": 1436
+          },
+          {
+            "league_id": 45,
+            "league_name": "FA Cup",
+            "team_id": 36,
+            "team_name": "Fulham",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 19
+          },
+          {
+            "league_id": 48,
+            "league_name": "League Cup",
+            "team_id": 36,
+            "team_name": "Fulham",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 216
+          },
+          {
+            "league_id": 1022,
+            "league_name": "Premier League - Summer Series",
+            "team_id": 36,
+            "team_name": "Fulham",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 0
+          },
+          {
+            "league_id": 536,
+            "league_name": "CONCACAF Nations League",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 32
+          },
+          {
+            "league_id": 10,
+            "league_name": "Friendlies",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "played": 2,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 103
+          }
+        ],
+        "2024": [
+          {
+            "league_id": 39,
+            "league_name": "Premier League",
+            "team_id": 36,
+            "team_name": "Fulham",
+            "played": 38,
+            "goals": 12,
+            "assists": 3,
+            "minutes": 2505
+          },
+          {
+            "league_id": 45,
+            "league_name": "FA Cup",
+            "team_id": 36,
+            "team_name": "Fulham",
+            "played": 3,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 94
+          },
+          {
+            "league_id": 48,
+            "league_name": "League Cup",
+            "team_id": 36,
+            "team_name": "Fulham",
+            "played": 2,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 105
+          },
+          {
+            "league_id": 536,
+            "league_name": "CONCACAF Nations League",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "played": 3,
+            "goals": 5,
+            "assists": 1,
+            "minutes": 269
+          },
+          {
+            "league_id": 10,
+            "league_name": "Friendlies",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "played": 1,
+            "goals": 1,
+            "assists": 1,
+            "minutes": 82
+          }
+        ]
+      },
+      "applied_fixtures": {}
+    },
+    "quinones": {
+      "seasons": {
+        "2022": [
+          {
+            "league_id": 239,
+            "league_name": "Primera A",
+            "team_id": 1142,
+            "team_name": "Deportes Tolima",
+            "played": 27,
+            "goals": 1,
+            "assists": 1,
+            "minutes": 2342
+          },
+          {
+            "league_id": 241,
+            "league_name": "Copa Colombia",
+            "team_id": 1142,
+            "team_name": "Deportes Tolima",
+            "played": 2,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 180
+          },
+          {
+            "league_id": 13,
+            "league_name": "CONMEBOL Libertadores",
+            "team_id": 1142,
+            "team_name": "Deportes Tolima",
+            "played": 7,
+            "goals": 2,
+            "assists": 0,
+            "minutes": 630
+          }
+        ],
+        "2023": [
+          {
+            "league_id": 239,
+            "league_name": "Primera A",
+            "team_id": 1142,
+            "team_name": "Deportes Tolima",
+            "played": 20,
+            "goals": 4,
+            "assists": 0,
+            "minutes": 1647
+          },
+          {
+            "league_id": 239,
+            "league_name": "Primera A",
+            "team_id": 1127,
+            "team_name": "Deportivo Cali",
+            "played": 21,
+            "goals": 3,
+            "assists": 0,
+            "minutes": 1711
+          },
+          {
+            "league_id": 241,
+            "league_name": "Copa Colombia",
+            "team_id": 1142,
+            "team_name": "Deportes Tolima",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 3
+          },
+          {
+            "league_id": 11,
+            "league_name": "CONMEBOL Sudamericana",
+            "team_id": 1142,
+            "team_name": "Deportes Tolima",
+            "played": 2,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 180
+          }
+        ],
+        "2024": [
+          {
+            "league_id": 239,
+            "league_name": "Primera A",
+            "team_id": 1142,
+            "team_name": "Deportes Tolima",
+            "played": 10,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 662
+          },
+          {
+            "league_id": 239,
+            "league_name": "Primera A",
+            "team_id": 1127,
+            "team_name": "Deportivo Cali",
+            "played": 14,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 566
+          },
+          {
+            "league_id": 241,
+            "league_name": "Copa Colombia",
+            "team_id": 1142,
+            "team_name": "Deportes Tolima",
+            "played": 1,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 90
+          },
+          {
+            "league_id": 11,
+            "league_name": "CONMEBOL Sudamericana",
+            "team_id": 1142,
+            "team_name": "Deportes Tolima",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 79
           }
         ]
       },
