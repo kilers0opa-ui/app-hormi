@@ -47,30 +47,13 @@
           "key": "al_qadsiah",
           "label": "Al-Qadsiah",
           "team_id": null,
-          "checks": [
-            {
-              "check": "Equipo/Selección encontrado",
-              "ok": false,
-              "detalle": "no coincidió con country='Saudi Arabia'. Resultados de la búsqueda: ninguno"
-            }
-          ]
+          "checks": []
         },
         {
           "key": "seleccion",
           "label": "Selección Mexicana",
           "team_id": 16,
-          "checks": [
-            {
-              "check": "Equipo (id conocido)",
-              "ok": true,
-              "detalle": "id 16"
-            },
-            {
-              "check": "Julián Quiñones encontrado en la plantilla",
-              "ok": false,
-              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'} (tampoco se encontró por /players/profiles con nacionalidad mexicana)"
-            }
-          ]
+          "checks": []
         }
       ]
     },
@@ -90,6 +73,67 @@
           "label": "Selección Mexicana",
           "team_id": 16,
           "checks": []
+        }
+      ]
+    },
+    {
+      "key": "vasquez",
+      "name": "Johan Vásquez",
+      "player_id": 35544,
+      "targets": [
+        {
+          "key": "genoa",
+          "label": "Genoa",
+          "team_id": 495,
+          "checks": [
+            {
+              "check": "Equipo encontrado",
+              "ok": true,
+              "detalle": "Genoa (id 495)"
+            },
+            {
+              "check": "Johan Vásquez encontrado (perfil, sin equipo/temporada todavía)",
+              "ok": true,
+              "detalle": "J. Vásquez · id 35544 · Mexico"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Johan Vásquez (id conocido)",
+              "ok": true,
+              "detalle": "id 35544"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
         }
       ]
     }
