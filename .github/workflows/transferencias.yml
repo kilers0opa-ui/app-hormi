@@ -1,0 +1,70 @@
+name: Deteccion de cambio de equipo - App Hormi
+
+on:
+  schedule:
+    # Una vez al dia, en horario distinto a las demas fases para no
+    # juntar de golpe las peticiones (historial 03:00, tabla 06:00 hora
+    # de Mexico). La peticion es barata (1 por jugador), asi que revisar
+    # todos los dias en vez de solo "en ventana de pases" no gasta cuota
+    # de forma relevante.
+    - cron: "0 15 * * *"   # 09:00 hora de México (UTC-6)
+  workflow_dispatch:       # para poder correrlo manual desde la pestaña Actions
+    inputs:
+      jugador:
+        description: "Limitar a un jugador (vacío = todos: armando, raul, quinones, mora, vasquez)"
+        type: choice
+        default: ""
+        options:
+          - ""
+          - armando
+          - raul
+          - quinones
+          - mora
+          - vasquez
+      backfill_crests:
+        description: "Solo rellenar escudos faltantes (crest_url), sin revisar transferencias"
+        type: boolean
+        default: false
+
+concurrency:
+  group: hormi-chequeo   # mismo grupo que las demas fases: nunca corren al mismo tiempo (evita choques de git push)
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # necesario para que el workflow pueda hacer commit/push de hormi_config.json
+
+jobs:
+  transferencias:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Revisar cambios de equipo / rellenar escudos
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+          FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ "${{ inputs.backfill_crests }}" = "true" ]; then
+            python hormi_transferencias.py --backfill-crests
+          elif [ -n "${{ inputs.jugador }}" ]; then
+            python hormi_transferencias.py --jugador "${{ inputs.jugador }}"
+          else
+            python hormi_transferencias.py
+          fi
+
+      - name: Subir hormi_config.json
+        run: |
+          git config user.name "app-hormi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add hormi_config.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: actualiza equipo/escudo detectado (Fase 5) [skip ci]"
+            git pull --rebase origin main
+            git push
+          else
+            echo "Sin cambios que subir."
+          fi

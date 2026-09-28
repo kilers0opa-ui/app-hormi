@@ -134,11 +134,15 @@ def find_team(target, args):
             check(target, "Selección encontrada", True,
                   f"{team['name']} (id {team['id']})")
             target["team_id"] = team["id"]
+            if team.get("logo"):
+                target["crest_url"] = team["logo"]
             return team["id"]
         if not is_national and same_country and not team.get("national"):
             check(target, "Equipo encontrado", True,
                   f"{team['name']} (id {team['id']})")
             target["team_id"] = team["id"]
+            if team.get("logo"):
+                target["crest_url"] = team["logo"]
             return team["id"]
     names = ", ".join(f"{t['team']['name']} ({t['team'].get('country')})" for t in teams) or "ninguno"
     check(target, "Equipo/Selección encontrado", False,
