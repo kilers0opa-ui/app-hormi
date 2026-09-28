@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T19:27:22.702951-06:00",
+  "updated_at": "2026-09-27T21:04:54.851777-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -306,6 +306,197 @@
             "goals": 1,
             "assists": 1,
             "minutes": 82
+          }
+        ]
+      },
+      "applied_fixtures": {}
+    },
+    "vasquez": {
+      "seasons": {
+        "2022": [
+          {
+            "league_id": 135,
+            "league_name": "Serie A",
+            "league_logo": "https://media.api-sports.io/football/leagues/135.png",
+            "team_id": 520,
+            "team_name": "Cremonese",
+            "team_logo": "https://media.api-sports.io/football/teams/520.png",
+            "played": 25,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 1808
+          },
+          {
+            "league_id": 137,
+            "league_name": "Coppa Italia",
+            "league_logo": "https://media.api-sports.io/football/leagues/137.png",
+            "team_id": 520,
+            "team_name": "Cremonese",
+            "team_logo": "https://media.api-sports.io/football/teams/520.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 378
+          },
+          {
+            "league_id": 536,
+            "league_name": "CONCACAF Nations League",
+            "league_logo": "https://media.api-sports.io/football/leagues/536.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 380
+          },
+          {
+            "league_id": 31,
+            "league_name": "World Cup - Qualification CONCACAF",
+            "league_logo": "https://media.api-sports.io/football/leagues/31.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 360
+          },
+          {
+            "league_id": 10,
+            "league_name": "Friendlies",
+            "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 28
+          }
+        ],
+        "2023": [
+          {
+            "league_id": 135,
+            "league_name": "Serie A",
+            "league_logo": "https://media.api-sports.io/football/leagues/135.png",
+            "team_id": 495,
+            "team_name": "Genoa",
+            "team_logo": "https://media.api-sports.io/football/teams/495.png",
+            "played": 37,
+            "goals": 1,
+            "assists": 1,
+            "minutes": 2850
+          },
+          {
+            "league_id": 137,
+            "league_name": "Coppa Italia",
+            "league_logo": "https://media.api-sports.io/football/leagues/137.png",
+            "team_id": 495,
+            "team_name": "Genoa",
+            "team_logo": "https://media.api-sports.io/football/teams/495.png",
+            "played": 1,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 90
+          },
+          {
+            "league_id": 536,
+            "league_name": "CONCACAF Nations League",
+            "league_logo": "https://media.api-sports.io/football/leagues/536.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 380
+          },
+          {
+            "league_id": 22,
+            "league_name": "CONCACAF Gold Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/22.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 380
+          },
+          {
+            "league_id": 10,
+            "league_name": "Friendlies",
+            "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 1,
+            "minutes": 360
+          }
+        ],
+        "2024": [
+          {
+            "league_id": 135,
+            "league_name": "Serie A",
+            "league_logo": "https://media.api-sports.io/football/leagues/135.png",
+            "team_id": 495,
+            "team_name": "Genoa",
+            "team_logo": "https://media.api-sports.io/football/teams/495.png",
+            "played": 36,
+            "goals": 3,
+            "assists": 0,
+            "minutes": 3041
+          },
+          {
+            "league_id": 137,
+            "league_name": "Coppa Italia",
+            "league_logo": "https://media.api-sports.io/football/leagues/137.png",
+            "team_id": 495,
+            "team_name": "Genoa",
+            "team_logo": "https://media.api-sports.io/football/teams/495.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 90
+          },
+          {
+            "league_id": 9,
+            "league_name": "Copa America",
+            "league_logo": "https://media.api-sports.io/football/leagues/9.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 270
+          },
+          {
+            "league_id": 10,
+            "league_name": "Friendlies",
+            "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 360
+          },
+          {
+            "league_id": 536,
+            "league_name": "CONCACAF Nations League",
+            "league_logo": "https://media.api-sports.io/football/leagues/536.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 2,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 180
           }
         ]
       },
