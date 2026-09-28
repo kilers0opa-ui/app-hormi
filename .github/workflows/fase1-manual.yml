@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       jugador:
-        description: "Limitar a un jugador (vacío = todos: armando, raul, quinones, mora)"
+        description: "Limitar a un jugador (vacío = todos: armando, raul, quinones, mora, vasquez)"
         type: choice
         default: ""
         options:
@@ -16,6 +16,7 @@ on:
           - raul
           - quinones
           - mora
+          - vasquez
 
 concurrency:
   group: hormi-chequeo   # mismo grupo que el motor: nunca corren al mismo tiempo (evita choques de git push)
@@ -37,10 +38,10 @@ jobs:
       - name: Validar API (todos los jugadores y objetivos, o el que se elija)
         env:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
-        # Sin --jugador corre los 4 (armando, raul, quinones, mora). Armando
-        # ya tiene su player_id guardado en hormi_config.json así que no
-        # vuelve a buscarlo por nombre; raul, quinones y mora sí se buscan (y
-        # una vez encontrados, quedan guardados para las siguientes corridas).
+        # Sin --jugador corre los 5 (armando, raul, quinones, mora, vasquez).
+        # Armando ya tiene su player_id guardado en hormi_config.json así que
+        # no vuelve a buscarlo por nombre; los demás sí se buscan (y una vez
+        # encontrados, quedan guardados para las siguientes corridas).
         run: |
           if [ -n "${{ inputs.jugador }}" ]; then
             python hormiga_fase1_validar_api.py --jugador "${{ inputs.jugador }}"

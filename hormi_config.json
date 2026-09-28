@@ -168,6 +168,48 @@
         2025,
         2026
       ]
+    },
+    {
+      "key": "vasquez",
+      "name": "Johan Vásquez",
+      "apodo": "Vásquez",
+      "player_id": null,
+      "player_search_term": "Vasquez",
+      "search_first_name": "johan",
+      "search_last_name": "vasquez",
+      "targets": [
+        {
+          "key": "genoa",
+          "label": "Genoa",
+          "emoji": "🦅",
+          "team_id": null,
+          "search": "Genoa",
+          "country": "Italy",
+          "season": 2026,
+          "kind": "club"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico"
+        }
+      ],
+      "career_seasons": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
     }
   ]
 }
