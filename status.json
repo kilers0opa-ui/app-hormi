@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-28T09:23:51.482533-06:00",
-  "app_name": "EuroGoalMX",
+  "updated_at": "2026-09-28T09:45:50.345469-06:00",
+  "app_name": "LegiónMX",
   "players": {
     "armando": {
       "name": "Armando \"La Hormiga\" González",
@@ -96,8 +96,9 @@
         "genoa": {
           "label": "Genoa",
           "emoji": "🦅",
+          "crest_url": "https://media.api-sports.io/football/teams/495.png",
           "status": "sin_partido",
-          "checked_at": "2026-09-28T03:42:18.916167-06:00",
+          "checked_at": "2026-09-28T09:45:30.845310-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
@@ -105,8 +106,9 @@
         "seleccion": {
           "label": "Selección Mexicana",
           "emoji": "🇲🇽",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-09-28T03:42:38.404373-06:00",
+          "checked_at": "2026-09-28T09:45:50.344937-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
