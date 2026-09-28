@@ -572,6 +572,7 @@ def refresh_schedule(target):
 
 def check_once(player, target, config, notifier, sent_by_target, status_out, schedule, fcm=None):
     label, emoji, key = target["label"], target["emoji"], target["key"]
+    crest_url = target.get("crest_url")
     if not target.get("team_id"):
         log(f"⚠️  {player['name']} · {label}: sin team_id en {CONFIG_FILE}, se salta (corre Fase 1).")
         return
@@ -582,7 +583,8 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         if not fx_meta:
             schedule[key] = {"refreshed_at": now_iso(), "last_error": last_api_error}
             status_out[key] = {
-                "label": label, "emoji": emoji, "status": "sin_partido", "checked_at": now_iso(),
+                "label": label, "emoji": emoji, "crest_url": crest_url,
+                "status": "sin_partido", "checked_at": now_iso(),
                 "api_error": last_api_error}
             return
         entry = {
@@ -599,7 +601,8 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         # Nada que vigilar todavía / ya pasó la ventana: no gasta petición,
         # deja el status.json como estaba (o marca "sin_partido" si no había nada).
         status_out.setdefault(key, {
-            "label": label, "emoji": emoji, "status": "sin_partido", "checked_at": now_iso()})
+            "label": label, "emoji": emoji, "crest_url": crest_url,
+            "status": "sin_partido", "checked_at": now_iso()})
         return
 
     snap = api("/fixtures", {"id": entry["fixture_id"]})
@@ -618,7 +621,7 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         log(f"⚠️  {player['name']} · {label}: no se pudo actualizar el histórico — {err}")
 
     status_out[key] = {
-        "label": label, "emoji": emoji, "checked_at": now_iso(),
+        "label": label, "emoji": emoji, "crest_url": crest_url, "checked_at": now_iso(),
         "match_reference": why, **info, "kickoff": entry["kickoff"],
     }
 
