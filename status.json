@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T21:01:29.788240-06:00",
+  "updated_at": "2026-09-27T21:24:37.484116-06:00",
   "app_name": "EuroGoalMX",
   "players": {
     "armando": {
@@ -83,6 +83,30 @@
           "emoji": "🔴",
           "status": "sin_partido",
           "checked_at": "2026-09-27T18:36:43.157953-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        }
+      }
+    },
+    "vasquez": {
+      "name": "Johan Vásquez",
+      "player_id": 35544,
+      "targets": {
+        "genoa": {
+          "label": "Genoa",
+          "emoji": "🦅",
+          "status": "sin_partido",
+          "checked_at": "2026-09-27T21:24:17.986266-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        },
+        "seleccion": {
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "status": "sin_partido",
+          "checked_at": "2026-09-27T21:24:37.483501-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
