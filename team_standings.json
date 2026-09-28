@@ -1,0 +1,30 @@
+{
+  "updated_at": "2026-09-27T21:53:04.235374-06:00",
+  "teams": {
+    "genoa": {
+      "label": "Genoa",
+      "player_key": "vasquez",
+      "standings": [
+        {
+          "season": 2024,
+          "group": "Serie A",
+          "rank": 13,
+          "points": 43,
+          "played": 38,
+          "win": 10,
+          "draw": 13,
+          "lose": 15,
+          "goals_for": 37,
+          "goals_against": 49,
+          "goals_diff": -12,
+          "form": "WLDLL",
+          "status": "same",
+          "description": null,
+          "total_teams": 20,
+          "league_id": 135,
+          "league_name": "Serie A"
+        }
+      ]
+    }
+  }
+}
