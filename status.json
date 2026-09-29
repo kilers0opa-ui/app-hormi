@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T18:15:12.577282-06:00",
+  "updated_at": "2026-09-28T18:43:05.694491-06:00",
   "app_name": "Legión MX",
   "players": {
     "armando": {
@@ -79,7 +79,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-09-28T12:23:24.734962-06:00",
+          "checked_at": "2026-09-28T18:42:07.190913-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
@@ -148,6 +148,54 @@
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
           "checked_at": "2026-09-28T16:27:45.305300-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        }
+      }
+    },
+    "obed": {
+      "name": "Obed Vargas",
+      "player_id": null,
+      "targets": {
+        "seleccion": {
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png",
+          "status": "sin_partido",
+          "checked_at": "2026-09-28T18:42:26.693110-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        }
+      }
+    },
+    "fidalgo": {
+      "name": "Álvaro Fidalgo",
+      "player_id": null,
+      "targets": {
+        "seleccion": {
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png",
+          "status": "sin_partido",
+          "checked_at": "2026-09-28T18:42:46.195474-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        }
+      }
+    },
+    "huescas": {
+      "name": "Rodrigo Huescas",
+      "player_id": null,
+      "targets": {
+        "seleccion": {
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png",
+          "status": "sin_partido",
+          "checked_at": "2026-09-28T18:43:05.693815-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
