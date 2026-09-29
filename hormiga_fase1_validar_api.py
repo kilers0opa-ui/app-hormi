@@ -381,7 +381,12 @@ def validate_target(target, args, player):
     team_id = find_team(target, args)
     if not team_id:
         return
-    player_id = args.player_id or find_player(target, args, team_id, player)
+    if args.player_id:
+        check(target, f"{player['name']} (id manual)", True, f"id {args.player_id}")
+        player["player_id"] = args.player_id
+        player_id = args.player_id
+    else:
+        player_id = find_player(target, args, team_id, player)
     if not player_id:
         return
     season_stats(target, args, player_id)
