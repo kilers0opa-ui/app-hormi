@@ -142,11 +142,35 @@
           "key": "atletico_madrid",
           "label": "Atlético Madrid",
           "team_id": 530,
+          "checks": []
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": []
+        }
+      ]
+    },
+    {
+      "key": "fidalgo",
+      "name": "Álvaro Fidalgo",
+      "player_id": 750,
+      "targets": [
+        {
+          "key": "betis",
+          "label": "Real Betis",
+          "team_id": 543,
           "checks": [
             {
               "check": "Equipo (id conocido)",
               "ok": true,
-              "detalle": "id 530"
+              "detalle": "id 543"
+            },
+            {
+              "check": "Álvaro Fidalgo (id manual)",
+              "ok": true,
+              "detalle": "id 750"
             },
             {
               "check": "Stats de temporada disponibles",
@@ -171,6 +195,11 @@
               "detalle": "id 16"
             },
             {
+              "check": "Álvaro Fidalgo (id manual)",
+              "ok": true,
+              "detalle": "id 750"
+            },
+            {
               "check": "Stats de temporada disponibles",
               "ok": false,
               "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
@@ -181,25 +210,6 @@
               "detalle": ""
             }
           ]
-        }
-      ]
-    },
-    {
-      "key": "fidalgo",
-      "name": "Álvaro Fidalgo",
-      "player_id": null,
-      "targets": [
-        {
-          "key": "betis",
-          "label": "Real Betis",
-          "team_id": 543,
-          "checks": []
-        },
-        {
-          "key": "seleccion",
-          "label": "Selección Mexicana",
-          "team_id": 16,
-          "checks": []
         }
       ]
     },
