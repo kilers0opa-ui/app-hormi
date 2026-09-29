@@ -10,7 +10,7 @@ on:
   workflow_dispatch:       # para poder correrlo manual desde la pestaña Actions
     inputs:
       jugador:
-        description: "Limitar a un jugador (vacío = todos: armando, raul, quinones, mora, vasquez)"
+        description: "Limitar a un jugador (vacío = todos: armando, raul, quinones, mora, vasquez, gimenez, chavez, obed, fidalgo, huescas)"
         type: choice
         default: ""
         options:
@@ -22,6 +22,9 @@ on:
           - vasquez
           - gimenez
           - chavez
+          - obed
+          - fidalgo
+          - huescas
       temporada:
         description: "Limitar a una sola temporada (vacío = todas las de career_seasons), útil para pruebas"
         type: string

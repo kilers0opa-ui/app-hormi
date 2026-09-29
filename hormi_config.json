@@ -301,6 +301,128 @@
         2025,
         2026
       ]
+    },
+    {
+      "key": "obed",
+      "name": "Obed Vargas",
+      "apodo": "Obed",
+      "player_id": null,
+      "player_search_term": "Vargas",
+      "search_first_name": "obed",
+      "search_last_name": "vargas",
+      "targets": [
+        {
+          "key": "atletico_madrid",
+          "label": "Atlético Madrid",
+          "emoji": "🔴",
+          "team_id": null,
+          "search": "Atletico Madrid",
+          "country": "Spain",
+          "season": 2026,
+          "kind": "club"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png"
+        }
+      ],
+      "career_seasons": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "key": "fidalgo",
+      "name": "Álvaro Fidalgo",
+      "apodo": "Fidalgo",
+      "player_id": null,
+      "player_search_term": "Fidalgo",
+      "search_first_name": "alvaro",
+      "search_last_name": "fidalgo",
+      "targets": [
+        {
+          "key": "america",
+          "label": "Club América",
+          "emoji": "🟡",
+          "team_id": null,
+          "search": "America",
+          "country": "Mexico",
+          "season": 2026,
+          "kind": "club"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png"
+        }
+      ],
+      "career_seasons": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "key": "huescas",
+      "name": "Rodrigo Huescas",
+      "apodo": "Huescas",
+      "player_id": null,
+      "player_search_term": "Huescas",
+      "search_first_name": "rodrigo",
+      "search_last_name": "huescas",
+      "targets": [
+        {
+          "key": "copenhague",
+          "label": "FC Copenhague",
+          "emoji": "⚪",
+          "team_id": null,
+          "search": "FC Copenhagen",
+          "country": "Denmark",
+          "season": 2026,
+          "kind": "club"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png"
+        }
+      ],
+      "career_seasons": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
     }
   ]
 }
