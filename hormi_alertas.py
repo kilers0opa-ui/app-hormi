@@ -446,7 +446,58 @@ def register_goal_for_video(key, player_key, team_key):
         log(f"ℹ️  No se pudo anotar el gol para buscarle video (la alerta ya salió): {err}")
 
 
-def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None, register_video=True):
+def register_final_for_video(key, player_key, team_key, match_info):
+    """Anota el FINAL de un partido en videos_pendientes.json ("finales") para
+    que video-gol.yml (hormi_videos.py --eventos) busque el resumen del partido
+    (a los ~30 y ~60 min) y refresque la noticia principal de cada jugador.
+
+    Un solo evento por partido (fixture): si varios jugadores del roster
+    comparten el mismo partido, se agregan a la lista "jugadores" del mismo
+    evento. Mismas reglas que register_goal_for_video: solo después de que la
+    alerta ya salió, sin red, y cualquier error se traga."""
+    try:
+        fid = (match_info or {}).get("fixture_id")
+        if fid is None:
+            return
+        now = datetime.now(timezone.utc)
+        data = load_json(PENDING_VIDEOS_FILE, {"goles": []})
+        finales = data.setdefault("finales", [])
+        cutoff = now - timedelta(hours=6)
+        finales[:] = [f for f in finales
+                      if datetime.fromisoformat(f["final_seen_at"]) >= cutoff]
+        summary = match_info.get("summary") or {}
+        jugador = {
+            "player_key": player_key,
+            "team_key": team_key,
+            "minutes": summary.get("minutes", 0),
+            "goals": summary.get("goals", 0),
+            "assists": summary.get("assists", 0),
+        }
+        event = next((f for f in finales if f.get("fixture_id") == fid), None)
+        if event is None:
+            event = {
+                "fixture_id": fid,
+                "home": match_info.get("home"),
+                "away": match_info.get("away"),
+                "league": match_info.get("league"),
+                "score": match_info.get("score"),
+                "final_seen_at": now.isoformat(),
+                "jugadores": [],
+            }
+            finales.append(event)
+        if any(j.get("player_key") == player_key and j.get("team_key") == team_key
+               for j in event["jugadores"]):
+            return
+        event["jugadores"].append(jugador)
+        tmp = PENDING_VIDEOS_FILE.with_suffix(".tmp")
+        save_json(tmp, data)
+        os.replace(tmp, PENDING_VIDEOS_FILE)
+    except Exception as err:
+        log(f"ℹ️  No se pudo anotar el final para buscarle resumen (la alerta ya salió): {err}")
+
+
+def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None,
+             register_video=True, match_info=None):
     new = 0
     for key, title, message, priority in alerts:
         if key not in sent:
@@ -458,8 +509,11 @@ def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None, r
             new += 1
             # Va al final, con la alerta ya enviada. No aplica en repeticiones
             # ni en modo solo-consola.
-            if register_video and key.endswith(":gol") and not getattr(notifier, "console_only", False):
-                register_goal_for_video(key, player_key, team_key)
+            if register_video and not getattr(notifier, "console_only", False):
+                if key.endswith(":gol"):
+                    register_goal_for_video(key, player_key, team_key)
+                elif key.endswith(":final") and match_info:
+                    register_final_for_video(key, player_key, team_key, match_info)
     return new
 
 
@@ -649,7 +703,15 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
 
     sent = sent_by_target.setdefault(key, set())
     alerts, info = analyze(snap, player, target)
-    n = dispatch(alerts, sent, notifier, fcm, player["key"], key)
+    match_info = {
+        "fixture_id": snap["fixture"]["id"],
+        "home": snap["teams"]["home"]["name"],
+        "away": snap["teams"]["away"]["name"],
+        "league": snap["league"]["name"],
+        "score": info.get("score"),
+        "summary": info.get("summary"),
+    }
+    n = dispatch(alerts, sent, notifier, fcm, player["key"], key, match_info=match_info)
     if n:
         log(f"{emoji} {player['name']} · {label}: {n} alerta(s) nueva(s)")
     try:

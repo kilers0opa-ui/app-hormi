@@ -1,19 +1,23 @@
 {
-  "_ayuda": "Todo lo de esta sección es OPCIONAL: sin tocar nada, hormi_videos.py busca a cada jugador con su nombre + club. Solo agrega entradas en 'jugadores' cuando quieras afinar. Ejemplo (borra el guion bajo de '_ejemplo' para usarlo): query_video reemplaza la búsqueda de YouTube; query_noticias reemplaza la búsqueda de noticias; canales agrega los uploads de un canal oficial (channel_id empieza con 'UC'; cuesta 1 unidad de cuota en vez de 100).",
+  "_ayuda": "Todo lo de esta sección es OPCIONAL: sin tocar nada funciona. 'jugadores' afina por jugador: query_noticias reemplaza la búsqueda de noticias; query_video_gol reemplaza la búsqueda del video del gol. 'equipos' agrega nombres alternativos de un equipo para reconocer su resumen (la clave es el nombre tal como lo escribe API-Football). En 'config' se pueden ajustar los valores de DEFAULTS de hormi_videos.py (p. ej. resumen_intentos_min, resumen_notificar). Borra el guion bajo de '_ejemplo' para usarlo.",
   "config": {
-    "max_videos": 5,
     "max_noticias": 2,
-    "dias_busqueda": 30,
     "dias_retencion": 30
   },
   "_ejemplo": {
-    "armando": {
-      "query_video": "Armando González Olympiacos gol",
-      "query_noticias": "\"Armando González\" Olympiacos",
-      "canales": [
-        { "label": "Nombre del canal oficial", "channel_id": "UCxxxxxxxxxxxxxxxxxxxxxx" }
+    "jugadores": {
+      "armando": {
+        "query_noticias": "\"Armando González\" Olympiacos",
+        "query_video_gol": "\"Armando González\" gol Olympiacos"
+      }
+    },
+    "equipos": {
+      "Olympiakos Piraeus": [
+        "Olympiacos",
+        "Olympiakos"
       ]
     }
   },
+  "equipos": {},
   "jugadores": {}
 }

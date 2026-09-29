@@ -1,11 +1,11 @@
-name: Videos y noticias - App Hormi
+name: Noticias - App Hormi
 
 on:
   schedule:
     # Dos veces al día, en horarios distintos a los de las demás fases
     # (tabla 12:00 UTC, transferencias 15:00 UTC, historial 09:00 UTC).
-    # Cada corrida completa gasta ~1,000 unidades de la cuota de YouTube
-    # (10,000/día gratis) — 2 corridas = ~2,000. Bajar a una si hace falta.
+    # Solo noticias (RSS de Google Noticias): NO gasta cuota de YouTube. Los
+    # videos llegan por eventos (goles y finales) en video-gol.yml.
     - cron: "30 17 * * *"   # 11:30 hora de México (UTC-6)
     - cron: "30 1 * * *"    # 19:30 hora de México
   workflow_dispatch:        # para poder correrlo manual desde la pestaña Actions
@@ -26,14 +26,6 @@ on:
           - obed
           - fidalgo
           - huescas
-      solo:
-        description: "Solo una fuente (vacío = videos y noticias). 'noticias' no gasta cuota de YouTube."
-        type: choice
-        default: ""
-        options:
-          - ""
-          - videos
-          - noticias
 
 concurrency:
   group: hormi-videos   # PROPIO de este workflow: nunca comparte cola con el motor de alertas (hormi-chequeo), así una corrida de videos jamás puede retrasar una alerta de gol
@@ -52,16 +44,11 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Actualizar videos y noticias (videos.json)
-        env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+      - name: Actualizar noticias (videos.json)
         run: |
           ARGS=""
           if [ -n "${{ inputs.jugador }}" ]; then
             ARGS="$ARGS --jugador ${{ inputs.jugador }}"
-          fi
-          if [ -n "${{ inputs.solo }}" ]; then
-            ARGS="$ARGS --solo ${{ inputs.solo }}"
           fi
           python hormi_videos.py $ARGS
 
@@ -71,7 +58,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add videos.json
           if ! git diff --cached --quiet; then
-            git commit -m "chore: actualiza videos y noticias (Fase 6) [skip ci]"
+            git commit -m "chore: actualiza noticias (Fase 6) [skip ci]"
             for i in 1 2 3; do
               git pull --rebase origin main && git push && break
               sleep 5

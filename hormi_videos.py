@@ -1,67 +1,58 @@
 #!/usr/bin/env python3
 """
-Legión MX · Fase 6 — Videos y noticias (videos.json)
-=====================================================
-Para cada jugador del roster arma dos listas que la app muestra en su
-sección "Videos y noticias":
+Legión MX · Fase 6 — Videos y noticias
+=======================================
+Dos archivos, dos escritores (así los workflows jamás chocan al hacer push):
 
-  * videos   — clips reproducibles DENTRO de la app con el reproductor
-               oficial de YouTube (IFrame API). Se buscan con la YouTube
-               Data API v3 filtrando videoEmbeddable=true, así ningún clip
-               llega a la app con el embed desactivado por su dueño.
-               Opcionalmente también se leen los "uploads" de canales
-               oficiales (hormi_videos_fuentes.json → "canales").
-  * noticias — titular, medio, fecha y enlace (SIN el texto de la nota)
-               desde el RSS de Google Noticias. La app abre el enlace en
-               un Custom Tab.
+  videos.json      (corrida normal, videos.yml, 2 veces al día)
+                   Noticias por jugador: titular, medio, fecha y enlace (SIN el
+                   texto de la nota) desde el RSS de Google Noticias. Solo
+                   titulares que nombran al jugador (apellido + nombre o apodo),
+                   sin repetidos, pocas (max_noticias, 2 por defecto). "videos"
+                   queda vacío: la búsqueda abierta de YouTube se RETIRÓ (traía
+                   videos de aficionados). La app abre las noticias en un Custom Tab.
 
-Noticias: solo titulares que nombran al jugador (apellido + nombre o apodo),
-sin títulos repetidos y pocas (max_noticias, 2 por defecto). Videos: max_videos
-(5 por defecto).
+  videos_gol.json  (modo --eventos, video-gol.yml, cada 5 min solo si hay algo)
+                   Los videos llegan únicamente por EVENTOS que anota el motor
+                   de alertas (hormi_alertas.py) en videos_pendientes.json:
+                     · goles      → video del gol
+                     · finales    → resumen del partido + noticia principal
+                   Todos se reproducen DENTRO de la app con el reproductor
+                   oficial de YouTube (IFrame): la búsqueda filtra
+                   videoEmbeddable=true.
 
-Qué escribe: videos.json — aparte de player_stats.json y
-team_standings.json. Cada corrida MEZCLA lo nuevo con lo que ya había
-(sin duplicados, más reciente primero, tope por lista, descartando lo
-muy viejo): si una fuente falla o se agota la cuota, lo anterior se queda.
+Cuota de YouTube Data API (10,000 unidades/día gratis): search.list = 100.
+La corrida normal ya NO gasta cuota. Los eventos comparten un tope de 50
+búsquedas/día (= 5,000 unidades, la mitad de la cuota gratis); de esas, los
+resúmenes pueden usar máximo 20 para no quitarle cuota a los goles.
 
-Cuota de YouTube Data API (10,000 unidades/día gratis):
-  search.list = 100 · playlistItems.list = 1 · videos.list = 1
-  Con 10 jugadores y 2 corridas/día: ~2,000 unidades. El script cuenta las
-  unidades que gasta y las imprime al final.
-
-Modo gol (--gol): el video del gol recién metido
-------------------------------------------------
-El motor de alertas (hormi_alertas.py) anota cada gol que alerta en
-videos_pendientes.json. Con --gol, este script busca el clip de ESE gol:
-
-  * Búsqueda con el NOMBRE COMPLETO del jugador ("Armando González"), y el
-    título/descripción del resultado debe contener nombre Y apellido.
-  * Filtrada por fecha: solo videos publicados desde el momento del gol
-    (menos un pequeño margen por el retraso de detección) — así el clip es
-    del gol de hoy, no de uno viejo.
-  * Solo 2 intentos por gol: ~15 y ~30 min después. Si en el segundo no hay
-    video, se omite (no se sigue gastando cuota).
-  * Cuando aparece, manda una segunda notificación: "Ya está el video del
-    gol de La Hormiga".
-  * Tope diario de búsquedas de gol (gol_max_busquedas_dia) para que una
-    tarde con muchos goles no se coma la cuota.
-
-Escribe videos_gol.json (un solo escritor: este modo). videos.json lo
-escribe únicamente la corrida normal; así los dos nunca chocan.
+Modo eventos (--eventos, alias --gol)
+-------------------------------------
+GOL  · búsqueda con el NOMBRE COMPLETO ("Armando González"); título/descripción
+       deben contener nombre Y apellido; solo videos publicados desde el gol
+       (menos un margen); 2 intentos (~15 y ~30 min después), luego se omite;
+       al aparecer manda la notificación "Ya está el video del gol de X".
+FINAL· un evento por partido (aunque jueguen varios del roster).
+       - Noticia principal de cada jugador: se refresca a los +30 y +60 min
+         (RSS, gratis) y queda en partidos[fixture].noticias[jugador].
+       - Resumen del partido: 2 intentos, +30 y +60 min; el título debe decir
+         "resumen/highlights/goles…" y nombrar a los DOS equipos (tolera
+         variantes tipo Olympiacos/Olympiakos; ver "equipos" en el archivo de
+         fuentes); solo si algún jugador del roster tuvo minutos.
+       - "resumen_notificar" (apagado) manda "Ya está el resumen".
+Si un intento falla o no hay nada, se omite: nunca se sigue gastando cuota.
 
 Uso:
   export YOUTUBE_API_KEY="tu_api_key"     # Google Cloud → YouTube Data API v3
-  python hormi_videos.py                          # todos los jugadores
+  python hormi_videos.py                          # noticias de todos los jugadores
   python hormi_videos.py --jugador armando         # solo uno
-  python hormi_videos.py --solo noticias           # sin gastar cuota de YouTube
-  python hormi_videos.py --solo videos
-  python hormi_videos.py --gol                     # atiende los goles pendientes
-  python hormi_videos.py --gol --sin-notificar     # igual, sin mandar push
+  python hormi_videos.py --eventos                 # atiende goles y finales pendientes
+  python hormi_videos.py --eventos --sin-notificar # igual, sin mandar push
 
-Pensado para correr desde GitHub Actions (ver .github/workflows/videos.yml).
+Pensado para correr desde GitHub Actions (ver .github/workflows/).
 
-Requisitos: Python 3.9+, sin librerías externas. Variable YOUTUBE_API_KEY
-(solo para videos; las noticias no necesitan llave).
+Requisitos: Python 3.9+, sin librerías externas. YOUTUBE_API_KEY solo se usa
+en --eventos (las noticias no necesitan llave).
 """
 
 import argparse
@@ -90,17 +81,21 @@ NEWS_RSS = "https://news.google.com/rss/search"
 LOCAL_TZ = timezone(timedelta(hours=-6))
 
 DEFAULTS = {
-    "max_videos": 5,         # tope de videos guardados por jugador
     "max_noticias": 2,       # tope de noticias guardadas por jugador (pocas y buenas, no un feed)
-    "dias_busqueda": 30,     # la búsqueda de YouTube solo mira lo publicado en los últimos N días
     "dias_retencion": 30,    # lo guardado más viejo que esto se descarta. Las políticas de la API de YouTube exigen borrar o refrescar sus datos a los 30 días: NO subir de 30
-    # --- modo --gol
+    # --- modo --eventos: goles
     "gol_intentos_min": [15, 30],     # minutos después del gol en que se busca (2 intentos, ni uno más)
     "gol_margen_min": 10,             # el clip puede haberse publicado hasta N min antes de que se detectara el gol
     "gol_min_entre_intentos": 10,     # si el worker se atrasa, separa los intentos al menos N min
-    "gol_max_busquedas_dia": 50,      # tope de búsquedas de gol al día (50 x 100 = 5,000 unidades, la mitad de la cuota gratis)
-    "gol_caducidad_horas": 3,         # un gol pendiente más viejo que esto se omite
-    "gol_retencion_horas": 48,        # cuánto se conserva un gol en videos_gol.json
+    "gol_max_busquedas_dia": 50,      # tope de búsquedas de YouTube al día (goles + resúmenes): 50 x 100 = 5,000 unidades, la mitad de la cuota gratis
+    "gol_caducidad_horas": 3,         # un gol/partido pendiente más viejo que esto se omite
+    "gol_retencion_horas": 48,        # cuánto se conserva un gol/partido en videos_gol.json
+    # --- modo --eventos: final de partido (resumen + noticia principal)
+    "resumen_intentos_min": [30, 60],     # minutos después del final en que se busca el resumen (2 intentos) y se refresca la noticia
+    "resumen_margen_min": 10,             # el resumen puede haberse publicado hasta N min antes de que se detectara el final
+    "resumen_max_busquedas_dia": 20,      # de las 50 búsquedas del día, máximo 20 pueden ser de resúmenes: los goles siempre conservan cuota
+    "resumen_solo_con_minutos": True,     # solo se busca resumen si algún jugador del roster tuvo minutos
+    "resumen_notificar": False,           # True = manda "Ya está el resumen" (apagado por defecto para no saturar de notificaciones)
 }
 
 QUOTA_SEARCH = 100
@@ -410,34 +405,18 @@ def club_label(player):
     return None
 
 
-def build_for_player(player, overrides, settings, do_videos, do_news):
-    club = club_label(player)
+def news_query(player, overrides):
     full = full_name(player)
-    tokens = name_tokens(full)
-    result = {}
+    club = club_label(player)
+    return overrides.get("query_noticias") or " ".join(x for x in (f'"{full}"', club) if x)
 
-    if do_videos:
-        query = overrides.get("query_video") or " ".join(x for x in (f'"{full}"', club) if x)
-        log(f"   🎬 videos · búsqueda: {query!r}")
-        found = search_videos(query, settings["dias_busqueda"])
-        if found is None:
-            result["videos"] = None
-        else:
-            found = [e for e in found if mentions_player(e, tokens)]
-            for canal in overrides.get("canales") or []:
-                log(f"   🎬 videos · canal {canal.get('label') or canal.get('channel_id')}")
-                uploads = [e for e in channel_uploads(canal.get("channel_id")) if mentions_player(e, tokens)]
-                fill_embeddable(uploads)
-                # de canales solo entran los que sí se pueden incrustar
-                found += [e for e in uploads if e.get("embeddable") is not False]
-            result["videos"] = found
 
-    if do_news:
-        query = overrides.get("query_noticias") or " ".join(x for x in (f'"{full}"', club) if x)
-        log(f"   📰 noticias · {query!r}")
-        result["noticias"] = fetch_news(query)
-
-    return result
+def build_for_player(player, overrides):
+    """Solo noticias. Los videos ya NO se buscan de forma abierta (traía videos
+    de aficionados): llegan únicamente por eventos, ver process_events."""
+    query = news_query(player, overrides)
+    log(f"   📰 noticias · {query!r}")
+    return {"noticias": fetch_news(query)}
 
 
 def strip_private(entries):
@@ -470,27 +449,31 @@ def send_video_push(config, player, video, team_key):
         log(f"     ⚠️  fallo enviando la notificación del video: {err}")
 
 
-def next_attempt(st, settings, now):
-    """None = todavía no toca · 'normal' | 'final' = toca buscar ·
-    'agotado' | 'caducado' = ya no se busca más."""
-    offsets = settings["gol_intentos_min"]
-    n = st["intentos"]
+def _due(n, base, last_iso, offsets, settings, now):
+    """None = todavía no toca · 'normal' | 'final' = toca ·
+    'agotado' | 'caducado' = ya no se hace más. n = intentos hechos; base =
+    momento del evento; offsets = minutos después del evento de cada intento."""
     if n >= len(offsets):
         return "agotado"
-    goal_at = parse_ts(st.get("goal_seen_at"))
-    if goal_at is None:
+    if base is None:
         return "agotado"
-    if now - goal_at > timedelta(hours=settings["gol_caducidad_horas"]):
+    if now - base > timedelta(hours=settings["gol_caducidad_horas"]):
         return "caducado"
-    if now < goal_at + timedelta(minutes=offsets[n]):
+    if now < base + timedelta(minutes=offsets[n]):
         return None
-    last = parse_ts(st.get("ultimo_intento"))
+    last = parse_ts(last_iso)
     if last and now - last < timedelta(minutes=settings["gol_min_entre_intentos"]):
         return None
     # Si el worker llegó tarde y ya pasó también la hora del último intento,
-    # se hace UNA sola búsqueda y esa es la definitiva (nunca más de 2).
-    late = n == 0 and now >= goal_at + timedelta(minutes=offsets[-1])
+    # se hace UNA sola pasada y esa es la definitiva (nunca más de las previstas).
+    late = n == 0 and now >= base + timedelta(minutes=offsets[-1])
     return "final" if (late or n == len(offsets) - 1) else "normal"
+
+
+def next_attempt(st, settings, now):
+    """Para un gol: ver _due."""
+    return _due(st["intentos"], parse_ts(st.get("goal_seen_at")), st.get("ultimo_intento"),
+                settings["gol_intentos_min"], settings, now)
 
 
 def pick_goal_video(candidates):
@@ -503,14 +486,186 @@ def pick_goal_video(candidates):
     return sorted(candidates, key=score)[0]
 
 
-def process_goals(config, settings, sources, notify=True):
-    out = load_json(GOLES_FILE, {"updated_at": None, "cuota": {}, "goles": {}})
+# ------------------------------------------------------- Final de partido --
+
+TEAM_STOP = {"fc", "cf", "sc", "ac", "as", "cd", "ud", "club", "de", "del", "la", "el", "the", "and"}
+TEAM_GENERIC = {"real", "united", "city", "sporting", "deportivo", "athletic"}
+RESUMEN_WORDS = ("resumen", "highlights", "goles", "goals", "compacto", "melhores", "resume", "extended")
+
+
+def team_prefixes(name, aliases=()):
+    """Prefijos (5 letras) de las palabras distintivas de un equipo, para
+    aguantar variantes: 'Olympiakos Piraeus' / 'Olympiacos' -> 'olymp'."""
+    def words(text):
+        return [w for w in re.findall(r"[a-z0-9]+", normalize(text)) if w not in TEAM_STOP]
+    base = [w for w in words(name) if len(w) >= 4]
+    strong = [w for w in base if w not in TEAM_GENERIC] or base or [w for w in words(name) if len(w) >= 2]
+    extra = [w for a in aliases for w in words(a) if len(w) >= 4]
+    return {w[:5] for w in strong + extra}
+
+
+def mentions_team(text_norm, prefixes):
+    words = re.findall(r"[a-z0-9]+", text_norm)
+    return any(w.startswith(p) for p in prefixes for w in words)
+
+
+def is_match_summary(entry, home_pref, away_pref):
+    """El clip debe nombrar a los DOS equipos y decir que es un resumen."""
+    text = normalize(f"{entry.get('title') or ''} {entry.get('_description') or ''}")
+    title = normalize(entry.get("title") or "")
+    return (mentions_team(text, home_pref) and mentions_team(text, away_pref)
+            and any(w in title for w in RESUMEN_WORDS))
+
+
+def send_summary_push(config, players, video, st):
+    """Opcional (resumen_notificar): 'Ya está el resumen'. Tipo 'info'."""
+    try:
+        import hormi_alertas as ha
+        title = f"🎬 Ya está el resumen: {st.get('home')} vs {st.get('away')}"
+        message = " · ".join(x for x in (video.get("title"), video.get("channel")) if x) + " — míralo en la app"
+        if config.get("ntfy_topic"):
+            ha.Notifier(config["ntfy_topic"]).send(title, message, 3)
+        fcm = ha.FcmSender(config.get("fcm_project_id"))
+        for pk, j in st["jugadores"].items():
+            if pk in players and (j.get("minutes") or 0) > 0:
+                fcm.send("info", title, message, pk, j.get("team_key"))
+    except Exception as err:
+        log(f"     ⚠️  fallo enviando la notificación del resumen: {err}")
+
+
+def _finales_step(out, config, settings, sources, notify, now):
+    """Final de partido: (1) refresca la noticia principal de cada jugador
+    (RSS, gratis) a los +30 y +60 min; (2) busca el resumen en YouTube a los
+    +30 y +60 min (2 intentos, ni uno más). Devuelve True si cambió algo."""
+    partidos = out.setdefault("partidos", {})
+    cuota = out["cuota"]
+    pending = (load_json(PENDING_FILE, {}).get("finales")) or []
+    players = {p["key"]: p for p in config["players"]}
+    per_player = sources.get("jugadores") or {}
+    aliases = sources.get("equipos") or {}
+    offsets = settings["resumen_intentos_min"]
+    changed = False
+
+    # 1) partidos nuevos (y jugadores nuevos de un partido que ya conocíamos)
+    for ev in pending:
+        fid = ev.get("fixture_id")
+        js = {j["player_key"]: j for j in ev.get("jugadores") or [] if j.get("player_key") in players}
+        if fid is None or not js:
+            continue
+        st = partidos.get(str(fid))
+        if st is None:
+            st = partidos[str(fid)] = {
+                "fixture_id": fid, "home": ev.get("home"), "away": ev.get("away"),
+                "league": ev.get("league"), "score": ev.get("score"),
+                "final_seen_at": ev.get("final_seen_at"), "jugadores": {},
+                "status": "pendiente", "intentos": 0, "fallos": 0,
+                "ultimo_intento": None, "video": None,
+                "noticias_pasadas": 0, "ultima_noticia": None, "noticias": {},
+            }
+            changed = True
+        for pk, j in js.items():
+            if pk not in st["jugadores"]:
+                st["jugadores"][pk] = {k: j.get(k) for k in ("team_key", "minutes", "goals", "assists")}
+                changed = True
+
+    # 2) poda
+    cutoff = now - timedelta(hours=settings["gol_retencion_horas"])
+    for k in [k for k, st in partidos.items()
+              if (parse_ts(st.get("final_seen_at")) or now) < cutoff]:
+        del partidos[k]
+        changed = True
+
+    for fid, st in partidos.items():
+        base = parse_ts(st.get("final_seen_at"))
+        match = f"{st.get('home')} vs {st.get('away')}"
+
+        # 3) noticia principal de cada jugador (no gasta cuota)
+        if st["noticias_pasadas"] < len(offsets):
+            when = _due(st["noticias_pasadas"], base, st.get("ultima_noticia"), offsets, settings, now)
+            if when in ("agotado", "caducado"):
+                st["noticias_pasadas"] = len(offsets)
+                changed = True
+            elif when is not None:
+                log(f"📰 final {match} · noticias de {len(st['jugadores'])} jugador(es)")
+                for pk in st["jugadores"]:
+                    player = players.get(pk)
+                    if player is None:
+                        continue
+                    fresh = fetch_news(news_query(player, per_player.get(pk) or {}))
+                    if fresh is not None:
+                        st["noticias"][pk] = curate_news(fresh, player, settings["max_noticias"])
+                st["noticias_pasadas"] = len(offsets) if when == "final" else st["noticias_pasadas"] + 1
+                st["ultima_noticia"] = now.isoformat()
+                changed = True
+
+        # 4) resumen del partido (YouTube)
+        if st["status"] != "pendiente":
+            continue
+        when = _due(st["intentos"], base, st.get("ultimo_intento"), offsets, settings, now)
+        if when is None:
+            continue
+        if when in ("agotado", "caducado"):
+            st["status"], st["motivo"] = "omitido", when
+            changed = True
+            continue
+        if settings["resumen_solo_con_minutos"] and not any(
+                (j.get("minutes") or 0) > 0 for j in st["jugadores"].values()):
+            st["status"], st["motivo"] = "omitido", "ningún jugador tuvo minutos"
+            log(f"   ⏭️  {match}: nadie del roster jugó — no se busca resumen")
+            changed = True
+            continue
+        if (cuota["busquedas"] >= settings["gol_max_busquedas_dia"]
+                or cuota.get("busquedas_resumen", 0) >= settings["resumen_max_busquedas_dia"]):
+            st["status"], st["motivo"] = "omitido", "tope diario de búsquedas"
+            log(f"   ⛔ tope diario de búsquedas alcanzado — se omite el resumen de {match}")
+            changed = True
+            continue
+
+        home_pref = team_prefixes(st.get("home") or "", aliases.get(st.get("home")) or [])
+        away_pref = team_prefixes(st.get("away") or "", aliases.get(st.get("away")) or [])
+        since = base - timedelta(minutes=settings["resumen_margen_min"])
+        query = f"{st.get('home')} {st.get('away')} resumen goles"
+        log(f"🔎 resumen {match} · intento {st['intentos'] + 1} · {query!r} · desde {since:%H:%M} UTC")
+        found = search_videos(query, published_after=since, max_results=15)
+        changed = True
+        if found is None:
+            st["fallos"] += 1
+            if _youtube_disabled or st["fallos"] >= 3:
+                st["status"], st["motivo"] = "omitido", "sin acceso a YouTube"
+            continue
+        cuota["busquedas"] += 1
+        cuota["busquedas_resumen"] = cuota.get("busquedas_resumen", 0) + 1
+        st["intentos"] += 1
+        st["ultimo_intento"] = now.isoformat()
+
+        used = {s2["video"]["id"] for k2, s2 in partidos.items() if k2 != fid and s2.get("video")}
+        since_iso = since.strftime("%Y-%m-%dT%H:%M:%SZ")
+        candidates = [e for e in found
+                      if is_match_summary(e, home_pref, away_pref)
+                      and (e.get("published_at") or "") >= since_iso
+                      and e["id"] not in used]
+        log(f"     {len(found)} resultados · {len(candidates)} válidos")
+        if candidates:
+            best = sorted(candidates, key=lambda e: e.get("published_at") or "")[0]
+            video = strip_private([best])[0]
+            st["status"], st["video"] = "resuelto", video
+            log(f"     ✅ {video['title']!r} ({video['channel']})")
+            if notify and settings.get("resumen_notificar"):
+                send_summary_push(config, players, video, st)
+        elif when == "final":
+            st["status"], st["motivo"] = "omitido", "sin resumen tras los intentos"
+            log("     ⏭️  sin resumen tras el último intento — se omite")
+    return changed
+
+
+# ----------------------------------------------------------- Modo eventos --
+
+def _goals_step(out, config, settings, sources, notify, now):
     state = out.setdefault("goles", {})
-    cuota = out.setdefault("cuota", {})
+    cuota = out["cuota"]
     pending = (load_json(PENDING_FILE, {"goles": []}).get("goles")) or []
     players = {p["key"]: p for p in config["players"]}
     per_player = sources.get("jugadores") or {}
-    now = datetime.now(timezone.utc)
     changed = False
 
     # 1) goles nuevos que anotó el motor de alertas
@@ -532,9 +687,6 @@ def process_goals(config, settings, sources, notify=True):
         changed = True
 
     # 3) un intento por gol pendiente al que ya le toca
-    today = f"{datetime.now(LOCAL_TZ):%Y-%m-%d}"
-    if cuota.get("fecha") != today:
-        cuota["fecha"], cuota["busquedas"] = today, 0
     for key, st in state.items():
         if st["status"] != "pendiente":
             continue
@@ -550,7 +702,7 @@ def process_goals(config, settings, sources, notify=True):
             continue
         if cuota["busquedas"] >= settings["gol_max_busquedas_dia"]:
             st["status"], st["motivo"] = "omitido", "tope diario de búsquedas"
-            log(f"   ⛔ tope diario de búsquedas de gol alcanzado — se omite {key}")
+            log(f"   ⛔ tope diario de búsquedas alcanzado — se omite {key}")
             changed = True
             continue
 
@@ -589,6 +741,26 @@ def process_goals(config, settings, sources, notify=True):
         elif when == "final":
             st["status"], st["motivo"] = "omitido", "sin video tras los intentos"
             log("     ⏭️  sin video tras el último intento — se omite")
+    return changed
+
+
+def process_events(config, settings, sources, notify=True):
+    """Modo --eventos (alias --gol): atiende lo que anotó el motor de alertas
+    en videos_pendientes.json — goles (video del gol) y finales de partido
+    (resumen + noticia principal) — y lo escribe en videos_gol.json. Los goles
+    van primero. Ambos comparten el tope diario de búsquedas."""
+    out = load_json(GOLES_FILE, {"updated_at": None, "cuota": {}, "goles": {}, "partidos": {}})
+    cuota = out.setdefault("cuota", {})
+    now = datetime.now(timezone.utc)
+    today = f"{datetime.now(LOCAL_TZ):%Y-%m-%d}"
+    if cuota.get("fecha") != today:
+        cuota["fecha"], cuota["busquedas"], cuota["busquedas_resumen"] = today, 0, 0
+
+    changed = _goals_step(out, config, settings, sources, notify, now)
+    try:
+        changed = _finales_step(out, config, settings, sources, notify, now) or changed
+    except Exception as err:   # un fallo en finales jamás debe perder lo ya resuelto de los goles
+        log(f"⚠️  error atendiendo finales de partido: {err}")
 
     if changed:
         out["updated_at"] = datetime.now(LOCAL_TZ).isoformat()
@@ -598,14 +770,12 @@ def process_goals(config, settings, sources, notify=True):
         log("Nada que atender.")
 
 
-
 def main():
     parser = argparse.ArgumentParser(description="Fase 6 · Videos y noticias")
     parser.add_argument("--jugador", help="Limita a un jugador por su 'key'")
-    parser.add_argument("--solo", choices=["videos", "noticias"], help="Corre solo una de las dos fuentes")
-    parser.add_argument("--gol", action="store_true",
-                        help="Atiende los goles pendientes (videos_pendientes.json) y escribe videos_gol.json")
-    parser.add_argument("--sin-notificar", action="store_true", help="Con --gol: no manda la notificación")
+    parser.add_argument("--eventos", "--gol", dest="eventos", action="store_true",
+                        help="Atiende goles y finales de partido pendientes (videos_pendientes.json) y escribe videos_gol.json")
+    parser.add_argument("--sin-notificar", action="store_true", help="Con --eventos: no manda notificaciones")
     args = parser.parse_args()
 
     config = load_json(CONFIG_FILE, None)
@@ -615,8 +785,8 @@ def main():
     settings = {**DEFAULTS, **(sources.get("config") or {})}
     per_player = sources.get("jugadores") or {}
 
-    if args.gol:
-        process_goals(config, settings, sources, notify=not args.sin_notificar)
+    if args.eventos:
+        process_events(config, settings, sources, notify=not args.sin_notificar)
         return
 
     players = config["players"]
@@ -625,32 +795,24 @@ def main():
         if not players:
             sys.exit(f"No hay jugador con key='{args.jugador}' en {CONFIG_FILE}.")
 
-    do_videos = args.solo in (None, "videos")
-    do_news = args.solo in (None, "noticias")
-
     output = load_json(VIDEOS_FILE, {"updated_at": None, "players": {}})
     output.setdefault("players", {})
 
     for player in players:
         log(f"📺 {player['name']}")
-        fresh = build_for_player(player, per_player.get(player["key"]) or {}, settings, do_videos, do_news)
+        fresh = build_for_player(player, per_player.get(player["key"]) or {})
         entry = output["players"].setdefault(player["key"], {"videos": [], "noticias": []})
-        if fresh.get("videos") is not None:
-            entry["videos"] = strip_private(
-                merge(entry.get("videos"), strip_private(fresh["videos"]), "id",
-                      settings["max_videos"], settings["dias_retencion"]))
-            log(f"     → {len(entry['videos'])} videos guardados")
+        entry["videos"] = []   # la búsqueda abierta se retiró: los videos llegan por eventos (videos_gol.json)
         merged_news = entry.get("noticias") or []
         if fresh.get("noticias") is not None:
             merged_news = merge(merged_news, fresh["noticias"], "url", 10_000, settings["dias_retencion"])
         # se cura SIEMPRE (también lo ya guardado), así una corrida limpia lo que quedó de antes
         entry["noticias"] = curate_news(merged_news, player, settings["max_noticias"])
-        if do_news:
-            log(f"     → {len(entry['noticias'])} noticias guardadas")
+        log(f"     → {len(entry['noticias'])} noticias guardadas")
 
     output["updated_at"] = datetime.now(LOCAL_TZ).isoformat()
     save_json(VIDEOS_FILE, output)
-    log(f"✅ listo · {VIDEOS_FILE} actualizado · cuota de YouTube gastada: {_quota_used} unidades")
+    log(f"✅ listo · {VIDEOS_FILE} actualizado")
 
 
 if __name__ == "__main__":
