@@ -47,35 +47,13 @@
           "key": "al_qadsiah",
           "label": "Al-Qadsiah",
           "team_id": null,
-          "checks": [
-            {
-              "check": "Equipo/Selección encontrado",
-              "ok": false,
-              "detalle": "no coincidió con country='Saudi Arabia'. Resultados de la búsqueda: ninguno"
-            }
-          ]
+          "checks": []
         },
         {
           "key": "seleccion",
           "label": "Selección Mexicana",
           "team_id": 16,
-          "checks": [
-            {
-              "check": "Equipo (id conocido)",
-              "ok": true,
-              "detalle": "id 16"
-            },
-            {
-              "check": "Stats de temporada disponibles",
-              "ok": false,
-              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
-            },
-            {
-              "check": "Calendario disponible",
-              "ok": false,
-              "detalle": ""
-            }
-          ]
+          "checks": []
         }
       ]
     },
@@ -164,13 +142,45 @@
           "key": "atletico_madrid",
           "label": "Atlético Madrid",
           "team_id": 530,
-          "checks": []
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 530"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
         },
         {
           "key": "seleccion",
           "label": "Selección Mexicana",
           "team_id": 16,
-          "checks": []
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
         }
       ]
     },
