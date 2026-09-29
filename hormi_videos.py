@@ -15,6 +15,10 @@ sección "Videos y noticias":
                desde el RSS de Google Noticias. La app abre el enlace en
                un Custom Tab.
 
+Noticias: solo titulares que nombran al jugador (apellido + nombre o apodo),
+sin títulos repetidos y pocas (max_noticias, 3 por defecto). Videos: max_videos
+(5 por defecto).
+
 Qué escribe: videos.json — aparte de player_stats.json y
 team_standings.json. Cada corrida MEZCLA lo nuevo con lo que ya había
 (sin duplicados, más reciente primero, tope por lista, descartando lo
@@ -86,8 +90,8 @@ NEWS_RSS = "https://news.google.com/rss/search"
 LOCAL_TZ = timezone(timedelta(hours=-6))
 
 DEFAULTS = {
-    "max_videos": 10,        # tope de videos guardados por jugador
-    "max_noticias": 10,      # tope de noticias guardadas por jugador
+    "max_videos": 5,         # tope de videos guardados por jugador
+    "max_noticias": 3,       # tope de noticias guardadas por jugador (pocas y buenas, no un feed)
     "dias_busqueda": 30,     # la búsqueda de YouTube solo mira lo publicado en los últimos N días
     "dias_retencion": 30,    # lo guardado más viejo que esto se descarta. Las políticas de la API de YouTube exigen borrar o refrescar sus datos a los 30 días: NO subir de 30
     # --- modo --gol
@@ -336,6 +340,48 @@ def merge(old, new, key, cap, retention_days):
         kept.append(entry)
     kept.sort(key=lambda e: e.get("published_at") or "", reverse=True)
     return kept[:cap]
+
+
+# --------------------------------------------------------- Curar noticias --
+
+ALIAS_STOPWORDS = {"el", "la", "los", "las", "de", "del"}
+
+
+def title_mentions_player(title, player):
+    """El TITULAR debe nombrar al jugador: apellido + (nombre de pila o apodo).
+    Google Noticias devuelve notas donde el jugador apenas aparece en el
+    cuerpo, y esas no son 'sus' noticias. Apodo que sea igual al nombre o al
+    apellido no cuenta como apodo (así 'Mora' solo no basta)."""
+    text = normalize(title)
+
+    def has(tok):
+        return re.search(rf"\b{re.escape(tok)}\b", text) is not None
+
+    first = normalize(player.get("search_first_name") or "")
+    last = normalize(player.get("search_last_name") or "")
+    if not last or not has(last):
+        return False
+    if first and has(first):
+        return True
+    alias = [t for t in name_tokens(player.get("apodo") or "")
+             if t not in (first, last) and t not in ALIAS_STOPWORDS and len(t) >= 4]
+    return bool(alias) and all(has(t) for t in alias)
+
+
+def curate_news(news, player, cap):
+    """Solo titulares que nombran al jugador, sin títulos repetidos (el mismo
+    titular llega a veces con dos enlaces), más reciente primero, con tope."""
+    ordered = sorted(news, key=lambda n: n.get("published_at") or "", reverse=True)
+    seen, out = set(), []
+    for n in ordered:
+        if not title_mentions_player(n.get("title") or "", player):
+            continue
+        key = re.sub(r"[^a-z0-9 ]+", "", normalize(n.get("title") or ""))
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(n)
+    return out[:cap]
 
 
 # ------------------------------------------------------------------- Main --
@@ -594,9 +640,12 @@ def main():
                 merge(entry.get("videos"), strip_private(fresh["videos"]), "id",
                       settings["max_videos"], settings["dias_retencion"]))
             log(f"     → {len(entry['videos'])} videos guardados")
+        merged_news = entry.get("noticias") or []
         if fresh.get("noticias") is not None:
-            entry["noticias"] = merge(entry.get("noticias"), fresh["noticias"], "url",
-                                      settings["max_noticias"], settings["dias_retencion"])
+            merged_news = merge(merged_news, fresh["noticias"], "url", 10_000, settings["dias_retencion"])
+        # se cura SIEMPRE (también lo ya guardado), así una corrida limpia lo que quedó de antes
+        entry["noticias"] = curate_news(merged_news, player, settings["max_noticias"])
+        if do_news:
             log(f"     → {len(entry['noticias'])} noticias guardadas")
 
     output["updated_at"] = datetime.now(LOCAL_TZ).isoformat()

@@ -1,8 +1,8 @@
 {
   "_ayuda": "Todo lo de esta sección es OPCIONAL: sin tocar nada, hormi_videos.py busca a cada jugador con su nombre + club. Solo agrega entradas en 'jugadores' cuando quieras afinar. Ejemplo (borra el guion bajo de '_ejemplo' para usarlo): query_video reemplaza la búsqueda de YouTube; query_noticias reemplaza la búsqueda de noticias; canales agrega los uploads de un canal oficial (channel_id empieza con 'UC'; cuesta 1 unidad de cuota en vez de 100).",
   "config": {
-    "max_videos": 10,
-    "max_noticias": 10,
+    "max_videos": 5,
+    "max_noticias": 3,
     "dias_busqueda": 30,
     "dias_retencion": 30
   },
