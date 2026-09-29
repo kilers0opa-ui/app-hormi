@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T16:17:09.097541-06:00",
+  "updated_at": "2026-09-29T16:37:13.661020-06:00",
   "app_name": "Legión MX",
   "players": {
     "armando": {
@@ -105,7 +105,7 @@
           "emoji": "🦅",
           "crest_url": "https://media.api-sports.io/football/teams/495.png",
           "status": "sin_partido",
-          "checked_at": "2026-09-29T10:23:48.395788-06:00",
+          "checked_at": "2026-09-29T16:35:16.656504-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
@@ -115,7 +115,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-09-29T10:24:07.886675-06:00",
+          "checked_at": "2026-09-29T16:35:36.157999-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
@@ -124,7 +124,7 @@
     },
     "gimenez": {
       "name": "Santiago Giménez",
-      "player_id": null,
+      "player_id": 94562,
       "targets": {
         "seleccion": {
           "label": "Selección Mexicana",
@@ -135,12 +135,22 @@
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
+        },
+        "porto": {
+          "label": "Porto",
+          "emoji": "🔵",
+          "crest_url": "https://media.api-sports.io/football/teams/212.png",
+          "status": "sin_partido",
+          "checked_at": "2026-09-29T16:35:55.662197-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
         }
       }
     },
     "chavez": {
       "name": "Mateo Chávez",
-      "player_id": null,
+      "player_id": 390002,
       "targets": {
         "seleccion": {
           "label": "Selección Mexicana",
@@ -148,6 +158,16 @@
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
           "checked_at": "2026-09-29T11:01:36.208972-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        },
+        "az_alkmaar": {
+          "label": "AZ Alkmaar",
+          "emoji": "🔴",
+          "crest_url": "https://media.api-sports.io/football/teams/201.png",
+          "status": "sin_partido",
+          "checked_at": "2026-09-29T16:36:15.163818-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
@@ -167,6 +187,16 @@
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
+        },
+        "atletico_madrid": {
+          "label": "Atlético Madrid",
+          "emoji": "🔴",
+          "crest_url": "https://media.api-sports.io/football/teams/530.png",
+          "status": "sin_partido",
+          "checked_at": "2026-09-29T16:36:34.670873-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
         }
       }
     },
@@ -183,12 +213,22 @@
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
+        },
+        "betis": {
+          "label": "Real Betis",
+          "emoji": "🟢",
+          "crest_url": "https://media.api-sports.io/football/teams/543.png",
+          "status": "sin_partido",
+          "checked_at": "2026-09-29T16:36:54.162998-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
         }
       }
     },
     "huescas": {
       "name": "Rodrigo Huescas",
-      "player_id": null,
+      "player_id": 310199,
       "targets": {
         "seleccion": {
           "label": "Selección Mexicana",
@@ -196,6 +236,16 @@
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
           "checked_at": "2026-09-29T13:08:13.282715-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        },
+        "copenhague": {
+          "label": "FC Copenhague",
+          "emoji": "⚪",
+          "crest_url": "https://media.api-sports.io/football/teams/400.png",
+          "status": "sin_partido",
+          "checked_at": "2026-09-29T16:37:13.659389-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
