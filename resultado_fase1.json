@@ -41,19 +41,46 @@
     {
       "key": "quinones",
       "name": "Julián Quiñones",
-      "player_id": null,
+      "player_id": 35532,
       "targets": [
         {
           "key": "al_qadsiah",
           "label": "Al-Qadsiah",
           "team_id": null,
-          "checks": []
+          "checks": [
+            {
+              "check": "Equipo/Selección encontrado",
+              "ok": false,
+              "detalle": "no coincidió con country='Saudi Arabia'. Resultados de la búsqueda: ninguno"
+            }
+          ]
         },
         {
           "key": "seleccion",
           "label": "Selección Mexicana",
           "team_id": 16,
-          "checks": []
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Julián Quiñones (id manual)",
+              "ok": true,
+              "detalle": "id 35532"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
         }
       ]
     },
@@ -161,55 +188,13 @@
           "key": "betis",
           "label": "Real Betis",
           "team_id": 543,
-          "checks": [
-            {
-              "check": "Equipo (id conocido)",
-              "ok": true,
-              "detalle": "id 543"
-            },
-            {
-              "check": "Álvaro Fidalgo (id manual)",
-              "ok": true,
-              "detalle": "id 750"
-            },
-            {
-              "check": "Stats de temporada disponibles",
-              "ok": false,
-              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
-            },
-            {
-              "check": "Calendario disponible",
-              "ok": false,
-              "detalle": ""
-            }
-          ]
+          "checks": []
         },
         {
           "key": "seleccion",
           "label": "Selección Mexicana",
           "team_id": 16,
-          "checks": [
-            {
-              "check": "Equipo (id conocido)",
-              "ok": true,
-              "detalle": "id 16"
-            },
-            {
-              "check": "Álvaro Fidalgo (id manual)",
-              "ok": true,
-              "detalle": "id 750"
-            },
-            {
-              "check": "Stats de temporada disponibles",
-              "ok": false,
-              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
-            },
-            {
-              "check": "Calendario disponible",
-              "ok": false,
-              "detalle": ""
-            }
-          ]
+          "checks": []
         }
       ]
     },
