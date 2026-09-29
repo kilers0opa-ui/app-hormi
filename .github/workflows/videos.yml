@@ -1,0 +1,79 @@
+name: Videos y noticias - App Hormi
+
+on:
+  schedule:
+    # Dos veces al día, en horarios distintos a los de las demás fases
+    # (tabla 12:00 UTC, transferencias 15:00 UTC, historial 09:00 UTC).
+    # Cada corrida completa gasta ~1,000 unidades de la cuota de YouTube
+    # (10,000/día gratis) — 2 corridas = ~2,000. Bajar a una si hace falta.
+    - cron: "30 17 * * *"   # 11:30 hora de México (UTC-6)
+    - cron: "30 1 * * *"    # 19:30 hora de México
+  workflow_dispatch:        # para poder correrlo manual desde la pestaña Actions
+    inputs:
+      jugador:
+        description: "Limitar a un jugador (vacío = todos: armando, raul, quinones, mora, vasquez, gimenez, chavez, obed, fidalgo, huescas)"
+        type: choice
+        default: ""
+        options:
+          - ""
+          - armando
+          - raul
+          - quinones
+          - mora
+          - vasquez
+          - gimenez
+          - chavez
+          - obed
+          - fidalgo
+          - huescas
+      solo:
+        description: "Solo una fuente (vacío = videos y noticias). 'noticias' no gasta cuota de YouTube."
+        type: choice
+        default: ""
+        options:
+          - ""
+          - videos
+          - noticias
+
+concurrency:
+  group: hormi-chequeo   # mismo grupo que las demás fases: nunca corren al mismo tiempo (evita choques de git push)
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # necesario para que el workflow pueda hacer commit/push de videos.json
+
+jobs:
+  videos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Actualizar videos y noticias (videos.json)
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.jugador }}" ]; then
+            ARGS="$ARGS --jugador ${{ inputs.jugador }}"
+          fi
+          if [ -n "${{ inputs.solo }}" ]; then
+            ARGS="$ARGS --solo ${{ inputs.solo }}"
+          fi
+          python hormi_videos.py $ARGS
+
+      - name: Subir videos.json
+        run: |
+          git config user.name "app-hormi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add videos.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: actualiza videos y noticias (Fase 6) [skip ci]"
+            git pull --rebase origin main
+            git push
+          else
+            echo "Sin cambios que subir."
+          fi
