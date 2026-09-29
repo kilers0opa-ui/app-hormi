@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T16:37:13.661020-06:00",
+  "updated_at": "2026-09-29T16:52:48.430287-06:00",
   "app_name": "Legión MX",
   "players": {
     "armando": {
@@ -11,7 +11,7 @@
           "emoji": "🔴",
           "crest_url": "https://media.api-sports.io/football/teams/553.png",
           "status": "sin_partido",
-          "checked_at": "2026-09-29T10:45:55.692921-06:00",
+          "checked_at": "2026-09-29T16:51:30.428623-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
@@ -21,7 +21,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-09-29T10:46:15.194691-06:00",
+          "checked_at": "2026-09-29T16:51:49.929588-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
@@ -37,7 +37,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-09-29T10:46:34.694532-06:00",
+          "checked_at": "2026-09-29T16:52:09.446885-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
@@ -56,14 +56,24 @@
     },
     "quinones": {
       "name": "Julián Quiñones",
-      "player_id": null,
+      "player_id": 35532,
       "targets": {
         "seleccion": {
           "label": "Selección Mexicana",
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-09-29T10:46:54.191460-06:00",
+          "checked_at": "2026-09-29T16:52:48.429385-06:00",
+          "api_error": {
+            "plan": "Free plans do not have access to the Last parameter."
+          }
+        },
+        "al_qadsiah": {
+          "label": "Al-Qadsiah",
+          "emoji": "🔴",
+          "crest_url": "https://media.api-sports.io/football/teams/2933.png",
+          "status": "sin_partido",
+          "checked_at": "2026-09-29T16:52:28.924226-06:00",
           "api_error": {
             "plan": "Free plans do not have access to the Last parameter."
           }
@@ -176,7 +186,7 @@
     },
     "obed": {
       "name": "Obed Vargas",
-      "player_id": null,
+      "player_id": 313383,
       "targets": {
         "seleccion": {
           "label": "Selección Mexicana",
@@ -202,7 +212,7 @@
     },
     "fidalgo": {
       "name": "Álvaro Fidalgo",
-      "player_id": null,
+      "player_id": 750,
       "targets": {
         "seleccion": {
           "label": "Selección Mexicana",
