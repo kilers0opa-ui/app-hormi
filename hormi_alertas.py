@@ -64,6 +64,7 @@ CONFIG_FILE = Path("hormi_config.json")
 STATE_FILE = Path("hormi_estado.json")     # qué alertas ya se mandaron
 STATUS_FILE = Path("status.json")          # lo que lee la app (dashboard)
 STATS_FILE = Path("player_stats.json")     # historial por competición (Estadísticas)
+PENDING_VIDEOS_FILE = Path("videos_pendientes.json")  # goles a los que hormi_videos.py --gol les buscará video
 
 LOCAL_TZ = timezone(timedelta(hours=-6))   # hora del centro de México
 
@@ -413,7 +414,39 @@ def apply_live_delta(player, target, snap, info):
         f"{row['goals']}G {row['assists']}A)")
 
 
-def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None):
+def register_goal_for_video(key, player_key, team_key):
+    """Anota un gol recién alertado en videos_pendientes.json para que el
+    workflow aparte video-gol.yml (hormi_videos.py --gol) le busque video a
+    los ~15 y ~30 min.
+
+    REGLA: esto NUNCA puede retrasar ni romper una alerta de gol. Por eso se
+    llama SOLO después de que la alerta ya salió (ntfy + FCM), no hace red
+    (solo escribe un archivo local pequeño) y se traga cualquier error. Este
+    archivo lo escribe únicamente el motor de alertas; el lado de videos
+    nunca lo modifica (así los dos workflows jamás chocan al hacer push)."""
+    try:
+        now = datetime.now(timezone.utc)
+        data = load_json(PENDING_VIDEOS_FILE, {"goles": []})
+        goles = data.setdefault("goles", [])
+        if any(g.get("key") == key for g in goles):
+            return
+        cutoff = now - timedelta(hours=6)   # lo viejo ya no le sirve a nadie: se poda aquí
+        goles[:] = [g for g in goles
+                    if datetime.fromisoformat(g["goal_seen_at"]) >= cutoff]
+        goles.append({
+            "key": key,
+            "player_key": player_key,
+            "team_key": team_key,
+            "goal_seen_at": now.isoformat(),
+        })
+        tmp = PENDING_VIDEOS_FILE.with_suffix(".tmp")
+        save_json(tmp, data)
+        os.replace(tmp, PENDING_VIDEOS_FILE)
+    except Exception as err:
+        log(f"ℹ️  No se pudo anotar el gol para buscarle video (la alerta ya salió): {err}")
+
+
+def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None, register_video=True):
     new = 0
     for key, title, message, priority in alerts:
         if key not in sent:
@@ -423,6 +456,10 @@ def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None):
                 fcm.send(tipo, title, message, player_key, team_key)
             sent.add(key)
             new += 1
+            # Va al final, con la alerta ya enviada. No aplica en repeticiones
+            # ni en modo solo-consola.
+            if register_video and key.endswith(":gol") and not getattr(notifier, "console_only", False):
+                register_goal_for_video(key, player_key, team_key)
     return new
 
 
@@ -486,7 +523,7 @@ def replay(args, notifier, config, fcm=None):
                     g["home" if e["team"]["id"] == home_id else "away"] += 1
             snap["goals"] = g
         alerts, _ = analyze(snap, player, target)
-        dispatch(alerts, sent, notifier, fcm, player["key"], target["key"])
+        dispatch(alerts, sent, notifier, fcm, player["key"], target["key"], register_video=False)  # repetición: no es un gol real
         time.sleep(args.velocidad)
     print("\n✅ Repetición terminada.")
 

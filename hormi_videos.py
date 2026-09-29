@@ -25,12 +25,34 @@ Cuota de YouTube Data API (10,000 unidades/día gratis):
   Con 10 jugadores y 2 corridas/día: ~2,000 unidades. El script cuenta las
   unidades que gasta y las imprime al final.
 
+Modo gol (--gol): el video del gol recién metido
+------------------------------------------------
+El motor de alertas (hormi_alertas.py) anota cada gol que alerta en
+videos_pendientes.json. Con --gol, este script busca el clip de ESE gol:
+
+  * Búsqueda con el NOMBRE COMPLETO del jugador ("Armando González"), y el
+    título/descripción del resultado debe contener nombre Y apellido.
+  * Filtrada por fecha: solo videos publicados desde el momento del gol
+    (menos un pequeño margen por el retraso de detección) — así el clip es
+    del gol de hoy, no de uno viejo.
+  * Solo 2 intentos por gol: ~15 y ~30 min después. Si en el segundo no hay
+    video, se omite (no se sigue gastando cuota).
+  * Cuando aparece, manda una segunda notificación: "Ya está el video del
+    gol de La Hormiga".
+  * Tope diario de búsquedas de gol (gol_max_busquedas_dia) para que una
+    tarde con muchos goles no se coma la cuota.
+
+Escribe videos_gol.json (un solo escritor: este modo). videos.json lo
+escribe únicamente la corrida normal; así los dos nunca chocan.
+
 Uso:
   export YOUTUBE_API_KEY="tu_api_key"     # Google Cloud → YouTube Data API v3
   python hormi_videos.py                          # todos los jugadores
   python hormi_videos.py --jugador armando         # solo uno
   python hormi_videos.py --solo noticias           # sin gastar cuota de YouTube
   python hormi_videos.py --solo videos
+  python hormi_videos.py --gol                     # atiende los goles pendientes
+  python hormi_videos.py --gol --sin-notificar     # igual, sin mandar push
 
 Pensado para correr desde GitHub Actions (ver .github/workflows/videos.yml).
 
@@ -55,6 +77,8 @@ from pathlib import Path
 CONFIG_FILE = Path("hormi_config.json")
 SOURCES_FILE = Path("hormi_videos_fuentes.json")
 VIDEOS_FILE = Path("videos.json")
+PENDING_FILE = Path("videos_pendientes.json")   # lo escribe hormi_alertas.py
+GOLES_FILE = Path("videos_gol.json")             # lo escribe SOLO el modo --gol
 
 YT_BASE = "https://www.googleapis.com/youtube/v3"
 NEWS_RSS = "https://news.google.com/rss/search"
@@ -66,6 +90,13 @@ DEFAULTS = {
     "max_noticias": 10,      # tope de noticias guardadas por jugador
     "dias_busqueda": 30,     # la búsqueda de YouTube solo mira lo publicado en los últimos N días
     "dias_retencion": 60,    # lo guardado más viejo que esto se descarta
+    # --- modo --gol
+    "gol_intentos_min": [15, 30],     # minutos después del gol en que se busca (2 intentos, ni uno más)
+    "gol_margen_min": 10,             # el clip puede haberse publicado hasta N min antes de que se detectara el gol
+    "gol_min_entre_intentos": 10,     # si el worker se atrasa, separa los intentos al menos N min
+    "gol_max_busquedas_dia": 40,      # tope de búsquedas de gol al día (40 x 100 = 4,000 unidades)
+    "gol_caducidad_horas": 3,         # un gol pendiente más viejo que esto se omite
+    "gol_retencion_horas": 48,        # cuánto se conserva un gol en videos_gol.json
 }
 
 QUOTA_SEARCH = 100
@@ -157,25 +188,33 @@ def video_entry(video_id, snippet, embeddable):
     }
 
 
-def mentions_player(entry, last_name):
-    """El clip debe nombrar al jugador (apellido) en título o descripción — la
-    búsqueda de YouTube es difusa y a veces devuelve videos que no tienen que ver."""
+def name_tokens(full):
+    return [t for t in re.split(r"\s+", normalize(full)) if t]
+
+
+def mentions_player(entry, tokens):
+    """El clip debe nombrar al jugador con nombre Y apellido (todas las
+    palabras de su nombre completo) en título o descripción. La búsqueda de
+    YouTube es difusa, y un apellido solo ('Mora', 'González') deja pasar
+    videos de otras personas."""
     haystack = normalize(f"{entry.get('title') or ''} {entry.get('_description') or ''}")
-    return normalize(last_name) in haystack
+    return all(re.search(rf"\b{re.escape(t)}\b", haystack) for t in tokens)
 
 
-def search_videos(query, days):
-    published_after = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
+def search_videos(query, days=None, published_after=None, max_results=25):
+    """published_after (datetime UTC) tiene prioridad sobre days."""
+    if published_after is None:
+        published_after = datetime.now(timezone.utc) - timedelta(days=days)
     data = yt_api("search", {
         "part": "snippet",
         "q": query,
         "type": "video",
         "order": "date",
-        "maxResults": 25,
+        "maxResults": max_results,
         "videoEmbeddable": "true",   # la clave: solo clips que sí se pueden reproducir dentro de la app
         "regionCode": "MX",
         "relevanceLanguage": "es",
-        "publishedAfter": published_after,
+        "publishedAfter": published_after.strftime("%Y-%m-%dT%H:%M:%SZ"),
     }, QUOTA_SEARCH)
     if not data:
         return None
@@ -288,7 +327,7 @@ def merge(old, new, key, cap, retention_days):
     cutoff = datetime.now(timezone.utc) - timedelta(days=retention_days)
     by_key = {}
     for entry in list(old or []) + list(new or []):   # el nuevo va después: sobreescribe al viejo
-        by_key[entry[key]] = entry
+        by_key[entry[key]] = {**by_key.get(entry[key], {}), **entry}
     kept = []
     for entry in by_key.values():
         ts = parse_ts(entry.get("published_at"))
@@ -307,6 +346,17 @@ def player_names(player):
     return first.title(), last.title()
 
 
+def full_name(player):
+    """Nombre completo con acentos y sin el apodo entre comillas:
+    'Armando "La Hormiga" González' -> 'Armando González'."""
+    name = re.sub(r'\s*"[^"]*"\s*', " ", player.get("name") or "")
+    name = " ".join(name.split())
+    if name:
+        return name
+    first, last = player_names(player)
+    return f"{first} {last}".strip()
+
+
 def club_label(player):
     for t in player.get("targets", []):
         if t.get("kind") == "club":
@@ -315,22 +365,22 @@ def club_label(player):
 
 
 def build_for_player(player, overrides, settings, do_videos, do_news):
-    first, last = player_names(player)
     club = club_label(player)
-    full = f"{first} {last}".strip()
+    full = full_name(player)
+    tokens = name_tokens(full)
     result = {}
 
     if do_videos:
-        query = overrides.get("query_video") or " ".join(x for x in (full, club) if x)
+        query = overrides.get("query_video") or " ".join(x for x in (f'"{full}"', club) if x)
         log(f"   🎬 videos · búsqueda: {query!r}")
         found = search_videos(query, settings["dias_busqueda"])
         if found is None:
             result["videos"] = None
         else:
-            found = [e for e in found if mentions_player(e, last)]
+            found = [e for e in found if mentions_player(e, tokens)]
             for canal in overrides.get("canales") or []:
                 log(f"   🎬 videos · canal {canal.get('label') or canal.get('channel_id')}")
-                uploads = [e for e in channel_uploads(canal.get("channel_id")) if mentions_player(e, last)]
+                uploads = [e for e in channel_uploads(canal.get("channel_id")) if mentions_player(e, tokens)]
                 fill_embeddable(uploads)
                 # de canales solo entran los que sí se pueden incrustar
                 found += [e for e in uploads if e.get("embeddable") is not False]
@@ -347,11 +397,169 @@ def build_for_player(player, overrides, settings, do_videos, do_news):
 def strip_private(entries):
     return [{k: v for k, v in e.items() if not k.startswith("_")} for e in entries]
 
+# ------------------------------------------------------------- Modo gol --
+
+GOAL_WORDS = ("gol", "goal", "golazo", "anota", "marca")
+
+
+def send_video_push(config, player, video, team_key):
+    """Segunda notificación: 'Ya está el video del gol de X'. Va por ntfy y por
+    FCM (como tipo 'info', así la app NO vuelve a abrir la pantalla de
+    ¡GOOOOL!). Cualquier fallo aquí se registra y se ignora."""
+    try:
+        import hormi_alertas as ha
+    except Exception as err:
+        log(f"     ⚠️  no se pudo cargar hormi_alertas para notificar: {err}")
+        return
+    apodo = player.get("apodo") or player["name"]
+    title = f"🎬 Ya está el video del gol de {apodo}"
+    parts = [video.get("title"), video.get("channel")]
+    message = " · ".join(x for x in parts if x) + " — míralo en la app"
+    try:
+        if config.get("ntfy_topic"):
+            ha.Notifier(config["ntfy_topic"]).send(title, message, 3)
+        fcm = ha.FcmSender(config.get("fcm_project_id"))
+        fcm.send("info", title, message, player["key"], team_key)
+    except Exception as err:
+        log(f"     ⚠️  fallo enviando la notificación del video: {err}")
+
+
+def next_attempt(st, settings, now):
+    """None = todavía no toca · 'normal' | 'final' = toca buscar ·
+    'agotado' | 'caducado' = ya no se busca más."""
+    offsets = settings["gol_intentos_min"]
+    n = st["intentos"]
+    if n >= len(offsets):
+        return "agotado"
+    goal_at = parse_ts(st.get("goal_seen_at"))
+    if goal_at is None:
+        return "agotado"
+    if now - goal_at > timedelta(hours=settings["gol_caducidad_horas"]):
+        return "caducado"
+    if now < goal_at + timedelta(minutes=offsets[n]):
+        return None
+    last = parse_ts(st.get("ultimo_intento"))
+    if last and now - last < timedelta(minutes=settings["gol_min_entre_intentos"]):
+        return None
+    # Si el worker llegó tarde y ya pasó también la hora del último intento,
+    # se hace UNA sola búsqueda y esa es la definitiva (nunca más de 2).
+    late = n == 0 and now >= goal_at + timedelta(minutes=offsets[-1])
+    return "final" if (late or n == len(offsets) - 1) else "normal"
+
+
+def pick_goal_video(candidates):
+    """El clip más probable: primero los que dicen 'gol' en el título; entre
+    ellos, el que se publicó antes (el primero en salir tras el gol)."""
+    def score(e):
+        title = normalize(e.get("title") or "")
+        has_word = any(w in title for w in GOAL_WORDS)
+        return (not has_word, e.get("published_at") or "")
+    return sorted(candidates, key=score)[0]
+
+
+def process_goals(config, settings, sources, notify=True):
+    out = load_json(GOLES_FILE, {"updated_at": None, "cuota": {}, "goles": {}})
+    state = out.setdefault("goles", {})
+    cuota = out.setdefault("cuota", {})
+    pending = (load_json(PENDING_FILE, {"goles": []}).get("goles")) or []
+    players = {p["key"]: p for p in config["players"]}
+    per_player = sources.get("jugadores") or {}
+    now = datetime.now(timezone.utc)
+    changed = False
+
+    # 1) goles nuevos que anotó el motor de alertas
+    for g in pending:
+        key = g.get("key")
+        if key and key not in state and g.get("player_key") in players:
+            state[key] = {
+                "player_key": g["player_key"], "team_key": g.get("team_key"),
+                "goal_seen_at": g.get("goal_seen_at"), "status": "pendiente",
+                "intentos": 0, "fallos": 0, "ultimo_intento": None, "video": None,
+            }
+            changed = True
+
+    # 2) poda de goles viejos
+    cutoff = now - timedelta(hours=settings["gol_retencion_horas"])
+    for key in [k for k, st in state.items()
+                if (parse_ts(st.get("goal_seen_at")) or now) < cutoff]:
+        del state[key]
+        changed = True
+
+    # 3) un intento por gol pendiente al que ya le toca
+    today = f"{datetime.now(LOCAL_TZ):%Y-%m-%d}"
+    if cuota.get("fecha") != today:
+        cuota["fecha"], cuota["busquedas"] = today, 0
+    for key, st in state.items():
+        if st["status"] != "pendiente":
+            continue
+        player = players.get(st["player_key"])
+        if player is None:
+            continue
+        when = next_attempt(st, settings, now)
+        if when is None:
+            continue
+        if when in ("agotado", "caducado"):
+            st["status"], st["motivo"] = "omitido", when
+            changed = True
+            continue
+        if cuota["busquedas"] >= settings["gol_max_busquedas_dia"]:
+            st["status"], st["motivo"] = "omitido", "tope diario de búsquedas"
+            log(f"   ⛔ tope diario de búsquedas de gol alcanzado — se omite {key}")
+            changed = True
+            continue
+
+        full = full_name(player)
+        tokens = name_tokens(full)
+        goal_at = parse_ts(st["goal_seen_at"])
+        since = goal_at - timedelta(minutes=settings["gol_margen_min"])
+        query = (per_player.get(player["key"]) or {}).get("query_video_gol") or f'"{full}" gol'
+        log(f"🔎 gol de {full} · intento {st['intentos'] + 1} · {query!r} · desde {since:%H:%M} UTC")
+        found = search_videos(query, published_after=since, max_results=15)
+        changed = True
+        if found is None:
+            st["fallos"] += 1
+            if _youtube_disabled or st["fallos"] >= 3:
+                st["status"], st["motivo"] = "omitido", "sin acceso a YouTube"
+            continue
+        cuota["busquedas"] += 1
+        st["intentos"] += 1
+        st["ultimo_intento"] = now.isoformat()
+
+        used = {s2["video"]["id"] for k2, s2 in state.items()
+                if k2 != key and s2["player_key"] == st["player_key"]
+                and s2.get("video")}
+        since_iso = since.strftime("%Y-%m-%dT%H:%M:%SZ")
+        candidates = [e for e in found
+                      if mentions_player(e, tokens)
+                      and (e.get("published_at") or "") >= since_iso
+                      and e["id"] not in used]
+        log(f"     {len(found)} resultados · {len(candidates)} válidos")
+        if candidates:
+            video = strip_private([pick_goal_video(candidates)])[0]
+            st["status"], st["video"] = "resuelto", video
+            log(f"     ✅ {video['title']!r} ({video['channel']})")
+            if notify:
+                send_video_push(config, player, video, st.get("team_key"))
+        elif when == "final":
+            st["status"], st["motivo"] = "omitido", "sin video tras los intentos"
+            log("     ⏭️  sin video tras el último intento — se omite")
+
+    if changed:
+        out["updated_at"] = datetime.now(LOCAL_TZ).isoformat()
+        save_json(GOLES_FILE, out)
+        log(f"✅ {GOLES_FILE} actualizado · cuota de YouTube gastada: {_quota_used} unidades")
+    else:
+        log("Nada que atender.")
+
+
 
 def main():
     parser = argparse.ArgumentParser(description="Fase 6 · Videos y noticias")
     parser.add_argument("--jugador", help="Limita a un jugador por su 'key'")
     parser.add_argument("--solo", choices=["videos", "noticias"], help="Corre solo una de las dos fuentes")
+    parser.add_argument("--gol", action="store_true",
+                        help="Atiende los goles pendientes (videos_pendientes.json) y escribe videos_gol.json")
+    parser.add_argument("--sin-notificar", action="store_true", help="Con --gol: no manda la notificación")
     args = parser.parse_args()
 
     config = load_json(CONFIG_FILE, None)
@@ -360,6 +568,10 @@ def main():
     sources = load_json(SOURCES_FILE, {})
     settings = {**DEFAULTS, **(sources.get("config") or {})}
     per_player = sources.get("jugadores") or {}
+
+    if args.gol:
+        process_goals(config, settings, sources, notify=not args.sin_notificar)
+        return
 
     players = config["players"]
     if args.jugador:

@@ -1,0 +1,95 @@
+name: Video del gol - App Hormi
+
+# Busca el video de los goles que el motor de alertas ya avisó (ver
+# hormi_videos.py --gol): 2 intentos por gol, ~15 y ~30 min después. Si en el
+# segundo no hay video, se omite. Cuando aparece manda la notificación
+# "Ya está el video del gol de X".
+#
+# AISLAMIENTO: este workflow es totalmente independiente del motor de
+# alertas. Tiene su PROPIO grupo de concurrencia (nunca entra a la cola de
+# hormi-chequeo), corre en su propia máquina, escribe solo videos_gol.json y
+# lee (nunca modifica) videos_pendientes.json. Si falla o se atrasa, las
+# alertas de gol no se enteran.
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:       # para poder correrlo manual desde la pestaña Actions
+
+concurrency:
+  group: hormi-video-gol
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # necesario para que el workflow pueda hacer commit/push de videos_gol.json
+
+jobs:
+  video-gol:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      # Casi siempre no hay nada que hacer: esta revisión (sin instalar nada,
+      # sin llamar a ninguna API) deja el resto de los pasos en "skipped".
+      - name: ¿Hay goles esperando su video?
+        id: check
+        run: |
+          python3 - <<'EOF' >> "$GITHUB_OUTPUT"
+          import json
+          from datetime import datetime, timedelta, timezone
+
+          def load(path):
+              try:
+                  with open(path, encoding="utf-8") as f:
+                      return json.load(f)
+              except Exception:
+                  return {}
+
+          now = datetime.now(timezone.utc)
+          state = load("videos_gol.json").get("goles", {})
+          hay = False
+          for g in load("videos_pendientes.json").get("goles", []):
+              try:
+                  seen = datetime.fromisoformat(g["goal_seen_at"])
+              except Exception:
+                  continue
+              if now - seen > timedelta(hours=3):
+                  continue
+              st = state.get(g.get("key"))
+              if st is None or st.get("status") == "pendiente":
+                  hay = True
+          print("hay=" + str(hay).lower())
+          EOF
+
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.hay == 'true'
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias (push real vía FCM)
+        if: steps.check.outputs.hay == 'true'
+        run: pip install google-auth
+
+      - name: Buscar video de los goles (videos_gol.json)
+        if: steps.check.outputs.hay == 'true'
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
+        run: python hormi_videos.py --gol
+
+      - name: Subir videos_gol.json
+        if: steps.check.outputs.hay == 'true'
+        run: |
+          git config user.name "app-hormi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add videos_gol.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: actualiza videos de gol (Fase 6) [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              sleep 5
+            done
+          else
+            echo "Sin cambios que subir."
+          fi
