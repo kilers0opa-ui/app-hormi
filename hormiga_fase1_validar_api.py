@@ -119,6 +119,34 @@ def api(endpoint, params, use_cache=True):
 
 
 # ---------------------------------------------------------------- pasos
+RESERVE_WORDS = {"w", "women", "femenino", "feminine", "b", "ii", "reserves", "youth", "academy", "juvenil"}
+
+
+def is_reserve_or_women(name):
+    """Equipos femeniles, filiales y juveniles ('Porto B', 'Betis W', 'Mexico U23'):
+    la búsqueda por nombre los devuelve mezclados con el equipo principal, y el
+    orden no es fiable — no deben ganarle al primer equipo."""
+    tokens = norm(name).replace(".", " ").split()
+    return any(t in RESERVE_WORDS or (t.startswith("u") and t[1:].isdigit()) for t in tokens)
+
+
+def pick_team(teams, target):
+    """Entre los resultados que coinciden en país y tipo (club/selección), elige
+    el primer equipo: descarta femenil/filial/juvenil y prefiere el nombre
+    idéntico a la búsqueda. Devuelve (elegido, candidatos)."""
+    is_national = target["kind"] == "seleccion"
+    candidates = [t["team"] for t in teams
+                  if t["team"].get("country") == target.get("country")
+                  and bool(t["team"].get("national")) == is_national]
+    if not candidates:
+        return None, []
+    wanted = norm(target.get("search") or "")
+    ranked = sorted(enumerate(candidates),
+                    key=lambda ic: (is_reserve_or_women(ic[1]["name"]),
+                                    norm(ic[1]["name"]) != wanted, ic[0]))
+    return ranked[0][1], candidates
+
+
 def find_team(target, args):
     print("\n1) Equipo")
     if target.get("team_id"):
@@ -127,23 +155,16 @@ def find_team(target, args):
 
     is_national = target["kind"] == "seleccion"
     teams = api("/teams", {"search": target["search"]}, args.cache) or []
-    for t in teams:
-        team = t["team"]
-        same_country = team.get("country") == target.get("country")
-        if is_national and same_country and team.get("national"):
-            check(target, "Selección encontrada", True,
-                  f"{team['name']} (id {team['id']})")
-            target["team_id"] = team["id"]
-            if team.get("logo"):
-                target["crest_url"] = team["logo"]
-            return team["id"]
-        if not is_national and same_country and not team.get("national"):
-            check(target, "Equipo encontrado", True,
-                  f"{team['name']} (id {team['id']})")
-            target["team_id"] = team["id"]
-            if team.get("logo"):
-                target["crest_url"] = team["logo"]
-            return team["id"]
+    team, candidates = pick_team(teams, target)
+    if team:
+        others = [f"{c['name']} (id {c['id']})" for c in candidates if c["id"] != team["id"]]
+        extra = f" · otros candidatos descartados: {', '.join(others)}" if others else ""
+        check(target, "Selección encontrada" if is_national else "Equipo encontrado", True,
+              f"{team['name']} (id {team['id']}){extra}")
+        target["team_id"] = team["id"]
+        if team.get("logo"):
+            target["crest_url"] = team["logo"]
+        return team["id"]
     names = ", ".join(f"{t['team']['name']} ({t['team'].get('country')})" for t in teams) or "ninguno"
     check(target, "Equipo/Selección encontrado", False,
           f"no coincidió con country='{target.get('country')}'. Resultados de la búsqueda: {names}")
@@ -197,6 +218,23 @@ def find_player(target, args, team_id, player):
             check(target, f"{player['name']} encontrado en la plantilla", False,
                   f"hay {len(candidates)} jugadores mexicanos con ese nombre — resuélvelo a mano: "
                   f"{ids}. Pasa --jugador {player['key']} --player-id <id>")
+            return None
+        # Nadie con ese nombre figura como mexicano en la API (la nacionalidad
+        # registrada puede ser la de nacimiento: Argentina, EE. UU., España...).
+        # No se adivina, pero se muestran los que coinciden por nombre para
+        # poder elegir a mano con --player-id.
+        by_name = []
+        for p in profiles:
+            info = p["player"]
+            full = norm(f"{info.get('firstname')} {info.get('lastname')} {info.get('name')}")
+            if first in full and last in full:
+                birth = (info.get("birth") or {}).get("country")
+                by_name.append(f"{info['name']} (id {info['id']}, nacionalidad {info.get('nationality')}"
+                               f"{', nació en ' + birth if birth else ''}, {info.get('age')} años)")
+        if by_name:
+            check(target, f"{player['name']} encontrado en la plantilla", False,
+                  f"ninguno figura con nacionalidad mexicana; coinciden por nombre: "
+                  f"{'; '.join(by_name[:5])}. Si uno es él, pasa --jugador {player['key']} --player-id <id>")
             return None
         check(target, f"{player['name']} encontrado en la plantilla", False,
               f"error de API: {first_error} (tampoco se encontró por /players/profiles "
