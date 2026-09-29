@@ -89,7 +89,7 @@ DEFAULTS = {
     "max_videos": 10,        # tope de videos guardados por jugador
     "max_noticias": 10,      # tope de noticias guardadas por jugador
     "dias_busqueda": 30,     # la búsqueda de YouTube solo mira lo publicado en los últimos N días
-    "dias_retencion": 60,    # lo guardado más viejo que esto se descarta
+    "dias_retencion": 30,    # lo guardado más viejo que esto se descarta. Las políticas de la API de YouTube exigen borrar o refrescar sus datos a los 30 días: NO subir de 30
     # --- modo --gol
     "gol_intentos_min": [15, 30],     # minutos después del gol en que se busca (2 intentos, ni uno más)
     "gol_margen_min": 10,             # el clip puede haberse publicado hasta N min antes de que se detectara el gol
