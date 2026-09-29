@@ -9,106 +9,26 @@
           "key": "olympiacos",
           "label": "Olympiacos",
           "team_id": 553,
-          "checks": []
-        },
-        {
-          "key": "seleccion",
-          "label": "Selección Mexicana",
-          "team_id": 16,
-          "checks": []
-        }
-      ]
-    },
-    {
-      "key": "raul",
-      "name": "Raúl Jiménez",
-      "player_id": 2887,
-      "targets": [
-        {
-          "key": "wolves",
-          "label": "Wolves",
-          "team_id": 39,
-          "checks": []
-        },
-        {
-          "key": "seleccion",
-          "label": "Selección Mexicana",
-          "team_id": 16,
-          "checks": []
-        }
-      ]
-    },
-    {
-      "key": "quinones",
-      "name": "Julián Quiñones",
-      "player_id": null,
-      "targets": [
-        {
-          "key": "al_qadsiah",
-          "label": "Al-Qadsiah",
-          "team_id": null,
-          "checks": []
-        },
-        {
-          "key": "seleccion",
-          "label": "Selección Mexicana",
-          "team_id": 16,
-          "checks": []
-        }
-      ]
-    },
-    {
-      "key": "mora",
-      "name": "Gilberto Mora",
-      "player_id": null,
-      "targets": [
-        {
-          "key": "tijuana",
-          "label": "Tijuana",
-          "team_id": 2280,
-          "checks": []
-        },
-        {
-          "key": "seleccion",
-          "label": "Selección Mexicana",
-          "team_id": 16,
-          "checks": []
-        }
-      ]
-    },
-    {
-      "key": "vasquez",
-      "name": "Johan Vásquez",
-      "player_id": 35544,
-      "targets": [
-        {
-          "key": "genoa",
-          "label": "Genoa",
-          "team_id": 495,
-          "checks": []
-        },
-        {
-          "key": "seleccion",
-          "label": "Selección Mexicana",
-          "team_id": 16,
-          "checks": []
-        }
-      ]
-    },
-    {
-      "key": "gimenez",
-      "name": "Santiago Giménez",
-      "player_id": null,
-      "targets": [
-        {
-          "key": "porto",
-          "label": "Porto",
-          "team_id": null,
           "checks": [
             {
-              "check": "Equipo/Selección encontrado",
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 553"
+            },
+            {
+              "check": "Armando \"La Hormiga\" González (id conocido)",
+              "ok": true,
+              "detalle": "id 291713"
+            },
+            {
+              "check": "Stats de temporada disponibles",
               "ok": false,
-              "detalle": "no coincidió con country='Portugal'. Resultados de la búsqueda: ninguno"
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
             }
           ]
         },
@@ -123,7 +43,155 @@
               "detalle": "id 16"
             },
             {
-              "check": "Santiago Giménez encontrado en la plantilla",
+              "check": "Armando \"La Hormiga\" González (id conocido)",
+              "ok": true,
+              "detalle": "id 291713"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "raul",
+      "name": "Raúl Jiménez",
+      "player_id": 2887,
+      "targets": [
+        {
+          "key": "wolves",
+          "label": "Wolves",
+          "team_id": 39,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 39"
+            },
+            {
+              "check": "Raúl Jiménez (id conocido)",
+              "ok": true,
+              "detalle": "id 2887"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Raúl Jiménez (id conocido)",
+              "ok": true,
+              "detalle": "id 2887"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "quinones",
+      "name": "Julián Quiñones",
+      "player_id": null,
+      "targets": [
+        {
+          "key": "al_qadsiah",
+          "label": "Al-Qadsiah",
+          "team_id": null,
+          "checks": [
+            {
+              "check": "Equipo/Selección encontrado",
+              "ok": false,
+              "detalle": "no coincidió con country='Saudi Arabia'. Resultados de la búsqueda: ninguno"
+            }
+          ]
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Julián Quiñones encontrado en la plantilla",
+              "ok": false,
+              "detalle": "ninguno figura con nacionalidad mexicana; coinciden por nombre: J. Quiñónes (id 13361, nacionalidad Colombia, nació en Colombia, 36 años); J. Quiñones (id 35532, nacionalidad Colombia, nació en Colombia, 29 años). Si uno es él, pasa --jugador quinones --player-id <id>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "mora",
+      "name": "Gilberto Mora",
+      "player_id": null,
+      "targets": [
+        {
+          "key": "tijuana",
+          "label": "Tijuana",
+          "team_id": 2280,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 2280"
+            },
+            {
+              "check": "Gilberto Mora encontrado en la plantilla",
+              "ok": false,
+              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'} (tampoco se encontró por /players/profiles con nacionalidad mexicana)"
+            }
+          ]
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Gilberto Mora encontrado en la plantilla",
               "ok": false,
               "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'} (tampoco se encontró por /players/profiles con nacionalidad mexicana)"
             }
@@ -132,21 +200,328 @@
       ]
     },
     {
-      "key": "chavez",
-      "name": "Mateo Chávez",
-      "player_id": null,
+      "key": "vasquez",
+      "name": "Johan Vásquez",
+      "player_id": 35544,
       "targets": [
         {
-          "key": "az_alkmaar",
-          "label": "AZ Alkmaar",
-          "team_id": null,
-          "checks": []
+          "key": "genoa",
+          "label": "Genoa",
+          "team_id": 495,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 495"
+            },
+            {
+              "check": "Johan Vásquez (id conocido)",
+              "ok": true,
+              "detalle": "id 35544"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
         },
         {
           "key": "seleccion",
           "label": "Selección Mexicana",
           "team_id": 16,
-          "checks": []
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Johan Vásquez (id conocido)",
+              "ok": true,
+              "detalle": "id 35544"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "gimenez",
+      "name": "Santiago Giménez",
+      "player_id": 94562,
+      "targets": [
+        {
+          "key": "porto",
+          "label": "Porto",
+          "team_id": 212,
+          "checks": [
+            {
+              "check": "Equipo encontrado",
+              "ok": true,
+              "detalle": "FC Porto (id 212) · otros candidatos descartados: FC Porto B (id 243), AD Portomosense (id 6347), Porto Cruz (id 6363), Porto U19 (id 7922), Desportos de Glória (id 17381), Portosantense (id 22087), Porto W (id 28057), FC Porto U21 (id 28185)"
+            },
+            {
+              "check": "Santiago Giménez encontrado (perfil, sin equipo/temporada todavía)",
+              "ok": true,
+              "detalle": "S. Giménez · id 94562 · Mexico"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Santiago Giménez (id conocido)",
+              "ok": true,
+              "detalle": "id 94562"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "chavez",
+      "name": "Mateo Chávez",
+      "player_id": 390002,
+      "targets": [
+        {
+          "key": "az_alkmaar",
+          "label": "AZ Alkmaar",
+          "team_id": 201,
+          "checks": [
+            {
+              "check": "Equipo encontrado",
+              "ok": true,
+              "detalle": "AZ Alkmaar (id 201)"
+            },
+            {
+              "check": "Mateo Chávez encontrado (perfil, sin equipo/temporada todavía)",
+              "ok": true,
+              "detalle": "M. Chávez · id 390002 · Mexico"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Mateo Chávez (id conocido)",
+              "ok": true,
+              "detalle": "id 390002"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "obed",
+      "name": "Obed Vargas",
+      "player_id": null,
+      "targets": [
+        {
+          "key": "atletico_madrid",
+          "label": "Atlético Madrid",
+          "team_id": 530,
+          "checks": [
+            {
+              "check": "Equipo encontrado",
+              "ok": true,
+              "detalle": "Atletico Madrid (id 530) · otros candidatos descartados: Atletico Madrid W (id 1910), Atlético Madrid U19 (id 7884), Atlético Madrid II (id 9570)"
+            },
+            {
+              "check": "Obed Vargas encontrado en la plantilla",
+              "ok": false,
+              "detalle": "ninguno figura con nacionalidad mexicana; coinciden por nombre: Rafael Escobedo Vargas (id 183623, nacionalidad Spain, nació en Spain, 32 años); O. Vargas (id 313383, nacionalidad USA, nació en USA, 21 años). Si uno es él, pasa --jugador obed --player-id <id>"
+            }
+          ]
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Obed Vargas encontrado en la plantilla",
+              "ok": false,
+              "detalle": "ninguno figura con nacionalidad mexicana; coinciden por nombre: Rafael Escobedo Vargas (id 183623, nacionalidad Spain, nació en Spain, 32 años); O. Vargas (id 313383, nacionalidad USA, nació en USA, 21 años). Si uno es él, pasa --jugador obed --player-id <id>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "fidalgo",
+      "name": "Álvaro Fidalgo",
+      "player_id": null,
+      "targets": [
+        {
+          "key": "betis",
+          "label": "Real Betis",
+          "team_id": 543,
+          "checks": [
+            {
+              "check": "Equipo encontrado",
+              "ok": true,
+              "detalle": "Real Betis (id 543) · otros candidatos descartados: Real Betis W (id 1907), Real Betis II (id 9765), Real Betis U19 (id 25195)"
+            },
+            {
+              "check": "Álvaro Fidalgo encontrado en la plantilla",
+              "ok": false,
+              "detalle": "ninguno figura con nacionalidad mexicana; coinciden por nombre: Álvaro Fidalgo (id 750, nacionalidad Spain, nació en Spain, 29 años). Si uno es él, pasa --jugador fidalgo --player-id <id>"
+            }
+          ]
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Álvaro Fidalgo encontrado en la plantilla",
+              "ok": false,
+              "detalle": "ninguno figura con nacionalidad mexicana; coinciden por nombre: Álvaro Fidalgo (id 750, nacionalidad Spain, nació en Spain, 29 años). Si uno es él, pasa --jugador fidalgo --player-id <id>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "huescas",
+      "name": "Rodrigo Huescas",
+      "player_id": 310199,
+      "targets": [
+        {
+          "key": "copenhague",
+          "label": "FC Copenhague",
+          "team_id": 400,
+          "checks": [
+            {
+              "check": "Equipo encontrado",
+              "ok": true,
+              "detalle": "FC Copenhagen (id 400) · otros candidatos descartados: FC Copenhagen W (id 27632)"
+            },
+            {
+              "check": "Rodrigo Huescas encontrado (perfil, sin equipo/temporada todavía)",
+              "ok": true,
+              "detalle": "R. Huescas · id 310199 · Mexico"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": [
+            {
+              "check": "Equipo (id conocido)",
+              "ok": true,
+              "detalle": "id 16"
+            },
+            {
+              "check": "Rodrigo Huescas (id conocido)",
+              "ok": true,
+              "detalle": "id 310199"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": false,
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
+            }
+          ]
         }
       ]
     }

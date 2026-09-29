@@ -224,7 +224,7 @@
       "key": "gimenez",
       "name": "Santiago Giménez",
       "apodo": "El Chaquito",
-      "player_id": null,
+      "player_id": 94562,
       "player_search_term": "Gimenez",
       "search_first_name": "santiago",
       "search_last_name": "gimenez",
@@ -233,11 +233,12 @@
           "key": "porto",
           "label": "Porto",
           "emoji": "🔵",
-          "team_id": null,
+          "team_id": 212,
           "search": "Porto",
           "country": "Portugal",
           "season": 2026,
-          "kind": "club"
+          "kind": "club",
+          "crest_url": "https://media.api-sports.io/football/teams/212.png"
         },
         {
           "key": "seleccion",
@@ -266,7 +267,7 @@
       "key": "chavez",
       "name": "Mateo Chávez",
       "apodo": "Mateo",
-      "player_id": null,
+      "player_id": 390002,
       "player_search_term": "Chavez",
       "search_first_name": "mateo",
       "search_last_name": "chavez",
@@ -275,11 +276,12 @@
           "key": "az_alkmaar",
           "label": "AZ Alkmaar",
           "emoji": "🔴",
-          "team_id": null,
+          "team_id": 201,
           "search": "AZ Alkmaar",
           "country": "Netherlands",
           "season": 2026,
-          "kind": "club"
+          "kind": "club",
+          "crest_url": "https://media.api-sports.io/football/teams/201.png"
         },
         {
           "key": "seleccion",
@@ -315,11 +317,12 @@
           "key": "atletico_madrid",
           "label": "Atlético Madrid",
           "emoji": "🔴",
-          "team_id": null,
+          "team_id": 530,
           "search": "Atletico Madrid",
           "country": "Spain",
           "season": 2026,
-          "kind": "club"
+          "kind": "club",
+          "crest_url": "https://media.api-sports.io/football/teams/530.png"
         },
         {
           "key": "seleccion",
@@ -354,11 +357,12 @@
           "key": "betis",
           "label": "Real Betis",
           "emoji": "🟢",
-          "team_id": null,
+          "team_id": 543,
           "search": "Real Betis",
           "country": "Spain",
           "season": 2026,
-          "kind": "club"
+          "kind": "club",
+          "crest_url": "https://media.api-sports.io/football/teams/543.png"
         },
         {
           "key": "seleccion",
@@ -388,7 +392,7 @@
       "key": "huescas",
       "name": "Rodrigo Huescas",
       "apodo": "Huescas",
-      "player_id": null,
+      "player_id": 310199,
       "player_search_term": "Huescas",
       "search_first_name": "rodrigo",
       "search_last_name": "huescas",
@@ -397,11 +401,12 @@
           "key": "copenhague",
           "label": "FC Copenhague",
           "emoji": "⚪",
-          "team_id": null,
+          "team_id": 400,
           "search": "FC Copenhagen",
           "country": "Denmark",
           "season": 2026,
-          "kind": "club"
+          "kind": "club",
+          "crest_url": "https://media.api-sports.io/football/teams/400.png"
         },
         {
           "key": "seleccion",
