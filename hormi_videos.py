@@ -16,7 +16,7 @@ sección "Videos y noticias":
                un Custom Tab.
 
 Noticias: solo titulares que nombran al jugador (apellido + nombre o apodo),
-sin títulos repetidos y pocas (max_noticias, 3 por defecto). Videos: max_videos
+sin títulos repetidos y pocas (max_noticias, 2 por defecto). Videos: max_videos
 (5 por defecto).
 
 Qué escribe: videos.json — aparte de player_stats.json y
@@ -91,7 +91,7 @@ LOCAL_TZ = timezone(timedelta(hours=-6))
 
 DEFAULTS = {
     "max_videos": 5,         # tope de videos guardados por jugador
-    "max_noticias": 3,       # tope de noticias guardadas por jugador (pocas y buenas, no un feed)
+    "max_noticias": 2,       # tope de noticias guardadas por jugador (pocas y buenas, no un feed)
     "dias_busqueda": 30,     # la búsqueda de YouTube solo mira lo publicado en los últimos N días
     "dias_retencion": 30,    # lo guardado más viejo que esto se descarta. Las políticas de la API de YouTube exigen borrar o refrescar sus datos a los 30 días: NO subir de 30
     # --- modo --gol
