@@ -47,26 +47,35 @@
           "key": "al_qadsiah",
           "label": "Al-Qadsiah",
           "team_id": 2933,
+          "checks": []
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "team_id": 16,
+          "checks": []
+        }
+      ]
+    },
+    {
+      "key": "mora",
+      "name": "Gilberto Mora",
+      "player_id": null,
+      "targets": [
+        {
+          "key": "tijuana",
+          "label": "Tijuana",
+          "team_id": 2280,
           "checks": [
             {
-              "check": "Equipo encontrado",
+              "check": "Equipo (id conocido)",
               "ok": true,
-              "detalle": "Al-Qadisiyah FC (id 2933)"
+              "detalle": "id 2280"
             },
             {
-              "check": "Julián Quiñones (id conocido)",
-              "ok": true,
-              "detalle": "id 35532"
-            },
-            {
-              "check": "Stats de temporada disponibles",
+              "check": "Gilberto Mora encontrado en la plantilla",
               "ok": false,
-              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
-            },
-            {
-              "check": "Calendario disponible",
-              "ok": false,
-              "detalle": ""
+              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'} (tampoco se encontró por /players/profiles con nacionalidad mexicana)"
             }
           ]
         },
@@ -81,40 +90,11 @@
               "detalle": "id 16"
             },
             {
-              "check": "Julián Quiñones (id conocido)",
-              "ok": true,
-              "detalle": "id 35532"
-            },
-            {
-              "check": "Stats de temporada disponibles",
+              "check": "Gilberto Mora encontrado en la plantilla",
               "ok": false,
-              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
-            },
-            {
-              "check": "Calendario disponible",
-              "ok": false,
-              "detalle": ""
+              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'} (tampoco se encontró por /players/profiles con nacionalidad mexicana)"
             }
           ]
-        }
-      ]
-    },
-    {
-      "key": "mora",
-      "name": "Gilberto Mora",
-      "player_id": null,
-      "targets": [
-        {
-          "key": "tijuana",
-          "label": "Tijuana",
-          "team_id": 2280,
-          "checks": []
-        },
-        {
-          "key": "seleccion",
-          "label": "Selección Mexicana",
-          "team_id": 16,
-          "checks": []
         }
       ]
     },
