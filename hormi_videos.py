@@ -39,7 +39,8 @@ FINAL· un evento por partido (aunque jueguen varios del roster).
          "resumen/highlights/goles…" y nombrar a los DOS equipos (tolera
          variantes tipo Olympiacos/Olympiakos; ver "equipos" en el archivo de
          fuentes); solo si algún jugador del roster tuvo minutos.
-       - "resumen_notificar" (apagado) manda "Ya está el resumen".
+       - Al aparecer el resumen manda "Ya está disponible el resumen del partido de {jugador}",
+         una por cada jugador del roster que tuvo minutos (resumen_notificar; False lo apaga).
 Si un intento falla o no hay nada, se omite: nunca se sigue gastando cuota.
 
 Uso:
@@ -95,7 +96,7 @@ DEFAULTS = {
     "resumen_margen_min": 10,             # el resumen puede haberse publicado hasta N min antes de que se detectara el final
     "resumen_max_busquedas_dia": 20,      # de las 50 búsquedas del día, máximo 20 pueden ser de resúmenes: los goles siempre conservan cuota
     "resumen_solo_con_minutos": True,     # solo se busca resumen si algún jugador del roster tuvo minutos
-    "resumen_notificar": False,           # True = manda "Ya está el resumen" (apagado por defecto para no saturar de notificaciones)
+    "resumen_notificar": True,            # manda "Ya está disponible el resumen del partido de {jugador}" cuando el resumen aparece (False = apagado)
 }
 
 QUOTA_SEARCH = 100
@@ -518,19 +519,35 @@ def is_match_summary(entry, home_pref, away_pref):
 
 
 def send_summary_push(config, players, video, st):
-    """Opcional (resumen_notificar): 'Ya está el resumen'. Tipo 'info'."""
+    """Notificación 'Ya está disponible el resumen del partido de {jugador}'.
+    Una por cada jugador del roster que tuvo minutos en ese partido (cada una
+    llega por el canal de ese jugador, así la app respeta lo que el usuario
+    tenga activado). Solo se llama cuando el resumen SÍ se encontró. Va por
+    ntfy y por FCM como tipo 'info'. Cualquier fallo se registra y se ignora."""
     try:
         import hormi_alertas as ha
-        title = f"🎬 Ya está el resumen: {st.get('home')} vs {st.get('away')}"
-        message = " · ".join(x for x in (video.get("title"), video.get("channel")) if x) + " — míralo en la app"
-        if config.get("ntfy_topic"):
-            ha.Notifier(config["ntfy_topic"]).send(title, message, 3)
-        fcm = ha.FcmSender(config.get("fcm_project_id"))
-        for pk, j in st["jugadores"].items():
-            if pk in players and (j.get("minutes") or 0) > 0:
-                fcm.send("info", title, message, pk, j.get("team_key"))
     except Exception as err:
-        log(f"     ⚠️  fallo enviando la notificación del resumen: {err}")
+        log(f"     ⚠️  no se pudo cargar hormi_alertas para notificar: {err}")
+        return
+    detalle = " · ".join(x for x in (st.get("score"), video.get("title"), video.get("channel")) if x)
+    message = f"{detalle} — míralo en la app"
+    try:
+        notifier = ha.Notifier(config["ntfy_topic"]) if config.get("ntfy_topic") else None
+        fcm = ha.FcmSender(config.get("fcm_project_id"))
+    except Exception as err:
+        log(f"     ⚠️  fallo preparando la notificación del resumen: {err}")
+        return
+    for pk, j in st["jugadores"].items():
+        player = players.get(pk)
+        if player is None or (j.get("minutes") or 0) <= 0:
+            continue
+        title = f"🎬 Ya está disponible el resumen del partido de {full_name(player)}"
+        try:
+            if notifier:
+                notifier.send(title, message, 3)
+            fcm.send("info", title, message, pk, j.get("team_key"))
+        except Exception as err:
+            log(f"     ⚠️  fallo enviando la notificación del resumen ({pk}): {err}")
 
 
 def _finales_step(out, config, settings, sources, notify, now):
