@@ -22,6 +22,10 @@ on:
           - obed
           - fidalgo
           - huescas
+      player_id:
+        description: "Solo si un jugador no se encontró solo: su id de API-Football (requiere elegir jugador arriba). Vacío = buscarlo automáticamente."
+        type: string
+        default: ""
 
 concurrency:
   group: hormi-chequeo   # mismo grupo que el motor: nunca corren al mismo tiempo (evita choques de git push)
@@ -49,7 +53,11 @@ jobs:
         # encontrados, quedan guardados para las siguientes corridas).
         run: |
           if [ -n "${{ inputs.jugador }}" ]; then
-            python hormiga_fase1_validar_api.py --jugador "${{ inputs.jugador }}"
+            if [ -n "${{ inputs.player_id }}" ]; then
+              python hormiga_fase1_validar_api.py --jugador "${{ inputs.jugador }}" --player-id "${{ inputs.player_id }}"
+            else
+              python hormiga_fase1_validar_api.py --jugador "${{ inputs.jugador }}"
+            fi
           else
             python hormiga_fase1_validar_api.py
           fi
