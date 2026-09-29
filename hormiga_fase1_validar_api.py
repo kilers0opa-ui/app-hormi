@@ -175,6 +175,7 @@ def find_player(target, args, team_id, player):
     print("\n2) Jugador")
     if args.player_id:
         check(target, f"{player['name']} (id manual)", True, f"id {args.player_id}")
+        player["player_id"] = args.player_id
         return args.player_id
     if player.get("player_id"):
         check(target, f"{player['name']} (id conocido)", True, f"id {player['player_id']}")
