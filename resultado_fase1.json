@@ -46,12 +46,27 @@
         {
           "key": "al_qadsiah",
           "label": "Al-Qadsiah",
-          "team_id": null,
+          "team_id": 2933,
           "checks": [
             {
-              "check": "Equipo/Selección encontrado",
+              "check": "Equipo encontrado",
+              "ok": true,
+              "detalle": "Al-Qadisiyah FC (id 2933)"
+            },
+            {
+              "check": "Julián Quiñones (id conocido)",
+              "ok": true,
+              "detalle": "id 35532"
+            },
+            {
+              "check": "Stats de temporada disponibles",
               "ok": false,
-              "detalle": "no coincidió con country='Saudi Arabia'. Resultados de la búsqueda: Al-Qadisiyah FC (Saudi-Arabia), Al Qadisiyah Bani Walid (Libya)"
+              "detalle": "sin datos (¿el plan gratuito no cubre esta temporada?)"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": false,
+              "detalle": ""
             }
           ]
         },
