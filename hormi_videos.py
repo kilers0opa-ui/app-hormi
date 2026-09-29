@@ -94,7 +94,7 @@ DEFAULTS = {
     "gol_intentos_min": [15, 30],     # minutos después del gol en que se busca (2 intentos, ni uno más)
     "gol_margen_min": 10,             # el clip puede haberse publicado hasta N min antes de que se detectara el gol
     "gol_min_entre_intentos": 10,     # si el worker se atrasa, separa los intentos al menos N min
-    "gol_max_busquedas_dia": 40,      # tope de búsquedas de gol al día (40 x 100 = 4,000 unidades)
+    "gol_max_busquedas_dia": 50,      # tope de búsquedas de gol al día (50 x 100 = 5,000 unidades, la mitad de la cuota gratis)
     "gol_caducidad_horas": 3,         # un gol pendiente más viejo que esto se omite
     "gol_retencion_horas": 48,        # cuánto se conserva un gol en videos_gol.json
 }
