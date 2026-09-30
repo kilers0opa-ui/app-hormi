@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T03:15:29.327511-06:00",
+  "updated_at": "2026-09-30T03:19:05.703020-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -497,6 +497,1080 @@
             "goals": 0,
             "assists": 0,
             "minutes": 180
+          }
+        ]
+      },
+      "applied_fixtures": {}
+    },
+    "quinones": {
+      "seasons": {
+        "2022": [
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2283,
+            "team_name": "Atlas",
+            "team_logo": "https://media.api-sports.io/football/teams/2283.png",
+            "played": 35,
+            "goals": 18,
+            "assists": 2,
+            "minutes": 3118
+          },
+          {
+            "league_id": 866,
+            "league_name": "MLS All-Star",
+            "league_logo": "https://media.api-sports.io/football/leagues/866.png",
+            "team_id": 17664,
+            "team_name": "Liga MX All-Stars",
+            "team_logo": "https://media.api-sports.io/football/teams/17664.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 46
+          },
+          {
+            "league_id": 885,
+            "league_name": "Campeones Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/885.png",
+            "team_id": 2283,
+            "team_name": "Atlas",
+            "team_logo": "https://media.api-sports.io/football/teams/2283.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 90
+          }
+        ],
+        "2023": [
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2283,
+            "team_name": "Atlas",
+            "team_logo": "https://media.api-sports.io/football/teams/2283.png",
+            "played": 0,
+            "goals": 0,
+            "assists": 7,
+            "minutes": 0
+          },
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2287,
+            "team_name": "Club America",
+            "team_logo": "https://media.api-sports.io/football/teams/2287.png",
+            "played": 41,
+            "goals": 18,
+            "assists": 7,
+            "minutes": 2845
+          },
+          {
+            "league_id": 772,
+            "league_name": "Leagues Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/772.png",
+            "team_id": 2287,
+            "team_name": "Club America",
+            "team_logo": "https://media.api-sports.io/football/teams/2287.png",
+            "played": 2,
+            "goals": 1,
+            "assists": 1,
+            "minutes": 158
+          },
+          {
+            "league_id": 16,
+            "league_name": "CONCACAF Champions League",
+            "league_logo": "https://media.api-sports.io/football/leagues/16.png",
+            "team_id": 2283,
+            "team_name": "Atlas",
+            "team_logo": "https://media.api-sports.io/football/teams/2283.png",
+            "played": 2,
+            "goals": 1,
+            "assists": 1,
+            "minutes": 158
+          },
+          {
+            "league_id": 667,
+            "league_name": "Friendlies Clubs",
+            "league_logo": "https://media.api-sports.io/football/leagues/667.png",
+            "team_id": 2287,
+            "team_name": "Club America",
+            "team_logo": "https://media.api-sports.io/football/teams/2287.png",
+            "played": 1,
+            "goals": 2,
+            "assists": 0,
+            "minutes": 62
+          },
+          {
+            "league_id": 536,
+            "league_name": "CONCACAF Nations League",
+            "league_logo": "https://media.api-sports.io/football/leagues/536.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 3,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 126
+          }
+        ],
+        "2024": [
+          {
+            "league_id": 826,
+            "league_name": "Super Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/826.png",
+            "team_id": 2933,
+            "team_name": "Al-Qadisiyah FC",
+            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
+            "played": 3,
+            "goals": 2,
+            "assists": 0,
+            "minutes": 262
+          },
+          {
+            "league_id": null,
+            "league_name": "King's Cup",
+            "league_logo": null,
+            "team_id": 2933,
+            "team_name": "Al-Qadisiyah FC",
+            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
+            "played": 41,
+            "goals": 18,
+            "assists": 7,
+            "minutes": 2845
+          },
+          {
+            "league_id": 16,
+            "league_name": "CONCACAF Champions League",
+            "league_logo": "https://media.api-sports.io/football/leagues/16.png",
+            "team_id": 2287,
+            "team_name": "Club America",
+            "team_logo": "https://media.api-sports.io/football/teams/2287.png",
+            "played": 7,
+            "goals": 3,
+            "assists": 2,
+            "minutes": 601
+          },
+          {
+            "league_id": 9,
+            "league_name": "Copa America",
+            "league_logo": "https://media.api-sports.io/football/leagues/9.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 254
+          },
+          {
+            "league_id": 10,
+            "league_name": "Friendlies",
+            "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 162
+          },
+          {
+            "league_id": 307,
+            "league_name": "Pro League",
+            "league_logo": "https://media.api-sports.io/football/leagues/307.png",
+            "team_id": 2933,
+            "team_name": "Al-Qadisiyah FC",
+            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
+            "played": 29,
+            "goals": 20,
+            "assists": 5,
+            "minutes": 2442
+          },
+          {
+            "league_id": 536,
+            "league_name": "CONCACAF Nations League",
+            "league_logo": "https://media.api-sports.io/football/leagues/536.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 2,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 68
+          }
+        ]
+      },
+      "applied_fixtures": {}
+    },
+    "gimenez": {
+      "seasons": {
+        "2022": [
+          {
+            "league_id": 88,
+            "league_name": "Eredivisie",
+            "league_logo": "https://media.api-sports.io/football/leagues/88.png",
+            "team_id": 209,
+            "team_name": "Feyenoord",
+            "team_logo": "https://media.api-sports.io/football/teams/209.png",
+            "played": 32,
+            "goals": 15,
+            "assists": 2,
+            "minutes": 1925
+          },
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2295,
+            "team_name": "Cruz Azul",
+            "team_logo": "https://media.api-sports.io/football/teams/2295.png",
+            "played": 5,
+            "goals": 5,
+            "assists": 0,
+            "minutes": 409
+          },
+          {
+            "league_id": 90,
+            "league_name": "KNVB Beker",
+            "league_logo": "https://media.api-sports.io/football/leagues/90.png",
+            "team_id": 209,
+            "team_name": "Feyenoord",
+            "team_logo": "https://media.api-sports.io/football/teams/209.png",
+            "played": 4,
+            "goals": 3,
+            "assists": 0,
+            "minutes": 260
+          },
+          {
+            "league_id": 3,
+            "league_name": "UEFA Europa League",
+            "league_logo": "https://media.api-sports.io/football/leagues/3.png",
+            "team_id": 209,
+            "team_name": "Feyenoord",
+            "team_logo": "https://media.api-sports.io/football/teams/209.png",
+            "played": 9,
+            "goals": 5,
+            "assists": 0,
+            "minutes": 439
+          },
+          {
+            "league_id": 667,
+            "league_name": "Friendlies Clubs",
+            "league_logo": "https://media.api-sports.io/football/leagues/667.png",
+            "team_id": 209,
+            "team_name": "Feyenoord",
+            "team_logo": "https://media.api-sports.io/football/teams/209.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 176
+          },
+          {
+            "league_id": 16,
+            "league_name": "CONCACAF Champions League",
+            "league_logo": "https://media.api-sports.io/football/leagues/16.png",
+            "team_id": 2295,
+            "team_name": "Cruz Azul",
+            "team_logo": "https://media.api-sports.io/football/teams/2295.png",
+            "played": 6,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 354
+          },
+          {
+            "league_id": 536,
+            "league_name": "CONCACAF Nations League",
+            "league_logo": "https://media.api-sports.io/football/leagues/536.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 1,
+            "minutes": 133
+          },
+          {
+            "league_id": 10,
+            "league_name": "Friendlies",
+            "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 5,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 216
+          }
+        ],
+        "2023": [
+          {
+            "league_id": 543,
+            "league_name": "Super Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/543.png",
+            "team_id": 209,
+            "team_name": "Feyenoord",
+            "team_logo": "https://media.api-sports.io/football/teams/209.png",
+            "played": 1,
+            "goals": 2,
+            "assists": 1,
+            "minutes": 69
+          },
+          {
+            "league_id": 88,
+            "league_name": "Eredivisie",
+            "league_logo": "https://media.api-sports.io/football/leagues/88.png",
+            "team_id": 209,
+            "team_name": "Feyenoord",
+            "team_logo": "https://media.api-sports.io/football/teams/209.png",
+            "played": 30,
+            "goals": 23,
+            "assists": 6,
+            "minutes": 2384
+          },
+          {
+            "league_id": 90,
+            "league_name": "KNVB Beker",
+            "league_logo": "https://media.api-sports.io/football/leagues/90.png",
+            "team_id": 209,
+            "team_name": "Feyenoord",
+            "team_logo": "https://media.api-sports.io/football/teams/209.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 304
+          },
+          {
+            "league_id": 3,
+            "league_name": "UEFA Europa League",
+            "league_logo": "https://media.api-sports.io/football/leagues/3.png",
+            "team_id": 209,
+            "team_name": "Feyenoord",
+            "team_logo": "https://media.api-sports.io/football/teams/209.png",
+            "played": 2,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 105
+          },
+          {
+            "league_id": 2,
+            "league_name": "UEFA Champions League",
+            "league_logo": "https://media.api-sports.io/football/leagues/2.png",
+            "team_id": 209,
+            "team_name": "Feyenoord",
+            "team_logo": "https://media.api-sports.io/football/teams/209.png",
+            "played": 4,
+            "goals": 2,
+            "assists": 1,
+            "minutes": 349
+          },
+          {
+            "league_id": 667,
+            "league_name": "Friendlies Clubs",
+            "league_logo": "https://media.api-sports.io/football/leagues/667.png",
+            "team_id": 209,
+            "team_name": "Feyenoord",
+            "team_logo": "https://media.api-sports.io/football/teams/209.png",
+            "played": 1,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 46
+          },
+          {
+            "league_id": 536,
+            "league_name": "CONCACAF Nations League",
+            "league_logo": "https://media.api-sports.io/football/leagues/536.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 1,
+            "minutes": 133
+          },
+          {
+            "league_id": 22,
+            "league_name": "CONCACAF Gold Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/22.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 1,
+            "minutes": 133
+          },
+          {
+            "league_id": 10,
+            "league_name": "Friendlies",
+            "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 167
+          }
+        ],
+        "2024": [
+          {
+            "league_id": 2,
+            "league_name": "UEFA Champions League",
+            "league_logo": "https://media.api-sports.io/football/leagues/2.png",
+            "team_id": 209,
+            "team_name": "Feyenoord",
+            "team_logo": "https://media.api-sports.io/football/teams/209.png",
+            "played": 5,
+            "goals": 5,
+            "assists": 1,
+            "minutes": 295
+          },
+          {
+            "league_id": 135,
+            "league_name": "Serie A",
+            "league_logo": "https://media.api-sports.io/football/leagues/135.png",
+            "team_id": 489,
+            "team_name": "AC Milan",
+            "team_logo": "https://media.api-sports.io/football/teams/489.png",
+            "played": 14,
+            "goals": 5,
+            "assists": 2,
+            "minutes": 676
+          },
+          {
+            "league_id": 88,
+            "league_name": "Eredivisie",
+            "league_logo": "https://media.api-sports.io/football/leagues/88.png",
+            "team_id": 209,
+            "team_name": "Feyenoord",
+            "team_logo": "https://media.api-sports.io/football/teams/209.png",
+            "played": 11,
+            "goals": 7,
+            "assists": 1,
+            "minutes": 770
+          },
+          {
+            "league_id": 2,
+            "league_name": "UEFA Champions League",
+            "league_logo": "https://media.api-sports.io/football/leagues/2.png",
+            "team_id": 489,
+            "team_name": "AC Milan",
+            "team_logo": "https://media.api-sports.io/football/teams/489.png",
+            "played": 5,
+            "goals": 5,
+            "assists": 1,
+            "minutes": 295
+          },
+          {
+            "league_id": 9,
+            "league_name": "Copa America",
+            "league_logo": "https://media.api-sports.io/football/leagues/9.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 219
+          },
+          {
+            "league_id": 10,
+            "league_name": "Friendlies",
+            "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 222
+          },
+          {
+            "league_id": 137,
+            "league_name": "Coppa Italia",
+            "league_logo": "https://media.api-sports.io/football/leagues/137.png",
+            "team_id": 489,
+            "team_name": "AC Milan",
+            "team_logo": "https://media.api-sports.io/football/teams/489.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 74
+          },
+          {
+            "league_id": 90,
+            "league_name": "KNVB Beker",
+            "league_logo": "https://media.api-sports.io/football/leagues/90.png",
+            "team_id": 209,
+            "team_name": "Feyenoord",
+            "team_logo": "https://media.api-sports.io/football/teams/209.png",
+            "played": 1,
+            "goals": 2,
+            "assists": 0,
+            "minutes": 65
+          },
+          {
+            "league_id": 536,
+            "league_name": "CONCACAF Nations League",
+            "league_logo": "https://media.api-sports.io/football/leagues/536.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 2,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 169
+          }
+        ]
+      },
+      "applied_fixtures": {}
+    },
+    "chavez": {
+      "seasons": {
+        "2022": [
+          {
+            "league_id": 263,
+            "league_name": "Liga de Expansión MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/263.png",
+            "team_id": 14278,
+            "team_name": "Tapatío",
+            "team_logo": "https://media.api-sports.io/football/teams/14278.png",
+            "played": 27,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 2026
+          }
+        ],
+        "2023": [
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2278,
+            "team_name": "Guadalajara Chivas",
+            "team_logo": "https://media.api-sports.io/football/teams/2278.png",
+            "played": 11,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 746
+          },
+          {
+            "league_id": 263,
+            "league_name": "Liga de Expansión MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/263.png",
+            "team_id": 14278,
+            "team_name": "Tapatío",
+            "team_logo": "https://media.api-sports.io/football/teams/14278.png",
+            "played": 12,
+            "goals": 2,
+            "assists": 0,
+            "minutes": 1054
+          }
+        ],
+        "2024": [
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2278,
+            "team_name": "Guadalajara Chivas",
+            "team_logo": "https://media.api-sports.io/football/teams/2278.png",
+            "played": 26,
+            "goals": 0,
+            "assists": 4,
+            "minutes": 1787
+          },
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 14278,
+            "team_name": "Tapatío",
+            "team_logo": "https://media.api-sports.io/football/teams/14278.png",
+            "played": 0,
+            "goals": 0,
+            "assists": 4,
+            "minutes": 0
+          },
+          {
+            "league_id": 16,
+            "league_name": "CONCACAF Champions League",
+            "league_logo": "https://media.api-sports.io/football/leagues/16.png",
+            "team_id": 2278,
+            "team_name": "Guadalajara Chivas",
+            "team_logo": "https://media.api-sports.io/football/teams/2278.png",
+            "played": 2,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 178
+          },
+          {
+            "league_id": 772,
+            "league_name": "Leagues Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/772.png",
+            "team_id": 2278,
+            "team_name": "Guadalajara Chivas",
+            "team_logo": "https://media.api-sports.io/football/teams/2278.png",
+            "played": 2,
+            "goals": 0,
+            "assists": 1,
+            "minutes": 93
+          }
+        ]
+      },
+      "applied_fixtures": {}
+    },
+    "obed": {
+      "seasons": {
+        "2022": [
+          {
+            "league_id": 253,
+            "league_name": "Major League Soccer",
+            "league_logo": "https://media.api-sports.io/football/leagues/253.png",
+            "team_id": 1595,
+            "team_name": "Seattle Sounders",
+            "team_logo": "https://media.api-sports.io/football/teams/1595.png",
+            "played": 13,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 854
+          },
+          {
+            "league_id": 257,
+            "league_name": "US Open Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/257.png",
+            "team_id": 1595,
+            "team_name": "Seattle Sounders",
+            "team_logo": "https://media.api-sports.io/football/teams/1595.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 44
+          },
+          {
+            "league_id": 16,
+            "league_name": "CONCACAF Champions League",
+            "league_logo": "https://media.api-sports.io/football/leagues/16.png",
+            "team_id": 1595,
+            "team_name": "Seattle Sounders",
+            "team_logo": "https://media.api-sports.io/football/teams/1595.png",
+            "played": 7,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 378
+          }
+        ],
+        "2023": [
+          {
+            "league_id": 253,
+            "league_name": "Major League Soccer",
+            "league_logo": "https://media.api-sports.io/football/leagues/253.png",
+            "team_id": 1595,
+            "team_name": "Seattle Sounders",
+            "team_logo": "https://media.api-sports.io/football/teams/1595.png",
+            "played": 24,
+            "goals": 0,
+            "assists": 1,
+            "minutes": 1342
+          },
+          {
+            "league_id": 257,
+            "league_name": "US Open Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/257.png",
+            "team_id": 1595,
+            "team_name": "Seattle Sounders",
+            "team_logo": "https://media.api-sports.io/football/teams/1595.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 102
+          },
+          {
+            "league_id": 772,
+            "league_name": "Leagues Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/772.png",
+            "team_id": 1595,
+            "team_name": "Seattle Sounders",
+            "team_logo": "https://media.api-sports.io/football/teams/1595.png",
+            "played": 2,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 79
+          },
+          {
+            "league_id": 490,
+            "league_name": "World Cup - U20",
+            "league_logo": "https://media.api-sports.io/football/leagues/490.png",
+            "team_id": 10306,
+            "team_name": "United States U20",
+            "team_logo": "https://media.api-sports.io/football/teams/10306.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 175
+          }
+        ],
+        "2024": [
+          {
+            "league_id": 253,
+            "league_name": "Major League Soccer",
+            "league_logo": "https://media.api-sports.io/football/leagues/253.png",
+            "team_id": 1595,
+            "team_name": "Seattle Sounders",
+            "team_logo": "https://media.api-sports.io/football/teams/1595.png",
+            "played": 33,
+            "goals": 1,
+            "assists": 2,
+            "minutes": 2843
+          },
+          {
+            "league_id": 257,
+            "league_name": "US Open Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/257.png",
+            "team_id": 1595,
+            "team_name": "Seattle Sounders",
+            "team_logo": "https://media.api-sports.io/football/teams/1595.png",
+            "played": 2,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 99
+          },
+          {
+            "league_id": 772,
+            "league_name": "Leagues Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/772.png",
+            "team_id": 1595,
+            "team_name": "Seattle Sounders",
+            "team_logo": "https://media.api-sports.io/football/teams/1595.png",
+            "played": 5,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 398
+          },
+          {
+            "league_id": 10,
+            "league_name": "Friendlies",
+            "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 7
+          }
+        ]
+      },
+      "applied_fixtures": {}
+    },
+    "fidalgo": {
+      "seasons": {
+        "2022": [
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2287,
+            "team_name": "Club America",
+            "team_logo": "https://media.api-sports.io/football/teams/2287.png",
+            "played": 41,
+            "goals": 3,
+            "assists": 9,
+            "minutes": 3226
+          },
+          {
+            "league_id": 866,
+            "league_name": "MLS All-Star",
+            "league_logo": "https://media.api-sports.io/football/leagues/866.png",
+            "team_id": 17664,
+            "team_name": "Liga MX All-Stars",
+            "team_logo": "https://media.api-sports.io/football/teams/17664.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 29
+          },
+          {
+            "league_id": 667,
+            "league_name": "Friendlies Clubs",
+            "league_logo": "https://media.api-sports.io/football/leagues/667.png",
+            "team_id": 2287,
+            "team_name": "Club America",
+            "team_logo": "https://media.api-sports.io/football/teams/2287.png",
+            "played": 3,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 153
+          }
+        ],
+        "2023": [
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2287,
+            "team_name": "Club America",
+            "team_logo": "https://media.api-sports.io/football/teams/2287.png",
+            "played": 41,
+            "goals": 2,
+            "assists": 6,
+            "minutes": 3391
+          },
+          {
+            "league_id": 667,
+            "league_name": "Friendlies Clubs",
+            "league_logo": "https://media.api-sports.io/football/leagues/667.png",
+            "team_id": 2287,
+            "team_name": "Club America",
+            "team_logo": "https://media.api-sports.io/football/teams/2287.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 28
+          },
+          {
+            "league_id": 772,
+            "league_name": "Leagues Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/772.png",
+            "team_id": 2287,
+            "team_name": "Club America",
+            "team_logo": "https://media.api-sports.io/football/teams/2287.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 360
+          }
+        ],
+        "2024": [
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2287,
+            "team_name": "Club America",
+            "team_logo": "https://media.api-sports.io/football/teams/2287.png",
+            "played": 42,
+            "goals": 8,
+            "assists": 8,
+            "minutes": 3315
+          },
+          {
+            "league_id": 866,
+            "league_name": "MLS All-Star",
+            "league_logo": "https://media.api-sports.io/football/leagues/866.png",
+            "team_id": 17664,
+            "team_name": "Liga MX All-Stars",
+            "team_logo": "https://media.api-sports.io/football/teams/17664.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 35
+          },
+          {
+            "league_id": 16,
+            "league_name": "CONCACAF Champions League",
+            "league_logo": "https://media.api-sports.io/football/leagues/16.png",
+            "team_id": 2287,
+            "team_name": "Club America",
+            "team_logo": "https://media.api-sports.io/football/teams/2287.png",
+            "played": 8,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 641
+          },
+          {
+            "league_id": 772,
+            "league_name": "Leagues Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/772.png",
+            "team_id": 2287,
+            "team_name": "Club America",
+            "team_logo": "https://media.api-sports.io/football/teams/2287.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 270
+          },
+          {
+            "league_id": 885,
+            "league_name": "Campeones Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/885.png",
+            "team_id": 2287,
+            "team_name": "Club America",
+            "team_logo": "https://media.api-sports.io/football/teams/2287.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 90
+          }
+        ]
+      },
+      "applied_fixtures": {}
+    },
+    "huescas": {
+      "seasons": {
+        "2022": [
+          {
+            "league_id": 1016,
+            "league_name": "CAC Games",
+            "league_logo": "https://media.api-sports.io/football/leagues/1016.png",
+            "team_id": 10178,
+            "team_name": "Mexico U23",
+            "team_logo": "https://media.api-sports.io/football/teams/10178.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 270
+          },
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2295,
+            "team_name": "Cruz Azul",
+            "team_logo": "https://media.api-sports.io/football/teams/2295.png",
+            "played": 31,
+            "goals": 4,
+            "assists": 5,
+            "minutes": 1685
+          },
+          {
+            "league_id": 16,
+            "league_name": "CONCACAF Champions League",
+            "league_logo": "https://media.api-sports.io/football/leagues/16.png",
+            "team_id": 2295,
+            "team_name": "Cruz Azul",
+            "team_logo": "https://media.api-sports.io/football/teams/2295.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 33
+          }
+        ],
+        "2023": [
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2295,
+            "team_name": "Cruz Azul",
+            "team_logo": "https://media.api-sports.io/football/teams/2295.png",
+            "played": 39,
+            "goals": 2,
+            "assists": 8,
+            "minutes": 2548
+          },
+          {
+            "league_id": 772,
+            "league_name": "Leagues Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/772.png",
+            "team_id": 2295,
+            "team_name": "Cruz Azul",
+            "team_logo": "https://media.api-sports.io/football/teams/2295.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 30
+          },
+          {
+            "league_id": null,
+            "league_name": "CAC Games",
+            "league_logo": null,
+            "team_id": 10178,
+            "team_name": "Mexico U23",
+            "team_logo": "https://media.api-sports.io/football/teams/10178.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 270
+          }
+        ],
+        "2024": [
+          {
+            "league_id": 119,
+            "league_name": "Superliga",
+            "league_logo": "https://media.api-sports.io/football/leagues/119.png",
+            "team_id": 400,
+            "team_name": "FC Copenhagen",
+            "team_logo": "https://media.api-sports.io/football/teams/400.png",
+            "played": 25,
+            "goals": 1,
+            "assists": 2,
+            "minutes": 1421
+          },
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2295,
+            "team_name": "Cruz Azul",
+            "team_logo": "https://media.api-sports.io/football/teams/2295.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 90
+          },
+          {
+            "league_id": 121,
+            "league_name": "DBU Pokalen",
+            "league_logo": "https://media.api-sports.io/football/leagues/121.png",
+            "team_id": 400,
+            "team_name": "FC Copenhagen",
+            "team_logo": "https://media.api-sports.io/football/teams/400.png",
+            "played": 39,
+            "goals": 2,
+            "assists": 8,
+            "minutes": 2548
+          },
+          {
+            "league_id": 848,
+            "league_name": "UEFA Europa Conference League",
+            "league_logo": "https://media.api-sports.io/football/leagues/848.png",
+            "team_id": 400,
+            "team_name": "FC Copenhagen",
+            "team_logo": "https://media.api-sports.io/football/teams/400.png",
+            "played": 13,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 598
+          },
+          {
+            "league_id": 10,
+            "league_name": "Friendlies",
+            "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 44
+          },
+          {
+            "league_id": 914,
+            "league_name": "Tournoi Maurice Revello",
+            "league_logo": "https://media.api-sports.io/football/leagues/914.png",
+            "team_id": 10178,
+            "team_name": "Mexico U23",
+            "team_logo": "https://media.api-sports.io/football/teams/10178.png",
+            "played": 3,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 232
+          },
+          {
+            "league_id": 536,
+            "league_name": "CONCACAF Nations League",
+            "league_logo": "https://media.api-sports.io/football/leagues/536.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 66
           }
         ]
       },
