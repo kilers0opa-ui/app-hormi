@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T06:14:29.361107-06:00",
+  "updated_at": "2026-09-30T06:23:13.326242-06:00",
   "teams": {
     "genoa": {
       "label": "Genoa",
@@ -92,6 +92,213 @@
           "total_teams": 36,
           "league_id": 262,
           "league_name": "Liga MX"
+        }
+      ]
+    },
+    "al_qadsiah": {
+      "label": "Al-Qadsiah",
+      "player_key": "quinones",
+      "standings": [
+        {
+          "season": 2024,
+          "group": "Saudi League",
+          "rank": 4,
+          "points": 68,
+          "played": 34,
+          "win": 21,
+          "draw": 5,
+          "lose": 8,
+          "goals_for": 53,
+          "goals_against": 31,
+          "goals_diff": 22,
+          "form": "LWWWW",
+          "status": "same",
+          "description": null,
+          "total_teams": 18,
+          "league_id": 307,
+          "league_name": "Pro League"
+        }
+      ]
+    },
+    "porto": {
+      "label": "Porto",
+      "player_key": "gimenez",
+      "standings": [
+        {
+          "season": 2024,
+          "group": "Primeira Liga",
+          "rank": 3,
+          "points": 71,
+          "played": 34,
+          "win": 22,
+          "draw": 5,
+          "lose": 7,
+          "goals_for": 65,
+          "goals_against": 30,
+          "goals_diff": 35,
+          "form": "WWWLW",
+          "status": "same",
+          "description": "Promotion - Europa League (League phase: )",
+          "total_teams": 18,
+          "league_id": 94,
+          "league_name": "Primeira Liga"
+        }
+      ]
+    },
+    "az_alkmaar": {
+      "label": "AZ Alkmaar",
+      "player_key": "chavez",
+      "standings": [
+        {
+          "season": 2024,
+          "group": "Eredivisie",
+          "rank": 5,
+          "points": 57,
+          "played": 34,
+          "win": 16,
+          "draw": 9,
+          "lose": 9,
+          "goals_for": 58,
+          "goals_against": 37,
+          "goals_diff": 21,
+          "form": "DWWWD",
+          "status": "same",
+          "description": "Promotion - Eredivisie (Conference League - Play Offs: )",
+          "total_teams": 18,
+          "league_id": 88,
+          "league_name": "Eredivisie"
+        },
+        {
+          "season": 2024,
+          "group": "UEFA Europa League",
+          "rank": 19,
+          "points": 11,
+          "played": 8,
+          "win": 3,
+          "draw": 2,
+          "lose": 3,
+          "goals_for": 13,
+          "goals_against": 13,
+          "goals_diff": 0,
+          "form": "LWDDW",
+          "status": "same",
+          "description": "Promotion - Europa League (Play Offs: 1/16-finals)",
+          "total_teams": 36,
+          "league_id": 3,
+          "league_name": "UEFA Europa League"
+        }
+      ]
+    },
+    "atletico_madrid": {
+      "label": "Atlético Madrid",
+      "player_key": "obed",
+      "standings": [
+        {
+          "season": 2024,
+          "group": "LaLiga",
+          "rank": 3,
+          "points": 76,
+          "played": 38,
+          "win": 22,
+          "draw": 10,
+          "lose": 6,
+          "goals_for": 68,
+          "goals_against": 30,
+          "goals_diff": 38,
+          "form": "WWLWD",
+          "status": "same",
+          "description": "Champions League",
+          "total_teams": 20,
+          "league_id": 140,
+          "league_name": "La Liga"
+        },
+        {
+          "season": 2024,
+          "group": "UEFA Champions League",
+          "rank": 5,
+          "points": 18,
+          "played": 8,
+          "win": 6,
+          "draw": 0,
+          "lose": 2,
+          "goals_for": 20,
+          "goals_against": 12,
+          "goals_diff": 8,
+          "form": "WWWWW",
+          "status": "same",
+          "description": "Promotion - Champions League (Play Offs: 1/8-finals)",
+          "total_teams": 36,
+          "league_id": 2,
+          "league_name": "UEFA Champions League"
+        }
+      ]
+    },
+    "betis": {
+      "label": "Real Betis",
+      "player_key": "fidalgo",
+      "standings": [
+        {
+          "season": 2024,
+          "group": "LaLiga",
+          "rank": 6,
+          "points": 60,
+          "played": 38,
+          "win": 16,
+          "draw": 12,
+          "lose": 10,
+          "goals_for": 57,
+          "goals_against": 50,
+          "goals_diff": 7,
+          "form": "DLDDW",
+          "status": "same",
+          "description": "UEFA Europa League",
+          "total_teams": 20,
+          "league_id": 140,
+          "league_name": "La Liga"
+        }
+      ]
+    },
+    "copenhague": {
+      "label": "FC Copenhague",
+      "player_key": "huescas",
+      "standings": [
+        {
+          "season": 2024,
+          "group": "Superliga: Championship Round",
+          "rank": 1,
+          "points": 63,
+          "played": 32,
+          "win": 18,
+          "draw": 9,
+          "lose": 5,
+          "goals_for": 60,
+          "goals_against": 33,
+          "goals_diff": 27,
+          "form": "WWDWW",
+          "status": "same",
+          "description": "Promotion - Champions League (Qualification)",
+          "total_teams": 24,
+          "league_id": 119,
+          "league_name": "Superliga"
+        },
+        {
+          "season": 2024,
+          "group": "UEFA Conference League",
+          "rank": 18,
+          "points": 8,
+          "played": 6,
+          "win": 2,
+          "draw": 2,
+          "lose": 2,
+          "goals_for": 8,
+          "goals_against": 9,
+          "goals_diff": -1,
+          "form": "LWWDD",
+          "status": "same",
+          "description": "Promotion - Conference League (Play Offs: 1/16-finals)",
+          "total_teams": 36,
+          "league_id": 848,
+          "league_name": "UEFA Europa Conference League"
         }
       ]
     }
