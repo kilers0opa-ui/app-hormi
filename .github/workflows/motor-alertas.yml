@@ -2,21 +2,30 @@ name: Motor de alertas - App Hormi
 
 on:
   schedule:
-    # Cada 5 minutos. Es barato: si no hay partido cerca, el script no
-    # gasta ninguna petición de la API (ver hormi_alertas.py, modo chequeo).
+    # El cron de GitHub NO es puntual: pedir "cada 5 min" en la práctica corre
+    # cada ~20-30 min (medido). Por eso el modo "vigilar": cuando hay un partido
+    # en curso o por empezar, UNA corrida se queda viva y revisa cada minuto
+    # (ver hormi_alertas.py). Este cron solo es el arranque y la red de
+    # seguridad. Si no hay partido cerca, la corrida hace una pasada y sale.
     - cron: "*/5 * * * *"
   workflow_dispatch:       # para poder correrlo manual desde la pestaña Actions
     inputs:
       modo:
-        description: "chequeo (normal) o prueba (manda un push de prueba por ntfy y FCM)"
+        description: "vigilar (normal) · chequeo (una sola pasada) · prueba (push de prueba por ntfy y FCM)"
         type: choice
-        default: chequeo
+        default: vigilar
         options:
+          - vigilar
           - chequeo
           - prueba
 
+# GRUPO PROPIO: una corrida "vigilar" puede durar horas. Si compartiera grupo
+# con historial/tabla/transferencias/fase1 (grupo hormi-chequeo), las dejaría
+# esperando todo el partido, y como GitHub solo guarda UNA corrida pendiente
+# por grupo, las programadas se cancelarían. Los choques de git se manejan con
+# pull --rebase + reintentos (aquí y en esos workflows).
 concurrency:
-  group: hormi-chequeo
+  group: hormi-motor
   cancel-in-progress: false   # nunca corta una corrida a medias
 
 permissions:
@@ -25,6 +34,7 @@ permissions:
 jobs:
   chequeo:
     runs-on: ubuntu-latest
+    timeout-minutes: 350   # un poco más que MAX_VIGILAR (5 h 40 min) de hormi_alertas.py
     steps:
       - uses: actions/checkout@v4
 
@@ -35,26 +45,33 @@ jobs:
       - name: Instalar dependencias (push real vía FCM)
         run: pip install google-auth
 
-      - name: Chequeo
-        env:
-          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
-          FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
-        run: python hormi_alertas.py "${{ inputs.modo || 'chequeo' }}"
-
-      - name: Guardar estado (status.json, hormi_estado.json, hormi_horario.json, player_stats.json)
-        if: ${{ (inputs.modo || 'chequeo') == 'chequeo' }}
+      - name: Configurar git
         run: |
           git config user.name "app-hormi-bot"
           git config user.email "actions@users.noreply.github.com"
+
+      - name: Motor
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+          FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
+          # En modo vigilar el script sube el estado a git él mismo en cada pasada con novedades.
+          HORMI_GIT_PUSH: "1"
+        run: python hormi_alertas.py "${{ inputs.modo || 'vigilar' }}"
+
+      - name: Guardar estado (status.json, hormi_estado.json, hormi_horario.json, player_stats.json)
+        # !cancelled(): también si el motor salió con error, para no perder lo ya avisado.
+        if: ${{ !cancelled() && (inputs.modo || 'vigilar') != 'prueba' }}
+        run: |
           git add status.json hormi_estado.json hormi_horario.json player_stats.json
           # Solo existe después del primer gol alertado. Protegido con '|| true' para que,
           # pase lo que pase con este archivo, el guardado del estado de las alertas nunca falle por él.
           [ -f videos_pendientes.json ] && git add videos_pendientes.json || true
           if ! git diff --cached --quiet; then
             git commit -m "chore: actualiza estado del chequeo [skip ci]"
-            # Por si otro workflow (fase1-manual) subió algo justo antes:
-            git pull --rebase origin main
-            git push
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              sleep 5
+            done
           else
             echo "Sin cambios que subir."
           fi

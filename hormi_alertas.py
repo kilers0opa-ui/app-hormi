@@ -34,6 +34,13 @@ Modos:
       es el modo pensado para correr cada pocos minutos desde un cron en
       la nube (GitHub Actions) — no se queda corriendo, entra y sale.
 
+  python hormi_alertas.py vigilar
+      Lo que usa el workflow: igual que "chequeo", pero si hay un partido en
+      curso o por empezar se queda vivo y repite la pasada cada minuto
+      (hasta que no quede ningún partido por vigilar). Evita el atraso del
+      cron de GitHub. Con HORMI_GIT_PUSH=1 publica el estado a git en cada
+      pasada donde haya algo nuevo.
+
 Requisitos: Python 3.9+, sin librerías externas. Variable APIFOOTBALL_KEY
 (no se necesita en modo repetición, que usa solo la caché).
 
@@ -50,6 +57,7 @@ import argparse
 import json
 import os
 import secrets
+import subprocess
 import sys
 import time
 import urllib.error
@@ -200,11 +208,15 @@ class FcmSender:
     """
     TOPIC = "hormi_alerts"
     SCOPE = "https://www.googleapis.com/auth/firebase.messaging"
+    TOKEN_MAX_AGE = 45 * 60   # el token de Google dura 60 min; en modo "vigilar" el proceso vive horas, hay que renovarlo
 
     def __init__(self, project_id):
         self.project_id = project_id
         self.enabled = False
         self._token = None
+        self._token_at = 0.0
+        self._creds = None
+        self._request = None
 
         sa_json = os.environ.get("FCM_SERVICE_ACCOUNT_JSON")
         if not project_id:
@@ -217,13 +229,18 @@ class FcmSender:
             from google.oauth2 import service_account
             import google.auth.transport.requests
             info = json.loads(sa_json)
-            creds = service_account.Credentials.from_service_account_info(
+            self._creds = service_account.Credentials.from_service_account_info(
                 info, scopes=[self.SCOPE])
-            creds.refresh(google.auth.transport.requests.Request())
-            self._token = creds.token
+            self._request = google.auth.transport.requests.Request()
+            self._refresh_token()
             self.enabled = True
         except Exception as err:
             log(f"⚠️  FCM: no se pudo autenticar con la cuenta de servicio — {err}")
+
+    def _refresh_token(self):
+        self._creds.refresh(self._request)
+        self._token = self._creds.token
+        self._token_at = time.time()
 
     def send(self, tipo, title, body, player_key=None, team_key=None):
         """tipo: 'goal' (dispara la pantalla de ¡GOOOOL! en la app) o
@@ -234,12 +251,22 @@ class FcmSender:
         app elija la imagen de fondo correcta en notificaciones de gol."""
         if not self.enabled:
             return
+        if time.time() - self._token_at > self.TOKEN_MAX_AGE:
+            try:
+                self._refresh_token()
+            except Exception as err:
+                log(f"⚠️  FCM: no se pudo renovar el token — {err} (se intenta con el anterior)")
         url = f"https://fcm.googleapis.com/v1/projects/{self.project_id}/messages:send"
         payload = {
             "message": {
                 "topic": self.TOPIC,
                 "data": {"type": tipo, "title": title, "body": body,
                          "player_key": player_key or "", "team_key": team_key or ""},
+                # Mensajes de solo-datos con prioridad normal los puede retrasar
+                # el modo Doze del teléfono (minutos u horas). HIGH los entrega
+                # al instante. TTL: un aviso de gol que no se pudo entregar en
+                # 30 min ya no sirve — mejor descartarlo que llegar tarde.
+                "android": {"priority": "HIGH", "ttl": "1800s"},
             }
         }
         req = urllib.request.Request(
@@ -349,16 +376,23 @@ def analyze(data, player, target):
 
     summary = None
     if status in FINISHED:
-        if role == "titular":
-            played = out_minute or 90
-        elif entered:
-            played = max(1, (out_minute or 90) - in_minute)
+        if not data.get("lineups"):
+            # Sin alineación no se pueden saber los minutos: no afirmar
+            # "No tuvo minutos" (sería falso) ni sumar nada a las estadísticas.
+            detalle = "Sin datos de minutos para este partido"
+            if goals or assists:
+                detalle += f" · {goals} gol(es) · {assists} asistencia(s)"
         else:
-            played = 0
-        detalle = (f"{played} min · {goals} gol(es) · {assists} asistencia(s)") \
-            if played else "No tuvo minutos."
+            if role == "titular":
+                played = out_minute or 90
+            elif entered:
+                played = max(1, (out_minute or 90) - in_minute)
+            else:
+                played = 0
+            detalle = (f"{played} min · {goals} gol(es) · {assists} asistencia(s)") \
+                if played else "No tuvo minutos."
+            summary = {"minutes": played, "goals": goals, "assists": assists}
         add("final", f"🏁 {emoji} Final {label} ({apodo}): {score()}", detalle, 3)
-        summary = {"minutes": played, "goals": goals, "assists": assists}
 
     current_status = "no_convocado" if data.get("lineups") and role is None else \
         role or ("en_cancha" if status in LIVE else
@@ -378,7 +412,9 @@ def apply_live_delta(player, target, snap, info):
     conteo. Usa el fixture_id para no sumar el mismo partido dos veces —
     check_once() lo sigue viendo hasta VENTANA_DESPUES después del final."""
     summary = info.get("summary")
-    if not summary:
+    # Sin minutos (no convocado, o en banca sin entrar) no cuenta como partido
+    # jugado: antes sumaba +1 PJ con 0 minutos.
+    if not summary or not summary.get("minutes"):
         return
 
     stats = load_json(STATS_FILE, {"updated_at": None, "players": {}})
@@ -618,18 +654,21 @@ def schedule_stale(entry):
     if not entry:
         return True
     now = datetime.now(LOCAL_TZ)
-    kickoff = _parse(entry.get("kickoff"))
-    if kickoff and now > kickoff + VENTANA_DESPUES:
-        return True  # ese partido ya se jugó, hay que buscar el siguiente
     refreshed = _parse(entry.get("refreshed_at"))
     if not refreshed or now - refreshed > timedelta(hours=REFRESH_HORAS):
         return True  # por si el calendario cambió (aplazamientos, etc.)
+    kickoff = _parse(entry.get("kickoff"))
+    if kickoff and now > kickoff + VENTANA_DESPUES and refreshed < kickoff + VENTANA_DESPUES:
+        # El partido guardado ya venció y todavía no se ha buscado el siguiente:
+        # se busca UNA vez. (Antes se repetía en cada corrida hasta medianoche,
+        # porque la búsqueda "partido de hoy" devolvía el mismo partido ya terminado.)
+        return True
     return False
 
 
 def in_live_window(entry):
     kickoff = _parse(entry.get("kickoff")) if entry else None
-    if not kickoff:
+    if not kickoff or entry.get("done"):
         return False
     now = datetime.now(LOCAL_TZ)
     return kickoff - VENTANA_ANTES <= now <= kickoff + VENTANA_DESPUES
@@ -638,11 +677,19 @@ def in_live_window(entry):
 def refresh_schedule(target):
     """1-3 peticiones: hoy → próximo (si es pronto) → último jugado."""
     team_id, season = target["team_id"], target["season"]
-    today = datetime.now(LOCAL_TZ).strftime("%Y-%m-%d")
+    now = datetime.now(LOCAL_TZ)
+    today = now.strftime("%Y-%m-%d")
     todays = api("/fixtures", {"team": team_id, "season": season, "date": today,
                                "timezone": "America/Mexico_City"}) or []
-    if todays:
-        return todays[0], "hoy"
+    # Solo cuentan los partidos de hoy que siguen vigentes (aún no vence su
+    # ventana de vigilancia); uno ya terminado y vencido no debe volver a
+    # guardarse como "el partido de este objetivo".
+    vigentes = sorted(
+        (f for f in todays
+         if datetime.fromtimestamp(f["fixture"]["timestamp"], LOCAL_TZ) + VENTANA_DESPUES >= now),
+        key=lambda f: f["fixture"]["timestamp"])
+    if vigentes:
+        return vigentes[0], "hoy"
 
     upcoming = api("/fixtures", {"team": team_id, "next": 1}) or []
     if upcoming:
@@ -661,15 +708,33 @@ def refresh_schedule(target):
     return None, None
 
 
+_WARNED = set()      # avisos que ya se mostraron en este proceso (el modo vigilar repite pasadas cada minuto)
+_SNAP_CACHE = {}     # fixture_id -> foto del partido, válida solo durante UNA pasada
+
+
+def warn_once(key, msg):
+    if key not in _WARNED:
+        _WARNED.add(key)
+        log(msg)
+
+
 def check_once(player, target, config, notifier, sent_by_target, status_out, schedule, fcm=None):
     label, emoji, key = target["label"], target["emoji"], target["key"]
     crest_url = target.get("crest_url")
     if not target.get("team_id"):
-        log(f"⚠️  {player['name']} · {label}: sin team_id en {CONFIG_FILE}, se salta (corre Fase 1).")
+        warn_once((player["key"], key, "team_id"),
+                  f"⚠️  {player['name']} · {label}: sin team_id en {CONFIG_FILE}, se salta (corre Fase 1).")
+        return
+    if not player.get("player_id"):
+        # Sin player_id el detector no puede reconocer al jugador en la
+        # alineación y mandaría un "no convocado" FALSO en cada partido.
+        warn_once((player["key"], key, "player_id"),
+                  f"⚠️  {player['name']} · {label}: sin player_id en {CONFIG_FILE}, se salta (corre Fase 1).")
         return
 
     entry = schedule.get(key, {})
     if schedule_stale(entry):
+        prev = entry
         fx_meta, why = refresh_schedule(target)
         if not fx_meta:
             schedule[key] = {"refreshed_at": now_iso(), "last_error": last_api_error}
@@ -684,6 +749,9 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
             "why": why,
             "refreshed_at": now_iso(),
         }
+        if (prev.get("done") and prev.get("fixture_id") == entry["fixture_id"]
+                and prev.get("kickoff") == entry["kickoff"]):
+            entry["done"] = True     # mismo partido (misma hora) que ya se cerró: no volver a vigilarlo
         schedule[key] = entry
     else:
         why = entry.get("why")
@@ -696,10 +764,15 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
             "status": "sin_partido", "checked_at": now_iso()})
         return
 
-    snap = api("/fixtures", {"id": entry["fixture_id"]})
+    # Varios jugadores comparten partido (p.ej. los 10 con la Selección): se
+    # pide UNA sola vez por pasada y se reparte, en vez de una petición por jugador.
+    fid = entry["fixture_id"]
+    if fid not in _SNAP_CACHE:
+        res = api("/fixtures", {"id": fid})
+        _SNAP_CACHE[fid] = res[0] if res else None
+    snap = _SNAP_CACHE[fid]
     if not snap:
         return
-    snap = snap[0]
 
     sent = sent_by_target.setdefault(key, set())
     alerts, info = analyze(snap, player, target)
@@ -724,8 +797,43 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         "match_reference": why, **info, "kickoff": entry["kickoff"],
     }
 
+    # Partido cerrado (final o cancelado ya avisado): dejar de pedirlo a la API
+    # el resto de la ventana. Antes se seguía pidiendo hasta kickoff + 3 h.
+    st = snap["fixture"]["status"]["short"]
+    closing_key = f"{player['key']}:{key}:{fid}:" + ("cancelado" if st in CANCELLED else "final")
+    # "SUSP" (suspendido) puede reanudarse: ese no se da por cerrado.
+    if (st in FINISHED or st in CANCELLED - {"SUSP"}) and closing_key in sent:
+        entry["done"] = True
+
+
+STATUS_HEARTBEAT = timedelta(minutes=60)   # la app muestra "Actualizado: <hora>" con este campo
+_VOLATILE = {"updated_at", "checked_at"}
+
+
+def _strip_volatile(obj):
+    if isinstance(obj, dict):
+        return {k: _strip_volatile(v) for k, v in obj.items() if k not in _VOLATILE}
+    if isinstance(obj, list):
+        return [_strip_volatile(v) for v in obj]
+    return obj
+
+
+def save_status(new):
+    """Escribe status.json solo si cambió algo real (marcador, estado, alertas...)
+    o si el "Actualizado" guardado ya tiene más de STATUS_HEARTBEAT. Antes se
+    reescribía en cada corrida porque 'updated_at' siempre cambia → ~70 commits
+    al día aunque no pasara nada."""
+    old = load_json(STATUS_FILE, None)
+    if old is not None and _strip_volatile(old) == _strip_volatile(new):
+        old_ts = _parse(old.get("updated_at"))
+        if old_ts and datetime.now(LOCAL_TZ) - old_ts < STATUS_HEARTBEAT:
+            return False
+    save_json(STATUS_FILE, new)
+    return True
+
 
 def chequeo(args, notifier, config, fcm=None):
+    _SNAP_CACHE.clear()
     state = load_json(STATE_FILE, {})
     sent_raw = state.get("sent", {})
     schedule_raw = load_json(SCHEDULE_FILE, {})
@@ -802,17 +910,127 @@ def chequeo(args, notifier, config, fcm=None):
 
     save_json(STATE_FILE, {"sent": sent_out})
     save_json(SCHEDULE_FILE, schedule_out)
-    save_json(STATUS_FILE, {
+    save_status({
         "updated_at": now_iso(),
         "app_name": config.get("app_name", ""),
         "players": status_out})
-    log(f"✅ chequeo listo · {STATUS_FILE}, {STATE_FILE} y {SCHEDULE_FILE} actualizados")
+    log(f"✅ chequeo listo · {STATUS_FILE}, {STATE_FILE} y {SCHEDULE_FILE} al día")
+
+
+# ═══════════════════════════════════════════════════════ modo vigilar
+# El cron de GitHub Actions dice "cada 5 min" pero en la práctica corre cada
+# ~20-30 min (mediana medida: 22 min), así que una alerta de gol podía llegar
+# 25 min tarde. "vigilar" lo resuelve sin depender de la puntualidad del cron:
+# cuando hay un partido en curso o por empezar, UNA corrida se queda viva y
+# hace una pasada de "chequeo" cada minuto (publicando el estado a git cuando
+# hay algo nuevo). Si no hay partido cerca, hace una sola pasada y sale, igual
+# que antes. El cron solo sirve de arranque (por eso el margen ARRANQUE_EXTRA)
+# y de red de seguridad si la corrida larga muere.
+ARRANQUE_EXTRA = timedelta(minutes=45)   # margen sobre VENTANA_ANTES: cubre el atraso del cron (se midió hasta ~29 min)
+MAX_VIGILAR = timedelta(hours=5, minutes=40)   # el job de GitHub se corta a las 6 h
+PASO_VIGILAR = 60                        # segundos entre pasadas
+MIN_PAUSA_VIGILAR = 10
+MAX_FALLOS_SEGUIDOS = 5
+
+STATE_OWNED_FILES = (STATUS_FILE, STATE_FILE, SCHEDULE_FILE, PENDING_VIDEOS_FILE)
+
+
+def active_soon(config):
+    """¿Algún objetivo tiene un partido en curso o que empieza pronto?
+    Mira hormi_horario.json (lo que ya se sabe), sin gastar peticiones."""
+    now = datetime.now(LOCAL_TZ)
+    schedule = load_json(SCHEDULE_FILE, {})
+    for p in config["players"]:
+        if not p.get("player_id"):
+            continue
+        for t in p["targets"]:
+            e = (schedule.get(p["key"]) or {}).get(t["key"]) or {}
+            ko = _parse(e.get("kickoff"))
+            if not ko or e.get("done"):
+                continue
+            if ko - VENTANA_ANTES - ARRANQUE_EXTRA <= now <= ko + VENTANA_DESPUES:
+                return True
+    return False
+
+
+def _git(*a):
+    return subprocess.run(["git", *a], capture_output=True, text=True)
+
+
+def publish_state():
+    """Sube a git el estado del motor si cambió (solo con HORMI_GIT_PUSH=1, que
+    pone el workflow). Pensado para el modo vigilar, donde el proceso vive
+    horas: si la máquina muriera, lo ya avisado quedaría guardado y no se
+    repetirían alertas. Nunca debe tumbar el motor: cualquier fallo solo se
+    registra."""
+    if os.environ.get("HORMI_GIT_PUSH") != "1":
+        return
+    try:
+        files = [str(f) for f in (*STATE_OWNED_FILES, STATS_FILE) if f.exists()]
+        _git("add", *files)
+        if _git("diff", "--cached", "--quiet").returncode == 0:
+            return
+        _git("commit", "-m", "chore: actualiza estado del chequeo [skip ci]")
+        for attempt in range(3):
+            if _git("pull", "--rebase", "origin", "main").returncode == 0:
+                if _git("push").returncode == 0:
+                    return
+                time.sleep(3 * (attempt + 1))   # alguien subió justo antes: se reintenta
+                continue
+            # El rebase chocó. El único archivo que también escribe otro workflow
+            # (Fase 3, de madrugada) es player_stats.json: ahí gana la versión del
+            # servidor, que Fase 3 recalcula completa. El resto es solo del motor
+            # y se conserva tal cual.
+            _git("rebase", "--abort")
+            mine = _git("rev-parse", "HEAD").stdout.strip()
+            owned = [str(f) for f in STATE_OWNED_FILES
+                     if _git("cat-file", "-e", f"{mine}:{f}").returncode == 0]
+            _git("fetch", "origin", "main")
+            _git("reset", "--hard", "origin/main")
+            if owned:
+                _git("checkout", mine, "--", *owned)
+                _git("add", *owned)
+            if _git("diff", "--cached", "--quiet").returncode == 0:
+                return
+            _git("commit", "-m", "chore: actualiza estado del chequeo [skip ci]")
+            if _git("push").returncode == 0:
+                return
+            time.sleep(3 * (attempt + 1))
+        log("⚠️  No se pudo subir el estado a git tras 3 intentos (se reintenta en la siguiente pasada).")
+    except Exception as err:
+        log(f"⚠️  publish_state: {err}")
+
+
+def vigilar(args, notifier, config, fcm=None):
+    start = datetime.now(LOCAL_TZ)
+    fallos = passes = 0
+    while True:
+        t0 = time.time()
+        try:
+            config = load_config()   # por si Fase 1/5 cambió algo desde la pasada anterior
+            chequeo(args, notifier, config, fcm)
+            fallos = 0
+        except Exception as err:
+            fallos += 1
+            log(f"⚠️  pasada fallida ({fallos}/{MAX_FALLOS_SEGUIDOS}): {err}")
+            if fallos >= MAX_FALLOS_SEGUIDOS:
+                publish_state()
+                sys.exit(1)
+        publish_state()
+        passes += 1
+        if datetime.now(LOCAL_TZ) - start > MAX_VIGILAR:
+            log("⏱️  tiempo máximo de vigilancia alcanzado; el cron reanuda.")
+            break
+        if not active_soon(config):
+            break
+        time.sleep(max(MIN_PAUSA_VIGILAR, PASO_VIGILAR - (time.time() - t0)))
+    log(f"👋 vigilar terminó tras {passes} pasada(s)")
 
 
 # ═══════════════════════════════════════════════════════ main
 def main():
     parser = argparse.ArgumentParser(description="Motor de alertas · EuroGoalMX (multi-jugador)")
-    parser.add_argument("modo", choices=["prueba", "repeticion", "chequeo"])
+    parser.add_argument("modo", choices=["prueba", "repeticion", "chequeo", "vigilar"])
     parser.add_argument("--jugador", help="Limita a un jugador por su 'key' (armando, raul, quinones)")
     parser.add_argument("--solo", help="Limita a un objetivo por su 'key' (olympiacos, seleccion, wolves, al_qadsiah)")
     parser.add_argument("--contra", help="Rival del partido a repetir (ej. Juarez)")
@@ -836,6 +1054,8 @@ def main():
                      "El push real (FCM) también está funcionando.")
     elif args.modo == "repeticion":
         replay(args, notifier, config, fcm)
+    elif args.modo == "vigilar":
+        vigilar(args, notifier, config, fcm)
     else:
         chequeo(args, notifier, config, fcm)
 

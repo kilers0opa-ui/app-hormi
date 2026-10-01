@@ -31,7 +31,7 @@ on:
         default: ""
 
 concurrency:
-  group: hormi-chequeo   # mismo grupo que el motor y fase1: nunca corren al mismo tiempo (evita choques de git push)
+  group: hormi-chequeo   # comparte grupo con fase1/tabla/transferencias (NO con el motor, que tiene el suyo: hormi-motor); el push reintenta con pull --rebase
   cancel-in-progress: false
 
 permissions:
@@ -67,8 +67,22 @@ jobs:
           git add player_stats.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: actualiza historial de estadisticas (Fase 3) [skip ci]"
-            git pull --rebase origin main
-            git push
+            for i in 1 2 3; do
+              if git pull --rebase origin main; then
+                git push && break
+              else
+                # El motor de alertas también puede tocar player_stats.json (suma el partido recién
+                # terminado). Esta fase recalcula todo desde la API, así que su versión gana.
+                git rebase --abort
+                cp player_stats.json /tmp/player_stats.json
+                git fetch origin main && git reset --hard origin/main
+                cp /tmp/player_stats.json player_stats.json
+                git add player_stats.json
+                git commit -m "chore: actualiza historial de estadisticas (Fase 3) [skip ci]"
+                git push && break
+              fi
+              sleep 5
+            done
           else
             echo "Sin cambios que subir."
           fi

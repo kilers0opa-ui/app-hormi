@@ -34,7 +34,7 @@ on:
         default: false
 
 concurrency:
-  group: hormi-chequeo   # mismo grupo que las demas fases: nunca corren al mismo tiempo (evita choques de git push)
+  group: hormi-chequeo   # comparte grupo con las demás fases (NO con el motor de alertas, que tiene el suyo: hormi-motor); el push reintenta con pull --rebase
   cancel-in-progress: false
 
 permissions:
@@ -70,8 +70,10 @@ jobs:
           git add hormi_config.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: actualiza equipo/escudo detectado (Fase 5) [skip ci]"
-            git pull --rebase origin main
-            git push
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              sleep 5
+            done
           else
             echo "Sin cambios que subir."
           fi
