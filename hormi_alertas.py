@@ -845,7 +845,7 @@ def send_reminders(config, notifier, fcm, schedule_out, reminders_sent):
     for rid, g in groups.items():
         e, target, players = g["entry"], g["target"], g["players"]
         ko = _parse(e["kickoff"])
-        hora = "hora por confirmar" if e.get("fx_status") == "TBD" else f"{_hora_cdmx(ko)} (hora CDMX)"
+        hora = "hora por confirmar" if e.get("fx_status") == "TBD" else f"{_hora_cdmx(ko)} (hora centro)"
         quien = players[0].get("apodo") or players[0]["name"]
         if len(players) == 1:
             title = f"📅 Mañana juega {quien} ({target['label']})"
