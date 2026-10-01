@@ -242,9 +242,14 @@ class FcmSender:
         self._token = self._creds.token
         self._token_at = time.time()
 
-    def send(self, tipo, title, body, player_key=None, team_key=None):
+    def send(self, tipo, title, body, player_key=None, team_key=None, player_keys=None):
         """tipo: 'goal' (dispara la pantalla de ¡GOOOOL! en la app) o
-        cualquier otro string para una notificación normal. player_key
+        cualquier otro string para una notificación normal. La app usa el
+        tipo para decidir sonido/vibración/silencio (pantalla de
+        configuración) y a qué pantalla abre al tocarla (ver
+        alert_type() y HormiFirebaseMessagingService.kt). player_keys: para
+        avisos que son de varios jugadores a la vez (p.ej. "Juega mañana" de
+        la Selección): la app lo muestra si AL MENOS UNO es Favorito. player_key
         identifica de qué jugador es la alerta (p.ej. 'armando', 'raul',
         'quinones'), para que la app filtre por Favoritos. team_key es el
         objetivo (p.ej. 'olympiacos', 'seleccion', 'wolves'), para que la
@@ -261,7 +266,8 @@ class FcmSender:
             "message": {
                 "topic": self.TOPIC,
                 "data": {"type": tipo, "title": title, "body": body,
-                         "player_key": player_key or "", "team_key": team_key or ""},
+                         "player_key": player_key or "", "team_key": team_key or "",
+                         "player_keys": ",".join(player_keys or [])},
                 # Mensajes de solo-datos con prioridad normal los puede retrasar
                 # el modo Doze del teléfono (minutos u horas). HIGH los entrega
                 # al instante. TTL: un aviso de gol que no se pudo entregar en
@@ -429,8 +435,12 @@ def apply_live_delta(player, target, snap, info):
     applied.append(fixture_id)
     del applied[:-500]  # no crecer sin límite
 
-    season_key = str(target["season"])
     league = snap.get("league") or {}
+    # La temporada sale del propio partido (la API la trae en league.season),
+    # no del config: así la Selección y los clubes no dependen de que
+    # "season" esté bien puesto a mano (los torneos de selecciones usan
+    # año calendario, los clubes europeos el año en que empieza la temporada).
+    season_key = str(league.get("season") or target["season"])
     rows = entry.setdefault("seasons", {}).setdefault(season_key, [])
     row = next((r for r in rows if r.get("league_id") == league.get("id")), None)
     if row is None:
@@ -532,6 +542,29 @@ def register_final_for_video(key, player_key, team_key, match_info):
         log(f"ℹ️  No se pudo anotar el final para buscarle resumen (la alerta ya salió): {err}")
 
 
+def alert_type(key):
+    """Tipo de notificación a partir de la llave de la alerta. La app deja
+    configurar sonido/vibración/silencio por tipo y abre Inicio o Videos
+    según el tipo. 'goal' es el único que dispara la pantalla de ¡GOOOOL!.
+    Tipos: goal, assist, lineup, start, sub, final, incident (VAR/suspendido),
+    reminder (juega mañana), video, transfer."""
+    if key.endswith(":gol"):
+        return "goal"
+    if key.endswith(":ast"):
+        return "assist"
+    if key.endswith(":alineacion"):
+        return "lineup"
+    if key.endswith(":inicio"):
+        return "start"
+    if key.endswith(":final"):
+        return "final"
+    if key.endswith(":cancelado") or ":var:" in key:
+        return "incident"
+    if ":subst:" in key:
+        return "sub"
+    return "info"
+
+
 def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None,
              register_video=True, match_info=None):
     new = 0
@@ -539,8 +572,7 @@ def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None,
         if key not in sent:
             notifier.send(title, message, priority)
             if fcm:
-                tipo = "goal" if key.endswith(":gol") else "info"
-                fcm.send(tipo, title, message, player_key, team_key)
+                fcm.send(alert_type(key), title, message, player_key, team_key)
             sent.add(key)
             new += 1
             # Va al final, con la alerta ya enviada. No aplica en repeticiones
@@ -679,8 +711,15 @@ def refresh_schedule(target):
     team_id, season = target["team_id"], target["season"]
     now = datetime.now(LOCAL_TZ)
     today = now.strftime("%Y-%m-%d")
-    todays = api("/fixtures", {"team": team_id, "season": season, "date": today,
-                               "timezone": "America/Mexico_City"}) or []
+    # Sin "season": equipo + fecha ya identifica el partido, y así no importa
+    # si la temporada del config está mal (la Selección juega torneos de año
+    # calendario y amistosos que caen en otra "season" que la del club). Si la
+    # API la exigiera, se reintenta con season.
+    todays = api("/fixtures", {"team": team_id, "date": today,
+                               "timezone": "America/Mexico_City"})
+    if todays is None:
+        todays = api("/fixtures", {"team": team_id, "season": season, "date": today,
+                                   "timezone": "America/Mexico_City"}) or []
     # Solo cuentan los partidos de hoy que siguen vigentes (aún no vence su
     # ventana de vigilancia); uno ya terminado y vencido no debe volver a
     # guardarse como "el partido de este objetivo".
@@ -706,6 +745,121 @@ def refresh_schedule(target):
     if last_api_error:
         log(f"⚠️  {target['label']}: sin horario — error de API: {last_api_error}")
     return None, None
+
+
+def _fixture_meta(fx):
+    """Datos del partido que se guardan en el horario (para el aviso 'Juega mañana')."""
+    return {"home": fx["teams"]["home"]["name"], "away": fx["teams"]["away"]["name"],
+            "league": (fx.get("league") or {}).get("name"),
+            "fx_status": fx["fixture"]["status"]["short"]}
+
+
+# ═══════════════════════════════════════════════════════ aviso "Juega mañana"
+# Un solo aviso por partido, en la noche (REMINDER_HORA, hora CDMX) del día
+# anterior, con la hora del partido ya convertida a hora CDMX. Mucho mejor que
+# "juega hoy" por la mañana: los partidos en Europa caen de madrugada (9 pm en
+# Inglaterra = 6 am en CDMX) y el aviso llegaría tarde. NO dice nada de
+# convocatoria: eso solo se sabe ~1 h antes (alineación), y las listas de las
+# noticias suelen cambiar.
+REMINDER_HORA = 21
+_NEXT_CACHE = {}     # team_id -> próximo partido, válido durante UNA pasada
+
+
+def _hora_cdmx(dt):
+    h12 = dt.hour % 12 or 12
+    return f"{h12}:{dt.minute:02d} {'a.m.' if dt.hour < 12 else 'p.m.'}"
+
+
+def _entry_future(entry, now):
+    ko = _parse(entry.get("kickoff")) if entry else None
+    return bool(ko and ko > now and entry.get("home"))
+
+
+def _advance_entry(target, entry, now):
+    """El horario de este objetivo apunta a un partido ya pasado (o sin datos
+    del rival): busca el próximo (1 petición, una vez al día por objetivo) y
+    lo guarda en el horario. Devuelve el horario (nuevo o el mismo)."""
+    today = now.strftime("%Y-%m-%d")
+    if entry and entry.get("next_checked") == today:
+        return entry
+    tid = target["team_id"]
+    if tid not in _NEXT_CACHE:
+        _NEXT_CACHE[tid] = api("/fixtures", {"team": tid, "next": 1}) or []
+    nxt = _NEXT_CACHE[tid]
+    if not nxt:
+        entry = dict(entry or {})
+        entry["next_checked"] = today
+        return entry
+    fx = nxt[0]
+    new = {
+        "fixture_id": fx["fixture"]["id"],
+        "kickoff": datetime.fromtimestamp(fx["fixture"]["timestamp"], LOCAL_TZ).isoformat(),
+        "why": "próximo (lejos)", "refreshed_at": now_iso(), "next_checked": today,
+        **_fixture_meta(fx),
+    }
+    if (entry and entry.get("done") and entry.get("fixture_id") == new["fixture_id"]
+            and entry.get("kickoff") == new["kickoff"]):
+        new["done"] = True
+    return new
+
+
+def send_reminders(config, notifier, fcm, schedule_out, reminders_sent):
+    """Manda 'Juega mañana' (una vez por partido). reminders_sent es un set
+    de ids 'fixture_id:fecha' que se va llenando. Devuelve cuántos mandó."""
+    now = datetime.now(LOCAL_TZ)
+    if now.hour < REMINDER_HORA:
+        return 0
+    tomorrow = (now + timedelta(days=1)).date()
+    groups = {}
+    for player in config["players"]:
+        if not player.get("player_id"):
+            continue
+        pkey = player["key"]
+        for target in player["targets"]:
+            if not target.get("team_id"):
+                continue
+            sched = schedule_out.setdefault(pkey, {})
+            entry = sched.get(target["key"]) or {}
+            ko0 = _parse(entry.get("kickoff"))
+            if (ko0 and ko0 <= now <= ko0 + VENTANA_DESPUES and not entry.get("done")):
+                continue   # partido en curso o recién terminado: nunca se le cambia el horario
+            try:
+                if not _entry_future(entry, now):
+                    entry = _advance_entry(target, entry, now)
+                    sched[target["key"]] = entry
+            except Exception as err:
+                log(f"⚠️  {player['name']} · {target['label']}: no se pudo buscar el próximo partido — {err}")
+                continue
+            ko = _parse(entry.get("kickoff"))
+            if not ko or not entry.get("home") or ko <= now or ko.date() != tomorrow:
+                continue
+            if entry.get("fx_status") in CANCELLED:
+                continue
+            rid = f"{entry['fixture_id']}:{ko.date().isoformat()}"
+            if rid in reminders_sent:
+                continue
+            g = groups.setdefault(rid, {"entry": entry, "target": target, "players": []})
+            g["players"].append(player)
+
+    sent_n = 0
+    for rid, g in groups.items():
+        e, target, players = g["entry"], g["target"], g["players"]
+        ko = _parse(e["kickoff"])
+        hora = "hora por confirmar" if e.get("fx_status") == "TBD" else f"{_hora_cdmx(ko)} (hora CDMX)"
+        quien = players[0].get("apodo") or players[0]["name"]
+        if len(players) == 1:
+            title = f"📅 Mañana juega {quien} ({target['label']})"
+        else:
+            title = f"📅 Mañana juega {target['label']}"
+        body = f"{e['home']} vs {e['away']} · {hora}" + (f" · {e['league']}" if e.get("league") else "")
+        notifier.send(title, body, 3)
+        if fcm:
+            fcm.send("reminder", title, body, None, target["key"],
+                     player_keys=[p["key"] for p in players])
+        if not getattr(notifier, "console_only", False):
+            reminders_sent.add(rid)
+        sent_n += 1
+    return sent_n
 
 
 _WARNED = set()      # avisos que ya se mostraron en este proceso (el modo vigilar repite pasadas cada minuto)
@@ -748,6 +902,7 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
             "kickoff": datetime.fromtimestamp(fx_meta["fixture"]["timestamp"], LOCAL_TZ).isoformat(),
             "why": why,
             "refreshed_at": now_iso(),
+            **_fixture_meta(fx_meta),
         }
         if (prev.get("done") and prev.get("fixture_id") == entry["fixture_id"]
                 and prev.get("kickoff") == entry["kickoff"]):
@@ -834,8 +989,10 @@ def save_status(new):
 
 def chequeo(args, notifier, config, fcm=None):
     _SNAP_CACHE.clear()
+    _NEXT_CACHE.clear()
     state = load_json(STATE_FILE, {})
     sent_raw = state.get("sent", {})
+    reminders_sent = set(state.get("reminders", []))
     schedule_raw = load_json(SCHEDULE_FILE, {})
     status_raw = load_json(STATUS_FILE, {}).get("players", {})
 
@@ -908,7 +1065,18 @@ def chequeo(args, notifier, config, fcm=None):
         if pkey in schedule_raw:
             schedule_out[pkey] = schedule_raw[pkey]
 
-    save_json(STATE_FILE, {"sent": sent_out})
+    # "Juega mañana": solo en pasadas completas (con --jugador/--solo el
+    # horario de los demás no se toca).
+    if not args.jugador and not args.solo:
+        try:
+            n = send_reminders(config, notifier, fcm, schedule_out, reminders_sent)
+            if n:
+                log(f"📅 {n} aviso(s) de 'Juega mañana'")
+        except Exception as err:
+            log(f"⚠️  no se pudieron mandar los avisos de 'Juega mañana' — {err}")
+    # Los ids llevan la fecha del partido: se conservan los más recientes.
+    reminders_keep = sorted(reminders_sent, key=lambda r: r.split(":", 1)[1])[-60:]
+    save_json(STATE_FILE, {"sent": sent_out, "reminders": reminders_keep})
     save_json(SCHEDULE_FILE, schedule_out)
     save_status({
         "updated_at": now_iso(),

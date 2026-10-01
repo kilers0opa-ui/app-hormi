@@ -187,7 +187,9 @@ class FcmSender:
         url = f"https://fcm.googleapis.com/v1/projects/{self.project_id}/messages:send"
         payload = {"message": {"topic": self.TOPIC, "data": {
             "type": tipo, "title": title, "body": body,
-            "player_key": player_key or "", "team_key": team_key or ""}}}
+            "player_key": player_key or "", "team_key": team_key or ""},
+            # prioridad alta + vigencia corta: igual que hormi_alertas.py
+            "android": {"priority": "HIGH", "ttl": "3600s"}}}
         req = urllib.request.Request(
             url, data=json.dumps(payload).encode("utf-8"),
             headers={"Content-Type": "application/json; charset=UTF-8",
@@ -241,7 +243,7 @@ def check_player(player, notifier, fcm):
     title = f"🚨 ¡{apodo} cambió de equipo!"
     message = f"Ahora juega en {new_label}" + (f" (antes {old_label})" if old_label else "")
     notifier.send(title, message, 5)
-    fcm.send("info", title, message, player["key"], target["key"])
+    fcm.send("transfer", title, message, player["key"], target["key"])
     return True
 
 

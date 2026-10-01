@@ -2,14 +2,15 @@ name: Deteccion de cambio de equipo - App Hormi
 
 on:
   schedule:
-    # TEMPORAL (28-sep-2026, pedido del usuario): cada 5 dias en vez de
-    # diario, mientras el mercado de fichajes esta cerrado (no tiene
-    # caso gastar peticiones todos los dias si nadie puede cambiar de
-    # equipo). "*/5" en el campo dia-del-mes dispara los dias 1,6,11,16,
-    # 21,26,31 - un aproximado de "cada 5 dias" (el hueco real varia
-    # entre 4 y 6 dias segun donde caiga el fin de mes). Cuando se
-    # reabra la ventana de pases, volver a "0 15 * * *" (diario).
-    - cron: "0 15 */5 * *"   # 09:00 hora de México (UTC-6), cada ~5 días
+    # El cron corre TODOS los días 09:00 hora de México (UTC-6), pero el paso
+    # "Decidir si toca revisar" (abajo) solo deja pasar:
+    #   - los días 1 y 16 de cada mes (≈ una vez cada 15 días), y
+    #   - TODOS los días dentro de las ventanas de fichajes: del 1-dic al
+    #     10-feb (Liga MX en diciembre, Europa/Arabia en enero) y del 1-jun al
+    #     5-sep (verano). Así pasa a diario solo cuando importa, sin tocar
+    #     nada a mano. Si cambian las fechas, se editan en ese paso.
+    # Corrido manual (Run workflow) siempre revisa.
+    - cron: "0 15 * * *"
   workflow_dispatch:       # para poder correrlo manual desde la pestaña Actions
     inputs:
       jugador:
@@ -50,7 +51,23 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Decidir si toca revisar
+        id: gate
+        run: |
+          # Fecha en hora de México (el runner va en UTC; MX no tiene horario de verano).
+          MD=$(TZ=America/Mexico_City date +%m%d)    # p.ej. 1201
+          DAY=$(TZ=America/Mexico_City date +%d)
+          RUN=false
+          if [ "${{ github.event_name }}" != "schedule" ]; then RUN=true; echo "Corrida manual: se revisa."
+          elif [ "$DAY" = "01" ] || [ "$DAY" = "16" ]; then RUN=true; echo "Día $DAY: toca la revisión quincenal."
+          elif [ "$MD" -ge 1201 ] || [ "$MD" -le 0210 ]; then RUN=true; echo "Ventana de fichajes de invierno: revisión diaria."
+          elif [ "$MD" -ge 0601 ] && [ "$MD" -le 0905 ]; then RUN=true; echo "Ventana de fichajes de verano: revisión diaria."
+          else echo "Fuera de ventana y no es día 1/16: no se gastan peticiones hoy."
+          fi
+          echo "run=$RUN" >> "$GITHUB_OUTPUT"
+
       - name: Revisar cambios de equipo / rellenar escudos
+        if: steps.gate.outputs.run == 'true'
         env:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
           FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
@@ -64,6 +81,7 @@ jobs:
           fi
 
       - name: Subir hormi_config.json
+        if: steps.gate.outputs.run == 'true'
         run: |
           git config user.name "app-hormi-bot"
           git config user.email "actions@users.noreply.github.com"

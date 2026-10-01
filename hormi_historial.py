@@ -159,7 +159,14 @@ def build_player_seasons(player, only_season=None):
         log(f"⚠️  {player['name']}: sin player_id todavía en {CONFIG_FILE} "
             "(hace falta correr Fase 1 con una temporada que el plan ya cubra) — se salta.")
         return {}
-    seasons_cfg = player.get("career_seasons") or []
+    seasons_cfg = list(player.get("career_seasons") or [])
+    # Años nuevos se agregan solos: si la lista llega a 2026 y hoy es 2027,
+    # se consulta también 2027 (y así cada año), sin tocar el config a mano.
+    # Los torneos de selecciones usan año calendario, así que sin esto se
+    # perderían en enero. Si ese año aún no tiene minutos, queda vacío.
+    if seasons_cfg and not only_season:
+        year_now = datetime.now(timezone(timedelta(hours=-6))).year
+        seasons_cfg += range(max(seasons_cfg) + 1, year_now + 1)
     if only_season:
         seasons_cfg = [s for s in seasons_cfg if s == only_season]
     if not seasons_cfg:

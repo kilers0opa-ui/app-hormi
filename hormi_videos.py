@@ -445,7 +445,7 @@ def send_video_push(config, player, video, team_key):
         if config.get("ntfy_topic"):
             ha.Notifier(config["ntfy_topic"]).send(title, message, 3)
         fcm = ha.FcmSender(config.get("fcm_project_id"))
-        fcm.send("info", title, message, player["key"], team_key)
+        fcm.send("video", title, message, player["key"], team_key)
     except Exception as err:
         log(f"     ⚠️  fallo enviando la notificación del video: {err}")
 
@@ -545,7 +545,7 @@ def send_summary_push(config, players, video, st):
         try:
             if notifier:
                 notifier.send(title, message, 3)
-            fcm.send("info", title, message, pk, j.get("team_key"))
+            fcm.send("video", title, message, pk, j.get("team_key"))
         except Exception as err:
             log(f"     ⚠️  fallo enviando la notificación del resumen ({pk}): {err}")
 
