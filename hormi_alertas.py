@@ -716,9 +716,14 @@ def in_live_window(entry):
     return kickoff - VENTANA_ANTES <= now <= kickoff + VENTANA_DESPUES
 
 
-def refresh_schedule(target):
-    """1-3 peticiones: hoy → próximo (si es pronto) → último jugado."""
-    team_id, season = target["team_id"], target["season"]
+def refresh_schedule(target, known_season=None):
+    """1-3 peticiones: hoy → próximo (si es pronto) → último jugado.
+
+    known_season: la temporada que la propia API le asignó al último partido
+    guardado de este objetivo (league.season). Se usa en lugar del "season"
+    del config, así la búsqueda "hoy" se ajusta sola con los cambios de
+    temporada/año y no hay que editar el config cada año."""
+    team_id, season = target["team_id"], known_season or target["season"]
     now = datetime.now(LOCAL_TZ)
     today = now.strftime("%Y-%m-%d")
     # La API EXIGE "season" junto con team+date ("The Season field is required",
@@ -911,7 +916,7 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     entry = schedule.get(key, {})
     if schedule_stale(entry):
         prev = entry
-        fx_meta, why = refresh_schedule(target)
+        fx_meta, why = refresh_schedule(target, prev.get("season"))
         if not fx_meta:
             schedule[key] = {"refreshed_at": now_iso(), "last_error": last_api_error}
             status_out[key] = {
