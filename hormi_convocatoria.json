@@ -1,0 +1,8 @@
+{
+  "_nota": "La API no publica la convocatoria de la Selección con anticipación. Aquí se anotan, por partido, los jugadores del roster que NO están convocados; para ellos no se muestra ese partido como su próximo ni se manda 'Mañana juega'. Solo vale para ese fixture_id y se vence sola. Las alertas de alineación del día del partido siguen funcionando igual.",
+  "seleccion": {
+    "fixture_id": 1629004,
+    "partido": "USA vs Mexico, 3-oct-2026",
+    "no_convocados": ["raul", "quinones", "huescas"]
+  }
+}

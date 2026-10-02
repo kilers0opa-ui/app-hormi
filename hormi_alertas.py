@@ -681,6 +681,7 @@ def replay(args, notifier, config, fcm=None):
 # (no cuesta nada si no hay nada que ver) y solo gasta cuota real durante
 # los partidos.
 SCHEDULE_FILE = Path("hormi_horario.json")
+CONVOCATORIA_FILE = Path("hormi_convocatoria.json")   # quién NO está convocado a ESTE partido de la Selección
 REFRESH_HORAS = 6                      # cada cuánto se revisa si hay partido nuevo
 VENTANA_ANTES = timedelta(minutes=75)  # desde cuándo antes del kickoff se vigila en vivo (la API publica la alineación ~60 min antes)
 VENTANA_DESPUES = timedelta(hours=3)   # hasta cuándo después se sigue vigilando
@@ -860,6 +861,8 @@ def send_reminders(config, notifier, fcm, schedule_out, reminders_sent):
             rid = f"{entry['fixture_id']}:{ko.date().isoformat()}"
             if rid in reminders_sent:
                 continue
+            if pkey in _no_convocados(target, entry):
+                continue   # no convocado a ese partido de la Selección: sin aviso
             g = groups.setdefault(rid, {"entry": entry, "target": target, "players": []})
             g["players"].append(player)
 
@@ -894,13 +897,33 @@ def warn_once(key, msg):
         log(msg)
 
 
-def _next_match_status(target, entry):
+def _no_convocados(target, entry):
+    """Llaves de jugadores que NO están en la lista de la Selección para ESTE
+    partido (la API no publica la convocatoria con anticipación; se anota a
+    mano en hormi_convocatoria.json: {"seleccion": {"fixture_id": N,
+    "no_convocados": ["raul", ...]}}). Solo vale para ese fixture_id, así que
+    se vence sola: el siguiente partido vuelve a mostrarse a todos hasta que
+    se anote su lista. Sin archivo o sin coincidencia = nadie excluido."""
+    if target.get("kind") != "seleccion" or not entry:
+        return set()
+    try:
+        sel = (load_json(CONVOCATORIA_FILE, {}) or {}).get("seleccion") or {}
+    except Exception:
+        return set()
+    if sel.get("fixture_id") != entry.get("fixture_id"):
+        return set()
+    return set(sel.get("no_convocados") or [])
+
+
+def _next_match_status(target, entry, player_key=None):
     """Estado para la app de un objetivo sin partido en vigilancia: el próximo
     partido si el horario lo conoce, o "sin_partido" a secas."""
     base = {"label": target["label"], "emoji": target["emoji"],
             "crest_url": target.get("crest_url"), "status": "sin_partido",
             "checked_at": now_iso()}
     ko = _parse(entry.get("kickoff")) if entry else None
+    if player_key and player_key in _no_convocados(target, entry):
+        return base   # no está convocado: no se le muestra ese partido como su próximo
     if ko and entry.get("home") and ko > datetime.now(LOCAL_TZ) and entry.get("fx_status") not in CANCELLED:
         base.update({"match_reference": "próximo",
                      "match": f"{entry['home']} vs {entry['away']}",
@@ -958,7 +981,7 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         keep_last = bool(cur and cur.get("status") == "finalizado" and not cur.get("api_error")
                          and ko and datetime.now(LOCAL_TZ) - ko < timedelta(hours=48))
         if not keep_last:
-            status_out[key] = _next_match_status(target, entry)
+            status_out[key] = _next_match_status(target, entry, player["key"])
         return
 
     # Varios jugadores comparten partido (p.ej. los 10 con la Selección): se
