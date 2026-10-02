@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T17:07:04+00:00",
+  "updated_at": "2026-10-02T17:10:12+00:00",
   "players": {
     "armando": {
       "generados": [
@@ -1609,13 +1609,13 @@
             "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_BBVA_Bancomer_Inauguration.jpg"
           },
           {
-            "id": "commons_43912982",
+            "id": "commons_45369235",
             "title": "Estadio BBVA",
-            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_43912982.jpg?v=e1abf0fd",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_45369235.jpg?v=247eeab0",
             "width": 1080,
             "height": 2340,
-            "credit": "Foto: Rick González · CC BY 2.0 · Wikimedia Commons",
-            "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_BBVA.jpg"
+            "credit": "Foto: Presidencia de la República Mexicana · CC BY 2.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_BBVA_Bancomer_(2).jpg"
           },
           {
             "id": "commons_72236600",
@@ -1976,16 +1976,6 @@
             "query": "football pitch aerial"
           },
           {
-            "id": "pixabay_182994",
-            "title": "Cancha y balón",
-            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_stock_pixabay_182994.jpg?v=5f4c6558",
-            "width": 956,
-            "height": 1280,
-            "credit": "Foto: samlegalintern · Pixabay",
-            "source_url": "https://pixabay.com/photos/soccer-football-england-competition-182994/",
-            "query": "football pitch aerial"
-          },
-          {
             "id": "pixabay_488393",
             "title": "Cancha y balón",
             "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_stock_pixabay_488393.jpg?v=3c2f3b3f",
@@ -1993,6 +1983,16 @@
             "height": 1280,
             "credit": "Foto: 422737 · Pixabay",
             "source_url": "https://pixabay.com/photos/football-field-line-mark-white-488393/",
+            "query": "football pitch aerial"
+          },
+          {
+            "id": "pixabay_182994",
+            "title": "Cancha y balón",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_stock_pixabay_182994.jpg?v=5f4c6558",
+            "width": 956,
+            "height": 1280,
+            "credit": "Foto: samlegalintern · Pixabay",
+            "source_url": "https://pixabay.com/photos/soccer-football-england-competition-182994/",
             "query": "football pitch aerial"
           },
           {
@@ -2004,42 +2004,6 @@
             "credit": "Foto: Vladvictoria · Pixabay",
             "source_url": "https://pixabay.com/photos/soccer-girls-practice-3949658/",
             "query": "soccer field lines"
-          }
-        ]
-      },
-      {
-        "id": "stock_noche",
-        "title": "Estadios de noche",
-        "items": [
-          {
-            "id": "pixabay_1525534",
-            "title": "Estadios de noche",
-            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_stock_pixabay_1525534.jpg?v=fff7aa47",
-            "width": 857,
-            "height": 1280,
-            "credit": "Foto: voltamax · Pixabay",
-            "source_url": "https://pixabay.com/photos/stadium-soccer-santiago-grass-1525534/",
-            "query": "football stadium night lights"
-          },
-          {
-            "id": "pixabay_3952062",
-            "title": "Estadios de noche",
-            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_stock_pixabay_3952062.jpg?v=48c98270",
-            "width": 853,
-            "height": 1280,
-            "credit": "Foto: c1n3ma · Pixabay",
-            "source_url": "https://pixabay.com/photos/football-stadium-sports-stadium-3952062/",
-            "query": "football stadium night lights"
-          },
-          {
-            "id": "pixabay_182994",
-            "title": "Estadios de noche",
-            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_stock_pixabay_182994.jpg?v=5f4c6558",
-            "width": 956,
-            "height": 1280,
-            "credit": "Foto: samlegalintern · Pixabay",
-            "source_url": "https://pixabay.com/photos/soccer-football-england-competition-182994/",
-            "query": "stadium floodlights soccer"
           }
         ]
       }
