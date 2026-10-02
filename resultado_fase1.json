@@ -60,7 +60,7 @@
     {
       "key": "mora",
       "name": "Gilberto Mora",
-      "player_id": null,
+      "player_id": 482605,
       "targets": [
         {
           "key": "tijuana",
@@ -74,8 +74,38 @@
             },
             {
               "check": "Gilberto Mora encontrado en la plantilla",
+              "ok": true,
+              "detalle": "G. Mora · id 482605 · Mexico · 17 años"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": true,
+              "detalle": "6 goles, 1 asistencias, 975 minutos en total"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": true,
+              "detalle": "14 jugados, 8 por jugar"
+            },
+            {
+              "check": "Alineación incluye a Gilberto Mora",
               "ok": false,
-              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'} (tampoco se encontró por /players/profiles con nacionalidad mexicana)"
+              "detalle": "no aparece (no convocado o alineación no disponible)"
+            },
+            {
+              "check": "Evento de gol con minuto",
+              "ok": false,
+              "detalle": "sin goles suyos en este partido"
+            },
+            {
+              "check": "Evento de asistencia",
+              "ok": false,
+              "detalle": "sin asistencias suyas en este partido"
+            },
+            {
+              "check": "Evento de cambio con minuto",
+              "ok": false,
+              "detalle": "jugó completo o no participó"
             }
           ]
         },
@@ -90,9 +120,39 @@
               "detalle": "id 16"
             },
             {
-              "check": "Gilberto Mora encontrado en la plantilla",
+              "check": "Gilberto Mora (id conocido)",
+              "ok": true,
+              "detalle": "id 482605"
+            },
+            {
+              "check": "Stats de temporada disponibles",
+              "ok": true,
+              "detalle": "6 goles, 1 asistencias, 975 minutos en total"
+            },
+            {
+              "check": "Calendario disponible",
+              "ok": true,
+              "detalle": "15 jugados, 2 por jugar"
+            },
+            {
+              "check": "Alineación incluye a Gilberto Mora",
+              "ok": true,
+              "detalle": "fue banca"
+            },
+            {
+              "check": "Evento de gol con minuto",
               "ok": false,
-              "detalle": "error de API: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'} (tampoco se encontró por /players/profiles con nacionalidad mexicana)"
+              "detalle": "sin goles suyos en este partido"
+            },
+            {
+              "check": "Evento de asistencia",
+              "ok": false,
+              "detalle": "sin asistencias suyas en este partido"
+            },
+            {
+              "check": "Evento de cambio con minuto",
+              "ok": false,
+              "detalle": "jugó completo o no participó"
             }
           ]
         }
