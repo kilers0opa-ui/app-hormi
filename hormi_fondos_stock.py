@@ -76,6 +76,7 @@ def stock_categorias(previas):
         print("  (stock: sin PEXELS_API_KEY ni PIXABAY_API_KEY, se omite)")
         return previas
     nuevas = []
+    vistos_global = set()
     excluidas = F.load_excluidas()
     try:
         with open(os.path.join(F.HERE, "fondos_stock_aprobadas.json"), encoding="utf-8") as f:
@@ -86,7 +87,7 @@ def stock_categorias(previas):
         print("  (stock: no hay fotos aprobadas en fondos_stock_aprobadas.json, se omite)")
         return previas
     for cid, titulo, consultas, maximo in CATEGORIAS:
-        items, vistos = [], set()
+        items, vistos = [], vistos_global
         for consulta, team_key in consultas:
             for fuente, key in (("pexels", kp), ("pixabay", kx)):
                 if not key or len(items) >= maximo:
