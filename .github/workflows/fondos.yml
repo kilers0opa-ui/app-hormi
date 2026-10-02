@@ -2,9 +2,13 @@ name: Fondos de pantalla - App Hormi
 
 on:
   schedule:
-    # Una vez al mes (día 3, 10:00 hora de México): vuelve a buscar fotos
-    # libres nuevas en Wikimedia Commons y regenera los wallpapers.
-    - cron: "0 16 3 * *"
+    # Cada lunes (3:00 am hora de México): vuelve a buscar fotos libres nuevas
+    # (Wikimedia Commons y Flickr) y regenera los wallpapers.
+    - cron: "0 9 * * 1"
+  push:
+    # Al subir imágenes propias a mis_fondos/ se agregan solas al catálogo.
+    paths:
+      - "mis_fondos/**"
   workflow_dispatch:        # manual desde la pestaña Actions
     inputs:
       jugador:
@@ -32,6 +36,7 @@ on:
           - generar
           - general
           - fotos
+          - mios
 
 concurrency:
   group: hormi-fondos   # propio: no compite con el motor de alertas
@@ -54,8 +59,11 @@ jobs:
         run: pip install pillow
 
       - name: Generar fondos y buscar fotos libres
+        env:
+          FLICKR_API_KEY: ${{ secrets.FLICKR_API_KEY }}
         run: |
           ARGS=""
+          if [ "${{ github.event_name }}" = "push" ]; then ARGS="--solo mios"; fi
           if [ -n "${{ inputs.jugador }}" ]; then ARGS="$ARGS --jugador ${{ inputs.jugador }}"; fi
           if [ -n "${{ inputs.solo }}" ]; then ARGS="$ARGS --solo ${{ inputs.solo }}"; fi
           python hormi_fondos.py $ARGS

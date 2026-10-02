@@ -466,7 +466,7 @@ def buscar_fotos(player):
 # ------------------------------------------------------------------ principal
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--solo", choices=["generar", "fotos", "general"], default=None)
+    ap.add_argument("--solo", choices=["generar", "fotos", "general", "mios"], default=None)
     ap.add_argument("--jugador", default=None)
     args = ap.parse_args()
 
@@ -486,7 +486,14 @@ def main():
             print(f"Buscando fotos de {plain_name(p)}")
             try:
                 fotos = buscar_fotos(p)
-                print(f"  {len(fotos)} foto(s) libres")
+                print(f"  {len(fotos)} foto(s) libres en Commons")
+                try:
+                    import hormi_fondos_extra as X
+                    extra = X.flickr_jugador(p, {f["id"] for f in fotos}, MAX_FOTOS - len(fotos))
+                    print(f"  {len(extra)} foto(s) libres en Flickr")
+                    fotos += extra
+                except Exception as e:
+                    print(f"  Flickr falló ({e}); se sigue solo con Commons")
                 salida.setdefault(p["key"], {})["fotos"] = fotos
             except Exception as e:
                 print(f"  Commons falló ({e}); se conservan las anteriores")
@@ -514,10 +521,29 @@ def main():
         clubes = _buscar("estadios de clubes", lambda: G.buscar_estadios(G.ESTADIOS_CLUB, 2), "estadios_clubes")
         if clubes:
             cats.append({"id": "estadios_clubes", "title": "Estadios de los clubes", "items": clubes})
-        sel = _buscar("fotos de la Selección", G.buscar_seleccion, "seleccion_fotos")
+        def _sel():
+            fotos = G.buscar_seleccion()
+            try:
+                import hormi_fondos_extra as X
+                fotos += X.flickr_seleccion({f["id"] for f in fotos}, max(0, 8 - len(fotos)))
+            except Exception as e:
+                print(f"  Flickr (Selección) falló ({e})")
+            return fotos
+
+        sel = _buscar("fotos de la Selección", _sel, "seleccion_fotos")
         if sel:
             cats.append({"id": "seleccion_fotos", "title": "El Tri en la cancha", "items": sel})
         general = {"categorias": cats}
+
+    # "Mis fondos": lo que el dueño sube a mano a mis_fondos/<jugador>/ o mis_fondos/general/
+    import hormi_fondos_extra as X
+    propios = X.mis_fondos({p["key"] for p in config["players"]})
+    for p in config["players"]:
+        salida.setdefault(p["key"], {})["mios"] = propios.get(p["key"], [])
+    cats = [c for c in general.get("categorias", []) if c["id"] != "mios"]
+    if propios.get("general"):
+        cats.append({"id": "mios", "title": "Mis fondos", "items": propios["general"]})
+    general = {"categorias": cats}
 
     # "contexto": fotos libres de su club (estadio) y de la Selección, para que a
     # nadie le falten fondos reales aunque Commons tenga pocas fotos suyas.
@@ -531,6 +557,7 @@ def main():
     for key in list(salida):
         salida[key].setdefault("generados", [])
         salida[key].setdefault("fotos", [])
+        salida[key].setdefault("mios", [])
     nuevo = {"updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
              "players": salida, "general": general}
     # No reescribir (y no hacer commit vacío) si nada cambió salvo la hora.
@@ -538,11 +565,11 @@ def main():
         print("Sin cambios.")
         return 0
     usadas = {os.path.basename(i["url"].split("?")[0]) for v in salida.values()
-              for i in v["generados"] + v["fotos"] + v.get("contexto", []) if i.get("url")}
+              for i in v["generados"] + v["fotos"] + v.get("contexto", []) + v.get("mios", []) if i.get("url")}
     usadas |= {os.path.basename(i["url"].split("?")[0]) for c in general.get("categorias", [])
                for i in c["items"] if i.get("url")}
     for fn in os.listdir(OUT_DIR) if os.path.isdir(OUT_DIR) else []:
-        if fn.startswith(("foto_", "general_")) and fn not in usadas:
+        if fn.startswith(("foto_", "general_", "mio_")) and fn not in usadas:
             os.remove(os.path.join(OUT_DIR, fn))
     with open(OUT_JSON, "w", encoding="utf-8") as f:
         json.dump(nuevo, f, ensure_ascii=False, indent=2)
