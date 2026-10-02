@@ -114,10 +114,11 @@ def current_leagues_for_team(team_id):
     leagues = []
     for entry in data:
         league = entry.get("league") or {}
-        for season in entry.get("seasons") or []:
-            if season.get("year") == CURRENT_YEAR and season.get("current"):
-                leagues.append({"id": league.get("id"), "name": league.get("name")})
-                break
+        # La temporada "current" la marca la propia API (europeas = año en que
+        # empieza, Liga MX/selecciones = año calendario): no se adivina por año.
+        current = [x.get("year") for x in entry.get("seasons") or [] if x.get("current")]
+        if current:
+            leagues.append({"id": league.get("id"), "name": league.get("name"), "season": max(current)})
     return leagues
 
 
@@ -164,29 +165,24 @@ def build_team_standings(target):
         return None
     leagues = current_leagues_for_team(team_id)
     if not leagues:
-        log(f"    sin ligas 'current' para team_id {team_id} todavía (¿el plan no cubre {CURRENT_YEAR}?)")
+        log(f"    sin ligas 'current' para team_id {team_id} todavía (¿el plan no cubre la temporada vigente?)")
         return None
     result = []
-    # temporadas a intentar, de la más nueva a la más vieja que el plan
-    # gratuito sí suele cubrir — así hoy mismo se ve algo (aunque sea de
-    # 2024) y en cuanto se pague Pro empieza a traer la de verdad sin
-    # tocar nada.
-    seasons_to_try = [CURRENT_YEAR, CURRENT_YEAR - 1, CURRENT_YEAR - 2]
+    # Solo la temporada vigente de cada competición. Antes se probaban también
+    # las 2 anteriores (por el plan gratuito) y salía la tabla VIEJA de una
+    # competición que el equipo ya no juega (p. ej. Champions 2025-26 de
+    # Olympiacos, eliminado en la previa de 2026). Si aún no hay tabla de la
+    # temporada vigente (previas, fase por empezar), simplemente no se muestra.
     for league in leagues:
         league_id = league["id"]
-        row = None
-        used_season = None
-        for season in seasons_to_try:
-            row = standings_row_for(league_id, season, team_id)
-            if row is not None:
-                used_season = season
-                break
+        season = league["season"]
+        row = standings_row_for(league_id, season, team_id)
         if row is None:
-            log(f"    {league['name']}: sin tabla (¿es de eliminación directa, o el plan aún no cubre ninguna temporada probada?)")
+            log(f"    {league['name']} {season}: sin tabla todavía (previas, eliminación directa o aún no empieza)")
             continue
         row["league_id"] = league_id
         row["league_name"] = league["name"]
-        log(f"    {league['name']} {used_season}: lugar {row['rank']}/{row['total_teams']} · {row['points']} pts")
+        log(f"    {league['name']} {season}: lugar {row['rank']}/{row['total_teams']} · {row['points']} pts")
         result.append(row)
     return result or None
 
