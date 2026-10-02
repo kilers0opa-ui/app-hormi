@@ -17,6 +17,23 @@ try:
     cfg = json.load(open("hormi_config.json", encoding="utf-8"))
     res["project_id"] = cfg.get("fcm_project_id")
     res["secret_presente"] = bool(os.environ.get("FCM_SERVICE_ACCOUNT_JSON"))
+    # Reproduce paso a paso la autenticación de FcmSender para saber EXACTAMENTE dónde falla.
+    sa = os.environ.get("FCM_SERVICE_ACCOUNT_JSON", "")
+    res["secret_largo"] = len(sa)
+    try:
+        info = json.loads(sa)
+        res["sa_campos"] = sorted(k for k in info if k != "private_key")
+        res["sa_project_id"] = info.get("project_id")
+        res["sa_client_email"] = info.get("client_email")
+        res["sa_tiene_private_key"] = bool(info.get("private_key"))
+        res["sa_private_key_inicio_ok"] = str(info.get("private_key", "")).startswith("-----BEGIN PRIVATE KEY-----")
+        from google.oauth2 import service_account
+        import google.auth.transport.requests
+        creds = service_account.Credentials.from_service_account_info(info, scopes=[ha.FcmSender.SCOPE])
+        creds.refresh(google.auth.transport.requests.Request())
+        res["auth_ok"] = True
+    except Exception as e:
+        res["auth_error"] = f"{type(e).__name__}: {e}"[:600]
     s = ha.FcmSender(cfg.get("fcm_project_id"))
     res["fcm_habilitado"] = s.enabled
     if s.enabled:
