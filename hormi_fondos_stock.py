@@ -77,6 +77,14 @@ def stock_categorias(previas):
         return previas
     nuevas = []
     excluidas = F.load_excluidas()
+    try:
+        with open(os.path.join(F.HERE, "fondos_stock_aprobadas.json"), encoding="utf-8") as f:
+            aprobadas = set(json.load(f).get("ids", []))
+    except (OSError, ValueError):
+        aprobadas = set()
+    if not aprobadas:
+        print("  (stock: no hay fotos aprobadas en fondos_stock_aprobadas.json, se omite)")
+        return previas
     for cid, titulo, consultas, maximo in CATEGORIAS:
         items, vistos = [], set()
         for consulta, team_key in consultas:
@@ -90,7 +98,7 @@ def stock_categorias(previas):
                     continue
                 tomadas = 0
                 for c in candidatos:
-                    if len(items) >= maximo or tomadas >= POR_CONSULTA or c["id"] in vistos or c["id"] in excluidas:
+                    if len(items) >= maximo or tomadas >= 12 or c["id"] in vistos or c["id"] in excluidas or c["id"] not in aprobadas:
                         continue
                     try:
                         img = Image.open(io.BytesIO(_get(c["src"], timeout=60))).convert("RGB")
