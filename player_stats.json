@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T03:13:01.503202-06:00",
+  "updated_at": "2026-10-02T14:26:10.244121-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -204,6 +204,34 @@
             "assists": 2,
             "minutes": 152,
             "estimated": true
+          }
+        ],
+        "2020": [
+          {
+            "league_id": 263,
+            "league_name": "Liga de Expansión MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/263.png",
+            "team_id": 14278,
+            "team_name": "Tapatío",
+            "team_logo": "https://media.api-sports.io/football/teams/14278.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 20
+          }
+        ],
+        "2021": [
+          {
+            "league_id": 263,
+            "league_name": "Liga de Expansión MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/263.png",
+            "team_id": 14278,
+            "team_name": "Tapatío",
+            "team_logo": "https://media.api-sports.io/football/teams/14278.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 2
           }
         ]
       },
@@ -1753,6 +1781,33 @@
             "assists": 0,
             "minutes": 417
           }
+        ],
+        "2016": [],
+        "2017": [
+          {
+            "league_id": 263,
+            "league_name": "Liga de Expansión MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/263.png",
+            "team_id": 2301,
+            "team_name": "Cimarrones",
+            "team_logo": "https://media.api-sports.io/football/teams/2301.png",
+            "played": 25,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 2004
+          },
+          {
+            "league_id": null,
+            "league_name": "Copa MX",
+            "league_logo": null,
+            "team_id": 2301,
+            "team_name": "Cimarrones",
+            "team_logo": "https://media.api-sports.io/football/teams/2301.png",
+            "played": 8,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 636
+          }
         ]
       },
       "applied_fixtures": {}
@@ -1883,18 +1938,6 @@
             "goals": 2,
             "assists": 0,
             "minutes": 262
-          },
-          {
-            "league_id": null,
-            "league_name": "King's Cup",
-            "league_logo": null,
-            "team_id": 2933,
-            "team_name": "Al-Qadisiyah FC",
-            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
-            "played": 41,
-            "goals": 18,
-            "assists": 7,
-            "minutes": 2845
           },
           {
             "league_id": 16,
@@ -2265,7 +2308,9 @@
             "minutes": 84,
             "estimated": true
           }
-        ]
+        ],
+        "2013": [],
+        "2014": []
       },
       "applied_fixtures": {}
     },
@@ -2515,18 +2560,6 @@
             "goals": 7,
             "assists": 1,
             "minutes": 770
-          },
-          {
-            "league_id": 2,
-            "league_name": "UEFA Champions League",
-            "league_logo": "https://media.api-sports.io/football/leagues/2.png",
-            "team_id": 489,
-            "team_name": "AC Milan",
-            "team_logo": "https://media.api-sports.io/football/teams/489.png",
-            "played": 5,
-            "goals": 5,
-            "assists": 1,
-            "minutes": 295
           },
           {
             "league_id": 9,
@@ -2802,7 +2835,22 @@
             "assists": 0,
             "minutes": 74
           }
-        ]
+        ],
+        "2017": [
+          {
+            "league_id": null,
+            "league_name": "Copa MX",
+            "league_logo": null,
+            "team_id": 2295,
+            "team_name": "Cruz Azul",
+            "team_logo": "https://media.api-sports.io/football/teams/2295.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 3
+          }
+        ],
+        "2018": []
       },
       "applied_fixtures": {}
     },
@@ -3046,7 +3094,8 @@
             "assists": 0,
             "minutes": 238
           }
-        ]
+        ],
+        "2020": []
       },
       "applied_fixtures": {}
     },
@@ -3338,6 +3387,32 @@
             "assists": 0,
             "minutes": 90,
             "estimated": true
+          }
+        ],
+        "2021": [
+          {
+            "league_id": 253,
+            "league_name": "Major League Soccer",
+            "league_logo": "https://media.api-sports.io/football/leagues/253.png",
+            "team_id": 1595,
+            "team_name": "Seattle Sounders",
+            "team_logo": "https://media.api-sports.io/football/teams/1595.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 77
+          },
+          {
+            "league_id": 255,
+            "league_name": "USL Championship",
+            "league_logo": "https://media.api-sports.io/football/leagues/255.png",
+            "team_id": 4020,
+            "team_name": "Tacoma Defiance",
+            "team_logo": "https://media.api-sports.io/football/teams/4020.png",
+            "played": 28,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 1862
           }
         ]
       },
@@ -3758,6 +3833,49 @@
             "assists": 0,
             "minutes": 352
           }
+        ],
+        "2014": [],
+        "2015": [
+          {
+            "league_id": null,
+            "league_name": "UEFA Youth League",
+            "league_logo": null,
+            "team_id": 7926,
+            "team_name": "Real Madrid U19",
+            "team_logo": "https://media.api-sports.io/football/teams/7926.png",
+            "played": 7,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 539
+          }
+        ],
+        "2016": [
+          {
+            "league_id": null,
+            "league_name": "Primera División RFEF",
+            "league_logo": null,
+            "team_id": 861,
+            "team_name": "Rayo Majadahonda",
+            "team_logo": "https://media.api-sports.io/football/teams/861.png",
+            "played": 33,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 2107
+          }
+        ],
+        "2017": [
+          {
+            "league_id": null,
+            "league_name": "Primera División RFEF",
+            "league_logo": null,
+            "team_id": 9575,
+            "team_name": "Real Madrid II",
+            "team_logo": "https://media.api-sports.io/football/teams/9575.png",
+            "played": 26,
+            "goals": 4,
+            "assists": 0,
+            "minutes": 885
+          }
         ]
       },
       "applied_fixtures": {}
@@ -3864,18 +3982,6 @@
             "goals": 0,
             "assists": 0,
             "minutes": 90
-          },
-          {
-            "league_id": 121,
-            "league_name": "DBU Pokalen",
-            "league_logo": "https://media.api-sports.io/football/leagues/121.png",
-            "team_id": 400,
-            "team_name": "FC Copenhagen",
-            "team_logo": "https://media.api-sports.io/football/teams/400.png",
-            "played": 39,
-            "goals": 2,
-            "assists": 8,
-            "minutes": 2548
           },
           {
             "league_id": 848,
@@ -3990,7 +4096,9 @@
             "minutes": 645
           }
         ],
-        "2026": []
+        "2026": [],
+        "2019": [],
+        "2020": []
       },
       "applied_fixtures": {}
     },
