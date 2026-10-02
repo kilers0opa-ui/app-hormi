@@ -51,6 +51,9 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Instalar dependencias (push real vía FCM)
+        run: pip install google-auth requests
+
       - name: Decidir si toca revisar
         id: gate
         run: |

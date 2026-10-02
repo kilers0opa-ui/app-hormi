@@ -88,7 +88,7 @@ jobs:
 
       - name: Instalar dependencias (push real vía FCM)
         if: steps.check.outputs.hay == 'true'
-        run: pip install google-auth
+        run: pip install google-auth requests
 
       - name: Atender goles y finales (videos_gol.json)
         if: steps.check.outputs.hay == 'true'
