@@ -55,8 +55,8 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Instalar Pillow
-        run: pip install pillow
+      - name: Instalar Pillow y OpenCV
+        run: pip install pillow numpy opencv-contrib-python-headless
 
       - name: Generar fondos y buscar fotos libres
         env:

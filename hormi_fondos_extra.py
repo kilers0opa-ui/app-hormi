@@ -168,6 +168,49 @@ def flickr_seleccion(ya, maximo=4):
 
 
 # ------------------------------------------------------------------ Mis fondos
+MEJORA_VERSION = "-sr1"
+CACHE_MIOS = os.path.join(F.HERE, "mis_fondos_cache.json")
+MODELO_SR = os.path.join(F.HERE, "modelos_sr", "LapSRN_x2.pb")
+LADO_ANCHO_OBJETIVO = 1440      # ancho final máximo tras ampliar
+ANCHO_SIN_MEJORA = 1080         # fotos con ≥ este ancho no se amplían
+
+
+def _leer_cache():
+    try:
+        with open(CACHE_MIOS, encoding="utf-8") as fh:
+            return json.load(fh)
+    except Exception:
+        return {}
+
+
+def _mejorar_foto(img):
+    """Fotos chicas (Pinterest ~736 px) se ven suaves al estirarlas a la pantalla del
+    celular. Se amplían x2 con super-resolución (LapSRN) cuando está disponible (si no,
+    Lanczos), se ajustan a ≤1440 px de ancho y se afinan un poco. Nunca se reduce el
+    original por debajo de su tamaño."""
+    from PIL import Image, ImageFilter
+    if img.width >= ANCHO_SIN_MEJORA:
+        if max(img.size) > 2340:
+            k = 2340 / max(img.size)
+            img = img.resize((round(img.width * k), round(img.height * k)), Image.LANCZOS)
+        return img
+    grande = None
+    try:
+        import cv2
+        import numpy as np
+        sr = cv2.dnn_superres.DnnSuperResImpl_create()
+        sr.readModel(MODELO_SR)
+        sr.setModel("lapsrn", 2)
+        bgr = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)
+        grande = Image.fromarray(cv2.cvtColor(sr.upsample(bgr), cv2.COLOR_BGR2RGB))
+    except Exception as e:
+        print(f"  (super-resolución no disponible, uso Lanczos: {e})")
+        grande = img.resize((img.width * 2, img.height * 2), Image.LANCZOS)
+    if grande.width > LADO_ANCHO_OBJETIVO:
+        k = LADO_ANCHO_OBJETIVO / grande.width
+        grande = grande.resize((LADO_ANCHO_OBJETIVO, round(grande.height * k)), Image.LANCZOS)
+    return grande.filter(ImageFilter.UnsharpMask(radius=1.4, percent=70, threshold=2))
+
 def _slug(s):
     return re.sub(r"[^a-z0-9]+", "-", norm(s)).strip("-") or "fondo"
 
@@ -180,6 +223,7 @@ def mis_fondos(keys_jugadores):
     res = {}
     if not os.path.isdir(MIS_FONDOS_DIR):
         return res
+    cache, cache_sucio = _leer_cache(), False
     for key in sorted(os.listdir(MIS_FONDOS_DIR)):
         carpeta = os.path.join(MIS_FONDOS_DIR, key)
         if not os.path.isdir(carpeta) or (key != "general" and key not in keys_jugadores):
@@ -196,17 +240,26 @@ def mis_fondos(keys_jugadores):
                 titulo = f"Mi foto {n_foto}"
             else:
                 titulo = stem.replace("_", " ").replace("-", " ").strip().title()
+            ruta = os.path.join(carpeta, fn)
+            nombre = f"mio_{key}_{_slug(stem)}.jpg"
             try:
-                img = Image.open(os.path.join(carpeta, fn)).convert("RGB")
-                if max(img.size) > 2340:
-                    k = 2340 / max(img.size)
-                    img = img.resize((round(img.width * k), round(img.height * k)), Image.LANCZOS)
-                buf = io.BytesIO()
-                img.save(buf, "JPEG", quality=90, optimize=True)
+                with open(ruta, "rb") as fh:
+                    src_hash = hashlib.sha1(fh.read()).hexdigest() + MEJORA_VERSION
+                destino = os.path.join(OUT_DIR, nombre)
+                if cache.get(nombre) == src_hash and os.path.exists(destino):
+                    with open(destino, "rb") as fh:
+                        data = fh.read()
+                    img = Image.open(io.BytesIO(data))
+                else:
+                    img = _mejorar_foto(Image.open(ruta).convert("RGB"))
+                    buf = io.BytesIO()
+                    img.save(buf, "JPEG", quality=92, optimize=True, subsampling=0)
+                    data = buf.getvalue()
+                    cache[nombre] = src_hash
+                    cache_sucio = True
             except Exception as e:
                 print(f"  (mis_fondos/{key}/{fn}: no se pudo leer: {e})")
                 continue
-            data = buf.getvalue()
             nombre = f"mio_{key}_{_slug(stem)}.jpg"
             os.makedirs(OUT_DIR, exist_ok=True)
             with open(os.path.join(OUT_DIR, nombre), "wb") as f:
@@ -218,4 +271,7 @@ def mis_fondos(keys_jugadores):
             })
         if items:
             res[key] = items
+    if cache_sucio:
+        with open(CACHE_MIOS, "w", encoding="utf-8") as fh:
+            json.dump(cache, fh, indent=1, sort_keys=True)
     return res
