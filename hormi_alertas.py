@@ -681,7 +681,7 @@ def replay(args, notifier, config, fcm=None):
 # (no cuesta nada si no hay nada que ver) y solo gasta cuota real durante
 # los partidos.
 SCHEDULE_FILE = Path("hormi_horario.json")
-CONVOCATORIA_FILE = Path("hormi_convocatoria.json")   # quién NO está convocado a ESTE partido de la Selección
+CONVOCATORIA_FILE = Path("hormi_convocatoria.json")   # convocatoria de la Selección (la escribe hormi_convocatoria.py)
 REFRESH_HORAS = 6                      # cada cuánto se revisa si hay partido nuevo
 VENTANA_ANTES = timedelta(minutes=75)  # desde cuándo antes del kickoff se vigila en vivo (la API publica la alineación ~60 min antes)
 VENTANA_DESPUES = timedelta(hours=3)   # hasta cuándo después se sigue vigilando
@@ -899,20 +899,24 @@ def warn_once(key, msg):
 
 def _no_convocados(target, entry):
     """Llaves de jugadores que NO están en la lista de la Selección para ESTE
-    partido (la API no publica la convocatoria con anticipación; se anota a
-    mano en hormi_convocatoria.json: {"seleccion": {"fixture_id": N,
-    "no_convocados": ["raul", ...]}}). Solo vale para ese fixture_id, así que
-    se vence sola: el siguiente partido vuelve a mostrarse a todos hasta que
-    se anote su lista. Sin archivo o sin coincidencia = nadie excluido."""
+    partido. La lista la escribe hormi_convocatoria.py (lee la convocatoria
+    oficial en Wikipedia) con la ventana de fechas de esa convocatoria
+    ("desde"/"hasta"); solo vale para partidos dentro de esa ventana, así que
+    se vence sola. Sin archivo, fuera de ventana o con cualquier problema =
+    nadie excluido (ante la duda, se muestra)."""
     if target.get("kind") != "seleccion" or not entry:
         return set()
     try:
         sel = (load_json(CONVOCATORIA_FILE, {}) or {}).get("seleccion") or {}
+        ko = _parse(entry.get("kickoff"))
+        if not ko or not sel.get("desde") or not sel.get("hasta"):
+            return set()
+        dia = ko.astimezone(LOCAL_TZ).date().isoformat()
+        if sel["desde"] <= dia <= sel["hasta"]:
+            return set(sel.get("no_convocados") or [])
     except Exception:
-        return set()
-    if sel.get("fixture_id") != entry.get("fixture_id"):
-        return set()
-    return set(sel.get("no_convocados") or [])
+        pass
+    return set()
 
 
 def _next_match_status(target, entry, player_key=None):

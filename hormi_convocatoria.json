@@ -1,8 +1,23 @@
 {
-  "_nota": "La API no publica la convocatoria de la Selección con anticipación. Aquí se anotan, por partido, los jugadores del roster que NO están convocados; para ellos no se muestra ese partido como su próximo ni se manda 'Mañana juega'. Solo vale para ese fixture_id y se vence sola. Las alertas de alineación del día del partido siguen funcionando igual.",
   "seleccion": {
-    "fixture_id": 1629004,
-    "partido": "USA vs Mexico, 3-oct-2026",
-    "no_convocados": ["raul", "quinones", "huescas"]
+    "desde": "2026-09-26",
+    "hasta": "2026-10-06",
+    "jugadores_en_lista": 32,
+    "convocados": [
+      "armando",
+      "mora",
+      "vasquez",
+      "gimenez",
+      "chavez",
+      "obed",
+      "fidalgo"
+    ],
+    "no_convocados": [
+      "raul",
+      "quinones",
+      "huescas"
+    ],
+    "fuente": "https://en.wikipedia.org/wiki/Mexico_national_football_team#Current_squad",
+    "actualizado": "2026-10-02T01:44:51-06:00"
   }
 }
