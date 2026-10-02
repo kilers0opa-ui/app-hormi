@@ -261,6 +261,7 @@ def generar(config, only_player=None):
 
 
 # ------------------------------------------------------------ Wikimedia Commons
+CONTEXTO_FUTBOL = r"\b(football|footballer|futbol|futbolista|soccer|fifa|concacaf|liga mx|national team|seleccion|world cup|copa mundial|uefa)\b"
 LICENCIAS_OK = re.compile(r"^(cc[ -]?by|cc[ -]?0|cc0|public domain|pd\b|attribution)", re.I)
 
 
@@ -279,6 +280,8 @@ def buscar_fotos(player):
     nombre = plain_name(player)
     partes = norm(nombre).split()
     primero, apellido = partes[0], partes[-1]
+    clubes = [norm(t.get("label") or "") for t in player.get("targets", []) if t["key"] != "seleccion"]
+    clubes = [c for c in clubes if len(c) >= 4]
     candidatos = {}
     for consulta in (f'"{nombre}" footballer', f'"{nombre}"'):
         data = _commons({
@@ -309,6 +312,13 @@ def buscar_fotos(player):
             _strip_html((meta.get("Categories") or {}).get("value")).replace("|", " "),
         ]))
         if primero not in pajar or apellido not in pajar:
+            continue
+        # Y que sea de fútbol: evita políticos, músicos y otros homónimos
+        # (p. ej. otro "Armando González"). Debe aparecer el deporte o el
+        # equipo (club/selección) del jugador.
+        if not re.search(CONTEXTO_FUTBOL, pajar) and not any(c in pajar for c in clubes):
+            continue
+        if re.search(r"\b(politic|diputad|senador|alcalde|gobernador|candidat|cantante|actor|actriz)", pajar):
             continue
         w, h = info.get("width") or 0, info.get("height") or 0
         if w < 800 or h < 800:
