@@ -63,7 +63,7 @@ CONFIG_FILE = Path("hormi_config.json")
 STATS_FILE = Path("player_stats.json")
 
 LOCAL_TZ = timezone(timedelta(hours=-6))   # hora del centro de México
-MIN_SECONDS_BETWEEN_REQUESTS = 6.5         # plan gratuito: 10 peticiones/min
+MIN_SECONDS_BETWEEN_REQUESTS = 0.3         # plan Pro: 300 peticiones/min (en el gratuito eran 10/min → 6.5 s)
 _last_request_at = 0.0
 last_api_error = None
 

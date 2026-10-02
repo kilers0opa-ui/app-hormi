@@ -81,7 +81,7 @@ FINISHED = {"FT", "AET", "PEN"}
 CANCELLED = {"PST", "CANC", "ABD", "AWD", "WO", "SUSP"}
 NOT_STARTED = {"NS", "TBD"}
 
-MIN_SECONDS_BETWEEN_REQUESTS = 6.5         # plan gratuito: 10 peticiones/min
+MIN_SECONDS_BETWEEN_REQUESTS = 0.3         # plan Pro: 300 peticiones/min (en el gratuito eran 10/min → 6.5 s)
 _last_request_at = 0.0
 last_api_error = None    # último {"errors": ...} de la API, para diagnosticar sin logs
 
@@ -669,7 +669,7 @@ def replay(args, notifier, config, fcm=None):
 # los partidos.
 SCHEDULE_FILE = Path("hormi_horario.json")
 REFRESH_HORAS = 6                      # cada cuánto se revisa si hay partido nuevo
-VENTANA_ANTES = timedelta(minutes=20)  # desde cuándo antes del kickoff se vigila en vivo
+VENTANA_ANTES = timedelta(minutes=75)  # desde cuándo antes del kickoff se vigila en vivo (la API publica la alineación ~60 min antes)
 VENTANA_DESPUES = timedelta(hours=3)   # hasta cuándo después se sigue vigilando
 
 

@@ -51,7 +51,7 @@ CONFIG_FILE = Path("hormi_config.json")
 STANDINGS_FILE = Path("team_standings.json")
 
 LOCAL_TZ = timezone(timedelta(hours=-6))
-MIN_SECONDS_BETWEEN_REQUESTS = 6.5
+MIN_SECONDS_BETWEEN_REQUESTS = 0.3         # plan Pro: 300 peticiones/min (en el gratuito eran 10/min → 6.5 s)
 CURRENT_YEAR = 2026
 
 _last_request_at = 0.0

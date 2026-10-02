@@ -48,7 +48,7 @@ CONFIG_FILE = Path("hormi_config.json")
 requests_used = 0
 last_request_at = 0.0
 last_api_error = None    # último {"errors": ...} de la API, para diagnosticar sin logs
-MIN_SECONDS_BETWEEN_REQUESTS = 6.5   # plan gratuito: máx. 10 peticiones/min
+MIN_SECONDS_BETWEEN_REQUESTS = 0.3         # plan Pro: 300 peticiones/min (en el gratuito eran 10/min → 6.5 s)
 
 
 # ---------------------------------------------------------------- utilidades

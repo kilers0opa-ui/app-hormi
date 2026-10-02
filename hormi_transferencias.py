@@ -58,7 +58,7 @@ BASE_URL = "https://v3.football.api-sports.io"
 CONFIG_FILE = Path("hormi_config.json")
 
 LOCAL_TZ = timezone(timedelta(hours=-6))
-MIN_SECONDS_BETWEEN_REQUESTS = 6.5
+MIN_SECONDS_BETWEEN_REQUESTS = 0.3         # plan Pro: 300 peticiones/min (en el gratuito eran 10/min → 6.5 s)
 
 _last_request_at = 0.0
 
