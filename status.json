@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T00:16:45.205910-06:00",
+  "updated_at": "2026-10-02T00:18:33.370929-06:00",
   "app_name": "Legión MX",
   "players": {
     "armando": {
@@ -11,9 +11,9 @@
           "emoji": "🔴",
           "crest_url": "https://media.api-sports.io/football/teams/553.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T18:04:06.751594-06:00",
+          "checked_at": "2026-10-02T00:18:21.934593-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-553_timezone-America/Mexico_City.json'"
           }
         },
         "seleccion": {
@@ -21,9 +21,9 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T18:04:32.750705-06:00",
+          "checked_at": "2026-10-02T00:18:22.408452-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-16_timezone-America/Mexico_City.json'"
           }
         }
       }
@@ -37,9 +37,9 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T18:04:58.770633-06:00",
+          "checked_at": "2026-10-02T00:18:23.600695-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-16_timezone-America/Mexico_City.json'"
           }
         },
         "wolves": {
@@ -47,9 +47,9 @@
           "emoji": "🐺",
           "crest_url": "https://media.api-sports.io/football/teams/39.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T08:57:28.773493-06:00",
+          "checked_at": "2026-10-02T00:18:23.008902-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-39_timezone-America/Mexico_City.json'"
           }
         }
       }
@@ -63,9 +63,9 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T18:05:50.750760-06:00",
+          "checked_at": "2026-10-02T00:18:24.818071-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-16_timezone-America/Mexico_City.json'"
           }
         },
         "al_qadsiah": {
@@ -73,9 +73,9 @@
           "emoji": "🔴",
           "crest_url": "https://media.api-sports.io/football/teams/2933.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T18:05:24.747400-06:00",
+          "checked_at": "2026-10-02T00:18:24.225637-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-2933_timezone-America/Mexico_City.json'"
           }
         }
       }
@@ -89,9 +89,9 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T08:37:56.752418-06:00",
+          "checked_at": "2026-10-02T00:18:26.299474-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-16_timezone-America/Mexico_City.json'"
           }
         },
         "tijuana": {
@@ -99,9 +99,9 @@
           "emoji": "🔴",
           "crest_url": "https://media.api-sports.io/football/teams/2280.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T08:57:47.721676-06:00",
+          "checked_at": "2026-10-02T00:18:25.402395-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-2280_timezone-America/Mexico_City.json'"
           }
         }
       }
@@ -115,9 +115,9 @@
           "emoji": "🦅",
           "crest_url": "https://media.api-sports.io/football/teams/495.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T18:06:16.749347-06:00",
+          "checked_at": "2026-10-02T00:18:26.782262-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-495_timezone-America/Mexico_City.json'"
           }
         },
         "seleccion": {
@@ -125,9 +125,9 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T18:06:42.761560-06:00",
+          "checked_at": "2026-10-02T00:18:27.375882-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-16_timezone-America/Mexico_City.json'"
           }
         }
       }
@@ -141,9 +141,9 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T06:24:43.922254-06:00",
+          "checked_at": "2026-10-02T00:18:28.583853-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-16_timezone-America/Mexico_City.json'"
           }
         },
         "porto": {
@@ -151,9 +151,9 @@
           "emoji": "🔵",
           "crest_url": "https://media.api-sports.io/football/teams/212.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T18:07:08.755798-06:00",
+          "checked_at": "2026-10-02T00:18:27.969512-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-212_timezone-America/Mexico_City.json'"
           }
         }
       }
@@ -167,9 +167,9 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T06:25:03.425833-06:00",
+          "checked_at": "2026-10-02T00:18:29.769400-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-16_timezone-America/Mexico_City.json'"
           }
         },
         "az_alkmaar": {
@@ -177,9 +177,9 @@
           "emoji": "🔴",
           "crest_url": "https://media.api-sports.io/football/teams/201.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T18:07:34.760792-06:00",
+          "checked_at": "2026-10-02T00:18:29.167471-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-201_timezone-America/Mexico_City.json'"
           }
         }
       }
@@ -193,9 +193,9 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T08:38:16.250521-06:00",
+          "checked_at": "2026-10-02T00:18:30.973350-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-16_timezone-America/Mexico_City.json'"
           }
         },
         "atletico_madrid": {
@@ -203,9 +203,9 @@
           "emoji": "🔴",
           "crest_url": "https://media.api-sports.io/football/teams/530.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T18:08:00.757276-06:00",
+          "checked_at": "2026-10-02T00:18:30.385017-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-530_timezone-America/Mexico_City.json'"
           }
         }
       }
@@ -219,9 +219,9 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T08:38:35.758113-06:00",
+          "checked_at": "2026-10-02T00:18:32.169868-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-16_timezone-America/Mexico_City.json'"
           }
         },
         "betis": {
@@ -229,9 +229,9 @@
           "emoji": "🟢",
           "crest_url": "https://media.api-sports.io/football/teams/543.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T18:08:26.749491-06:00",
+          "checked_at": "2026-10-02T00:18:31.571871-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-543_timezone-America/Mexico_City.json'"
           }
         }
       }
@@ -245,9 +245,9 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T08:38:55.239408-06:00",
+          "checked_at": "2026-10-02T00:18:33.370620-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-16_timezone-America/Mexico_City.json'"
           }
         },
         "copenhague": {
@@ -255,9 +255,9 @@
           "emoji": "⚪",
           "crest_url": "https://media.api-sports.io/football/teams/400.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-01T18:08:52.997691-06:00",
+          "checked_at": "2026-10-02T00:18:32.768254-06:00",
           "api_error": {
-            "plan": "Free plans do not have access to the Last parameter."
+            "error": "FileNotFoundError: [Errno 2] No such file or directory: 'cache_api/fixtures_date-2026-10-02_season-2026_team-400_timezone-America/Mexico_City.json'"
           }
         }
       }
