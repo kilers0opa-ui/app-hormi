@@ -880,6 +880,20 @@ def warn_once(key, msg):
         log(msg)
 
 
+def _next_match_status(target, entry):
+    """Estado para la app de un objetivo sin partido en vigilancia: el próximo
+    partido si el horario lo conoce, o "sin_partido" a secas."""
+    base = {"label": target["label"], "emoji": target["emoji"],
+            "crest_url": target.get("crest_url"), "status": "sin_partido",
+            "checked_at": now_iso()}
+    ko = _parse(entry.get("kickoff")) if entry else None
+    if ko and entry.get("home") and ko > datetime.now(LOCAL_TZ) and entry.get("fx_status") not in CANCELLED:
+        base.update({"match_reference": "próximo",
+                     "match": f"{entry['home']} vs {entry['away']}",
+                     "league": entry.get("league"), "kickoff": entry["kickoff"]})
+    return base
+
+
 def check_once(player, target, config, notifier, sent_by_target, status_out, schedule, fcm=None):
     label, emoji, key = target["label"], target["emoji"], target["key"]
     crest_url = target.get("crest_url")
@@ -920,11 +934,17 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         why = entry.get("why")
 
     if not in_live_window(entry):
-        # Nada que vigilar todavía / ya pasó la ventana: no gasta petición,
-        # deja el status.json como estaba (o marca "sin_partido" si no había nada).
-        status_out.setdefault(key, {
-            "label": label, "emoji": emoji, "crest_url": crest_url,
-            "status": "sin_partido", "checked_at": now_iso()})
+        # Nada que vigilar todavía / ya pasó la ventana: no gasta petición.
+        # En vez de dejar "Sin partido programado", la app muestra el PRÓXIMO
+        # partido que ya conoce el horario (rival, liga, fecha/hora). Se
+        # conserva el resultado del partido recién terminado durante 48 h
+        # para que "Último partido" no desaparezca al instante.
+        cur = status_out.get(key)
+        ko = _parse((cur or {}).get("kickoff"))
+        keep_last = bool(cur and cur.get("status") == "finalizado" and not cur.get("api_error")
+                         and ko and datetime.now(LOCAL_TZ) - ko < timedelta(hours=48))
+        if not keep_last:
+            status_out[key] = _next_match_status(target, entry)
         return
 
     # Varios jugadores comparten partido (p.ej. los 10 con la Selección): se
