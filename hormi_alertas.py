@@ -1014,6 +1014,11 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         ko = _parse((cur or {}).get("kickoff"))
         keep_last = bool(cur and cur.get("status") == "finalizado" and not cur.get("api_error")
                          and ko and datetime.now(LOCAL_TZ) - ko < timedelta(hours=48))
+        # Un "finalizado" de club sin minutos (sin alineación) de un convocado al Tri
+        # dentro de su ventana no es partido suyo: no se conserva como "Último partido".
+        if (keep_last and target.get("kind") == "club" and _en_concentracion(player["key"], cur)
+                and not ((cur.get("summary") or {}).get("minutes"))):
+            keep_last = False
         if not keep_last:
             status_out[key] = _next_match_status(target, entry, player["key"])
         return
