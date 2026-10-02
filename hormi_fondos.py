@@ -333,10 +333,11 @@ def buscar_fotos(player):
             artista = artista[:77] + "…"
         fotos.append({
             "score": (1 if h >= w else 0, min(w, h)),
+            "src": info.get("thumburl") or info.get("url"),
             "item": {
                 "id": f"commons_{page['pageid']}",
                 "title": nombre,
-                "url": info.get("thumburl") or info.get("url"),
+                "url": None,
                 "credit": f"Foto: {artista} · {licencia} · Wikimedia Commons",
                 "source_url": info.get("descriptionurl"),
                 "width": info.get("thumbwidth") or w,
@@ -344,7 +345,32 @@ def buscar_fotos(player):
             },
         })
     fotos.sort(key=lambda f: f["score"], reverse=True)
-    return [f["item"] for f in fotos[:MAX_FOTOS]]
+    items = []
+    for f in fotos:
+        if len(items) >= MAX_FOTOS:
+            break
+        # La foto se guarda en el repo (1080 px de ancho): así la app la baja
+        # de GitHub como las demás y no depende de Wikimedia.
+        try:
+            from PIL import Image
+            img = Image.open(io.BytesIO(http_get(f["src"], timeout=40))).convert("RGB")
+            if img.width > 1080:
+                img = img.resize((1080, round(img.height * 1080 / img.width)), Image.LANCZOS)
+            buf = io.BytesIO()
+            img.save(buf, "JPEG", quality=88, optimize=True)
+        except Exception as e:
+            print(f"  (no se pudo bajar {f['src']}: {e})")
+            continue
+        data = buf.getvalue()
+        fname = f"foto_{f['item']['id']}.jpg"
+        os.makedirs(OUT_DIR, exist_ok=True)
+        with open(os.path.join(OUT_DIR, fname), "wb") as fh:
+            fh.write(data)
+        f["item"]["url"] = f"{RAW_BASE}{fname}?v={hashlib.sha1(data).hexdigest()[:8]}"
+        f["item"]["width"], f["item"]["height"] = img.size
+        items.append(f["item"])
+        time.sleep(1)
+    return items
 
 
 # ------------------------------------------------------------------ principal
@@ -385,6 +411,11 @@ def main():
     if previo.get("players") == salida:
         print("Sin cambios.")
         return 0
+    usadas = {os.path.basename(i["url"].split("?")[0]) for v in salida.values()
+              for i in v["generados"] + v["fotos"] if i.get("url")}
+    for fn in os.listdir(OUT_DIR) if os.path.isdir(OUT_DIR) else []:
+        if fn.startswith("foto_") and fn not in usadas:
+            os.remove(os.path.join(OUT_DIR, fn))
     with open(OUT_JSON, "w", encoding="utf-8") as f:
         json.dump(nuevo, f, ensure_ascii=False, indent=2)
         f.write("\n")
