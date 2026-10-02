@@ -56,6 +56,7 @@ Push real (opcional, además de ntfy):
 import argparse
 import json
 import os
+import re
 import secrets
 import subprocess
 import sys
@@ -102,6 +103,13 @@ def load_config():
     if config is None:
         sys.exit(f"Falta {CONFIG_FILE}. Corre primero hormiga_fase1_validar_api.py.")
     return config
+
+
+def display_name(player):
+    """Nombre completo SIN el apodo entre comillas ('Armando "La Hormiga" González'
+    → 'Armando González'). Las notificaciones usan el nombre del jugador; el apodo
+    (El Chaquito, Morita...) queda solo para las de gol."""
+    return re.sub(r'\s*"[^"]*"\s*', " ", player["name"]).strip()
 
 
 def api(endpoint, params, use_cache=False):
@@ -307,7 +315,8 @@ def analyze(data, player, target):
     nunca chocan aunque dos jugadores compartan el mismo partido (p.ej.
     ambos convocados a la Selección Mexicana en la misma fecha FIFA)."""
     player_id = player["player_id"]
-    apodo = player.get("apodo") or player["name"]
+    apodo = player.get("apodo") or player["name"]   # solo para las alertas de GOL
+    nombre = display_name(player)                    # para todas las demás
     emoji, label, tkey = target["emoji"], target["label"], target["key"]
     prefix = f"{player['key']}:{tkey}"
 
@@ -327,7 +336,7 @@ def analyze(data, player, target):
         alerts.append((f"{prefix}:{fid}:{key}", title, message, priority))
 
     if status in CANCELLED:
-        add("cancelado", f"⚠️ {emoji} {label} ({apodo}): partido suspendido/pospuesto",
+        add("cancelado", f"⚠️ {emoji} {label} ({nombre}): partido suspendido/pospuesto",
             f"{match} · {fx['status']['long']}")
         return alerts, {"status": "cancelado", "match": match, "league": league,
                         "score": score(), "goals": 0, "assists": 0, "summary": None}
@@ -341,16 +350,16 @@ def analyze(data, player, target):
                 role = lbl
     if data.get("lineups"):
         if role == "titular":
-            add("alineacion", f"⭐ {emoji} ¡{apodo} titular con {label}!", f"{match} · {league}", 4)
+            add("alineacion", f"⭐ {emoji} ¡{nombre} titular con {label}!", f"{match} · {league}", 4)
         elif role == "banca":
-            add("alineacion", f"🪑 {emoji} {apodo} arranca en la banca ({label})",
+            add("alineacion", f"🪑 {emoji} {nombre} arranca en la banca ({label})",
                 f"{match} · {league}")
         else:
-            add("alineacion", f"❌ {emoji} {apodo} no convocado ({label})",
+            add("alineacion", f"❌ {emoji} {nombre} no convocado ({label})",
                 f"{match} · {league}", 2)
 
     if status in LIVE | FINISHED:
-        add("inicio", f"⚽ {emoji} Arrancó: {label} ({apodo})", match, 2)
+        add("inicio", f"⚽ {emoji} Arrancó: {label} ({nombre})", match, 2)
 
     entered = False
     goals = assists = 0
@@ -372,17 +381,17 @@ def analyze(data, player, target):
                     f"{label} · {score()}", 5)
             elif aid == player_id:
                 assists += 1
-                add(k + ":ast", f"🎯 {emoji} ¡Asistencia de {apodo}! {m}",
+                add(k + ":ast", f"🎯 {emoji} ¡Asistencia de {nombre}! {m}",
                     f"{label} · Gol de {e['player']['name']} · {score()}", 4)
         elif etype == "var" and "goal" in detail.lower() and player_id in (pid, aid):
-            add(k, f"🚫 {emoji} VAR anula jugada de gol de {apodo} {m}", f"{label} · {detail}")
+            add(k, f"🚫 {emoji} VAR anula jugada de gol de {nombre} {m}", f"{label} · {detail}")
         elif etype == "subst" and player_id in (pid, aid):
             if role == "banca" and not entered:
                 entered, in_minute = True, t["elapsed"]
-                add(k, f"🔄 {emoji} ¡Entra {apodo}! {m}", f"{label} · {score()}", 4)
+                add(k, f"🔄 {emoji} ¡Entra {nombre}! {m}", f"{label} · {score()}", 4)
             else:
                 out_minute = t["elapsed"]
-                add(k, f"↩️ {emoji} Sale {apodo} {m}", f"{label} · {score()}", 2)
+                add(k, f"↩️ {emoji} Sale {nombre} {m}", f"{label} · {score()}", 2)
 
     summary = None
     if status in FINISHED:
@@ -402,7 +411,7 @@ def analyze(data, player, target):
             detalle = (f"{played} min · {goals} gol(es) · {assists} asistencia(s)") \
                 if played else "No tuvo minutos."
             summary = {"minutes": played, "goals": goals, "assists": assists}
-        add("final", f"🏁 {emoji} Final {label} ({apodo}): {score()}", detalle, 3)
+        add("final", f"🏁 {emoji} Final {label} ({nombre}): {score()}", detalle, 3)
 
     current_status = "no_convocado" if data.get("lineups") and role is None else \
         role or ("en_cancha" if status in LIVE else
@@ -859,7 +868,7 @@ def send_reminders(config, notifier, fcm, schedule_out, reminders_sent):
         e, target, players = g["entry"], g["target"], g["players"]
         ko = _parse(e["kickoff"])
         hora = "hora por confirmar" if e.get("fx_status") == "TBD" else f"{_hora_cdmx(ko)} (hora centro)"
-        quien = players[0].get("apodo") or players[0]["name"]
+        quien = display_name(players[0])
         if len(players) == 1:
             title = f"📅 Mañana juega {quien} ({target['label']})"
         else:

@@ -46,6 +46,7 @@ variable de entorno FCM_SERVICE_ACCOUNT_JSON).
 import argparse
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -239,7 +240,8 @@ def check_player(player, notifier, fcm):
     if crest:
         target["crest_url"] = crest
 
-    apodo = player.get("apodo") or player["name"]
+    # nombre completo sin el apodo entre comillas (el apodo es solo para los goles)
+    apodo = re.sub(r'\s*"[^"]*"\s*', " ", player["name"]).strip()
     title = f"🚨 ¡{apodo} cambió de equipo!"
     message = f"Ahora juega en {new_label}" + (f" (antes {old_label})" if old_label else "")
     notifier.send(title, message, 5)
