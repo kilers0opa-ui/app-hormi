@@ -1,392 +1,103 @@
 {
- "players_2024": [
+ "fixtures_cup": [
   {
-   "team": "Guadalajara Chivas",
-   "league": 262,
-   "league_name": "Liga MX",
-   "country": "Mexico",
-   "played": 24,
-   "goals": 3,
-   "assists": 1,
-   "min": 643
-  },
-  {
-   "team": "Guadalajara Chivas",
-   "league": 16,
-   "league_name": "CONCACAF Champions League",
-   "country": "World",
-   "played": 1,
-   "goals": 0,
-   "assists": null,
-   "min": 30
-  },
-  {
-   "team": "Guadalajara Chivas",
-   "league": 772,
-   "league_name": "Leagues Cup",
-   "country": "World",
-   "played": 2,
-   "goals": 0,
-   "assists": 0,
-   "min": 53
-  }
- ],
- "players_2024_errors": [],
- "players_2025": [
-  {
-   "team": "Guadalajara Chivas",
-   "league": 772,
-   "league_name": "Leagues Cup",
-   "country": "World",
-   "played": 3,
-   "goals": 1,
-   "assists": 0,
-   "min": 101
-  },
-  {
-   "team": "Guadalajara Chivas",
-   "league": 16,
-   "league_name": "CONCACAF Champions League",
-   "country": "World",
-   "played": 1,
-   "goals": 1,
-   "assists": 0,
-   "min": 26
-  },
-  {
-   "team": "Mexico",
-   "league": 10,
-   "league_name": "Friendlies",
-   "country": "World",
-   "played": 1,
-   "goals": 0,
-   "assists": 0,
-   "min": 30
-  },
-  {
-   "team": "Guadalajara Chivas",
-   "league": 262,
-   "league_name": "Liga MX",
-   "country": "Mexico",
-   "played": 34,
-   "goals": 24,
-   "assists": 2,
-   "min": 2459
-  }
- ],
- "players_2025_errors": [],
- "players_2026": [
-  {
-   "team": "Mexico",
-   "league": 1,
-   "league_name": "World Cup",
-   "country": "World",
-   "played": 1,
-   "goals": 0,
-   "assists": 0,
-   "min": 14
-  },
-  {
-   "team": "Guadalajara Chivas",
-   "league": 772,
-   "league_name": "Leagues Cup",
-   "country": "World",
-   "played": 3,
-   "goals": 0,
-   "assists": 0,
-   "min": 164
-  },
-  {
-   "team": "Olympiakos Piraeus",
-   "league": 3,
-   "league_name": "UEFA Europa League",
-   "country": "World",
-   "played": 1,
-   "goals": 1,
-   "assists": 0,
-   "min": 62
-  },
-  {
-   "team": "Olympiakos Piraeus",
-   "league": 197,
-   "league_name": "Super League 1",
-   "country": "Greece",
-   "played": 4,
-   "goals": 0,
-   "assists": 0,
-   "min": 148
-  },
-  {
-   "team": "Guadalajara Chivas",
-   "league": 262,
-   "league_name": "Liga MX",
-   "country": "Mexico",
-   "played": 3,
-   "goals": 0,
-   "assists": 0,
-   "min": 195
-  },
-  {
-   "team": "Mexico",
-   "league": 10,
-   "league_name": "Friendlies",
-   "country": "World",
-   "played": 7,
-   "goals": 1,
-   "assists": 1,
-   "min": 299
-  }
- ],
- "players_2026_errors": [],
- "leagues_olympiacos_2025": [
-  {
-   "id": 667,
-   "name": "Friendlies Clubs",
-   "type": "Cup"
-  },
-  {
-   "id": 2,
-   "name": "UEFA Champions League",
-   "type": "Cup"
-  },
-  {
-   "id": 197,
-   "name": "Super League 1",
-   "type": "League"
-  },
-  {
-   "id": 199,
-   "name": "Cup",
-   "type": "Cup"
-  }
- ],
- "leagues_olympiacos_2026": [
-  {
-   "id": 1210,
-   "name": "Super Cup",
-   "type": "Cup"
-  },
-  {
-   "id": 667,
-   "name": "Friendlies Clubs",
-   "type": "Cup"
-  },
-  {
-   "id": 2,
-   "name": "UEFA Champions League",
-   "type": "Cup"
-  },
-  {
-   "id": 3,
-   "name": "UEFA Europa League",
-   "type": "Cup"
-  },
-  {
-   "id": 197,
-   "name": "Super League 1",
-   "type": "League"
-  },
-  {
-   "id": 199,
-   "name": "Cup",
-   "type": "Cup"
-  }
- ],
- "olympiacos_last15": [
-  {
-   "date": "2026-09-20",
-   "league": 197,
-   "name": "Super League 1",
-   "season": 2026,
-   "round": "Regular Season - 5",
-   "home": "Levadiakos",
-   "away": "Olympiakos Piraeus",
-   "score": {
-    "home": 0,
-    "away": 1
-   }
-  },
-  {
-   "date": "2026-09-16",
-   "league": 3,
-   "name": "UEFA Europa League",
-   "season": 2026,
-   "round": "League Stage - 1",
-   "home": "Olympiakos Piraeus",
-   "away": "Jagiellonia",
-   "score": {
-    "home": 2,
-    "away": 1
-   }
-  },
-  {
-   "date": "2026-09-12",
-   "league": 197,
-   "name": "Super League 1",
-   "season": 2026,
-   "round": "Regular Season - 4",
-   "home": "Olympiakos Piraeus",
-   "away": "OFI",
-   "score": {
-    "home": 0,
-    "away": 1
-   }
-  },
-  {
-   "date": "2026-09-08",
-   "league": 199,
-   "name": "Cup",
-   "season": 2026,
-   "round": "Greek Cup - 2",
-   "home": "Olympiakos Piraeus",
-   "away": "Volos NFC",
-   "score": {
-    "home": 3,
-    "away": 2
-   }
-  },
-  {
-   "date": "2026-09-05",
-   "league": 197,
-   "name": "Super League 1",
-   "season": 2026,
-   "round": "Regular Season - 3",
-   "home": "Volos NFC",
-   "away": "Olympiakos Piraeus",
-   "score": {
-    "home": 1,
-    "away": 1
-   }
-  },
-  {
+   "id": 1635488,
    "date": "2026-09-02",
-   "league": 199,
-   "name": "Cup",
-   "season": 2026,
+   "status": "FT",
    "round": "Greek Cup - 1",
    "home": "Larisa",
    "away": "Olympiakos Piraeus",
-   "score": {
+   "goals": {
     "home": 0,
     "away": 4
-   }
+   },
+   "armando": null,
+   "events_armando": [
+    {
+     "min": 34,
+     "type": "Goal",
+     "detail": "Normal Goal"
+    },
+    {
+     "min": 54,
+     "type": "Goal",
+     "detail": "Normal Goal"
+    },
+    {
+     "min": 81,
+     "type": "subst",
+     "detail": "Substitution 5"
+    }
+   ]
   },
   {
-   "date": "2026-08-30",
-   "league": 197,
-   "name": "Super League 1",
-   "season": 2026,
-   "round": "Regular Season - 2",
-   "home": "Asteras Tripolis",
-   "away": "Olympiakos Piraeus",
-   "score": {
-    "home": 0,
-    "away": 1
-   }
-  },
-  {
-   "date": "2026-08-22",
-   "league": 197,
-   "name": "Super League 1",
-   "season": 2026,
-   "round": "Regular Season - 1",
+   "id": 1635498,
+   "date": "2026-09-08",
+   "status": "FT",
+   "round": "Greek Cup - 2",
    "home": "Olympiakos Piraeus",
-   "away": "Atromitos",
-   "score": {
-    "home": 1,
-    "away": 0
-   }
-  },
-  {
-   "date": "2026-08-11",
-   "league": 2,
-   "name": "UEFA Champions League",
-   "season": 2026,
-   "round": "3rd Qualifying Round",
-   "home": "NEC Nijmegen",
-   "away": "Olympiakos Piraeus",
-   "score": {
-    "home": 2,
-    "away": 1
-   }
-  },
-  {
-   "date": "2026-08-04",
-   "league": 2,
-   "name": "UEFA Champions League",
-   "season": 2026,
-   "round": "3rd Qualifying Round",
-   "home": "Olympiakos Piraeus",
-   "away": "NEC Nijmegen",
-   "score": {
-    "home": 0,
-    "away": 0
-   }
-  },
-  {
-   "date": "2026-07-25",
-   "league": 667,
-   "name": "Friendlies Clubs",
-   "season": 2026,
-   "round": "Club Friendlies",
-   "home": "AZ Alkmaar",
-   "away": "Olympiakos Piraeus",
-   "score": {
+   "away": "Volos NFC",
+   "goals": {
     "home": 3,
     "away": 2
-   }
+   },
+   "armando": null,
+   "events_armando": [
+    {
+     "min": 42,
+     "type": "Goal",
+     "detail": "Normal Goal"
+    },
+    {
+     "min": 50,
+     "type": "Goal",
+     "detail": "Normal Goal"
+    },
+    {
+     "min": 68,
+     "type": "Goal",
+     "detail": "Normal Goal"
+    },
+    {
+     "min": 71,
+     "type": "subst",
+     "detail": "Substitution 2"
+    }
+   ]
   },
   {
-   "date": "2026-07-24",
-   "league": 667,
-   "name": "Friendlies Clubs",
-   "season": 2026,
-   "round": "Club Friendlies",
-   "home": "Antwerp",
+   "id": 1635507,
+   "date": "2026-10-28",
+   "status": "NS",
+   "round": "Greek Cup - 4",
+   "home": "Marko",
    "away": "Olympiakos Piraeus",
-   "score": {
-    "home": 3,
-    "away": 0
-   }
+   "goals": {
+    "home": null,
+    "away": null
+   },
+   "armando": null,
+   "events_armando": []
   },
   {
-   "date": "2026-07-18",
-   "league": 667,
-   "name": "Friendlies Clubs",
-   "season": 2026,
-   "round": "Club Friendlies",
-   "home": "Ajax",
-   "away": "Olympiakos Piraeus",
-   "score": {
-    "home": 1,
-    "away": 0
-   }
-  },
-  {
-   "date": "2026-07-17",
-   "league": 667,
-   "name": "Friendlies Clubs",
-   "season": 2026,
-   "round": "Club Friendlies",
+   "id": 1635519,
+   "date": "2026-12-02",
+   "status": "NS",
+   "round": "Greek Cup - 5",
    "home": "Olympiakos Piraeus",
-   "away": "Fortuna Sittard",
-   "score": {
-    "home": 3,
-    "away": 1
-   }
-  },
-  {
-   "date": "2026-07-11",
-   "league": 667,
-   "name": "Friendlies Clubs",
-   "season": 2026,
-   "round": "Club Friendlies",
-   "home": "Olympiakos Piraeus",
-   "away": "OH Leuven",
-   "score": {
-    "home": 1,
-    "away": 1
-   }
+   "away": "Panathinaikos",
+   "goals": {
+    "home": null,
+    "away": null
+   },
+   "armando": null,
+   "events_armando": []
   }
+ ],
+ "season2025_leagues": [
+  "Leagues Cup",
+  "CONCACAF Champions League",
+  "Friendlies",
+  "Liga MX"
  ]
 }
