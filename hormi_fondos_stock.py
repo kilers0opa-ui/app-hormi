@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fondos genéricos de fútbol (cancha, balón, estadios de noche, afición, México) desde
+Fondos genéricos (México en general, cancha, estadios de noche) desde
 bancos de fotos gratuitos con API:
 
   - Pexels  (PEXELS_API_KEY)   licencia Pexels: uso libre, sin crédito obligatorio.
@@ -25,26 +25,13 @@ from hormi_fondos import OUT_DIR, RAW_BASE, UA
 # team_key: si la consulta es del estadio de un club que sigue la app, la foto también sale
 # en la sección de sus jugadores (campo "contexto").
 CATEGORIAS = [
-    ("stock_estadios_mx", "Estadios de México", [
-        ("Estadio Azteca", None), ("Estadio Banorte Mexico City", None), ("Estadio Akron Guadalajara", None),
-        ("Estadio BBVA Monterrey", None), ("Estadio Jalisco", None), ("Estadio Olimpico Universitario", None),
-        ("Estadio Caliente Tijuana", "tijuana"), ("Estadio Cuauhtemoc Puebla", None), ("mexico football stadium", None),
-    ], 14),
     ("stock_mexico", "México", [
         ("mexico flag", None), ("Mexico City skyline", None), ("Angel de la Independencia", None),
         ("Zocalo Mexico City", None), ("Guadalajara Mexico", None), ("Monterrey Mexico city", None),
         ("Chichen Itza", None), ("mexican fans football", None),
     ], 12),
-    ("stock_estadios_europa", "Estadios de Europa", [
-        ("Wanda Metropolitano", "atletico_madrid"), ("Estadio Benito Villamarin", "betis"),
-        ("Estadio do Dragao Porto", "porto"), ("Molineux Stadium Wolverhampton", "wolves"),
-        ("Stadio Luigi Ferraris Genoa", "genoa"), ("AFAS Stadion Alkmaar", "az_alkmaar"),
-        ("Parken Stadium Copenhagen", "copenhague"), ("Karaiskakis Stadium Piraeus Olympiacos", "olympiacos"),
-        ("Al Qadsiah stadium", "al_qadsiah"), ("european football stadium night", None),
-    ], 16),
     ("stock_cancha", "Cancha y balón", [("soccer ball on grass", None), ("football pitch aerial", None), ("soccer field lines", None)], 6),
     ("stock_noche", "Estadios de noche", [("football stadium night lights", None), ("stadium floodlights soccer", None)], 6),
-    ("stock_aficion", "Afición", [("soccer fans stadium crowd", None), ("football supporters flags", None)], 6),
 ]
 POR_CONSULTA = 2
 
