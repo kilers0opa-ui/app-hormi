@@ -2,6 +2,13 @@ name: Prueba de push de todos los tipos - App Hormi
 
 on:
   workflow_dispatch:
+    inputs:
+      jugador:
+        description: "Reenviar solo a este jugador (vacío = todos)"
+        default: ""
+      tipo:
+        description: "Solo este tipo (goal, assist, lineup, start, sub, final, incident, transfer, video); vacío = todos"
+        default: ""
 
 concurrency:
   group: hormi-prueba-push   # propio: no espera al motor ni lo estorba
@@ -22,6 +29,8 @@ jobs:
       - name: Mandar los push de prueba
         env:
           FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
+          SOLO_JUGADOR: ${{ inputs.jugador }}
+          SOLO_TIPO: ${{ inputs.tipo }}
         run: python prueba_push_todos.py
       - name: Subir resultado
         run: |

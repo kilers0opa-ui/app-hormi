@@ -40,11 +40,17 @@ if not fcm.enabled:
     res["error"] = "FCM no habilitado"
 else:
     P = "🧪 PRUEBA · "
+    SOLO_J, SOLO_T = os.environ.get("SOLO_JUGADOR", ""), os.environ.get("SOLO_TIPO", "")
+    if SOLO_J:   # reenvío puntual: un jugador y (opcional) un tipo
+        _push = push
+        def push(tipo, title, body, player_key="", team_key="", player_keys=()):
+            if player_key == SOLO_J and (not SOLO_T or tipo == SOLO_T):
+                _push(tipo, title, body, player_key, team_key, player_keys)
     # Avisos generales (sin jugador): siempre deben llegar.
-    push("info", P + "General (siempre llega)", "Sin jugador asociado: debe llegar aunque no tengas favoritos.")
+    if not SOLO_J: push("info", P + "General (siempre llega)", "Sin jugador asociado: debe llegar aunque no tengas favoritos.")
     # Aviso "Juega mañana" de la Selección: llega si AL MENOS UNO de los convocados es favorito.
     conv = [p["key"] for p in cfg["players"] if p["key"] not in ("raul", "quinones", "huescas")]
-    push("reminder", P + "📅 Mañana juega Selección Mexicana", "USA vs Mexico · 20:00 (hora centro) · Friendlies",
+    if not SOLO_J: push("reminder", P + "📅 Mañana juega Selección Mexicana", "USA vs Mexico · 20:00 (hora centro) · Friendlies",
          "", "seleccion", conv)
     for p in cfg["players"]:
         k = p["key"]
