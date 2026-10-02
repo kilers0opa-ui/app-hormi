@@ -61,6 +61,8 @@ jobs:
       - name: Generar fondos y buscar fotos libres
         env:
           FLICKR_API_KEY: ${{ secrets.FLICKR_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
           ARGS=""
           if [ "${{ github.event_name }}" = "push" ]; then ARGS="--solo mios"; fi

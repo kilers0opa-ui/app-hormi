@@ -533,6 +533,14 @@ def main():
         sel = _buscar("fotos de la Selección", _sel, "seleccion_fotos")
         if sel:
             cats.append({"id": "seleccion_fotos", "title": "El Tri en la cancha", "items": sel})
+        try:
+            import hormi_fondos_stock as S
+            print("Buscando fotos genéricas (Pexels/Pixabay)")
+            previas = [c for c in general.get("categorias", []) if c["id"].startswith("stock_")]
+            cats += S.stock_categorias(previas)
+        except Exception as e:
+            print(f"  Stock falló ({e})")
+            cats += [c for c in general.get("categorias", []) if c["id"].startswith("stock_")]
         general = {"categorias": cats}
 
     # "Mis fondos": lo que el dueño sube a mano a mis_fondos/<jugador>/ o mis_fondos/general/
