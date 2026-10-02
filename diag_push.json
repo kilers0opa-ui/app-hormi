@@ -1,6 +1,24 @@
 {
-  "at": "2026-10-02T17:13:34+00:00",
+  "at": "2026-10-02T17:14:32+00:00",
   "project_id": "otakugoal-97932",
   "secret_presente": true,
+  "secret_largo": 2385,
+  "sa_campos": [
+    "auth_provider_x509_cert_url",
+    "auth_uri",
+    "client_email",
+    "client_id",
+    "client_x509_cert_url",
+    "private_key_id",
+    "project_id",
+    "token_uri",
+    "type",
+    "universe_domain"
+  ],
+  "sa_project_id": "otakugoal-97932",
+  "sa_client_email": "firebase-adminsdk-fbsvc@otakugoal-97932.iam.gserviceaccount.com",
+  "sa_tiene_private_key": true,
+  "sa_private_key_inicio_ok": true,
+  "auth_error": "ImportError: The requests library is not installed from please install the requests package to use the requests transport.",
   "fcm_habilitado": false
 }
