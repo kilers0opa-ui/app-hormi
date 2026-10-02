@@ -1048,6 +1048,13 @@ def chequeo(args, notifier, config, fcm=None):
                           status_for_player, schedule_for_player, fcm)
             except Exception as err:
                 log(f"⚠️  {player['name']} · {target['label']}: error en el chequeo — {err}")
+                # También queda en status.json: los logs de Actions no se ven desde fuera,
+                # y así un fallo repetido se diagnostica leyendo ese archivo.
+                status_for_player[target["key"]] = {
+                    "label": target["label"], "emoji": target["emoji"],
+                    "crest_url": target.get("crest_url"), "status": "sin_partido",
+                    "checked_at": now_iso(),
+                    "api_error": {"error": f"{type(err).__name__}: {err}"[:300]}}
 
         status_out[pkey] = {"name": player["name"], "player_id": player.get("player_id"),
                             "targets": status_for_player}
