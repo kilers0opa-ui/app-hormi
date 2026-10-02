@@ -83,7 +83,6 @@ NOT_STARTED = {"NS", "TBD"}
 
 MIN_SECONDS_BETWEEN_REQUESTS = 0.3         # plan Pro: 300 peticiones/min (en el gratuito eran 10/min → 6.5 s)
 _last_request_at = 0.0
-last_refresh_note = None  # diagnóstico: por qué falló la búsqueda "hoy" sin season (se guarda en el horario)
 last_api_error = None    # último {"errors": ...} de la API, para diagnosticar sin logs
 
 
@@ -691,6 +690,12 @@ def schedule_stale(entry):
     if not entry:
         return True
     now = datetime.now(LOCAL_TZ)
+    ko = _parse(entry.get("kickoff"))
+    if ko and not entry.get("done") and ko - VENTANA_ANTES - ARRANQUE_EXTRA <= now <= ko + VENTANA_DESPUES:
+        # Partido en curso o por empezar: el horario NO se toca. Refrescarlo ahora
+        # podría sustituir el partido por el siguiente (la búsqueda "próximo" ya no
+        # devuelve el que está en juego) y se perderían las alertas a media partido.
+        return False
     refreshed = _parse(entry.get("refreshed_at"))
     if not refreshed or now - refreshed > timedelta(hours=REFRESH_HORAS):
         return True  # por si el calendario cambió (aplazamientos, etc.)
@@ -716,17 +721,12 @@ def refresh_schedule(target):
     team_id, season = target["team_id"], target["season"]
     now = datetime.now(LOCAL_TZ)
     today = now.strftime("%Y-%m-%d")
-    # Sin "season": equipo + fecha ya identifica el partido, y así no importa
-    # si la temporada del config está mal (la Selección juega torneos de año
-    # calendario y amistosos que caen en otra "season" que la del club). Si la
-    # API la exigiera, se reintenta con season.
-    todays = api("/fixtures", {"team": team_id, "date": today,
-                               "timezone": "America/Mexico_City"})
-    if todays is None:
-        global last_refresh_note
-        last_refresh_note = f"sin season: {last_api_error}"
-        todays = api("/fixtures", {"team": team_id, "season": season, "date": today,
-                                   "timezone": "America/Mexico_City"}) or []
+    # La API EXIGE "season" junto con team+date ("The Season field is required",
+    # comprobado con el plan Pro el 2-oct-2026). Si por temporada del config
+    # no aparece nada (la Selección juega torneos de año calendario), no pasa
+    # nada grave: más abajo se cae a "próximo" (next=1), que no necesita season.
+    todays = api("/fixtures", {"team": team_id, "season": season, "date": today,
+                               "timezone": "America/Mexico_City"}) or []
     # Solo cuentan los partidos de hoy que siguen vigentes (aún no vence su
     # ventana de vigilancia); uno ya terminado y vencido no debe volver a
     # guardarse como "el partido de este objetivo".
@@ -758,6 +758,7 @@ def _fixture_meta(fx):
     """Datos del partido que se guardan en el horario (para el aviso 'Juega mañana')."""
     return {"home": fx["teams"]["home"]["name"], "away": fx["teams"]["away"]["name"],
             "league": (fx.get("league") or {}).get("name"),
+            "season": (fx.get("league") or {}).get("season"),
             "fx_status": fx["fixture"]["status"]["short"]}
 
 
@@ -896,8 +897,6 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     entry = schedule.get(key, {})
     if schedule_stale(entry):
         prev = entry
-        global last_refresh_note
-        last_refresh_note = None
         fx_meta, why = refresh_schedule(target)
         if not fx_meta:
             schedule[key] = {"refreshed_at": now_iso(), "last_error": last_api_error}
@@ -913,8 +912,6 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
             "refreshed_at": now_iso(),
             **_fixture_meta(fx_meta),
         }
-        if last_refresh_note:
-            entry["note"] = last_refresh_note
         if (prev.get("done") and prev.get("fixture_id") == entry["fixture_id"]
                 and prev.get("kickoff") == entry["kickoff"]):
             entry["done"] = True     # mismo partido (misma hora) que ya se cerró: no volver a vigilarlo
