@@ -519,43 +519,9 @@ def main():
     if args.solo in (None, "general") and not args.jugador:
         import hormi_fondos_general as G
         cats = G.generar_general(config)
-        def _prev(cat_id):
-            return next((c["items"] for c in general.get("categorias", []) if c["id"] == cat_id), [])
-
-        def _buscar(nombre, fn, cat_id):
-            print(f"Buscando {nombre}")
-            try:
-                return fn()
-            except Exception as e:
-                print(f"  Commons falló ({e}); se conservan las anteriores")
-                return _prev(cat_id)
-
-        estadios = _buscar("estadios de México", G.buscar_estadios, "estadios")
-        if estadios:
-            cats.append({"id": "estadios", "title": "Estadios de México", "items": estadios})
-        clubes = _buscar("estadios de clubes", lambda: G.buscar_estadios(G.ESTADIOS_CLUB, 2), "estadios_clubes")
-        if clubes:
-            cats.append({"id": "estadios_clubes", "title": "Estadios de los clubes", "items": clubes})
-        def _sel():
-            fotos = G.buscar_seleccion()
-            try:
-                import hormi_fondos_extra as X
-                fotos += X.flickr_seleccion({f["id"] for f in fotos}, max(0, 8 - len(fotos)))
-            except Exception as e:
-                print(f"  Flickr (Selección) falló ({e})")
-            return fotos
-
-        sel = _buscar("fotos de la Selección", _sel, "seleccion_fotos")
-        if sel:
-            cats.append({"id": "seleccion_fotos", "title": "El Tri en la cancha", "items": sel})
-        try:
-            import hormi_fondos_stock as S
-            print("Buscando fotos genéricas (Pexels/Pixabay)")
-            previas = [c for c in general.get("categorias", []) if c["id"].startswith("stock_")]
-            cats += S.stock_categorias(previas)
-        except Exception as e:
-            print(f"  Stock falló ({e})")
-            cats += [c for c in general.get("categorias", []) if c["id"].startswith("stock_")]
+        # Decisión del dueño: en "General" solo se publican los escudos
+        # (sin Selección, patrones, estadios, fotos genéricas ni El Tri en la cancha).
+        cats = [c for c in cats if c["id"] == "escudos"]
         general = {"categorias": cats}
 
     # "Mis fondos": lo que el dueño sube a mano a mis_fondos/<jugador>/ o mis_fondos/general/
@@ -568,15 +534,11 @@ def main():
         cats.append({"id": "mios", "title": "Mis fondos", "items": propios["general"]})
     general = {"categorias": cats}
 
-    # "contexto": fotos libres de su club (estadio) y de la Selección, para que a
-    # nadie le falten fondos reales aunque Commons tenga pocas fotos suyas.
-    cats_por_id = {c["id"]: c["items"] for c in general.get("categorias", [])}
+    # Sin fotos de contexto (estadios/Selección) junto a los jugadores.
     for p in config["players"]:
-        claves = {t["key"] for t in p["targets"]}
-        ctx = [i for cid in ("estadios_clubes", "stock_estadios_europa", "stock_estadios_mx")
-               for i in cats_por_id.get(cid, []) if i.get("team_key") in claves]
-        ctx += cats_por_id.get("seleccion_fotos", [])[:4]
-        salida.setdefault(p["key"], {})["contexto"] = ctx
+        salida.setdefault(p["key"], {})["contexto"] = []
+    # En "General" solo quedan los escudos y lo que el dueño sube a mano.
+    general = {"categorias": [c for c in general.get("categorias", []) if c["id"] in ("escudos", "mios")]}
 
     for key in list(salida):
         salida[key].setdefault("generados", [])
