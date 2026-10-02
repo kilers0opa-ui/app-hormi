@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T00:24:51.957209-06:00",
+  "updated_at": "2026-10-02T01:31:41.199051-06:00",
   "teams": {
     "genoa": {
       "label": "Genoa",
@@ -30,25 +30,6 @@
       "label": "Olympiacos",
       "player_key": "armando",
       "standings": [
-        {
-          "season": 2025,
-          "group": "UEFA Champions League",
-          "rank": 18,
-          "points": 11,
-          "played": 8,
-          "win": 3,
-          "draw": 2,
-          "lose": 3,
-          "goals_for": 10,
-          "goals_against": 14,
-          "goals_diff": -4,
-          "form": "WWWLD",
-          "status": "same",
-          "description": "Promotion - Champions League (Play Offs: 1/16-finals)",
-          "total_teams": 36,
-          "league_id": 2,
-          "league_name": "UEFA Champions League"
-        },
         {
           "season": 2026,
           "group": "Super League",
@@ -199,6 +180,25 @@
           "total_teams": 36,
           "league_id": 2,
           "league_name": "UEFA Champions League"
+        },
+        {
+          "season": 2025,
+          "group": "Group A",
+          "rank": 3,
+          "points": 2,
+          "played": 3,
+          "win": 0,
+          "draw": 2,
+          "lose": 1,
+          "goals_for": 5,
+          "goals_against": 6,
+          "goals_diff": -1,
+          "form": "DLD",
+          "status": "same",
+          "description": null,
+          "total_teams": 32,
+          "league_id": 15,
+          "league_name": "FIFA Club World Cup"
         }
       ]
     },
@@ -287,6 +287,25 @@
           "total_teams": 36,
           "league_id": 2,
           "league_name": "UEFA Champions League"
+        },
+        {
+          "season": 2025,
+          "group": "Group B",
+          "rank": 3,
+          "points": 6,
+          "played": 3,
+          "win": 2,
+          "draw": 0,
+          "lose": 1,
+          "goals_for": 4,
+          "goals_against": 5,
+          "goals_diff": -1,
+          "form": "WWL",
+          "status": "same",
+          "description": null,
+          "total_teams": 32,
+          "league_id": 15,
+          "league_name": "FIFA Club World Cup"
         }
       ]
     },
