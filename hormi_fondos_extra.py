@@ -185,10 +185,17 @@ def mis_fondos(keys_jugadores):
         if not os.path.isdir(carpeta) or (key != "general" and key not in keys_jugadores):
             continue
         items = []
+        n_foto = 0
         for fn in sorted(os.listdir(carpeta)):
             if not fn.lower().endswith(_EXT):
                 continue
             stem = os.path.splitext(fn)[0]
+            n_foto += 1
+            # Nombres de cámara/descarga (hash largo o solo números) no sirven de título.
+            if re.fullmatch(r"[0-9a-fA-F]{16,}|\d+|img[-_ ]?\d+|image\d*", stem, re.I):
+                titulo = f"Mi foto {n_foto}"
+            else:
+                titulo = stem.replace("_", " ").replace("-", " ").strip().title()
             try:
                 img = Image.open(os.path.join(carpeta, fn)).convert("RGB")
                 if max(img.size) > 2340:
@@ -205,7 +212,7 @@ def mis_fondos(keys_jugadores):
             with open(os.path.join(OUT_DIR, nombre), "wb") as f:
                 f.write(data)
             items.append({
-                "id": f"mio_{_slug(stem)}", "title": stem.replace("_", " ").replace("-", " ").strip().title(),
+                "id": f"mio_{_slug(stem)}", "title": titulo,
                 "url": f"{RAW_BASE}{nombre}?v={hashlib.sha1(data).hexdigest()[:8]}",
                 "width": img.width, "height": img.height,
             })
