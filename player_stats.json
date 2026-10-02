@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T00:24:14.408279-06:00",
+  "updated_at": "2026-10-02T00:51:59.600357-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -191,6 +191,19 @@
             "goals": 1,
             "assists": 1,
             "minutes": 299
+          },
+          {
+            "league_id": 199,
+            "league_name": "Copa de Grecia",
+            "league_logo": "https://media.api-sports.io/football/leagues/199.png",
+            "team_id": 553,
+            "team_name": "Olympiakos Piraeus",
+            "team_logo": "https://media.api-sports.io/football/teams/553.png",
+            "played": 2,
+            "goals": 3,
+            "assists": 2,
+            "minutes": 152,
+            "estimated": true
           }
         ]
       },
