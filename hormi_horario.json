@@ -1,12 +1,242 @@
 {
-  "armando": {},
-  "raul": {},
-  "quinones": {},
-  "mora": {},
-  "vasquez": {},
-  "gimenez": {},
-  "chavez": {},
-  "obed": {},
-  "fidalgo": {},
-  "huescas": {}
+  "armando": {
+    "olympiacos": {
+      "fixture_id": 1593329,
+      "kickoff": "2026-10-10T09:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:11.034604-06:00",
+      "home": "Olympiakos Piraeus",
+      "away": "Panathinaikos",
+      "league": "Super League 1",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    },
+    "seleccion": {
+      "fixture_id": 1629004,
+      "kickoff": "2026-10-03T20:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:11.963989-06:00",
+      "home": "USA",
+      "away": "Mexico",
+      "league": "Friendlies",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    }
+  },
+  "raul": {
+    "wolves": {
+      "fixture_id": 1563183,
+      "kickoff": "2026-10-10T08:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:13.042645-06:00",
+      "home": "Middlesbrough",
+      "away": "Wolves",
+      "league": "Championship",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    },
+    "seleccion": {
+      "fixture_id": 1629004,
+      "kickoff": "2026-10-03T20:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:13.961066-06:00",
+      "home": "USA",
+      "away": "Mexico",
+      "league": "Friendlies",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    }
+  },
+  "quinones": {
+    "al_qadsiah": {
+      "fixture_id": 1603041,
+      "kickoff": "2026-10-09T07:50:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:14.846328-06:00",
+      "home": "Al Kholood",
+      "away": "Al-Qadisiyah FC",
+      "league": "Pro League",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    },
+    "seleccion": {
+      "fixture_id": 1629004,
+      "kickoff": "2026-10-03T20:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:15.747116-06:00",
+      "home": "USA",
+      "away": "Mexico",
+      "league": "Friendlies",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    }
+  },
+  "mora": {
+    "tijuana": {
+      "fixture_id": 1550987,
+      "kickoff": "2026-10-10T17:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:16.669770-06:00",
+      "home": "FC Juarez",
+      "away": "Club Tijuana",
+      "league": "Liga MX",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    },
+    "seleccion": {
+      "fixture_id": 1629004,
+      "kickoff": "2026-10-03T20:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:17.544703-06:00",
+      "home": "USA",
+      "away": "Mexico",
+      "league": "Friendlies",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    }
+  },
+  "vasquez": {
+    "genoa": {
+      "fixture_id": 1642927,
+      "kickoff": "2026-10-02T10:00:00-06:00",
+      "why": "hoy",
+      "refreshed_at": "2026-10-02T00:20:18.192698-06:00",
+      "home": "Rapid",
+      "away": "Genoa",
+      "league": "Friendlies Clubs",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    },
+    "seleccion": {
+      "fixture_id": 1629004,
+      "kickoff": "2026-10-03T20:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:19.041141-06:00",
+      "home": "USA",
+      "away": "Mexico",
+      "league": "Friendlies",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    }
+  },
+  "gimenez": {
+    "porto": {
+      "fixture_id": 1575515,
+      "kickoff": "2026-10-10T11:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:19.952709-06:00",
+      "home": "Maritimo",
+      "away": "FC Porto",
+      "league": "Primeira Liga",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    },
+    "seleccion": {
+      "fixture_id": 1629004,
+      "kickoff": "2026-10-03T20:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:20.864697-06:00",
+      "home": "USA",
+      "away": "Mexico",
+      "league": "Friendlies",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    }
+  },
+  "chavez": {
+    "az_alkmaar": {
+      "fixture_id": 1552181,
+      "kickoff": "2026-10-10T10:45:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:21.740922-06:00",
+      "home": "Feyenoord",
+      "away": "AZ Alkmaar",
+      "league": "Eredivisie",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    },
+    "seleccion": {
+      "fixture_id": 1629004,
+      "kickoff": "2026-10-03T20:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:22.772591-06:00",
+      "home": "USA",
+      "away": "Mexico",
+      "league": "Friendlies",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    }
+  },
+  "obed": {
+    "atletico_madrid": {
+      "fixture_id": 1570403,
+      "kickoff": "2026-10-10T08:15:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:23.586404-06:00",
+      "home": "Alaves",
+      "away": "Atletico Madrid",
+      "league": "La Liga",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    },
+    "seleccion": {
+      "fixture_id": 1629004,
+      "kickoff": "2026-10-03T20:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:24.504538-06:00",
+      "home": "USA",
+      "away": "Mexico",
+      "league": "Friendlies",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    }
+  },
+  "fidalgo": {
+    "betis": {
+      "fixture_id": 1570405,
+      "kickoff": "2026-10-11T10:30:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:25.393243-06:00",
+      "home": "Real Betis",
+      "away": "Osasuna",
+      "league": "La Liga",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    },
+    "seleccion": {
+      "fixture_id": 1629004,
+      "kickoff": "2026-10-03T20:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:26.273165-06:00",
+      "home": "USA",
+      "away": "Mexico",
+      "league": "Friendlies",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    }
+  },
+  "huescas": {
+    "copenhague": {
+      "fixture_id": 1642963,
+      "kickoff": "2026-10-04T07:30:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:27.174816-06:00",
+      "home": "Hamburger SV",
+      "away": "FC Copenhagen",
+      "league": "Friendlies Clubs",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    },
+    "seleccion": {
+      "fixture_id": 1629004,
+      "kickoff": "2026-10-03T20:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-02T00:20:28.088404-06:00",
+      "home": "USA",
+      "away": "Mexico",
+      "league": "Friendlies",
+      "fx_status": "NS",
+      "note": "sin season: {'season': 'The Season field is required.'}"
+    }
+  }
 }
