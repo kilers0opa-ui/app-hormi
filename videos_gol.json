@@ -1,0 +1,35 @@
+{
+  "updated_at": "2026-10-02T12:00:35.775748-06:00",
+  "cuota": {
+    "fecha": "2026-10-02",
+    "busquedas": 0,
+    "busquedas_resumen": 0
+  },
+  "goles": {},
+  "partidos": {
+    "1642927": {
+      "fixture_id": 1642927,
+      "home": "Rapid",
+      "away": "Genoa",
+      "league": "Friendlies Clubs",
+      "score": "Rapid 2-0 Genoa",
+      "final_seen_at": "2026-10-02T17:55:45.036116+00:00",
+      "jugadores": {
+        "vasquez": {
+          "team_key": "genoa",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
+    }
+  }
+}
