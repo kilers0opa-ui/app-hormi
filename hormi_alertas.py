@@ -706,6 +706,8 @@ def schedule_stale(entry):
         # podría sustituir el partido por el siguiente (la búsqueda "próximo" ya no
         # devuelve el que está en juego) y se perderían las alertas a media partido.
         return False
+    if entry.get("home") and "home_logo" not in entry:
+        return True   # horario viejo sin escudos de los equipos: se completa una vez
     refreshed = _parse(entry.get("refreshed_at"))
     if not refreshed or now - refreshed > timedelta(hours=REFRESH_HORAS):
         return True  # por si el calendario cambió (aplazamientos, etc.)
@@ -772,6 +774,7 @@ def refresh_schedule(target, known_season=None):
 def _fixture_meta(fx):
     """Datos del partido que se guardan en el horario (para el aviso 'Juega mañana')."""
     return {"home": fx["teams"]["home"]["name"], "away": fx["teams"]["away"]["name"],
+            "home_logo": fx["teams"]["home"].get("logo"), "away_logo": fx["teams"]["away"].get("logo"),
             "league": (fx.get("league") or {}).get("name"),
             "season": (fx.get("league") or {}).get("season"),
             "fx_status": fx["fixture"]["status"]["short"]}
@@ -931,6 +934,8 @@ def _next_match_status(target, entry, player_key=None):
     if ko and entry.get("home") and ko > datetime.now(LOCAL_TZ) and entry.get("fx_status") not in CANCELLED:
         base.update({"match_reference": "próximo",
                      "match": f"{entry['home']} vs {entry['away']}",
+                     "home": entry["home"], "away": entry["away"],
+                     "home_logo": entry.get("home_logo"), "away_logo": entry.get("away_logo"),
                      "league": entry.get("league"), "kickoff": entry["kickoff"]})
     return base
 
@@ -1019,6 +1024,8 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     status_out[key] = {
         "label": label, "emoji": emoji, "crest_url": crest_url, "checked_at": now_iso(),
         "match_reference": why, **info, "kickoff": entry["kickoff"],
+        "home": snap["teams"]["home"]["name"], "away": snap["teams"]["away"]["name"],
+        "home_logo": snap["teams"]["home"].get("logo"), "away_logo": snap["teams"]["away"].get("logo"),
     }
 
     # Partido cerrado (final o cancelado ya avisado): dejar de pedirlo a la API

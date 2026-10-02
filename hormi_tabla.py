@@ -116,7 +116,11 @@ def current_leagues_for_team(team_id):
         league = entry.get("league") or {}
         # La temporada "current" la marca la propia API (europeas = año en que
         # empieza, Liga MX/selecciones = año calendario): no se adivina por año.
-        current = [x.get("year") for x in entry.get("seasons") or [] if x.get("current")]
+        hoy = datetime.now(LOCAL_TZ).date().isoformat()
+        # "current" + que no haya terminado ya (p. ej. el Mundial de Clubes 2025
+        # sigue marcado "current" por la API aunque acabó en julio de 2025).
+        current = [x.get("year") for x in entry.get("seasons") or []
+                   if x.get("current") and (not x.get("end") or x["end"] >= hoy)]
         if current:
             leagues.append({"id": league.get("id"), "name": league.get("name"), "season": max(current)})
     return leagues
@@ -139,7 +143,20 @@ def standings_row_for(league_id, season, team_id):
                     continue
                 all_stats = row.get("all") or {}
                 goals = all_stats.get("goals") or {}
+                tabla = []
+                for r in group:
+                    a = r.get("all") or {}
+                    g = a.get("goals") or {}
+                    t = r.get("team") or {}
+                    tabla.append({
+                        "rank": r.get("rank"), "team_id": t.get("id"), "team_name": t.get("name"),
+                        "team_logo": t.get("logo"), "played": a.get("played"), "win": a.get("win"),
+                        "draw": a.get("draw"), "lose": a.get("lose"), "goals_for": g.get("for"),
+                        "goals_against": g.get("against"), "goals_diff": r.get("goalsDiff"),
+                        "points": r.get("points"), "form": r.get("form"),
+                    })
                 return {
+                    "table": tabla,
                     "season": season,
                     "group": row.get("group"),
                     "rank": row.get("rank"),
