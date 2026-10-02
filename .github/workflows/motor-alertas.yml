@@ -11,7 +11,7 @@ on:
   workflow_dispatch:       # para poder correrlo manual desde la pestaña Actions
     inputs:
       modo:
-        description: "vigilar (normal) · chequeo (una sola pasada) · prueba (push de prueba por ntfy y FCM)"
+        description: "vigilar (normal) · chequeo (una sola pasada) · prueba (push de prueba; ntfy está apagado, solo FCM)"
         type: choice
         default: vigilar
         options:

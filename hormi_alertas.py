@@ -165,6 +165,15 @@ def minute_txt(t):
 
 
 # ═══════════════════════════════════════════════════════ notificaciones
+def ntfy_activo():
+    """ntfy está APAGADO desde que la app recibe push real (FCM): hormi_config.json
+    "ntfy_activo": false. Para volver a usarlo, ponerlo en true (o quitar la llave)."""
+    try:
+        return bool(json.loads(CONFIG_FILE.read_text(encoding="utf-8")).get("ntfy_activo", True))
+    except Exception:
+        return True
+
+
 class Notifier:
     """Envía push con ntfy (https://ntfy.sh). Sin cuenta, gratis."""
 
@@ -174,7 +183,7 @@ class Notifier:
 
     def send(self, title, message, priority=3):
         log(f"📲 {title} — {message}")
-        if self.console_only:
+        if self.console_only or not ntfy_activo():
             return
         body = json.dumps({"topic": self.topic, "title": title,
                            "message": message, "priority": priority}).encode()

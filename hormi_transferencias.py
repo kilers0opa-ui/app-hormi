@@ -148,6 +148,11 @@ class Notifier:
         log(f"📲 {title} — {message}")
         if not self.topic:
             return
+        try:   # ntfy apagado: "ntfy_activo": false en hormi_config.json (la app recibe por FCM)
+            if not json.loads(CONFIG_FILE.read_text(encoding="utf-8")).get("ntfy_activo", True):
+                return
+        except Exception:
+            pass
         body = json.dumps({"topic": self.topic, "title": title,
                            "message": message, "priority": priority}).encode()
         req = urllib.request.Request(
