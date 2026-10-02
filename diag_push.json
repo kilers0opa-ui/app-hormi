@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-02T17:14:32+00:00",
+  "at": "2026-10-02T17:15:46+00:00",
   "project_id": "otakugoal-97932",
   "secret_presente": true,
   "secret_largo": 2385,
@@ -19,6 +19,8 @@
   "sa_client_email": "firebase-adminsdk-fbsvc@otakugoal-97932.iam.gserviceaccount.com",
   "sa_tiene_private_key": true,
   "sa_private_key_inicio_ok": true,
-  "auth_error": "ImportError: The requests library is not installed from please install the requests package to use the requests transport.",
-  "fcm_habilitado": false
+  "auth_ok": true,
+  "fcm_habilitado": true,
+  "http": 200,
+  "respuesta": "{\n  \"name\": \"projects/otakugoal-97932/messages/6355575062707154764\"\n}\n"
 }
