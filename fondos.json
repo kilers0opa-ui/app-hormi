@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T15:22:14+00:00",
+  "updated_at": "2026-10-02T15:28:04+00:00",
   "players": {
     "armando": {
       "generados": [
@@ -16,7 +16,59 @@
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/armando_seleccion.jpg?v=f32fe222"
         }
       ],
-      "fotos": []
+      "fotos": [],
+      "contexto": [
+        {
+          "id": "commons_166386664",
+          "title": "Estadio Karaiskakis",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_166386664.jpg?v=21c6e904",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Pavlos1988 · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:IMG_Olympiacos_CFP_fans_-_Conference_League_celebrations.jpg",
+          "team_key": "olympiacos"
+        },
+        {
+          "id": "commons_10754111",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_10754111.jpg?v=f2dbd33a",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: BrokenSphere · CC BY-SA 3.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Adidas_Mexico_national_football_team_home_jersey.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_145056637",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_145056637.jpg?v=7800cb6e",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Lacy Atkins / Los Angeles Times · CC BY 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Two_Mexican_soccer_players_go_up_for_a_header_during_game_against_England_at_Los_Angeles_Coliseum,_Calif.,_1986.jpg",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_53126304",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_53126304.jpg?v=19d52089",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: RickDikeman · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Mapfre-stadium-hosts-USA-Mexico_11-11-2016.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_34600913",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_34600913.jpg?v=4185da17",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Greatness21 · CC0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francisco_Rodriguez_Mexico_Anthem_Jan_29_2014.JPG",
+          "team_key": "seleccion"
+        }
+      ]
     },
     "raul": {
       "generados": [
@@ -34,15 +86,6 @@
         }
       ],
       "fotos": [
-        {
-          "id": "commons_153328573",
-          "title": "Raúl Jiménez",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_153328573.jpg?v=433e3234",
-          "credit": "Foto: Timmy96 · CC0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:Fulham_v_West_Ham_United_14092024_(7).jpg",
-          "width": 1080,
-          "height": 1440
-        },
         {
           "id": "commons_45386678",
           "title": "Raúl Jiménez",
@@ -71,15 +114,6 @@
           "height": 1860
         },
         {
-          "id": "commons_63779969",
-          "title": "Raúl Jiménez",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_63779969.jpg?v=f14fa879",
-          "credit": "Foto: Voltmetro · CC BY-SA 4.0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:2017_Confederation_Cup_-_MEXNZL_-_Ra%C3%BAl_Jim%C3%A9nez_(crop).jpg",
-          "width": 816,
-          "height": 928
-        },
-        {
           "id": "commons_27155197",
           "title": "Raúl Jiménez",
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_27155197.jpg?v=854b6a6c",
@@ -89,15 +123,6 @@
           "height": 1200
         },
         {
-          "id": "commons_192887644",
-          "title": "Raúl Jiménez",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_192887644.jpg?v=6464b913",
-          "credit": "Foto: Timmy96 · CC0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:Calvin_Bassey_and_Sean_Neave_24052026_(1).jpg",
-          "width": 1080,
-          "height": 810
-        },
-        {
           "id": "commons_113499696",
           "title": "Raúl Jiménez",
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_113499696.jpg?v=25b1b549",
@@ -105,6 +130,95 @@
           "source_url": "https://commons.wikimedia.org/wiki/File:Raul_Jimenez,_back_on_the_pitch!.jpg",
           "width": 1080,
           "height": 810
+        },
+        {
+          "id": "commons_180589432",
+          "title": "Raúl Jiménez",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_180589432.jpg?v=a9b0f875",
+          "credit": "Foto: Timmy96 · CC0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Fulham%27s_Penalty_22122025_(4).jpg",
+          "width": 1080,
+          "height": 720
+        },
+        {
+          "id": "commons_180589438",
+          "title": "Raúl Jiménez",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_180589438.jpg?v=e2f0cb2e",
+          "credit": "Foto: Timmy96 · CC0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Fulham%27s_Penalty_22122025_(8).jpg",
+          "width": 1080,
+          "height": 720
+        },
+        {
+          "id": "commons_180589439",
+          "title": "Raúl Jiménez",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_180589439.jpg?v=a9761b4e",
+          "credit": "Foto: Timmy96 · CC0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Fulham%27s_Penalty_22122025_(9).jpg",
+          "width": 1080,
+          "height": 720
+        }
+      ],
+      "contexto": [
+        {
+          "id": "commons_123863941",
+          "title": "Molineux",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_123863941.jpg?v=00f9e52a",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Bex Walton · CC BY 2.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:MolineuxStadium2022.jpg",
+          "team_key": "wolves"
+        },
+        {
+          "id": "commons_108154338",
+          "title": "Molineux",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_108154338.jpg?v=fb7d859c",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Bill Boaden · CC BY-SA 2.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Molineux_Stadium_-_geograph.org.uk_-_2439244.jpg",
+          "team_key": "wolves"
+        },
+        {
+          "id": "commons_10754111",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_10754111.jpg?v=f2dbd33a",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: BrokenSphere · CC BY-SA 3.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Adidas_Mexico_national_football_team_home_jersey.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_145056637",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_145056637.jpg?v=7800cb6e",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Lacy Atkins / Los Angeles Times · CC BY 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Two_Mexican_soccer_players_go_up_for_a_header_during_game_against_England_at_Los_Angeles_Coliseum,_Calif.,_1986.jpg",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_53126304",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_53126304.jpg?v=19d52089",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: RickDikeman · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Mapfre-stadium-hosts-USA-Mexico_11-11-2016.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_34600913",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_34600913.jpg?v=4185da17",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Greatness21 · CC0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francisco_Rodriguez_Mexico_Anthem_Jan_29_2014.JPG",
+          "team_key": "seleccion"
         }
       ]
     },
@@ -123,33 +237,47 @@
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/quinones_seleccion.jpg?v=a706c487"
         }
       ],
-      "fotos": [
+      "fotos": [],
+      "contexto": [
         {
-          "id": "commons_56125602",
-          "title": "Julián Quiñones",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_56125602.jpg?v=cac4a023",
-          "credit": "Foto: Agencia de Noticias ANDES · CC BY-SA 2.0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:Juli%C3%A1n_Qui%C3%B1ones.jpg",
-          "width": 1023,
-          "height": 1728
+          "id": "commons_10754111",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_10754111.jpg?v=f2dbd33a",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: BrokenSphere · CC BY-SA 3.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Adidas_Mexico_national_football_team_home_jersey.JPG",
+          "team_key": "seleccion"
         },
         {
-          "id": "commons_56060270",
-          "title": "Julián Quiñones",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_56060270.jpg?v=e86a5950",
-          "credit": "Foto: Agencia de Noticias ANDES · CC BY-SA 2.0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:ARGENTINA_vs_COLOMBIA_SUDAMERICANO_SUB_20_(32673268015).jpg",
+          "id": "commons_145056637",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_145056637.jpg?v=7800cb6e",
           "width": 1080,
-          "height": 754
+          "height": 2340,
+          "credit": "Foto: Lacy Atkins / Los Angeles Times · CC BY 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Two_Mexican_soccer_players_go_up_for_a_header_during_game_against_England_at_Los_Angeles_Coliseum,_Calif.,_1986.jpg",
+          "team_key": "seleccion"
         },
         {
-          "id": "commons_56349897",
-          "title": "Julián Quiñones",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_56349897.jpg?v=6de52f93",
-          "credit": "Foto: Agencia de Noticias ANDES · CC BY-SA 2.0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:COLOMBIA_VS_BRAZIL_SUB_20_(32003963524).jpg",
+          "id": "commons_53126304",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_53126304.jpg?v=19d52089",
           "width": 1080,
-          "height": 720
+          "height": 2340,
+          "credit": "Foto: RickDikeman · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Mapfre-stadium-hosts-USA-Mexico_11-11-2016.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_34600913",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_34600913.jpg?v=4185da17",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Greatness21 · CC0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francisco_Rodriguez_Mexico_Anthem_Jan_29_2014.JPG",
+          "team_key": "seleccion"
         }
       ]
     },
@@ -168,78 +296,67 @@
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/mora_seleccion.jpg?v=06081e31"
         }
       ],
-      "fotos": [
+      "fotos": [],
+      "contexto": [
         {
-          "id": "commons_156186267",
-          "title": "Gilberto Mora",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_156186267.jpg?v=c515de36",
-          "credit": "Foto: Yuliia Perekopaiko · CC BY-SA 4.0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%91%D0%B5%D0%BD%D1%84%D1%96%D0%BA%D0%B0%C2%BB_0-0._14_%D0%B2%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D1%8F_2021_%D1%80%D0%BE%D0%BA%D1%83._II_%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B0_%E2%80%94_1271719.jpg",
+          "id": "commons_22963545",
+          "title": "Estadio Caliente",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_22963545.jpg?v=39325c9d",
           "width": 1080,
-          "height": 720
+          "height": 2340,
+          "credit": "Foto: Angel Mendez · CC BY-SA 3.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:CalienteStadium.JPG",
+          "team_key": "tijuana"
         },
         {
-          "id": "commons_156186313",
-          "title": "Gilberto Mora",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_156186313.jpg?v=23fcadc4",
-          "credit": "Foto: Yuliia Perekopaiko · CC BY-SA 4.0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%91%D0%B5%D0%BD%D1%84%D1%96%D0%BA%D0%B0%C2%BB_0-0._14_%D0%B2%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D1%8F_2021_%D1%80%D0%BE%D0%BA%D1%83._II_%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B0_%E2%80%94_1271775.jpg",
+          "id": "commons_87341413",
+          "title": "Estadio Caliente",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_87341413.jpg?v=47447d11",
           "width": 1080,
-          "height": 720
+          "height": 2340,
+          "credit": "Foto: Chiko elektriko · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_Caliente_2020.jpg",
+          "team_key": "tijuana"
         },
         {
-          "id": "commons_156186318",
-          "title": "Gilberto Mora",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_156186318.jpg?v=aa0bc1b3",
-          "credit": "Foto: Yuliia Perekopaiko · CC BY-SA 4.0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%91%D0%B5%D0%BD%D1%84%D1%96%D0%BA%D0%B0%C2%BB_0-0._14_%D0%B2%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D1%8F_2021_%D1%80%D0%BE%D0%BA%D1%83._II_%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B0_%E2%80%94_1271779.jpg",
+          "id": "commons_10754111",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_10754111.jpg?v=f2dbd33a",
           "width": 1080,
-          "height": 720
+          "height": 2340,
+          "credit": "Foto: BrokenSphere · CC BY-SA 3.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Adidas_Mexico_national_football_team_home_jersey.JPG",
+          "team_key": "seleccion"
         },
         {
-          "id": "commons_156186366",
-          "title": "Gilberto Mora",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_156186366.jpg?v=197ab78f",
-          "credit": "Foto: Yuliia Perekopaiko · CC BY-SA 4.0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%91%D0%B5%D0%BD%D1%84%D1%96%D0%BA%D0%B0%C2%BB_0-0._14_%D0%B2%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D1%8F_2021_%D1%80%D0%BE%D0%BA%D1%83._II_%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B0_%E2%80%94_1271847.jpg",
+          "id": "commons_145056637",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_145056637.jpg?v=7800cb6e",
           "width": 1080,
-          "height": 720
+          "height": 2340,
+          "credit": "Foto: Lacy Atkins / Los Angeles Times · CC BY 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Two_Mexican_soccer_players_go_up_for_a_header_during_game_against_England_at_Los_Angeles_Coliseum,_Calif.,_1986.jpg",
+          "team_key": "seleccion"
         },
         {
-          "id": "commons_156186384",
-          "title": "Gilberto Mora",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_156186384.jpg?v=afd3246e",
-          "credit": "Foto: Yuliia Perekopaiko · CC BY-SA 4.0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%91%D0%B5%D0%BD%D1%84%D1%96%D0%BA%D0%B0%C2%BB_0-0._14_%D0%B2%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D1%8F_2021_%D1%80%D0%BE%D0%BA%D1%83._II_%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B0_%E2%80%94_1271871.jpg",
+          "id": "commons_53126304",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_53126304.jpg?v=19d52089",
           "width": 1080,
-          "height": 720
+          "height": 2340,
+          "credit": "Foto: RickDikeman · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Mapfre-stadium-hosts-USA-Mexico_11-11-2016.JPG",
+          "team_key": "seleccion"
         },
         {
-          "id": "commons_156186478",
-          "title": "Gilberto Mora",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_156186478.jpg?v=b97f149b",
-          "credit": "Foto: Olga Shcherbytska · CC BY-SA 4.0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%91%D0%B5%D0%BD%D1%84%D1%96%D0%BA%D0%B0%C2%BB_0-0._14_%D0%B2%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D1%8F_2021_%D1%80%D0%BE%D0%BA%D1%83_%E2%80%94_1271439.jpg",
+          "id": "commons_34600913",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_34600913.jpg?v=4185da17",
           "width": 1080,
-          "height": 720
-        },
-        {
-          "id": "commons_156186512",
-          "title": "Gilberto Mora",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_156186512.jpg?v=478e1dd2",
-          "credit": "Foto: Olga Shcherbytska · CC BY-SA 4.0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%91%D0%B5%D0%BD%D1%84%D1%96%D0%BA%D0%B0%C2%BB_0-0._14_%D0%B2%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D1%8F_2021_%D1%80%D0%BE%D0%BA%D1%83_%E2%80%94_1271487.jpg",
-          "width": 1080,
-          "height": 720
-        },
-        {
-          "id": "commons_156186555",
-          "title": "Gilberto Mora",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_156186555.jpg?v=4573023e",
-          "credit": "Foto: Olga Shcherbytska · CC BY-SA 4.0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%91%D0%B5%D0%BD%D1%84%D1%96%D0%BA%D0%B0%C2%BB_0-0._14_%D0%B2%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D1%8F_2021_%D1%80%D0%BE%D0%BA%D1%83_%E2%80%94_1271571.jpg",
-          "width": 1080,
-          "height": 720
+          "height": 2340,
+          "credit": "Foto: Greatness21 · CC0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francisco_Rodriguez_Mexico_Anthem_Jan_29_2014.JPG",
+          "team_key": "seleccion"
         }
       ]
     },
@@ -258,7 +375,69 @@
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/vasquez_seleccion.jpg?v=fdb1d9f8"
         }
       ],
-      "fotos": []
+      "fotos": [],
+      "contexto": [
+        {
+          "id": "commons_19557508",
+          "title": "Stadio Luigi Ferraris",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_19557508.jpg?v=6eed93c9",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Gabriel Rinaldi · CC BY-SA 3.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Bisagno_dallo_Stadio_Luigi_Ferraris.jpg",
+          "team_key": "genoa"
+        },
+        {
+          "id": "commons_192131846",
+          "title": "Stadio Luigi Ferraris",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_192131846.jpg?v=0d513de9",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Unknown authorUnknown author · Public domain · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Gigi_Riva_(Italy)_in_Genoa_-_1970s.jpg",
+          "team_key": "genoa"
+        },
+        {
+          "id": "commons_10754111",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_10754111.jpg?v=f2dbd33a",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: BrokenSphere · CC BY-SA 3.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Adidas_Mexico_national_football_team_home_jersey.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_145056637",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_145056637.jpg?v=7800cb6e",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Lacy Atkins / Los Angeles Times · CC BY 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Two_Mexican_soccer_players_go_up_for_a_header_during_game_against_England_at_Los_Angeles_Coliseum,_Calif.,_1986.jpg",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_53126304",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_53126304.jpg?v=19d52089",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: RickDikeman · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Mapfre-stadium-hosts-USA-Mexico_11-11-2016.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_34600913",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_34600913.jpg?v=4185da17",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Greatness21 · CC0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francisco_Rodriguez_Mexico_Anthem_Jan_29_2014.JPG",
+          "team_key": "seleccion"
+        }
+      ]
     },
     "gimenez": {
       "generados": [
@@ -275,15 +454,67 @@
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/gimenez_seleccion.jpg?v=5643ffc4"
         }
       ],
-      "fotos": [
+      "fotos": [],
+      "contexto": [
         {
-          "id": "commons_155493240",
-          "title": "Santiago Giménez",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_155493240.jpg?v=0f0c0648",
-          "credit": "Foto: Selección Nacional de México · CC BY 3.0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:Santiago_Gim%C3%A9nez_-_2023_(AI-generated_version).jpg",
-          "width": 1048,
-          "height": 1444
+          "id": "commons_125217252",
+          "title": "Estádio do Dragão",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_125217252.jpg?v=3406705a",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Nenea hartia · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Est%C3%A1dio_do_Drag%C3%A3o_metro_station_(Porto).03.jpg",
+          "team_key": "porto"
+        },
+        {
+          "id": "commons_125217253",
+          "title": "Estádio do Dragão",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_125217253.jpg?v=2a937b7a",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Nenea hartia · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Est%C3%A1dio_do_Drag%C3%A3o_metro_station_(Porto).01.jpg",
+          "team_key": "porto"
+        },
+        {
+          "id": "commons_10754111",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_10754111.jpg?v=f2dbd33a",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: BrokenSphere · CC BY-SA 3.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Adidas_Mexico_national_football_team_home_jersey.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_145056637",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_145056637.jpg?v=7800cb6e",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Lacy Atkins / Los Angeles Times · CC BY 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Two_Mexican_soccer_players_go_up_for_a_header_during_game_against_England_at_Los_Angeles_Coliseum,_Calif.,_1986.jpg",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_53126304",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_53126304.jpg?v=19d52089",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: RickDikeman · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Mapfre-stadium-hosts-USA-Mexico_11-11-2016.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_34600913",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_34600913.jpg?v=4185da17",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Greatness21 · CC0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francisco_Rodriguez_Mexico_Anthem_Jan_29_2014.JPG",
+          "team_key": "seleccion"
         }
       ]
     },
@@ -302,7 +533,59 @@
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/chavez_seleccion.jpg?v=61931bbb"
         }
       ],
-      "fotos": []
+      "fotos": [],
+      "contexto": [
+        {
+          "id": "commons_176615307",
+          "title": "AFAS Stadion",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_176615307.jpg?v=0e59c216",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Michielverbeek · CC BY 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Alkmaar,_het_AFAS_stadion_IMG_8382_2025-06-22_13.57.jpg",
+          "team_key": "az_alkmaar"
+        },
+        {
+          "id": "commons_10754111",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_10754111.jpg?v=f2dbd33a",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: BrokenSphere · CC BY-SA 3.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Adidas_Mexico_national_football_team_home_jersey.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_145056637",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_145056637.jpg?v=7800cb6e",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Lacy Atkins / Los Angeles Times · CC BY 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Two_Mexican_soccer_players_go_up_for_a_header_during_game_against_England_at_Los_Angeles_Coliseum,_Calif.,_1986.jpg",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_53126304",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_53126304.jpg?v=19d52089",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: RickDikeman · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Mapfre-stadium-hosts-USA-Mexico_11-11-2016.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_34600913",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_34600913.jpg?v=4185da17",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Greatness21 · CC0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francisco_Rodriguez_Mexico_Anthem_Jan_29_2014.JPG",
+          "team_key": "seleccion"
+        }
+      ]
     },
     "obed": {
       "generados": [
@@ -319,7 +602,69 @@
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/obed_seleccion.jpg?v=42ed9ac7"
         }
       ],
-      "fotos": []
+      "fotos": [],
+      "contexto": [
+        {
+          "id": "commons_66303382",
+          "title": "Estadio Metropolitano",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_66303382.jpg?v=2e96b8bc",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Fernandopascullo · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Wanda-Metropolitano.jpg",
+          "team_key": "atletico_madrid"
+        },
+        {
+          "id": "commons_63184648",
+          "title": "Estadio Metropolitano",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_63184648.jpg?v=4dbc180e",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Fabian Vidal · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_Metropolitano_de_Madrid.jpg",
+          "team_key": "atletico_madrid"
+        },
+        {
+          "id": "commons_10754111",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_10754111.jpg?v=f2dbd33a",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: BrokenSphere · CC BY-SA 3.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Adidas_Mexico_national_football_team_home_jersey.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_145056637",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_145056637.jpg?v=7800cb6e",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Lacy Atkins / Los Angeles Times · CC BY 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Two_Mexican_soccer_players_go_up_for_a_header_during_game_against_England_at_Los_Angeles_Coliseum,_Calif.,_1986.jpg",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_53126304",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_53126304.jpg?v=19d52089",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: RickDikeman · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Mapfre-stadium-hosts-USA-Mexico_11-11-2016.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_34600913",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_34600913.jpg?v=4185da17",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Greatness21 · CC0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francisco_Rodriguez_Mexico_Anthem_Jan_29_2014.JPG",
+          "team_key": "seleccion"
+        }
+      ]
     },
     "fidalgo": {
       "generados": [
@@ -336,15 +681,67 @@
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/fidalgo_seleccion.jpg?v=8e9fa0b1"
         }
       ],
-      "fotos": [
+      "fotos": [],
+      "contexto": [
         {
-          "id": "commons_105194645",
-          "title": "Álvaro Fidalgo",
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_105194645.jpg?v=3e0b53dd",
-          "credit": "Foto: Real Madrid C.F · CC BY 3.0 · Wikimedia Commons",
-          "source_url": "https://commons.wikimedia.org/wiki/File:Alvaro_Fidalgo.png",
-          "width": 868,
-          "height": 1024
+          "id": "commons_65379417",
+          "title": "Benito Villamarín",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_65379417.jpg?v=08e6978a",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Anual · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_Benito_Villamar%C3%ADn_2018001.jpg",
+          "team_key": "betis"
+        },
+        {
+          "id": "commons_87011969",
+          "title": "Benito Villamarín",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_87011969.jpg?v=bc04fab8",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Maesi64 · CC0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_Benito_Villamar%C3%ADn_-_Sevilla_-_01.jpg",
+          "team_key": "betis"
+        },
+        {
+          "id": "commons_10754111",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_10754111.jpg?v=f2dbd33a",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: BrokenSphere · CC BY-SA 3.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Adidas_Mexico_national_football_team_home_jersey.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_145056637",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_145056637.jpg?v=7800cb6e",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Lacy Atkins / Los Angeles Times · CC BY 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Two_Mexican_soccer_players_go_up_for_a_header_during_game_against_England_at_Los_Angeles_Coliseum,_Calif.,_1986.jpg",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_53126304",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_53126304.jpg?v=19d52089",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: RickDikeman · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Mapfre-stadium-hosts-USA-Mexico_11-11-2016.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_34600913",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_34600913.jpg?v=4185da17",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Greatness21 · CC0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francisco_Rodriguez_Mexico_Anthem_Jan_29_2014.JPG",
+          "team_key": "seleccion"
         }
       ]
     },
@@ -363,7 +760,69 @@
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/huescas_seleccion.jpg?v=39d878b7"
         }
       ],
-      "fotos": []
+      "fotos": [],
+      "contexto": [
+        {
+          "id": "commons_149888711",
+          "title": "Parken",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_149888711.jpg?v=26a490d3",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Arne Müseler · CC BY-SA 3.0 de · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Denmark_copenhagen_parken_stadium.jpg",
+          "team_key": "copenhague"
+        },
+        {
+          "id": "commons_196013198",
+          "title": "Parken",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_196013198.jpg?v=ef17f6e5",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: kallerna · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Parken_Copenhagen.jpg",
+          "team_key": "copenhague"
+        },
+        {
+          "id": "commons_10754111",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_10754111.jpg?v=f2dbd33a",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: BrokenSphere · CC BY-SA 3.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Adidas_Mexico_national_football_team_home_jersey.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_145056637",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_145056637.jpg?v=7800cb6e",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Lacy Atkins / Los Angeles Times · CC BY 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Two_Mexican_soccer_players_go_up_for_a_header_during_game_against_England_at_Los_Angeles_Coliseum,_Calif.,_1986.jpg",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_53126304",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_53126304.jpg?v=19d52089",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: RickDikeman · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Mapfre-stadium-hosts-USA-Mexico_11-11-2016.JPG",
+          "team_key": "seleccion"
+        },
+        {
+          "id": "commons_34600913",
+          "title": "Selección Mexicana",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_34600913.jpg?v=4185da17",
+          "width": 1080,
+          "height": 2340,
+          "credit": "Foto: Greatness21 · CC0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Francisco_Rodriguez_Mexico_Anthem_Jan_29_2014.JPG",
+          "team_key": "seleccion"
+        }
+      ]
     }
   },
   "general": {
@@ -576,7 +1035,7 @@
       },
       {
         "id": "estadios",
-        "title": "Estadios",
+        "title": "Estadios de México",
         "items": [
           {
             "id": "commons_191938306",
@@ -685,6 +1144,238 @@
             "height": 2340,
             "credit": "Foto: Chiko elektriko · CC BY-SA 4.0 · Wikimedia Commons",
             "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_Caliente_2020.jpg"
+          }
+        ]
+      },
+      {
+        "id": "estadios_clubes",
+        "title": "Estadios de los clubes",
+        "items": [
+          {
+            "id": "commons_166386664",
+            "title": "Estadio Karaiskakis",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_166386664.jpg?v=21c6e904",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Pavlos1988 · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:IMG_Olympiacos_CFP_fans_-_Conference_League_celebrations.jpg",
+            "team_key": "olympiacos"
+          },
+          {
+            "id": "commons_123863941",
+            "title": "Molineux",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_123863941.jpg?v=00f9e52a",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Bex Walton · CC BY 2.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:MolineuxStadium2022.jpg",
+            "team_key": "wolves"
+          },
+          {
+            "id": "commons_108154338",
+            "title": "Molineux",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_108154338.jpg?v=fb7d859c",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Bill Boaden · CC BY-SA 2.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Molineux_Stadium_-_geograph.org.uk_-_2439244.jpg",
+            "team_key": "wolves"
+          },
+          {
+            "id": "commons_19557508",
+            "title": "Stadio Luigi Ferraris",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_19557508.jpg?v=6eed93c9",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Gabriel Rinaldi · CC BY-SA 3.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Bisagno_dallo_Stadio_Luigi_Ferraris.jpg",
+            "team_key": "genoa"
+          },
+          {
+            "id": "commons_192131846",
+            "title": "Stadio Luigi Ferraris",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_192131846.jpg?v=0d513de9",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Unknown authorUnknown author · Public domain · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Gigi_Riva_(Italy)_in_Genoa_-_1970s.jpg",
+            "team_key": "genoa"
+          },
+          {
+            "id": "commons_125217252",
+            "title": "Estádio do Dragão",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_125217252.jpg?v=3406705a",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Nenea hartia · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Est%C3%A1dio_do_Drag%C3%A3o_metro_station_(Porto).03.jpg",
+            "team_key": "porto"
+          },
+          {
+            "id": "commons_125217253",
+            "title": "Estádio do Dragão",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_125217253.jpg?v=2a937b7a",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Nenea hartia · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Est%C3%A1dio_do_Drag%C3%A3o_metro_station_(Porto).01.jpg",
+            "team_key": "porto"
+          },
+          {
+            "id": "commons_176615307",
+            "title": "AFAS Stadion",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_176615307.jpg?v=0e59c216",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Michielverbeek · CC BY 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Alkmaar,_het_AFAS_stadion_IMG_8382_2025-06-22_13.57.jpg",
+            "team_key": "az_alkmaar"
+          },
+          {
+            "id": "commons_66303382",
+            "title": "Estadio Metropolitano",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_66303382.jpg?v=2e96b8bc",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Fernandopascullo · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Wanda-Metropolitano.jpg",
+            "team_key": "atletico_madrid"
+          },
+          {
+            "id": "commons_63184648",
+            "title": "Estadio Metropolitano",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_63184648.jpg?v=4dbc180e",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Fabian Vidal · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_Metropolitano_de_Madrid.jpg",
+            "team_key": "atletico_madrid"
+          },
+          {
+            "id": "commons_65379417",
+            "title": "Benito Villamarín",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_65379417.jpg?v=08e6978a",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Anual · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_Benito_Villamar%C3%ADn_2018001.jpg",
+            "team_key": "betis"
+          },
+          {
+            "id": "commons_87011969",
+            "title": "Benito Villamarín",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_87011969.jpg?v=bc04fab8",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Maesi64 · CC0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_Benito_Villamar%C3%ADn_-_Sevilla_-_01.jpg",
+            "team_key": "betis"
+          },
+          {
+            "id": "commons_149888711",
+            "title": "Parken",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_149888711.jpg?v=26a490d3",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Arne Müseler · CC BY-SA 3.0 de · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Denmark_copenhagen_parken_stadium.jpg",
+            "team_key": "copenhague"
+          },
+          {
+            "id": "commons_196013198",
+            "title": "Parken",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_196013198.jpg?v=ef17f6e5",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: kallerna · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Parken_Copenhagen.jpg",
+            "team_key": "copenhague"
+          },
+          {
+            "id": "commons_22963545",
+            "title": "Estadio Caliente",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_22963545.jpg?v=39325c9d",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Angel Mendez · CC BY-SA 3.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:CalienteStadium.JPG",
+            "team_key": "tijuana"
+          },
+          {
+            "id": "commons_87341413",
+            "title": "Estadio Caliente",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_87341413.jpg?v=47447d11",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Chiko elektriko · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_Caliente_2020.jpg",
+            "team_key": "tijuana"
+          }
+        ]
+      },
+      {
+        "id": "seleccion_fotos",
+        "title": "El Tri en la cancha",
+        "items": [
+          {
+            "id": "commons_10754111",
+            "title": "Selección Mexicana",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_10754111.jpg?v=f2dbd33a",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: BrokenSphere · CC BY-SA 3.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Adidas_Mexico_national_football_team_home_jersey.JPG",
+            "team_key": "seleccion"
+          },
+          {
+            "id": "commons_145056637",
+            "title": "Selección Mexicana",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_145056637.jpg?v=7800cb6e",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Lacy Atkins / Los Angeles Times · CC BY 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Two_Mexican_soccer_players_go_up_for_a_header_during_game_against_England_at_Los_Angeles_Coliseum,_Calif.,_1986.jpg",
+            "team_key": "seleccion"
+          },
+          {
+            "id": "commons_53126304",
+            "title": "Selección Mexicana",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_53126304.jpg?v=19d52089",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: RickDikeman · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Mapfre-stadium-hosts-USA-Mexico_11-11-2016.JPG",
+            "team_key": "seleccion"
+          },
+          {
+            "id": "commons_34600913",
+            "title": "Selección Mexicana",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_34600913.jpg?v=4185da17",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Greatness21 · CC0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Francisco_Rodriguez_Mexico_Anthem_Jan_29_2014.JPG",
+            "team_key": "seleccion"
+          },
+          {
+            "id": "commons_70008620",
+            "title": "Selección Mexicana",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_70008620.jpg?v=1517fc0f",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Laura Hale · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Mexico_v_Thailand_(June_16)_IBSA_2018_Blind_Football_Madrid-1.JPG",
+            "team_key": "seleccion"
+          },
+          {
+            "id": "commons_70008636",
+            "title": "Selección Mexicana",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_70008636.jpg?v=685f96ae",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Laura Hale · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Mexico_v_Thailand_(June_16)_IBSA_2018_Blind_Football_Madrid-10.JPG",
+            "team_key": "seleccion"
           }
         ]
       }
