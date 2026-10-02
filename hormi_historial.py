@@ -154,6 +154,100 @@ def season_rows(player_id, season):
     return rows
 
 
+# Nombres en español para competiciones que la API llama de forma genérica.
+LEAGUE_NAME_FIX = {199: "Copa de Grecia"}
+FINISHED = ("FT", "AET", "PEN")
+
+
+def _fixture_involvement(pid, fx):
+    """Goles/asistencias/minutos de un jugador en UN partido terminado,
+    calculados con los eventos y alineaciones del partido. Para competiciones
+    que /players no trae (p. ej. la Copa de Grecia): la API a veces no
+    publica sus estadísticas por jugador, pero sí los eventos del partido.
+    Devuelve None si el jugador no participó."""
+    fid = fx["fixture"]["id"]
+    events = api("/fixtures/events", {"fixture": fid}) or []
+    lineups = api("/fixtures/lineups", {"fixture": fid}) or []
+    starter = bench = False
+    for t in lineups:
+        if any((x.get("player") or {}).get("id") == pid for x in t.get("startXI") or []):
+            starter = True
+        if any((x.get("player") or {}).get("id") == pid for x in t.get("substitutes") or []):
+            bench = True
+    total = 120 if fx["fixture"]["status"]["short"] in ("AET", "PEN") else 90
+    goals = assists = 0
+    sub_in = sub_out = red = None
+    seen = False
+    for e in events:
+        minute = (e.get("time") or {}).get("elapsed") or 0
+        pl, asst = (e.get("player") or {}).get("id"), (e.get("assist") or {}).get("id")
+        kind, det = e.get("type"), e.get("detail") or ""
+        if kind == "Goal":
+            if pl == pid and "Missed" not in det and "Own" not in det:
+                goals += 1; seen = True
+            if asst == pid:
+                assists += 1; seen = True
+        elif kind == "subst":
+            if pl == pid:
+                sub_out = minute; seen = True
+            if asst == pid:
+                sub_in = minute; seen = True
+        elif kind == "Card" and pl == pid and ("Red" in det or "Second" in det):
+            red = minute; seen = True
+    if not (starter or bench or seen):
+        return None
+    start = sub_in if sub_in is not None else 0
+    end = sub_out if sub_out is not None else total
+    if red is not None:
+        end = min(end, red)
+    minutes = max(end - start, 0)
+    if minutes == 0 and not goals and not assists:
+        return None   # en la banca sin entrar
+    return {"goals": goals, "assists": assists, "minutes": minutes}
+
+
+def supplement_rows(player, season, rows):
+    """Completa competiciones del club ACTUAL que /players no trajo para
+    esta temporada, sumando partido por partido (ver _fixture_involvement).
+    Solo agrega competiciones ausentes; si la API ya las trae, no toca nada
+    (así nunca hay doble conteo). Amistosos de club no cuentan."""
+    pid = player.get("player_id")
+    for t in player.get("targets") or []:
+        if t.get("kind") != "club" or not t.get("team_id"):
+            continue
+        tid = t["team_id"]
+        covered = {r["league_id"] for r in rows if r.get("team_id") == tid}
+        fixtures = api("/fixtures", {"team": tid, "season": season})
+        if not fixtures:
+            continue
+        found = {}
+        for fx in fixtures:
+            lg = fx.get("league") or {}
+            if (fx["fixture"]["status"]["short"] not in FINISHED or lg.get("id") in covered
+                    or "riendl" in (lg.get("name") or "")):
+                continue
+            part = _fixture_involvement(pid, fx)
+            if not part:
+                continue
+            side = fx["teams"]["home"] if fx["teams"]["home"]["id"] == tid else fx["teams"]["away"]
+            row = found.setdefault(lg["id"], {
+                "league_id": lg["id"],
+                "league_name": LEAGUE_NAME_FIX.get(lg["id"]) or lg.get("name") or "?",
+                "league_logo": lg.get("logo"),
+                "team_id": tid, "team_name": side.get("name") or t["label"],
+                "team_logo": side.get("logo"),
+                "played": 0, "goals": 0, "assists": 0, "minutes": 0,
+                "estimated": True,
+            })
+            row["played"] += 1
+            for k in ("goals", "assists", "minutes"):
+                row[k] += part[k]
+        for row in found.values():
+            log(f"    + {row['league_name']} (de los partidos): {row['played']} PJ · "
+                f"{row['goals']} G · {row['assists']} A · {row['minutes']} min")
+            rows.append(row)
+
+
 def build_player_seasons(player, only_season=None):
     if not player.get("player_id"):
         log(f"⚠️  {player['name']}: sin player_id todavía en {CONFIG_FILE} "
@@ -179,6 +273,11 @@ def build_player_seasons(player, only_season=None):
         rows = season_rows(player["player_id"], season)
         if rows is None:
             continue  # no se toca lo que ya había guardado para esa temporada
+        if season == max(seasons_cfg):
+            try:
+                supplement_rows(player, season, rows)   # competiciones que /players no trae
+            except Exception as err:
+                log(f"    ⚠️  no se pudo completar con los partidos: {err}")
         result[str(season)] = rows
         if rows:
             g = sum(r["goals"] for r in rows)
