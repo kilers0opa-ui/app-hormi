@@ -413,12 +413,11 @@ def buscar_fotos(player):
         # Selecciones/países de homónimos ya vistos: sin contexto propio se descartan.
         if not contexto_propio and re.search(r"\b(colombia|colombian|ukrain|dynamo kyiv|dinamo kyiv)", pajar):
             continue
-        if en_cat:
-            # Una foto de categoría debe nombrar al jugador en su TÍTULO: si no, suele ser un
-            # partido donde apenas aparece de fondo (p. ej. fotos de penales donde no se le ve).
-            tit = norm(page.get("title", "")).replace("_", " ")
-            if primero not in tit or apellido not in tit:
-                continue
+        # Toda foto debe nombrar al jugador en su TÍTULO: si solo lo nombra la descripción,
+        # suele ser un partido o calentamiento donde apenas se le ve.
+        tit = norm(page.get("title", "")).replace("_", " ")
+        if primero not in tit or apellido not in tit:
+            continue
         if en_cat:
             # Viene de la categoría del jugador en Commons: se acepta si su nombre
             # aparece (y es de fútbol) o si el contexto es el suyo. Una foto de
