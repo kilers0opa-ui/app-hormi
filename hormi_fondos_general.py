@@ -321,6 +321,21 @@ ESTADIOS = [
     ("Estadio Jalisco", ("jalisco",), "Estadio Jalisco"),
     ("Estadio Caliente Tijuana", ("caliente", "tijuana"), "Estadio Caliente"),
 ]
+
+# Estadios de los clubes que siguen los jugadores (aparecen en la sección de cada
+# jugador, en "contexto"): (consulta, palabras clave, título, team_key del config).
+ESTADIOS_CLUB = [
+    ("Karaiskakis Stadium Piraeus", ("karaiskakis",), "Estadio Karaiskakis", "olympiacos"),
+    ("Molineux Stadium Wolverhampton", ("molineux",), "Molineux", "wolves"),
+    ("Luigi Ferraris stadium Genoa", ("ferraris",), "Stadio Luigi Ferraris", "genoa"),
+    ("Estádio do Dragão Porto", ("dragao", "dragon"), "Estádio do Dragão", "porto"),
+    ("AFAS Stadion Alkmaar", ("afas", "alkmaar"), "AFAS Stadion", "az_alkmaar"),
+    ("Estadio Metropolitano Madrid Atlético", ("metropolitano",), "Estadio Metropolitano", "atletico_madrid"),
+    ("Estadio Benito Villamarín Sevilla", ("villamarin",), "Benito Villamarín", "betis"),
+    ("Parken Stadium Copenhagen", ("parken",), "Parken", "copenhague"),
+    ("Estadio Caliente Tijuana", ("caliente", "tijuana"), "Estadio Caliente", "tijuana"),
+    ("Al-Qadsiah Stadium Khobar", ("qadsiah", "qadisiyah", "khobar"), "Estadio Al-Qadsiah", "al_qadsiah"),
+]
 MIN_LADO = 1600  # alto mínimo de la foto original para que el recorte vertical se vea nítido
 
 
@@ -339,12 +354,15 @@ def _recortar_vertical(img):
     return img.resize((W, H), Image.LANCZOS)
 
 
-def buscar_estadios():
-    """Fotos libres de estadios, recortadas a formato celular. Lanza si Commons falla."""
+def buscar_estadios(lista=None, max_por=MAX_POR_ESTADIO):
+    """Fotos libres de estadios, recortadas a formato celular. Lanza si Commons falla.
+    Cada elemento de `lista` es (consulta, claves, título[, team_key])."""
     from PIL import Image
     items = []
     vistos = set()
-    for consulta, claves, titulo in ESTADIOS:
+    for entrada in (lista or ESTADIOS):
+        consulta, claves, titulo = entrada[:3]
+        team_key = entrada[3] if len(entrada) > 3 else None
         data = _commons({
             "generator": "search", "gsrnamespace": "6", "gsrsearch": consulta + " filetype:bitmap",
             "gsrlimit": "30", "prop": "imageinfo",
@@ -379,7 +397,7 @@ def buscar_estadios():
         cand.sort(key=lambda c: c[0], reverse=True)
         tomadas = 0
         for _, page, info, licencia in cand:
-            if tomadas >= MAX_POR_ESTADIO:
+            if tomadas >= max_por:
                 break
             try:
                 img = Image.open(io.BytesIO(http_get(info.get("thumburl") or info["url"], timeout=60))).convert("RGB")
@@ -398,9 +416,77 @@ def buscar_estadios():
                 "id": idf, "title": titulo, "url": url, "width": W, "height": H,
                 "credit": f"Foto: {artista} · {licencia} · Wikimedia Commons",
                 "source_url": info.get("descriptionurl"),
+                **({"team_key": team_key} if team_key else {}),
             })
             tomadas += 1
             time.sleep(1)
         print(f"  {titulo}: {tomadas} foto(s)")
         time.sleep(1)
+    return items
+
+
+# --------------------------------------------------------------- fotos de la selección
+def buscar_seleccion(maximo=6):
+    """Fotos libres de partidos/jugadores de la Selección Mexicana (Commons).
+    Son fotos del equipo en general, no de un jugador en particular."""
+    from PIL import Image
+    cand = {}
+    for consulta in ("Mexico national football team", "Selección de fútbol de México", "Mexico national football team match"):
+        data = _commons({
+            "generator": "search", "gsrnamespace": "6", "gsrsearch": consulta + " filetype:bitmap",
+            "gsrlimit": "50", "prop": "imageinfo",
+            "iiprop": "url|size|mime|extmetadata", "iiurlwidth": "2200",
+            "iiextmetadatafilter": "Artist|LicenseShortName|ImageDescription|Categories|ObjectName",
+        })
+        for page in (data.get("query") or {}).get("pages", []):
+            cand[page["pageid"]] = page
+        time.sleep(1)
+    buenas = []
+    for page in cand.values():
+        info = (page.get("imageinfo") or [None])[0]
+        if not info or info.get("mime") != "image/jpeg":
+            continue
+        meta = info.get("extmetadata") or {}
+        licencia = _strip_html((meta.get("LicenseShortName") or {}).get("value"))
+        if not LICENCIAS_OK.match(licencia):
+            continue
+        pajar = norm(" ".join([
+            page.get("title", ""),
+            _strip_html((meta.get("ImageDescription") or {}).get("value")),
+            _strip_html((meta.get("Categories") or {}).get("value")).replace("|", " "),
+        ]))
+        if not re.search(r"\b(mexico|mexican|mexicana|mexicano)\b", pajar):
+            continue
+        if not re.search(r"\b(national|nacional|seleccion|world cup|copa|friendly|amistoso|concacaf|match|partido)\b", pajar):
+            continue
+        if re.search(r"\b(logo|map|mapa|crest|escudo|badge|women|femenil|feminine|u-?1\d|u-?2\d|sub-?\d+|ticket)\b", pajar):
+            continue
+        w, h = info.get("width") or 0, info.get("height") or 0
+        if h < 1500 or w < 1000:
+            continue
+        buenas.append((1 if h >= w else 0, w * h, page, info, licencia))
+    buenas.sort(key=lambda b: (b[0], b[1]), reverse=True)
+    items = []
+    for _, _, page, info, licencia in buenas:
+        if len(items) >= maximo:
+            break
+        try:
+            img = Image.open(io.BytesIO(http_get(info.get("thumburl") or info["url"], timeout=60))).convert("RGB")
+            img = _recortar_vertical(img)
+        except Exception as e:
+            print(f"  (no se pudo procesar {page.get('title')}: {e})")
+            continue
+        meta = info.get("extmetadata") or {}
+        artista = _strip_html((meta.get("Artist") or {}).get("value")) or "Autor desconocido"
+        if len(artista) > 80:
+            artista = artista[:77] + "…"
+        idf = f"commons_{page['pageid']}"
+        url = _guardar(img, f"foto_general_{idf}.jpg")
+        items.append({
+            "id": idf, "title": "Selección Mexicana", "url": url, "width": W, "height": H,
+            "credit": f"Foto: {artista} · {licencia} · Wikimedia Commons",
+            "source_url": info.get("descriptionurl"), "team_key": "seleccion",
+        })
+        time.sleep(1)
+    print(f"  Selección: {len(items)} foto(s)")
     return items
