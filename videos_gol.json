@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T12:00:35.775748-06:00",
+  "updated_at": "2026-10-02T12:40:36.205387-06:00",
   "cuota": {
     "fecha": "2026-10-02",
     "busquedas": 0,
@@ -22,14 +22,30 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-02T18:40:35.738184+00:00",
+      "noticias": {
+        "vasquez": [
+          {
+            "title": "El Genoa frena la venta de Johan Vásquez a la Roma",
+            "source": "Telemundo",
+            "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQNXVKT0htazYtSnZHT3pnaGF0NkpqZVB6Yjk2ZUtWdFZFcUtaSll0Sko5d250ZWNNUkJqSTdSTGI1dHZtRE5JMXhPUkpxVGNyZGpONmFtQkFIWG8zb2l0VlFScTYzN0pjdGpMOGw0dHBOZkJsOE9NN2lRMVpXNVRxemcxWGZtc3RtNUhJSkd2UFF4WUNSSmFGbG9FNHFYajVseEdMRHJyM0NIWHp3ZlFWNg?oc=5",
+            "published_at": "2026-09-22T18:56:04Z"
+          },
+          {
+            "title": "Johan Vásquez estuvo cerca de un gigante europeo en el pasado mercado de verano",
+            "source": "Récord",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVFdnYmxIOWdRQXdDREhUR0ppSVBjdWExckxqU2IxVWVnTVFnTEFxLUVZQTk0bmRMTjRuQmZGRFYyZXlkYUxBVGMzaWdCcncwUkEzZTllV004Z1VrcjVEOVJwTTNUWEdGdGZNdG44T1NlRUxteGVCM2JSZ2lndkRfTFpObFlucEtVM1JyVjNLblNVREt4bGFnNUFVSHVPdGdESUZ6VzJ3?oc=5",
+            "published_at": "2026-09-22T16:53:00Z"
+          }
+        ]
+      },
+      "motivo": "ningún jugador tuvo minutos"
     }
   }
 }
