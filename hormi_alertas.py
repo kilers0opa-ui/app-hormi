@@ -922,6 +922,31 @@ def _no_convocados(target, entry):
     return set()
 
 
+def _en_concentracion(player_key, entry):
+    """True si el jugador está convocado a la Selección y el partido de su CLUB
+    cae dentro de la ventana de esa convocatoria (fecha FIFA): ese día está con
+    el Tri, no con el club, así que un amistoso/partido del club no es suyo
+    (p. ej. Genoa vs Rapid mientras Vásquez está concentrado con México).
+    Sin archivo, fuera de ventana o cualquier problema = False (ante la duda, se muestra)."""
+    try:
+        sel = (load_json(CONVOCATORIA_FILE, {}) or {}).get("seleccion") or {}
+        ko = _parse(entry.get("kickoff")) if entry else None
+        if not ko or not sel.get("desde") or not sel.get("hasta"):
+            return False
+        dia = ko.astimezone(LOCAL_TZ).date().isoformat()
+        return player_key in (sel.get("convocados") or []) and sel["desde"] <= dia <= sel["hasta"]
+    except Exception:
+        return False
+
+
+def _aparece_en_alineacion(snap, player_id):
+    for team in snap.get("lineups") or []:
+        for slot in ("startXI", "substitutes"):
+            if any(p["player"]["id"] == player_id for p in team.get(slot) or []):
+                return True
+    return False
+
+
 def _next_match_status(target, entry, player_key=None):
     """Estado para la app de un objetivo sin partido en vigilancia: el próximo
     partido si el horario lo conoce, o "sin_partido" a secas."""
@@ -1001,6 +1026,13 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         _SNAP_CACHE[fid] = res[0] if res else None
     snap = _SNAP_CACHE[fid]
     if not snap:
+        return
+
+    # Convocado al Tri y su club juega en la ventana FIFA sin que aparezca en
+    # la alineación: no es partido suyo (ni "En cancha" ni "Arrancó").
+    if (target.get("kind") == "club" and _en_concentracion(player["key"], entry)
+            and not _aparece_en_alineacion(snap, player["player_id"])):
+        status_out[key] = _next_match_status(target, entry, player["key"])
         return
 
     sent = sent_by_target.setdefault(key, set())
