@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T00:51:59.600357-06:00",
+  "updated_at": "2026-10-02T03:13:01.503202-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -2225,6 +2225,45 @@
             "goals": 0,
             "assists": 0,
             "minutes": 202
+          },
+          {
+            "league_id": 826,
+            "league_name": "Super Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/826.png",
+            "team_id": 2933,
+            "team_name": "Al-Qadisiyah FC",
+            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 68,
+            "estimated": true
+          },
+          {
+            "league_id": 504,
+            "league_name": "King's Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/504.png",
+            "team_id": 2933,
+            "team_name": "Al-Qadisiyah FC",
+            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
+            "played": 3,
+            "goals": 4,
+            "assists": 0,
+            "minutes": 250,
+            "estimated": true
+          },
+          {
+            "league_id": 17,
+            "league_name": "AFC Champions League Elite",
+            "league_logo": "https://media.api-sports.io/football/leagues/17.png",
+            "team_id": 2933,
+            "team_name": "Al-Qadisiyah FC",
+            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
+            "played": 1,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 84,
+            "estimated": true
           }
         ]
       },
@@ -3273,6 +3312,32 @@
             "goals": 0,
             "assists": 0,
             "minutes": 255
+          },
+          {
+            "league_id": 140,
+            "league_name": "La Liga",
+            "league_logo": "https://media.api-sports.io/football/leagues/140.png",
+            "team_id": 530,
+            "team_name": "Atletico Madrid",
+            "team_logo": "https://media.api-sports.io/football/teams/530.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 270,
+            "estimated": true
+          },
+          {
+            "league_id": 2,
+            "league_name": "UEFA Champions League",
+            "league_logo": "https://media.api-sports.io/football/leagues/2.png",
+            "team_id": 530,
+            "team_name": "Atletico Madrid",
+            "team_logo": "https://media.api-sports.io/football/teams/530.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 90,
+            "estimated": true
           }
         ]
       },
