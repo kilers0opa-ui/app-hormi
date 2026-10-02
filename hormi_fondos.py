@@ -46,7 +46,7 @@ RAW_BASE = "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondo
 UA = "LegionMX-Fondos/1.0 (https://github.com/kilers0opa-ui/app-hormi)"
 
 W, H = 1080, 2340
-MAX_FOTOS = 4
+MAX_FOTOS = 8
 
 # (color principal, color secundario) por target. El texto se elige solo
 # (blanco u oscuro) según qué tan claro quede el fondo.
@@ -277,6 +277,71 @@ def _commons(params):
     return json.loads(http_get(url, timeout=30).decode("utf-8"))
 
 
+def _wikidata(params):
+    params = dict(params, format="json")
+    url = "https://www.wikidata.org/w/api.php?" + urllib.parse.urlencode(params)
+    return json.loads(http_get(url, timeout=30).decode("utf-8"))
+
+
+def commons_categoria(player):
+    """Categoría de Commons de este futbolista (vía Wikidata: ocupación futbolista
+    y nombre completo igual), o None. Así se toman TODAS sus fotos, no solo las
+    que el buscador de texto logra asociar."""
+    nombre = plain_name(player)
+    partes = norm(nombre).split()
+    res = _wikidata({"action": "wbsearchentities", "search": nombre, "language": "es",
+                     "uselang": "es", "type": "item", "limit": "10"})
+    ids = [r["id"] for r in res.get("search", [])]
+    res2 = _wikidata({"action": "wbsearchentities", "search": nombre, "language": "en",
+                      "type": "item", "limit": "10"})
+    ids += [r["id"] for r in res2.get("search", []) if r["id"] not in ids]
+    if not ids:
+        return None
+    ents = _wikidata({"action": "wbgetentities", "ids": "|".join(ids[:20]),
+                      "props": "claims|labels|sitelinks", "languages": "es|en"}).get("entities", {})
+    mejores = []
+    for qid, e in ents.items():
+        cl = e.get("claims", {})
+        ocup = {c["mainsnak"].get("datavalue", {}).get("value", {}).get("id") for c in cl.get("P106", [])}
+        if "Q937857" not in ocup:        # futbolista
+            continue
+        etiquetas = " ".join(norm(l["value"]) for l in e.get("labels", {}).values())
+        if not all(x in etiquetas for x in (partes[0], partes[-1])):
+            continue
+        pais = {c["mainsnak"].get("datavalue", {}).get("value", {}).get("id") for c in cl.get("P27", [])}
+        cat = next((c["mainsnak"]["datavalue"]["value"] for c in cl.get("P373", [])
+                    if "datavalue" in c["mainsnak"]), None)
+        mejores.append((1 if "Q96" in pais else 0, len(e.get("sitelinks", {})), cat, qid))
+    mejores.sort(reverse=True)
+    for _, _, cat, qid in mejores:
+        if cat:
+            print(f"  Wikidata {qid} -> Category:{cat}")
+            return cat
+    return None
+
+
+def _fotos_de_categoria(cat):
+    """Páginas (con imageinfo) del archivo de la categoría y sus subcategorías directas."""
+    paginas = {}
+    cats = [cat]
+    try:
+        sub = _commons({"list": "categorymembers", "cmtitle": f"Category:{cat}", "cmtype": "subcat", "cmlimit": "20"})
+        cats += [m["title"].split(":", 1)[1] for m in (sub.get("query") or {}).get("categorymembers", [])]
+    except Exception:
+        pass
+    for c in cats[:8]:
+        data = _commons({
+            "generator": "categorymembers", "gcmtitle": f"Category:{c}", "gcmtype": "file",
+            "gcmlimit": "60", "prop": "imageinfo",
+            "iiprop": "url|size|mime|extmetadata", "iiurlwidth": "1200",
+            "iiextmetadatafilter": "Artist|LicenseShortName|ImageDescription|Categories|ObjectName|DateTimeOriginal",
+        })
+        for page in (data.get("query") or {}).get("pages", []):
+            paginas[page["pageid"]] = page
+        time.sleep(1)
+    return paginas
+
+
 def buscar_fotos(player):
     """Fotos libres del jugador en Commons. Lanza excepción si Commons falla."""
     nombre = plain_name(player)
@@ -296,6 +361,17 @@ def buscar_fotos(player):
             candidatos[page["pageid"]] = page
         time.sleep(1)
 
+    de_categoria = set()
+    try:
+        cat = commons_categoria(player)
+        if cat:
+            for pid, page in _fotos_de_categoria(cat).items():
+                candidatos.setdefault(pid, page)
+                de_categoria.add(pid)
+            print(f"  categoría: {len(de_categoria)} archivo(s)")
+    except Exception as e:
+        print(f"  (sin categoría de Commons: {e})")
+
     fotos = []
     for page in candidatos.values():
         info = (page.get("imageinfo") or [None])[0]
@@ -313,7 +389,8 @@ def buscar_fotos(player):
             _strip_html((meta.get("ObjectName") or {}).get("value")),
             _strip_html((meta.get("Categories") or {}).get("value")).replace("|", " "),
         ]))
-        if primero not in pajar or apellido not in pajar:
+        en_cat = page["pageid"] in de_categoria
+        if not en_cat and (primero not in pajar or apellido not in pajar):
             continue
         # Y que sea de fútbol: evita políticos, músicos y otros homónimos
         # (p. ej. otro "Armando González"). Debe aparecer el deporte o el
@@ -321,11 +398,11 @@ def buscar_fotos(player):
         # Y que el contexto sea el suyo: selección mexicana o su club actual
         # (descarta homónimos de otros países, p. ej. un "Julián Quiñones" de
         # una selección juvenil colombiana). Prefiero pocas fotos seguras.
-        if not (re.search(CONTEXTO_FUTBOL, pajar) or any(c in pajar for c in clubes)):
+        if not en_cat and not (re.search(CONTEXTO_FUTBOL, pajar) or any(c in pajar for c in clubes)):
             continue
-        if not (re.search(r"\bmexic", pajar) or any(c in pajar for c in clubes)):
+        if not en_cat and not (re.search(r"\bmexic", pajar) or any(c in pajar for c in clubes)):
             continue
-        if re.search(r"\b(politic|diputad|senador|alcalde|gobernador|candidat|cantante|actor|actriz)", pajar):
+        if not en_cat and re.search(r"\b(politic|diputad|senador|alcalde|gobernador|candidat|cantante|actor|actriz)", pajar):
             continue
         w, h = info.get("width") or 0, info.get("height") or 0
         if w < 800 or h < 800:
