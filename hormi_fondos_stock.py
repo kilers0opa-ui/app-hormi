@@ -76,6 +76,7 @@ def stock_categorias(previas):
         print("  (stock: sin PEXELS_API_KEY ni PIXABAY_API_KEY, se omite)")
         return previas
     nuevas = []
+    excluidas = F.load_excluidas()
     for cid, titulo, consultas, maximo in CATEGORIAS:
         items, vistos = [], set()
         for consulta, team_key in consultas:
@@ -89,7 +90,7 @@ def stock_categorias(previas):
                     continue
                 tomadas = 0
                 for c in candidatos:
-                    if len(items) >= maximo or tomadas >= POR_CONSULTA or c["id"] in vistos:
+                    if len(items) >= maximo or tomadas >= POR_CONSULTA or c["id"] in vistos or c["id"] in excluidas:
                         continue
                     try:
                         img = Image.open(io.BytesIO(_get(c["src"], timeout=60))).convert("RGB")
