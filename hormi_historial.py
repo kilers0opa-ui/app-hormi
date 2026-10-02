@@ -248,6 +248,36 @@ def supplement_rows(player, season, rows):
             rows.append(row)
 
 
+def quitar_duplicados(seasons):
+    """API-Football a veces repite, en otra temporada/equipo, la fila EXACTA de una
+    anterior (p. ej. la "King's Cup" 2024 de Quiñones con los mismos 41 PJ / 2845 min /
+    18 G / 7 A que su Liga MX 2023 con el América; la "DBU Pokalen" 2024 de Huescas = su
+    Liga MX 2023 con Cruz Azul; la Champions 2024 de Giménez con el Milan = la de Feyenoord).
+    Eso infla los totales. Si dos filas con >=5 PJ y minutos tienen exactamente los mismos
+    PJ/minutos/goles/asistencias, se conserva la de la temporada más antigua (en un empate
+    de temporada, la de un equipo ya visto antes) y se descarta la repetida.
+    Devuelve (seasons_limpio, [descripciones de lo quitado])."""
+    cands = {}
+    equipos_antes = set()
+    for y in sorted(seasons, key=lambda x: int(x) if str(x).isdigit() else 0):
+        for i, r in enumerate(seasons[y]):
+            if (r.get("played") or 0) >= 5 and (r.get("minutes") or 0) > 0:
+                k = (r["played"], r["minutes"], r.get("goals"), r.get("assists"))
+                cands.setdefault(k, []).append((y, i, r, r.get("team_id") in equipos_antes))
+        equipos_antes |= {r.get("team_id") for r in seasons[y]}
+    quitar, avisos = set(), []
+    for k, lst in cands.items():
+        if len(lst) < 2:
+            continue
+        orden = sorted(lst, key=lambda t: (int(t[0]) if str(t[0]).isdigit() else 0, not t[3]))
+        for y, i, r, _ in orden[1:]:
+            quitar.add((y, i))
+            avisos.append(f"{y} {r.get('team_name')}/{r.get('league_name')} "
+                          f"({r['played']} PJ · {r['minutes']} min) repite una fila anterior")
+    limpio = {y: [r for i, r in enumerate(rows) if (y, i) not in quitar] for y, rows in seasons.items()}
+    return limpio, avisos
+
+
 def build_player_seasons(player, only_season=None):
     if not player.get("player_id"):
         log(f"⚠️  {player['name']}: sin player_id todavía en {CONFIG_FILE} "
@@ -316,6 +346,9 @@ def main():
         entry = stats["players"].setdefault(
             player["key"], {"seasons": {}, "applied_fixtures": {}})
         entry.setdefault("seasons", {}).update(seasons_data)
+        entry["seasons"], quitadas = quitar_duplicados(entry["seasons"])
+        for q in quitadas:
+            log(f"    🧹 dato repetido de la API descartado: {q}")
 
     # Poda jugadores que ya no están en hormi_config.json — igual que hace
     # el chequeo de cada 5 min con status.json, para que no se queden
