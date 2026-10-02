@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T06:57:35+00:00",
+  "updated_at": "2026-10-02T15:19:52+00:00",
   "players": {
     "armando": {
       "generados": [
@@ -208,5 +208,329 @@
       ],
       "fotos": []
     }
+  },
+  "general": {
+    "categorias": [
+      {
+        "id": "seleccion",
+        "title": "Selección Mexicana",
+        "items": [
+          {
+            "id": "sel_tricolor",
+            "title": "Tricolor",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_sel_tricolor.jpg?v=ffa74d43",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "sel_noche",
+            "title": "El Tri de noche",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_sel_noche.jpg?v=549075a2",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "sel_viva",
+            "title": "¡Viva México!",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_sel_viva.jpg?v=21bb1932",
+            "width": 1080,
+            "height": 2340
+          }
+        ]
+      },
+      {
+        "id": "legion",
+        "title": "Legión MX",
+        "items": [
+          {
+            "id": "marca_cancha",
+            "title": "Cancha",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_marca_cancha.jpg?v=7cebe084",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "marca_noche",
+            "title": "Noche de estadio",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_marca_noche.jpg?v=6e78c98b",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "marca_minimal",
+            "title": "Minimalista",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_marca_minimal.jpg?v=b5c4f551",
+            "width": 1080,
+            "height": 2340
+          }
+        ]
+      },
+      {
+        "id": "escudos",
+        "title": "Escudos",
+        "items": [
+          {
+            "id": "esc_al_qadsiah",
+            "title": "Al-Qadsiah",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_al_qadsiah.jpg?v=1444d9eb",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "esc_atletico_madrid",
+            "title": "Atlético Madrid",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_atletico_madrid.jpg?v=88b65af1",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "esc_az_alkmaar",
+            "title": "AZ Alkmaar",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_az_alkmaar.jpg?v=e2d916c4",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "esc_copenhague",
+            "title": "FC Copenhague",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_copenhague.jpg?v=59d4536a",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "esc_genoa",
+            "title": "Genoa",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_genoa.jpg?v=4f5ae2fa",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "esc_olympiacos",
+            "title": "Olympiacos",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_olympiacos.jpg?v=b15a92f8",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "esc_porto",
+            "title": "Porto",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_porto.jpg?v=ce87c32d",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "esc_betis",
+            "title": "Real Betis",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_betis.jpg?v=e7126e40",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "esc_tijuana",
+            "title": "Tijuana",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_tijuana.jpg?v=2992db17",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "esc_wolves",
+            "title": "Wolves",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_wolves.jpg?v=470a6057",
+            "width": 1080,
+            "height": 2340
+          }
+        ]
+      },
+      {
+        "id": "patrones",
+        "title": "Patrones",
+        "items": [
+          {
+            "id": "pat_al_qadsiah",
+            "title": "Al-Qadsiah",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_patron_al_qadsiah.jpg?v=d1611cad",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "pat_atletico_madrid",
+            "title": "Atlético Madrid",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_patron_atletico_madrid.jpg?v=f5ebc422",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "pat_az_alkmaar",
+            "title": "AZ Alkmaar",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_patron_az_alkmaar.jpg?v=534356b0",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "pat_copenhague",
+            "title": "FC Copenhague",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_patron_copenhague.jpg?v=98259966",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "pat_genoa",
+            "title": "Genoa",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_patron_genoa.jpg?v=dce3ccbc",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "pat_olympiacos",
+            "title": "Olympiacos",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_patron_olympiacos.jpg?v=d52d3849",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "pat_porto",
+            "title": "Porto",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_patron_porto.jpg?v=d6659e43",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "pat_betis",
+            "title": "Real Betis",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_patron_betis.jpg?v=1a5a5941",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "pat_tijuana",
+            "title": "Tijuana",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_patron_tijuana.jpg?v=678bc017",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "pat_wolves",
+            "title": "Wolves",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_patron_wolves.jpg?v=5f2d93e9",
+            "width": 1080,
+            "height": 2340
+          }
+        ]
+      },
+      {
+        "id": "estadios",
+        "title": "Estadios",
+        "items": [
+          {
+            "id": "commons_191938306",
+            "title": "Estadio Azteca",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_191938306.jpg?v=18bde6b4",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: ProtoplasmaKid · CC BY 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Vista_a%C3%A9rea_nocturna_del_Estadio_Azteca.jpg"
+          },
+          {
+            "id": "commons_60064492",
+            "title": "Estadio Azteca",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_60064492.jpg?v=13bf7b29",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Carlos Valenzuela · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_Azteca1706p1.jpg"
+          },
+          {
+            "id": "commons_162972549",
+            "title": "Estadio Akron",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_162972549.jpg?v=ee3e7648",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Chivista · CC0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Stand_tribune_of_Club_Deportivo_Guadalajara.jpg"
+          },
+          {
+            "id": "commons_193389590",
+            "title": "Estadio Akron",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_193389590.jpg?v=cc0551e8",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Mtenaespinoza · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Carteles_contra_la_Copa_Mundial_de_la_FIFA_M%C3%A9xico-Estados_Unidos-Canad%C3%A1_2026_02.jpg"
+          },
+          {
+            "id": "commons_64957255",
+            "title": "Estadio BBVA",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_64957255.jpg?v=752f5c3a",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Presidencia de la República Mexicana · CC BY 2.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_BBVA_Bancomer_Inauguration.jpg"
+          },
+          {
+            "id": "commons_194435747",
+            "title": "Estadio BBVA",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_194435747.jpg?v=69d869dd",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: SPORTS MONUMENTS · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Palabras_de_Pedro_Esquivel_fifa_host_city_manager_world_cup_2026_Monterrey_en_la_inauguracion_del_monumento_pasion_mundial_del_escultor_jose_miguel_howe_en_el_estadio_bbva.jpg"
+          },
+          {
+            "id": "commons_72236600",
+            "title": "Estadio Olímpico Universitario",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_72236600.jpg?v=105bcc74",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Abel Alejandro Sánchez https://www.flickr.com/photos/alejandroid_e/ · CC BY 2.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_Ol%C3%ADmpico_Universitario_Panor%C3%A1mica_CDMX.jpg"
+          },
+          {
+            "id": "commons_141564408",
+            "title": "Estadio Olímpico Universitario",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_141564408.jpg?v=3f32b4e5",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Own work · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_Ol%C3%ADmpico_Universitario_-_aerial_view.jpg"
+          },
+          {
+            "id": "commons_116484260",
+            "title": "Estadio Jalisco",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_116484260.jpg?v=4113e3a5",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Alejan98 · CC0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_Jalisco_06022022_vista_cabecera_sur_parte_alta.jpg"
+          },
+          {
+            "id": "commons_8630034",
+            "title": "Estadio Jalisco",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_8630034.jpg?v=a109ed00",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Paco Espinoza · CC BY 2.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Jalisco_Stadium_panoramic-MJ.jpg"
+          },
+          {
+            "id": "commons_22963545",
+            "title": "Estadio Caliente",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_22963545.jpg?v=39325c9d",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Angel Mendez · CC BY-SA 3.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:CalienteStadium.JPG"
+          },
+          {
+            "id": "commons_87341413",
+            "title": "Estadio Caliente",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_general_commons_87341413.jpg?v=47447d11",
+            "width": 1080,
+            "height": 2340,
+            "credit": "Foto: Chiko elektriko · CC BY-SA 4.0 · Wikimedia Commons",
+            "source_url": "https://commons.wikimedia.org/wiki/File:Estadio_Caliente_2020.jpg"
+          }
+        ]
+      }
+    ]
   }
 }
