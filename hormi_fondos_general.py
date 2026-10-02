@@ -383,12 +383,13 @@ def buscar_estadios(lista=None, max_por=MAX_POR_ESTADIO):
                 _strip_html((meta.get("ImageDescription") or {}).get("value")),
                 _strip_html((meta.get("ObjectName") or {}).get("value")),
             ]))
-            if not any(c in pajar for c in claves):
+            titulo_n = norm(page.get("title", ""))
+            if not any(c in titulo_n for c in claves):
                 continue
-            if not re.search(r"\b(estadio|stadium)\b", pajar):
+            if not re.search(r"\b(estadio|stadium|stadion|stadio|estadi|parken|molineux|dragao|metropolitano|villamarin|azteca|akron|bbva|jalisco|caliente|ferraris|karaiskakis)\b", pajar):
                 continue
-            # Fuera mapas, planos, escudos, logos, vistas con gente en primer plano.
-            if re.search(r"\b(map|mapa|logo|plano|diagram|scheme|crest|escudo|badge|interior de|ticket|boleto)\b", pajar):
+            # Fuera mapas, planos, escudos, logos, gente/aficionados, metro, ríos…
+            if re.search(r"\b(map|mapa|logo|plano|diagram|scheme|crest|escudo|badge|interior de|ticket|boleto|station|metro|estacion|fans?|supporters?|aficion|celebration|crowd|river|bisagno|riva|gigi|player|jugador|jersey|shirt|train|bus|tram|poster|painting|statue|monument|night market|ai[- ]generated)\b", pajar):
                 continue
             w, h = info.get("width") or 0, info.get("height") or 0
             if h < MIN_LADO or w < 1200:
@@ -431,7 +432,8 @@ def buscar_seleccion(maximo=6):
     Son fotos del equipo en general, no de un jugador en particular."""
     from PIL import Image
     cand = {}
-    for consulta in ("Mexico national football team", "Selección de fútbol de México", "Mexico national football team match"):
+    for consulta in ("Mexico national football team 2018 FIFA World Cup", "Mexico World Cup 2022 Qatar football",
+                     "Selección Mexicana Copa Oro", "Mexico Copa America football match", "Mexico national football team friendly"):
         data = _commons({
             "generator": "search", "gsrnamespace": "6", "gsrsearch": consulta + " filetype:bitmap",
             "gsrlimit": "50", "prop": "imageinfo",
@@ -457,9 +459,9 @@ def buscar_seleccion(maximo=6):
         ]))
         if not re.search(r"\b(mexico|mexican|mexicana|mexicano)\b", pajar):
             continue
-        if not re.search(r"\b(national|nacional|seleccion|world cup|copa|friendly|amistoso|concacaf|match|partido)\b", pajar):
+        if not re.search(r"\b(national|nacional|seleccion|world cup|mundial|copa|gold cup|friendly|amistoso|concacaf|match|partido|qualif)\b", pajar):
             continue
-        if re.search(r"\b(logo|map|mapa|crest|escudo|badge|women|femenil|feminine|u-?1\d|u-?2\d|sub-?\d+|ticket)\b", pajar):
+        if re.search(r"\b(logo|map|mapa|crest|escudo|badge|women|womens|femenil|feminine|femenina|u-?1\d|u-?2\d|sub-?\d+|ticket|blind|ibsa|paralymp|jersey|shirt|kit|camiseta|playera|stamp|beach|futsal|amputee|cerebral|deaf|1[0-9]{3}|198\d|197\d|199\d|200[0-9]|201[0-5]|ai[- ]generated)\b", pajar):
             continue
         w, h = info.get("width") or 0, info.get("height") or 0
         if h < 1500 or w < 1000:
