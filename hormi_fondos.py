@@ -194,9 +194,11 @@ def make_wallpaper(player, target, crest):
     d = ImageDraw.Draw(img)
     d.ellipse([cx - 330, cy - 330, cx + 330, cy + 330], outline=texto + (110,), width=6)
     if crest is not None:
-        lado = 540
+        lado = 470
         c = crest.copy()
-        c.thumbnail((lado, lado), Image.LANCZOS)
+        # Los escudos de la API son chicos (~150 px): se agrandan a `lado`.
+        k = lado / max(c.size)
+        c = c.resize((max(1, int(c.width * k)), max(1, int(c.height * k))), Image.LANCZOS)
         sombra = Image.new("RGBA", img.size, (0, 0, 0, 0))
         s = Image.new("RGBA", c.size, (0, 0, 0, 120))
         s.putalpha(c.getchannel("A").point(lambda a: int(a * 0.5)))
