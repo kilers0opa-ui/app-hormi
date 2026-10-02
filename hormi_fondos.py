@@ -378,7 +378,7 @@ def buscar_fotos(player):
 # ------------------------------------------------------------------ principal
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--solo", choices=["generar", "fotos"], default=None)
+    ap.add_argument("--solo", choices=["generar", "fotos", "general"], default=None)
     ap.add_argument("--jugador", default=None)
     args = ap.parse_args()
 
@@ -405,18 +405,35 @@ def main():
                 salida.setdefault(p["key"], {}).setdefault("fotos", [])
             time.sleep(1)
 
+    general = previo.get("general") or {"categorias": []}
+    if args.solo in (None, "general") and not args.jugador:
+        import hormi_fondos_general as G
+        cats = G.generar_general(config)
+        print("Buscando fotos de estadios")
+        try:
+            estadios = G.buscar_estadios()
+        except Exception as e:
+            print(f"  Commons falló ({e}); se conservan las anteriores")
+            estadios = next((c["items"] for c in general.get("categorias", []) if c["id"] == "estadios"), [])
+        if estadios:
+            cats.append({"id": "estadios", "title": "Estadios", "items": estadios})
+        general = {"categorias": cats}
+
     for key in list(salida):
         salida[key].setdefault("generados", [])
         salida[key].setdefault("fotos", [])
-    nuevo = {"updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "players": salida}
+    nuevo = {"updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+             "players": salida, "general": general}
     # No reescribir (y no hacer commit vacío) si nada cambió salvo la hora.
-    if previo.get("players") == salida:
+    if previo.get("players") == salida and previo.get("general") == general:
         print("Sin cambios.")
         return 0
     usadas = {os.path.basename(i["url"].split("?")[0]) for v in salida.values()
               for i in v["generados"] + v["fotos"] if i.get("url")}
+    usadas |= {os.path.basename(i["url"].split("?")[0]) for c in general.get("categorias", [])
+               for i in c["items"] if i.get("url")}
     for fn in os.listdir(OUT_DIR) if os.path.isdir(OUT_DIR) else []:
-        if fn.startswith("foto_") and fn not in usadas:
+        if fn.startswith(("foto_", "general_")) and fn not in usadas:
             os.remove(os.path.join(OUT_DIR, fn))
     with open(OUT_JSON, "w", encoding="utf-8") as f:
         json.dump(nuevo, f, ensure_ascii=False, indent=2)

@@ -30,6 +30,7 @@ on:
         options:
           - ""
           - generar
+          - general
           - fotos
 
 concurrency:
