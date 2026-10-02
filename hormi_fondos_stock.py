@@ -21,13 +21,32 @@ import urllib.request
 import hormi_fondos as F
 from hormi_fondos import OUT_DIR, RAW_BASE, UA
 
-# (id de categoría, título en la app, [consultas en inglés], máximo de fotos)
+# (id de categoría, título en la app, [(consulta en inglés/español, team_key o None)], máximo de fotos)
+# team_key: si la consulta es del estadio de un club que sigue la app, la foto también sale
+# en la sección de sus jugadores (campo "contexto").
 CATEGORIAS = [
-    ("stock_cancha", "Cancha y balón", ["soccer ball on grass", "football pitch aerial", "soccer field lines"], 6),
-    ("stock_noche", "Estadios de noche", ["football stadium night lights", "stadium floodlights soccer"], 6),
-    ("stock_aficion", "Afición", ["soccer fans stadium crowd", "football supporters flags"], 6),
-    ("stock_mexico", "México", ["mexico flag waving", "mexican flag stadium"], 4),
+    ("stock_estadios_mx", "Estadios de México", [
+        ("Estadio Azteca", None), ("Estadio Banorte Mexico City", None), ("Estadio Akron Guadalajara", None),
+        ("Estadio BBVA Monterrey", None), ("Estadio Jalisco", None), ("Estadio Olimpico Universitario", None),
+        ("Estadio Caliente Tijuana", "tijuana"), ("Estadio Cuauhtemoc Puebla", None), ("mexico football stadium", None),
+    ], 14),
+    ("stock_mexico", "México", [
+        ("mexico flag", None), ("Mexico City skyline", None), ("Angel de la Independencia", None),
+        ("Zocalo Mexico City", None), ("Guadalajara Mexico", None), ("Monterrey Mexico city", None),
+        ("Chichen Itza", None), ("mexican fans football", None),
+    ], 12),
+    ("stock_estadios_europa", "Estadios de Europa", [
+        ("Wanda Metropolitano", "atletico_madrid"), ("Estadio Benito Villamarin", "betis"),
+        ("Estadio do Dragao Porto", "porto"), ("Molineux Stadium Wolverhampton", "wolves"),
+        ("Stadio Luigi Ferraris Genoa", "genoa"), ("AFAS Stadion Alkmaar", "az_alkmaar"),
+        ("Parken Stadium Copenhagen", "copenhague"), ("Karaiskakis Stadium Piraeus Olympiacos", "olympiacos"),
+        ("Al Qadsiah stadium", "al_qadsiah"), ("european football stadium night", None),
+    ], 16),
+    ("stock_cancha", "Cancha y balón", [("soccer ball on grass", None), ("football pitch aerial", None), ("soccer field lines", None)], 6),
+    ("stock_noche", "Estadios de noche", [("football stadium night lights", None), ("stadium floodlights soccer", None)], 6),
+    ("stock_aficion", "Afición", [("soccer fans stadium crowd", None), ("football supporters flags", None)], 6),
 ]
+POR_CONSULTA = 2
 
 
 def _get(url, headers=None, timeout=30):
@@ -36,7 +55,7 @@ def _get(url, headers=None, timeout=30):
         return r.read()
 
 
-def _pexels(consulta, key):
+def _pexels(consulta, key):  # noqa: E302
     url = "https://api.pexels.com/v1/search?" + urllib.parse.urlencode(
         {"query": consulta, "orientation": "portrait", "size": "large", "per_page": "30"})
     data = json.loads(_get(url, {"Authorization": key}))
@@ -72,10 +91,9 @@ def stock_categorias(previas):
     nuevas = []
     for cid, titulo, consultas, maximo in CATEGORIAS:
         items, vistos = [], set()
-        # Alterna fuentes y consultas para que la categoría salga variada.
-        for consulta in consultas:
+        for consulta, team_key in consultas:
             for fuente, key in (("pexels", kp), ("pixabay", kx)):
-                if not key:
+                if not key or len(items) >= maximo:
                     continue
                 try:
                     candidatos = list(_pexels(consulta, key) if fuente == "pexels" else _pixabay(consulta, key))
@@ -84,7 +102,7 @@ def stock_categorias(previas):
                     continue
                 tomadas = 0
                 for c in candidatos:
-                    if len(items) >= maximo or tomadas >= 2 or c["id"] in vistos:
+                    if len(items) >= maximo or tomadas >= POR_CONSULTA or c["id"] in vistos:
                         continue
                     try:
                         img = Image.open(io.BytesIO(_get(c["src"], timeout=60))).convert("RGB")
@@ -103,9 +121,13 @@ def stock_categorias(previas):
                     with open(os.path.join(OUT_DIR, fname), "wb") as f:
                         f.write(data)
                     vistos.add(c["id"])
-                    items.append({"id": c["id"], "title": titulo, "url": f"{RAW_BASE}{fname}?v={hashlib.sha1(data).hexdigest()[:8]}",
-                                  "width": img.width, "height": img.height, "credit": c["credit"],
-                                  "source_url": c["source_url"]})
+                    item = {"id": c["id"], "title": (consulta if cid.startswith("stock_estadios") else titulo),
+                            "url": f"{RAW_BASE}{fname}?v={hashlib.sha1(data).hexdigest()[:8]}",
+                            "width": img.width, "height": img.height, "credit": c["credit"],
+                            "source_url": c["source_url"], "query": consulta}
+                    if team_key:
+                        item["team_key"] = team_key
+                    items.append(item)
                     tomadas += 1
                     time.sleep(0.5)
         print(f"  {titulo}: {len(items)} foto(s)")

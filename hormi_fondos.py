@@ -558,7 +558,8 @@ def main():
     cats_por_id = {c["id"]: c["items"] for c in general.get("categorias", [])}
     for p in config["players"]:
         claves = {t["key"] for t in p["targets"]}
-        ctx = [i for i in cats_por_id.get("estadios_clubes", []) if i.get("team_key") in claves]
+        ctx = [i for cid in ("estadios_clubes", "stock_estadios_europa", "stock_estadios_mx")
+               for i in cats_por_id.get(cid, []) if i.get("team_key") in claves]
         ctx += cats_por_id.get("seleccion_fotos", [])[:4]
         salida.setdefault(p["key"], {})["contexto"] = ctx
 
