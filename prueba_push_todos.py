@@ -54,7 +54,8 @@ else:
          "", "seleccion", conv)
     for p in cfg["players"]:
         k = p["key"]
-        club = next(t for t in p["targets"] if t.get("kind") == "club")
+        EQ = os.environ.get("SOLO_EQUIPO", "")   # "seleccion" = usar el objetivo de la Selección en vez del club
+        club = next(t for t in p["targets"] if t.get("kind") == ("seleccion" if EQ == "seleccion" else "club"))
         n = ha.display_name(p)
         ap = p.get("apodo") or p["name"]
         c, ck = club["label"], club["key"]

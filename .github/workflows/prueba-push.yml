@@ -6,6 +6,9 @@ on:
       jugador:
         description: "Reenviar solo a este jugador (vacío = todos)"
         default: ""
+      equipo:
+        description: "'seleccion' = el push lleva el objetivo de la Selección (vacío = club)"
+        default: ""
       tipo:
         description: "Solo este tipo (goal, assist, lineup, start, sub, final, incident, transfer, video); vacío = todos"
         default: ""
@@ -31,6 +34,7 @@ jobs:
           FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
           SOLO_JUGADOR: ${{ inputs.jugador }}
           SOLO_TIPO: ${{ inputs.tipo }}
+          SOLO_EQUIPO: ${{ inputs.equipo }}
         run: python prueba_push_todos.py
       - name: Subir resultado
         run: |
