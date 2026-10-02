@@ -83,6 +83,7 @@ NOT_STARTED = {"NS", "TBD"}
 
 MIN_SECONDS_BETWEEN_REQUESTS = 0.3         # plan Pro: 300 peticiones/min (en el gratuito eran 10/min → 6.5 s)
 _last_request_at = 0.0
+last_refresh_note = None  # diagnóstico: por qué falló la búsqueda "hoy" sin season (se guarda en el horario)
 last_api_error = None    # último {"errors": ...} de la API, para diagnosticar sin logs
 
 
@@ -110,6 +111,7 @@ def api(endpoint, params, use_cache=False):
     last_api_error = None
     key = endpoint.strip("/").replace("/", "_") + "_" + "_".join(
         f"{k}-{v}" for k, v in sorted(params.items()))
+    key = key.replace("/", "_")   # p.ej. timezone=America/Mexico_City: la "/" rompía el nombre del archivo
     cache_file = CACHE_DIR / f"{key}.json"
     if use_cache and cache_file.exists():
         return load_json(cache_file, {}).get("response", [])
@@ -139,8 +141,11 @@ def api(endpoint, params, use_cache=False):
         last_api_error = data["errors"]
         log(f"⚠️  La API respondió con error: {data['errors']}")
         return None
-    CACHE_DIR.mkdir(exist_ok=True)
-    save_json(cache_file, data)
+    try:
+        CACHE_DIR.mkdir(exist_ok=True)
+        save_json(cache_file, data)
+    except OSError as err:   # la caché es solo una comodidad: nunca debe tumbar una consulta que sí funcionó
+        log(f"ℹ️  no se pudo guardar la caché ({err})")
     return data.get("response", [])
 
 
@@ -718,6 +723,8 @@ def refresh_schedule(target):
     todays = api("/fixtures", {"team": team_id, "date": today,
                                "timezone": "America/Mexico_City"})
     if todays is None:
+        global last_refresh_note
+        last_refresh_note = f"sin season: {last_api_error}"
         todays = api("/fixtures", {"team": team_id, "season": season, "date": today,
                                    "timezone": "America/Mexico_City"}) or []
     # Solo cuentan los partidos de hoy que siguen vigentes (aún no vence su
@@ -889,6 +896,8 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     entry = schedule.get(key, {})
     if schedule_stale(entry):
         prev = entry
+        global last_refresh_note
+        last_refresh_note = None
         fx_meta, why = refresh_schedule(target)
         if not fx_meta:
             schedule[key] = {"refreshed_at": now_iso(), "last_error": last_api_error}
@@ -904,6 +913,8 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
             "refreshed_at": now_iso(),
             **_fixture_meta(fx_meta),
         }
+        if last_refresh_note:
+            entry["note"] = last_refresh_note
         if (prev.get("done") and prev.get("fixture_id") == entry["fixture_id"]
                 and prev.get("kickoff") == entry["kickoff"]):
             entry["done"] = True     # mismo partido (misma hora) que ya se cerró: no volver a vigilarlo
