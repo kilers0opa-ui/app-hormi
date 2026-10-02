@@ -459,6 +459,8 @@ def buscar_seleccion(maximo=6):
         ]))
         if not re.search(r"\b(mexico|mexican|mexicana|mexicano)\b", pajar):
             continue
+        if not re.search(r"\b(mex|mexico|mexican|mexicana|mexicano)\b", norm(page.get("title", "")).replace("_", " ")):
+            continue  # el título debe nombrar a México (descarta p. ej. "Arabia Saudita vs México")
         if not re.search(r"\b(national|nacional|seleccion|world cup|mundial|copa|gold cup|friendly|amistoso|concacaf|match|partido|qualif)\b", pajar):
             continue
         if re.search(r"\b(logo|map|mapa|crest|escudo|badge|women|womens|femenil|feminine|femenina|u-?1\d|u-?2\d|sub-?\d+|ticket|blind|ibsa|paralymp|jersey|shirt|kit|camiseta|playera|stamp|beach|futsal|amputee|cerebral|deaf|1[0-9]{3}|198\d|197\d|199\d|200[0-9]|201[0-5]|ai[- ]generated)\b", pajar):
