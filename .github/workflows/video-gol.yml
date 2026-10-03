@@ -32,6 +32,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # siempre lo más nuevo (una corrida en cola, si no, usa la versión de cuando se encoló y repite alertas ya enviadas)
 
       # Casi siempre no hay nada que hacer: esta revisión (sin instalar nada,
       # sin llamar a ninguna API) deja el resto de los pasos en "skipped".
