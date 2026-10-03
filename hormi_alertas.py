@@ -1223,7 +1223,7 @@ def chequeo(args, notifier, config, fcm=None):
 # hay algo nuevo). Si no hay partido cerca, hace una sola pasada y sale, igual
 # que antes. El cron solo sirve de arranque (por eso el margen ARRANQUE_EXTRA)
 # y de red de seguridad si la corrida larga muere.
-ARRANQUE_EXTRA = timedelta(minutes=90)   # margen sobre VENTANA_ANTES: la vigilancia arranca ~2 h 45 min antes del kickoff, aunque el cron se atrase o se salte corridas (se midió hasta ~34 min de atraso)
+ARRANQUE_EXTRA = timedelta(minutes=45)   # margen sobre VENTANA_ANTES: la vigilancia arranca ~2 h antes del kickoff. El disparador externo (cron-job.org, cada 5 min) ya cubre el atraso del cron de GitHub.
 MAX_VIGILAR = timedelta(hours=5, minutes=40)   # el job de GitHub se corta a las 6 h
 PASO_VIGILAR = 60                        # segundos entre pasadas
 MIN_PAUSA_VIGILAR = 10
