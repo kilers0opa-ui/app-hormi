@@ -1,17 +1,96 @@
 {
  "errors": [],
  "status": {
-  "long": "Not Started",
-  "short": "NS",
-  "elapsed": null,
+  "long": "First Half",
+  "short": "1H",
+  "elapsed": 3,
   "extra": null
  },
  "score": {
-  "home": null,
-  "away": null
+  "home": 0,
+  "away": 0
  },
- "lineups_in_fixture": [],
+ "lineups_in_fixture": [
+  {
+   "team": "USA",
+   "n_start": 11,
+   "n_subs": 15
+  },
+  {
+   "team": "Mexico",
+   "n_start": 11,
+   "n_subs": 14
+  }
+ ],
  "n_events": 0,
- "lineups_endpoint": [],
+ "lineups_endpoint": [
+  {
+   "team": "USA",
+   "formation": "4-2-3-1",
+   "start": [
+    "Diego Kochen",
+    "Alexander Freeman",
+    "Antonee Robinson",
+    "Auston Trusty",
+    "Chris Richards",
+    "Sebastian Berhalter",
+    "Tyler Adams",
+    "Cavan Sullivan",
+    "Giovanni Reyna",
+    "Malik Tillman",
+    "Julian Hall"
+   ],
+   "subs": [
+    "Matthew Freese",
+    "Brian Schwake",
+    "Peyton Miller",
+    "Neil Pierre",
+    "Frankie Westfield",
+    "Sergiño Dest",
+    "George Campbell",
+    "Adri Mehmeti",
+    "Zavier Gozo",
+    "Yunus Musah",
+    "Brooklyn Raines",
+    "Damion Downs",
+    "Mathis Albert",
+    "Cole Campbell",
+    "Justin Ellis"
+   ]
+  },
+  {
+   "team": "Mexico",
+   "formation": "4-3-3",
+   "start": [
+    "Raúl Rangel",
+    "Jesús Gallardo",
+    "Johan Vásquez",
+    "Israel Reyes",
+    "Diego Campillo",
+    "Orbelín Pineda",
+    "Erik Lira",
+    "Santiago Sandoval",
+    "Roberto Alvarado",
+    "Santiago Giménez",
+    "Luis Romo"
+   ],
+   "subs": [
+    "Oscar García",
+    "Victor Guzmán",
+    "Mateo Chávez",
+    "Everardo López",
+    "Jorge Sánchez",
+    "Luis Chávez",
+    "Denzell Garcia",
+    "Hugo Camberos",
+    "Isaías Violante",
+    "Obed Vargas",
+    "Jeremy Márquez",
+    "Álvaro Fidalgo",
+    "Armando González",
+    "Germán Berterame"
+   ]
+  }
+ ],
  "lineups_errors": []
 }
