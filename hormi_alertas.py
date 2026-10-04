@@ -440,15 +440,20 @@ def analyze(data, player, target):
             if pid == player_id and detail != "Own Goal":
                 goals += 1
                 tipo = " de penal" if detail == "Penalty" else ""
-                add(k + ":gol", f"🔥 {emoji} ¡GOL DE {apodo.upper()}{tipo.upper()}! {m}",
+                add(f"goal:{pid}:{goals}:gol", f"🔥 {emoji} ¡GOL DE {apodo.upper()}{tipo.upper()}! {m}",
                     f"{label} · {score()}", 5)
             elif aid == player_id:
                 assists += 1
-                add(k + ":ast", f"🎯 {emoji} ¡Asistencia de {nombre}! {m}",
+                add(f"goal:{pid}:{aid}:{assists}:ast", f"🎯 {emoji} ¡Asistencia de {nombre}! {m}",
                     f"{label} · Gol de {e['player']['name']} · {score()}", 4)
         elif etype == "var" and "goal" in detail.lower() and player_id in (pid, aid):
             add(k, f"🚫 {emoji} VAR anula jugada de gol de {nombre} {m}", f"{label} · {detail}")
+        elif etype == "card" and pid == player_id and "red" in detail.lower():
+            add(f"red:{pid}", f"🟥 {emoji} ¡Expulsan a {nombre}! {m}", f"{label} · {score()}", 5)
         elif etype == "subst" and player_id in (pid, aid):
+            # La llave NO lleva el minuto: la API a veces corrige el minuto de un cambio (66' → 67')
+            # y con él cambiaba la llave, lo que mandaba el aviso dos veces.
+            k = f"subst:{pid}:{aid}"
             if role == "banca" and not entered:
                 entered, in_minute = True, t["elapsed"]
                 add(k, f"🔄 {emoji} ¡Entra {nombre}! {m}", f"{label} · {score()}", 4)
@@ -645,6 +650,8 @@ def alert_type(key):
         return "incident"
     if ":subst:" in key:
         return "sub"
+    if ":red:" in key:
+        return "incident"
     return "info"
 
 
@@ -1111,6 +1118,11 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         return
 
     sent = sent_by_target.setdefault(key, set())
+    # Migración: llaves viejas "…:subst:MIN:EXTRA:pid:aid" → "…:subst:pid:aid" (no reenviar tras reiniciar).
+    for _k in list(sent):
+        _p = _k.split(":subst:")
+        if len(_p) == 2 and _p[1].count(":") == 3:
+            sent.add(f"{_p[0]}:subst:" + ":".join(_p[1].split(":")[2:]))
     alerts, info = analyze(snap, player, target)
     match_info = {
         "fixture_id": snap["fixture"]["id"],
@@ -1147,8 +1159,11 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
             ahora = datetime.now(LOCAL_TZ)
             prev_ref = _parse(prev.get("clock_ref")) if prev.get("periodo") == _per else None
             nuevo = ahora - timedelta(minutes=max(0.0, _el + (_ex or 0) - 0.5))
-            if prev_ref and (_ex or abs((nuevo - prev_ref).total_seconds()) < 90):
-                status_out[key]["clock_ref"] = prev["clock_ref"]   # en reposición la API no avanza "elapsed": se conserva
+            # La API de datos va 1-3 min atrasada, nunca adelantada: la referencia más temprana es la
+            # más cercana a la realidad. Se conserva la anterior salvo que la nueva sea >20 s más temprana
+            # (así converge al tiempo real sin generar un commit por minuto).
+            if prev_ref and (_ex or (nuevo - prev_ref).total_seconds() > -20):
+                status_out[key]["clock_ref"] = prev["clock_ref"]
             else:
                 status_out[key]["clock_ref"] = nuevo.isoformat()
     except Exception as err:
