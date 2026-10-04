@@ -364,6 +364,11 @@ def main():
     stats["updated_at"] = datetime.now(LOCAL_TZ).isoformat()
     save_json(STATS_FILE, stats)
     log(f"✅ listo · {STATS_FILE} actualizado")
+    try:   # "Último partido" de cada jugador (club o Selección, el más reciente con minutos)
+        import hormi_ultimo
+        hormi_ultimo.actualizar(config, args.jugador)
+    except Exception as err:
+        log(f"⚠️  no se pudo actualizar el último partido: {err}")
 
 
 if __name__ == "__main__":

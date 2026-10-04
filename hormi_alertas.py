@@ -498,6 +498,36 @@ def analyze(data, player, target):
                      "summary": summary}
 
 
+def registrar_ultimo(player, target, snap, info):
+    """Guarda en player_stats.json (players.<jugador>.ultimo_partido) el ÚLTIMO partido en el que el
+    jugador tuvo minutos, de su club o de la Selección (el más reciente). Lo muestra la app en
+    "Último partido". Corre cuando un partido termina; hormi_ultimo.py hace lo mismo con la API para
+    los partidos anteriores (y a diario lo repara si algo falló)."""
+    s = info.get("summary")
+    if not s or not s.get("minutes"):
+        return
+    fx = snap["fixture"]
+    kickoff = datetime.fromtimestamp(fx["timestamp"], LOCAL_TZ).isoformat()
+    stats = load_json(STATS_FILE, {"updated_at": None, "players": {}})
+    entry = stats.setdefault("players", {}).setdefault(player["key"], {"seasons": {}, "applied_fixtures": {}})
+    cur = entry.get("ultimo_partido")
+    if cur and cur.get("fixture_id") != fx["id"] and (cur.get("kickoff") or "") >= kickoff:
+        return   # ya hay uno más reciente
+    g = snap.get("goals") or {}
+    entry["ultimo_partido"] = {
+        "fixture_id": fx["id"], "kickoff": kickoff,
+        "home": nombre_es(snap["teams"]["home"]["name"]), "away": nombre_es(snap["teams"]["away"]["name"]),
+        "home_logo": snap["teams"]["home"].get("logo"), "away_logo": snap["teams"]["away"].get("logo"),
+        "home_goals": g.get("home"), "away_goals": g.get("away"),
+        "league": liga_es(snap["league"]["name"]),
+        "team_key": target["key"], "team_label": target["label"], "emoji": target["emoji"],
+        "crest_url": target.get("crest_url"),
+        "minutes": s["minutes"], "goals": s["goals"], "assists": s["assists"],
+    }
+    stats["updated_at"] = now_iso()
+    save_json(STATS_FILE, stats)
+
+
 def apply_live_delta(player, target, snap, info):
     """Cuando un partido de un objetivo TERMINA, suma sus minutos/goles/
     asistencias al histórico de player_stats.json — así Estadísticas no
@@ -1218,6 +1248,10 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         anotar_grupo(player, target, info, fid, grupo)
     if n:
         log(f"{emoji} {player['name']} · {label}: {n} alerta(s) nueva(s)")
+    try:
+        registrar_ultimo(player, target, snap, info)
+    except Exception as err:
+        log(f"⚠️  {player['name']} · {label}: no se pudo guardar el último partido — {err}")
     try:
         apply_live_delta(player, target, snap, info)
     except Exception as err:
