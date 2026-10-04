@@ -1,184 +1,23 @@
 {
  "errors": [],
  "status": {
-  "long": "Second Half",
-  "short": "2H",
-  "elapsed": 68,
+  "long": "First Half",
+  "short": "1H",
+  "elapsed": 14,
   "extra": null
  },
  "score": {
-  "home": 2,
+  "home": 0,
   "away": 0
  },
- "lineups_in_fixture": [
-  {
-   "team": "USA",
-   "n_start": 11,
-   "n_subs": 15
-  },
-  {
-   "team": "Mexico",
-   "n_start": 11,
-   "n_subs": 14
-  }
- ],
- "n_events": 9,
+ "lineups_in_fixture": [],
+ "n_events": 0,
  "periods": {
-  "first": 1791079200,
-  "second": 1791082800
+  "first": 1791120600,
+  "second": null
  },
- "fixture_ts": 1791079200,
- "events": [
-  {
-   "min": 28,
-   "extra": null,
-   "type": "Goal",
-   "detail": "Normal Goal",
-   "team": "USA",
-   "player": "J. Hall",
-   "assist": null
-  },
-  {
-   "min": 35,
-   "extra": null,
-   "type": "Card",
-   "detail": "Yellow Card",
-   "team": "Mexico",
-   "player": "L. Romo",
-   "assist": null
-  },
-  {
-   "min": 46,
-   "extra": null,
-   "type": "subst",
-   "detail": "Substitution 1",
-   "team": "Mexico",
-   "player": "J. Gallardo",
-   "assist": "M. Chavez Garcia"
-  },
-  {
-   "min": 46,
-   "extra": null,
-   "type": "subst",
-   "detail": "Substitution 2",
-   "team": "Mexico",
-   "player": "L. Romo",
-   "assist": "L. Chavez"
-  },
-  {
-   "min": 62,
-   "extra": null,
-   "type": "Goal",
-   "detail": "Normal Goal",
-   "team": "USA",
-   "player": "C. Sullivan",
-   "assist": null
-  },
-  {
-   "min": 64,
-   "extra": null,
-   "type": "Card",
-   "detail": "Yellow Card",
-   "team": "USA",
-   "player": "T. Adams",
-   "assist": null
-  },
-  {
-   "min": 66,
-   "extra": null,
-   "type": "subst",
-   "detail": "Substitution 1",
-   "team": "USA",
-   "player": "J. Hall",
-   "assist": "J. Ellis"
-  },
-  {
-   "min": 66,
-   "extra": null,
-   "type": "subst",
-   "detail": "Substitution 2",
-   "team": "USA",
-   "player": "C. Sullivan",
-   "assist": "Y. Musah"
-  },
-  {
-   "min": 67,
-   "extra": null,
-   "type": "subst",
-   "detail": "Substitution 3",
-   "team": "Mexico",
-   "player": "S. Sandoval",
-   "assist": "A. Fidalgo"
-  }
- ],
- "lineups_endpoint": [
-  {
-   "team": "USA",
-   "formation": "4-4-2",
-   "start": [
-    "Diego Kochen",
-    "Alexander Freeman",
-    "Chris Richards",
-    "Auston Trusty",
-    "Antonee Robinson",
-    "Cavan Sullivan",
-    "Sebastian Berhalter",
-    "Tyler Adams",
-    "Giovanni Reyna",
-    "Julian Hall",
-    "Malik Tillman"
-   ],
-   "subs": [
-    "Matthew Freese",
-    "Brian Schwake",
-    "Peyton Miller",
-    "Neil Pierre",
-    "Frankie Westfield",
-    "Sergiño Dest",
-    "George Campbell",
-    "Adri Mehmeti",
-    "Zavier Gozo",
-    "Yunus Musah",
-    "Brooklyn Raines",
-    "Damion Downs",
-    "Mathis Albert",
-    "Cole Campbell",
-    "Justin Ellis"
-   ]
-  },
-  {
-   "team": "Mexico",
-   "formation": "4-4-1-1",
-   "start": [
-    "Raúl Rangel",
-    "Israel Reyes",
-    "Diego Campillo",
-    "Johan Vásquez",
-    "Jesús Gallardo",
-    "Roberto Alvarado",
-    "Erik Lira",
-    "Luis Romo",
-    "Orbelín Pineda",
-    "Santiago Sandoval",
-    "Santiago Giménez"
-   ],
-   "subs": [
-    "Oscar García",
-    "Victor Guzmán",
-    "Mateo Chávez",
-    "Everardo López",
-    "Jorge Sánchez",
-    "Luis Chávez",
-    "Denzell Garcia",
-    "Hugo Camberos",
-    "Isaías Violante",
-    "Obed Vargas",
-    "Jeremy Márquez",
-    "Álvaro Fidalgo",
-    "Armando González",
-    "Germán Berterame"
-   ]
-  }
- ],
+ "fixture_ts": 1791120600,
+ "events": [],
+ "lineups_endpoint": [],
  "lineups_errors": []
 }
