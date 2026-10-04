@@ -663,7 +663,7 @@ def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None,
     new = 0
     for key, title, message, priority in alerts:
         if key not in sent:
-            if grupo is not None and alert_type(key) in ("start", "final"):
+            if grupo is not None and alert_type(key) in ("start", "final", "lineup"):
                 grupo.append(key)
             else:
                 notifier.send(title, message, priority)
@@ -702,6 +702,27 @@ def enviar_grupos(notifier, fcm):
     en el partido (titular/banca); la app lo muestra si AL MENOS UNO de ellos es Favorito."""
     for (tkey, fid, tipo), g in list(_GRUPOS.items()):
         jug = [j for j in g["jugadores"] if j["status"] not in ("no_convocado", "sin_partido", "cancelado")]
+        if tipo == "lineup":
+            # La alineación sí incluye a los no convocados (es justo lo que quieres saber de ellos).
+            jug = g["jugadores"]
+            tit = [j["name"] for j in jug if j["status"] == "titular"]
+            ban = [j["name"] for j in jug if j["status"] in ("banca", "en_cancha")]
+            nop = [j["name"] for j in jug if j["status"] == "no_convocado"]
+            lineas = []
+            if tit:
+                lineas.append("⭐ Titulares: " + ", ".join(tit))
+            if ban:
+                lineas.append("🪑 Banca: " + ", ".join(ban))
+            if nop:
+                lineas.append("❌ No convocados: " + ", ".join(nop))
+            if not lineas:
+                continue
+            title = f"📋 {g['emoji']} Alineación: {g['label']}"
+            body = "\n".join(lineas)
+            notifier.send(title, body, 4)
+            if fcm:
+                fcm.send(tipo, title, body, None, tkey, [j["key"] for j in jug])
+            continue
         if not jug:
             continue
         if tipo == "start":
