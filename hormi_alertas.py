@@ -422,10 +422,15 @@ def analyze(data, player, target):
             add("alineacion", f"❌ {emoji} {nombre} no convocado ({label})",
                 f"{match} · {league}", 2)
 
-    if status in LIVE | FINISHED:
+    es_club = target.get("kind") != "seleccion"
+    # Con el club NO se avisa "Arrancó" si el jugador no está en la alineación (ni "convocado" ni "no
+    # convocado": simplemente no es partido suyo) ni mientras la API no publica alineación (amistosos):
+    # sin saberlo, un aviso de "arrancó el partido" de un equipo donde quizá ni juega es ruido.
+    if status in LIVE | FINISHED and (role or not es_club):
         add("inicio", f"⚽ {emoji} Arrancó: {label} ({nombre})", match, 2)
 
     entered = False
+    evidencia = False     # sin alineación publicada: ¿hay eventos que prueben que el jugador está jugando?
     goals = assists = 0
     in_minute = out_minute = None
     events = sorted(data.get("events") or [],
@@ -440,11 +445,13 @@ def analyze(data, player, target):
         if etype == "goal" and detail != "Missed Penalty":
             if pid == player_id and detail != "Own Goal":
                 goals += 1
+                evidencia = True
                 tipo = " de penal" if detail == "Penalty" else ""
                 add(f"goal:{pid}:{goals}:gol", f"🔥 {emoji} ¡GOL DE {apodo.upper()}{tipo.upper()}! {m}",
                     f"{label} · {score()}", 5)
             elif aid == player_id:
                 assists += 1
+                evidencia = True
                 add(f"goal:{pid}:{aid}:{assists}:ast", f"🎯 {emoji} ¡Asistencia de {nombre}! {m}",
                     f"{label} · Gol de {e['player']['name']} · {score()}", 4)
         elif etype == "var" and "goal" in detail.lower() and player_id in (pid, aid):
@@ -455,7 +462,9 @@ def analyze(data, player, target):
             # La llave NO lleva el minuto: la API a veces corrige el minuto de un cambio (66' → 67')
             # y con él cambiaba la llave, lo que mandaba el aviso dos veces.
             k = f"subst:{pid}:{aid}"
-            if role == "banca" and not entered:
+            evidencia = True
+            sin_alin_entra = role is None and not data.get("lineups") and aid == player_id
+            if (role == "banca" or sin_alin_entra) and not entered:
                 entered, in_minute = True, t["elapsed"]
                 add(k, f"🔄 {emoji} ¡Entra {nombre}! {m}", f"{label} · {score()}", 4)
             else:
@@ -480,7 +489,10 @@ def analyze(data, player, target):
             detalle = (f"{played} min · {goals} gol(es) · {assists} asistencia(s)") \
                 if played else "No tuvo minutos."
             summary = {"minutes": played, "goals": goals, "assists": assists}
-        add("final", f"🏁 {emoji} Final {label} ({nombre}): {score()}", detalle, 3)
+        # Club: sin aviso de final si no es partido suyo (fuera de la alineación) o si no hay datos de
+        # si jugó (sin alineación ni eventos suyos). La Selección se filtra aparte (grupos/convocatoria).
+        if not es_club or role or goals or assists or entered:
+            add("final", f"🏁 {emoji} Final {label} ({nombre}): {score()}", detalle, 3)
 
     current_status = "no_convocado" if data.get("lineups") and role is None else \
         role or ("en_cancha" if status in LIVE else
@@ -492,6 +504,11 @@ def analyze(data, player, target):
             current_status = "en_cancha"
         elif out_minute is not None:
             current_status = "banca"
+    elif es_club and role is None and not data.get("lineups") and status in LIVE:
+        # Partido del club en curso sin alineación publicada: NO se asume que juega. Solo "en_cancha" si
+        # un evento lo prueba (gol, asistencia, cambio); si no, "sin_alineacion" (la app lo muestra como
+        # partido de hoy sin afirmar nada).
+        current_status = "banca" if out_minute is not None else ("en_cancha" if evidencia else "sin_alineacion")
 
     return alerts, {"status": current_status, "match": match, "league": league,
                      "score": score(), "goals": goals, "assists": assists,
@@ -1134,7 +1151,7 @@ def _aparece_en_alineacion(snap, player_id):
     return False
 
 
-def _next_match_status(target, entry, player_key=None):
+def _next_match_status(target, entry, player_key=None, en_curso=False):
     """Estado para la app de un objetivo sin partido en vigilancia: el próximo
     partido si el horario lo conoce, o "sin_partido" a secas."""
     base = {"label": target["label"], "emoji": target["emoji"],
@@ -1143,7 +1160,7 @@ def _next_match_status(target, entry, player_key=None):
     ko = _parse(entry.get("kickoff")) if entry else None
     if player_key and player_key in _no_convocados(target, entry):
         return base   # no está convocado: no se le muestra ese partido como su próximo
-    if ko and entry.get("home") and ko > datetime.now(LOCAL_TZ) and entry.get("fx_status") not in CANCELLED:
+    if ko and entry.get("home") and (en_curso or ko > datetime.now(LOCAL_TZ)) and entry.get("fx_status") not in CANCELLED:
         base.update({"match_reference": "próximo",
                      "match": f"{entry['home']} vs {entry['away']}",
                      "home": entry["home"], "away": entry["away"],
@@ -1294,12 +1311,19 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
             and ko_entry and ko_entry > datetime.now(LOCAL_TZ)):
         status_out[key] = _next_match_status(target, entry, player["key"])
 
+    # Partido del club en curso pero SIN alineación publicada (amistosos): no se sabe si el jugador
+    # participa. La tarjeta de Inicio sigue mostrando el partido (como próximo/de hoy) en lugar de
+    # desaparecer con "Sin partido programado", sin afirmar que está jugando.
+    if info.get("status") == "sin_alineacion":
+        status_out[key] = _next_match_status(target, entry, player["key"], en_curso=True)
+
     # Partido cerrado (final o cancelado ya avisado): dejar de pedirlo a la API
     # el resto de la ventana. Antes se seguía pidiendo hasta kickoff + 3 h.
     st = snap["fixture"]["status"]["short"]
     closing_key = f"{player['key']}:{key}:{fid}:" + ("cancelado" if st in CANCELLED else "final")
     # "SUSP" (suspendido) puede reanudarse: ese no se da por cerrado.
-    if (st in FINISHED or st in CANCELLED - {"SUSP"}) and closing_key in sent:
+    sin_final = st in FINISHED and not any(a[0].endswith(":final") for a in alerts)   # no era partido suyo: nada que avisar
+    if (st in FINISHED or st in CANCELLED - {"SUSP"}) and (closing_key in sent or sin_final):
         entry["done"] = True
 
 
