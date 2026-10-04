@@ -1,6 +1,6 @@
 """Diagnóstico temporal: qué devuelve la API para el partido de la Selección (alineación, estado)."""
 import json, os, urllib.request, urllib.parse
-FID = 1629004
+FID = 1642963
 key = os.environ["APIFOOTBALL_KEY"]
 def get(ep, **p):
     req = urllib.request.Request("https://v3.football.api-sports.io" + ep + "?" + urllib.parse.urlencode(p),
