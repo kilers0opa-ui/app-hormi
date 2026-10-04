@@ -379,7 +379,7 @@ def analyze(data, player, target):
     nunca chocan aunque dos jugadores compartan el mismo partido (p.ej.
     ambos convocados a la Selección Mexicana en la misma fecha FIFA)."""
     player_id = player["player_id"]
-    apodo = player.get("apodo") or player["name"]   # solo para las alertas de GOL
+    apodo = player.get("nombre_gol") or player.get("apodo") or player["name"]   # solo para las alertas de GOL ("nombre_gol" tiene prioridad sobre el apodo)
     nombre = display_name(player)                    # para todas las demás
     emoji, label, tkey = target["emoji"], target["label"], target["key"]
     prefix = f"{player['key']}:{tkey}"
