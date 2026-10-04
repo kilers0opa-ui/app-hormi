@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-02T13:08:06.992604-06:00",
+  "updated_at": "2026-10-03T22:30:34.971779-06:00",
   "cuota": {
-    "fecha": "2026-10-02",
+    "fecha": "2026-10-03",
     "busquedas": 0,
     "busquedas_resumen": 0
   },
@@ -46,6 +46,84 @@
         ]
       },
       "motivo": "ningún jugador tuvo minutos"
+    },
+    "1629004": {
+      "fixture_id": 1629004,
+      "home": "Estados Unidos",
+      "away": "México",
+      "league": "Amistoso",
+      "score": "Estados Unidos 3-0 México",
+      "final_seen_at": "2026-10-04T04:01:16.283494+00:00",
+      "jugadores": {
+        "armando": {
+          "team_key": "seleccion",
+          "minutes": 18,
+          "goals": 0,
+          "assists": 0
+        },
+        "raul": {
+          "team_key": "seleccion",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        },
+        "quinones": {
+          "team_key": "seleccion",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        },
+        "mora": {
+          "team_key": "seleccion",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        },
+        "vasquez": {
+          "team_key": "seleccion",
+          "minutes": 90,
+          "goals": 0,
+          "assists": 0
+        },
+        "gimenez": {
+          "team_key": "seleccion",
+          "minutes": 72,
+          "goals": 0,
+          "assists": 0
+        },
+        "chavez": {
+          "team_key": "seleccion",
+          "minutes": 44,
+          "goals": 0,
+          "assists": 0
+        },
+        "obed": {
+          "team_key": "seleccion",
+          "minutes": 9,
+          "goals": 0,
+          "assists": 0
+        },
+        "fidalgo": {
+          "team_key": "seleccion",
+          "minutes": 24,
+          "goals": 0,
+          "assists": 0
+        },
+        "huescas": {
+          "team_key": "seleccion",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
