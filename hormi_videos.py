@@ -537,17 +537,35 @@ def send_summary_push(config, players, video, st):
     except Exception as err:
         log(f"     ⚠️  fallo preparando la notificación del resumen: {err}")
         return
+    seleccion = []   # jugadores de la Selección: UN solo aviso por partido (no uno por jugador)
     for pk, j in st["jugadores"].items():
         player = players.get(pk)
         if player is None or (j.get("minutes") or 0) <= 0:
             continue
         title = f"🎬 Ya está disponible el resumen del partido de {full_name(player)}"
+        if j.get("team_key") == "seleccion":
+            seleccion.append({"key": pk, "name": ha.display_name(player), "status": "jugo",
+                              "summary": {"minutes": j.get("minutes")}, "title": title, "body": message})
+            continue
         try:
             if notifier:
                 notifier.send(title, message, 3)
             fcm.send("video", title, message, pk, j.get("team_key"))
         except Exception as err:
             log(f"     ⚠️  fallo enviando la notificación del resumen ({pk}): {err}")
+    if seleccion:
+        # La app arma el texto según tus favoritos: con uno solo, su aviso individual; con varios, este.
+        try:
+            tg = next(t for pk in (x["key"] for x in seleccion) for t in players[pk]["targets"] if t["key"] == "seleccion")
+            g = {"emoji": tg["emoji"], "label": tg["label"], "match": f"{st.get('home')} vs {st.get('away')}",
+                 "league": st.get("league"), "score": st.get("score")}
+            title_all = f"🎬 Ya está disponible el resumen del partido de la {tg['label']}"
+            if notifier:
+                notifier.send(title_all, message, 3)
+            fcm.send("video", title_all, message, None, "seleccion", [x["key"] for x in seleccion],
+                     extra={"grupo": ha._payload_grupo(g, seleccion, title_all, message)})
+        except Exception as err:
+            log(f"     ⚠️  fallo enviando la notificación unificada del resumen: {err}")
 
 
 def _finales_step(out, config, settings, sources, notify, now):
