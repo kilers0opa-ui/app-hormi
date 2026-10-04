@@ -1,9 +1,9 @@
 {
  "errors": [],
  "status": {
-  "long": "First Half",
-  "short": "1H",
-  "elapsed": 31,
+  "long": "Second Half",
+  "short": "2H",
+  "elapsed": 48,
   "extra": null
  },
  "score": {
@@ -22,23 +22,23 @@
    "n_subs": 14
   }
  ],
- "n_events": 1,
+ "n_events": 4,
  "lineups_endpoint": [
   {
    "team": "USA",
-   "formation": "4-2-3-1",
+   "formation": "4-4-2",
    "start": [
     "Diego Kochen",
     "Alexander Freeman",
-    "Antonee Robinson",
-    "Auston Trusty",
     "Chris Richards",
+    "Auston Trusty",
+    "Antonee Robinson",
+    "Cavan Sullivan",
     "Sebastian Berhalter",
     "Tyler Adams",
-    "Cavan Sullivan",
     "Giovanni Reyna",
-    "Malik Tillman",
-    "Julian Hall"
+    "Julian Hall",
+    "Malik Tillman"
    ],
    "subs": [
     "Matthew Freese",
@@ -60,19 +60,19 @@
   },
   {
    "team": "Mexico",
-   "formation": "4-3-3",
+   "formation": "4-4-1-1",
    "start": [
     "Raúl Rangel",
-    "Jesús Gallardo",
-    "Johan Vásquez",
     "Israel Reyes",
     "Diego Campillo",
-    "Orbelín Pineda",
-    "Erik Lira",
-    "Santiago Sandoval",
+    "Johan Vásquez",
+    "Jesús Gallardo",
     "Roberto Alvarado",
-    "Santiago Giménez",
-    "Luis Romo"
+    "Erik Lira",
+    "Luis Romo",
+    "Orbelín Pineda",
+    "Santiago Sandoval",
+    "Santiago Giménez"
    ],
    "subs": [
     "Oscar García",
