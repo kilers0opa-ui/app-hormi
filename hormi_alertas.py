@@ -263,7 +263,7 @@ class FcmSender:
         self._token = self._creds.token
         self._token_at = time.time()
 
-    def send(self, tipo, title, body, player_key=None, team_key=None, player_keys=None):
+    def send(self, tipo, title, body, player_key=None, team_key=None, player_keys=None, extra=None):
         """tipo: 'goal' (dispara la pantalla de ¡GOOOOL! en la app) o
         cualquier otro string para una notificación normal. La app usa el
         tipo para decidir sonido/vibración/silencio (pantalla de
@@ -288,7 +288,8 @@ class FcmSender:
                 "topic": self.TOPIC,
                 "data": {"type": tipo, "title": title, "body": body,
                          "player_key": player_key or "", "team_key": team_key or "",
-                         "player_keys": ",".join(player_keys or [])},
+                         "player_keys": ",".join(player_keys or []),
+                         **{k: str(v) for k, v in (extra or {}).items()}},
                 # Mensajes de solo-datos con prioridad normal los puede retrasar
                 # el modo Doze del teléfono (minutos u horas). HIGH los entrega
                 # al instante. TTL: un aviso de gol que no se pudo entregar en
@@ -664,7 +665,7 @@ def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None,
     for key, title, message, priority in alerts:
         if key not in sent:
             if grupo is not None and alert_type(key) in ("start", "final", "lineup"):
-                grupo.append(key)
+                grupo.append((key, title, message))
             else:
                 notifier.send(title, message, priority)
                 if fcm:
@@ -687,14 +688,27 @@ _GRUPOS = {}
 
 
 def anotar_grupo(player, target, info, fid, gkeys):
-    for gkey in gkeys:
+    for gkey, gtitle, gmsg in gkeys:
         tipo = alert_type(gkey)
         g = _GRUPOS.setdefault((target["key"], fid, tipo), {
             "emoji": target["emoji"], "label": target["label"], "match": info.get("match"),
             "league": info.get("league"), "score": info.get("score"), "jugadores": []})
         g["score"] = info.get("score") or g["score"]
         g["jugadores"].append({"key": player["key"], "name": display_name(player),
-                               "status": info.get("status"), "summary": info.get("summary")})
+                               "status": info.get("status"), "summary": info.get("summary"),
+                               "title": gtitle, "body": gmsg})
+
+
+def _payload_grupo(g, jug, title, body):
+    """Datos para que la APP arme el aviso según TUS favoritos: si solo sigues a uno, muestra su aviso
+    individual (title/body de ese jugador); si sigues a varios, muestra el unificado (title/body de
+    arriba) con solo esos jugadores. El servidor no sabe quiénes son tus favoritos."""
+    items = [{"key": j["key"], "name": j["name"], "rol": j["status"],
+              "min": (j.get("summary") or {}).get("minutes"),
+              "title": j["title"], "body": j["body"]} for j in jug]
+    return json.dumps({"title": title, "body": body, "match": g.get("match"), "league": g.get("league"),
+                       "score": g.get("score"), "label": g["label"], "emoji": g["emoji"], "items": items},
+                      ensure_ascii=False, separators=(",", ":"))
 
 
 def enviar_grupos(notifier, fcm):
@@ -721,7 +735,8 @@ def enviar_grupos(notifier, fcm):
             body = "\n".join(lineas)
             notifier.send(title, body, 4)
             if fcm:
-                fcm.send(tipo, title, body, None, tkey, [j["key"] for j in jug])
+                fcm.send(tipo, title, body, None, tkey, [j["key"] for j in jug],
+                         extra={"grupo": _payload_grupo(g, jug, title, body)})
             continue
         if not jug:
             continue
@@ -735,7 +750,8 @@ def enviar_grupos(notifier, fcm):
             body = ("Jugaron: " + " · ".join(jugaron)) if jugaron else "Ninguno de tus jugadores tuvo minutos."
         notifier.send(title, body, 3)
         if fcm:
-            fcm.send(tipo, title, body, None, tkey, [j["key"] for j in jug])
+            fcm.send(tipo, title, body, None, tkey, [j["key"] for j in jug],
+                     extra={"grupo": _payload_grupo(g, jug, title, body)})
     _GRUPOS.clear()
 
 
