@@ -1,24 +1,42 @@
 {
   "sent": {
-    "armando": {},
-    "raul": {},
-    "quinones": {},
-    "mora": {},
+    "armando": {
+      "seleccion": []
+    },
+    "raul": {
+      "seleccion": []
+    },
+    "quinones": {
+      "seleccion": []
+    },
+    "mora": {
+      "seleccion": []
+    },
     "vasquez": {
       "genoa": [
         "vasquez:genoa:1642927:final",
         "vasquez:genoa:1642927:inicio"
-      ]
+      ],
+      "seleccion": []
     },
     "gimenez": {
       "porto": [
         "gimenez:porto:1643495:inicio"
-      ]
+      ],
+      "seleccion": []
     },
-    "chavez": {},
-    "obed": {},
-    "fidalgo": {},
-    "huescas": {}
+    "chavez": {
+      "seleccion": []
+    },
+    "obed": {
+      "seleccion": []
+    },
+    "fidalgo": {
+      "seleccion": []
+    },
+    "huescas": {
+      "seleccion": []
+    }
   },
   "reminders": [
     "1629004:2026-10-03"
