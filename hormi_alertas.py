@@ -1315,7 +1315,15 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     # participa. La tarjeta de Inicio sigue mostrando el partido (como próximo/de hoy) en lugar de
     # desaparecer con "Sin partido programado", sin afirmar que está jugando.
     if info.get("status") == "sin_alineacion":
+        vivo = status_out.get(key) or {}
         status_out[key] = _next_match_status(target, entry, player["key"], en_curso=True)
+        # Marcador y reloj del partido en curso (la app los muestra aunque no se sepa si el jugador juega).
+        status_out[key]["en_curso"] = True
+        for campo in ("score", "periodo", "clock_ref"):
+            if vivo.get(campo) is not None:
+                status_out[key][campo] = vivo[campo]
+        gl = snap.get("goals") or {}
+        status_out[key]["home_goals"], status_out[key]["away_goals"] = gl.get("home"), gl.get("away")
 
     # Partido cerrado (final o cancelado ya avisado): dejar de pedirlo a la API
     # el resto de la ventana. Antes se seguía pidiendo hasta kickoff + 3 h.
