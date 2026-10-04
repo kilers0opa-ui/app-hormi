@@ -313,6 +313,28 @@ class FcmSender:
             log(f"⚠️  FCM: no se pudo enviar el push real — {err}")
 
 
+
+# ── Nombres de selecciones en español (la API los da en inglés: "Mexico", "USA"...).
+# Solo afecta lo que se MUESTRA (tarjetas y avisos); los ids no cambian. Los clubes quedan igual.
+NOMBRES_ES = {
+    "Mexico": "México", "USA": "Estados Unidos", "United States": "Estados Unidos", "Canada": "Canadá",
+    "Panama": "Panamá", "Peru": "Perú", "Brazil": "Brasil", "Germany": "Alemania", "Spain": "España",
+    "France": "Francia", "England": "Inglaterra", "Italy": "Italia", "Netherlands": "Países Bajos",
+    "Belgium": "Bélgica", "Switzerland": "Suiza", "Poland": "Polonia", "Denmark": "Dinamarca",
+    "Sweden": "Suecia", "Norway": "Noruega", "Croatia": "Croacia", "Scotland": "Escocia", "Wales": "Gales",
+    "Czech Republic": "Chequia", "Czechia": "Chequia", "Hungary": "Hungría", "Greece": "Grecia",
+    "Turkey": "Turquía", "Austria": "Austria", "Ireland": "Irlanda", "Japan": "Japón",
+    "South Korea": "Corea del Sur", "Korea Republic": "Corea del Sur", "China": "China",
+    "Saudi Arabia": "Arabia Saudita", "Iran": "Irán", "Iraq": "Irak", "Qatar": "Catar",
+    "Morocco": "Marruecos", "Egypt": "Egipto", "Tunisia": "Túnez", "Algeria": "Argelia",
+    "Cameroon": "Camerún", "Ivory Coast": "Costa de Marfil", "South Africa": "Sudáfrica",
+    "New Zealand": "Nueva Zelanda", "Haiti": "Haití", "Jamaica": "Jamaica",
+}
+
+
+def nombre_es(name):
+    return NOMBRES_ES.get(name, name)
+
 # ═══════════════════════════════════════════════════════ detector
 def analyze(data, player, target):
     """Recibe una 'foto' del partido (formato de /fixtures?id=...) para UN
@@ -333,11 +355,11 @@ def analyze(data, player, target):
     fid, status = fx["id"], fx["status"]["short"]
     home, away = data["teams"]["home"], data["teams"]["away"]
     league = data["league"]["name"]
-    match = f"{home['name']} vs {away['name']}"
+    match = f"{nombre_es(home['name'])} vs {nombre_es(away['name'])}"
 
     def score():
         g = data["goals"]
-        return f"{home['name']} {g['home'] or 0}-{g['away'] or 0} {away['name']}"
+        return f"{nombre_es(home['name'])} {g['home'] or 0}-{g['away'] or 0} {nombre_es(away['name'])}"
 
     alerts = []
 
@@ -782,7 +804,7 @@ def refresh_schedule(target, known_season=None):
 
 def _fixture_meta(fx):
     """Datos del partido que se guardan en el horario (para el aviso 'Juega mañana')."""
-    return {"home": fx["teams"]["home"]["name"], "away": fx["teams"]["away"]["name"],
+    return {"home": nombre_es(fx["teams"]["home"]["name"]), "away": nombre_es(fx["teams"]["away"]["name"]),
             "home_logo": fx["teams"]["home"].get("logo"), "away_logo": fx["teams"]["away"].get("logo"),
             "league": (fx.get("league") or {}).get("name"),
             "season": (fx.get("league") or {}).get("season"),
@@ -1053,8 +1075,8 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     alerts, info = analyze(snap, player, target)
     match_info = {
         "fixture_id": snap["fixture"]["id"],
-        "home": snap["teams"]["home"]["name"],
-        "away": snap["teams"]["away"]["name"],
+        "home": nombre_es(snap["teams"]["home"]["name"]),
+        "away": nombre_es(snap["teams"]["away"]["name"]),
         "league": snap["league"]["name"],
         "score": info.get("score"),
         "summary": info.get("summary"),
@@ -1067,12 +1089,32 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     except Exception as err:
         log(f"⚠️  {player['name']} · {label}: no se pudo actualizar el histórico — {err}")
 
+    prev_status = dict(status_out.get(key) or {})   # estado anterior (para el reloj del partido)
     status_out[key] = {
         "label": label, "emoji": emoji, "crest_url": crest_url, "checked_at": now_iso(),
         "match_reference": why, **info, "kickoff": entry["kickoff"],
-        "home": snap["teams"]["home"]["name"], "away": snap["teams"]["away"]["name"],
+        "home": nombre_es(snap["teams"]["home"]["name"]), "away": nombre_es(snap["teams"]["away"]["name"]),
         "home_logo": snap["teams"]["home"].get("logo"), "away_logo": snap["teams"]["away"].get("logo"),
     }
+    # Reloj del partido para la app: periodo (1H/HT/2H/ET/BT/P...) y "clock_ref", el instante en que
+    # el reloj marcaba 0:00 (la app cuenta mm:ss desde ahí, sin pedir nada cada segundo). Solo se
+    # reescribe si cambia el periodo o se desvía >90 s, para no generar un commit por minuto.
+    try:
+        _st = snap["fixture"]["status"]
+        _per, _el, _ex = _st.get("short"), _st.get("elapsed"), _st.get("extra")
+        prev = prev_status
+        status_out[key]["periodo"] = _per
+        if _per in ("1H", "2H", "ET", "LIVE") and _el is not None:
+            ahora = datetime.now(LOCAL_TZ)
+            prev_ref = _parse(prev.get("clock_ref")) if prev.get("periodo") == _per else None
+            nuevo = ahora - timedelta(minutes=max(0.0, _el + (_ex or 0) - 0.5))
+            if prev_ref and (_ex or abs((nuevo - prev_ref).total_seconds()) < 90):
+                status_out[key]["clock_ref"] = prev["clock_ref"]   # en reposición la API no avanza "elapsed": se conserva
+            else:
+                status_out[key]["clock_ref"] = nuevo.isoformat()
+    except Exception as err:
+        log(f"⚠️  reloj del partido: {err}")
+
     # Dentro de la ventana en vivo pero el partido AÚN NO empieza (NS/TBD, p.ej. la API todavía
     # no publica la alineación): para la app sigue siendo el "Próximo partido". Sin esto el
     # estado quedaba como "sin_partido" con referencia "hoy" y la tarjeta desaparecía de Inicio.
