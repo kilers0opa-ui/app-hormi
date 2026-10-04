@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T22:01:17.565568-06:00",
+  "updated_at": "2026-10-03T23:24:17.626341-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -187,10 +187,10 @@
             "team_id": 16,
             "team_name": "Mexico",
             "team_logo": "https://media.api-sports.io/football/teams/16.png",
-            "played": 8,
+            "played": 7,
             "goals": 1,
             "assists": 1,
-            "minutes": 317
+            "minutes": 299
           },
           {
             "league_id": 199,
@@ -239,6 +239,24 @@
         "seleccion": [
           1629004
         ]
+      },
+      "ultimo_partido": {
+        "fixture_id": 1629004,
+        "kickoff": "2026-10-03T20:00:00-06:00",
+        "home": "Estados Unidos",
+        "away": "México",
+        "home_logo": "https://media.api-sports.io/football/teams/2384.png",
+        "away_logo": "https://media.api-sports.io/football/teams/16.png",
+        "home_goals": 3,
+        "away_goals": 0,
+        "league": "Amistoso",
+        "team_key": "seleccion",
+        "team_label": "Selección Mexicana",
+        "emoji": "🇲🇽",
+        "crest_url": "https://media.api-sports.io/football/teams/16.png",
+        "minutes": 18,
+        "goals": 0,
+        "assists": 0
       }
     },
     "raul": {
@@ -1308,7 +1326,25 @@
           }
         ]
       },
-      "applied_fixtures": {}
+      "applied_fixtures": {},
+      "ultimo_partido": {
+        "fixture_id": 1635559,
+        "kickoff": "2026-09-16T12:45:00-06:00",
+        "home": "Everton",
+        "away": "Wolves",
+        "home_logo": "https://media.api-sports.io/football/teams/45.png",
+        "away_logo": "https://media.api-sports.io/football/teams/39.png",
+        "home_goals": 1,
+        "away_goals": 0,
+        "league": "Copa de la Liga",
+        "team_key": "wolves",
+        "team_label": "Wolves",
+        "emoji": "🐺",
+        "crest_url": "https://media.api-sports.io/football/teams/39.png",
+        "minutes": 38,
+        "goals": 0,
+        "assists": 0
+      }
     },
     "vasquez": {
       "seasons": {
@@ -1780,10 +1816,10 @@
             "team_id": 16,
             "team_name": "Mexico",
             "team_logo": "https://media.api-sports.io/football/teams/16.png",
-            "played": 6,
+            "played": 5,
             "goals": 2,
             "assists": 0,
-            "minutes": 507
+            "minutes": 417
           }
         ],
         "2017": [
@@ -1817,6 +1853,24 @@
         "seleccion": [
           1629004
         ]
+      },
+      "ultimo_partido": {
+        "fixture_id": 1629004,
+        "kickoff": "2026-10-03T20:00:00-06:00",
+        "home": "Estados Unidos",
+        "away": "México",
+        "home_logo": "https://media.api-sports.io/football/teams/2384.png",
+        "away_logo": "https://media.api-sports.io/football/teams/16.png",
+        "home_goals": 3,
+        "away_goals": 0,
+        "league": "Amistoso",
+        "team_key": "seleccion",
+        "team_label": "Selección Mexicana",
+        "emoji": "🇲🇽",
+        "crest_url": "https://media.api-sports.io/football/teams/16.png",
+        "minutes": 90,
+        "goals": 0,
+        "assists": 0
       }
     },
     "quinones": {
@@ -2317,7 +2371,25 @@
           }
         ]
       },
-      "applied_fixtures": {}
+      "applied_fixtures": {},
+      "ultimo_partido": {
+        "fixture_id": 1629916,
+        "kickoff": "2026-09-14T12:15:00-06:00",
+        "home": "Al-Qadisiyah FC",
+        "away": "Al-Wasl FC",
+        "home_logo": "https://media.api-sports.io/football/teams/2933.png",
+        "away_logo": "https://media.api-sports.io/football/teams/2872.png",
+        "home_goals": 2,
+        "away_goals": 1,
+        "league": "Liga de Campeones de Asia",
+        "team_key": "al_qadsiah",
+        "team_label": "Al-Qadsiah",
+        "emoji": "🔴",
+        "crest_url": "https://media.api-sports.io/football/teams/2933.png",
+        "minutes": 84,
+        "goals": 1,
+        "assists": 0
+      }
     },
     "gimenez": {
       "seasons": {
@@ -2835,10 +2907,10 @@
             "team_id": 16,
             "team_name": "Mexico",
             "team_logo": "https://media.api-sports.io/football/teams/16.png",
-            "played": 3,
+            "played": 2,
             "goals": 0,
             "assists": 0,
-            "minutes": 146
+            "minutes": 74
           }
         ],
         "2017": [
@@ -2860,6 +2932,24 @@
         "seleccion": [
           1629004
         ]
+      },
+      "ultimo_partido": {
+        "fixture_id": 1629004,
+        "kickoff": "2026-10-03T20:00:00-06:00",
+        "home": "Estados Unidos",
+        "away": "México",
+        "home_logo": "https://media.api-sports.io/football/teams/2384.png",
+        "away_logo": "https://media.api-sports.io/football/teams/16.png",
+        "home_goals": 3,
+        "away_goals": 0,
+        "league": "Amistoso",
+        "team_key": "seleccion",
+        "team_label": "Selección Mexicana",
+        "emoji": "🇲🇽",
+        "crest_url": "https://media.api-sports.io/football/teams/16.png",
+        "minutes": 72,
+        "goals": 0,
+        "assists": 0
       }
     },
     "chavez": {
@@ -3097,10 +3187,10 @@
             "team_id": 16,
             "team_name": "Mexico",
             "team_logo": "https://media.api-sports.io/football/teams/16.png",
-            "played": 6,
+            "played": 5,
             "goals": 0,
             "assists": 0,
-            "minutes": 282
+            "minutes": 238
           }
         ]
       },
@@ -3108,6 +3198,24 @@
         "seleccion": [
           1629004
         ]
+      },
+      "ultimo_partido": {
+        "fixture_id": 1629004,
+        "kickoff": "2026-10-03T20:00:00-06:00",
+        "home": "Estados Unidos",
+        "away": "México",
+        "home_logo": "https://media.api-sports.io/football/teams/2384.png",
+        "away_logo": "https://media.api-sports.io/football/teams/16.png",
+        "home_goals": 3,
+        "away_goals": 0,
+        "league": "Amistoso",
+        "team_key": "seleccion",
+        "team_label": "Selección Mexicana",
+        "emoji": "🇲🇽",
+        "crest_url": "https://media.api-sports.io/football/teams/16.png",
+        "minutes": 22,
+        "goals": 0,
+        "assists": 0
       }
     },
     "obed": {
@@ -3368,10 +3476,10 @@
             "team_id": 16,
             "team_name": "Mexico",
             "team_logo": "https://media.api-sports.io/football/teams/16.png",
-            "played": 7,
+            "played": 6,
             "goals": 0,
             "assists": 0,
-            "minutes": 264
+            "minutes": 255
           },
           {
             "league_id": 140,
@@ -3431,6 +3539,24 @@
         "seleccion": [
           1629004
         ]
+      },
+      "ultimo_partido": {
+        "fixture_id": 1629004,
+        "kickoff": "2026-10-03T20:00:00-06:00",
+        "home": "Estados Unidos",
+        "away": "México",
+        "home_logo": "https://media.api-sports.io/football/teams/2384.png",
+        "away_logo": "https://media.api-sports.io/football/teams/16.png",
+        "home_goals": 3,
+        "away_goals": 0,
+        "league": "Amistoso",
+        "team_key": "seleccion",
+        "team_label": "Selección Mexicana",
+        "emoji": "🇲🇽",
+        "crest_url": "https://media.api-sports.io/football/teams/16.png",
+        "minutes": 9,
+        "goals": 0,
+        "assists": 0
       }
     },
     "fidalgo": {
@@ -3843,10 +3969,10 @@
             "team_id": 16,
             "team_name": "Mexico",
             "team_logo": "https://media.api-sports.io/football/teams/16.png",
-            "played": 7,
+            "played": 6,
             "goals": 0,
             "assists": 0,
-            "minutes": 376
+            "minutes": 352
           }
         ],
         "2015": [
@@ -3896,6 +4022,24 @@
         "seleccion": [
           1629004
         ]
+      },
+      "ultimo_partido": {
+        "fixture_id": 1629004,
+        "kickoff": "2026-10-03T20:00:00-06:00",
+        "home": "Estados Unidos",
+        "away": "México",
+        "home_logo": "https://media.api-sports.io/football/teams/2384.png",
+        "away_logo": "https://media.api-sports.io/football/teams/16.png",
+        "home_goals": 3,
+        "away_goals": 0,
+        "league": "Amistoso",
+        "team_key": "seleccion",
+        "team_label": "Selección Mexicana",
+        "emoji": "🇲🇽",
+        "crest_url": "https://media.api-sports.io/football/teams/16.png",
+        "minutes": 24,
+        "goals": 0,
+        "assists": 0
       }
     },
     "huescas": {
@@ -4247,7 +4391,25 @@
           }
         ]
       },
-      "applied_fixtures": {}
+      "applied_fixtures": {},
+      "ultimo_partido": {
+        "fixture_id": 1628996,
+        "kickoff": "2026-09-26T19:00:00-06:00",
+        "home": "México",
+        "away": "Colombia",
+        "home_logo": "https://media.api-sports.io/football/teams/16.png",
+        "away_logo": "https://media.api-sports.io/football/teams/8.png",
+        "home_goals": 1,
+        "away_goals": 1,
+        "league": "Amistoso",
+        "team_key": "seleccion",
+        "team_label": "Selección Mexicana",
+        "emoji": "🇲🇽",
+        "crest_url": "https://media.api-sports.io/football/teams/16.png",
+        "minutes": 64,
+        "goals": 1,
+        "assists": 0
+      }
     }
   }
 }
