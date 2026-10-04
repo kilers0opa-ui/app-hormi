@@ -656,13 +656,19 @@ def alert_type(key):
 
 
 def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None,
-             register_video=True, match_info=None):
+             register_video=True, match_info=None, grupo=None):
+    """grupo: lista opcional. Si viene, los avisos de inicio y final NO se mandan aquí: se anotan
+    en ella (y se dan por enviados) para mandar UNO solo por partido de la Selección en vez de
+    uno por jugador (ver enviar_grupos)."""
     new = 0
     for key, title, message, priority in alerts:
         if key not in sent:
-            notifier.send(title, message, priority)
-            if fcm:
-                fcm.send(alert_type(key), title, message, player_key, team_key)
+            if grupo is not None and alert_type(key) in ("start", "final"):
+                grupo.append(key)
+            else:
+                notifier.send(title, message, priority)
+                if fcm:
+                    fcm.send(alert_type(key), title, message, player_key, team_key)
             sent.add(key)
             new += 1
             # Va al final, con la alerta ya enviada. No aplica en repeticiones
@@ -673,6 +679,43 @@ def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None,
                 elif key.endswith(":final") and match_info:
                     register_final_for_video(key, player_key, team_key, match_info)
     return new
+
+
+# ── Avisos de la Selección unificados: con varios jugadores seguidos en el mismo partido, "arrancó" y
+# "final" salían una vez POR JUGADOR. Se juntan durante la pasada y se manda uno solo por partido.
+_GRUPOS = {}
+
+
+def anotar_grupo(player, target, info, fid, gkeys):
+    for gkey in gkeys:
+        tipo = alert_type(gkey)
+        g = _GRUPOS.setdefault((target["key"], fid, tipo), {
+            "emoji": target["emoji"], "label": target["label"], "match": info.get("match"),
+            "league": info.get("league"), "score": info.get("score"), "jugadores": []})
+        g["score"] = info.get("score") or g["score"]
+        g["jugadores"].append({"key": player["key"], "name": display_name(player),
+                               "status": info.get("status"), "summary": info.get("summary")})
+
+
+def enviar_grupos(notifier, fcm):
+    """Manda los avisos unificados juntados en esta pasada. Solo cuentan los jugadores que estuvieron
+    en el partido (titular/banca); la app lo muestra si AL MENOS UNO de ellos es Favorito."""
+    for (tkey, fid, tipo), g in list(_GRUPOS.items()):
+        jug = [j for j in g["jugadores"] if j["status"] not in ("no_convocado", "sin_partido", "cancelado")]
+        if not jug:
+            continue
+        if tipo == "start":
+            title = f"⚽ {g['emoji']} Arrancó: {g['label']}"
+            body = f"{g['match']} · {g['league']}"
+        else:
+            title = f"🏁 {g['emoji']} Final {g['label']}: {g['score']}"
+            jugaron = [f"{j['name']} {j['summary']['minutes']}'" for j in jug
+                       if j.get("summary") and j["summary"].get("minutes")]
+            body = ("Jugaron: " + " · ".join(jugaron)) if jugaron else "Ninguno de tus jugadores tuvo minutos."
+        notifier.send(title, body, 3)
+        if fcm:
+            fcm.send(tipo, title, body, None, tkey, [j["key"] for j in jug])
+    _GRUPOS.clear()
 
 
 # ═══════════════════════════════════════════════════════ modo repetición
@@ -1132,7 +1175,10 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         "score": info.get("score"),
         "summary": info.get("summary"),
     }
-    n = dispatch(alerts, sent, notifier, fcm, player["key"], key, match_info=match_info)
+    grupo = [] if target.get("kind") == "seleccion" else None
+    n = dispatch(alerts, sent, notifier, fcm, player["key"], key, match_info=match_info, grupo=grupo)
+    if grupo:
+        anotar_grupo(player, target, info, fid, grupo)
     if n:
         log(f"{emoji} {player['name']} · {label}: {n} alerta(s) nueva(s)")
     try:
@@ -1214,6 +1260,7 @@ def save_status(new):
 
 def chequeo(args, notifier, config, fcm=None):
     _SNAP_CACHE.clear()
+    _GRUPOS.clear()
     _NEXT_CACHE.clear()
     state = load_json(STATE_FILE, {})
     sent_raw = state.get("sent", {})
@@ -1296,6 +1343,11 @@ def chequeo(args, notifier, config, fcm=None):
             sent_out[pkey] = sent_raw[pkey]
         if pkey in schedule_raw:
             schedule_out[pkey] = schedule_raw[pkey]
+
+    try:
+        enviar_grupos(notifier, fcm)
+    except Exception as err:
+        log(f"⚠️  no se pudieron mandar los avisos unificados de la Selección — {err}")
 
     # "Juega mañana": solo en pasadas completas (con --jugador/--solo el
     # horario de los demás no se toca).
