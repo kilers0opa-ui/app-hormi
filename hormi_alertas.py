@@ -329,7 +329,39 @@ NOMBRES_ES = {
     "Morocco": "Marruecos", "Egypt": "Egipto", "Tunisia": "Túnez", "Algeria": "Argelia",
     "Cameroon": "Camerún", "Ivory Coast": "Costa de Marfil", "South Africa": "Sudáfrica",
     "New Zealand": "Nueva Zelanda", "Haiti": "Haití", "Jamaica": "Jamaica",
+    # clubes (solo los que la API trae sin acento / en otro idioma)
+    "Olympiakos Piraeus": "Olympiakos", "Atletico Madrid": "Atlético de Madrid", "Alaves": "Alavés",
+    "Maritimo": "Marítimo", "FC Copenhagen": "FC Copenhague",
 }
+
+LIGAS_ES = {
+    "Friendlies": "Amistoso", "Friendlies Clubs": "Amistoso de clubes", "Friendly International": "Amistoso internacional",
+    "Super League 1": "Superliga de Grecia", "Super League": "Superliga de Grecia",
+    "World Cup": "Copa del Mundo", "World Cup - U20": "Mundial Sub-20",
+    "World Cup - Qualification CONCACAF": "Eliminatorias Concacaf",
+    "Concacaf World Cup Qualifiers": "Eliminatorias Concacaf",
+    "World Cup - Qualification Intercontinental Play-offs": "Repechaje intercontinental",
+    "CONCACAF Nations League": "Liga de Naciones Concacaf", "CONCACAF Gold Cup": "Copa Oro", "Gold Cup": "Copa Oro",
+    "CONCACAF Champions League": "Liga de Campeones Concacaf", "Leagues Cup": "Leagues Cup",
+    "UEFA Champions League": "Liga de Campeones", "UEFA Europa League": "Europa League",
+    "UEFA Europa Conference League": "Conference League", "Copa America": "Copa América",
+    "League Cup": "Copa de la Liga", "FA Cup": "Copa FA", "Super Cup": "Supercopa", "Coppa Italia": "Copa Italia",
+    "Primeira Liga": "Liga Portugal", "Taça de Portugal": "Copa de Portugal", "KNVB Beker": "Copa de Países Bajos",
+    "Major League Soccer": "MLS", "MLS All-Star": "Juego de Estrellas MLS", "Campeones Cup": "Campeones Cup",
+    "US Open Cup": "Copa Abierta de EE. UU.", "Pro League": "Liga Profesional Saudí",
+    "Olympics Men": "Juegos Olímpicos", "Olympics Men - Qualification Concacaf": "Preolímpico Concacaf",
+    "Confederations Cup": "Copa Confederaciones", "FIFA Club World Cup": "Mundial de Clubes",
+    "FIFA Intercontinental Cup": "Copa Intercontinental", "Pan American Games": "Juegos Panamericanos",
+    "CAC Games": "Juegos Centroamericanos", "Tournoi Maurice Revello": "Torneo Maurice Revello",
+    "CONMEBOL Libertadores U20": "Libertadores Sub-20", "CONMEBOL U20": "Sudamericano Sub-20",
+    "AFC Champions League Elite": "Liga de Campeones de Asia", "Premier League - Summer Series": "Premier League Summer Series",
+    "International Champions Cup": "Copa Internacional de Campeones", "King's Cup": "Copa del Rey de Arabia",
+    "Eerste Divisie": "Eerste Divisie", "Championship": "Championship", "Eredivisie": "Eredivisie",
+}
+
+
+def liga_es(name):
+    return LIGAS_ES.get(name, name)
 
 
 def nombre_es(name):
@@ -354,7 +386,7 @@ def analyze(data, player, target):
     fx = data["fixture"]
     fid, status = fx["id"], fx["status"]["short"]
     home, away = data["teams"]["home"], data["teams"]["away"]
-    league = data["league"]["name"]
+    league = liga_es(data["league"]["name"])
     match = f"{nombre_es(home['name'])} vs {nombre_es(away['name'])}"
 
     def score():
@@ -806,7 +838,7 @@ def _fixture_meta(fx):
     """Datos del partido que se guardan en el horario (para el aviso 'Juega mañana')."""
     return {"home": nombre_es(fx["teams"]["home"]["name"]), "away": nombre_es(fx["teams"]["away"]["name"]),
             "home_logo": fx["teams"]["home"].get("logo"), "away_logo": fx["teams"]["away"].get("logo"),
-            "league": (fx.get("league") or {}).get("name"),
+            "league": liga_es((fx.get("league") or {}).get("name")),
             "season": (fx.get("league") or {}).get("season"),
             "fx_status": fx["fixture"]["status"]["short"]}
 
@@ -1077,7 +1109,7 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         "fixture_id": snap["fixture"]["id"],
         "home": nombre_es(snap["teams"]["home"]["name"]),
         "away": nombre_es(snap["teams"]["away"]["name"]),
-        "league": snap["league"]["name"],
+        "league": liga_es(snap["league"]["name"]),
         "score": info.get("score"),
         "summary": info.get("summary"),
     }
