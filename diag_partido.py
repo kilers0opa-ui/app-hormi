@@ -15,6 +15,9 @@ if r:
     out["score"] = r["goals"]
     out["lineups_in_fixture"] = [{"team": l["team"]["name"], "n_start": len(l.get("startXI") or []), "n_subs": len(l.get("substitutes") or [])} for l in (r.get("lineups") or [])]
     out["n_events"] = len(r.get("events") or [])
+    out["periods"] = r["fixture"].get("periods")
+    out["fixture_ts"] = r["fixture"].get("timestamp")
+    out["events"] = [{"min": e["time"]["elapsed"], "extra": e["time"].get("extra"), "type": e["type"], "detail": e.get("detail"), "team": e["team"]["name"], "player": e["player"].get("name"), "assist": (e.get("assist") or {}).get("name")} for e in (r.get("events") or [])]
 ln = get("/fixtures/lineups", fixture=FID)
 out["lineups_endpoint"] = [{"team": l["team"]["name"], "formation": l.get("formation"),
     "start": [p["player"]["name"] for p in l.get("startXI") or []],
