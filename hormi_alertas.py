@@ -1073,6 +1073,13 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         "home": snap["teams"]["home"]["name"], "away": snap["teams"]["away"]["name"],
         "home_logo": snap["teams"]["home"].get("logo"), "away_logo": snap["teams"]["away"].get("logo"),
     }
+    # Dentro de la ventana en vivo pero el partido AÚN NO empieza (NS/TBD, p.ej. la API todavía
+    # no publica la alineación): para la app sigue siendo el "Próximo partido". Sin esto el
+    # estado quedaba como "sin_partido" con referencia "hoy" y la tarjeta desaparecía de Inicio.
+    ko_entry = _parse(entry.get("kickoff"))
+    if (info.get("status") == "sin_partido" and snap["fixture"]["status"]["short"] in ("NS", "TBD")
+            and ko_entry and ko_entry > datetime.now(LOCAL_TZ)):
+        status_out[key] = _next_match_status(target, entry, player["key"])
 
     # Partido cerrado (final o cancelado ya avisado): dejar de pedirlo a la API
     # el resto de la ventana. Antes se seguía pidiendo hasta kickoff + 3 h.
