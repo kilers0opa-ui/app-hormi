@@ -3,11 +3,11 @@
  "status": {
   "long": "Second Half",
   "short": "2H",
-  "elapsed": 48,
+  "elapsed": 68,
   "extra": null
  },
  "score": {
-  "home": 1,
+  "home": 2,
   "away": 0
  },
  "lineups_in_fixture": [
@@ -22,7 +22,95 @@
    "n_subs": 14
   }
  ],
- "n_events": 4,
+ "n_events": 9,
+ "periods": {
+  "first": 1791079200,
+  "second": 1791082800
+ },
+ "fixture_ts": 1791079200,
+ "events": [
+  {
+   "min": 28,
+   "extra": null,
+   "type": "Goal",
+   "detail": "Normal Goal",
+   "team": "USA",
+   "player": "J. Hall",
+   "assist": null
+  },
+  {
+   "min": 35,
+   "extra": null,
+   "type": "Card",
+   "detail": "Yellow Card",
+   "team": "Mexico",
+   "player": "L. Romo",
+   "assist": null
+  },
+  {
+   "min": 46,
+   "extra": null,
+   "type": "subst",
+   "detail": "Substitution 1",
+   "team": "Mexico",
+   "player": "J. Gallardo",
+   "assist": "M. Chavez Garcia"
+  },
+  {
+   "min": 46,
+   "extra": null,
+   "type": "subst",
+   "detail": "Substitution 2",
+   "team": "Mexico",
+   "player": "L. Romo",
+   "assist": "L. Chavez"
+  },
+  {
+   "min": 62,
+   "extra": null,
+   "type": "Goal",
+   "detail": "Normal Goal",
+   "team": "USA",
+   "player": "C. Sullivan",
+   "assist": null
+  },
+  {
+   "min": 64,
+   "extra": null,
+   "type": "Card",
+   "detail": "Yellow Card",
+   "team": "USA",
+   "player": "T. Adams",
+   "assist": null
+  },
+  {
+   "min": 66,
+   "extra": null,
+   "type": "subst",
+   "detail": "Substitution 1",
+   "team": "USA",
+   "player": "J. Hall",
+   "assist": "J. Ellis"
+  },
+  {
+   "min": 66,
+   "extra": null,
+   "type": "subst",
+   "detail": "Substitution 2",
+   "team": "USA",
+   "player": "C. Sullivan",
+   "assist": "Y. Musah"
+  },
+  {
+   "min": 67,
+   "extra": null,
+   "type": "subst",
+   "detail": "Substitution 3",
+   "team": "Mexico",
+   "player": "S. Sandoval",
+   "assist": "A. Fidalgo"
+  }
+ ],
  "lineups_endpoint": [
   {
    "team": "USA",
