@@ -479,6 +479,13 @@ def analyze(data, player, target):
     current_status = "no_convocado" if data.get("lineups") and role is None else \
         role or ("en_cancha" if status in LIVE else
                  ("finalizado" if status in FINISHED else "sin_partido"))
+    # Suplente que ya entró y sigue jugando → "en_cancha" (antes se quedaba en "banca" todo el partido).
+    # Si luego sale, vuelve a "banca"; el titular que sale también pasa a "banca".
+    if role in ("titular", "banca") and status in LIVE:
+        if role == "banca" and entered and out_minute is None:
+            current_status = "en_cancha"
+        elif out_minute is not None:
+            current_status = "banca"
 
     return alerts, {"status": current_status, "match": match, "league": league,
                      "score": score(), "goals": goals, "assists": assists,
@@ -1306,7 +1313,7 @@ def chequeo(args, notifier, config, fcm=None):
 # y de red de seguridad si la corrida larga muere.
 ARRANQUE_EXTRA = timedelta(minutes=45)   # margen sobre VENTANA_ANTES: la vigilancia arranca ~2 h antes del kickoff. El disparador externo (cron-job.org, cada 5 min) ya cubre el atraso del cron de GitHub.
 MAX_VIGILAR = timedelta(hours=5, minutes=40)   # el job de GitHub se corta a las 6 h
-PASO_VIGILAR = 60                        # segundos entre pasadas
+PASO_VIGILAR = 20                        # segundos entre pasadas
 MIN_PAUSA_VIGILAR = 10
 MAX_FALLOS_SEGUIDOS = 5
 
