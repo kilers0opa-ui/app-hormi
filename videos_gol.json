@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-03T22:30:34.971779-06:00",
+  "updated_at": "2026-10-03T23:10:27.844337-06:00",
   "cuota": {
     "fecha": "2026-10-03",
-    "busquedas": 0,
-    "busquedas_resumen": 0
+    "busquedas": 1,
+    "busquedas_resumen": 1
   },
   "goles": {},
   "partidos": {
@@ -116,14 +116,163 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
-      "intentos": 0,
+      "status": "resuelto",
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
-      "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "ultimo_intento": "2026-10-04T05:10:19.888237+00:00",
+      "video": {
+        "id": "9Kv-nkp54Nk",
+        "title": "🇺🇸 EUA vs MÉXICO 3-0 | RESUMEN Y GOLES | TODOS LOS GOLES DEL PARTIDO",
+        "channel": "MiX دولسيكا ",
+        "published_at": "2026-10-04T04:12:33Z",
+        "thumbnail": "https://i.ytimg.com/vi/9Kv-nkp54Nk/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=9Kv-nkp54Nk",
+        "embeddable": true
+      },
+      "noticias_pasadas": 2,
+      "ultima_noticia": "2026-10-04T05:10:19.888237+00:00",
+      "noticias": {
+        "armando": [
+          {
+            "title": "Armando González, con los pies en la tierra tras llegar al Olympiacos: \"No soy Messi y nunca lo voy a ser\"",
+            "source": "Claro Sports",
+            "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQWS1pay1MZjk5WVFfMUlFOHdQQXlYN3F4aklEeFdLMmpERWhQUVJ3ZGdQUW8zLUJRZW9lMEg2dzF2aU9ISWEtbjN6NXNsX2pYOUNpSHRxdUhhRHBDcFlSTGFWbXVNV3hiTHBDX25ncTFzY1g5bXh4c3RJMndTYjhudzRnUVBfdDh6cld5YTduSDN1dHpZNExwYXNfNlJxV0V0d005OUk1VFdBYlBSYWpaT25XX3RPY3otZnVHbGRYZHhYOVFVaURUd1dJYXJwX3ZYTDUxNA?oc=5",
+            "published_at": "2026-10-04T00:44:45Z"
+          },
+          {
+            "title": "Hormiga González se Convierte en el Jugador Más Caro de Grecia; Este es su Valor",
+            "source": "N+",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNSWxuVnN2SHh5a0FHaWVBUWFPMzNFX3cxRGdTUFVzVXJKc3ZpX0lMQS1RNm5VanhSRTBKU3lHbGVlSnB4THB3aDVwWWhtdmxKODVuYkFQMTF0SXJ4UV9fUWxSY3ExbGNWSmVfZ2ZDaGFIcFBEbC1Vd2FLMzNoWUhyZXZUelljZ1p0TDFhVzVIQzR4ZDdfY1V6TmliVXdaS3piSFdHVTk3aGJSSGdlZzZZWWUwTQ?oc=5",
+            "published_at": "2026-10-03T23:19:40Z"
+          }
+        ],
+        "raul": [
+          {
+            "title": "🚨 ¿Se encienden las alarmas? Raúl Jiménez aparece con muletas en partido de los Wolves",
+            "source": "facebook.com",
+            "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPTERWUU9GLWp6MFp1LXRkc0tUaDU0UXFUNVpOZmg5NkZ4eUEyVnFzMWdTX3FXamJacTJrdDctMlU2Ym5FSjQ2eWtyLXFrVzJ5UzZDXzAta2RrWExjUnAtUno5aE9QekFldE9ycE8yZVc2czRPTFpBSnhTa1htcnNmZnlwVXlvZ0o5ZzlXNFItTDI5SVlSb2pLd01EajFleVkxMC1YSkhiWEw1d19SNHNXRnZ4Um9VZkJXbElwS04wa0JqQlRhblMtbDVaaXdoTmZlMVU1RWs5WlpiUmJGekIzd1g3V0t1T3h4?oc=5",
+            "published_at": "2026-09-21T19:07:37Z"
+          },
+          {
+            "title": "Raúl Jiménez Enciende las Alarmas al Aparecer en Muletas en Partido del Wolverhampton",
+            "source": "N+",
+            "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOaWwwMFIxcEVJN0I2ZkZwTjZURnBlV2w0aFZvZUhJRXlKWDhUM1FrS1J6dlVXQ1Vsbk5PeEk3X1ByTVdZUUh6T1E1Y0ROOUtZUWRpeHJZWVlxeTVNLTNuVzBvOEtJX3JyMlhITXUySWlISkZpZXFCaXRWaGRFQmVjVjJEVGs0YXlzenB0ZlB0clVhdjFhWWFfUEJweHlWN3UyN25LRmw2TkFRaWZuT0RBSEdnSS1XeldnN0lFR1FhVE84aVBi?oc=5",
+            "published_at": "2026-09-21T07:00:00Z"
+          }
+        ],
+        "quinones": [
+          {
+            "title": "Julián Quiñones celebra la Independencia de México: “Viva México de mi corazón”",
+            "source": "Récord",
+            "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSjRyTFBRQlBwOUJERUlEc1YwTjdXV1NOS2ZwRU1NMFdzZWd2VlN3SjIyamFuSDJhM0xTVkIxbW9WbDFybEx3WVI3UGZWd0dYMEcxbEtTVTZ2YThHRktIOHpybDF3WmJGblhobmxPQUd3TFJ6aVdVblhlQ0g5TDg1SGxCaWxNRzFXbkQ1TXhmQUNabW1NdElYc3haM2x5RzVh?oc=5",
+            "published_at": "2026-09-15T07:00:00Z"
+          },
+          {
+            "title": "Julián Quiñones debuta con gol en Champions League de Asia",
+            "source": "ESPN México",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNUVY2UDI0R0pnOHlqM1ZnNUE0b1Rya0toLTlXSnRNRnBjd2cxS1ItTHlNQUZZX2k4S2t2R1l2ZE9wZFZuWV9uck9DRjBkeWo1R2EwT3laMzlCT0RCcFZyNU1jRHM3SGphWnR3a2lxZjM1aE1helZ3a01Uallab3lzQXpJM1B2VXlpWDNlQ21kcnhLTlFDUHJPTGluTEpwQQ?oc=5",
+            "published_at": "2026-09-14T07:00:00Z"
+          }
+        ],
+        "mora": [
+          {
+            "title": "México vs Estados Unidos: horario, canales y Rafa Márquez define si juega Gilberto Mora",
+            "source": "Tribuna de México",
+            "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcE81aG92NV9FOTFqbFBJUGxucjBzNGNnYW5TNktnR0hxbzZ5Q0ZmMkJJVWdtZml1aTRkejI4RFlzQWxnVTZjaTBPY0hTVEtzWVBZWGxzZ0Y0X3VHNnFjb0hISGs5RlYtX0tSekxlMGdNU2dMVUJiQUdRQjNMNVF2elN6bWRXY0tHdmtSbnFaaFZuRFZyNHVKQkxXWEp0V0RRSDN1Y2hGcDRhMnB3MkdtenNKUlFTYUk?oc=5",
+            "published_at": "2026-10-04T03:15:24Z"
+          },
+          {
+            "title": "Rafael Márquez descarta a Gilberto Mora y no jugará ante Estados Unidos",
+            "source": "sdpnoticias",
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNNklDZHBWV1c3eU5SNUdGUHppVnVVQnBuQnlwRmlFWnllNHFjQ3hvT2JUV05sTW02RVYxYnRrZjh0RV8ySi1VSHFKdDRncnUtZlB1dm5rZ21ueUVvWjNGZFdBSTlkVkU5aGxvOG9jWnYtUUZjeVdRbGZwSEJQWWN3cks5ZUdoLS1JbEV1QW9xSHFBVkZKay1IV2U2bFI1OVRUaVoxcjJoUkdHYWVMY1E?oc=5",
+            "published_at": "2026-10-04T01:12:00Z"
+          }
+        ],
+        "vasquez": [
+          {
+            "title": "Le cierran las puertas a Johan Vásquez en Génova",
+            "source": "AS México",
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNNnhaMTdmTjlqYzhURERybXNQNXJaMUpncmRkYV9XNk5yR3N4aEFQNE5wbVg1aFFwNGstQTNHZjJ4SEVOWTVVYmR6T0psS2dnQWhoTUJOczdKdDU5THA4VlhjSFZMTUcxYmxJcWpzbWRJZHAtZE5MWUZDVG0za2o4YnV5NlF0eGJZbWY1VGVmWnFrcFJsY3g0Q2RjUzF0Z2VfcXU5bFpEODBocWRDNVHSAcIBQVVfeXFMTUlkQmtta3JSNzJWV2JWZG82SkJ6VEVnZlo1YzFuVkhmTkhyQTJYTjdnOXctTVFYV0NvZi0zVGJMX3UtS0ZxeW54VDBjNkZKS1F2WDJIcFYwSHFBSmxPZ2tZYUpJZ2ZqSWYzMFVLcjdKY0hoeko3Y2N0d3diMDIzd0p5UjNseUNyRS04OE5KNXBDb2xldWcyOFNzdHlpZjVCaE51aWM5aTRsNTYtNFphRl9ySmFyYl9KMk9FbTRmTEJBbWc?oc=5",
+            "published_at": "2026-09-22T07:00:00Z"
+          },
+          {
+            "title": "Johan Vásquez: la Roma estuvo cerca de ficharlo, pero el Genoa conservó a su capitán",
+            "source": "Claro Sports",
+            "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNT0M2NW1vNnZ6d1pZMjVldEduWGo3WDh3Z2N0TEpTYV9vTDIyZ2YyaHFETzl6cUN2VGxTTGhoODNSbEw5MmFubk8xa09MZ0lqTU9vVjZzSTg4RU1fa1VzM05kX3pacWxQSlZpZU5ZU0M1WF85bmxNb2hMcGFPaHlSVTQ4TEJDSjM3R0dweEJwZlFRX1BJU1V3d2syaFBHaW5mck1SWGpOVTlxc2k5Yll2Q1lOM2ZFRzV6R3JLby1oWVRwakVOeVRyRFd0eHRfTXpr?oc=5",
+            "published_at": "2026-09-22T07:00:00Z"
+          }
+        ],
+        "gimenez": [
+          {
+            "title": "Santiago Gimenez no jugó en la victoria del Porto sobre Benfica",
+            "source": "FOX Deportes",
+            "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMWxiU1gxd0RLMXVJSTgtNjZ3YnN6QUhSaUxXZVNFYUNwd2ZFblk1d1p2TVo2VEYtNXBVdzA4M2lYYmdPSGpFXzZGVkdlM0ZzSURSWlRwc1MxX1B5MVc1dzA0WF9KRmpyLUVQa2RYeGU1UkV0NkhSOHU0TkdBT1BWXzJxaW16R3VlTXlBSzJQZzJKa2xIdUtiV0c1bXh4Y0JnMnFET2ttSElKcFpSNzM4Nm1xR3JmUEU?oc=5",
+            "published_at": "2026-09-21T00:01:29Z"
+          },
+          {
+            "title": "Santiago Giménez se quedó en la banca en triunfo de Porto contra Benfica",
+            "source": "Récord",
+            "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOcEVtVmdIZDVOYjF6UUpxV3RkR0dWQ0R6dkd1UkhsZFZGSHRSNC1PNElhSGh3LXFscXIxWFdOV0h1M01ybTNwYWUtZjNqc0VfYWJPZVFjU2VSQzFldVpQYU81N1JRZ2xHeXlHNmhyZG12YzlIVVY4Mi1ZVjRySFNnT2MyMlBiN3FLbjJ6al9YY2xwVFR0Rk11eFRfVC1JWDJxS3NMRW1LQmk0YXBYWFBVT25IeHJGWDBzTFNOWHc1TTJpX2FSNkE?oc=5",
+            "published_at": "2026-09-20T07:00:00Z"
+          }
+        ],
+        "chavez": [
+          {
+            "title": "¡De alto riesgo el próximo juego de Mateo Chávez en Europa League!",
+            "source": "TUDN",
+            "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNTU52cElST0NXOFhoVmdJVjJwd3FzVmJrOFRsVzY4S1BqZjdwNWNFbnNJVzFXN0kyekFEWVFiRms1T1pqeU5wNE1hSm5icmd4b1BpYWtyejFvaVkzbkNVU2ltalhYZ3BaMVZwX3lTSi1yWVFRNkUwSXVraldnQng3QzNWa2dReUIzczdPSHJ4VXV3THV0MGRpZDJnajMzQ1JkN1lJR3VvaW9ZS3VFdjZ1UUJlQnFHZTA?oc=5",
+            "published_at": "2026-10-03T18:18:00Z"
+          },
+          {
+            "title": "¡De alto riesgo el próximo partido de Mateo Chávez en Europa League!",
+            "source": "TUDN",
+            "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQmkydGhnazFuQUdIbnN5UTVkTEVjcTlPTEJyMWlacGdvQnQ5Vlc2Nm9XamRnUzdmUDd0aG9QTlFOTWkteEZQRU9GQ3l0QllsZ0FjOEJDWXpQTGFxNHkxc3RLdHZUendkMXRJbFdxRnNsRzZ6NmpPejB1OE41UGF5VEhEeDI3Ym5USUxpY0hTRTg0RWlZcndGdzkxNlhXUnVVbDkzd1p4YXNZZndvOVNIcVp2TU5RU19Vby1MamozQkoycmZWMF9IbA?oc=5",
+            "published_at": "2026-10-03T18:16:06Z"
+          }
+        ],
+        "obed": [
+          {
+            "title": "¿MLS o Liga MX? Obed Vargas responde qué torneo interesa más en Europa",
+            "source": "El Heraldo de México",
+            "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPczU2aElZUnk3SVp2MlNNWGpmTkFaZkFpSllWb1V6Q2RlYUV4MVNvcHJOODhkd25DbEhtcVFZTlo2RTZUbjhDUjNtQjNPZjNPcmNkUDJIR3pQM29MR25xYUdua1ljcmVsUm5NcjhiaXNYeU9XZm80UWdBVHM5Sl9lSGNzallQYlFlMjJOZFd1WlF1QnQ4bDg0NW9rN012Y2lrVzczM3ZHX2dZMWUybmVMa1N0eFlUZE9YTnlTZndiOHl1Ym9uV1Nz?oc=5",
+            "published_at": "2026-10-03T20:16:00Z"
+          },
+          {
+            "title": "Obed Vargas revela el sacrificio que todo mexicano debe hacer para llegar al futbol europeo",
+            "source": "Infobae",
+            "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQTXhScHh4dGNLX0d1ejQxWlFQMWxIVFBoOEh0ZnZyX09CRGNablhhclhkbGh1MXlJdnRuWS13NUdNU1J5Z1NwQTBycG1wR2I2ek84TDZ0Tk9qRnhNTmxTSDhDU1M1TkhOaXA5d1AzOVdFSkV4ZVZkeUxGcFhfWTlOa0FqWTJmd0QzdmNrZVYyWGpnUExJSEFoRC1vTl9pekxaSXQwd01JYmJOVU1rQmFYOHcxV3BpVGJ2SUU5eFNfNWhVaTBJNzRJSkRST3ZCTDhjWkxQdXZ1SFZBNk3SAfYBQVVfeXFMTkxLX2QwVjczUjNpa0NjYnlBdVRiM2lKNXY2b21ZcXN5S1MzdnhnRjJwYlFyR0hCYkdCaFRRaFA5YnNQSWd1YkVEMG96eEd3ZDV3RmU0V0xKdUgxdkItdEdLNExGX2xCT1BxZ2VXUnhsaFdsUG1hZ2ZrR0pNSlhKa2FKalBTM3NBb1hKdlRFVHBxODRMRllkS1dmeFlzd09jbXVkdWVLczhvSGtyV01mTWZFdFNjYl85WHVyd21FdW1qcjhnR3FVYmQxdWd5SzJqQzBxNndnQWNnS0J4Ml8wOHlEWEQwWnFheThpTVBORVlEbWtPd2lR?oc=5",
+            "published_at": "2026-10-03T16:09:36Z"
+          }
+        ],
+        "fidalgo": [
+          {
+            "title": "Álvaro Fidalgo asegura que le gustaría regresar a las águilas del América - esto",
+            "source": "El Sol de México",
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNazc2SEpuQW1LcmdLQlBEVlV0cUJ2eE5aZ3owdGMyUmZ5LXVYYU42ZjJqdzRlTDNidXAwWnkybnpGX2Rvc2JPeS1rb0w4UnBlZUNsajQzVGRDeFZXNlFib2JvSzNwQmdaZGt6QzJRTW12dE1KdUc5bGJIU1dSYUJzamFhRnNfR29yNGY5dWZiekNiVGdvbzIzUXNUMTd5RUViZlJnSnVfbjBKczl0MVhwNW9jZk0?oc=5",
+            "published_at": "2026-10-04T04:16:41Z"
+          },
+          {
+            "title": "¿Álvaro Fidalgo piensa en dejar al Real Betis en el mercado invernal ante la falta de minutos?",
+            "source": "bolavip.com",
+            "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPS3RUcWw0dURNUUZQTzBsODRnRkdGR0hQMVFYUy00b3AzWV9fclhIUnF1b0wzQzNKbXpBdE8yVUdoVE91bTlYVGpadWVfUU9maHlqeVFNY205YWMybW9faVBuMTFWZjk1QjNJb0lWUXliYWtXaEpYMzNnN2tTTVRueFptVWJvZkEyVWpCNG02SDlXUFdyWnk2MVZpWFpZaHBRNnZoWVdybHFHQTFQY09FLWZBWmVKdWFrekpGSlVqb2oyazJRSWRrTk8tcmV3Ni1fVk5IRUc0b2JoQdIB3wFBVV95cUxPd2dpR2RlcXNOVEJBUHJPMHgyZWtScjdzY2tZeElYMTVVYzRNbDhyOHh6UEsxYi1iQXhMTTV6ZDhaQllBa05DVUhpWi1CajZjZkF5YS1vOUlfUzB1ajFKYldsXzlQSjZxTVBuZno1R3hvTy1rNlh6ajlQOWpOakJEbzlFaHR5d1hVWC1zRkZKa2gzSS11ZEZ5RUZENzQyeWo4RzFNRTNlNEQ3WC1DZnNpYUNvbEZpMFBaUU9PdmJ3ZzZDTm5BcVktTF9PeFhTZXZhZ2RBbEJQU05CT1I4MDA0?oc=5",
+            "published_at": "2026-10-03T23:50:51Z"
+          }
+        ],
+        "huescas": [
+          {
+            "title": "Mexicanos en Europa: Rodrigo Huescas rompe el silencio y confirma fecha de regreso con Copenhague",
+            "source": "Al Bat",
+            "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPZmQydEJVTjA1YjJiZXdrUWlQWEdWS1NDRTF2N1FuMUk3UW5Id3piV2dhdFJwNlBGQnhlMFB4QnV2cUJlVWhYMFF6UVZtNURkRDZqM21MX1liWGNaZDhLOXh3emRBUVd2bjBHZkl2N2s3cnFtU2kzdEZJemRfeFdMRDloXzViZldoZWpnSGZEX212WTBZR1I1cUdSclRLekZ3YzZyMTRTZHdnUXp4RGZZdmczYzlYR0NuWjZpLXUzd1dvbjZLUFgyenc3WTJhTUNDTkE2SmZsWGRHTjNyNHY00gHkAUFVX3lxTFBzVUV5UFk3VDBBZEN6WWZCM3IydGJGcFZ3YVlwb2loRHZVQ1VCcjRpTGhLSUx6X2czM0JieFJfYjhtNlUwT3NSSEhmZk1hZUdQMUx5ODdfWHNmQnJ3dHNpNzdiXzZKNHQ0Ui05dm8xblhIQ2E1cTFDMWNvWlFUZzFfcUJxY2prMlZkaE93SmxNSWVxdFFaSHZEdlBybVhkT3M1aC1KSmVhbUlUMVFKdzlfWVBZNUxIY2hqRkJsb3VGNGV3YjBKRFJ4dzNsUjFORXpLcG1vMGZrQkRhaHg5RUo1YkRiQg?oc=5",
+            "published_at": "2026-10-02T22:00:00Z"
+          },
+          {
+            "title": "Rodrigo Huescas confirma su regreso a las canchas con el Copenhague tras polémica detención en Dinamarca",
+            "source": "Infobae",
+            "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPNGpJSVNWM2JvcXg5X0ZFV2EtZlc5VUVDNFh4ZVMzOG94b08tWGJ4VHIwRHpJUXpMa01qSGNwTnU5ZXE2S2c4MTllaW15a3dZN0xBTUI3aTIyQVdLbmdCY19zekhtYUo5WG1lV1JrMVgwV3VQeEgza1pfQmlFU3pSUlh2aC1VQnZiaVRhQVo1MWk4dGgzdW9Wa3FSVkVoelIzTGRQa3dEcG9RZkNRcnEtRXhXaVFoWEROWWhoZVBWRTNUR21kNEJBa1I3eEZGc3ZqM1lBS0NxejVVOWU5bzVaODVhSGZ1aDdQZWhfcdIBhwJBVV95cUxQbXRVUTRIQ0FmUlZXRlc5b0JuUUNzLWgzQ0tfS0ZWMzZpN2FkbnAzd3JhYzhpb2Ria1RVUWlaODIxRXpjUTZpZXYxbFpwR1NBRjZKekxZOW9LWXd3TDlDRDU4MEd4N041eS1hamd0OXhwVnhjS1NqTHpVbjBpOFZ3VEN6Tml3R2hFeUNCNmpJNXo5WmRBMS1PdmFuUlRuN2J4WnBnaE1Ddm1JX3MwTlItSXdiclFmZkdxN3JwekpUS2hQOVgzdjRHYXJadU1IRjFJbTZoVmlNQXoyU1dDZXNqSlBHU0NMSFVoYzhSVS1rYy1qZG9JWXU4YmZsT2d3ZmZfeWVmTXR3dw?oc=5",
+            "published_at": "2026-10-02T19:10:00Z"
+          }
+        ]
+      }
     }
   }
 }
