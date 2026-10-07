@@ -412,7 +412,13 @@ def analyze(data, player, target):
         for slot, lbl in (("startXI", "titular"), ("substitutes", "banca")):
             if any(p["player"]["id"] == player_id for p in team.get(slot) or []):
                 role = lbl
-    if data.get("lineups"):
+    # La API a veces publica solo los 11 titulares y la banca (substitutes) vacía hasta ~1 h después o
+    # nunca (pasó en México-Chile, 6-oct-2026): quien no es titular NO está "no convocado", solo no se
+    # sabe. Sin banca publicada no se afirma nada de él (ni aviso, ni estado).
+    team_lu = next((t for t in data.get("lineups") or []
+                    if (t.get("team") or {}).get("id") == target.get("team_id")), None)
+    banca_pendiente = bool(role is None and team_lu and team_lu.get("startXI") and not team_lu.get("substitutes"))
+    if data.get("lineups") and not banca_pendiente:
         if role == "titular":
             add("alineacion", f"⭐ {emoji} ¡{nombre} titular con {label}!", f"{match} · {league}", 4)
         elif role == "banca":
@@ -463,7 +469,7 @@ def analyze(data, player, target):
             # y con él cambiaba la llave, lo que mandaba el aviso dos veces.
             k = f"subst:{pid}:{aid}"
             evidencia = True
-            sin_alin_entra = role is None and not data.get("lineups") and aid == player_id
+            sin_alin_entra = role is None and (not data.get("lineups") or banca_pendiente) and aid == player_id
             if (role == "banca" or sin_alin_entra) and not entered:
                 entered, in_minute = True, t["elapsed"]
                 add(k, f"🔄 {emoji} ¡Entra {nombre}! {m}", f"{label} · {score()}", 4)
@@ -494,7 +500,7 @@ def analyze(data, player, target):
         if not es_club or role or goals or assists or entered:
             add("final", f"🏁 {emoji} Final {label} ({nombre}): {score()}", detalle, 3)
 
-    current_status = "no_convocado" if data.get("lineups") and role is None else \
+    current_status = "no_convocado" if data.get("lineups") and role is None and not banca_pendiente else \
         role or ("en_cancha" if status in LIVE else
                  ("finalizado" if status in FINISHED else "sin_partido"))
     # Suplente que ya entró y sigue jugando → "en_cancha" (antes se quedaba en "banca" todo el partido).
@@ -504,7 +510,7 @@ def analyze(data, player, target):
             current_status = "en_cancha"
         elif out_minute is not None:
             current_status = "banca"
-    elif role is None and not data.get("lineups") and status in LIVE:
+    elif role is None and (not data.get("lineups") or banca_pendiente) and status in LIVE:
         # Partido (club o Selección) en curso sin alineación publicada: NO se asume que juega. Solo "en_cancha" si
         # un evento lo prueba (gol, asistencia, cambio); si no, "sin_alineacion" (la app lo muestra como
         # partido de hoy sin afirmar nada).
@@ -512,7 +518,7 @@ def analyze(data, player, target):
 
     return alerts, {"status": current_status, "match": match, "league": league,
                      "score": score(), "goals": goals, "assists": assists,
-                     "summary": summary}
+                     "summary": summary, **({"banca_pendiente": True} if banca_pendiente else {})}
 
 
 def registrar_ultimo(player, target, snap, info):
@@ -1251,6 +1257,10 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         if len(_p) == 2 and _p[1].count(":") == 3:
             sent.add(f"{_p[0]}:subst:" + ":".join(_p[1].split(":")[2:]))
     alerts, info = analyze(snap, player, target)
+    if info.get("banca_pendiente"):
+        # Si un aviso "no convocado" salió por error mientras la banca no estaba publicada, se olvida
+        # para que cuando la API publique la banca se mande el correcto (banca / no convocado).
+        sent.discard(f"{player['key']}:{key}:{fid}:alineacion")
     match_info = {
         "fixture_id": snap["fixture"]["id"],
         "home": nombre_es(snap["teams"]["home"]["name"]),
