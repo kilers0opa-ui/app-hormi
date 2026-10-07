@@ -1285,7 +1285,7 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     # Corrección manual (hormi_manual.json): {"<fixture_id>": {"<jugador>": "banca"|"no_convocado"}}. Solo
     # aplica al ESTADO cuando la API no sabe del jugador (sin alineación / banca incompleta); no manda avisos.
     if info.get("banca_pendiente") or info.get("status") == "sin_alineacion":
-        _man = ((load_json("hormi_manual.json", {}) or {}).get(str(fid)) or {}).get(player["key"])
+        _man = ((load_json(Path("hormi_manual.json"), {}) or {}).get(str(fid)) or {}).get(player["key"])
         if _man in ("banca", "no_convocado"):
             info["status"] = _man
     if info.get("banca_pendiente"):
