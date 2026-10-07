@@ -1282,6 +1282,12 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         if len(_p) == 2 and _p[1].count(":") == 3:
             sent.add(f"{_p[0]}:subst:" + ":".join(_p[1].split(":")[2:]))
     alerts, info = analyze(snap, player, target)
+    # Corrección manual (hormi_manual.json): {"<fixture_id>": {"<jugador>": "banca"|"no_convocado"}}. Solo
+    # aplica al ESTADO cuando la API no sabe del jugador (sin alineación / banca incompleta); no manda avisos.
+    if info.get("banca_pendiente") or info.get("status") == "sin_alineacion":
+        _man = ((load_json("hormi_manual.json", {}) or {}).get(str(fid)) or {}).get(player["key"])
+        if _man in ("banca", "no_convocado"):
+            info["status"] = _man
     if info.get("banca_pendiente"):
         # Si un aviso "no convocado" salió por error mientras la banca no estaba publicada, se olvida
         # para que cuando la API publique la banca se mande el correcto (banca / no convocado).
