@@ -425,7 +425,12 @@ def analyze(data, player, target):
     if (role is None and target.get("kind") == "seleccion" and data.get("lineups")
             and _convocado_oficial(player["key"], fx.get("timestamp"))):
         banca_pendiente = True
-    if data.get("lineups") and not banca_pendiente:
+    # Aviso de alineación TARDÍO (la API publicó la banca con el partido ya avanzado, p. ej. al min 32 en
+    # México-Chile): "banca" / "no convocado" ya no sirve de nada y además puede ser incorrecto. Pasados
+    # 10 min de juego (o con el partido terminado) solo se manda el de titular; el estado en la app sí se actualiza.
+    elapsed = (fx["status"].get("elapsed") or 0)
+    tarde = status in FINISHED or (status in LIVE and elapsed > 10)
+    if data.get("lineups") and not banca_pendiente and not (tarde and role != "titular"):
         if role == "titular":
             add("alineacion", f"⭐ {emoji} ¡{nombre} titular con {label}!", f"{match} · {league}", 4)
         elif role == "banca":
