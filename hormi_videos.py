@@ -92,10 +92,22 @@ DEFAULTS = {
     "gol_caducidad_horas": 3,         # un gol/partido pendiente más viejo que esto se omite
     "gol_retencion_horas": 48,        # cuánto se conserva un gol/partido en videos_gol.json
     # --- modo --eventos: final de partido (resumen + noticia principal)
-    "resumen_intentos_min": [30, 60],     # minutos después del final en que se busca el resumen (2 intentos) y se refresca la noticia
+    "resumen_intentos_min": [30, 60, 120],     # minutos después del final en que se busca el resumen (3 intentos) y se refresca la noticia
     "resumen_margen_min": 10,             # el resumen puede haberse publicado hasta N min antes de que se detectara el final
     "resumen_max_busquedas_dia": 20,      # de las 50 búsquedas del día, máximo 20 pueden ser de resúmenes: los goles siempre conservan cuota
     "resumen_solo_con_minutos": True,     # solo se busca resumen si algún jugador del roster tuvo minutos
+    # Calidad del resumen: solo se acepta el de un canal confiable (estos nombres, o el canal oficial de alguno de
+    # los dos equipos). Los videos de canales raros (voz de IA, "reacciones", narraciones de relleno) se descartan.
+    # Se puede ajustar en hormi_videos_fuentes.json → config.
+    "canales_confiables": ["tudn", "espn", "fox sports", "foxsports", "claro sports", "clarosports", "tv azteca",
+                           "azteca deportes", "azteca 7", "televisa", "tyc sports", "dsports", "directv sports",
+                           "sky sports", "dazn", "tnt sports", "cbs sports", "canal 13", "tvn", "chilevision",
+                           "sport tv", "movistar", "fifa", "conmebol", "concacaf", "uefa", "mediotiempo",
+                           "record", "marca", "superdeporte", "futbol total"],
+    "canales_bloqueados": ["spectaglobeworld"],
+    "titulos_descartados": ["gameplay", "efootball", "fifa 2", "fc 26", "fc26", "simulacion", "simulation",
+                            "reaccion", "reacciona", " en vivo ", " en directo ", " live ", "prediccion", " previa ",
+                            "analisis", " ia ", "inteligencia artificial", "narracion", "narrado", "de infarto"],
     "resumen_notificar": True,            # manda "Ya está disponible el resumen del partido de {jugador}" cuando el resumen aparece (False = apagado)
 }
 
@@ -518,6 +530,21 @@ def is_match_summary(entry, home_pref, away_pref):
             and any(w in title for w in RESUMEN_WORDS))
 
 
+def resumen_confiable(entry, home_pref, away_pref, settings):
+    """True si el canal es de los confiables o el oficial de alguno de los dos equipos."""
+    ch = normalize(entry.get("channel") or "") + " "
+    return (any(t in ch for t in settings.get("canales_confiables") or [])
+            or mentions_team(ch, home_pref) or mentions_team(ch, away_pref))
+
+
+def resumen_descartado(entry, settings):
+    """Canal bloqueado o título que delata que NO es el resumen oficial (voz de IA, reacción, partida de videojuego...)."""
+    ch = normalize(entry.get("channel") or "")
+    title = " " + normalize(entry.get("title") or "") + " "
+    return (any(b in ch for b in settings.get("canales_bloqueados") or [])
+            or any(w in title for w in settings.get("titulos_descartados") or []))
+
+
 def send_summary_push(config, players, video, st):
     """Notificación 'Ya está disponible el resumen del partido de {jugador}'.
     Una por cada jugador del roster que tuvo minutos en ese partido (cada una
@@ -659,7 +686,9 @@ def _finales_step(out, config, settings, sources, notify, now):
         home_pref = team_prefixes(st.get("home") or "", aliases.get(st.get("home")) or [])
         away_pref = team_prefixes(st.get("away") or "", aliases.get(st.get("away")) or [])
         since = base - timedelta(minutes=settings["resumen_margen_min"])
-        query = f"{st.get('home')} {st.get('away')} resumen goles"
+        # Cada intento usa una búsqueda distinta (los videos de relleno suelen salir primero con "order=date")
+        base_q = f"{st.get('home')} {st.get('away')} resumen goles"
+        query = [base_q, base_q + " TUDN ESPN Fox Sports Claro Sports", f"{st.get('home')} {st.get('away')} highlights resumen"][min(st["intentos"], 2)]
         log(f"🔎 resumen {match} · intento {st['intentos'] + 1} · {query!r} · desde {since:%H:%M} UTC")
         found = search_videos(query, published_after=since, max_results=15)
         changed = True
@@ -678,14 +707,18 @@ def _finales_step(out, config, settings, sources, notify, now):
         candidates = [e for e in found
                       if is_match_summary(e, home_pref, away_pref)
                       and (e.get("published_at") or "") >= since_iso
-                      and e["id"] not in used]
-        log(f"     {len(found)} resultados · {len(candidates)} válidos")
-        if candidates:
-            best = sorted(candidates, key=lambda e: e.get("published_at") or "")[0]
+                      and e["id"] not in used
+                      and not resumen_descartado(e, settings)]
+        # Solo canales confiables (el primero en publicar). Si hay válidos pero de canales desconocidos,
+        # no se acepta ninguno: se espera al siguiente intento (los oficiales tardan más en subirlo).
+        confiables = [e for e in candidates if resumen_confiable(e, home_pref, away_pref, settings)]
+        log(f"     {len(found)} resultados · {len(candidates)} válidos · {len(confiables)} de canal confiable")
+        if confiables:
+            best = sorted(confiables, key=lambda e: e.get("published_at") or "")[0]
             video = strip_private([best])[0]
             st["status"], st["video"] = "resuelto", video
             log(f"     ✅ {video['title']!r} ({video['channel']})")
-            if notify and settings.get("resumen_notificar"):
+            if notify and settings.get("resumen_notificar") and not st.get("silencioso"):
                 send_summary_push(config, players, video, st)
         elif when == "final":
             st["status"], st["motivo"] = "omitido", "sin resumen tras los intentos"
