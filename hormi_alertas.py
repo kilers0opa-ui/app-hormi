@@ -418,6 +418,13 @@ def analyze(data, player, target):
     team_lu = next((t for t in data.get("lineups") or []
                     if (t.get("team") or {}).get("id") == target.get("team_id")), None)
     banca_pendiente = bool(role is None and team_lu and team_lu.get("startXI") and not team_lu.get("substitutes"))
+    # La banca que publica la API también puede venir INCOMPLETA (México-Chile, 6-oct-2026: 10 suplentes
+    # y faltaban Giménez, Mora, Vásquez y Chávez, que sí estaban en el banquillo). Si el jugador está en
+    # la convocatoria oficial de la Selección, que no aparezca en la lista de la API NO prueba que no
+    # esté convocado: se trata igual que banca no publicada (sin aviso y sin afirmar nada).
+    if (role is None and target.get("kind") == "seleccion" and data.get("lineups")
+            and _convocado_oficial(player["key"], fx.get("timestamp"))):
+        banca_pendiente = True
     if data.get("lineups") and not banca_pendiente:
         if role == "titular":
             add("alineacion", f"⭐ {emoji} ¡{nombre} titular con {label}!", f"{match} · {league}", 4)
@@ -1130,6 +1137,19 @@ def _no_convocados(target, entry):
     except Exception:
         pass
     return set()
+
+
+def _convocado_oficial(player_key, fixture_ts):
+    """True si el jugador está en la convocatoria oficial de la Selección (hormi_convocatoria.json) y el
+    partido cae dentro de su ventana de fechas. Sin archivo / fuera de ventana / error = False."""
+    try:
+        sel = (load_json(CONVOCATORIA_FILE, {}) or {}).get("seleccion") or {}
+        if not fixture_ts or not sel.get("desde") or not sel.get("hasta"):
+            return False
+        dia = datetime.fromtimestamp(int(fixture_ts), LOCAL_TZ).date().isoformat()
+        return player_key in (sel.get("convocados") or []) and sel["desde"] <= dia <= sel["hasta"]
+    except Exception:
+        return False
 
 
 def _en_concentracion(player_key, entry):
