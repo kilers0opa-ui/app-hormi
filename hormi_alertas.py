@@ -504,8 +504,8 @@ def analyze(data, player, target):
             current_status = "en_cancha"
         elif out_minute is not None:
             current_status = "banca"
-    elif es_club and role is None and not data.get("lineups") and status in LIVE:
-        # Partido del club en curso sin alineación publicada: NO se asume que juega. Solo "en_cancha" si
+    elif role is None and not data.get("lineups") and status in LIVE:
+        # Partido (club o Selección) en curso sin alineación publicada: NO se asume que juega. Solo "en_cancha" si
         # un evento lo prueba (gol, asistencia, cambio); si no, "sin_alineacion" (la app lo muestra como
         # partido de hoy sin afirmar nada).
         current_status = "banca" if out_minute is not None else ("en_cancha" if evidencia else "sin_alineacion")
