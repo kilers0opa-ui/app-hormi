@@ -22,7 +22,7 @@
    "n_subs": 15
   }
  ],
- "n_events": 7,
+ "n_events": 8,
  "periods": {
   "first": 1791340200,
   "second": 1791343800
@@ -36,6 +36,8 @@
    "detail": "Yellow Card",
    "team": "Mexico",
    "player": "J. Gallardo",
+   "pid": 2881,
+   "aid": null,
    "assist": null
   },
   {
@@ -45,6 +47,8 @@
    "detail": "Substitution 1",
    "team": "Chile",
    "player": "R. Echeverria",
+   "pid": 11828,
+   "aid": 11453,
    "assist": "V. Mendez"
   },
   {
@@ -54,6 +58,8 @@
    "detail": "Normal Goal",
    "team": "Chile",
    "player": "M. Gutierrez",
+   "pid": 371790,
+   "aid": 201909,
    "assist": "G. Tapia"
   },
   {
@@ -63,6 +69,8 @@
    "detail": "Substitution 1",
    "team": "Mexico",
    "player": "J. Gallardo",
+   "pid": 2881,
+   "aid": 35544,
    "assist": "J. Vasquez"
   },
   {
@@ -72,6 +80,8 @@
    "detail": "Substitution 2",
    "team": "Mexico",
    "player": "D. Espinoza",
+   "pid": 421130,
+   "aid": 2878,
    "assist": "J. Sanchez"
   },
   {
@@ -81,6 +91,8 @@
    "detail": "Substitution 3",
    "team": "Mexico",
    "player": "R. Alvarado",
+   "pid": 2879,
+   "aid": 286663,
    "assist": "I. Violante"
   },
   {
@@ -90,7 +102,20 @@
    "detail": "Normal Goal",
    "team": "Chile",
    "player": "V. Pizarro",
+   "pid": 70463,
+   "aid": 307117,
    "assist": "D. Osorio"
+  },
+  {
+   "min": 68,
+   "extra": null,
+   "type": "subst",
+   "detail": "Substitution 4",
+   "team": "Mexico",
+   "player": "E. Lira",
+   "pid": 266345,
+   "aid": 359835,
+   "assist": "D. Garcia"
   }
  ],
  "lineups_endpoint": [
