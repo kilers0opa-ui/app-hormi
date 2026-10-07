@@ -1,238 +1,231 @@
 {
-  "updated_at": "2026-10-06T23:10:24.976738-06:00",
-  "cuota": {
-    "fecha": "2026-10-06",
-    "busquedas": 1,
-    "busquedas_resumen": 1
-  },
-  "goles": {},
-  "partidos": {
-    "1629006": {
-      "fixture_id": 1629006,
-      "home": "México",
-      "away": "Chile",
-      "league": "Amistoso",
-      "score": "México 0-2 Chile",
-      "final_seen_at": "2026-10-07T04:37:54.211676+00:00",
-      "jugadores": {
-        "armando": {
-          "team_key": "seleccion",
-          "minutes": 64,
-          "goals": 0,
-          "assists": 0
-        },
-        "raul": {
-          "team_key": "seleccion",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        },
-        "quinones": {
-          "team_key": "seleccion",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        },
-        "mora": {
-          "team_key": "seleccion",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        },
-        "vasquez": {
-          "team_key": "seleccion",
-          "minutes": 26,
-          "goals": 0,
-          "assists": 0
-        },
-        "gimenez": {
-          "team_key": "seleccion",
-          "minutes": 26,
-          "goals": 0,
-          "assists": 0
-        },
-        "chavez": {
-          "team_key": "seleccion",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        },
-        "obed": {
-          "team_key": "seleccion",
-          "minutes": 72,
-          "goals": 0,
-          "assists": 0
-        },
-        "fidalgo": {
-          "team_key": "seleccion",
-          "minutes": 82,
-          "goals": 0,
-          "assists": 0
-        },
-        "huescas": {
-          "team_key": "seleccion",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "resuelto",
-      "intentos": 1,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-07T05:10:19.584272+00:00",
-      "video": {
-        "id": "nHoH4-dKA1s",
-        "title": "Chile vs México 2026 Resumen Goles Amistoso Internacional de Infarto",
-        "channel": "SpectaGlobeWorld",
-        "published_at": "2026-10-07T04:30:28Z",
-        "thumbnail": "https://i.ytimg.com/vi/nHoH4-dKA1s/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=nHoH4-dKA1s",
-        "embeddable": true
-      },
-      "noticias_pasadas": 1,
-      "ultima_noticia": "2026-10-07T05:10:19.584272+00:00",
-      "noticias": {
-        "armando": [
-          {
-            "title": "“Papá Milito…”: La épica reacción de Armando González al triunfo de Chivas sobre el América",
-            "source": "Rebaño Pasión",
-            "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNWUFkLTJiRUpvRTBUaklUS0dKWEtwTTQ5RC1OdmR0ZzRmenJUSU90ZlpJcktrSTVNX0xIcWtoUzlaZUo1clc5SHNNcVZCaWpmUjZ3UThvbXhOcV9WNlY0UlJBNzZ2d2dfMzVuYkEzeFp0WmlIMDQ0VGl6ZlB0RVZIZl9zbXJRTHNudC1jekRYQUllaGowaVBQMEo4N2diLU5pNXF0cVJMUXJrcHI5Wk9KbmxMYWt2Z294ejNsNzdRakNBd25NMG9mTdIByAFBVV95cUxNWUFkLTJiRUpvRTBUaklUS0dKWEtwTTQ5RC1OdmR0ZzRmenJUSU90ZlpJcktrSTVNX0xIcWtoUzlaZUo1clc5SHNNcVZCaWpmUjZ3UThvbXhOcV9WNlY0UlJBNzZ2d2dfMzVuYkEzeFp0WmlIMDQ0VGl6ZlB0RVZIZl9zbXJRTHNudC1jekRYQUllaGowaVBQMEo4N2diLU5pNXF0cVJMUXJrcHI5Wk9KbmxMYWt2Z294ejNsNzdRakNBd25NMG9mTQ?oc=5",
-            "published_at": "2026-10-06T17:40:20Z"
-          },
-          {
-            "title": "Armando “Hormiga” González confiesa su gran ilusión: quiere jugar unos Juegos Olímpicos con México",
-            "source": "Infobae",
-            "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNQUsyNEtJQjNZTjgxVktHbkJZbFhsZFVrOTVSWW50RkVfTDF3dXlrT3k4VW5tUVEwMUlFS3JqZExFbUVmaEg2ZlhLLWM3NG9aZkdENEtRZk50cHhxUmkybElKb1ZjWkdablk5N19lNXlSb2JmdzFBV0szQ29Yc1RpTFI4WFNBQV9Lc2NLVTE4dHZYMWFzUjhvcm5JYmFGMkhMNU9waTVQTjYyNUNvT3VSSWxZYW9sT3JLMkVQZFpHaUtremJLZkFWZUsxNk9OTlpXSGR1enFSTFpKUjZTbUc4a9IB-wFBVV95cUxNQXVGcjhJNGZFX0tQMTlHOTlIdTM4dV93a1A1cHdpNXBhU05CRDd6RjhteDNEZWJvMzJtMUNZWC1PTy1HR1ZaODJiX2l5Q2NZdERHc2pQUjNJaXRGbUxFbnNrTnQwTkFzYUNyWkNBeEFiZHVNajV6YjlTYS1rTVpST25rVE5Td2poVjl2cVZ4azY2YUtRRjMwTUhmbTJVLTEyeTY0bnhPQTJaQjFmRENqNE9pV2lKNVRUQWpkeVAtZGJQWkFaRFdZT0FINjJNV05pSjFMSUJTM0RudkQyQzZFZXkzT0NyaUkxT01IQ2JYWFVqQlQwSVI5QVcwaw?oc=5",
-            "published_at": "2026-10-06T17:04:00Z"
-          }
-        ],
-        "raul": [
-          {
-            "title": "\"El mejor partido del Mundial 2026\": Raúl Jiménez cuenta que el México vs. Inglaterra dejó huella",
-            "source": "Excélsior",
-            "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNVjF5aHdMd3lORFZtYnRST3VUaWJDUFh5TE5yamF4NWdGTm5wOXkyS2F6OHF4QkxDTTE0VEtXTURXMWtVakIyMHJqV3FfUXMyS3ZRNi1xaHlzd1laUDhnSkQ5el9yc1l5UVcxcWdhVzBQTnU4RElHSzd4emtTMGhTTnhvYmlfakZIWXJZQl82QXVZU3lDbU9ZLUJwUE8yQ1ZwQVdwc9IBqgFBVV95cUxPa2NLTkJ3WUtfUlZ5OGdGNDJHbE5vVWtSRHVHQUpWREdRWVhWaEg4cVVlSG1ab0Rjd1NFNzlvV01ZMjNpRjJFT2RZRUxhbzhzeG1xVmxNbUlqWVF3cU02OGdmenBmVXJIZUpWMk1oU0JPelhBaE9mNGdvLXRPMzBUMlVpMUlZckNIdFRkMl8yNVRpSUxaVzY4UVFaQ3dfci1sSVhObmdUckc1UQ?oc=5",
-            "published_at": "2026-10-06T23:18:41Z"
-          },
-          {
-            "title": "🚨 ¿Se encienden las alarmas? Raúl Jiménez aparece con muletas en partido de los Wolves",
-            "source": "Facebook",
-            "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPTERWUU9GLWp6MFp1LXRkc0tUaDU0UXFUNVpOZmg5NkZ4eUEyVnFzMWdTX3FXamJacTJrdDctMlU2Ym5FSjQ2eWtyLXFrVzJ5UzZDXzAta2RrWExjUnAtUno5aE9QekFldE9ycE8yZVc2czRPTFpBSnhTa1htcnNmZnlwVXlvZ0o5ZzlXNFItTDI5SVlSb2pLd01EajFleVkxMC1YSkhiWEw1d19SNHNXRnZ4Um9VZkJXbElwS04wa0JqQlRhblMtbDVaaXdoTmZlMVU1RWs5WlpiUmJGekIzd1g3V0t1T3h4?oc=5",
-            "published_at": "2026-09-21T19:07:37Z"
-          }
-        ],
-        "quinones": [
-          {
-            "title": "Julián Quiñones celebra la Independencia de México: “Viva México de mi corazón”",
-            "source": "Récord",
-            "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSjRyTFBRQlBwOUJERUlEc1YwTjdXV1NOS2ZwRU1NMFdzZWd2VlN3SjIyamFuSDJhM0xTVkIxbW9WbDFybEx3WVI3UGZWd0dYMEcxbEtTVTZ2YThHRktIOHpybDF3WmJGblhobmxPQUd3TFJ6aVdVblhlQ0g5TDg1SGxCaWxNRzFXbkQ1TXhmQUNabW1NdElYc3haM2x5RzVh?oc=5",
-            "published_at": "2026-09-15T07:00:00Z"
-          },
-          {
-            "title": "Julián Quiñones anota golazo para liderar el debut triunfal del Al-Qadsiah en la Champions asiática",
-            "source": "Excélsior",
-            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQUWI1NkhvVTRrYXRTVW9uUldocm1ONlltQTJDRDdWN3kxZll1NTNyR083Mi1iRmtXdnUtNUNIZ3VFdzcwa2ZobUJ1X2VqLWdLV2RIMFNsdjYyZDk3QW9aRVduS08zOXMzT194WHVlN0JIdTliQUpBSlBWdnc4MjljZjhJRW10aV9UQVcyNWxaTm9pSVNkdHBnbmFPU1VxSFlWakdIZ3p30gGrAUFVX3lxTE95ZHFjWHpSSHllOWpiU3FHZVJMNFhPdHBsc1NBdzVPMm1aS0haV21XOG9UVVE4eDc3VDBRUFZvejk5ZFI4V1RLUUFFOVBaQ2RrRkhwcHM4SWpseWM2N25Cd2NlMTVQa1NVVGNVRG4yQUZwSGlzU2t1VnBlX3ZOTWNnTFdpbXdPVzd0MVlCYVlqbXhMQ1FyZWN4N3RnYkt3Z0RZajZ1U0lzbTNmQQ?oc=5",
-            "published_at": "2026-09-14T07:00:00Z"
-          }
-        ],
-        "mora": [
-          {
-            "title": "No solo es el tobillo: Gilberto Mora también presenta molestias en cadera y pubis",
-            "source": "AS México",
-            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNdVY4OUxBcFFVaC1oVEltUzFjQW9NcUxjbTRXOHBXbF93UGc3Ql9wVlZvR0Z2Qk5qWUx0dUZlLWVucTJ5cEtZQmdpeklBSjdWdEduQWZ4MmQzcVR2QldSeVVZNGFtZktMVDg3LVQzVVVtM3lEcmlfUjFkeUtwNkprenpvRUxwc0x5clFCNTdGczcxOEFKLTRFV2tIQ1ZVTTZvLW1MZExNblJOZU50TEFrYmkzQXhZMWVJUy1fcNIB0AFBVV95cUxPYk5BZlRWY2tfSmJLeFdvTElJZTRpRU5GV1NHVVN6V3pLVGtZdFh6dmwyZzExMUdULWpHbHVWaXNpZHprSUdVSFc3OTJMTS0teXlrUVNhRnpiR1VfSVdiakVHckJITFJQenIySGNqaVl5a1Qwb1RjaDZhNU82UEllVWlyMXFWNHRyZFBmQWhBTW1PUWcxX1BhbmpOa2tyQlF3WlJWRkZ6ZVFsSVpHaU9Qa2pobEM4TU1kQW0wNjAtSFMxbkhYLUNON3ZqcDdwYXk0?oc=5",
-            "published_at": "2026-10-07T02:10:57Z"
-          },
-          {
-            "title": "Gilberto Mora recibiría oferta del fútbol inglés por más de 50 millones de dólares",
-            "source": "MAGMA Noticias",
-            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaUMtV0RYRnU4NGowN3lFZWFaS01ZZjdISEgtSEViZllXN2NMcnhXSUpxT0hfSklXNnFRRzg4c19HUDZhbE01ZU1ONXF4MlVpYmRkQUR1SkFCaGVBZVFPZUp3aUNPZ000QkswdHRfVEZPVDJZYm5xNzY3bFluYTVPcXJuODRseFR6LWZ0cm1YS1IxYmtRcU5z?oc=5",
-            "published_at": "2026-10-07T02:10:03Z"
-          }
-        ],
-        "vasquez": [
-          {
-            "title": "Le cierran las puertas a Johan Vásquez en Génova",
-            "source": "AS México",
-            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNNnhaMTdmTjlqYzhURERybXNQNXJaMUpncmRkYV9XNk5yR3N4aEFQNE5wbVg1aFFwNGstQTNHZjJ4SEVOWTVVYmR6T0psS2dnQWhoTUJOczdKdDU5THA4VlhjSFZMTUcxYmxJcWpzbWRJZHAtZE5MWUZDVG0za2o4YnV5NlF0eGJZbWY1VGVmWnFrcFJsY3g0Q2RjUzF0Z2VfcXU5bFpEODBocWRDNVHSAcIBQVVfeXFMTUlkQmtta3JSNzJWV2JWZG82SkJ6VEVnZlo1YzFuVkhmTkhyQTJYTjdnOXctTVFYV0NvZi0zVGJMX3UtS0ZxeW54VDBjNkZKS1F2WDJIcFYwSHFBSmxPZ2tZYUpJZ2ZqSWYzMFVLcjdKY0hoeko3Y2N0d3diMDIzd0p5UjNseUNyRS04OE5KNXBDb2xldWcyOFNzdHlpZjVCaE51aWM5aTRsNTYtNFphRl9ySmFyYl9KMk9FbTRmTEJBbWc?oc=5",
-            "published_at": "2026-09-22T07:00:00Z"
-          },
-          {
-            "title": "Johan Vásquez: la Roma estuvo cerca de ficharlo, pero el Genoa conservó a su capitán",
-            "source": "Claro Sports",
-            "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNT0M2NW1vNnZ6d1pZMjVldEduWGo3WDh3Z2N0TEpTYV9vTDIyZ2YyaHFETzl6cUN2VGxTTGhoODNSbEw5MmFubk8xa09MZ0lqTU9vVjZzSTg4RU1fa1VzM05kX3pacWxQSlZpZU5ZU0M1WF85bmxNb2hMcGFPaHlSVTQ4TEJDSjM3R0dweEJwZlFRX1BJU1V3d2syaFBHaW5mck1SWGpOVTlxc2k5Yll2Q1lOM2ZFRzV6R3JLby1oWVRwakVOeVRyRFd0eHRfTXpr?oc=5",
-            "published_at": "2026-09-22T07:00:00Z"
-          }
-        ],
-        "gimenez": [
-          {
-            "title": "¿Romperá el maleficio? Santiago Giménez suma 390 días sin gol con el Tri",
-            "source": "24 HORAS | El Diario sin Límites",
-            "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9mRU1YOWpqMU85VVA3RGpSVzZQS2dhTjNxLW5KU1RSakFsYkJQeDRNcHliVlphWFdzaFJxNGxQMFY5TVlYcWxtSU1HNUNRTU9hYjhXR20tU1o3ZUtGWXJHdEtxbTIxTGpKbnd4ZXVTWmhMY1hqcVdGOHNR?oc=5",
-            "published_at": "2026-10-07T00:15:51Z"
-          },
-          {
-            "title": "¡Se le secó la pólvora! Santiago Giménez suma 35 partidos sin anotar gol con la Selección Mexicana",
-            "source": "Radio Fórmula",
-            "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOQ0dweWUtdDVJczBfc3JfQV83OV9xQjdnZHUxU2RYcXBzUGNqb3RKZzBRVTRGTDFGbldKYUVGQk5wRzB0UTdtTDdETEdvOTNlVHhkRWZGNzdobEFhNXctdmZQbTBnamY0WnpqaHZtYUZZTm1Wam5QWXNWQXpYTEJDeV8xdmg2WGtSTC1HdThvMXJMNGYyNkt0M1QzejJUaDQtUzZ3d25uR3d6RF82Ql9jRXJoUjhYN05XaHNWRkE2NjA1RVFtWkQ5NGs5eDZ2aU5xNFZFbWMxSFg4OTdCWERFV2lyeEJIXzBxdFFncjVB?oc=5",
-            "published_at": "2026-10-06T20:44:00Z"
-          }
-        ],
-        "chavez": [
-          {
-            "title": "Gilberto Mora y Mateo Chávez causan baja del Tricolor para el juego ante Chile",
-            "source": "López-Dóriga Digital",
-            "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxORHN3bVM1eTM1OGRiMC1PNk1fRHZTRGFndGM3SVZLTC1TRVVDbFc3V2QwcDhfVW42M2N4eGxpVlBGN0JIV0FXQ0oyakVMVFlQNVhiNS02OGtNb2gxY0lKOThzVm4wQXFwUHluR3BWQUFYUVdyMW1rWUUySU9NUDhPdFV4OVA1Q3EzTEMtVVVzaHFaMUFPQVNyQw?oc=5",
-            "published_at": "2026-10-05T22:07:45Z"
-          },
-          {
-            "title": "Gilberto Mora, Hirving Lozano y Mateo Chávez no jugarán el partido del Tri ante Chile",
-            "source": "La Jornada",
-            "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPMWxvS1RXXzNTZVFlWld1UFVjako1RkVpUF91VXJaOGh2eFBEZGluMWpZV0l0RHUwWk1LT1QzWk5URE9KWEYwaGhvYUFjOWkyN2lWaHNLQnAwbjJFMnV6Z2FndjY5QTMwUmI5ZUZnaHV1Y3I4dTZPSlRJWmNzbXBsc0tCTVZ2S0wzZWhwZVJwX055UTdyX0dwZjI2anRCOXBRMk9seFhfQjZyc1VTdW5yQnhwVkx6UUhhRW45dWNldlJObG1malNIMlVtNHQyWHRMMGZ1YnlR?oc=5",
-            "published_at": "2026-10-05T05:19:00Z"
-          }
-        ],
-        "obed": [
-          {
-            "title": "Los 5 equipos en Europa que pelean el fichaje de Obed Vargas",
-            "source": "Bolavip México",
-            "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxORXVnMGwtUkNBR1ZtMmxYdHBncVBtb1ZiTlpjR180SXlWQmRDVXloQWRVTzhNMTV4bTlWc0k0WElKaWFFdlhFbTMwSGYwYVBEMGpseUdHWkRIOE4tUVVyYzJuVmU5UVdwRmVnWUNaMy1DRUlrbnBJd0tTVHZBaERyYkNsZTZ0UnI3MWlMaEM3LU9hLXI2V0R2V3VMTTFObHVScjlCMjNJeW1vSFA0ZEF30gG0AUFVX3lxTE5aRFd4ei1Db3drS01Sc3ZaUkhmMm1FRE9BUTJ1MEVZb0ZfSlp3U3dyZ0dVdFRBZUl2NkVVdy1ENlR0SjB4Vzc0VGdZRmF4UTN1cFFMVHI3VGpPNE9nMnZIbGxyajFXSDJaZ0RRSzRpeXJraU85OGJzQmtOZTA0U181RWdsQzA5UmRYREM4bTRlZ2tveUgzT1RGNnhZTGw5RjBxTFN2aXJUSFNpeERlT0NhNXhaTA?oc=5",
-            "published_at": "2026-10-05T14:42:27Z"
-          },
-          {
-            "title": "¿MLS o Liga MX? Obed Vargas responde qué torneo interesa más en Europa",
-            "source": "El Heraldo de México",
-            "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPczU2aElZUnk3SVp2MlNNWGpmTkFaZkFpSllWb1V6Q2RlYUV4MVNvcHJOODhkd25DbEhtcVFZTlo2RTZUbjhDUjNtQjNPZjNPcmNkUDJIR3pQM29MR25xYUdua1ljcmVsUm5NcjhiaXNYeU9XZm80UWdBVHM5Sl9lSGNzallQYlFlMjJOZFd1WlF1QnQ4bDg0NW9rN012Y2lrVzczM3ZHX2dZMWUybmVMa1N0eFlUZE9YTnlTZndiOHl1Ym9uV1Nz?oc=5",
-            "published_at": "2026-10-03T20:16:00Z"
-          }
-        ],
-        "fidalgo": [
-          {
-            "title": "Álvaro Fidalgo esperaría una niña: pareja del futbolista desata rumores sobre el sexo del bebé",
-            "source": "Infobae",
-            "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOeXZ2Nlg1dVgtRUtzVVp1Z2JZRHVldE93Zko2bDlialRRQ3NRS25IZWdEOGs3dko5Uko2T21rWmVxSFdkQW9xcklUejFHN3E2cHRlSTN3MmFtQlVrQUtFVHkzR0x2R3UxUHVwWERZTGlPQ1YxSThKcjB0U2xKd3RxM3cxNkhrSEtmSTVycTZaN1pJRWEyZGZ4cm5EMEt0ZzZMajdWTXU4Nmd2YVV3Y080MVJreXJjQ2xLaUtQalV2bVVkSUJzOHFUeEw1aG5ESVRKRVHSAewBQVVfeXFMTUQ1SWpVRWZ1ZS0tSmtNNDY2cGRaWTZBZ29RV3c3ckV5OENsWE54RGZiNWg2cmMzU1N4LWU5d2pYUHVVSFZvTzZ5N0FZNWlMLU1QRTNMX1hxb3A4d0dUNWl1UF91YzRGbF9WaTR0ZzVNcTlOSEFJN0xoYkZZdXY1OHFVZ2RjWVNLU1FNQllzWUdGTklTV2Y2YWxvRkYzRlctRi1xS2E3OEE2WTZRWWw2U3RiX1Bfb04zMUFqdFhhWHVqUkpLbnVDbHNISURwbmxQRW92azNtS3pJODNqT0IwTW5semhVdnZOTGZvM0Q?oc=5",
-            "published_at": "2026-10-05T00:30:00Z"
-          },
-          {
-            "title": "¿Álvaro Fidalgo piensa en dejar al Real Betis en el mercado invernal ante la falta de minutos?",
-            "source": "Bolavip México",
-            "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPS3RUcWw0dURNUUZQTzBsODRnRkdGR0hQMVFYUy00b3AzWV9fclhIUnF1b0wzQzNKbXpBdE8yVUdoVE91bTlYVGpadWVfUU9maHlqeVFNY205YWMybW9faVBuMTFWZjk1QjNJb0lWUXliYWtXaEpYMzNnN2tTTVRueFptVWJvZkEyVWpCNG02SDlXUFdyWnk2MVZpWFpZaHBRNnZoWVdybHFHQTFQY09FLWZBWmVKdWFrekpGSlVqb2oyazJRSWRrTk8tcmV3Ni1fVk5IRUc0b2JoQdIB3wFBVV95cUxPd2dpR2RlcXNOVEJBUHJPMHgyZWtScjdzY2tZeElYMTVVYzRNbDhyOHh6UEsxYi1iQXhMTTV6ZDhaQllBa05DVUhpWi1CajZjZkF5YS1vOUlfUzB1ajFKYldsXzlQSjZxTVBuZno1R3hvTy1rNlh6ajlQOWpOakJEbzlFaHR5d1hVWC1zRkZKa2gzSS11ZEZ5RUZENzQyeWo4RzFNRTNlNEQ3WC1DZnNpYUNvbEZpMFBaUU9PdmJ3ZzZDTm5BcVktTF9PeFhTZXZhZ2RBbEJQU05CT1I4MDA0?oc=5",
-            "published_at": "2026-10-03T23:50:51Z"
-          }
-        ],
-        "huescas": [
-          {
-            "title": "Rodrigo Huescas regresa a las canchas con FC Copenhague tras un año fuera por lesión",
-            "source": "Tribuna de México",
-            "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE82SDRXb1VmX2Nxck9CUW03S2NyUmpjclNFLWFVYndEcEZFeXFxdkVlN3o2a21DNmMxRUR3RmxZYmtfalNHRXRMelpMU2pMTUkyMGxERHJPTWVCSFVwTldiRU02bEVPc013NUxkMHBGRVctc3ZO?oc=5",
-            "published_at": "2026-10-05T19:56:48Z"
-          },
-          {
-            "title": "Rodrigo Huescas Volvió a Jugar un Año Después de su Lesión",
-            "source": "N+",
-            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNQllybkRydHk0UVh0NDdudmlxRTIwQjVfTlFIWmlhQWxfQXBrak1GNUxaZlk3UmhTX09iMzg2NlB1NnJxbWNIUEpqcEFxWmtKSDlub2g5eFdWbEZrRlZYNVBDRFhkRzRyb0phYzN5d1piTkstS2RVS3dHNWI1UGJ2eFFpb0x6MklIa0R1X19IdWpxSGRsSElr?oc=5",
-            "published_at": "2026-10-04T22:03:58Z"
-          }
-        ]
-      }
+ "updated_at": "2026-10-06T23:10:24.976738-06:00",
+ "cuota": {
+  "fecha": "2026-10-06",
+  "busquedas": 1,
+  "busquedas_resumen": 1
+ },
+ "goles": {},
+ "partidos": {
+  "1629006": {
+   "fixture_id": 1629006,
+   "home": "México",
+   "away": "Chile",
+   "league": "Amistoso",
+   "score": "México 0-2 Chile",
+   "final_seen_at": "2026-10-07T04:37:54.211676+00:00",
+   "jugadores": {
+    "armando": {
+     "team_key": "seleccion",
+     "minutes": 64,
+     "goals": 0,
+     "assists": 0
+    },
+    "raul": {
+     "team_key": "seleccion",
+     "minutes": 0,
+     "goals": 0,
+     "assists": 0
+    },
+    "quinones": {
+     "team_key": "seleccion",
+     "minutes": 0,
+     "goals": 0,
+     "assists": 0
+    },
+    "mora": {
+     "team_key": "seleccion",
+     "minutes": 0,
+     "goals": 0,
+     "assists": 0
+    },
+    "vasquez": {
+     "team_key": "seleccion",
+     "minutes": 26,
+     "goals": 0,
+     "assists": 0
+    },
+    "gimenez": {
+     "team_key": "seleccion",
+     "minutes": 26,
+     "goals": 0,
+     "assists": 0
+    },
+    "chavez": {
+     "team_key": "seleccion",
+     "minutes": 0,
+     "goals": 0,
+     "assists": 0
+    },
+    "obed": {
+     "team_key": "seleccion",
+     "minutes": 72,
+     "goals": 0,
+     "assists": 0
+    },
+    "fidalgo": {
+     "team_key": "seleccion",
+     "minutes": 82,
+     "goals": 0,
+     "assists": 0
+    },
+    "huescas": {
+     "team_key": "seleccion",
+     "minutes": 0,
+     "goals": 0,
+     "assists": 0
     }
+   },
+   "status": "pendiente",
+   "intentos": 1,
+   "fallos": 0,
+   "ultimo_intento": "2026-10-07T05:10:19.584272+00:00",
+   "video": null,
+   "noticias_pasadas": 1,
+   "ultima_noticia": "2026-10-07T05:10:19.584272+00:00",
+   "noticias": {
+    "armando": [
+     {
+      "title": "“Papá Milito…”: La épica reacción de Armando González al triunfo de Chivas sobre el América",
+      "source": "Rebaño Pasión",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNWUFkLTJiRUpvRTBUaklUS0dKWEtwTTQ5RC1OdmR0ZzRmenJUSU90ZlpJcktrSTVNX0xIcWtoUzlaZUo1clc5SHNNcVZCaWpmUjZ3UThvbXhOcV9WNlY0UlJBNzZ2d2dfMzVuYkEzeFp0WmlIMDQ0VGl6ZlB0RVZIZl9zbXJRTHNudC1jekRYQUllaGowaVBQMEo4N2diLU5pNXF0cVJMUXJrcHI5Wk9KbmxMYWt2Z294ejNsNzdRakNBd25NMG9mTdIByAFBVV95cUxNWUFkLTJiRUpvRTBUaklUS0dKWEtwTTQ5RC1OdmR0ZzRmenJUSU90ZlpJcktrSTVNX0xIcWtoUzlaZUo1clc5SHNNcVZCaWpmUjZ3UThvbXhOcV9WNlY0UlJBNzZ2d2dfMzVuYkEzeFp0WmlIMDQ0VGl6ZlB0RVZIZl9zbXJRTHNudC1jekRYQUllaGowaVBQMEo4N2diLU5pNXF0cVJMUXJrcHI5Wk9KbmxMYWt2Z294ejNsNzdRakNBd25NMG9mTQ?oc=5",
+      "published_at": "2026-10-06T17:40:20Z"
+     },
+     {
+      "title": "Armando “Hormiga” González confiesa su gran ilusión: quiere jugar unos Juegos Olímpicos con México",
+      "source": "Infobae",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNQUsyNEtJQjNZTjgxVktHbkJZbFhsZFVrOTVSWW50RkVfTDF3dXlrT3k4VW5tUVEwMUlFS3JqZExFbUVmaEg2ZlhLLWM3NG9aZkdENEtRZk50cHhxUmkybElKb1ZjWkdablk5N19lNXlSb2JmdzFBV0szQ29Yc1RpTFI4WFNBQV9Lc2NLVTE4dHZYMWFzUjhvcm5JYmFGMkhMNU9waTVQTjYyNUNvT3VSSWxZYW9sT3JLMkVQZFpHaUtremJLZkFWZUsxNk9OTlpXSGR1enFSTFpKUjZTbUc4a9IB-wFBVV95cUxNQXVGcjhJNGZFX0tQMTlHOTlIdTM4dV93a1A1cHdpNXBhU05CRDd6RjhteDNEZWJvMzJtMUNZWC1PTy1HR1ZaODJiX2l5Q2NZdERHc2pQUjNJaXRGbUxFbnNrTnQwTkFzYUNyWkNBeEFiZHVNajV6YjlTYS1rTVpST25rVE5Td2poVjl2cVZ4azY2YUtRRjMwTUhmbTJVLTEyeTY0bnhPQTJaQjFmRENqNE9pV2lKNVRUQWpkeVAtZGJQWkFaRFdZT0FINjJNV05pSjFMSUJTM0RudkQyQzZFZXkzT0NyaUkxT01IQ2JYWFVqQlQwSVI5QVcwaw?oc=5",
+      "published_at": "2026-10-06T17:04:00Z"
+     }
+    ],
+    "raul": [
+     {
+      "title": "\"El mejor partido del Mundial 2026\": Raúl Jiménez cuenta que el México vs. Inglaterra dejó huella",
+      "source": "Excélsior",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNVjF5aHdMd3lORFZtYnRST3VUaWJDUFh5TE5yamF4NWdGTm5wOXkyS2F6OHF4QkxDTTE0VEtXTURXMWtVakIyMHJqV3FfUXMyS3ZRNi1xaHlzd1laUDhnSkQ5el9yc1l5UVcxcWdhVzBQTnU4RElHSzd4emtTMGhTTnhvYmlfakZIWXJZQl82QXVZU3lDbU9ZLUJwUE8yQ1ZwQVdwc9IBqgFBVV95cUxPa2NLTkJ3WUtfUlZ5OGdGNDJHbE5vVWtSRHVHQUpWREdRWVhWaEg4cVVlSG1ab0Rjd1NFNzlvV01ZMjNpRjJFT2RZRUxhbzhzeG1xVmxNbUlqWVF3cU02OGdmenBmVXJIZUpWMk1oU0JPelhBaE9mNGdvLXRPMzBUMlVpMUlZckNIdFRkMl8yNVRpSUxaVzY4UVFaQ3dfci1sSVhObmdUckc1UQ?oc=5",
+      "published_at": "2026-10-06T23:18:41Z"
+     },
+     {
+      "title": "🚨 ¿Se encienden las alarmas? Raúl Jiménez aparece con muletas en partido de los Wolves",
+      "source": "Facebook",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPTERWUU9GLWp6MFp1LXRkc0tUaDU0UXFUNVpOZmg5NkZ4eUEyVnFzMWdTX3FXamJacTJrdDctMlU2Ym5FSjQ2eWtyLXFrVzJ5UzZDXzAta2RrWExjUnAtUno5aE9QekFldE9ycE8yZVc2czRPTFpBSnhTa1htcnNmZnlwVXlvZ0o5ZzlXNFItTDI5SVlSb2pLd01EajFleVkxMC1YSkhiWEw1d19SNHNXRnZ4Um9VZkJXbElwS04wa0JqQlRhblMtbDVaaXdoTmZlMVU1RWs5WlpiUmJGekIzd1g3V0t1T3h4?oc=5",
+      "published_at": "2026-09-21T19:07:37Z"
+     }
+    ],
+    "quinones": [
+     {
+      "title": "Julián Quiñones celebra la Independencia de México: “Viva México de mi corazón”",
+      "source": "Récord",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSjRyTFBRQlBwOUJERUlEc1YwTjdXV1NOS2ZwRU1NMFdzZWd2VlN3SjIyamFuSDJhM0xTVkIxbW9WbDFybEx3WVI3UGZWd0dYMEcxbEtTVTZ2YThHRktIOHpybDF3WmJGblhobmxPQUd3TFJ6aVdVblhlQ0g5TDg1SGxCaWxNRzFXbkQ1TXhmQUNabW1NdElYc3haM2x5RzVh?oc=5",
+      "published_at": "2026-09-15T07:00:00Z"
+     },
+     {
+      "title": "Julián Quiñones anota golazo para liderar el debut triunfal del Al-Qadsiah en la Champions asiática",
+      "source": "Excélsior",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQUWI1NkhvVTRrYXRTVW9uUldocm1ONlltQTJDRDdWN3kxZll1NTNyR083Mi1iRmtXdnUtNUNIZ3VFdzcwa2ZobUJ1X2VqLWdLV2RIMFNsdjYyZDk3QW9aRVduS08zOXMzT194WHVlN0JIdTliQUpBSlBWdnc4MjljZjhJRW10aV9UQVcyNWxaTm9pSVNkdHBnbmFPU1VxSFlWakdIZ3p30gGrAUFVX3lxTE95ZHFjWHpSSHllOWpiU3FHZVJMNFhPdHBsc1NBdzVPMm1aS0haV21XOG9UVVE4eDc3VDBRUFZvejk5ZFI4V1RLUUFFOVBaQ2RrRkhwcHM4SWpseWM2N25Cd2NlMTVQa1NVVGNVRG4yQUZwSGlzU2t1VnBlX3ZOTWNnTFdpbXdPVzd0MVlCYVlqbXhMQ1FyZWN4N3RnYkt3Z0RZajZ1U0lzbTNmQQ?oc=5",
+      "published_at": "2026-09-14T07:00:00Z"
+     }
+    ],
+    "mora": [
+     {
+      "title": "No solo es el tobillo: Gilberto Mora también presenta molestias en cadera y pubis",
+      "source": "AS México",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNdVY4OUxBcFFVaC1oVEltUzFjQW9NcUxjbTRXOHBXbF93UGc3Ql9wVlZvR0Z2Qk5qWUx0dUZlLWVucTJ5cEtZQmdpeklBSjdWdEduQWZ4MmQzcVR2QldSeVVZNGFtZktMVDg3LVQzVVVtM3lEcmlfUjFkeUtwNkprenpvRUxwc0x5clFCNTdGczcxOEFKLTRFV2tIQ1ZVTTZvLW1MZExNblJOZU50TEFrYmkzQXhZMWVJUy1fcNIB0AFBVV95cUxPYk5BZlRWY2tfSmJLeFdvTElJZTRpRU5GV1NHVVN6V3pLVGtZdFh6dmwyZzExMUdULWpHbHVWaXNpZHprSUdVSFc3OTJMTS0teXlrUVNhRnpiR1VfSVdiakVHckJITFJQenIySGNqaVl5a1Qwb1RjaDZhNU82UEllVWlyMXFWNHRyZFBmQWhBTW1PUWcxX1BhbmpOa2tyQlF3WlJWRkZ6ZVFsSVpHaU9Qa2pobEM4TU1kQW0wNjAtSFMxbkhYLUNON3ZqcDdwYXk0?oc=5",
+      "published_at": "2026-10-07T02:10:57Z"
+     },
+     {
+      "title": "Gilberto Mora recibiría oferta del fútbol inglés por más de 50 millones de dólares",
+      "source": "MAGMA Noticias",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaUMtV0RYRnU4NGowN3lFZWFaS01ZZjdISEgtSEViZllXN2NMcnhXSUpxT0hfSklXNnFRRzg4c19HUDZhbE01ZU1ONXF4MlVpYmRkQUR1SkFCaGVBZVFPZUp3aUNPZ000QkswdHRfVEZPVDJZYm5xNzY3bFluYTVPcXJuODRseFR6LWZ0cm1YS1IxYmtRcU5z?oc=5",
+      "published_at": "2026-10-07T02:10:03Z"
+     }
+    ],
+    "vasquez": [
+     {
+      "title": "Le cierran las puertas a Johan Vásquez en Génova",
+      "source": "AS México",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNNnhaMTdmTjlqYzhURERybXNQNXJaMUpncmRkYV9XNk5yR3N4aEFQNE5wbVg1aFFwNGstQTNHZjJ4SEVOWTVVYmR6T0psS2dnQWhoTUJOczdKdDU5THA4VlhjSFZMTUcxYmxJcWpzbWRJZHAtZE5MWUZDVG0za2o4YnV5NlF0eGJZbWY1VGVmWnFrcFJsY3g0Q2RjUzF0Z2VfcXU5bFpEODBocWRDNVHSAcIBQVVfeXFMTUlkQmtta3JSNzJWV2JWZG82SkJ6VEVnZlo1YzFuVkhmTkhyQTJYTjdnOXctTVFYV0NvZi0zVGJMX3UtS0ZxeW54VDBjNkZKS1F2WDJIcFYwSHFBSmxPZ2tZYUpJZ2ZqSWYzMFVLcjdKY0hoeko3Y2N0d3diMDIzd0p5UjNseUNyRS04OE5KNXBDb2xldWcyOFNzdHlpZjVCaE51aWM5aTRsNTYtNFphRl9ySmFyYl9KMk9FbTRmTEJBbWc?oc=5",
+      "published_at": "2026-09-22T07:00:00Z"
+     },
+     {
+      "title": "Johan Vásquez: la Roma estuvo cerca de ficharlo, pero el Genoa conservó a su capitán",
+      "source": "Claro Sports",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNT0M2NW1vNnZ6d1pZMjVldEduWGo3WDh3Z2N0TEpTYV9vTDIyZ2YyaHFETzl6cUN2VGxTTGhoODNSbEw5MmFubk8xa09MZ0lqTU9vVjZzSTg4RU1fa1VzM05kX3pacWxQSlZpZU5ZU0M1WF85bmxNb2hMcGFPaHlSVTQ4TEJDSjM3R0dweEJwZlFRX1BJU1V3d2syaFBHaW5mck1SWGpOVTlxc2k5Yll2Q1lOM2ZFRzV6R3JLby1oWVRwakVOeVRyRFd0eHRfTXpr?oc=5",
+      "published_at": "2026-09-22T07:00:00Z"
+     }
+    ],
+    "gimenez": [
+     {
+      "title": "¿Romperá el maleficio? Santiago Giménez suma 390 días sin gol con el Tri",
+      "source": "24 HORAS | El Diario sin Límites",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9mRU1YOWpqMU85VVA3RGpSVzZQS2dhTjNxLW5KU1RSakFsYkJQeDRNcHliVlphWFdzaFJxNGxQMFY5TVlYcWxtSU1HNUNRTU9hYjhXR20tU1o3ZUtGWXJHdEtxbTIxTGpKbnd4ZXVTWmhMY1hqcVdGOHNR?oc=5",
+      "published_at": "2026-10-07T00:15:51Z"
+     },
+     {
+      "title": "¡Se le secó la pólvora! Santiago Giménez suma 35 partidos sin anotar gol con la Selección Mexicana",
+      "source": "Radio Fórmula",
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOQ0dweWUtdDVJczBfc3JfQV83OV9xQjdnZHUxU2RYcXBzUGNqb3RKZzBRVTRGTDFGbldKYUVGQk5wRzB0UTdtTDdETEdvOTNlVHhkRWZGNzdobEFhNXctdmZQbTBnamY0WnpqaHZtYUZZTm1Wam5QWXNWQXpYTEJDeV8xdmg2WGtSTC1HdThvMXJMNGYyNkt0M1QzejJUaDQtUzZ3d25uR3d6RF82Ql9jRXJoUjhYN05XaHNWRkE2NjA1RVFtWkQ5NGs5eDZ2aU5xNFZFbWMxSFg4OTdCWERFV2lyeEJIXzBxdFFncjVB?oc=5",
+      "published_at": "2026-10-06T20:44:00Z"
+     }
+    ],
+    "chavez": [
+     {
+      "title": "Gilberto Mora y Mateo Chávez causan baja del Tricolor para el juego ante Chile",
+      "source": "López-Dóriga Digital",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxORHN3bVM1eTM1OGRiMC1PNk1fRHZTRGFndGM3SVZLTC1TRVVDbFc3V2QwcDhfVW42M2N4eGxpVlBGN0JIV0FXQ0oyakVMVFlQNVhiNS02OGtNb2gxY0lKOThzVm4wQXFwUHluR3BWQUFYUVdyMW1rWUUySU9NUDhPdFV4OVA1Q3EzTEMtVVVzaHFaMUFPQVNyQw?oc=5",
+      "published_at": "2026-10-05T22:07:45Z"
+     },
+     {
+      "title": "Gilberto Mora, Hirving Lozano y Mateo Chávez no jugarán el partido del Tri ante Chile",
+      "source": "La Jornada",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPMWxvS1RXXzNTZVFlWld1UFVjako1RkVpUF91VXJaOGh2eFBEZGluMWpZV0l0RHUwWk1LT1QzWk5URE9KWEYwaGhvYUFjOWkyN2lWaHNLQnAwbjJFMnV6Z2FndjY5QTMwUmI5ZUZnaHV1Y3I4dTZPSlRJWmNzbXBsc0tCTVZ2S0wzZWhwZVJwX055UTdyX0dwZjI2anRCOXBRMk9seFhfQjZyc1VTdW5yQnhwVkx6UUhhRW45dWNldlJObG1malNIMlVtNHQyWHRMMGZ1YnlR?oc=5",
+      "published_at": "2026-10-05T05:19:00Z"
+     }
+    ],
+    "obed": [
+     {
+      "title": "Los 5 equipos en Europa que pelean el fichaje de Obed Vargas",
+      "source": "Bolavip México",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxORXVnMGwtUkNBR1ZtMmxYdHBncVBtb1ZiTlpjR180SXlWQmRDVXloQWRVTzhNMTV4bTlWc0k0WElKaWFFdlhFbTMwSGYwYVBEMGpseUdHWkRIOE4tUVVyYzJuVmU5UVdwRmVnWUNaMy1DRUlrbnBJd0tTVHZBaERyYkNsZTZ0UnI3MWlMaEM3LU9hLXI2V0R2V3VMTTFObHVScjlCMjNJeW1vSFA0ZEF30gG0AUFVX3lxTE5aRFd4ei1Db3drS01Sc3ZaUkhmMm1FRE9BUTJ1MEVZb0ZfSlp3U3dyZ0dVdFRBZUl2NkVVdy1ENlR0SjB4Vzc0VGdZRmF4UTN1cFFMVHI3VGpPNE9nMnZIbGxyajFXSDJaZ0RRSzRpeXJraU85OGJzQmtOZTA0U181RWdsQzA5UmRYREM4bTRlZ2tveUgzT1RGNnhZTGw5RjBxTFN2aXJUSFNpeERlT0NhNXhaTA?oc=5",
+      "published_at": "2026-10-05T14:42:27Z"
+     },
+     {
+      "title": "¿MLS o Liga MX? Obed Vargas responde qué torneo interesa más en Europa",
+      "source": "El Heraldo de México",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPczU2aElZUnk3SVp2MlNNWGpmTkFaZkFpSllWb1V6Q2RlYUV4MVNvcHJOODhkd25DbEhtcVFZTlo2RTZUbjhDUjNtQjNPZjNPcmNkUDJIR3pQM29MR25xYUdua1ljcmVsUm5NcjhiaXNYeU9XZm80UWdBVHM5Sl9lSGNzallQYlFlMjJOZFd1WlF1QnQ4bDg0NW9rN012Y2lrVzczM3ZHX2dZMWUybmVMa1N0eFlUZE9YTnlTZndiOHl1Ym9uV1Nz?oc=5",
+      "published_at": "2026-10-03T20:16:00Z"
+     }
+    ],
+    "fidalgo": [
+     {
+      "title": "Álvaro Fidalgo esperaría una niña: pareja del futbolista desata rumores sobre el sexo del bebé",
+      "source": "Infobae",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOeXZ2Nlg1dVgtRUtzVVp1Z2JZRHVldE93Zko2bDlialRRQ3NRS25IZWdEOGs3dko5Uko2T21rWmVxSFdkQW9xcklUejFHN3E2cHRlSTN3MmFtQlVrQUtFVHkzR0x2R3UxUHVwWERZTGlPQ1YxSThKcjB0U2xKd3RxM3cxNkhrSEtmSTVycTZaN1pJRWEyZGZ4cm5EMEt0ZzZMajdWTXU4Nmd2YVV3Y080MVJreXJjQ2xLaUtQalV2bVVkSUJzOHFUeEw1aG5ESVRKRVHSAewBQVVfeXFMTUQ1SWpVRWZ1ZS0tSmtNNDY2cGRaWTZBZ29RV3c3ckV5OENsWE54RGZiNWg2cmMzU1N4LWU5d2pYUHVVSFZvTzZ5N0FZNWlMLU1QRTNMX1hxb3A4d0dUNWl1UF91YzRGbF9WaTR0ZzVNcTlOSEFJN0xoYkZZdXY1OHFVZ2RjWVNLU1FNQllzWUdGTklTV2Y2YWxvRkYzRlctRi1xS2E3OEE2WTZRWWw2U3RiX1Bfb04zMUFqdFhhWHVqUkpLbnVDbHNISURwbmxQRW92azNtS3pJODNqT0IwTW5semhVdnZOTGZvM0Q?oc=5",
+      "published_at": "2026-10-05T00:30:00Z"
+     },
+     {
+      "title": "¿Álvaro Fidalgo piensa en dejar al Real Betis en el mercado invernal ante la falta de minutos?",
+      "source": "Bolavip México",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPS3RUcWw0dURNUUZQTzBsODRnRkdGR0hQMVFYUy00b3AzWV9fclhIUnF1b0wzQzNKbXpBdE8yVUdoVE91bTlYVGpadWVfUU9maHlqeVFNY205YWMybW9faVBuMTFWZjk1QjNJb0lWUXliYWtXaEpYMzNnN2tTTVRueFptVWJvZkEyVWpCNG02SDlXUFdyWnk2MVZpWFpZaHBRNnZoWVdybHFHQTFQY09FLWZBWmVKdWFrekpGSlVqb2oyazJRSWRrTk8tcmV3Ni1fVk5IRUc0b2JoQdIB3wFBVV95cUxPd2dpR2RlcXNOVEJBUHJPMHgyZWtScjdzY2tZeElYMTVVYzRNbDhyOHh6UEsxYi1iQXhMTTV6ZDhaQllBa05DVUhpWi1CajZjZkF5YS1vOUlfUzB1ajFKYldsXzlQSjZxTVBuZno1R3hvTy1rNlh6ajlQOWpOakJEbzlFaHR5d1hVWC1zRkZKa2gzSS11ZEZ5RUZENzQyeWo4RzFNRTNlNEQ3WC1DZnNpYUNvbEZpMFBaUU9PdmJ3ZzZDTm5BcVktTF9PeFhTZXZhZ2RBbEJQU05CT1I4MDA0?oc=5",
+      "published_at": "2026-10-03T23:50:51Z"
+     }
+    ],
+    "huescas": [
+     {
+      "title": "Rodrigo Huescas regresa a las canchas con FC Copenhague tras un año fuera por lesión",
+      "source": "Tribuna de México",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE82SDRXb1VmX2Nxck9CUW03S2NyUmpjclNFLWFVYndEcEZFeXFxdkVlN3o2a21DNmMxRUR3RmxZYmtfalNHRXRMelpMU2pMTUkyMGxERHJPTWVCSFVwTldiRU02bEVPc013NUxkMHBGRVctc3ZO?oc=5",
+      "published_at": "2026-10-05T19:56:48Z"
+     },
+     {
+      "title": "Rodrigo Huescas Volvió a Jugar un Año Después de su Lesión",
+      "source": "N+",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNQllybkRydHk0UVh0NDdudmlxRTIwQjVfTlFIWmlhQWxfQXBrak1GNUxaZlk3UmhTX09iMzg2NlB1NnJxbWNIUEpqcEFxWmtKSDlub2g5eFdWbEZrRlZYNVBDRFhkRzRyb0phYzN5d1piTkstS2RVS3dHNWI1UGJ2eFFpb0x6MklIa0R1X19IdWpxSGRsSElr?oc=5",
+      "published_at": "2026-10-04T22:03:58Z"
+     }
+    ]
+   },
+   "silencioso": true
   }
+ }
 }
