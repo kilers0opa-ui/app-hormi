@@ -17,7 +17,7 @@ if r:
     out["n_events"] = len(r.get("events") or [])
     out["periods"] = r["fixture"].get("periods")
     out["fixture_ts"] = r["fixture"].get("timestamp")
-    out["events"] = [{"min": e["time"]["elapsed"], "extra": e["time"].get("extra"), "type": e["type"], "detail": e.get("detail"), "team": e["team"]["name"], "player": e["player"].get("name"), "assist": (e.get("assist") or {}).get("name")} for e in (r.get("events") or [])]
+    out["events"] = [{"min": e["time"]["elapsed"], "extra": e["time"].get("extra"), "type": e["type"], "detail": e.get("detail"), "team": e["team"]["name"], "player": e["player"].get("name"), "pid": e["player"].get("id"), "aid": (e.get("assist") or {}).get("id"), "assist": (e.get("assist") or {}).get("name")} for e in (r.get("events") or [])]
 ln = get("/fixtures/lineups", fixture=FID)
 out["lineups_endpoint"] = [{"team": l["team"]["name"], "formation": l.get("formation"),
     "start": [p["player"]["name"] for p in l.get("startXI") or []],
