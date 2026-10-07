@@ -1316,10 +1316,12 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     # Dentro de la ventana en vivo pero el partido AÚN NO empieza (NS/TBD, p.ej. la API todavía
     # no publica la alineación): para la app sigue siendo el "Próximo partido". Sin esto el
     # estado quedaba como "sin_partido" con referencia "hoy" y la tarjeta desaparecía de Inicio.
+    # También cuando la hora ya pasó pero el partido sigue sin empezar (se retrasa unos minutos; la API
+    # lo deja en NS): antes la tarjeta desaparecía de Inicio desde la hora programada hasta el silbatazo.
     ko_entry = _parse(entry.get("kickoff"))
     if (info.get("status") == "sin_partido" and snap["fixture"]["status"]["short"] in ("NS", "TBD")
-            and ko_entry and ko_entry > datetime.now(LOCAL_TZ)):
-        status_out[key] = _next_match_status(target, entry, player["key"])
+            and ko_entry):
+        status_out[key] = _next_match_status(target, entry, player["key"], en_curso=True)
 
     # Partido del club en curso pero SIN alineación publicada (amistosos): no se sabe si el jugador
     # participa. La tarjeta de Inicio sigue mostrando el partido (como próximo/de hoy) en lugar de
