@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T21:20:14.797839-06:00",
+  "updated_at": "2026-10-06T21:26:34.334887-06:00",
   "app_name": "Legión MX",
   "players": {
     "armando": {
@@ -11,7 +11,7 @@
           "emoji": "🔴",
           "crest_url": "https://media.api-sports.io/football/teams/553.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-06T21:20:14.148676-06:00",
+          "checked_at": "2026-10-06T21:26:34.150354-06:00",
           "match_reference": "próximo",
           "match": "Olympiakos vs Panathinaikos",
           "home": "Olympiakos",
@@ -25,7 +25,7 @@
           "label": "Selección Mexicana",
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
-          "checked_at": "2026-10-06T21:20:14.796889-06:00",
+          "checked_at": "2026-10-06T21:26:34.333863-06:00",
           "match_reference": "hoy",
           "status": "titular",
           "match": "México vs Chile",
@@ -39,8 +39,7 @@
           "away": "Chile",
           "home_logo": "https://media.api-sports.io/football/teams/16.png",
           "away_logo": "https://media.api-sports.io/football/teams/2383.png",
-          "periodo": "1H",
-          "clock_ref": "2026-10-06T20:38:31.283812-06:00"
+          "periodo": "HT"
         }
       }
     },
@@ -52,7 +51,7 @@
           "label": "Selección Mexicana",
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
-          "checked_at": "2026-10-06T21:20:14.797024-06:00",
+          "checked_at": "2026-10-06T21:26:34.333952-06:00",
           "match_reference": "hoy",
           "status": "no_convocado",
           "match": "México vs Chile",
@@ -66,15 +65,14 @@
           "away": "Chile",
           "home_logo": "https://media.api-sports.io/football/teams/16.png",
           "away_logo": "https://media.api-sports.io/football/teams/2383.png",
-          "periodo": "1H",
-          "clock_ref": "2026-10-06T20:38:31.283908-06:00"
+          "periodo": "HT"
         },
         "wolves": {
           "label": "Wolves",
           "emoji": "🐺",
           "crest_url": "https://media.api-sports.io/football/teams/39.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-06T21:20:14.796939-06:00",
+          "checked_at": "2026-10-06T21:26:34.333891-06:00",
           "match_reference": "próximo",
           "match": "Middlesbrough vs Wolves",
           "home": "Middlesbrough",
@@ -94,7 +92,7 @@
           "label": "Selección Mexicana",
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
-          "checked_at": "2026-10-06T21:20:14.797092-06:00",
+          "checked_at": "2026-10-06T21:26:34.334016-06:00",
           "match_reference": "hoy",
           "status": "no_convocado",
           "match": "México vs Chile",
@@ -108,15 +106,14 @@
           "away": "Chile",
           "home_logo": "https://media.api-sports.io/football/teams/16.png",
           "away_logo": "https://media.api-sports.io/football/teams/2383.png",
-          "periodo": "1H",
-          "clock_ref": "2026-10-06T20:38:31.284004-06:00"
+          "periodo": "HT"
         },
         "al_qadsiah": {
           "label": "Al-Qadsiah",
           "emoji": "🔴",
           "crest_url": "https://media.api-sports.io/football/teams/2933.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-06T21:20:14.797044-06:00",
+          "checked_at": "2026-10-06T21:26:34.333975-06:00",
           "match_reference": "próximo",
           "match": "Al Kholood vs Al-Qadisiyah FC",
           "home": "Al Kholood",
@@ -137,7 +134,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-06T21:20:14.797179-06:00",
+          "checked_at": "2026-10-06T21:26:34.334079-06:00",
           "api_error": {
             "error": "AttributeError: 'str' object has no attribute 'exists'"
           }
@@ -147,7 +144,7 @@
           "emoji": "🔴",
           "crest_url": "https://media.api-sports.io/football/teams/2280.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-06T21:20:14.797109-06:00",
+          "checked_at": "2026-10-06T21:26:34.334028-06:00",
           "match_reference": "próximo",
           "match": "FC Juarez vs Club Tijuana",
           "home": "FC Juarez",
@@ -168,7 +165,7 @@
           "emoji": "🦅",
           "crest_url": "https://media.api-sports.io/football/teams/495.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-06T21:20:14.797194-06:00",
+          "checked_at": "2026-10-06T21:26:34.334092-06:00",
           "match_reference": "próximo",
           "match": "Genoa vs Fiorentina",
           "home": "Genoa",
@@ -183,7 +180,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-06T21:20:14.797235-06:00",
+          "checked_at": "2026-10-06T21:26:34.334131-06:00",
           "api_error": {
             "error": "AttributeError: 'str' object has no attribute 'exists'"
           }
@@ -199,7 +196,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-06T21:20:14.797297-06:00",
+          "checked_at": "2026-10-06T21:26:34.334178-06:00",
           "api_error": {
             "error": "AttributeError: 'str' object has no attribute 'exists'"
           }
@@ -209,7 +206,7 @@
           "emoji": "🔵",
           "crest_url": "https://media.api-sports.io/football/teams/212.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-06T21:20:14.797247-06:00",
+          "checked_at": "2026-10-06T21:26:34.334142-06:00",
           "match_reference": "próximo",
           "match": "Marítimo vs FC Porto",
           "home": "Marítimo",
@@ -230,7 +227,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-06T21:20:14.797347-06:00",
+          "checked_at": "2026-10-06T21:26:34.334224-06:00",
           "api_error": {
             "error": "AttributeError: 'str' object has no attribute 'exists'"
           }
@@ -240,7 +237,7 @@
           "emoji": "🔴",
           "crest_url": "https://media.api-sports.io/football/teams/201.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-06T21:20:14.797309-06:00",
+          "checked_at": "2026-10-06T21:26:34.334188-06:00",
           "match_reference": "próximo",
           "match": "Feyenoord vs AZ Alkmaar",
           "home": "Feyenoord",
@@ -260,7 +257,7 @@
           "label": "Selección Mexicana",
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
-          "checked_at": "2026-10-06T21:20:14.797383-06:00",
+          "checked_at": "2026-10-06T21:26:34.334251-06:00",
           "match_reference": "hoy",
           "status": "titular",
           "match": "México vs Chile",
@@ -274,15 +271,14 @@
           "away": "Chile",
           "home_logo": "https://media.api-sports.io/football/teams/16.png",
           "away_logo": "https://media.api-sports.io/football/teams/2383.png",
-          "periodo": "1H",
-          "clock_ref": "2026-10-06T20:38:31.284340-06:00"
+          "periodo": "HT"
         },
         "atletico_madrid": {
           "label": "Atlético Madrid",
           "emoji": "🔴",
           "crest_url": "https://media.api-sports.io/football/teams/530.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-06T21:20:14.797359-06:00",
+          "checked_at": "2026-10-06T21:26:34.334233-06:00",
           "match_reference": "próximo",
           "match": "Alavés vs Atlético de Madrid",
           "home": "Alavés",
@@ -302,7 +298,7 @@
           "label": "Selección Mexicana",
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
-          "checked_at": "2026-10-06T21:20:14.797417-06:00",
+          "checked_at": "2026-10-06T21:26:34.334297-06:00",
           "match_reference": "hoy",
           "status": "titular",
           "match": "México vs Chile",
@@ -316,15 +312,14 @@
           "away": "Chile",
           "home_logo": "https://media.api-sports.io/football/teams/16.png",
           "away_logo": "https://media.api-sports.io/football/teams/2383.png",
-          "periodo": "1H",
-          "clock_ref": "2026-10-06T20:38:31.284400-06:00"
+          "periodo": "HT"
         },
         "betis": {
           "label": "Real Betis",
           "emoji": "🟢",
           "crest_url": "https://media.api-sports.io/football/teams/543.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-06T21:20:14.797399-06:00",
+          "checked_at": "2026-10-06T21:26:34.334262-06:00",
           "match_reference": "próximo",
           "match": "Real Betis vs Osasuna",
           "home": "Real Betis",
@@ -344,7 +339,7 @@
           "label": "Selección Mexicana",
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
-          "checked_at": "2026-10-06T21:20:14.797462-06:00",
+          "checked_at": "2026-10-06T21:26:34.334342-06:00",
           "match_reference": "hoy",
           "status": "no_convocado",
           "match": "México vs Chile",
@@ -358,15 +353,14 @@
           "away": "Chile",
           "home_logo": "https://media.api-sports.io/football/teams/16.png",
           "away_logo": "https://media.api-sports.io/football/teams/2383.png",
-          "periodo": "1H",
-          "clock_ref": "2026-10-06T20:38:31.284458-06:00"
+          "periodo": "HT"
         },
         "copenhague": {
           "label": "FC Copenhague",
           "emoji": "⚪",
           "crest_url": "https://media.api-sports.io/football/teams/400.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-06T21:20:14.797431-06:00",
+          "checked_at": "2026-10-06T21:26:34.334308-06:00",
           "match_reference": "próximo",
           "match": "FC Midtjylland vs FC Copenhague",
           "home": "FC Midtjylland",
