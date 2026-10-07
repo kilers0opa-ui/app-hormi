@@ -1,0 +1,212 @@
+{
+ "errors": [],
+ "status": {
+  "long": "Second Half",
+  "short": "2H",
+  "elapsed": 72,
+  "extra": null
+ },
+ "score": {
+  "home": 0,
+  "away": 2
+ },
+ "lineups_in_fixture": [
+  {
+   "team": "Mexico",
+   "n_start": 11,
+   "n_subs": 13
+  },
+  {
+   "team": "Chile",
+   "n_start": 11,
+   "n_subs": 15
+  }
+ ],
+ "n_events": 10,
+ "periods": {
+  "first": 1791340200,
+  "second": 1791343800
+ },
+ "fixture_ts": 1791340200,
+ "events": [
+  {
+   "min": 44,
+   "extra": null,
+   "type": "Card",
+   "detail": "Yellow Card",
+   "team": "Mexico",
+   "player": "J. Gallardo",
+   "pid": 2881,
+   "aid": null,
+   "assist": null
+  },
+  {
+   "min": 46,
+   "extra": null,
+   "type": "subst",
+   "detail": "Substitution 1",
+   "team": "Chile",
+   "player": "R. Echeverria",
+   "pid": 11828,
+   "aid": 11453,
+   "assist": "V. Mendez"
+  },
+  {
+   "min": 55,
+   "extra": null,
+   "type": "Goal",
+   "detail": "Normal Goal",
+   "team": "Chile",
+   "player": "M. Gutierrez",
+   "pid": 371790,
+   "aid": 201909,
+   "assist": "G. Tapia"
+  },
+  {
+   "min": 64,
+   "extra": null,
+   "type": "subst",
+   "detail": "Substitution 1",
+   "team": "Mexico",
+   "player": "J. Gallardo",
+   "pid": 2881,
+   "aid": 35544,
+   "assist": "J. Vasquez"
+  },
+  {
+   "min": 64,
+   "extra": null,
+   "type": "subst",
+   "detail": "Substitution 2",
+   "team": "Mexico",
+   "player": "D. Espinoza",
+   "pid": 421130,
+   "aid": 2878,
+   "assist": "J. Sanchez"
+  },
+  {
+   "min": 64,
+   "extra": null,
+   "type": "subst",
+   "detail": "Substitution 3",
+   "team": "Mexico",
+   "player": "R. Alvarado",
+   "pid": 2879,
+   "aid": 286663,
+   "assist": "I. Violante"
+  },
+  {
+   "min": 64,
+   "extra": null,
+   "type": "subst",
+   "detail": "Substitution 4",
+   "team": "Mexico",
+   "player": "E. Lira",
+   "pid": 266345,
+   "aid": 359835,
+   "assist": "D. Garcia"
+  },
+  {
+   "min": 64,
+   "extra": null,
+   "type": "subst",
+   "detail": "Substitution 5",
+   "team": "Mexico",
+   "player": "A. Gonzalez",
+   "pid": 291713,
+   "aid": 94562,
+   "assist": "S. Gimenez"
+  },
+  {
+   "min": 65,
+   "extra": null,
+   "type": "Goal",
+   "detail": "Normal Goal",
+   "team": "Chile",
+   "player": "V. Pizarro",
+   "pid": 70463,
+   "aid": 307117,
+   "assist": "D. Osorio"
+  },
+  {
+   "min": 72,
+   "extra": null,
+   "type": "subst",
+   "detail": "Substitution 6",
+   "team": "Mexico",
+   "player": "G. Berterame",
+   "pid": 6485,
+   "aid": 453887,
+   "assist": "H. Camberos"
+  }
+ ],
+ "lineups_endpoint": [
+  {
+   "team": "Mexico",
+   "formation": "4-3-3",
+   "start": [
+    "Alex Padilla",
+    "Dagoberto Espinoza",
+    "Israel Reyes",
+    "Everardo López",
+    "Jesús Gallardo",
+    "Obed Vargas",
+    "Erik Lira",
+    "Álvaro Fidalgo",
+    "Roberto Alvarado",
+    "Armando González",
+    "Germán Berterame"
+   ],
+   "subs": [
+    "Oscar García",
+    "Raúl Rangel",
+    "Diego Campillo",
+    "Johan Vásquez",
+    "Victor Guzmán",
+    "Jorge Sánchez",
+    "Santiago Sandoval",
+    "Luis Chávez",
+    "Hugo Camberos",
+    "Isaías Violante",
+    "Jeremy Márquez",
+    "Orbelín Pineda",
+    "Denzell Garcia"
+   ]
+  },
+  {
+   "team": "Chile",
+   "formation": "4-2-3-1",
+   "start": [
+    "Lawrence Vigouroux",
+    "Diego Ulloa",
+    "Jonathan Villagra",
+    "Paulo Díaz",
+    "Gabriel Suazo",
+    "Vicente Pizarro",
+    "Felipe Loyola",
+    "Maximiliano Gutiérrez",
+    "Rodrigo Echeverría",
+    "Darío Osorio",
+    "Gonzalo Tapia"
+   ],
+   "subs": [
+    "Víctor Felipe Méndez",
+    "Christian Bravo",
+    "Brayan Cortés",
+    "Felipe Faúndez",
+    "Iván Román",
+    "Marcelo Morales",
+    "Francisco Salinas",
+    "Igor Lichnovsky",
+    "Nils Reichmuth",
+    "Ben Brereton Díaz",
+    "Agustín Arce",
+    "César Pérez",
+    "Matías Sepúlveda",
+    "Lucas Cepeda",
+    "Leandro Hernández"
+   ]
+  }
+ ],
+ "lineups_errors": []
+}
