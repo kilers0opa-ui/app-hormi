@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T03:12:39.445053-06:00",
+  "updated_at": "2026-10-06T22:37:54.269297-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -187,10 +187,10 @@
             "team_id": 16,
             "team_name": "Mexico",
             "team_logo": "https://media.api-sports.io/football/teams/16.png",
-            "played": 8,
+            "played": 9,
             "goals": 1,
             "assists": 1,
-            "minutes": 317
+            "minutes": 381
           },
           {
             "league_id": 199,
@@ -237,24 +237,25 @@
       },
       "applied_fixtures": {
         "seleccion": [
-          1629004
+          1629004,
+          1629006
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1629004,
-        "kickoff": "2026-10-03T20:00:00-06:00",
-        "home": "Estados Unidos",
-        "away": "México",
-        "home_logo": "https://media.api-sports.io/football/teams/2384.png",
-        "away_logo": "https://media.api-sports.io/football/teams/16.png",
-        "home_goals": 3,
-        "away_goals": 0,
+        "fixture_id": 1629006,
+        "kickoff": "2026-10-06T20:30:00-06:00",
+        "home": "México",
+        "away": "Chile",
+        "home_logo": "https://media.api-sports.io/football/teams/16.png",
+        "away_logo": "https://media.api-sports.io/football/teams/2383.png",
+        "home_goals": 0,
+        "away_goals": 2,
         "league": "Amistoso",
         "team_key": "seleccion",
         "team_label": "Selección Mexicana",
         "emoji": "🇲🇽",
         "crest_url": "https://media.api-sports.io/football/teams/16.png",
-        "minutes": 18,
+        "minutes": 64,
         "goals": 0,
         "assists": 0
       }
@@ -1816,10 +1817,10 @@
             "team_id": 16,
             "team_name": "Mexico",
             "team_logo": "https://media.api-sports.io/football/teams/16.png",
-            "played": 6,
+            "played": 7,
             "goals": 2,
             "assists": 0,
-            "minutes": 507
+            "minutes": 533
           }
         ],
         "2017": [
@@ -1851,24 +1852,25 @@
       },
       "applied_fixtures": {
         "seleccion": [
-          1629004
+          1629004,
+          1629006
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1629004,
-        "kickoff": "2026-10-03T20:00:00-06:00",
-        "home": "Estados Unidos",
-        "away": "México",
-        "home_logo": "https://media.api-sports.io/football/teams/2384.png",
-        "away_logo": "https://media.api-sports.io/football/teams/16.png",
-        "home_goals": 3,
-        "away_goals": 0,
+        "fixture_id": 1629006,
+        "kickoff": "2026-10-06T20:30:00-06:00",
+        "home": "México",
+        "away": "Chile",
+        "home_logo": "https://media.api-sports.io/football/teams/16.png",
+        "away_logo": "https://media.api-sports.io/football/teams/2383.png",
+        "home_goals": 0,
+        "away_goals": 2,
         "league": "Amistoso",
         "team_key": "seleccion",
         "team_label": "Selección Mexicana",
         "emoji": "🇲🇽",
         "crest_url": "https://media.api-sports.io/football/teams/16.png",
-        "minutes": 90,
+        "minutes": 26,
         "goals": 0,
         "assists": 0
       }
@@ -2907,10 +2909,10 @@
             "team_id": 16,
             "team_name": "Mexico",
             "team_logo": "https://media.api-sports.io/football/teams/16.png",
-            "played": 3,
+            "played": 4,
             "goals": 0,
             "assists": 0,
-            "minutes": 146
+            "minutes": 172
           }
         ],
         "2017": [
@@ -2930,24 +2932,25 @@
       },
       "applied_fixtures": {
         "seleccion": [
-          1629004
+          1629004,
+          1629006
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1629004,
-        "kickoff": "2026-10-03T20:00:00-06:00",
-        "home": "Estados Unidos",
-        "away": "México",
-        "home_logo": "https://media.api-sports.io/football/teams/2384.png",
-        "away_logo": "https://media.api-sports.io/football/teams/16.png",
-        "home_goals": 3,
-        "away_goals": 0,
+        "fixture_id": 1629006,
+        "kickoff": "2026-10-06T20:30:00-06:00",
+        "home": "México",
+        "away": "Chile",
+        "home_logo": "https://media.api-sports.io/football/teams/16.png",
+        "away_logo": "https://media.api-sports.io/football/teams/2383.png",
+        "home_goals": 0,
+        "away_goals": 2,
         "league": "Amistoso",
         "team_key": "seleccion",
         "team_label": "Selección Mexicana",
         "emoji": "🇲🇽",
         "crest_url": "https://media.api-sports.io/football/teams/16.png",
-        "minutes": 72,
+        "minutes": 26,
         "goals": 0,
         "assists": 0
       }
@@ -3476,10 +3479,10 @@
             "team_id": 16,
             "team_name": "Mexico",
             "team_logo": "https://media.api-sports.io/football/teams/16.png",
-            "played": 7,
+            "played": 8,
             "goals": 0,
             "assists": 0,
-            "minutes": 264
+            "minutes": 336
           },
           {
             "league_id": 140,
@@ -3537,24 +3540,25 @@
       },
       "applied_fixtures": {
         "seleccion": [
-          1629004
+          1629004,
+          1629006
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1629004,
-        "kickoff": "2026-10-03T20:00:00-06:00",
-        "home": "Estados Unidos",
-        "away": "México",
-        "home_logo": "https://media.api-sports.io/football/teams/2384.png",
-        "away_logo": "https://media.api-sports.io/football/teams/16.png",
-        "home_goals": 3,
-        "away_goals": 0,
+        "fixture_id": 1629006,
+        "kickoff": "2026-10-06T20:30:00-06:00",
+        "home": "México",
+        "away": "Chile",
+        "home_logo": "https://media.api-sports.io/football/teams/16.png",
+        "away_logo": "https://media.api-sports.io/football/teams/2383.png",
+        "home_goals": 0,
+        "away_goals": 2,
         "league": "Amistoso",
         "team_key": "seleccion",
         "team_label": "Selección Mexicana",
         "emoji": "🇲🇽",
         "crest_url": "https://media.api-sports.io/football/teams/16.png",
-        "minutes": 9,
+        "minutes": 72,
         "goals": 0,
         "assists": 0
       }
@@ -3969,10 +3973,10 @@
             "team_id": 16,
             "team_name": "Mexico",
             "team_logo": "https://media.api-sports.io/football/teams/16.png",
-            "played": 7,
+            "played": 8,
             "goals": 0,
             "assists": 0,
-            "minutes": 376
+            "minutes": 458
           }
         ],
         "2015": [
@@ -4020,24 +4024,25 @@
       },
       "applied_fixtures": {
         "seleccion": [
-          1629004
+          1629004,
+          1629006
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1629004,
-        "kickoff": "2026-10-03T20:00:00-06:00",
-        "home": "Estados Unidos",
-        "away": "México",
-        "home_logo": "https://media.api-sports.io/football/teams/2384.png",
-        "away_logo": "https://media.api-sports.io/football/teams/16.png",
-        "home_goals": 3,
-        "away_goals": 0,
+        "fixture_id": 1629006,
+        "kickoff": "2026-10-06T20:30:00-06:00",
+        "home": "México",
+        "away": "Chile",
+        "home_logo": "https://media.api-sports.io/football/teams/16.png",
+        "away_logo": "https://media.api-sports.io/football/teams/2383.png",
+        "home_goals": 0,
+        "away_goals": 2,
         "league": "Amistoso",
         "team_key": "seleccion",
         "team_label": "Selección Mexicana",
         "emoji": "🇲🇽",
         "crest_url": "https://media.api-sports.io/football/teams/16.png",
-        "minutes": 24,
+        "minutes": 82,
         "goals": 0,
         "assists": 0
       }
