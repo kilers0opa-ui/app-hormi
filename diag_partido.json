@@ -1,0 +1,162 @@
+{
+ "errors": [],
+ "status": {
+  "long": "First Half",
+  "short": "1H",
+  "elapsed": 4,
+  "extra": null
+ },
+ "score": {
+  "home": 0,
+  "away": 0
+ },
+ "lineups_in_fixture": [
+  {
+   "team": "Mexico",
+   "n_start": 11,
+   "n_subs": 0
+  },
+  {
+   "team": "Chile",
+   "n_start": 11,
+   "n_subs": 15
+  }
+ ],
+ "n_events": 0,
+ "periods": {
+  "first": 1791340200,
+  "second": null
+ },
+ "fixture_ts": 1791340200,
+ "events": [],
+ "lineups_endpoint": [
+  {
+   "team": "Mexico",
+   "formation": "4-3-3",
+   "start": [
+    "Alex Padilla",
+    "Dagoberto Espinoza",
+    "Israel Reyes",
+    "Everardo López",
+    "Jesús Gallardo",
+    "Obed Vargas",
+    "Erik Lira",
+    "Álvaro Fidalgo",
+    "Roberto Alvarado",
+    "Armando González",
+    "Germán Berterame"
+   ],
+   "subs": []
+  },
+  {
+   "team": "Chile",
+   "formation": "4-2-3-1",
+   "start": [
+    "Lawrence Vigouroux",
+    "Diego Ulloa",
+    "Jonathan Villagra",
+    "Paulo Díaz",
+    "Gabriel Suazo",
+    "Felipe Loyola",
+    "Vicente Pizarro",
+    "Maximiliano Gutiérrez",
+    "Darío Osorio",
+    "Rodrigo Echeverría",
+    "Gonzalo Tapia"
+   ],
+   "subs": [
+    "Christian Bravo",
+    "Brayan Cortés",
+    "Felipe Faúndez",
+    "Iván Román",
+    "Marcelo Morales",
+    "Francisco Salinas",
+    "Igor Lichnovsky",
+    "Víctor Felipe Méndez",
+    "Nils Reichmuth",
+    "Ben Brereton Díaz",
+    "Agustín Arce",
+    "César Pérez",
+    "Matías Sepúlveda",
+    "Lucas Cepeda",
+    "Leandro Hernández"
+   ]
+  }
+ ],
+ "lineups_errors": [],
+ "lineups_full": [
+  {
+   "team": "Mexico",
+   "n_start": 11,
+   "n_subs": 0,
+   "subs_ids": []
+  },
+  {
+   "team": "Chile",
+   "n_start": 11,
+   "n_subs": 15,
+   "subs_ids": [
+    [
+     414500,
+     "Christian Bravo"
+    ],
+    [
+     2548,
+     "Brayan Cortés"
+    ],
+    [
+     414497,
+     "Felipe Faúndez"
+    ],
+    [
+     404640,
+     "Iván Román"
+    ],
+    [
+     289291,
+     "Marcelo Morales"
+    ],
+    [
+     12345,
+     "Francisco Salinas"
+    ],
+    [
+     2552,
+     "Igor Lichnovsky"
+    ],
+    [
+     11453,
+     "Víctor Felipe Méndez"
+    ],
+    [
+     265753,
+     "Nils Reichmuth"
+    ],
+    [
+     19485,
+     "Ben Brereton Díaz"
+    ],
+    [
+     373591,
+     "Agustín Arce"
+    ],
+    [
+     70268,
+     "César Pérez"
+    ],
+    [
+     11486,
+     "Matías Sepúlveda"
+    ],
+    [
+     318592,
+     "Lucas Cepeda"
+    ],
+    [
+     449075,
+     "Leandro Hernández"
+    ]
+   ]
+  }
+ ]
+}
