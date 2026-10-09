@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T03:13:39.837307-06:00",
+  "updated_at": "2026-10-09T09:46:58.588659-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -2315,10 +2315,10 @@
             "team_id": 2933,
             "team_name": "Al-Qadisiyah FC",
             "team_logo": "https://media.api-sports.io/football/teams/2933.png",
-            "played": 7,
-            "goals": 3,
-            "assists": 1,
-            "minutes": 630
+            "played": 8,
+            "goals": 4,
+            "assists": 3,
+            "minutes": 720
           },
           {
             "league_id": 10,
@@ -2373,24 +2373,28 @@
           }
         ]
       },
-      "applied_fixtures": {},
+      "applied_fixtures": {
+        "al_qadsiah": [
+          1603041
+        ]
+      },
       "ultimo_partido": {
-        "fixture_id": 1629916,
-        "kickoff": "2026-09-14T12:15:00-06:00",
-        "home": "Al-Qadisiyah FC",
-        "away": "Al-Wasl FC",
-        "home_logo": "https://media.api-sports.io/football/teams/2933.png",
-        "away_logo": "https://media.api-sports.io/football/teams/2872.png",
-        "home_goals": 2,
-        "away_goals": 1,
-        "league": "Liga de Campeones de Asia",
+        "fixture_id": 1603041,
+        "kickoff": "2026-10-09T07:50:00-06:00",
+        "home": "Al Kholood",
+        "away": "Al-Qadisiyah FC",
+        "home_logo": "https://media.api-sports.io/football/teams/10509.png",
+        "away_logo": "https://media.api-sports.io/football/teams/2933.png",
+        "home_goals": 0,
+        "away_goals": 5,
+        "league": "Liga Profesional Saudí",
         "team_key": "al_qadsiah",
         "team_label": "Al-Qadsiah",
         "emoji": "🔴",
         "crest_url": "https://media.api-sports.io/football/teams/2933.png",
-        "minutes": 84,
+        "minutes": 90,
         "goals": 1,
-        "assists": 0
+        "assists": 2
       }
     },
     "gimenez": {
