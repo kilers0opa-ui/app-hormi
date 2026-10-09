@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-09T10:10:22.290573-06:00",
+  "updated_at": "2026-10-09T10:20:23.050694-06:00",
   "cuota": {
     "fecha": "2026-10-09",
-    "busquedas": 2,
-    "busquedas_resumen": 0
+    "busquedas": 3,
+    "busquedas_resumen": 1
   },
   "goles": {
     "quinones:al_qadsiah:1603041:goal:35532:1:gol": {
@@ -36,13 +36,28 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-09T16:20:22.143976+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-09T16:20:22.143976+00:00",
+      "noticias": {
+        "quinones": [
+          {
+            "title": "Julián Quiñones brilla con gol de penal y asistencia en la goleada del Al Qadsiah ante Al Kholood",
+            "source": "Récord",
+            "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPTU45dkhZejg4eE01eW1SbjF1RE14TFU4Vnh0OTNRaGZMY3hLUFlsd2RkR2dabVFEdVNPeDZWT3FUd3VQNGdkZ215T1h3eW1tWEJjbEhRMEFEanhPRjBNSmNtekJaTno2Z3JHbERxdWpyTzlDSGk3OUhUaE5ZVWhNdFRad2FHTVJnTzg3cWxwNDNoZWM0S1FMWko2U0gzNmZQSG52ZHlkbnFNbjR2Ulh1TlM2Q21Fd3l4NFZpRkhMYVlhSFlVajFwWnpmbUpIcGFBNnBKYTdIVjgxWWZza2IteDFHRkFtblk?oc=5",
+            "published_at": "2026-10-09T16:04:00Z"
+          },
+          {
+            "title": "Al-Kholood – Al-Qadsiah 0 - 5 | GOAL – Julián Quiñones",
+            "source": "OneFootball",
+            "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOcTlxcUxXSkE2bURkQURlWF9Wc2JFYV9wVUxfM1VEUzhjdmx1RGoteUk0cmZsN0dWSVNZbUNUYmZHZDJ1NGpXMTBQQ0E4VGpRMDFZV2preE9ObTlzVG95Wmx2QzlFNDFuUmpnRU9lcTg3WkRwaHJjSTE2WEtVdlJiMDFETnF3QlNFUjZaMzhZRFRiUQ?oc=5",
+            "published_at": "2026-10-09T15:54:39Z"
+          }
+        ]
+      }
     }
   }
 }
