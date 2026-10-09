@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T09:45:18.774664-06:00",
+  "updated_at": "2026-10-09T09:50:22.883904-06:00",
   "cuota": {
     "fecha": "2026-10-09",
     "busquedas": 0,
@@ -17,5 +17,30 @@
       "video": null
     }
   },
-  "partidos": {}
+  "partidos": {
+    "1603041": {
+      "fixture_id": 1603041,
+      "home": "Al Kholood",
+      "away": "Al-Qadisiyah FC",
+      "league": "Liga Profesional Saudí",
+      "score": "Al Kholood 0-5 Al-Qadisiyah FC",
+      "final_seen_at": "2026-10-09T15:46:58.580527+00:00",
+      "jugadores": {
+        "quinones": {
+          "team_key": "al_qadsiah",
+          "minutes": 90,
+          "goals": 1,
+          "assists": 2
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
+    }
+  }
 }
