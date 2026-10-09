@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-09T09:50:22.883904-06:00",
+  "updated_at": "2026-10-09T09:55:16.253739-06:00",
   "cuota": {
     "fecha": "2026-10-09",
-    "busquedas": 0,
+    "busquedas": 1,
     "busquedas_resumen": 0
   },
   "goles": {
@@ -10,11 +10,19 @@
       "player_key": "quinones",
       "team_key": "al_qadsiah",
       "goal_seen_at": "2026-10-09T15:39:58.586284+00:00",
-      "status": "pendiente",
-      "intentos": 0,
+      "status": "resuelto",
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
-      "video": null
+      "ultimo_intento": "2026-10-09T15:55:15.447973+00:00",
+      "video": {
+        "id": "0xMqudaSKZE",
+        "title": "GOL DE JULIÁN QUIÑONES | Al Kholood 0-5 Al Qadsiah | Jornada 8 | SPL 2025",
+        "channel": "Fox Deportes",
+        "published_at": "2026-10-09T15:42:05Z",
+        "thumbnail": "https://i.ytimg.com/vi/0xMqudaSKZE/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=0xMqudaSKZE",
+        "embeddable": true
+      }
     }
   },
   "partidos": {
