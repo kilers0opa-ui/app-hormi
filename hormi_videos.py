@@ -108,7 +108,10 @@ DEFAULTS = {
     "titulos_descartados": ["gameplay", "efootball", "fifa 2", "fc 26", "fc26", "simulacion", "simulation",
                             "reaccion", "reacciona", " en vivo ", " en directo ", " live ", "prediccion", " previa ",
                             "analisis", " ia ", "inteligencia artificial", "narracion", "narrado", "de infarto"],
-    "resumen_notificar": True,            # manda "Ya está disponible el resumen del partido de {jugador}" cuando el resumen aparece (False = apagado)
+    "resumen_notificar": True,
+    # País donde tiene que poderse ver el video (goles y resúmenes): se descartan los bloqueados ahí por
+    # el canal (p. ej. Fox Deportes bloquea muchos clips en México), los no incrustables y los +18.
+    "region_visible": "MX",            # manda "Ya está disponible el resumen del partido de {jugador}" cuando el resumen aparece (False = apagado)
 }
 
 QUOTA_SEARCH = 100
@@ -266,6 +269,37 @@ def channel_uploads(channel_id, max_items=15):
         entry["_description"] = snippet.get("description")
         found.append(entry)
     return found
+
+
+def filter_visibles(entries, region):
+    """Quita los videos que NO se pueden ver en `region` (bloqueo por país del canal), los que no se
+    pueden incrustar y los de restricción de edad. Una llamada a videos.list (1 unidad por hasta 50 ids).
+    Si la consulta falla, no se descarta nada (mejor un video posible que ninguno)."""
+    if not entries or not region:
+        return entries
+    data = yt_api("videos", {
+        "part": "contentDetails,status",
+        "id": ",".join(e["id"] for e in entries[:50]),
+    }, QUOTA_LIST)
+    if not data:
+        return entries
+    info = {it.get("id"): it for it in data.get("items") or []}
+    ok = []
+    for e in entries:
+        it = info.get(e["id"])
+        if it is None:
+            log(f"     🚫 {e.get('title')!r}: ya no existe o es privado")
+            continue
+        rr = (it.get("contentDetails") or {}).get("regionRestriction") or {}
+        bloqueado = region in (rr.get("blocked") or []) or ("allowed" in rr and region not in (rr.get("allowed") or []))
+        no_embed = (it.get("status") or {}).get("embeddable") is False
+        edad = ((it.get("contentDetails") or {}).get("contentRating") or {}).get("ytRating") == "ytAgeRestricted"
+        if bloqueado or no_embed or edad:
+            motivo = "bloqueado en " + region if bloqueado else ("no se puede incrustar" if no_embed else "restricción de edad")
+            log(f"     🚫 {e.get('title')!r} ({e.get('channel')}): {motivo}")
+            continue
+        ok.append(e)
+    return ok
 
 
 def fill_embeddable(entries):
@@ -711,7 +745,8 @@ def _finales_step(out, config, settings, sources, notify, now):
                       and not resumen_descartado(e, settings)]
         # Solo canales confiables (el primero en publicar). Si hay válidos pero de canales desconocidos,
         # no se acepta ninguno: se espera al siguiente intento (los oficiales tardan más en subirlo).
-        confiables = [e for e in candidates if resumen_confiable(e, home_pref, away_pref, settings)]
+        confiables = filter_visibles([e for e in candidates if resumen_confiable(e, home_pref, away_pref, settings)],
+                                     settings.get("region_visible"))
         log(f"     {len(found)} resultados · {len(candidates)} válidos · {len(confiables)} de canal confiable")
         if confiables:
             best = sorted(confiables, key=lambda e: e.get("published_at") or "")[0]
@@ -799,12 +834,13 @@ def _goals_step(out, config, settings, sources, notify, now):
                       if mentions_player(e, tokens)
                       and (e.get("published_at") or "") >= since_iso
                       and e["id"] not in used]
-        log(f"     {len(found)} resultados · {len(candidates)} válidos")
+        candidates = filter_visibles(candidates, settings.get("region_visible"))
+        log(f"     {len(found)} resultados · {len(candidates)} válidos y visibles en {settings.get('region_visible')}")
         if candidates:
             video = strip_private([pick_goal_video(candidates)])[0]
             st["status"], st["video"] = "resuelto", video
             log(f"     ✅ {video['title']!r} ({video['channel']})")
-            if notify:
+            if notify and not st.get("silencioso"):
                 send_video_push(config, player, video, st.get("team_key"))
         elif when == "final":
             st["status"], st["motivo"] = "omitido", "sin video tras los intentos"
