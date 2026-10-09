@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-09T10:50:20.953433-06:00",
+  "updated_at": "2026-10-09T11:48:48.845550-06:00",
   "cuota": {
     "fecha": "2026-10-09",
-    "busquedas": 4,
-    "busquedas_resumen": 2
+    "busquedas": 5,
+    "busquedas_resumen": 3
   },
   "goles": {
     "quinones:al_qadsiah:1603041:goal:35532:1:gol": {
@@ -35,29 +35,30 @@
           "assists": 2
         }
       },
-      "status": "pendiente",
-      "intentos": 2,
+      "status": "omitido",
+      "intentos": 3,
       "fallos": 0,
-      "ultimo_intento": "2026-10-09T16:50:20.135729+00:00",
+      "ultimo_intento": "2026-10-09T17:48:48.022661+00:00",
       "video": null,
-      "noticias_pasadas": 2,
-      "ultima_noticia": "2026-10-09T16:50:20.135729+00:00",
+      "noticias_pasadas": 3,
+      "ultima_noticia": "2026-10-09T17:48:48.022661+00:00",
       "noticias": {
         "quinones": [
           {
-            "title": "Julián Quiñones brilla con gol de penal y asistencia en la goleada del Al Qadsiah ante Al Kholood",
-            "source": "Récord",
-            "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPTU45dkhZejg4eE01eW1SbjF1RE14TFU4Vnh0OTNRaGZMY3hLUFlsd2RkR2dabVFEdVNPeDZWT3FUd3VQNGdkZ215T1h3eW1tWEJjbEhRMEFEanhPRjBNSmNtekJaTno2Z3JHbERxdWpyTzlDSGk3OUhUaE5ZVWhNdFRad2FHTVJnTzg3cWxwNDNoZWM0S1FMWko2U0gzNmZQSG52ZHlkbnFNbjR2Ulh1TlM2Q21Fd3l4NFZpRkhMYVlhSFlVajFwWnpmbUpIcGFBNnBKYTdIVjgxWWZza2IteDFHRkFtblk?oc=5",
-            "published_at": "2026-10-09T16:04:00Z"
+            "title": "Julián Quiñones marca un gol de Panenka en la goleada 5-0 de su equipo",
+            "source": "AS México",
+            "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPVnpaYVFyTTdqRGZiOExXWHlZVS1reGJ6REFzX2paS0FKV05HTm1McFBHaHFLT3d2dmU4MTZHN2RGR3NnODdqSVhVanZqX2tGaU5sem51N0JUSURNMzA5RkhxYU9GS2N2Yl9GUENYcmZKT1hQZ3g1MS00NEM5TVAxTVRKcHp1c0RYTTg1d3M4Q1JPRXV5c2dhUk5LTWdqcFlCV1B5c3J3aWZtTXNQZTBJ0gHDAUFVX3lxTFB1ZEpIMEw5QzRmWEJ2a0V4YzdMU1BTcF94dXoyRmFDWEVvM0FLM1ZjVGdnZmV0S1RDdUZfNTVKWkxEYXVsY2VERV9IcnFYaV9la1Bud3o4MVVNYXNVUWlmRlJIcFFuLUNCUkFZLThIbWU0UVRqazFTQW5JTWRKaHRuSlJnalVHaVpneXo0eEtNbk12QXF6MjN6c3hXdHJ1cUFUcFdZdGdvdzU3RXZNTkFHUjRvYVNDZ0V1N0FVSUVxalNLOA?oc=5",
+            "published_at": "2026-10-09T17:08:17Z"
           },
           {
-            "title": "Al-Kholood – Al-Qadsiah 0 - 5 | GOAL – Julián Quiñones",
-            "source": "OneFootball",
-            "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSFF6UUdDQ2NXN1VqemNxSkhXbEIxQ0VpS1JKdDhSUTV5Znhkb2dTUWNvdm5FV2pHX2NucFN2eW53SWw1aURwRXZQekp5bnhqYTNHXzFDWkdCVXlNeEhFVnlzZ3hYX1ptNmVWYmlLS0V0aWNNa1ppR1p5VURZWVBHbjdXNzNuRHBpakRDajhjR3I2Zw?oc=5",
-            "published_at": "2026-10-09T16:00:49Z"
+            "title": "Julián Quiñones marca golazo a lo Panenka y da dos asistencias en la goleada del Al Qadsiah",
+            "source": "Infobae",
+            "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQRy1ydlFmWnFKd1hwdEZPcnZmQl9wZXVjRGlYd3lPWVVCTEVQNlRmNWdaM1lUSHB5Umc1bmxpX0RKNGJZZVNfVFI3VkF2dm50TU9VXzZfRmg0TWlfQmNIbEpTZGVmRkdvRm9GMmpaUHZTM3RYMmZlT2ZqdTFNVUNiUmh6N0N1NklSbnlib1NQWGcxUzU1d3hxZ3VIMUlsZlNSYmxlV1lKQ0trNmZUbTk2ckxYN3l0RTk1bkJfVzNzMDhQQlBJdGhTZDF1dXlLM0d0ZUhOV3ZuelcwY2PSAfYBQVVfeXFMTXB4d1cyNGYyalBSUXR1MGF5T3ZPWGlENFVuQ2g5SF9DdmZkQXlMNW1NNk9KYzgyaXp2dVZfRGxKSnFDdUdBX05zTVdPN2g5d25Pa2VXakxpZEZXOGItcVdvdUlVdTZHaHY0eDlBRHZfdVRTS2xpX3BqV3JwMm1yMjdYWFRyc1U1UWd5NjVEbV96Uy1yQ08yNUpXRGZCVHBKRlpCTnFHY1l6YllfLXZzSUdrMGZYUW1rT3hqWlFUZFJ6MWxjY0lSR1ljRXdtUEt1OEMwdkVEOFVFeFluU0xiaENfd3UzbWdKNUhqQVIxOVIxaGswMTh3?oc=5",
+            "published_at": "2026-10-09T16:54:03Z"
           }
         ]
-      }
+      },
+      "motivo": "sin resumen tras los intentos"
     }
   }
 }
