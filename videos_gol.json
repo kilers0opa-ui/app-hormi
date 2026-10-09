@@ -1,47 +1,48 @@
 {
- "updated_at": "2026-10-09T09:55:16.253739-06:00",
- "cuota": {
-  "fecha": "2026-10-09",
-  "busquedas": 1,
-  "busquedas_resumen": 0
- },
- "goles": {
-  "quinones:al_qadsiah:1603041:goal:35532:1:gol": {
-   "player_key": "quinones",
-   "team_key": "al_qadsiah",
-   "goal_seen_at": "2026-10-09T15:39:58.586284+00:00",
-   "status": "pendiente",
-   "intentos": 1,
-   "fallos": 0,
-   "ultimo_intento": "2026-10-09T15:55:15.447973+00:00",
-   "video": null,
-   "silencioso": true
-  }
- },
- "partidos": {
-  "1603041": {
-   "fixture_id": 1603041,
-   "home": "Al Kholood",
-   "away": "Al-Qadisiyah FC",
-   "league": "Liga Profesional Saudí",
-   "score": "Al Kholood 0-5 Al-Qadisiyah FC",
-   "final_seen_at": "2026-10-09T15:46:58.580527+00:00",
-   "jugadores": {
-    "quinones": {
-     "team_key": "al_qadsiah",
-     "minutes": 90,
-     "goals": 1,
-     "assists": 2
+  "updated_at": "2026-10-09T10:10:22.290573-06:00",
+  "cuota": {
+    "fecha": "2026-10-09",
+    "busquedas": 2,
+    "busquedas_resumen": 0
+  },
+  "goles": {
+    "quinones:al_qadsiah:1603041:goal:35532:1:gol": {
+      "player_key": "quinones",
+      "team_key": "al_qadsiah",
+      "goal_seen_at": "2026-10-09T15:39:58.586284+00:00",
+      "status": "omitido",
+      "intentos": 2,
+      "fallos": 0,
+      "ultimo_intento": "2026-10-09T16:10:21.914753+00:00",
+      "video": null,
+      "silencioso": true,
+      "motivo": "sin video tras los intentos"
     }
-   },
-   "status": "pendiente",
-   "intentos": 0,
-   "fallos": 0,
-   "ultimo_intento": null,
-   "video": null,
-   "noticias_pasadas": 0,
-   "ultima_noticia": null,
-   "noticias": {}
+  },
+  "partidos": {
+    "1603041": {
+      "fixture_id": 1603041,
+      "home": "Al Kholood",
+      "away": "Al-Qadisiyah FC",
+      "league": "Liga Profesional Saudí",
+      "score": "Al Kholood 0-5 Al-Qadisiyah FC",
+      "final_seen_at": "2026-10-09T15:46:58.580527+00:00",
+      "jugadores": {
+        "quinones": {
+          "team_key": "al_qadsiah",
+          "minutes": 90,
+          "goals": 1,
+          "assists": 2
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
+    }
   }
- }
 }
