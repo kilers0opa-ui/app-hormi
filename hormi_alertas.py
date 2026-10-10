@@ -776,6 +776,12 @@ def register_final_for_video(key, player_key, team_key, match_info):
         log(f"ℹ️  No se pudo anotar el final para buscarle resumen (la alerta ya salió): {err}")
 
 
+def fcm_tipo(tipo):
+    """Tipo que se manda a la app. Medio tiempo y segundo tiempo viajan como "start": en la app un solo
+    interruptor ("Inicio, medio tiempo y 2.º tiempo") controla los tres avisos."""
+    return "start" if tipo == "halftime" else tipo
+
+
 def alert_type(key):
     """Tipo de notificación a partir de la llave de la alerta. La app deja
     configurar sonido/vibración/silencio por tipo y abre Inicio o Videos
@@ -816,7 +822,7 @@ def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None,
             else:
                 notifier.send(title, message, priority)
                 if fcm:
-                    fcm.send(alert_type(key), title, message, player_key, team_key)
+                    fcm.send(fcm_tipo(alert_type(key)), title, message, player_key, team_key)
             sent.add(key)
             new += 1
             # Va al final, con la alerta ya enviada. No aplica en repeticiones
@@ -900,7 +906,7 @@ def enviar_grupos(notifier, fcm):
             body = ("Jugaron: " + " · ".join(jugaron)) if jugaron else "Ninguno de tus jugadores tuvo minutos."
         notifier.send(title, body, 3)
         if fcm:
-            fcm.send(tipo, title, body, None, tkey, [j["key"] for j in jug],
+            fcm.send(fcm_tipo(tipo), title, body, None, tkey, [j["key"] for j in jug],
                      extra={"grupo": _payload_grupo(g, jug, title, body)})
     _GRUPOS.clear()
 
