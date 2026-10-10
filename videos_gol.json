@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-10T13:00:24.450240-06:00",
+  "updated_at": "2026-10-10T13:15:21.523961-06:00",
   "cuota": {
     "fecha": "2026-10-10",
-    "busquedas": 1,
-    "busquedas_resumen": 1
+    "busquedas": 2,
+    "busquedas_resumen": 2
   },
   "goles": {
     "quinones:al_qadsiah:1603041:goal:35532:1:gol": {
@@ -122,14 +122,37 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
-      "intentos": 0,
+      "status": "resuelto",
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
-      "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "ultimo_intento": "2026-10-10T19:15:19.518683+00:00",
+      "video": {
+        "id": "ESPP9B9RBpY",
+        "title": "Feyenoord 2-0 AZ Alkmaar | Feyenoord le ROBA el INVICTO al AZ de MATEO CHÁVEZ |  Resumen",
+        "channel": "ESPN MX",
+        "published_at": "2026-10-10T19:13:00Z",
+        "thumbnail": "https://i.ytimg.com/vi/ESPP9B9RBpY/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=ESPP9B9RBpY",
+        "embeddable": true
+      },
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-10T19:15:19.518683+00:00",
+      "noticias": {
+        "chavez": [
+          {
+            "title": "¡Mateo Chávez pierde INVICTO Y LIDERATO! Feyenoord termina con paso perfecto de AZ Alkmaar",
+            "source": "Fox Sports",
+            "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQY01CUmtmQXQ1RTNYVExvUzNhaHFEbXFWU21oYkFSUFJFcDVoODNoWFRsUDN2YWZOVEkzbkxuQ1BNRHZ6dnY5NUtsX01QaDktdTNFaEFEZko4XzVjVmdzbElidDZUQWd5RnlMMDVONU8tSXFyOFE1QWk3QldZNFFpaGdpcDFBV2NGczd0Z1ZpU3dVc0ZnWGZtRDVVeVdPbnhudHdOcFMwNXpaZkU1RGxKN3RzbE45bWlvUVh3V2FWM2hkTHZQcnZMTw?oc=5",
+            "published_at": "2026-10-10T18:57:32Z"
+          },
+          {
+            "title": "Mateo Chávez continúa con su mala racha y pierde el invicto en la Eredivisie: Resumen Feyenoord vs Alkmaar",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOTjlvV1NHa3NidEExZDFFRlVXazVpSS0zQlNURkdTRGdfNGF4N3dtbnFKTEZUanNqUHVmdHVtMkdFQjJMbFNld2k1NUFOLWpOM2h1Ql9FS2RYbkswVnp5aTlHYk5mTDBpWmVPT3RsTzNHNzFRSm9hZ1FaWG1yUG9LMzVuSENBcVdSTFZMRDhTVXpmaHY4SUd0WG9sX2ZZc0ZKZWh5UFVjZWJZYVNrek9VSHVaaTJtV2NZNXJEbllqU2Qyc0dIR2FIcl9UQmpOeUh2WmFRaFRXMkRNMVh3LUJzUGQ0YzB4QdIB5gFBVV95cUxQbFRrYlhKbVdRZU9DX3cwZ1Y0clE4Qjd3VXozOWZPWWZGQlUwMEM5T0NlbjZFdmNFR1VmRzFfdkdFTEo4MDJOZHh4M1hYdW1aWU80ZHp3TFcyOFlpbWwwRkxuN0tFbkJad0dkMUJ1c2NyZ21PZW95anlWSWVKTXhwMmZBd2YtQXJFZTA0ZVEySHZubHNWVTJNaGNZWjl0Mm5xbkZuUG13QWRjNldHV2lqZHM2M0ZUZW5lZEpybTRZanJhYV9qUFAtTXo4TVFXYlh4cFZ5QkxvUkRFdlpxLURkekFkdUwtQQ?oc=5",
+            "published_at": "2026-10-10T18:41:25Z"
+          }
+        ]
+      }
     },
     "1575515": {
       "fixture_id": 1575515,
