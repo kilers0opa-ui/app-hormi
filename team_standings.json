@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T06:09:52.050058-06:00",
+  "updated_at": "2026-10-10T06:08:24.053439-06:00",
   "teams": {
     "genoa": {
       "label": "Genoa",
@@ -516,21 +516,6 @@
             },
             {
               "rank": 13,
-              "team_id": 2110,
-              "team_name": "Volos NFC",
-              "team_logo": "https://media.api-sports.io/football/teams/2110.png",
-              "played": 5,
-              "win": 0,
-              "draw": 2,
-              "lose": 3,
-              "goals_for": 4,
-              "goals_against": 9,
-              "goals_diff": -5,
-              "points": 2,
-              "form": "LLDDL"
-            },
-            {
-              "rank": 14,
               "team_id": 957,
               "team_name": "Levadiakos",
               "team_logo": "https://media.api-sports.io/football/teams/957.png",
@@ -543,6 +528,21 @@
               "goals_diff": -9,
               "points": 1,
               "form": "LDLLL"
+            },
+            {
+              "rank": 14,
+              "team_id": 2110,
+              "team_name": "Volos NFC",
+              "team_logo": "https://media.api-sports.io/football/teams/2110.png",
+              "played": 5,
+              "win": 0,
+              "draw": 2,
+              "lose": 3,
+              "goals_for": 4,
+              "goals_against": 9,
+              "goals_diff": -5,
+              "points": null,
+              "form": "LLDDL"
             }
           ],
           "season": 2026,
@@ -1134,21 +1134,6 @@
           "table": [
             {
               "rank": 1,
-              "team_id": 2281,
-              "team_name": "Toluca",
-              "team_logo": "https://media.api-sports.io/football/teams/2281.png",
-              "played": 10,
-              "win": 6,
-              "draw": 2,
-              "lose": 2,
-              "goals_for": 23,
-              "goals_against": 12,
-              "goals_diff": 11,
-              "points": 20,
-              "form": "DLWWW"
-            },
-            {
-              "rank": 2,
               "team_id": 2287,
               "team_name": "Club America",
               "team_logo": "https://media.api-sports.io/football/teams/2287.png",
@@ -1161,6 +1146,21 @@
               "goals_diff": 11,
               "points": 20,
               "form": "WDLWW"
+            },
+            {
+              "rank": 2,
+              "team_id": 2281,
+              "team_name": "Toluca",
+              "team_logo": "https://media.api-sports.io/football/teams/2281.png",
+              "played": 11,
+              "win": 6,
+              "draw": 2,
+              "lose": 3,
+              "goals_for": 25,
+              "goals_against": 15,
+              "goals_diff": 10,
+              "points": 20,
+              "form": "LDLWW"
             },
             {
               "rank": 3,
@@ -1179,6 +1179,21 @@
             },
             {
               "rank": 4,
+              "team_id": 2289,
+              "team_name": "Leon",
+              "team_logo": "https://media.api-sports.io/football/teams/2289.png",
+              "played": 11,
+              "win": 5,
+              "draw": 3,
+              "lose": 3,
+              "goals_for": 15,
+              "goals_against": 12,
+              "goals_diff": 3,
+              "points": 18,
+              "form": "DWDWL"
+            },
+            {
+              "rank": 5,
               "team_id": 2290,
               "team_name": "Club Queretaro",
               "team_logo": "https://media.api-sports.io/football/teams/2290.png",
@@ -1191,21 +1206,6 @@
               "goals_diff": 5,
               "points": 17,
               "form": "WDWWL"
-            },
-            {
-              "rank": 5,
-              "team_id": 2289,
-              "team_name": "Leon",
-              "team_logo": "https://media.api-sports.io/football/teams/2289.png",
-              "played": 10,
-              "win": 5,
-              "draw": 2,
-              "lose": 3,
-              "goals_for": 14,
-              "goals_against": 11,
-              "goals_diff": 3,
-              "points": 17,
-              "form": "WDWLD"
             },
             {
               "rank": 6,
@@ -1239,6 +1239,21 @@
             },
             {
               "rank": 8,
+              "team_id": 2291,
+              "team_name": "Puebla",
+              "team_logo": "https://media.api-sports.io/football/teams/2291.png",
+              "played": 11,
+              "win": 4,
+              "draw": 3,
+              "lose": 4,
+              "goals_for": 12,
+              "goals_against": 13,
+              "goals_diff": -1,
+              "points": 15,
+              "form": "DLDLW"
+            },
+            {
+              "rank": 9,
               "team_id": 2280,
               "team_name": "Club Tijuana",
               "team_logo": "https://media.api-sports.io/football/teams/2280.png",
@@ -1249,21 +1264,6 @@
               "goals_for": 14,
               "goals_against": 13,
               "goals_diff": 1,
-              "points": 14,
-              "form": "LDLWL"
-            },
-            {
-              "rank": 9,
-              "team_id": 2291,
-              "team_name": "Puebla",
-              "team_logo": "https://media.api-sports.io/football/teams/2291.png",
-              "played": 10,
-              "win": 4,
-              "draw": 2,
-              "lose": 4,
-              "goals_for": 11,
-              "goals_against": 12,
-              "goals_diff": -1,
               "points": 14,
               "form": "LDLWL"
             },
@@ -1284,6 +1284,21 @@
             },
             {
               "rank": 11,
+              "team_id": 2279,
+              "team_name": "Tigres UANL",
+              "team_logo": "https://media.api-sports.io/football/teams/2279.png",
+              "played": 11,
+              "win": 3,
+              "draw": 4,
+              "lose": 4,
+              "goals_for": 13,
+              "goals_against": 15,
+              "goals_diff": -2,
+              "points": 13,
+              "form": "WWLDD"
+            },
+            {
+              "rank": 12,
               "team_id": 2292,
               "team_name": "CF Pachuca",
               "team_logo": "https://media.api-sports.io/football/teams/2292.png",
@@ -1298,7 +1313,7 @@
               "form": "LDWWD"
             },
             {
-              "rank": 12,
+              "rank": 13,
               "team_id": 2286,
               "team_name": "U.N.A.M. - Pumas",
               "team_logo": "https://media.api-sports.io/football/teams/2286.png",
@@ -1313,7 +1328,7 @@
               "form": "LDLWL"
             },
             {
-              "rank": 13,
+              "rank": 14,
               "team_id": 2314,
               "team_name": "Atletico San Luis",
               "team_logo": "https://media.api-sports.io/football/teams/2314.png",
@@ -1328,7 +1343,7 @@
               "form": "WWLLW"
             },
             {
-              "rank": 14,
+              "rank": 15,
               "team_id": 2312,
               "team_name": "Atlante FC",
               "team_logo": "https://media.api-sports.io/football/teams/2312.png",
@@ -1341,21 +1356,6 @@
               "goals_diff": -3,
               "points": 11,
               "form": "WDLDD"
-            },
-            {
-              "rank": 15,
-              "team_id": 2279,
-              "team_name": "Tigres UANL",
-              "team_logo": "https://media.api-sports.io/football/teams/2279.png",
-              "played": 10,
-              "win": 2,
-              "draw": 4,
-              "lose": 4,
-              "goals_for": 10,
-              "goals_against": 13,
-              "goals_diff": -3,
-              "points": 10,
-              "form": "WLDDD"
             },
             {
               "rank": 16,
@@ -1405,7 +1405,7 @@
           ],
           "season": 2026,
           "group": "Liga MX: Apertura",
-          "rank": 8,
+          "rank": 9,
           "points": 14,
           "played": 9,
           "win": 4,
@@ -1416,7 +1416,7 @@
           "goals_diff": 1,
           "form": "LDLWL",
           "status": "same",
-          "description": "Promotion - Liga MX (Apertura - Play Offs: Quarter-finals)",
+          "description": null,
           "total_teams": 18,
           "league_id": 262,
           "league_name": "Liga MX"
@@ -1431,6 +1431,36 @@
           "table": [
             {
               "rank": 1,
+              "team_id": 2933,
+              "team_name": "Al-Qadisiyah FC",
+              "team_logo": "https://media.api-sports.io/football/teams/2933.png",
+              "played": 8,
+              "win": 6,
+              "draw": 1,
+              "lose": 1,
+              "goals_for": 21,
+              "goals_against": 8,
+              "goals_diff": 13,
+              "points": 19,
+              "form": "WDWWW"
+            },
+            {
+              "rank": 2,
+              "team_id": 2939,
+              "team_name": "Al-Nassr",
+              "team_logo": "https://media.api-sports.io/football/teams/2939.png",
+              "played": 8,
+              "win": 6,
+              "draw": 1,
+              "lose": 1,
+              "goals_for": 19,
+              "goals_against": 7,
+              "goals_diff": 12,
+              "points": 19,
+              "form": "WDWLW"
+            },
+            {
+              "rank": 3,
               "team_id": 2932,
               "team_name": "Al-Hilal Saudi FC",
               "team_logo": "https://media.api-sports.io/football/teams/2932.png",
@@ -1445,7 +1475,7 @@
               "form": "WLWWW"
             },
             {
-              "rank": 2,
+              "rank": 4,
               "team_id": 2938,
               "team_name": "Al-Ittihad FC",
               "team_logo": "https://media.api-sports.io/football/teams/2938.png",
@@ -1460,37 +1490,22 @@
               "form": "WWWDW"
             },
             {
-              "rank": 3,
-              "team_id": 2939,
-              "team_name": "Al-Nassr",
-              "team_logo": "https://media.api-sports.io/football/teams/2939.png",
-              "played": 7,
-              "win": 5,
-              "draw": 1,
-              "lose": 1,
-              "goals_for": 16,
-              "goals_against": 7,
-              "goals_diff": 9,
-              "points": 16,
-              "form": "DWLWW"
-            },
-            {
-              "rank": 4,
-              "team_id": 2933,
-              "team_name": "Al-Qadisiyah FC",
-              "team_logo": "https://media.api-sports.io/football/teams/2933.png",
-              "played": 7,
-              "win": 5,
-              "draw": 1,
-              "lose": 1,
-              "goals_for": 16,
-              "goals_against": 8,
-              "goals_diff": 8,
-              "points": 16,
-              "form": "DWWWW"
-            },
-            {
               "rank": 5,
+              "team_id": 2929,
+              "team_name": "Al-Ahli Jeddah",
+              "team_logo": "https://media.api-sports.io/football/teams/2929.png",
+              "played": 8,
+              "win": 5,
+              "draw": 0,
+              "lose": 3,
+              "goals_for": 20,
+              "goals_against": 10,
+              "goals_diff": 10,
+              "points": 15,
+              "form": "WWLWL"
+            },
+            {
+              "rank": 6,
               "team_id": 10513,
               "team_name": "NEOM",
               "team_logo": "https://media.api-sports.io/football/teams/10513.png",
@@ -1505,52 +1520,22 @@
               "form": "WWWLL"
             },
             {
-              "rank": 6,
-              "team_id": 2929,
-              "team_name": "Al-Ahli Jeddah",
-              "team_logo": "https://media.api-sports.io/football/teams/2929.png",
-              "played": 7,
-              "win": 4,
-              "draw": 0,
-              "lose": 3,
-              "goals_for": 16,
-              "goals_against": 10,
-              "goals_diff": 6,
-              "points": 12,
-              "form": "WLWLL"
-            },
-            {
               "rank": 7,
               "team_id": 10509,
               "team_name": "Al Kholood",
               "team_logo": "https://media.api-sports.io/football/teams/10509.png",
-              "played": 7,
+              "played": 8,
               "win": 3,
               "draw": 3,
-              "lose": 1,
+              "lose": 2,
               "goals_for": 12,
-              "goals_against": 10,
-              "goals_diff": 2,
+              "goals_against": 15,
+              "goals_diff": -3,
               "points": 12,
-              "form": "LWDWD"
+              "form": "LLWDW"
             },
             {
               "rank": 8,
-              "team_id": 26738,
-              "team_name": "Al Diriyah",
-              "team_logo": "https://media.api-sports.io/football/teams/26738.png",
-              "played": 7,
-              "win": 3,
-              "draw": 2,
-              "lose": 2,
-              "goals_for": 7,
-              "goals_against": 5,
-              "goals_diff": 2,
-              "points": 11,
-              "form": "DWLWD"
-            },
-            {
-              "rank": 9,
               "team_id": 2934,
               "team_name": "Al-Ettifaq",
               "team_logo": "https://media.api-sports.io/football/teams/2934.png",
@@ -1563,6 +1548,21 @@
               "goals_diff": 0,
               "points": 11,
               "form": "DDWLL"
+            },
+            {
+              "rank": 9,
+              "team_id": 26738,
+              "team_name": "Al Diriyah",
+              "team_logo": "https://media.api-sports.io/football/teams/26738.png",
+              "played": 8,
+              "win": 3,
+              "draw": 2,
+              "lose": 3,
+              "goals_for": 7,
+              "goals_against": 8,
+              "goals_diff": -1,
+              "points": 11,
+              "form": "LDWLW"
             },
             {
               "rank": 10,
@@ -1641,21 +1641,6 @@
             },
             {
               "rank": 15,
-              "team_id": 2931,
-              "team_name": "Al-Fateh",
-              "team_logo": "https://media.api-sports.io/football/teams/2931.png",
-              "played": 7,
-              "win": 0,
-              "draw": 3,
-              "lose": 4,
-              "goals_for": 4,
-              "goals_against": 11,
-              "goals_diff": -7,
-              "points": 3,
-              "form": "LLDDD"
-            },
-            {
-              "rank": 16,
               "team_id": 2930,
               "team_name": "Al-Faisaly FC",
               "team_logo": "https://media.api-sports.io/football/teams/2930.png",
@@ -1670,7 +1655,7 @@
               "form": "LDDLD"
             },
             {
-              "rank": 17,
+              "rank": 16,
               "team_id": 2936,
               "team_name": "Al Taawon",
               "team_logo": "https://media.api-sports.io/football/teams/2936.png",
@@ -1683,6 +1668,21 @@
               "goals_diff": -9,
               "points": 3,
               "form": "LLDLD"
+            },
+            {
+              "rank": 17,
+              "team_id": 2931,
+              "team_name": "Al-Fateh",
+              "team_logo": "https://media.api-sports.io/football/teams/2931.png",
+              "played": 8,
+              "win": 0,
+              "draw": 3,
+              "lose": 5,
+              "goals_for": 4,
+              "goals_against": 15,
+              "goals_diff": -11,
+              "points": 3,
+              "form": "LLLDD"
             },
             {
               "rank": 18,
@@ -1702,16 +1702,16 @@
           ],
           "season": 2026,
           "group": "Saudi Professional League",
-          "rank": 4,
-          "points": 16,
-          "played": 7,
-          "win": 5,
+          "rank": 1,
+          "points": 19,
+          "played": 8,
+          "win": 6,
           "draw": 1,
           "lose": 1,
-          "goals_for": 16,
+          "goals_for": 21,
           "goals_against": 8,
-          "goals_diff": 8,
-          "form": "DWWWW",
+          "goals_diff": 13,
+          "form": "WDWWW",
           "status": "same",
           "description": "Promotion - AFC Champions League (League phase)",
           "total_teams": 18,
@@ -2004,6 +2004,21 @@
             },
             {
               "rank": 2,
+              "team_id": 228,
+              "team_name": "Sporting CP",
+              "team_logo": "https://media.api-sports.io/football/teams/228.png",
+              "played": 8,
+              "win": 5,
+              "draw": 3,
+              "lose": 0,
+              "goals_for": 20,
+              "goals_against": 9,
+              "goals_diff": 11,
+              "points": 18,
+              "form": "WDDWW"
+            },
+            {
+              "rank": 3,
               "team_id": 211,
               "team_name": "Benfica",
               "team_logo": "https://media.api-sports.io/football/teams/211.png",
@@ -2016,21 +2031,6 @@
               "goals_diff": 15,
               "points": 16,
               "form": "LWWWW"
-            },
-            {
-              "rank": 3,
-              "team_id": 228,
-              "team_name": "Sporting CP",
-              "team_logo": "https://media.api-sports.io/football/teams/228.png",
-              "played": 7,
-              "win": 4,
-              "draw": 3,
-              "lose": 0,
-              "goals_for": 17,
-              "goals_against": 8,
-              "goals_diff": 9,
-              "points": 15,
-              "form": "DDWWW"
             },
             {
               "rank": 4,
@@ -2064,21 +2064,36 @@
             },
             {
               "rank": 6,
-              "team_id": 217,
-              "team_name": "SC Braga",
-              "team_logo": "https://media.api-sports.io/football/teams/217.png",
-              "played": 6,
+              "team_id": 762,
+              "team_name": "GIL Vicente",
+              "team_logo": "https://media.api-sports.io/football/teams/762.png",
+              "played": 7,
               "win": 3,
               "draw": 2,
-              "lose": 1,
-              "goals_for": 7,
+              "lose": 2,
+              "goals_for": 6,
               "goals_against": 5,
-              "goals_diff": 2,
+              "goals_diff": 1,
               "points": 11,
-              "form": "DWLWW"
+              "form": "WDLLD"
             },
             {
               "rank": 7,
+              "team_id": 217,
+              "team_name": "SC Braga",
+              "team_logo": "https://media.api-sports.io/football/teams/217.png",
+              "played": 7,
+              "win": 3,
+              "draw": 2,
+              "lose": 2,
+              "goals_for": 8,
+              "goals_against": 8,
+              "goals_diff": 0,
+              "points": 11,
+              "form": "LDWLW"
+            },
+            {
+              "rank": 8,
               "team_id": 238,
               "team_name": "Academico Viseu",
               "team_logo": "https://media.api-sports.io/football/teams/238.png",
@@ -2093,7 +2108,7 @@
               "form": "WWWLD"
             },
             {
-              "rank": 8,
+              "rank": 9,
               "team_id": 15130,
               "team_name": "Estrela",
               "team_logo": "https://media.api-sports.io/football/teams/15130.png",
@@ -2106,21 +2121,6 @@
               "goals_diff": 0,
               "points": 10,
               "form": "LDWDW"
-            },
-            {
-              "rank": 9,
-              "team_id": 762,
-              "team_name": "GIL Vicente",
-              "team_logo": "https://media.api-sports.io/football/teams/762.png",
-              "played": 6,
-              "win": 2,
-              "draw": 2,
-              "lose": 2,
-              "goals_for": 5,
-              "goals_against": 5,
-              "goals_diff": 0,
-              "points": 8,
-              "form": "DLLDW"
             },
             {
               "rank": 10,
@@ -2157,15 +2157,15 @@
               "team_id": 215,
               "team_name": "Moreirense",
               "team_logo": "https://media.api-sports.io/football/teams/215.png",
-              "played": 7,
+              "played": 8,
               "win": 2,
               "draw": 2,
-              "lose": 3,
+              "lose": 4,
               "goals_for": 8,
-              "goals_against": 14,
-              "goals_diff": -6,
+              "goals_against": 15,
+              "goals_diff": -7,
               "points": 8,
-              "form": "DWLLW"
+              "form": "LDWLL"
             },
             {
               "rank": 13,
@@ -2862,6 +2862,21 @@
             },
             {
               "rank": 2,
+              "team_id": 197,
+              "team_name": "PSV Eindhoven",
+              "team_logo": "https://media.api-sports.io/football/teams/197.png",
+              "played": 8,
+              "win": 6,
+              "draw": 1,
+              "lose": 1,
+              "goals_for": 26,
+              "goals_against": 10,
+              "goals_diff": 16,
+              "points": 19,
+              "form": "WLWWW"
+            },
+            {
+              "rank": 3,
               "team_id": 209,
               "team_name": "Feyenoord",
               "team_logo": "https://media.api-sports.io/football/teams/209.png",
@@ -2874,21 +2889,6 @@
               "goals_diff": 18,
               "points": 17,
               "form": "WWWDW"
-            },
-            {
-              "rank": 3,
-              "team_id": 197,
-              "team_name": "PSV Eindhoven",
-              "team_logo": "https://media.api-sports.io/football/teams/197.png",
-              "played": 7,
-              "win": 5,
-              "draw": 1,
-              "lose": 1,
-              "goals_for": 24,
-              "goals_against": 10,
-              "goals_diff": 14,
-              "points": 16,
-              "form": "LWWWW"
             },
             {
               "rank": 4,
@@ -2985,15 +2985,15 @@
               "team_id": 210,
               "team_name": "Heerenveen",
               "team_logo": "https://media.api-sports.io/football/teams/210.png",
-              "played": 7,
+              "played": 8,
               "win": 2,
               "draw": 3,
-              "lose": 2,
+              "lose": 3,
               "goals_for": 11,
-              "goals_against": 9,
-              "goals_diff": 2,
+              "goals_against": 11,
+              "goals_diff": 0,
               "points": 9,
-              "form": "WDLDL"
+              "form": "LWDLD"
             },
             {
               "rank": 11,
@@ -3855,6 +3855,21 @@
             },
             {
               "rank": 11,
+              "team_id": 540,
+              "team_name": "Espanyol",
+              "team_logo": "https://media.api-sports.io/football/teams/540.png",
+              "played": 8,
+              "win": 2,
+              "draw": 2,
+              "lose": 4,
+              "goals_for": 11,
+              "goals_against": 11,
+              "goals_diff": 0,
+              "points": 8,
+              "form": "DLLWD"
+            },
+            {
+              "rank": 12,
               "team_id": 546,
               "team_name": "Getafe",
               "team_logo": "https://media.api-sports.io/football/teams/546.png",
@@ -3869,7 +3884,7 @@
               "form": "WLDDL"
             },
             {
-              "rank": 12,
+              "rank": 13,
               "team_id": 728,
               "team_name": "Rayo Vallecano",
               "team_logo": "https://media.api-sports.io/football/teams/728.png",
@@ -3884,7 +3899,7 @@
               "form": "DWLWL"
             },
             {
-              "rank": 13,
+              "rank": 14,
               "team_id": 727,
               "team_name": "Osasuna",
               "team_logo": "https://media.api-sports.io/football/teams/727.png",
@@ -3899,7 +3914,7 @@
               "form": "DLLLW"
             },
             {
-              "rank": 14,
+              "rank": 15,
               "team_id": 538,
               "team_name": "Celta Vigo",
               "team_logo": "https://media.api-sports.io/football/teams/538.png",
@@ -3912,21 +3927,6 @@
               "goals_diff": 2,
               "points": 7,
               "form": "WDDDL"
-            },
-            {
-              "rank": 15,
-              "team_id": 540,
-              "team_name": "Espanyol",
-              "team_logo": "https://media.api-sports.io/football/teams/540.png",
-              "played": 7,
-              "win": 2,
-              "draw": 1,
-              "lose": 4,
-              "goals_for": 10,
-              "goals_against": 10,
-              "goals_diff": 0,
-              "points": 7,
-              "form": "LLWDL"
             },
             {
               "rank": 16,
@@ -3993,15 +3993,15 @@
               "team_id": 535,
               "team_name": "Malaga",
               "team_logo": "https://media.api-sports.io/football/teams/535.png",
-              "played": 7,
+              "played": 8,
               "win": 0,
-              "draw": 3,
+              "draw": 4,
               "lose": 4,
-              "goals_for": 3,
-              "goals_against": 12,
+              "goals_for": 4,
+              "goals_against": 13,
               "goals_diff": -9,
-              "points": 3,
-              "form": "LLDDL"
+              "points": 4,
+              "form": "DLLDD"
             }
           ],
           "season": 2026,
@@ -4743,6 +4743,21 @@
             },
             {
               "rank": 11,
+              "team_id": 540,
+              "team_name": "Espanyol",
+              "team_logo": "https://media.api-sports.io/football/teams/540.png",
+              "played": 8,
+              "win": 2,
+              "draw": 2,
+              "lose": 4,
+              "goals_for": 11,
+              "goals_against": 11,
+              "goals_diff": 0,
+              "points": 8,
+              "form": "DLLWD"
+            },
+            {
+              "rank": 12,
               "team_id": 546,
               "team_name": "Getafe",
               "team_logo": "https://media.api-sports.io/football/teams/546.png",
@@ -4757,7 +4772,7 @@
               "form": "WLDDL"
             },
             {
-              "rank": 12,
+              "rank": 13,
               "team_id": 728,
               "team_name": "Rayo Vallecano",
               "team_logo": "https://media.api-sports.io/football/teams/728.png",
@@ -4772,7 +4787,7 @@
               "form": "DWLWL"
             },
             {
-              "rank": 13,
+              "rank": 14,
               "team_id": 727,
               "team_name": "Osasuna",
               "team_logo": "https://media.api-sports.io/football/teams/727.png",
@@ -4787,7 +4802,7 @@
               "form": "DLLLW"
             },
             {
-              "rank": 14,
+              "rank": 15,
               "team_id": 538,
               "team_name": "Celta Vigo",
               "team_logo": "https://media.api-sports.io/football/teams/538.png",
@@ -4800,21 +4815,6 @@
               "goals_diff": 2,
               "points": 7,
               "form": "WDDDL"
-            },
-            {
-              "rank": 15,
-              "team_id": 540,
-              "team_name": "Espanyol",
-              "team_logo": "https://media.api-sports.io/football/teams/540.png",
-              "played": 7,
-              "win": 2,
-              "draw": 1,
-              "lose": 4,
-              "goals_for": 10,
-              "goals_against": 10,
-              "goals_diff": 0,
-              "points": 7,
-              "form": "LLWDL"
             },
             {
               "rank": 16,
@@ -4881,15 +4881,15 @@
               "team_id": 535,
               "team_name": "Malaga",
               "team_logo": "https://media.api-sports.io/football/teams/535.png",
-              "played": 7,
+              "played": 8,
               "win": 0,
-              "draw": 3,
+              "draw": 4,
               "lose": 4,
-              "goals_for": 3,
-              "goals_against": 12,
+              "goals_for": 4,
+              "goals_against": 13,
               "goals_diff": -9,
-              "points": 3,
-              "form": "LLDDL"
+              "points": 4,
+              "form": "DLLDD"
             }
           ],
           "season": 2026,
@@ -5511,6 +5511,21 @@
             },
             {
               "rank": 3,
+              "team_id": 398,
+              "team_name": "FC Nordsjaelland",
+              "team_logo": "https://media.api-sports.io/football/teams/398.png",
+              "played": 10,
+              "win": 5,
+              "draw": 3,
+              "lose": 2,
+              "goals_for": 14,
+              "goals_against": 10,
+              "goals_diff": 4,
+              "points": 18,
+              "form": "DLWDL"
+            },
+            {
+              "rank": 4,
               "team_id": 2070,
               "team_name": "Viborg",
               "team_logo": "https://media.api-sports.io/football/teams/2070.png",
@@ -5523,21 +5538,6 @@
               "goals_diff": 7,
               "points": 17,
               "form": "WDLWW"
-            },
-            {
-              "rank": 4,
-              "team_id": 398,
-              "team_name": "FC Nordsjaelland",
-              "team_logo": "https://media.api-sports.io/football/teams/398.png",
-              "played": 9,
-              "win": 5,
-              "draw": 2,
-              "lose": 2,
-              "goals_for": 14,
-              "goals_against": 10,
-              "goals_diff": 4,
-              "points": 17,
-              "form": "LWDLW"
             },
             {
               "rank": 5,
@@ -5604,15 +5604,15 @@
               "team_id": 405,
               "team_name": "Odense",
               "team_logo": "https://media.api-sports.io/football/teams/405.png",
-              "played": 9,
+              "played": 10,
               "win": 2,
-              "draw": 3,
+              "draw": 4,
               "lose": 4,
               "goals_for": 8,
               "goals_against": 14,
               "goals_diff": -6,
-              "points": 9,
-              "form": "DWLDD"
+              "points": 10,
+              "form": "DDWLD"
             },
             {
               "rank": 10,
@@ -6267,15 +6267,15 @@
               "team_id": 48,
               "team_name": "West Ham",
               "team_logo": "https://media.api-sports.io/football/teams/48.png",
-              "played": 8,
+              "played": 9,
               "win": 4,
-              "draw": 3,
+              "draw": 4,
               "lose": 1,
-              "goals_for": 22,
-              "goals_against": 11,
+              "goals_for": 23,
+              "goals_against": 12,
               "goals_diff": 11,
-              "points": 15,
-              "form": "DWWWW"
+              "points": 16,
+              "form": "DDWWW"
             },
             {
               "rank": 3,
@@ -6309,6 +6309,21 @@
             },
             {
               "rank": 5,
+              "team_id": 72,
+              "team_name": "QPR",
+              "team_logo": "https://media.api-sports.io/football/teams/72.png",
+              "played": 9,
+              "win": 3,
+              "draw": 5,
+              "lose": 1,
+              "goals_for": 11,
+              "goals_against": 8,
+              "goals_diff": 3,
+              "points": 14,
+              "form": "DDDDL"
+            },
+            {
+              "rank": 6,
               "team_id": 60,
               "team_name": "West Brom",
               "team_logo": "https://media.api-sports.io/football/teams/60.png",
@@ -6321,21 +6336,6 @@
               "goals_diff": 2,
               "points": 14,
               "form": "LDWWD"
-            },
-            {
-              "rank": 6,
-              "team_id": 72,
-              "team_name": "QPR",
-              "team_logo": "https://media.api-sports.io/football/teams/72.png",
-              "played": 8,
-              "win": 3,
-              "draw": 4,
-              "lose": 1,
-              "goals_for": 10,
-              "goals_against": 7,
-              "goals_diff": 3,
-              "points": 13,
-              "form": "DDDLW"
             },
             {
               "rank": 7,
