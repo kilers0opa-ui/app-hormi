@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T08:57:59.830696-06:00",
+  "updated_at": "2026-10-10T12:40:39.703978-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -3197,33 +3197,36 @@
             "team_id": 201,
             "team_name": "AZ Alkmaar",
             "team_logo": "https://media.api-sports.io/football/teams/201.png",
-            "played": 7,
+            "played": 8,
             "goals": 1,
             "assists": 3,
-            "minutes": 561
+            "minutes": 651
           }
         ]
       },
       "applied_fixtures": {
         "seleccion": [
           1629004
+        ],
+        "az_alkmaar": [
+          1552181
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1629004,
-        "kickoff": "2026-10-03T20:00:00-06:00",
-        "home": "Estados Unidos",
-        "away": "México",
-        "home_logo": "https://media.api-sports.io/football/teams/2384.png",
-        "away_logo": "https://media.api-sports.io/football/teams/16.png",
-        "home_goals": 3,
+        "fixture_id": 1552181,
+        "kickoff": "2026-10-10T10:45:00-06:00",
+        "home": "Feyenoord",
+        "away": "AZ Alkmaar",
+        "home_logo": "https://media.api-sports.io/football/teams/209.png",
+        "away_logo": "https://media.api-sports.io/football/teams/201.png",
+        "home_goals": 2,
         "away_goals": 0,
-        "league": "Amistoso",
-        "team_key": "seleccion",
-        "team_label": "Selección Mexicana",
-        "emoji": "🇲🇽",
-        "crest_url": "https://media.api-sports.io/football/teams/16.png",
-        "minutes": 22,
+        "league": "Eredivisie",
+        "team_key": "az_alkmaar",
+        "team_label": "AZ Alkmaar",
+        "emoji": "🧀",
+        "crest_url": "https://media.api-sports.io/football/teams/201.png",
+        "minutes": 90,
         "goals": 0,
         "assists": 0
       }
