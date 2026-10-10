@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T09:46:58.588659-06:00",
+  "updated_at": "2026-10-10T03:11:01.438437-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -1302,18 +1302,6 @@
             "minutes": 85
           },
           {
-            "league_id": 40,
-            "league_name": "Championship",
-            "league_logo": "https://media.api-sports.io/football/leagues/40.png",
-            "team_id": 39,
-            "team_name": "Wolves",
-            "team_logo": "https://media.api-sports.io/football/teams/39.png",
-            "played": 6,
-            "goals": 3,
-            "assists": 1,
-            "minutes": 350
-          },
-          {
             "league_id": 10,
             "league_name": "Friendlies",
             "league_logo": "https://media.api-sports.io/football/leagues/10.png",
@@ -1324,6 +1312,18 @@
             "goals": 1,
             "assists": 0,
             "minutes": 187
+          },
+          {
+            "league_id": 40,
+            "league_name": "Championship",
+            "league_logo": "https://media.api-sports.io/football/leagues/40.png",
+            "team_id": 39,
+            "team_name": "Wolves",
+            "team_logo": "https://media.api-sports.io/football/teams/39.png",
+            "played": 6,
+            "goals": 3,
+            "assists": 1,
+            "minutes": 350
           }
         ]
       },
@@ -2309,18 +2309,6 @@
             "minutes": 414
           },
           {
-            "league_id": 307,
-            "league_name": "Pro League",
-            "league_logo": "https://media.api-sports.io/football/leagues/307.png",
-            "team_id": 2933,
-            "team_name": "Al-Qadisiyah FC",
-            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
-            "played": 8,
-            "goals": 4,
-            "assists": 3,
-            "minutes": 720
-          },
-          {
             "league_id": 10,
             "league_name": "Friendlies",
             "league_logo": "https://media.api-sports.io/football/leagues/10.png",
@@ -2331,6 +2319,18 @@
             "goals": 0,
             "assists": 0,
             "minutes": 202
+          },
+          {
+            "league_id": 307,
+            "league_name": "Pro League",
+            "league_logo": "https://media.api-sports.io/football/leagues/307.png",
+            "team_id": 2933,
+            "team_name": "Al-Qadisiyah FC",
+            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
+            "played": 8,
+            "goals": 4,
+            "assists": 3,
+            "minutes": 720
           },
           {
             "league_id": 826,
@@ -2895,18 +2895,6 @@
             "minutes": 17
           },
           {
-            "league_id": 94,
-            "league_name": "Primeira Liga",
-            "league_logo": "https://media.api-sports.io/football/leagues/94.png",
-            "team_id": 212,
-            "team_name": "FC Porto",
-            "team_logo": "https://media.api-sports.io/football/teams/212.png",
-            "played": 2,
-            "goals": 1,
-            "assists": 0,
-            "minutes": 43
-          },
-          {
             "league_id": 10,
             "league_name": "Friendlies",
             "league_logo": "https://media.api-sports.io/football/leagues/10.png",
@@ -2917,6 +2905,18 @@
             "goals": 0,
             "assists": 0,
             "minutes": 172
+          },
+          {
+            "league_id": 94,
+            "league_name": "Primeira Liga",
+            "league_logo": "https://media.api-sports.io/football/leagues/94.png",
+            "team_id": 212,
+            "team_name": "FC Porto",
+            "team_logo": "https://media.api-sports.io/football/teams/212.png",
+            "played": 2,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 43
           }
         ],
         "2017": [
@@ -3176,18 +3176,6 @@
             "minutes": 90
           },
           {
-            "league_id": 88,
-            "league_name": "Eredivisie",
-            "league_logo": "https://media.api-sports.io/football/leagues/88.png",
-            "team_id": 201,
-            "team_name": "AZ Alkmaar",
-            "team_logo": "https://media.api-sports.io/football/teams/201.png",
-            "played": 7,
-            "goals": 1,
-            "assists": 3,
-            "minutes": 561
-          },
-          {
             "league_id": 10,
             "league_name": "Friendlies",
             "league_logo": "https://media.api-sports.io/football/leagues/10.png",
@@ -3198,6 +3186,18 @@
             "goals": 0,
             "assists": 0,
             "minutes": 260
+          },
+          {
+            "league_id": 88,
+            "league_name": "Eredivisie",
+            "league_logo": "https://media.api-sports.io/football/leagues/88.png",
+            "team_id": 201,
+            "team_name": "AZ Alkmaar",
+            "team_logo": "https://media.api-sports.io/football/teams/201.png",
+            "played": 7,
+            "goals": 1,
+            "assists": 3,
+            "minutes": 561
           }
         ]
       },
@@ -3959,18 +3959,6 @@
             "minutes": 29
           },
           {
-            "league_id": 140,
-            "league_name": "La Liga",
-            "league_logo": "https://media.api-sports.io/football/leagues/140.png",
-            "team_id": 543,
-            "team_name": "Real Betis",
-            "team_logo": "https://media.api-sports.io/football/teams/543.png",
-            "played": 2,
-            "goals": 0,
-            "assists": 0,
-            "minutes": 31
-          },
-          {
             "league_id": 10,
             "league_name": "Friendlies",
             "league_logo": "https://media.api-sports.io/football/leagues/10.png",
@@ -3981,6 +3969,18 @@
             "goals": 0,
             "assists": 0,
             "minutes": 458
+          },
+          {
+            "league_id": 140,
+            "league_name": "La Liga",
+            "league_logo": "https://media.api-sports.io/football/leagues/140.png",
+            "team_id": 543,
+            "team_name": "Real Betis",
+            "team_logo": "https://media.api-sports.io/football/teams/543.png",
+            "played": 2,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 31
           }
         ],
         "2015": [
