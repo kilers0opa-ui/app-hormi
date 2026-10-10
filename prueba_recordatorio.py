@@ -16,8 +16,8 @@ lineas = [
     "🐕 Gilberto Mora · FC Juárez vs Club Tijuana · 5:00 p.m.",
 ]
 variantes = [
-    ("🧪 A · 📅 Mañana juegan 6 de tus jugadores", "\n".join(lineas) + "\n(hora centro) · Toca para ver los detalles"),
-    ("🧪 B · 📅 Mañana juegan Vásquez, Raúl, Obed, Chávez, Giménez y Mora", "\n".join(lineas) + "\n(hora centro) · Toca para ver los detalles"),
+    ("🧪 C · 📅 Mañana juegan 6 de tus jugadores favoritos", "Da clic o entra a la app para ver los detalles de los partidos."),
+    ("🧪 D · 📅 Mañana juegan 6 de tus jugadores favoritos", "Vásquez, Raúl, Obed, Chávez, Giménez y Mora\nDa clic o entra a la app para ver los detalles de los partidos."),
 ]
 for title, body in variantes:
     try:
