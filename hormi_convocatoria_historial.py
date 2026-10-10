@@ -10,6 +10,7 @@ import argparse, json, re, sys, time, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
 import hormi_convocatoria as hc
 
+DUMP = None
 PAGINAS = {"es": (hc.API_ES, hc.PAGE_ES), "en": (hc.API, hc.PAGE.replace("_", " "))}
 
 
@@ -75,6 +76,8 @@ def leer(idioma, desde, paso_dias=4):
             sec = seccion(contenido(api, r["revid"]), idioma)
             if not sec:
                 continue
+            if DUMP is not None and len(DUMP) < 6 and idioma == "es":
+                DUMP.append({"rev": r["timestamp"], "intro": sec[:900]})
             pp, pw, pd = ((hc.parse_players_es, hc.parse_window_es, hc.parse_detalle_es) if idioma == "es"
                           else (hc.parse_players, hc.parse_window, hc.parse_detalle_en))
             f = hc.leer_fuente(idioma, sec, pp, pw, pd, hc.info_es if idioma == "es" else None)
@@ -93,8 +96,15 @@ def main():
     ap.add_argument("--ver", action="store_true")
     args = ap.parse_args()
     config = json.loads(hc.CONFIG_FILE.read_text(encoding="utf-8"))
+    global DUMP
+    if args.ver:
+        DUMP = []
     es, en = leer("es", args.desde), leer("en", args.desde)
+    if DUMP is not None:
+        json.dump(DUMP, open("historial_dump.json", "w"), ensure_ascii=False, indent=1)
     print(f"es: {len(es)} ventanas · en: {len(en)} ventanas")
+    for (d, h), f in sorted(en.items()):
+        print(f"  en {d} → {h} · {f.get('motivo')} · {f['n']} jug · rev {f['rev']}")
     hist = []
     for (d, h), f in sorted(es.items(), reverse=True):
         # la de inglés que se traslape con esta ventana confirma
