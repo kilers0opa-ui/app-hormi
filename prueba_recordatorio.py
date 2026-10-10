@@ -15,12 +15,17 @@ lineas = [
     "🐉 Santiago Giménez · Marítimo vs FC Porto · 11:00 a.m.",
     "🐕 Gilberto Mora · FC Juárez vs Club Tijuana · 5:00 p.m.",
 ]
-variantes = [
-    ("🧪 C · 📅 Mañana juegan 6 de tus jugadores favoritos", "Entra para ver los detalles de los partidos."),
+pruebas = [
+    ("🧪 ⚽ 🔴 Arrancó: Olympiacos (Armando)",
+     "Olympiacos vs Panathinaikos · Superliga de Grecia\nSigue el marcador en tiempo real desde la app.",
+     "armando", "olympiacos", None),
+    ("🧪 ⚽ 🇲🇽 Arrancó: Selección Mexicana",
+     "México vs Chile · Amistoso\nSigue el marcador en tiempo real desde la app.",
+     None, "seleccion", ["armando", "vasquez", "gimenez", "obed", "fidalgo"]),
 ]
-for title, body in variantes:
+for title, body, pk, tk, pks in pruebas:
     try:
-        fcm.send("reminder", title, body, None, None, player_keys=keys)
+        fcm.send("start", title, body, pk, tk, player_keys=pks)
         res["enviados"] += 1
     except Exception as e:
         res["fallos"].append(str(e))
