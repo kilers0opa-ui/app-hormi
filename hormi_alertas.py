@@ -366,7 +366,7 @@ LIGAS_ES = {
     "CONCACAF Champions League": "Liga de Campeones Concacaf", "Leagues Cup": "Leagues Cup",
     "UEFA Champions League": "Champions League", "UEFA Europa League": "Europa League",
     "UEFA Europa Conference League": "Conference League", "Copa America": "Copa América",
-    "League Cup": "Copa de la Liga", "FA Cup": "Copa FA", "Super Cup": "Supercopa", "Coppa Italia": "Copa Italia",
+    "League Cup": "Carabao Cup", "FA Cup": "FA Cup", "Super Cup": "Supercopa", "Coppa Italia": "Copa Italia",
     "Primeira Liga": "Liga Portugal", "Taça de Portugal": "Copa de Portugal", "KNVB Beker": "Copa de Países Bajos",
     "Major League Soccer": "MLS", "MLS All-Star": "Juego de Estrellas MLS", "Campeones Cup": "Campeones Cup",
     "US Open Cup": "Copa Abierta de EE. UU.", "Pro League": "Liga Profesional Saudí",

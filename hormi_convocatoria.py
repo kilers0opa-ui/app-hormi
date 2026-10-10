@@ -204,7 +204,11 @@ def esta_en_lista(player, nombres_norm):
     if toks in nombres_norm:
         return True
     ap, nom = toks[-1], toks[0]
-    return any(n[-1] == ap and n[0][0] == nom[0] for n in nombres_norm)
+    if any(n[-1] == ap and n[0][0] == nom[0] for n in nombres_norm):
+        return True
+    # Con dos apellidos en una fuente y uno en la otra ("Víctor Guzmán Olmedo" / "Víctor Guzmán"):
+    # mismo nombre de pila y algún apellido en común.
+    return any(n[0] == nom and set(n[1:]) & set(toks[1:]) for n in nombres_norm)
 
 
 def leer_fuente(nombre, wikitext, parse_p, parse_w, parse_d=None, info=None):
