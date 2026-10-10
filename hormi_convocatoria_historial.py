@@ -112,6 +112,7 @@ def main():
         par = next((g for (d2, h2), g in en.items() if d2 <= h and h2 >= d), None)
         sel = hc.construir({"es": f, "en": par}, config)
         sel["motivo"] = f.get("motivo")
+        sel["desde"], sel["hasta"] = f["desde"].isoformat(), f["hasta"].isoformat()   # la ventana de es.wikipedia
         sel["reconstruida"] = True
         hist.append(sel)
         print(f"{sel['desde']} → {sel['hasta']} · {sel.get('motivo')} · {len(sel['jugadores'])} jug · anunciada {sel.get('anunciada')} · "

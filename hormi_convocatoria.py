@@ -184,6 +184,8 @@ def info_es(wikitext):
         if c:
             for t in re.findall(r"\{\{sel\|([^}|]+)[^}]*\}\}|\[\[([^\]]+)\]\]", c.group(1)):
                 nombre = t[0] or _link_texto("[[" + t[1] + "]]")
+                if nombre and re.search(r"copa|liga|mundial|cup|torneo", nombre, re.I):
+                    continue   # es el torneo, no un rival
                 if nombre and nombre not in rivales:
                     rivales.append(nombre.strip())
         fechas = [f"{d} de {list(MESES_ES)[m - 1]}" for _, m, d in _fechas_es(intro)]
@@ -233,7 +235,9 @@ def _fechas_es(texto, year_default=None):
 def parse_window_es(wikitext):
     """(desde, hasta) de los partidos listados en la introducción."""
     intro = _intro_es(wikitext)
-    years = re.findall(r"\b(20\d\d)\b", intro)
+    bruto = wikitext.split("{|")[0]
+    cita = re.search(r"fecha=(\d{1,2}) de (" + _MES_RE + r") de (20\d\d)", bruto, re.I)
+    years = re.findall(r"\b(20\d\d)\b", intro) or ([cita.group(3)] if cita else [])
     if not years:
         raise RuntimeError("no pude leer el año de la convocatoria (es)")
     y0 = int(years[-1])
@@ -243,6 +247,11 @@ def parse_window_es(wikitext):
             fechas.append(date(y or y0, mes, d))
         except ValueError:
             pass
+    if not fechas and cita:
+        # Torneo sin fechas en el texto (p. ej. "Lista final ... para la Copa del Mundo 2026"): desde el anuncio
+        # y 45 días (lo que dura la fase de grupos + eliminatorias de un torneo así).
+        d0 = date(int(cita.group(3)), MESES_ES[cita.group(2).lower()], int(cita.group(1)))
+        return d0, d0 + timedelta(days=45)
     if not fechas:
         raise RuntimeError("no pude leer las fechas de la convocatoria (es)")
     return min(fechas), max(fechas)
