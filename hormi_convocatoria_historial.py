@@ -72,12 +72,11 @@ def leer(idioma, desde, paso_dias=4):
             elegidas[-1] = r
     ventanas = {}
     for r in elegidas:
+        sec = None
         try:
             sec = seccion(contenido(api, r["revid"]), idioma)
             if not sec:
                 continue
-            if DUMP is not None and len(DUMP) < 6 and idioma == "es":
-                DUMP.append({"rev": r["timestamp"], "intro": sec[:900]})
             pp, pw, pd = ((hc.parse_players_es, hc.parse_window_es, hc.parse_detalle_es) if idioma == "es"
                           else (hc.parse_players, hc.parse_window, hc.parse_detalle_en))
             f = hc.leer_fuente(idioma, sec, pp, pw, pd, hc.info_es if idioma == "es" else None)
@@ -86,6 +85,8 @@ def leer(idioma, desde, paso_dias=4):
             ventanas[(f["desde"], f["hasta"])] = f   # la versión más nueva de cada ventana gana
         except Exception as err:
             print(f"  {idioma} {r['timestamp']}: {err}")
+            if DUMP is not None and idioma == "es" and sec and len(DUMP) < 40:
+                DUMP.append({"rev": r["timestamp"], "err": str(err), "intro": sec[:700]})
         time.sleep(0.2)
     return ventanas
 
