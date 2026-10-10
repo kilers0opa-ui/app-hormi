@@ -122,7 +122,8 @@ def main():
         return 0
     data = json.loads(hc.OUT_FILE.read_text(encoding="utf-8"))
     actual = data.get("seleccion") or {}
-    previas = [x for x in hist if x["desde"] < actual.get("desde", "9999")]
+    anio = int(actual.get("desde", "2026")[:4])
+    previas = [x for x in hist if x["desde"] < actual.get("desde", "9999") and int(x["desde"][:4]) >= anio - 1]
     data["historial"] = previas
     hc.OUT_FILE.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"historial: {len(previas)} convocatorias")

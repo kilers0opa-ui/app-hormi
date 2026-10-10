@@ -240,13 +240,20 @@ def parse_window_es(wikitext):
     years = re.findall(r"\b(20\d\d)\b", intro) or ([cita.group(3)] if cita else [])
     if not years:
         raise RuntimeError("no pude leer el año de la convocatoria (es)")
-    y0 = int(years[-1])
+    y0 = int(cita.group(3)) if cita else int(years[-1])   # el año del anuncio ("2024-25" en el texto confunde)
+    d_cita = date(int(cita.group(3)), MESES_ES[cita.group(2).lower()], int(cita.group(1))) if cita else None
     fechas = []
-    for y, mes, d in _fechas_es(intro, y0):
+    for y, mes, d in _fechas_es(intro, None):
         try:
-            fechas.append(date(y or y0, mes, d))
+            f = date(y or y0, mes, d)
+            if not y and d_cita and f < d_cita - timedelta(days=7):
+                f = date(y0 + 1, mes, d)   # partidos de enero anunciados en diciembre
+            fechas.append(f)
         except ValueError:
             pass
+    if fechas and d_cita and re.search(r"copa mundial|copa de oro|copa américa", intro, re.I):
+        # Lista para un torneo (con amistosos de preparación): la ventana cubre el torneo completo.
+        return min(fechas), max(max(fechas), d_cita + timedelta(days=45))
     if not fechas and cita:
         # Torneo sin fechas en el texto (p. ej. "Lista final ... para la Copa del Mundo 2026"): desde el anuncio
         # y 45 días (lo que dura la fase de grupos + eliminatorias de un torneo así).
