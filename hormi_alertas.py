@@ -364,7 +364,7 @@ LIGAS_ES = {
     "World Cup - Qualification Intercontinental Play-offs": "Repechaje intercontinental",
     "CONCACAF Nations League": "Liga de Naciones Concacaf", "CONCACAF Gold Cup": "Copa Oro", "Gold Cup": "Copa Oro",
     "CONCACAF Champions League": "Liga de Campeones Concacaf", "Leagues Cup": "Leagues Cup",
-    "UEFA Champions League": "Liga de Campeones", "UEFA Europa League": "Europa League",
+    "UEFA Champions League": "Champions League", "UEFA Europa League": "Europa League",
     "UEFA Europa Conference League": "Conference League", "Copa America": "Copa América",
     "League Cup": "Copa de la Liga", "FA Cup": "Copa FA", "Super Cup": "Supercopa", "Coppa Italia": "Copa Italia",
     "Primeira Liga": "Liga Portugal", "Taça de Portugal": "Copa de Portugal", "KNVB Beker": "Copa de Países Bajos",
@@ -388,8 +388,10 @@ def liga_es(name):
 def nombre_es(name):
     return NOMBRES_ES.get(name, name)
 
+LIGA_V = 2   # sube si cambia cómo se clasifica la liga: los horarios guardados se refrescan una vez
 _COPA_PALABRAS = ("cup", "copa", "coupe", "pokal", "coppa", "taça", "taca", "beker", "champions", "europa",
-                  "conference", "nations", "gold cup", "libertadores", "super", "shield", "trophy", "playoff")
+                  "conference", "nations", "gold cup", "libertadores", "super cup", "supercup", "supercopa",
+                  "supercoppa", "shield", "trophy", "playoff")
 
 
 def _liga_tipo(name):
@@ -1013,8 +1015,8 @@ def schedule_stale(entry):
         return False
     if entry.get("home") and "home_logo" not in entry:
         return True   # horario viejo sin escudos de los equipos: se completa una vez
-    if entry.get("home") and "league_tipo" not in entry:
-        return True   # horario viejo sin logo/tipo de la liga: se completa una vez
+    if entry.get("home") and entry.get("liga_v") != LIGA_V:
+        return True   # horario viejo sin logo/tipo de la liga (o con la clasificación anterior): se completa una vez
     refreshed = _parse(entry.get("refreshed_at"))
     if not refreshed or now - refreshed > timedelta(hours=REFRESH_HORAS):
         return True  # por si el calendario cambió (aplazamientos, etc.)
@@ -1084,7 +1086,7 @@ def _fixture_meta(fx):
             "home_logo": fx["teams"]["home"].get("logo"), "away_logo": fx["teams"]["away"].get("logo"),
             "league": liga_es((fx.get("league") or {}).get("name")),
             "league_logo": (fx.get("league") or {}).get("logo"),
-            "league_tipo": _liga_tipo((fx.get("league") or {}).get("name")),
+            "league_tipo": _liga_tipo((fx.get("league") or {}).get("name")), "liga_v": LIGA_V,
             "season": (fx.get("league") or {}).get("season"),
             "fx_status": fx["fixture"]["status"]["short"]}
 
@@ -1675,7 +1677,9 @@ def chequeo(args, notifier, config, fcm=None):
         "updated_at": now_iso(),
         "app_name": config.get("app_name", ""),
         "players": status_out,
-        "calendario_seleccion": cal})
+        "calendario_seleccion": cal,
+        # Convocatoria actual (+ historial) para la pantalla "Selección Mexicana → Convocados" de la app.
+        "convocatoria": load_json(CONVOCATORIA_FILE, None)})
     log(f"✅ chequeo listo · {STATUS_FILE}, {STATE_FILE} y {SCHEDULE_FILE} al día")
 
 

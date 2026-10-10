@@ -126,13 +126,57 @@ def fetch_wikitext_es():
     raise RuntimeError("no encontré la sección 'Última convocatoria' (es)")
 
 
+POS_ES = {"por": "Portero", "def": "Defensa", "med": "Mediocampista", "del": "Delantero"}
+POS_EN = {"GK": "Portero", "DF": "Defensa", "MF": "Mediocampista", "FW": "Delantero"}
+
+
+def _link_texto(txt):
+    """'[[Título (algo)|Mostrado]]' → 'Mostrado'; '[[Título]]' → 'Título' sin paréntesis."""
+    m = re.search(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]", txt or "")
+    if not m:
+        return None
+    return (m.group(2) or re.sub(r"\s*\(.*?\)\s*$", "", m.group(1))).strip()
+
+
+def parse_detalle_es(wikitext):
+    """[{nombre, pos, club}] de la tabla de es.wikipedia: renglón del nombre y, abajo, posición y club."""
+    lineas = wikitext.split("\n")
+    out = []
+    for i, ln in enumerate(lineas):
+        m = re.match(r"^\|\s*(\[\[[^\]]+\]\])\s*$", ln)
+        if not m:
+            continue
+        sig = lineas[i + 1] if i + 1 < len(lineas) else ""
+        pm = re.search(r"\{\{(por|def|med|del)\}\}", sig)
+        clubs = re.findall(r"\[\[[^\]]+\]\]", sig)
+        out.append({"nombre": _link_texto(m.group(1)), "pos": POS_ES.get(pm.group(1)) if pm else None,
+                    "club": _link_texto(clubs[-1]) if clubs else None})
+    return out
+
+
 def parse_players_es(wikitext):
-    """Nombres de la tabla de la convocatoria (es.wikipedia): renglón '|[[Título|Nombre]]' tras cada '!'."""
-    nombres = []
-    for m in re.finditer(r"^\|\s*\[\[([^\]|]+)(?:\|([^\]]+))?\]\]\s*$", wikitext, re.M):
-        titulo, mostrado = m.group(1), m.group(2)
-        nombres.append(mostrado or re.sub(r"\s*\(.*?\)\s*$", "", titulo))
-    return nombres
+    return [d["nombre"] for d in parse_detalle_es(wikitext)]
+
+
+def parse_detalle_en(wikitext):
+    out = []
+    for m in re.finditer(r"\{\{nat fs g player\|([^\n]*?)\}\}\s*$", wikitext, re.M):
+        campos = m.group(1)
+        nombre = _link_texto((re.search(r"name=(\[\[[^\]]+\]\])", campos) or [None, ""])[1])
+        pos = (re.search(r"pos=(\w+)", campos) or [None, ""])[1]
+        club = _link_texto((re.search(r"club=(\[\[[^\]]+\]\])", campos) or [None, ""])[1])
+        if nombre:
+            out.append({"nombre": nombre, "pos": POS_EN.get(pos), "club": club})
+    return out
+
+
+def info_es(wikitext):
+    """Fecha de anuncio (de la cita) y partidos [(rival, '26 de septiembre')] de la introducción."""
+    intro = wikitext.split("{|")[0]
+    f = re.search(r"fecha=(\d{1,2} de \w+ de 20\d\d)", intro)
+    partidos = [{"rival": r.strip(), "fecha": d.strip()} for r, d in
+                re.findall(r"\{\{sel\|([^}|]+)[^}]*\}\}\s*\(([^)]+)\)", intro)]
+    return {"anunciada": f.group(1) if f else None, "partidos": partidos}
 
 
 def parse_window_es(wikitext):
@@ -163,12 +207,13 @@ def esta_en_lista(player, nombres_norm):
     return any(n[-1] == ap and n[0][0] == nom[0] for n in nombres_norm)
 
 
-def leer_fuente(nombre, wikitext, parse_p, parse_w):
+def leer_fuente(nombre, wikitext, parse_p, parse_w, parse_d=None, info=None):
     nombres = parse_p(wikitext)
     if len(nombres) < MIN_JUGADORES:
         raise RuntimeError(f"{nombre}: solo leí {len(nombres)} jugadores; no me fío de la lectura")
     desde, hasta = parse_w(wikitext)
-    return {"nombres": [norm(n) for n in nombres], "n": len(nombres), "desde": desde, "hasta": hasta}
+    return {"nombres": [norm(n) for n in nombres], "n": len(nombres), "desde": desde, "hasta": hasta,
+            "detalle": parse_d(wikitext) if parse_d else [], **(info(wikitext) if info else {})}
 
 
 def construir(fuentes, config):
@@ -181,6 +226,16 @@ def construir(fuentes, config):
     vigentes = {k: f for k, f in ok.items() if f["hasta"] >= reciente["desde"] and f["desde"] <= reciente["hasta"]}
     desde = min(f["desde"] for f in vigentes.values())
     hasta = max(f["hasta"] for f in vigentes.values())
+    # Lista completa para la app (nombre, posición, club): de es.wikipedia si está al día; si no, de la otra.
+    vista = vigentes.get("es") or next(iter(vigentes.values()))
+    otras = [f for k, f in vigentes.items() if f is not vista]
+    roster = {p["key"]: p for p in config["players"]}
+    jugadores = []
+    for d in vista.get("detalle") or []:
+        nn = norm(d["nombre"])
+        key = next((k for k, p in roster.items() if esta_en_lista(p, [nn])), None)
+        confirmado = bool(otras) and all(esta_en_lista({"name": d["nombre"]}, f["nombres"]) for f in otras)
+        jugadores.append({**d, "key": key, "confirmado": confirmado})
     conv, dud, no_conv = [], [], []
     for p in config["players"]:
         en = sum(1 for f in vigentes.values() if esta_en_lista(p, f["nombres"]))
@@ -194,7 +249,41 @@ def construir(fuentes, config):
             "jugadores_en_lista": max(f["n"] for f in vigentes.values()),
             "convocados": conv, "dudosos": dud, "no_convocados": no_conv,
             "fuentes": sorted(vigentes),
+            "anunciada": vista.get("anunciada"), "partidos": vista.get("partidos") or [],
+            "jugadores": jugadores,
             "fuente": f"https://en.wikipedia.org/wiki/{PAGE}#Current_squad · https://es.wikipedia.org/wiki/Selección_de_fútbol_de_México#Última_convocatoria"}
+
+
+def avisar(prev, sel, nueva, config):
+    """Push "📋 Nueva convocatoria del Tri" (o "Cambio en la convocatoria") cuando sale una lista nueva o cambia
+    quién de la app va. La app arma el texto con TUS favoritos (grupo): con uno solo, su aviso individual."""
+    van = sel.get("convocados", []) + sel.get("dudosos", [])
+    antes = (prev.get("convocados") or []) + (prev.get("dudosos") or []) if not nueva else []
+    if not nueva and set(van) == set(antes):
+        return
+    import hormi_alertas as ha
+    fcm = ha.FcmSender(config.get("fcm_project_id"))
+    if not fcm.enabled:
+        print("FCM no habilitado: sin aviso de convocatoria")
+        return
+    nombre = {p["key"]: ha.display_name(p) for p in config["players"]}
+    rivales = ", ".join(p["rival"] for p in sel.get("partidos") or [])
+    cola = f" · vs {rivales}" if rivales else ""
+    items = []
+    for p in config["players"]:
+        k = p["key"]
+        if k in van:
+            t = f"📋 {nombre[k]}, convocado a la Selección" + (" (por confirmar)" if k in sel.get("dudosos", []) else "")
+        else:
+            t = f"📋 {nombre[k]} no fue convocado a la Selección"
+        items.append({"key": k, "name": nombre[k], "status": "convocado" if k in van else "no_convocado",
+                      "summary": None, "title": t, "body": "Entra para ver la lista completa" + cola})
+    titulo = "📋 Nueva convocatoria de la Selección" if nueva else "📋 Cambio en la convocatoria de la Selección"
+    cuerpo = ("Van: " + ", ".join(nombre[k] for k in van)) if van else "Ninguno de los jugadores de la app"
+    g = {"emoji": "📋", "label": "Selección Mexicana", "match": None, "league": None, "score": None}
+    fcm.send("convocatoria", titulo, cuerpo, None, "seleccion", [p["key"] for p in config["players"]],
+             extra={"grupo": ha._payload_grupo(g, items, titulo, cuerpo)})
+    print(f"📲 aviso: {titulo} — {cuerpo}")
 
 
 def main():
@@ -208,7 +297,8 @@ def main():
                                       ("es", args.archivo_es, fetch_wikitext_es, parse_players_es, parse_window_es)):
         try:
             wt = Path(archivo).read_text(encoding="utf-8") if archivo else fetch()
-            fuentes[k] = leer_fuente(k, wt, pp, pw)
+            fuentes[k] = leer_fuente(k, wt, pp, pw, parse_detalle_es if k == "es" else parse_detalle_en,
+                                     info_es if k == "es" else None)
         except Exception as err:
             print(f"⚠️  fuente {k}: {err}")
             fuentes[k] = None
@@ -217,17 +307,26 @@ def main():
     except Exception as err:
         print(f"⚠️  convocatoria sin cambios: {err}")
         return 0
-    prev = {}
+    prev, historial = {}, []
     try:
-        prev = json.loads(OUT_FILE.read_text(encoding="utf-8")).get("seleccion") or {}
+        anterior = json.loads(OUT_FILE.read_text(encoding="utf-8"))
+        prev, historial = anterior.get("seleccion") or {}, anterior.get("historial") or []
     except Exception:
         pass
-    keys = ("desde", "hasta", "convocados", "dudosos", "no_convocados")
-    if all(prev.get(k) == sel[k] for k in keys):
+    keys = ("desde", "hasta", "convocados", "dudosos", "no_convocados", "jugadores")
+    if all(prev.get(k) == sel.get(k) for k in keys):
         print("Sin cambios en la convocatoria.")
         return 0
+    nueva = bool(prev) and (prev.get("desde"), prev.get("hasta")) != (sel["desde"], sel["hasta"])
+    if nueva and prev.get("desde") < sel["desde"]:
+        historial = ([prev] + [h for h in historial if h.get("desde") != prev.get("desde")])[:6]   # la anterior pasa al historial
     sel["actualizado"] = datetime.now(timezone(timedelta(hours=-6))).isoformat(timespec="seconds")
-    OUT_FILE.write_text(json.dumps({"seleccion": sel}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    OUT_FILE.write_text(json.dumps({"seleccion": sel, "historial": historial}, ensure_ascii=False, indent=2) + "\n",
+                        encoding="utf-8")
+    try:
+        avisar(prev, sel, nueva or not prev, config)
+    except Exception as err:
+        print(f"⚠️  no se pudo mandar el aviso de convocatoria: {err}")
     print(f"Convocatoria {sel['desde']} → {sel['hasta']} ({', '.join(sel['fuentes'])}): convocados = {sel['convocados']} · "
           f"dudosos = {sel['dudosos']} · no convocados = {sel['no_convocados']}")
     return 0

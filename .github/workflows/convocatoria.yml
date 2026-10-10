@@ -26,7 +26,11 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Leer la convocatoria (Wikipedia)
+      - run: pip install google-auth requests
+
+      - name: Leer la convocatoria (Wikipedia en inglés y en español)
+        env:
+          FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
         run: python hormi_convocatoria.py
 
       - name: Subir hormi_convocatoria.json

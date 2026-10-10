@@ -75,6 +75,16 @@ def actualizar(config, solo=None):
                     "minutes": part[0], "goals": part[1], "assists": part[2],
                 }
                 break
+        if mejor and "eventos" not in mejor and mejor.get("fixture_id"):
+            # Guardado antes de existir "Detalles": se piden los eventos de ese partido (1 petición, una sola vez).
+            try:
+                res = ha.api("/fixtures", {"id": mejor["fixture_id"]})
+                if res:
+                    lg = res[0].get("league") or {}
+                    mejor = dict(mejor, eventos=ha._eventos(res[0], player.get("player_id")),
+                                 league_logo=lg.get("logo"), league_tipo=ha._liga_tipo(lg.get("name")))
+            except Exception as err:
+                hh.log(f"⚠️  {player['name']}: no se pudieron leer los detalles del último partido — {err}")
         if mejor and mejor != entry.get("ultimo_partido"):
             entry["ultimo_partido"] = mejor
             cambios += 1
