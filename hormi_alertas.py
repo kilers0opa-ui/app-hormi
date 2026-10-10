@@ -368,6 +368,17 @@ def liga_es(name):
 def nombre_es(name):
     return NOMBRES_ES.get(name, name)
 
+def _goles_texto(data):
+    """Goles del partido hasta ahora (ambos equipos), uno por línea: '⚽ El Kaabi 23' (Olympiacos)'."""
+    lineas = []
+    for e in sorted(data.get("events") or [], key=lambda e: (e["time"]["elapsed"] or 0, e["time"].get("extra") or 0)):
+        if (e.get("type") or "").lower() != "goal" or e.get("detail") == "Missed Penalty":
+            continue
+        extra = " (pen.)" if e.get("detail") == "Penalty" else (" (a.g.)" if e.get("detail") == "Own Goal" else "")
+        lineas.append(f"⚽ {e['player'].get('name') or '?'} {minute_txt(e['time'])}{extra} ({nombre_es(e['team']['name'])})")
+    return "\n".join(lineas) if lineas else "Sin goles."
+
+
 # ═══════════════════════════════════════════════════════ detector
 def analyze(data, player, target):
     """Recibe una 'foto' del partido (formato de /fixtures?id=...) para UN
@@ -445,7 +456,10 @@ def analyze(data, player, target):
     # convocado": simplemente no es partido suyo) ni mientras la API no publica alineación (amistosos):
     # sin saberlo, un aviso de "arrancó el partido" de un equipo donde quizá ni juega es ruido.
     if status in LIVE | FINISHED and (role or not es_club):
-        add("inicio", f"⚽ {emoji} Arrancó: {label} ({nombre})", match, 2)
+        add("inicio", f"⚽ {emoji} Arrancó: {label} ({nombre})", match + "\nSigue el marcador en tiempo real desde la app.", 2)
+    # Medio tiempo: marcador y goles de AMBOS equipos (mismas reglas que "Arrancó").
+    if status == "HT" and (role or not es_club):
+        add("medio", f"⏸️ {emoji} Medio tiempo: {score()}", _goles_texto(data), 3)
 
     entered = False
     evidencia = False     # sin alineación publicada: ¿hay eventos que prueben que el jugador está jugando?
@@ -701,7 +715,7 @@ def alert_type(key):
     configurar sonido/vibración/silencio por tipo y abre Inicio o Videos
     según el tipo. 'goal' es el único que dispara la pantalla de ¡GOOOOL!.
     Tipos: goal, assist, lineup, start, sub, final, incident (VAR/suspendido),
-    reminder (juega mañana), video, transfer."""
+    reminder (juega mañana), video, transfer, halftime (medio tiempo)."""
     if key.endswith(":gol"):
         return "goal"
     if key.endswith(":ast"):
@@ -710,6 +724,8 @@ def alert_type(key):
         return "lineup"
     if key.endswith(":inicio"):
         return "start"
+    if key.endswith(":medio"):
+        return "halftime"
     if key.endswith(":final"):
         return "final"
     if key.endswith(":cancelado") or ":var:" in key:
@@ -729,7 +745,7 @@ def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None,
     new = 0
     for key, title, message, priority in alerts:
         if key not in sent:
-            if grupo is not None and alert_type(key) in ("start", "final", "lineup"):
+            if grupo is not None and alert_type(key) in ("start", "final", "lineup", "halftime"):
                 grupo.append((key, title, message))
             else:
                 notifier.send(title, message, priority)
@@ -807,7 +823,10 @@ def enviar_grupos(notifier, fcm):
             continue
         if tipo == "start":
             title = f"⚽ {g['emoji']} Arrancó: {g['label']}"
-            body = f"{g['match']} · {g['league']}"
+            body = f"{g['match']} · {g['league']}\nSigue el marcador en tiempo real desde la app."
+        elif tipo == "halftime":
+            title = f"⏸️ {g['emoji']} Medio tiempo: {g['score']}"
+            body = jug[0]["body"]
         else:
             title = f"🏁 {g['emoji']} Final {g['label']}: {g['score']}"
             jugaron = [f"{j['name']} {j['summary']['minutes']}'" for j in jug
@@ -1091,25 +1110,37 @@ def send_reminders(config, notifier, fcm, schedule_out, reminders_sent):
             g = groups.setdefault(rid, {"entry": entry, "target": target, "players": []})
             g["players"].append(player)
 
-    sent_n = 0
-    for rid, g in groups.items():
-        e, target, players = g["entry"], g["target"], g["players"]
+    # UN solo aviso para todos los partidos de mañana. El servidor no sabe tus favoritos: manda el detalle de
+    # cada jugador (grupo) y la app arma el texto: 1 favorito → "Mañana juega X (Club) a las 8:15 a.m.";
+    # 2 o más → "Mañana juegan N de tus jugadores favoritos". title/body de abajo = texto si la app es vieja.
+    items, keys = [], []
+    for rid, g in sorted(groups.items(), key=lambda kv: kv[1]["entry"].get("kickoff") or ""):
+        e, target = g["entry"], g["target"]
         ko = _parse(e["kickoff"])
-        hora = "hora por confirmar" if e.get("fx_status") == "TBD" else f"{_hora_cdmx(ko)} (hora centro)"
-        quien = display_name(players[0])
-        if len(players) == 1:
-            title = f"📅 Mañana juega {quien} ({target['label']})"
+        if e.get("fx_status") == "TBD":
+            cuando = " · hora por confirmar"
         else:
-            title = f"📅 Mañana juega {target['label']}"
-        body = f"{e['home']} vs {e['away']} · {hora}" + (f" · {e['league']}" if e.get("league") else "")
-        notifier.send(title, body, 3)
-        if fcm:
-            fcm.send("reminder", title, body, None, target["key"],
-                     player_keys=[p["key"] for p in players])
-        if not getattr(notifier, "console_only", False):
-            reminders_sent.add(rid)
-        sent_n += 1
-    return sent_n
+            hora = _hora_cdmx(ko)
+            cuando = f" {'a la' if hora.startswith('1:') else 'a las'} {hora}"
+        for p in g["players"]:
+            items.append({"key": p["key"], "name": display_name(p), "status": "convocado", "summary": None,
+                          "title": f"📅 Mañana juega {display_name(p)} ({target['label']}){cuando}",
+                          "body": "Entra para ver los detalles del partido."})
+            keys.append(p["key"])
+    if not items:
+        return 0
+    if len(items) == 1:
+        title, body = items[0]["title"], items[0]["body"]
+    else:
+        title, body = "📅 Mañana juegan tus jugadores favoritos", "Entra para ver los detalles de los partidos."
+    notifier.send(title if len(items) == 1 else f"📅 Mañana juegan {len(items)} jugadores", body, 3)
+    if fcm:
+        g = {"emoji": "📅", "label": "Mañana", "match": None, "league": None, "score": None}
+        fcm.send("reminder", title, body, None, None, player_keys=keys,
+                 extra={"grupo": _payload_grupo(g, items, title, body)})
+    if not getattr(notifier, "console_only", False):
+        reminders_sent.update(groups.keys())
+    return len(groups)
 
 
 _WARNED = set()      # avisos que ya se mostraron en este proceso (el modo vigilar repite pasadas cada minuto)
