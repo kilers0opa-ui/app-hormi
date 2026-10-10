@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-09T11:48:48.845550-06:00",
+  "updated_at": "2026-10-10T08:58:47.509510-06:00",
   "cuota": {
-    "fecha": "2026-10-09",
-    "busquedas": 5,
-    "busquedas_resumen": 3
+    "fecha": "2026-10-10",
+    "busquedas": 0,
+    "busquedas_resumen": 0
   },
   "goles": {
     "quinones:al_qadsiah:1603041:goal:35532:1:gol": {
@@ -59,6 +59,30 @@
         ]
       },
       "motivo": "sin resumen tras los intentos"
+    },
+    "1550140": {
+      "fixture_id": 1550140,
+      "home": "Genoa",
+      "away": "Fiorentina",
+      "league": "Serie A",
+      "score": "Genoa 2-1 Fiorentina",
+      "final_seen_at": "2026-10-10T14:57:59.822003+00:00",
+      "jugadores": {
+        "vasquez": {
+          "team_key": "genoa",
+          "minutes": 90,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
