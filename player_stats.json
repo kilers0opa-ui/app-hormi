@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T14:44:01.261781-06:00",
+  "updated_at": "2026-10-10T14:57:59.025871-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -259,7 +259,51 @@
         "goals": 0,
         "assists": 0,
         "league_logo": "https://media.api-sports.io/football/leagues/10.png",
-        "league_tipo": "amistoso"
+        "league_tipo": "amistoso",
+        "eventos": [
+          {
+            "min": "44'",
+            "tipo": "amarilla",
+            "nombre": "Jesús Gallardo",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "54'",
+            "tipo": "gol",
+            "nombre": "M. Gutierrez",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "64'",
+            "tipo": "sale",
+            "nombre": "A. Gonzalez",
+            "lado": "L",
+            "mio": true
+          },
+          {
+            "min": "65'",
+            "tipo": "gol",
+            "nombre": "V. Pizarro",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "73'",
+            "tipo": "amarilla",
+            "nombre": "Everardo López",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "78'",
+            "tipo": "amarilla",
+            "nombre": "Darío Osorio",
+            "lado": "V",
+            "mio": false
+          }
+        ]
       }
     },
     "raul": {
@@ -1346,7 +1390,46 @@
         "crest_url": "https://media.api-sports.io/football/teams/39.png",
         "minutes": 38,
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "eventos": [
+          {
+            "min": "10'",
+            "tipo": "amarilla",
+            "nombre": "Jackson Tchatchoua",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "11'",
+            "tipo": "amarilla",
+            "nombre": "Jack Grealish",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "38'",
+            "tipo": "sale",
+            "nombre": "Raúl Jiménez",
+            "lado": "V",
+            "mio": true
+          },
+          {
+            "min": "80'",
+            "tipo": "gol",
+            "nombre": "Charly Alcaraz",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "90+1'",
+            "tipo": "amarilla",
+            "nombre": "Thomas Doyle",
+            "lado": "V",
+            "mio": false
+          }
+        ],
+        "league_logo": "https://media.api-sports.io/football/leagues/48.png",
+        "league_tipo": "copa"
       }
     },
     "vasquez": {
@@ -1879,7 +1962,86 @@
         "goals": 0,
         "assists": 0,
         "league_logo": "https://media.api-sports.io/football/leagues/135.png",
-        "league_tipo": "liga"
+        "league_tipo": "liga",
+        "eventos": [
+          {
+            "min": "7'",
+            "tipo": "gol",
+            "nombre": "Milutin Osmajić",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "15'",
+            "tipo": "amarilla",
+            "nombre": "Luca Ranieri",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "15'",
+            "tipo": "gol",
+            "nombre": "Junior Messias",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "21'",
+            "tipo": "amarilla",
+            "nombre": "Christ Inao Oulaï",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "60'",
+            "tipo": "amarilla",
+            "nombre": "Viery",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "73'",
+            "tipo": "autogol",
+            "nombre": "Johan Vásquez",
+            "lado": "V",
+            "mio": true
+          },
+          {
+            "min": "73'",
+            "tipo": "amarilla",
+            "nombre": "Hamed Junior Traorè",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "84'",
+            "tipo": "amarilla",
+            "nombre": "Johan Vásquez",
+            "lado": "L",
+            "mio": true
+          },
+          {
+            "min": "85'",
+            "tipo": "amarilla",
+            "nombre": "Samuel Wiafe",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "90+1'",
+            "tipo": "amarilla",
+            "nombre": "Vítor Manuel Carvalho Oliveira",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "90+5'",
+            "tipo": "amarilla",
+            "nombre": "Stefano Sabelli",
+            "lado": "L",
+            "mio": false
+          }
+        ]
       }
     },
     "quinones": {
@@ -2403,7 +2565,51 @@
         "goals": 1,
         "assists": 2,
         "league_logo": "https://media.api-sports.io/football/leagues/307.png",
-        "league_tipo": "liga"
+        "league_tipo": "liga",
+        "eventos": [
+          {
+            "min": "4'",
+            "tipo": "gol",
+            "nombre": "Tijjani Reijnders",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "13'",
+            "tipo": "gol",
+            "nombre": "Christopher Bonsu Baah",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "40'",
+            "tipo": "gol",
+            "nombre": "Musab Al-Juwayr",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "67'",
+            "tipo": "gol",
+            "nombre": "Mateo Retegui",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "84'",
+            "tipo": "amarilla",
+            "nombre": "Coba Gomes da Costa",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "86'",
+            "tipo": "pen",
+            "nombre": "Julián Quiñones",
+            "lado": "V",
+            "mio": true
+          }
+        ]
       }
     },
     "gimenez": {
@@ -2967,7 +3173,44 @@
         "goals": 0,
         "assists": 0,
         "league_logo": "https://media.api-sports.io/football/leagues/10.png",
-        "league_tipo": "amistoso"
+        "league_tipo": "amistoso",
+        "eventos": [
+          {
+            "min": "44'",
+            "tipo": "amarilla",
+            "nombre": "Jesús Gallardo",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "54'",
+            "tipo": "gol",
+            "nombre": "M. Gutierrez",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "65'",
+            "tipo": "gol",
+            "nombre": "V. Pizarro",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "73'",
+            "tipo": "amarilla",
+            "nombre": "Everardo López",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "78'",
+            "tipo": "amarilla",
+            "nombre": "Darío Osorio",
+            "lado": "V",
+            "mio": false
+          }
+        ]
       }
     },
     "chavez": {
@@ -3238,7 +3481,51 @@
         "goals": 0,
         "assists": 0,
         "league_logo": "https://media.api-sports.io/football/leagues/88.png",
-        "league_tipo": "liga"
+        "league_tipo": "liga",
+        "eventos": [
+          {
+            "min": "11'",
+            "tipo": "amarilla",
+            "nombre": "Lewis Schouten",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "13'",
+            "tipo": "gol",
+            "nombre": "Nacho Ferri",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "23'",
+            "tipo": "amarilla",
+            "nombre": "Ro Zangelo Daal",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "45+2'",
+            "tipo": "amarilla",
+            "nombre": "Oussama Targhalline",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "59'",
+            "tipo": "gol",
+            "nombre": "Javi López",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "67'",
+            "tipo": "amarilla",
+            "nombre": "Wouter Goes",
+            "lado": "V",
+            "mio": false
+          }
+        ]
       }
     },
     "obed": {
@@ -3582,7 +3869,51 @@
         "goals": 0,
         "assists": 0,
         "league_logo": "https://media.api-sports.io/football/leagues/10.png",
-        "league_tipo": "amistoso"
+        "league_tipo": "amistoso",
+        "eventos": [
+          {
+            "min": "44'",
+            "tipo": "amarilla",
+            "nombre": "Jesús Gallardo",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "54'",
+            "tipo": "gol",
+            "nombre": "M. Gutierrez",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "65'",
+            "tipo": "gol",
+            "nombre": "V. Pizarro",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "72'",
+            "tipo": "sale",
+            "nombre": "O. Vargas",
+            "lado": "L",
+            "mio": true
+          },
+          {
+            "min": "73'",
+            "tipo": "amarilla",
+            "nombre": "Everardo López",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "78'",
+            "tipo": "amarilla",
+            "nombre": "Darío Osorio",
+            "lado": "V",
+            "mio": false
+          }
+        ]
       }
     },
     "fidalgo": {
@@ -4068,7 +4399,51 @@
         "goals": 0,
         "assists": 0,
         "league_logo": "https://media.api-sports.io/football/leagues/10.png",
-        "league_tipo": "amistoso"
+        "league_tipo": "amistoso",
+        "eventos": [
+          {
+            "min": "44'",
+            "tipo": "amarilla",
+            "nombre": "Jesús Gallardo",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "54'",
+            "tipo": "gol",
+            "nombre": "M. Gutierrez",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "65'",
+            "tipo": "gol",
+            "nombre": "V. Pizarro",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "73'",
+            "tipo": "amarilla",
+            "nombre": "Everardo López",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "78'",
+            "tipo": "amarilla",
+            "nombre": "Darío Osorio",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "82'",
+            "tipo": "sale",
+            "nombre": "A. Fidalgo",
+            "lado": "L",
+            "mio": true
+          }
+        ]
       }
     },
     "huescas": {
@@ -4437,7 +4812,60 @@
         "crest_url": "https://media.api-sports.io/football/teams/16.png",
         "minutes": 64,
         "goals": 1,
-        "assists": 0
+        "assists": 0,
+        "eventos": [
+          {
+            "min": "9'",
+            "tipo": "gol",
+            "nombre": "L. Suarez",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "23'",
+            "tipo": "amarilla",
+            "nombre": "Luis Javier Suárez",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "37'",
+            "tipo": "amarilla",
+            "nombre": "Álvaro Angulo",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "43'",
+            "tipo": "amarilla",
+            "nombre": "Hirving Lozano",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "59'",
+            "tipo": "amarilla",
+            "nombre": "Jorge Sánchez",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "62'",
+            "tipo": "gol",
+            "nombre": "G. Mora",
+            "lado": "L",
+            "mio": true
+          },
+          {
+            "min": "64'",
+            "tipo": "sale",
+            "nombre": "G. Mora",
+            "lado": "L",
+            "mio": true
+          }
+        ],
+        "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+        "league_tipo": "amistoso"
       }
     }
   }
