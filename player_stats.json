@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T03:11:01.438437-06:00",
+  "updated_at": "2026-10-10T08:57:59.830696-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -1805,10 +1805,10 @@
             "team_id": 495,
             "team_name": "Genoa",
             "team_logo": "https://media.api-sports.io/football/teams/495.png",
-            "played": 4,
+            "played": 5,
             "goals": 1,
             "assists": 0,
-            "minutes": 341
+            "minutes": 431
           },
           {
             "league_id": 10,
@@ -1854,23 +1854,26 @@
         "seleccion": [
           1629004,
           1629006
+        ],
+        "genoa": [
+          1550140
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1629006,
-        "kickoff": "2026-10-06T20:30:00-06:00",
-        "home": "México",
-        "away": "Chile",
-        "home_logo": "https://media.api-sports.io/football/teams/16.png",
-        "away_logo": "https://media.api-sports.io/football/teams/2383.png",
-        "home_goals": 0,
-        "away_goals": 2,
-        "league": "Amistoso",
-        "team_key": "seleccion",
-        "team_label": "Selección Mexicana",
-        "emoji": "🇲🇽",
-        "crest_url": "https://media.api-sports.io/football/teams/16.png",
-        "minutes": 26,
+        "fixture_id": 1550140,
+        "kickoff": "2026-10-10T07:00:00-06:00",
+        "home": "Genoa",
+        "away": "Fiorentina",
+        "home_logo": "https://media.api-sports.io/football/teams/495.png",
+        "away_logo": "https://media.api-sports.io/football/teams/502.png",
+        "home_goals": 2,
+        "away_goals": 1,
+        "league": "Serie A",
+        "team_key": "genoa",
+        "team_label": "Genoa",
+        "emoji": "🦅",
+        "crest_url": "https://media.api-sports.io/football/teams/495.png",
+        "minutes": 90,
         "goals": 0,
         "assists": 0
       }
