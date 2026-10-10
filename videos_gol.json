@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T13:15:21.523961-06:00",
+  "updated_at": "2026-10-10T13:30:23.467986-06:00",
   "cuota": {
     "fecha": "2026-10-10",
     "busquedas": 2,
@@ -169,14 +169,30 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-10T19:30:22.803711+00:00",
+      "noticias": {
+        "gimenez": [
+          {
+            "title": "¿Cómo quedó el Marítimo vs FC Porto? Cronología de la victoria de los Dragones con Santiago Giménez en la banca",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQTE1Nb0JGMUtsQmFfMEZvbnBIN1BiOElpT0N4cFVJSVo5VDkwb2JZVVMxT05mZ3NLTlluVXc1b0Q5QnVzaTBfQ1dKOUtIQ1dzMlkzQ0Y2d2tCdFY1SXlGSG1Vc29kZFQ5MlVDVEt1LVllQVF4cDBLWHk1blVOZk9hdVNXQUFaaTR5dlpLa1daY01sNW0tZlhZLXc4WGg?oc=5",
+            "published_at": "2026-10-10T19:09:20Z"
+          },
+          {
+            "title": "Santiago Gimenez se quedó en la banca: Porto consiguió dramático triunfo de 1-2 tras chequeo en el VAR",
+            "source": "Fox Sports",
+            "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWnFNTXY0anhtVlpSY3Axbkx2QlExTEJjbFlSdUYzeFpYS0ZYQlUzM2lmNEt2Tko3OWZlMjlvdXNWTllfbTlNb2FQUklfZjhjUWdzUzNGUVJtMVVXQ25hLURfM2Y4VjVySlp6TUlJRjJUNzlUei04alVjSkJqamFRTV9DRDUxQTVzUHBnMmk1cV85a1BqSjJtZWMyYmtwTGo4dVR5M2lTM2kzODFuNkEtcF9B?oc=5",
+            "published_at": "2026-10-10T18:54:44Z"
+          }
+        ]
+      },
+      "motivo": "ningún jugador tuvo minutos"
     }
   }
 }
