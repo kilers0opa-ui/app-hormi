@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T12:40:39.703978-06:00",
+  "updated_at": "2026-10-10T14:44:01.261781-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -257,7 +257,9 @@
         "crest_url": "https://media.api-sports.io/football/teams/16.png",
         "minutes": 64,
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+        "league_tipo": "amistoso"
       }
     },
     "raul": {
@@ -1805,10 +1807,10 @@
             "team_id": 495,
             "team_name": "Genoa",
             "team_logo": "https://media.api-sports.io/football/teams/495.png",
-            "played": 5,
+            "played": 4,
             "goals": 1,
             "assists": 0,
-            "minutes": 431
+            "minutes": 341
           },
           {
             "league_id": 10,
@@ -1875,7 +1877,9 @@
         "crest_url": "https://media.api-sports.io/football/teams/495.png",
         "minutes": 90,
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "league_logo": "https://media.api-sports.io/football/leagues/135.png",
+        "league_tipo": "liga"
       }
     },
     "quinones": {
@@ -2397,7 +2401,9 @@
         "crest_url": "https://media.api-sports.io/football/teams/2933.png",
         "minutes": 90,
         "goals": 1,
-        "assists": 2
+        "assists": 2,
+        "league_logo": "https://media.api-sports.io/football/leagues/307.png",
+        "league_tipo": "liga"
       }
     },
     "gimenez": {
@@ -2959,7 +2965,9 @@
         "crest_url": "https://media.api-sports.io/football/teams/16.png",
         "minutes": 26,
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+        "league_tipo": "amistoso"
       }
     },
     "chavez": {
@@ -3197,10 +3205,10 @@
             "team_id": 201,
             "team_name": "AZ Alkmaar",
             "team_logo": "https://media.api-sports.io/football/teams/201.png",
-            "played": 8,
+            "played": 7,
             "goals": 1,
             "assists": 3,
-            "minutes": 651
+            "minutes": 561
           }
         ]
       },
@@ -3228,7 +3236,9 @@
         "crest_url": "https://media.api-sports.io/football/teams/201.png",
         "minutes": 90,
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "league_logo": "https://media.api-sports.io/football/leagues/88.png",
+        "league_tipo": "liga"
       }
     },
     "obed": {
@@ -3570,7 +3580,9 @@
         "crest_url": "https://media.api-sports.io/football/teams/16.png",
         "minutes": 72,
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+        "league_tipo": "amistoso"
       }
     },
     "fidalgo": {
@@ -4054,7 +4066,9 @@
         "crest_url": "https://media.api-sports.io/football/teams/16.png",
         "minutes": 82,
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+        "league_tipo": "amistoso"
       }
     },
     "huescas": {
