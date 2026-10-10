@@ -13,12 +13,7 @@ try:
     out["es_textos"] = {}
     for s in cand[:4]:
         wt = json.loads(get(api + urllib.parse.urlencode({"action": "parse", "page": "Selección de fútbol de México", "prop": "wikitext", "section": s["index"], "format": "json"})))["parse"]["wikitext"]["*"]
-        out["es_textos"][s["line"]] = wt[:2500]
+        out["es_textos"][s["line"]] = wt if "convoca" in s["line"].lower() else wt[:200]
 except Exception as e:
     out["es_error"] = str(e)
-for u in ("https://miseleccion.mx", "https://miseleccion.mx/noticias", "https://fmf.mx"):
-    try:
-        h = get(u); out[u] = {"len": len(h), "convoca": [m.group(0) for m in re.finditer(r"[^<>\"]{0,80}[Cc]onvoca[^<>\"]{0,120}", h)][:10]}
-    except Exception as e:
-        out[u] = str(e)
 json.dump(out, open("diag_squad.json", "w"), ensure_ascii=False, indent=1)
