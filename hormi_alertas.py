@@ -388,6 +388,41 @@ def liga_es(name):
 def nombre_es(name):
     return NOMBRES_ES.get(name, name)
 
+_COPA_PALABRAS = ("cup", "copa", "coupe", "pokal", "coppa", "taça", "taca", "beker", "champions", "europa",
+                  "conference", "nations", "gold cup", "libertadores", "super", "shield", "trophy", "playoff")
+
+
+def _liga_tipo(name):
+    """'amistoso' | 'copa' (copas y torneos internacionales) | 'liga'. La app pinta un distintivo distinto."""
+    n = (name or "").lower()
+    if "friendl" in n:
+        return "amistoso"
+    if any(w in n for w in _COPA_PALABRAS):
+        return "copa"
+    return "liga"
+
+
+def _eventos(data, player_id):
+    """Detalles del partido para la app (sección "Detalles"): goles de ambos equipos, amarillas y rojas, y
+    cuando SALE tu jugador. lado: 'L' local / 'V' visitante; mio: es tu jugador."""
+    home_id = ((data.get("teams") or {}).get("home") or {}).get("id")
+    out = []
+    for e in sorted(data.get("events") or [], key=lambda e: (e["time"]["elapsed"] or 0, e["time"].get("extra") or 0)):
+        etype, detail = (e.get("type") or "").lower(), e.get("detail") or ""
+        pid = (e.get("player") or {}).get("id")
+        if etype == "goal" and detail != "Missed Penalty":
+            tipo = "pen" if detail == "Penalty" else ("autogol" if detail == "Own Goal" else "gol")
+        elif etype == "card":
+            tipo = "roja" if ("red" in detail.lower() or "second yellow" in detail.lower()) else "amarilla"
+        elif etype == "subst" and pid == player_id:
+            tipo = "sale"
+        else:
+            continue
+        out.append({"min": minute_txt(e["time"]), "tipo": tipo, "nombre": (e.get("player") or {}).get("name") or "?",
+                    "lado": "L" if (e.get("team") or {}).get("id") == home_id else "V", "mio": pid == player_id})
+    return out
+
+
 def _goles_texto(data):
     """Goles del partido hasta ahora (ambos equipos), uno por línea: '⚽ El Kaabi 23' (Olympiacos)'."""
     lineas = []
@@ -567,6 +602,9 @@ def analyze(data, player, target):
         current_status = "banca" if out_minute is not None else ("en_cancha" if evidencia else "sin_alineacion")
 
     return alerts, {"status": current_status, "match": match, "league": league,
+                     "league_logo": (data.get("league") or {}).get("logo"),
+                     "league_tipo": _liga_tipo((data.get("league") or {}).get("name")),
+                     "eventos": _eventos(data, player_id),
                      "score": score(), "goals": goals, "assists": assists,
                      "summary": summary, **({"banca_pendiente": True} if banca_pendiente else {})}
 
@@ -593,6 +631,8 @@ def registrar_ultimo(player, target, snap, info):
         "home_logo": snap["teams"]["home"].get("logo"), "away_logo": snap["teams"]["away"].get("logo"),
         "home_goals": g.get("home"), "away_goals": g.get("away"),
         "league": liga_es(snap["league"]["name"]),
+        "league_logo": snap["league"].get("logo"), "league_tipo": _liga_tipo(snap["league"].get("name")),
+        "eventos": info.get("eventos") or [],
         "team_key": target["key"], "team_label": target["label"], "emoji": target["emoji"],
         "crest_url": target.get("crest_url"),
         "minutes": s["minutes"], "goals": s["goals"], "assists": s["assists"],
@@ -1041,6 +1081,8 @@ def _fixture_meta(fx):
     return {"home": nombre_es(fx["teams"]["home"]["name"]), "away": nombre_es(fx["teams"]["away"]["name"]),
             "home_logo": fx["teams"]["home"].get("logo"), "away_logo": fx["teams"]["away"].get("logo"),
             "league": liga_es((fx.get("league") or {}).get("name")),
+            "league_logo": (fx.get("league") or {}).get("logo"),
+            "league_tipo": _liga_tipo((fx.get("league") or {}).get("name")),
             "season": (fx.get("league") or {}).get("season"),
             "fx_status": fx["fixture"]["status"]["short"]}
 
@@ -1252,7 +1294,8 @@ def _next_match_status(target, entry, player_key=None, en_curso=False):
                      "match": f"{entry['home']} vs {entry['away']}",
                      "home": entry["home"], "away": entry["away"],
                      "home_logo": entry.get("home_logo"), "away_logo": entry.get("away_logo"),
-                     "league": entry.get("league"), "kickoff": entry["kickoff"]})
+                     "league": entry.get("league"), "league_logo": entry.get("league_logo"),
+                     "league_tipo": entry.get("league_tipo"), "kickoff": entry["kickoff"]})
     return base
 
 
