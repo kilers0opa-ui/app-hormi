@@ -171,25 +171,76 @@ def parse_detalle_en(wikitext):
 
 
 def info_es(wikitext):
-    """Fecha de anuncio (de la cita) y partidos [(rival, '26 de septiembre')] de la introducción."""
-    intro = wikitext.split("{|")[0]
-    f = re.search(r"fecha=(\d{1,2} de \w+ de 20\d\d)", intro)
+    """Fecha de anuncio (de la cita), motivo y partidos [{rival, fecha}] de la introducción."""
+    bruto = wikitext.split("{|")[0]
+    f = re.search(r"fecha=(\d{1,2} de \w+ de 20\d\d)", bruto)
+    intro = _intro_es(wikitext)
     partidos = [{"rival": r.strip(), "fecha": d.strip()} for r, d in
                 re.findall(r"\{\{sel\|([^}|]+)[^}]*\}\}\s*\(([^)]+)\)", intro)]
-    return {"anunciada": f.group(1) if f else None, "partidos": partidos}
+    if not partidos:
+        # Formato viejo: "... los días 16 y 21 de enero de 2025 contra [[Inter]] y [[River Plate]]."
+        c = re.search(r"\bcontra\s+(.*)$", intro, re.S)
+        rivales = []
+        if c:
+            for t in re.findall(r"\{\{sel\|([^}|]+)[^}]*\}\}|\[\[([^\]]+)\]\]", c.group(1)):
+                nombre = t[0] or _link_texto("[[" + t[1] + "]]")
+                if nombre and nombre not in rivales:
+                    rivales.append(nombre.strip())
+        fechas = [f"{d} de {list(MESES_ES)[m - 1]}" for _, m, d in _fechas_es(intro)]
+        if rivales and len(fechas) == len(rivales):
+            partidos = [{"rival": r, "fecha": fe} for r, fe in zip(rivales, fechas)]
+        elif len(rivales) == 1 and fechas:
+            partidos = [{"rival": rivales[0], "fecha": " y ".join(fechas)}]
+        elif rivales:
+            partidos = [{"rival": r, "fecha": ""} for r in rivales]
+    return {"anunciada": f.group(1) if f else None, "partidos": partidos, "motivo": motivo_es(intro)}
+
+
+def motivo_es(intro):
+    """Para qué fue la convocatoria: Mundial 2026, Copa Oro, Liga de Naciones, Amistosos..."""
+    t = intro.lower()
+    for clave, nombre in (("copa mundial", "Mundial"), ("copa de oro", "Copa Oro"), ("liga de naciones", "Liga de Naciones"),
+                          ("copa américa", "Copa América"), ("amistoso", "Amistosos")):
+        if clave in t:
+            y = re.search(r"(20\d\d)", intro)
+            return f"{nombre} {y.group(1)}" if nombre in ("Mundial", "Copa Oro", "Copa América") and y else nombre
+    return None
+
+
+def _intro_es(wikitext):
+    """Texto de la introducción de la convocatoria (el <small> de arriba), sin las citas <ref>."""
+    intro = wikitext.split("{|")[0]
+    m = re.search(r"<small>(.*?)</small>", intro, re.S)
+    texto = m.group(1) if m else intro
+    return re.sub(r"<ref[^>]*>.*?</ref>|<ref[^>]*/>", "", texto, flags=re.S)
+
+
+_MES_RE = "|".join(MESES_ES)
+
+
+def _fechas_es(texto, year_default=None):
+    """Todas las fechas del texto: '26 de septiembre', 'los días 16 y 21 de enero de 2025', '5, 9 y 12 de junio'."""
+    fechas = []
+    for m in re.finditer(r"((?:\d{1,2}(?:\s*,\s*|\s+y\s+|\s+al\s+))*\d{1,2})\s+de\s+(" + _MES_RE + r")(?:\s+(?:de|del)\s+(20\d\d))?", texto, re.I):
+        nums = [int(n) for n in re.findall(r"\d{1,2}", m.group(1))]
+        mes = MESES_ES[m.group(2).lower()]
+        y = int(m.group(3)) if m.group(3) else year_default
+        for n in nums:
+            fechas.append((y, mes, n))
+    return fechas
 
 
 def parse_window_es(wikitext):
-    """(desde, hasta) de los partidos listados en la introducción: '(26 de septiembre)' ... 'de 2026'."""
-    intro = wikitext.split("{|")[0]
-    y = re.search(r"\b(20\d\d)\b", intro)
-    if not y:
+    """(desde, hasta) de los partidos listados en la introducción."""
+    intro = _intro_es(wikitext)
+    years = re.findall(r"\b(20\d\d)\b", intro)
+    if not years:
         raise RuntimeError("no pude leer el año de la convocatoria (es)")
-    year = int(y.group(1))
+    y0 = int(years[-1])
     fechas = []
-    for d, mes in re.findall(r"\((\d{1,2}) de (" + "|".join(MESES_ES) + r")\)", intro, re.I):
+    for y, mes, d in _fechas_es(intro, y0):
         try:
-            fechas.append(date(year, MESES_ES[mes.lower()], int(d)))
+            fechas.append(date(y or y0, mes, d))
         except ValueError:
             pass
     if not fechas:
@@ -254,6 +305,7 @@ def construir(fuentes, config):
             "convocados": conv, "dudosos": dud, "no_convocados": no_conv,
             "fuentes": sorted(vigentes),
             "anunciada": vista.get("anunciada"), "partidos": vista.get("partidos") or [],
+            "motivo": vista.get("motivo"),
             "jugadores": jugadores,
             "fuente": f"https://en.wikipedia.org/wiki/{PAGE}#Current_squad · https://es.wikipedia.org/wiki/Selección_de_fútbol_de_México#Última_convocatoria"}
 

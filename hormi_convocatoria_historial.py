@@ -81,7 +81,7 @@ def leer(idioma, desde, paso_dias=4):
             pp, pw, pd = ((hc.parse_players_es, hc.parse_window_es, hc.parse_detalle_es) if idioma == "es"
                           else (hc.parse_players, hc.parse_window, hc.parse_detalle_en))
             f = hc.leer_fuente(idioma, sec, pp, pw, pd, hc.info_es if idioma == "es" else None)
-            f["motivo"] = motivo(sec.split("{|")[0] if idioma == "es" else sec.split("{{nat fs g start}}")[0])
+            f["motivo"] = f.get("motivo") or motivo(sec.split("{|")[0] if idioma == "es" else sec.split("{{nat fs g start}}")[0])
             f["rev"] = r["timestamp"]
             ventanas[(f["desde"], f["hasta"])] = f   # la versión más nueva de cada ventana gana
         except Exception as err:
