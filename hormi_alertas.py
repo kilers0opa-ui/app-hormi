@@ -1013,6 +1013,8 @@ def schedule_stale(entry):
         return False
     if entry.get("home") and "home_logo" not in entry:
         return True   # horario viejo sin escudos de los equipos: se completa una vez
+    if entry.get("home") and "league_tipo" not in entry:
+        return True   # horario viejo sin logo/tipo de la liga: se completa una vez
     refreshed = _parse(entry.get("refreshed_at"))
     if not refreshed or now - refreshed > timedelta(hours=REFRESH_HORAS):
         return True  # por si el calendario cambió (aplazamientos, etc.)

@@ -51,6 +51,9 @@ def actualizar(config, solo=None):
             if not cands:
                 continue
             if mejor and mejor.get("fixture_id") == cands[0]["fixture"]["id"]:
+                if "league_tipo" not in mejor:   # guardado antes de existir el distintivo de la liga: se completa
+                    lg = cands[0].get("league") or {}
+                    mejor = dict(mejor, league_logo=lg.get("logo"), league_tipo=ha._liga_tipo(lg.get("name")))
                 continue   # ya es ese
             for fx in cands[:4]:
                 ko = datetime.fromtimestamp(fx["fixture"]["timestamp"], ha.LOCAL_TZ).isoformat()
@@ -66,6 +69,7 @@ def actualizar(config, solo=None):
                     "home_logo": fx["teams"]["home"].get("logo"), "away_logo": fx["teams"]["away"].get("logo"),
                     "home_goals": g.get("home"), "away_goals": g.get("away"),
                     "league": ha.liga_es(fx["league"]["name"]),
+                    "league_logo": fx["league"].get("logo"), "league_tipo": ha._liga_tipo(fx["league"].get("name")),
                     "team_key": target["key"], "team_label": target["label"], "emoji": target["emoji"],
                     "crest_url": target.get("crest_url"),
                     "minutes": part[0], "goals": part[1], "assists": part[2],
