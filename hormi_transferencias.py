@@ -187,13 +187,14 @@ class FcmSender:
         except Exception as err:
             log(f"⚠️  FCM: no se pudo autenticar con la cuenta de servicio — {err}")
 
-    def send(self, tipo, title, body, player_key=None, team_key=None):
+    def send(self, tipo, title, body, player_key=None, team_key=None, crest_url=None):
         if not self.enabled:
             return
         url = f"https://fcm.googleapis.com/v1/projects/{self.project_id}/messages:send"
         payload = {"message": {"topic": self.TOPIC, "data": {
             "type": tipo, "title": title, "body": body,
-            "player_key": player_key or "", "team_key": team_key or ""},
+            "player_key": player_key or "", "team_key": team_key or "",
+            "crest_url": crest_url or ""},   # escudo del club NUEVO (la app lo pone a la derecha del aviso)
             # prioridad alta + vigencia corta: igual que hormi_alertas.py
             "android": {"priority": "HIGH", "ttl": "3600s"}}}
         req = urllib.request.Request(
@@ -250,7 +251,7 @@ def check_player(player, notifier, fcm):
     title = f"🚨 ¡{apodo} cambió de equipo!"
     message = f"Ahora juega en {new_label}" + (f" (antes {old_label})" if old_label else "")
     notifier.send(title, message, 5)
-    fcm.send("transfer", title, message, player["key"], target["key"])
+    fcm.send("transfer", title, message, player["key"], target["key"], target.get("crest_url"))
     return True
 
 
