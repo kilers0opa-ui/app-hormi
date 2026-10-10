@@ -376,7 +376,7 @@ def _goles_texto(data):
             continue
         extra = " (pen.)" if e.get("detail") == "Penalty" else (" (a.g.)" if e.get("detail") == "Own Goal" else "")
         lineas.append(f"⚽ {e['player'].get('name') or '?'} {minute_txt(e['time'])}{extra} ({nombre_es(e['team']['name'])})")
-    return "\n".join(lineas) if lineas else "Sin goles."
+    return "\n".join(lineas)   # sin goles: vacío (el título ya dice 0-0)
 
 
 # ═══════════════════════════════════════════════════════ detector
