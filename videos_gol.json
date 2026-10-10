@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T10:00:25.981757-06:00",
+  "updated_at": "2026-10-10T12:42:44.960139-06:00",
   "cuota": {
     "fecha": "2026-10-10",
     "busquedas": 1,
@@ -88,7 +88,7 @@
         "url": "https://www.youtube.com/watch?v=v8mx5CYWzA8",
         "embeddable": true
       },
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 3,
       "ultima_noticia": "2026-10-10T16:00:25.476358+00:00",
       "noticias": {
         "vasquez": [
@@ -106,6 +106,30 @@
           }
         ]
       }
+    },
+    "1552181": {
+      "fixture_id": 1552181,
+      "home": "Feyenoord",
+      "away": "AZ Alkmaar",
+      "league": "Eredivisie",
+      "score": "Feyenoord 2-0 AZ Alkmaar",
+      "final_seen_at": "2026-10-10T18:40:39.696251+00:00",
+      "jugadores": {
+        "chavez": {
+          "team_key": "az_alkmaar",
+          "minutes": 90,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
