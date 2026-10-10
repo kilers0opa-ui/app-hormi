@@ -1173,6 +1173,8 @@ def send_reminders(config, notifier, fcm, schedule_out, reminders_sent):
                 continue
             if pkey in _no_convocados(target, entry):
                 continue   # no convocado a ese partido de la Selección: sin aviso
+            if target.get("kind") == "seleccion" and not _convocado_confirmado(pkey, entry):
+                continue   # sin convocatoria confirmada (dos fuentes): sin "Mañana juega"
             g = groups.setdefault(rid, {"entry": entry, "target": target, "players": []})
             g["players"].append(player)
 
@@ -1250,6 +1252,23 @@ def _convocado_oficial(player_key, fixture_ts):
         if not fixture_ts or not sel.get("desde") or not sel.get("hasta"):
             return False
         dia = datetime.fromtimestamp(int(fixture_ts), LOCAL_TZ).date().isoformat()
+        # "dudosos" (en una sola fuente) también cuentan aquí: esta función evita decir "no convocado"
+        # de alguien que quizá sí está; ante la duda, no se afirma.
+        lista = (sel.get("convocados") or []) + (sel.get("dudosos") or [])
+        return player_key in lista and sel["desde"] <= dia <= sel["hasta"]
+    except Exception:
+        return False
+
+
+def _convocado_confirmado(player_key, entry):
+    """True si el jugador está en la convocatoria CONFIRMADA (las dos fuentes) de la ventana de ese partido.
+    Solo así se muestra su partido de la Selección en Inicio y se manda "Mañana juega"."""
+    try:
+        sel = (load_json(CONVOCATORIA_FILE, {}) or {}).get("seleccion") or {}
+        ko = _parse(entry.get("kickoff")) if entry else None
+        if not ko or not sel.get("desde") or not sel.get("hasta"):
+            return False
+        dia = ko.astimezone(LOCAL_TZ).date().isoformat()
         return player_key in (sel.get("convocados") or []) and sel["desde"] <= dia <= sel["hasta"]
     except Exception:
         return False
@@ -1289,6 +1308,10 @@ def _next_match_status(target, entry, player_key=None, en_curso=False):
     ko = _parse(entry.get("kickoff")) if entry else None
     if player_key and player_key in _no_convocados(target, entry):
         return base   # no está convocado: no se le muestra ese partido como su próximo
+    if player_key and target.get("kind") == "seleccion" and not _convocado_confirmado(player_key, entry):
+        # Sin convocatoria confirmada no se ocupa la tarjeta con un partido de la Selección (a veces un mes
+        # antes y luego ni lo llaman). El calendario de la Selección está en su propia pantalla.
+        return base
     if ko and entry.get("home") and (en_curso or ko > datetime.now(LOCAL_TZ)) and entry.get("fx_status") not in CANCELLED:
         base.update({"match_reference": "próximo",
                      "match": f"{entry['home']} vs {entry['away']}",
@@ -1503,6 +1526,40 @@ def save_status(new):
     return True
 
 
+SELECCION_TEAM_ID = 16
+
+
+def calendario_seleccion(prev, config):
+    """Próximos partidos de la Selección para la pantalla "Calendario Selección" de la app. La lista se pide a
+    la API cada REFRESH_HORAS (1 petición); quién está convocado (confirmado / en duda) se recalcula en cada
+    pasada con hormi_convocatoria.json. Con cualquier falla se conserva lo anterior."""
+    prev = prev or {}
+    ts = _parse(prev.get("refreshed_at"))
+    partidos = prev.get("partidos") or []
+    if not ts or datetime.now(LOCAL_TZ) - ts > timedelta(hours=REFRESH_HORAS):
+        res = api("/fixtures", {"team": SELECCION_TEAM_ID, "next": 8})
+        if res is not None:
+            partidos = [{
+                "fixture_id": f["fixture"]["id"],
+                "kickoff": datetime.fromtimestamp(f["fixture"]["timestamp"], LOCAL_TZ).isoformat(),
+                "fx_status": f["fixture"]["status"]["short"],
+                **_fixture_meta(f)} for f in res]
+            ts = datetime.now(LOCAL_TZ)
+    sel = (load_json(CONVOCATORIA_FILE, {}) or {}).get("seleccion") or {}
+    out = []
+    for m in partidos:
+        ko = _parse(m.get("kickoff"))
+        if ko and ko < datetime.now(LOCAL_TZ) - timedelta(hours=3):
+            continue   # ya pasó
+        dia = ko.astimezone(LOCAL_TZ).date().isoformat() if ko else ""
+        en_ventana = bool(sel.get("desde") and sel["desde"] <= dia <= sel.get("hasta", ""))
+        out.append({**{k: v for k, v in m.items() if k != "season"},
+                    "convocados": (sel.get("convocados") or []) if en_ventana else [],
+                    "dudosos": (sel.get("dudosos") or []) if en_ventana else [],
+                    "convocatoria_publicada": en_ventana})
+    return {"refreshed_at": ts.isoformat() if ts else None, "partidos": out}
+
+
 def chequeo(args, notifier, config, fcm=None):
     _SNAP_CACHE.clear()
     _GRUPOS.clear()
@@ -1607,10 +1664,16 @@ def chequeo(args, notifier, config, fcm=None):
     reminders_keep = sorted(reminders_sent, key=lambda r: r.split(":", 1)[1])[-60:]
     save_json(STATE_FILE, {"sent": sent_out, "reminders": reminders_keep})
     save_json(SCHEDULE_FILE, schedule_out)
+    try:
+        cal = calendario_seleccion(load_json(STATUS_FILE, {}).get("calendario_seleccion"), config)
+    except Exception as err:
+        log(f"⚠️  no se pudo armar el calendario de la Selección — {err}")
+        cal = load_json(STATUS_FILE, {}).get("calendario_seleccion")
     save_status({
         "updated_at": now_iso(),
         "app_name": config.get("app_name", ""),
-        "players": status_out})
+        "players": status_out,
+        "calendario_seleccion": cal})
     log(f"✅ chequeo listo · {STATUS_FILE}, {STATE_FILE} y {SCHEDULE_FILE} al día")
 
 
