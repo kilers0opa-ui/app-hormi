@@ -39,7 +39,8 @@
       "away_logo": "https://media.api-sports.io/football/teams/39.png",
       "league": "Championship",
       "season": 2026,
-      "fx_status": "NS"
+      "fx_status": "NS",
+      "done": true
     },
     "seleccion": {
       "fixture_id": 1644691,
@@ -116,14 +117,14 @@
       "fixture_id": 1550140,
       "kickoff": "2026-10-10T07:00:00-06:00",
       "why": "hoy",
-      "refreshed_at": "2026-10-10T03:54:16.656724-06:00",
+      "refreshed_at": "2026-10-10T09:54:21.121408-06:00",
       "home": "Genoa",
       "away": "Fiorentina",
       "home_logo": "https://media.api-sports.io/football/teams/495.png",
       "away_logo": "https://media.api-sports.io/football/teams/502.png",
       "league": "Serie A",
       "season": 2026,
-      "fx_status": "NS",
+      "fx_status": "FT",
       "done": true
     },
     "seleccion": {
