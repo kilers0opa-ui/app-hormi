@@ -340,7 +340,11 @@ def avisar(prev, sel, nueva, config):
         return
     nombre = {p["key"]: ha.display_name(p) for p in config["players"]}
     rivales = ", ".join(p["rival"] for p in sel.get("partidos") or [])
-    cola = f" · vs {rivales}" if rivales else ""
+    motivo = sel.get("motivo")
+    if motivo and not motivo.startswith("Amistoso"):
+        cola = f" · {motivo}"   # torneo: no se sabe contra quién se termina jugando
+    else:
+        cola = f" · vs {rivales}" if rivales else ""
     items = []
     for p in config["players"]:
         k = p["key"]
