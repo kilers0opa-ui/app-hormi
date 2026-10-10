@@ -209,6 +209,24 @@ def get_topic(config):
 
 
 # ═══════════════════════════════════════════════════════ push real (FCM)
+_CRESTS = None
+
+
+def _crest_de(team_key):
+    """URL del escudo de un objetivo (club o Selección) según hormi_config.json; '' si no hay."""
+    global _CRESTS
+    if _CRESTS is None:
+        _CRESTS = {}
+        try:
+            for p in load_json(CONFIG_FILE, {}).get("players", []):
+                for t in p.get("targets", []):
+                    if t.get("crest_url"):
+                        _CRESTS.setdefault(t["key"], t["crest_url"])
+        except Exception:
+            pass
+    return _CRESTS.get(team_key or "", "")
+
+
 class FcmSender:
     """Push real vía Firebase Cloud Messaging, al tema 'hormi_alerts' (lo que
     la app Android suscribe al arrancar). Manda mensajes SOLO de datos (sin
@@ -289,6 +307,8 @@ class FcmSender:
                 "data": {"type": tipo, "title": title, "body": body,
                          "player_key": player_key or "", "team_key": team_key or "",
                          "player_keys": ",".join(player_keys or []),
+                         # Escudo del equipo: la app lo pone a la derecha del aviso (si no lo trae guardado).
+                         "crest_url": _crest_de(team_key),
                          **{k: str(v) for k, v in (extra or {}).items()}},
                 # Mensajes de solo-datos con prioridad normal los puede retrasar
                 # el modo Doze del teléfono (minutos u horas). HIGH los entrega
@@ -411,7 +431,7 @@ def analyze(data, player, target):
         alerts.append((f"{prefix}:{fid}:{key}", title, message, priority))
 
     if status in CANCELLED:
-        add("cancelado", f"⚠️ {emoji} {label} ({nombre}): partido suspendido/pospuesto",
+        add("cancelado", f"⚠️ {label} ({nombre}): partido suspendido/pospuesto",
             f"{match} · {fx['status']['long']}")
         return alerts, {"status": "cancelado", "match": match, "league": league,
                         "score": score(), "goals": 0, "assists": 0, "summary": None}
@@ -443,12 +463,12 @@ def analyze(data, player, target):
     tarde = status in FINISHED or (status in LIVE and elapsed > 10)
     if data.get("lineups") and not banca_pendiente and not (tarde and role != "titular"):
         if role == "titular":
-            add("alineacion", f"⭐ {emoji} ¡{nombre} titular con {label}!", f"{match} · {league}", 4)
+            add("alineacion", f"⭐ ¡{nombre} titular con {label}!", f"{match} · {league}", 4)
         elif role == "banca":
-            add("alineacion", f"🪑 {emoji} {nombre} arranca en la banca ({label})",
+            add("alineacion", f"🪑 {nombre} arranca en la banca ({label})",
                 f"{match} · {league}")
         else:
-            add("alineacion", f"❌ {emoji} {nombre} no convocado ({label})",
+            add("alineacion", f"❌ {nombre} no convocado ({label})",
                 f"{match} · {league}", 2)
 
     es_club = target.get("kind") != "seleccion"
@@ -456,10 +476,10 @@ def analyze(data, player, target):
     # convocado": simplemente no es partido suyo) ni mientras la API no publica alineación (amistosos):
     # sin saberlo, un aviso de "arrancó el partido" de un equipo donde quizá ni juega es ruido.
     if status in LIVE | FINISHED and (role or not es_club):
-        add("inicio", f"⚽ {emoji} Arrancó: {label} ({nombre})", match + "\nSigue el marcador en tiempo real desde la app.", 2)
+        add("inicio", f"Arrancó: {label} ({nombre})", match + "\nSigue el marcador en tiempo real desde la app.", 2)
     # Medio tiempo: marcador y goles de AMBOS equipos (mismas reglas que "Arrancó").
     if status == "HT" and (role or not es_club):
-        add("medio", f"⏸️ {emoji} Medio tiempo: {score()}", _goles_texto(data), 3)
+        add("medio", f"⏸️ Medio tiempo: {score()}", _goles_texto(data), 3)
 
     entered = False
     evidencia = False     # sin alineación publicada: ¿hay eventos que prueben que el jugador está jugando?
@@ -479,17 +499,17 @@ def analyze(data, player, target):
                 goals += 1
                 evidencia = True
                 tipo = " de penal" if detail == "Penalty" else ""
-                add(f"goal:{pid}:{goals}:gol", f"🔥 {emoji} ¡GOL DE {apodo.upper()}{tipo.upper()}! {m}",
+                add(f"goal:{pid}:{goals}:gol", f"🔥 ¡GOL DE {apodo.upper()}{tipo.upper()}! {m}",
                     f"{label} · {score()}", 5)
             elif aid == player_id:
                 assists += 1
                 evidencia = True
-                add(f"goal:{pid}:{aid}:{assists}:ast", f"🎯 {emoji} ¡Asistencia de {nombre}! {m}",
+                add(f"goal:{pid}:{aid}:{assists}:ast", f"🎯 ¡Asistencia de {nombre}! {m}",
                     f"{label} · Gol de {e['player']['name']} · {score()}", 4)
         elif etype == "var" and "goal" in detail.lower() and player_id in (pid, aid):
-            add(k, f"🚫 {emoji} VAR anula jugada de gol de {nombre} {m}", f"{label} · {detail}")
+            add(k, f"🚫 VAR anula jugada de gol de {nombre} {m}", f"{label} · {detail}")
         elif etype == "card" and pid == player_id and "red" in detail.lower():
-            add(f"red:{pid}", f"🟥 {emoji} ¡Expulsan a {nombre}! {m}", f"{label} · {score()}", 5)
+            add(f"red:{pid}", f"🟥 ¡Expulsan a {nombre}! {m}", f"{label} · {score()}", 5)
         elif etype == "subst" and player_id in (pid, aid):
             # La llave NO lleva el minuto: la API a veces corrige el minuto de un cambio (66' → 67')
             # y con él cambiaba la llave, lo que mandaba el aviso dos veces.
@@ -498,10 +518,10 @@ def analyze(data, player, target):
             sin_alin_entra = role is None and (not data.get("lineups") or banca_pendiente) and aid == player_id
             if (role == "banca" or sin_alin_entra) and not entered:
                 entered, in_minute = True, t["elapsed"]
-                add(k, f"🔄 {emoji} ¡Entra {nombre}! {m}", f"{label} · {score()}", 4)
+                add(k, f"🔄 ¡Entra {nombre}! {m}", f"{label} · {score()}", 4)
             else:
                 out_minute = t["elapsed"]
-                add(k, f"↩️ {emoji} Sale {nombre} {m}", f"{label} · {score()}", 2)
+                add(k, f"↩️ Sale {nombre} {m}", f"{label} · {score()}", 2)
 
     summary = None
     if status in FINISHED:
@@ -524,7 +544,7 @@ def analyze(data, player, target):
         # Club: sin aviso de final si no es partido suyo (fuera de la alineación) o si no hay datos de
         # si jugó (sin alineación ni eventos suyos). La Selección se filtra aparte (grupos/convocatoria).
         if not es_club or role or goals or assists or entered:
-            add("final", f"🏁 {emoji} Final {label} ({nombre}): {score()}", detalle, 3)
+            add("final", f"🏁 Final {label} ({nombre}): {score()}", detalle, 3)
 
     current_status = "no_convocado" if data.get("lineups") and role is None and not banca_pendiente else \
         role or ("en_cancha" if status in LIVE else
@@ -786,7 +806,8 @@ def _payload_grupo(g, jug, title, body):
     arriba) con solo esos jugadores. El servidor no sabe quiénes son tus favoritos."""
     items = [{"key": j["key"], "name": j["name"], "rol": j["status"],
               "min": (j.get("summary") or {}).get("minutes"),
-              "title": j["title"], "body": j["body"]} for j in jug]
+              "title": j["title"], "body": j["body"],
+              **({"team": j["team"], "crest_url": j.get("crest_url") or ""} if j.get("team") else {})} for j in jug]
     return json.dumps({"title": title, "body": body, "match": g.get("match"), "league": g.get("league"),
                        "score": g.get("score"), "label": g["label"], "emoji": g["emoji"], "items": items},
                       ensure_ascii=False, separators=(",", ":"))
@@ -812,7 +833,7 @@ def enviar_grupos(notifier, fcm):
                 lineas.append("❌ No convocados: " + ", ".join(nop))
             if not lineas:
                 continue
-            title = f"📋 {g['emoji']} Alineación: {g['label']}"
+            title = f"📋 Alineación: {g['label']}"
             body = "\n".join(lineas)
             notifier.send(title, body, 4)
             if fcm:
@@ -822,13 +843,13 @@ def enviar_grupos(notifier, fcm):
         if not jug:
             continue
         if tipo == "start":
-            title = f"⚽ {g['emoji']} Arrancó: {g['label']}"
+            title = f"Arrancó: {g['label']}"
             body = f"{g['match']} · {g['league']}\nSigue el marcador en tiempo real desde la app."
         elif tipo == "halftime":
-            title = f"⏸️ {g['emoji']} Medio tiempo: {g['score']}"
+            title = f"⏸️ Medio tiempo: {g['score']}"
             body = jug[0]["body"]
         else:
-            title = f"🏁 {g['emoji']} Final {g['label']}: {g['score']}"
+            title = f"🏁 Final {g['label']}: {g['score']}"
             jugaron = [f"{j['name']} {j['summary']['minutes']}'" for j in jug
                        if j.get("summary") and j["summary"].get("minutes")]
             body = ("Jugaron: " + " · ".join(jugaron)) if jugaron else "Ninguno de tus jugadores tuvo minutos."
@@ -1124,6 +1145,7 @@ def send_reminders(config, notifier, fcm, schedule_out, reminders_sent):
             cuando = f" {'a la' if hora.startswith('1:') else 'a las'} {hora}"
         for p in g["players"]:
             items.append({"key": p["key"], "name": display_name(p), "status": "convocado", "summary": None,
+                          "team": target["key"], "crest_url": target.get("crest_url") or "",
                           "title": f"📅 Mañana juega {display_name(p)} ({target['label']}){cuando}",
                           "body": "Entra para ver los detalles del partido."})
             keys.append(p["key"])
