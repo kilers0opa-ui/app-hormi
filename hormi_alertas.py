@@ -480,6 +480,10 @@ def analyze(data, player, target):
     # Medio tiempo: marcador y goles de AMBOS equipos (mismas reglas que "Arrancó").
     if status == "HT" and (role or not es_club):
         add("medio", f"⏸️ Medio tiempo: {score()}", _goles_texto(data), 3)
+    # Arranca el segundo tiempo (mismo tipo que medio tiempo: un solo interruptor en la app). Si se detecta
+    # ya avanzado (reinicio, falla de GitHub), pasado el minuto 50 no se manda: llegaría tarde.
+    if status == "2H" and (fx["status"].get("elapsed") or 0) <= 50 and (role or not es_club):
+        add("segundo", f"Arranca el segundo tiempo: {score()}", "Sigue el marcador en tiempo real desde la app.", 3)
 
     entered = False
     evidencia = False     # sin alineación publicada: ¿hay eventos que prueben que el jugador está jugando?
@@ -744,7 +748,7 @@ def alert_type(key):
         return "lineup"
     if key.endswith(":inicio"):
         return "start"
-    if key.endswith(":medio"):
+    if key.endswith(":medio") or key.endswith(":segundo"):
         return "halftime"
     if key.endswith(":final"):
         return "final"
@@ -845,9 +849,8 @@ def enviar_grupos(notifier, fcm):
         if tipo == "start":
             title = f"Arrancó: {g['label']}"
             body = f"{g['match']} · {g['league']}\nSigue el marcador en tiempo real desde la app."
-        elif tipo == "halftime":
-            title = f"⏸️ Medio tiempo: {g['score']}"
-            body = jug[0]["body"]
+        elif tipo == "halftime":   # medio tiempo o arranque del segundo tiempo: el texto no depende del jugador
+            title, body = jug[0]["title"], jug[0]["body"]
         else:
             title = f"🏁 Final {g['label']}: {g['score']}"
             jugaron = [f"{j['name']} {j['summary']['minutes']}'" for j in jug
