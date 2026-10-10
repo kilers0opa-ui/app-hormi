@@ -323,7 +323,11 @@ def main():
         return 0
     nueva = bool(prev) and (prev.get("desde"), prev.get("hasta")) != (sel["desde"], sel["hasta"])
     if nueva and prev.get("desde") < sel["desde"]:
-        historial = ([prev] + [h for h in historial if h.get("desde") != prev.get("desde")])[:6]   # la anterior pasa al historial
+        historial = [prev] + [h for h in historial if h.get("desde") != prev.get("desde")]   # la anterior pasa al historial
+    # Se guardan las convocatorias del año de la más reciente y del año anterior: cuando sale la primera de un
+    # año nuevo, se borran las de hace dos años (la app las agrupa por año).
+    anio = int(sel["desde"][:4])
+    historial = [h for h in historial if int((h.get("desde") or "0")[:4]) >= anio - 1]
     sel["actualizado"] = datetime.now(timezone(timedelta(hours=-6))).isoformat(timespec="seconds")
     OUT_FILE.write_text(json.dumps({"seleccion": sel, "historial": historial}, ensure_ascii=False, indent=2) + "\n",
                         encoding="utf-8")
