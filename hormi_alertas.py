@@ -870,7 +870,8 @@ def _payload_grupo(g, jug, title, body):
     items = [{"key": j["key"], "name": j["name"], "rol": j["status"],
               "min": (j.get("summary") or {}).get("minutes"),
               "title": j["title"], "body": j["body"],
-              **({"team": j["team"], "crest_url": j.get("crest_url") or ""} if j.get("team") else {})} for j in jug]
+              **({"team": j["team"], "crest_url": j.get("crest_url") or ""} if j.get("team") else {}),
+              **({"ko": j["ko"]} if j.get("ko") else {})} for j in jug]
     return json.dumps({"title": title, "body": body, "match": g.get("match"), "league": g.get("league"),
                        "score": g.get("score"), "label": g["label"], "emoji": g["emoji"], "items": items},
                       ensure_ascii=False, separators=(",", ":"))
@@ -1215,7 +1216,9 @@ def send_reminders(config, notifier, fcm, schedule_out, reminders_sent):
             items.append({"key": p["key"], "name": display_name(p), "status": "convocado", "summary": None,
                           "team": target["key"], "crest_url": target.get("crest_url") or "",
                           "title": f"📅 Mañana juega {display_name(p)} ({target['label']}){cuando}",
-                          "body": "Entra para ver los detalles del partido."})
+                          "body": "Entra para ver los detalles del partido.",
+                          # hora exacta: la app reescribe "a las 8:15 a.m." con la hora local del celular
+                          "ko": ko.isoformat() if e.get("fx_status") != "TBD" else None})
             keys.append(p["key"])
     if not items:
         return 0
