@@ -1,11 +1,22 @@
 {
-  "updated_at": "2026-10-11T14:57:16.962527-06:00",
+  "updated_at": "2026-10-11T15:50:17.630218-06:00",
   "cuota": {
     "fecha": "2026-10-11",
     "busquedas": 0,
     "busquedas_resumen": 0
   },
-  "goles": {},
+  "goles": {
+    "camberos:chivas:9:goal:453887:1:gol": {
+      "player_key": "camberos",
+      "team_key": "chivas",
+      "goal_seen_at": "2026-10-11T21:47:22.020250+00:00",
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null
+    }
+  },
   "partidos": {
     "1550140": {
       "fixture_id": 1550140,
