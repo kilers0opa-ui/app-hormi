@@ -215,6 +215,10 @@ def _slug(s):
     return re.sub(r"[^a-z0-9]+", "-", norm(s)).strip("-") or "fondo"
 
 
+# Carpetas de mis_fondos/ con nombre más claro que la clave interna del jugador.
+CARPETA_ALIAS = {"mateo_chavez": "chavez"}
+
+
 def mis_fondos(keys_jugadores):
     """Lee mis_fondos/<clave>/*.jpg|png|webp. Devuelve {clave: [items]} (clave 'general'
     incluida). Cada imagen se copia a fondos/ (lado largo ≤ 2340 px) para que la app la
@@ -224,11 +228,13 @@ def mis_fondos(keys_jugadores):
     if not os.path.isdir(MIS_FONDOS_DIR):
         return res
     cache, cache_sucio = _leer_cache(), False
-    for key in sorted(os.listdir(MIS_FONDOS_DIR)):
-        carpeta = os.path.join(MIS_FONDOS_DIR, key)
+    for carpeta_nombre in sorted(os.listdir(MIS_FONDOS_DIR)):
+        carpeta = os.path.join(MIS_FONDOS_DIR, carpeta_nombre)
+        # La carpeta puede llamarse distinto a la clave interna (mateo_chavez → chavez).
+        key = CARPETA_ALIAS.get(carpeta_nombre, carpeta_nombre)
         if not os.path.isdir(carpeta) or (key != "general" and key not in keys_jugadores):
             continue
-        items = []
+        items = res.get(key, [])
         n_foto = 0
         for fn in sorted(os.listdir(carpeta)):
             if not fn.lower().endswith(_EXT):
