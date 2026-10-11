@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-11T16:05:18.344517-06:00",
+  "updated_at": "2026-10-11T16:20:19.955800-06:00",
   "cuota": {
     "fecha": "2026-10-11",
-    "busquedas": 1,
+    "busquedas": 2,
     "busquedas_resumen": 0
   },
   "goles": {
@@ -10,11 +10,12 @@
       "player_key": "camberos",
       "team_key": "chivas",
       "goal_seen_at": "2026-10-11T21:47:22.020250+00:00",
-      "status": "pendiente",
-      "intentos": 1,
+      "status": "omitido",
+      "intentos": 2,
       "fallos": 0,
-      "ultimo_intento": "2026-10-11T22:05:18.104739+00:00",
-      "video": null
+      "ultimo_intento": "2026-10-11T22:20:19.703398+00:00",
+      "video": null,
+      "motivo": "sin video tras los intentos"
     }
   },
   "partidos": {
