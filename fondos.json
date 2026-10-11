@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T00:19:56+00:00",
+  "updated_at": "2026-10-11T21:50:53+00:00",
   "players": {
     "armando": {
       "generados": [
@@ -471,7 +471,17 @@
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/gimenez_seleccion.jpg?v=5643ffc4"
         }
       ],
-      "fotos": [],
+      "fotos": [
+        {
+          "id": "commons_201425905",
+          "title": "Santiago Giménez",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/foto_commons_201425905.jpg?v=0ca6e8e5",
+          "credit": "Foto: Ivan Joatzay · CC BY-SA 4.0 · Wikimedia Commons",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Santiago_Gim%C3%A9nez_profile_picture.jpg",
+          "width": 1080,
+          "height": 1620
+        }
+      ],
       "contexto": [],
       "mios": [
         {
@@ -870,6 +880,120 @@
           "height": 678
         }
       ]
+    },
+    "montes": {
+      "generados": [
+        {
+          "id": "gen_lokomotiv",
+          "title": "Lokomotiv Moscú",
+          "team_key": "lokomotiv",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/montes_lokomotiv.jpg?v=1b7f68d8"
+        },
+        {
+          "id": "gen_seleccion",
+          "title": "Selección Mexicana",
+          "team_key": "seleccion",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/montes_seleccion.jpg?v=7b233875"
+        }
+      ],
+      "fotos": [],
+      "mios": [],
+      "contexto": []
+    },
+    "luis_chavez": {
+      "generados": [
+        {
+          "id": "gen_dinamo",
+          "title": "Dinamo Moscú",
+          "team_key": "dinamo",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/luis_chavez_dinamo.jpg?v=11949be8"
+        },
+        {
+          "id": "gen_seleccion",
+          "title": "Selección Mexicana",
+          "team_key": "seleccion",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/luis_chavez_seleccion.jpg?v=29d1f6c9"
+        }
+      ],
+      "fotos": [],
+      "mios": [],
+      "contexto": []
+    },
+    "fimbres": {
+      "generados": [
+        {
+          "id": "gen_monterrey",
+          "title": "Monterrey",
+          "team_key": "monterrey",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/fimbres_monterrey.jpg?v=1c7439b6"
+        },
+        {
+          "id": "gen_seleccion",
+          "title": "Selección Mexicana",
+          "team_key": "seleccion",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/fimbres_seleccion.jpg?v=2d34421f"
+        }
+      ],
+      "fotos": [],
+      "mios": [],
+      "contexto": []
+    },
+    "campillo": {
+      "generados": [
+        {
+          "id": "gen_chivas",
+          "title": "Chivas",
+          "team_key": "chivas",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/campillo_chivas.jpg?v=06b83d26"
+        },
+        {
+          "id": "gen_seleccion",
+          "title": "Selección Mexicana",
+          "team_key": "seleccion",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/campillo_seleccion.jpg?v=06b8aa3c"
+        }
+      ],
+      "fotos": [],
+      "mios": [],
+      "contexto": []
+    },
+    "camberos": {
+      "generados": [
+        {
+          "id": "gen_chivas",
+          "title": "Chivas",
+          "team_key": "chivas",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/camberos_chivas.jpg?v=656105ac"
+        },
+        {
+          "id": "gen_seleccion",
+          "title": "Selección Mexicana",
+          "team_key": "seleccion",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/camberos_seleccion.jpg?v=8f60c08f"
+        }
+      ],
+      "fotos": [],
+      "mios": [],
+      "contexto": []
+    },
+    "sandoval": {
+      "generados": [
+        {
+          "id": "gen_chivas",
+          "title": "Chivas",
+          "team_key": "chivas",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/sandoval_chivas.jpg?v=88a3ead0"
+        },
+        {
+          "id": "gen_seleccion",
+          "title": "Selección Mexicana",
+          "team_key": "seleccion",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/sandoval_seleccion.jpg?v=1ae12301"
+        }
+      ],
+      "fotos": [],
+      "mios": [],
+      "contexto": []
     }
   },
   "general": {
@@ -900,6 +1024,20 @@
             "height": 2340
           },
           {
+            "id": "esc_chivas",
+            "title": "Chivas",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_chivas.jpg?v=0ebe22e5",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "esc_dinamo",
+            "title": "Dinamo Moscú",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_dinamo.jpg?v=2b463806",
+            "width": 1080,
+            "height": 2340
+          },
+          {
             "id": "esc_copenhague",
             "title": "FC Copenhague",
             "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_copenhague.jpg?v=59d4536a",
@@ -910,6 +1048,20 @@
             "id": "esc_genoa",
             "title": "Genoa",
             "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_genoa.jpg?v=4f5ae2fa",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "esc_lokomotiv",
+            "title": "Lokomotiv Moscú",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_lokomotiv.jpg?v=15261347",
+            "width": 1080,
+            "height": 2340
+          },
+          {
+            "id": "esc_monterrey",
+            "title": "Monterrey",
+            "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/fondos/general_escudo_monterrey.jpg?v=2fa80642",
             "width": 1080,
             "height": 2340
           },
