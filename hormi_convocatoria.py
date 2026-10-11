@@ -389,7 +389,7 @@ def main():
         prev, historial = anterior.get("seleccion") or {}, anterior.get("historial") or []
     except Exception:
         pass
-    keys = ("desde", "hasta", "convocados", "dudosos", "no_convocados", "jugadores")
+    keys = ("desde", "hasta", "convocados", "dudosos", "no_convocados", "jugadores", "motivo", "partidos", "anunciada")
     if all(prev.get(k) == sel.get(k) for k in keys):
         print("Sin cambios en la convocatoria.")
         return 0
