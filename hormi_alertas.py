@@ -1224,6 +1224,11 @@ def send_reminders(config, notifier, fcm, schedule_out, reminders_sent):
 
 _WARNED = set()      # avisos que ya se mostraron en este proceso (el modo vigilar repite pasadas cada minuto)
 _SNAP_CACHE = {}     # fixture_id -> foto del partido, válida solo durante UNA pasada
+# Antes del partido (hasta PRE_RAPIDO del kickoff) solo puede salir la alineación: se consulta
+# cada PRE_PASO en vez de cada pasada de 20 s y, entre consultas, se reusa la última foto.
+PRE_PASO = 60                          # segundos
+PRE_RAPIDO = timedelta(minutes=5)      # desde aquí (y durante el partido) vuelve a cada 20 s
+_PRE_SNAP = {}       # fixture_id -> (time.time() de la consulta, foto)
 
 
 def warn_once(key, msg):
@@ -1394,8 +1399,16 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     # pide UNA sola vez por pasada y se reparte, en vez de una petición por jugador.
     fid = entry["fixture_id"]
     if fid not in _SNAP_CACHE:
-        res = api("/fixtures", {"id": fid})
-        _SNAP_CACHE[fid] = res[0] if res else None
+        _ko = _parse(entry.get("kickoff"))
+        _pre = _PRE_SNAP.get(fid)
+        if (_pre and _pre[1] and time.time() - _pre[0] < PRE_PASO
+                and _ko and datetime.now(LOCAL_TZ) < _ko - PRE_RAPIDO
+                and (_pre[1].get("fixture") or {}).get("status", {}).get("short") in ("NS", "TBD")):
+            _SNAP_CACHE[fid] = _pre[1]      # previa: se reusa la foto de hace <1 min (sin petición)
+        else:
+            res = api("/fixtures", {"id": fid})
+            _SNAP_CACHE[fid] = res[0] if res else None
+            _PRE_SNAP[fid] = (time.time(), _SNAP_CACHE[fid])
     snap = _SNAP_CACHE[fid]
     if not snap:
         return
