@@ -22,9 +22,9 @@ Dos archivos, dos escritores (así los workflows jamás chocan al hacer push):
                    videoEmbeddable=true.
 
 Cuota de YouTube Data API (10,000 unidades/día gratis): search.list = 100.
-La corrida normal ya NO gasta cuota. Los eventos comparten un tope de 50
-búsquedas/día (= 5,000 unidades, la mitad de la cuota gratis); de esas, los
-resúmenes pueden usar máximo 20 para no quitarle cuota a los goles.
+La corrida normal ya NO gasta cuota. Los eventos comparten un tope de 90
+búsquedas/día (= 9,000 unidades de las 10,000 gratis); de esas, los
+resúmenes pueden usar máximo 35 para no quitarle cuota a los goles.
 
 Modo eventos (--eventos, alias --gol)
 -------------------------------------
@@ -88,13 +88,13 @@ DEFAULTS = {
     "gol_intentos_min": [15, 30],     # minutos después del gol en que se busca (2 intentos, ni uno más)
     "gol_margen_min": 10,             # el clip puede haberse publicado hasta N min antes de que se detectara el gol
     "gol_min_entre_intentos": 10,     # si el worker se atrasa, separa los intentos al menos N min
-    "gol_max_busquedas_dia": 50,      # tope de búsquedas de YouTube al día (goles + resúmenes): 50 x 100 = 5,000 unidades, la mitad de la cuota gratis
+    "gol_max_busquedas_dia": 90,      # tope de búsquedas de YouTube al día (goles + resúmenes): 90 x 100 = 9,000 de las 10,000 unidades gratis (deja ~1,000 para videos.list)
     "gol_caducidad_horas": 3,         # un gol/partido pendiente más viejo que esto se omite
     "gol_retencion_horas": 48,        # cuánto se conserva un gol/partido en videos_gol.json
     # --- modo --eventos: final de partido (resumen + noticia principal)
     "resumen_intentos_min": [30, 60, 120],     # minutos después del final en que se busca el resumen (3 intentos) y se refresca la noticia
     "resumen_margen_min": 10,             # el resumen puede haberse publicado hasta N min antes de que se detectara el final
-    "resumen_max_busquedas_dia": 20,      # de las 50 búsquedas del día, máximo 20 pueden ser de resúmenes: los goles siempre conservan cuota
+    "resumen_max_busquedas_dia": 35,      # de las 90 búsquedas del día, máximo 35 pueden ser de resúmenes: los goles siempre conservan cuota
     "resumen_solo_con_minutos": True,     # solo se busca resumen si algún jugador del roster tuvo minutos
     # Calidad del resumen: solo se acepta el de un canal confiable (estos nombres, o el canal oficial de alguno de
     # los dos equipos). Los videos de canales raros (voz de IA, "reacciones", narraciones de relleno) se descartan.
