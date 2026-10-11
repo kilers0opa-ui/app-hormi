@@ -62,6 +62,10 @@ PALETAS = {
     "atletico_madrid": ("#CB3524", "#272E61"),
     "betis": ("#00954C", "#FFFFFF"),
     "copenhague": ("#0A2A6B", "#FFFFFF"),
+    "lokomotiv": ("#D71920", "#00843D"),
+    "dinamo": ("#0047AB", "#FFFFFF"),
+    "monterrey": ("#002D72", "#FFFFFF"),
+    "chivas": ("#C8102E", "#1D2D6B"),
 }
 PALETA_DEFAULT = ("#1F6F5C", "#0B1F1A")
 
