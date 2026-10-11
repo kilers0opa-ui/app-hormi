@@ -497,6 +497,20 @@ def main():
     if args.solo in (None, "generar"):
         for key, items in generar(config, args.jugador).items():
             salida.setdefault(key, {})["generados"] = items
+        # Pósters hechos con las fotos de fondos_fuente/ (club = apellido gigante, Selección = duotono).
+        try:
+            import hormi_fondos_poster as P
+            for key, items in P.posters(config, args.jugador).items():
+                salida.setdefault(key, {}).setdefault("generados", [])
+                salida[key]["generados"] = [i for i in salida[key]["generados"]
+                                            if not i.get("id", "").startswith("poster_")] + items
+        except Exception as e:
+            print(f"Pósters: falló ({e}); se conservan los anteriores")
+            for key, v in players_prev.items():
+                viejos = [i for i in v.get("generados", []) if i.get("id", "").startswith("poster_")]
+                if viejos and key in salida:
+                    salida[key]["generados"] = [i for i in salida[key].get("generados", [])
+                                                if not i.get("id", "").startswith("poster_")] + viejos
 
     if args.solo in (None, "fotos"):
         for p in config["players"]:

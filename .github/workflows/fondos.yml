@@ -9,6 +9,7 @@ on:
     # Al subir imágenes propias a mis_fondos/ se agregan solas al catálogo.
     paths:
       - "mis_fondos/**"
+      - "fondos_fuente/**"
   workflow_dispatch:        # manual desde la pestaña Actions
     inputs:
       jugador:
@@ -63,8 +64,8 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Instalar Pillow y OpenCV
-        run: pip install pillow numpy opencv-contrib-python-headless
+      - name: Instalar Pillow, OpenCV y rembg (recorte del jugador para los pósters)
+        run: pip install pillow numpy opencv-contrib-python-headless "rembg[cpu]"
 
       - name: Generar fondos y buscar fotos libres
         env:
@@ -73,7 +74,11 @@ jobs:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
           ARGS=""
-          if [ "${{ github.event_name }}" = "push" ]; then ARGS="--solo mios"; fi
+          if [ "${{ github.event_name }}" = "push" ]; then
+            # Al subir fotos: pósters nuevos (fondos_fuente/) y fondos propios (mis_fondos/).
+            python hormi_fondos.py --solo generar
+            ARGS="--solo mios"
+          fi
           if [ -n "${{ inputs.jugador }}" ]; then ARGS="$ARGS --jugador ${{ inputs.jugador }}"; fi
           if [ -n "${{ inputs.solo }}" ]; then ARGS="$ARGS --solo ${{ inputs.solo }}"; fi
           python hormi_fondos.py $ARGS
