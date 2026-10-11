@@ -1,65 +1,12 @@
 {
-  "updated_at": "2026-10-10T13:58:34.658221-06:00",
+  "updated_at": "2026-10-11T11:57:00.003902-06:00",
   "cuota": {
-    "fecha": "2026-10-10",
-    "busquedas": 2,
-    "busquedas_resumen": 2
+    "fecha": "2026-10-11",
+    "busquedas": 0,
+    "busquedas_resumen": 0
   },
-  "goles": {
-    "quinones:al_qadsiah:1603041:goal:35532:1:gol": {
-      "player_key": "quinones",
-      "team_key": "al_qadsiah",
-      "goal_seen_at": "2026-10-09T15:39:58.586284+00:00",
-      "status": "omitido",
-      "intentos": 2,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-09T16:10:21.914753+00:00",
-      "video": null,
-      "silencioso": true,
-      "motivo": "sin video tras los intentos"
-    }
-  },
+  "goles": {},
   "partidos": {
-    "1603041": {
-      "fixture_id": 1603041,
-      "home": "Al Kholood",
-      "away": "Al-Qadisiyah FC",
-      "league": "Liga Profesional Saudí",
-      "score": "Al Kholood 0-5 Al-Qadisiyah FC",
-      "final_seen_at": "2026-10-09T15:46:58.580527+00:00",
-      "jugadores": {
-        "quinones": {
-          "team_key": "al_qadsiah",
-          "minutes": 90,
-          "goals": 1,
-          "assists": 2
-        }
-      },
-      "status": "omitido",
-      "intentos": 3,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-09T17:48:48.022661+00:00",
-      "video": null,
-      "noticias_pasadas": 3,
-      "ultima_noticia": "2026-10-09T17:48:48.022661+00:00",
-      "noticias": {
-        "quinones": [
-          {
-            "title": "Julián Quiñones marca un gol de Panenka en la goleada 5-0 de su equipo",
-            "source": "AS México",
-            "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPVnpaYVFyTTdqRGZiOExXWHlZVS1reGJ6REFzX2paS0FKV05HTm1McFBHaHFLT3d2dmU4MTZHN2RGR3NnODdqSVhVanZqX2tGaU5sem51N0JUSURNMzA5RkhxYU9GS2N2Yl9GUENYcmZKT1hQZ3g1MS00NEM5TVAxTVRKcHp1c0RYTTg1d3M4Q1JPRXV5c2dhUk5LTWdqcFlCV1B5c3J3aWZtTXNQZTBJ0gHDAUFVX3lxTFB1ZEpIMEw5QzRmWEJ2a0V4YzdMU1BTcF94dXoyRmFDWEVvM0FLM1ZjVGdnZmV0S1RDdUZfNTVKWkxEYXVsY2VERV9IcnFYaV9la1Bud3o4MVVNYXNVUWlmRlJIcFFuLUNCUkFZLThIbWU0UVRqazFTQW5JTWRKaHRuSlJnalVHaVpneXo0eEtNbk12QXF6MjN6c3hXdHJ1cUFUcFdZdGdvdzU3RXZNTkFHUjRvYVNDZ0V1N0FVSUVxalNLOA?oc=5",
-            "published_at": "2026-10-09T17:08:17Z"
-          },
-          {
-            "title": "Julián Quiñones marca golazo a lo Panenka y da dos asistencias en la goleada del Al Qadsiah",
-            "source": "Infobae",
-            "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQRy1ydlFmWnFKd1hwdEZPcnZmQl9wZXVjRGlYd3lPWVVCTEVQNlRmNWdaM1lUSHB5Umc1bmxpX0RKNGJZZVNfVFI3VkF2dm50TU9VXzZfRmg0TWlfQmNIbEpTZGVmRkdvRm9GMmpaUHZTM3RYMmZlT2ZqdTFNVUNiUmh6N0N1NklSbnlib1NQWGcxUzU1d3hxZ3VIMUlsZlNSYmxlV1lKQ0trNmZUbTk2ckxYN3l0RTk1bkJfVzNzMDhQQlBJdGhTZDF1dXlLM0d0ZUhOV3ZuelcwY2PSAfYBQVVfeXFMTXB4d1cyNGYyalBSUXR1MGF5T3ZPWGlENFVuQ2g5SF9DdmZkQXlMNW1NNk9KYzgyaXp2dVZfRGxKSnFDdUdBX05zTVdPN2g5d25Pa2VXakxpZEZXOGItcVdvdUlVdTZHaHY0eDlBRHZfdVRTS2xpX3BqV3JwMm1yMjdYWFRyc1U1UWd5NjVEbV96Uy1yQ08yNUpXRGZCVHBKRlpCTnFHY1l6YllfLXZzSUdrMGZYUW1rT3hqWlFUZFJ6MWxjY0lSR1ljRXdtUEt1OEMwdkVEOFVFeFluU0xiaENfd3UzbWdKNUhqQVIxOVIxaGswMTh3?oc=5",
-            "published_at": "2026-10-09T16:54:03Z"
-          }
-        ]
-      },
-      "motivo": "sin resumen tras los intentos"
-    },
     "1550140": {
       "fixture_id": 1550140,
       "home": "Genoa",
@@ -135,7 +82,7 @@
         "url": "https://www.youtube.com/watch?v=ESPP9B9RBpY",
         "embeddable": true
       },
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 3,
       "ultima_noticia": "2026-10-10T19:45:16.750759+00:00",
       "noticias": {
         "chavez": [
@@ -174,7 +121,7 @@
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 3,
       "ultima_noticia": "2026-10-10T19:58:34.177295+00:00",
       "noticias": {
         "gimenez": [
@@ -193,6 +140,30 @@
         ]
       },
       "motivo": "ningún jugador tuvo minutos"
+    },
+    "1549030": {
+      "fixture_id": 1549030,
+      "home": "FC Midtjylland",
+      "away": "FC Copenhague",
+      "league": "Superliga",
+      "score": "FC Midtjylland 2-1 FC Copenhague",
+      "final_seen_at": "2026-10-11T17:56:27.010019+00:00",
+      "jugadores": {
+        "huescas": {
+          "team_key": "copenhague",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
