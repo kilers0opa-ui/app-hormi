@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T12:25:21.235864-06:00",
+  "updated_at": "2026-10-11T12:29:10.930257-06:00",
   "cuota": {
     "fecha": "2026-10-11",
     "busquedas": 0,
@@ -156,14 +156,30 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-11T18:29:10.465706+00:00",
+      "noticias": {
+        "huescas": [
+          {
+            "title": "Rodrigo Huescas regresa a las canchas con FC Copenhague tras un año fuera por lesión",
+            "source": "Tribuna de México",
+            "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE82SDRXb1VmX2Nxck9CUW03S2NyUmpjclNFLWFVYndEcEZFeXFxdkVlN3o2a21DNmMxRUR3RmxZYmtfalNHRXRMelpMU2pMTUkyMGxERHJPTWVCSFVwTldiRU02bEVPc013NUxkMHBGRVctc3ZO?oc=5",
+            "published_at": "2026-10-05T19:56:48Z"
+          },
+          {
+            "title": "Rodrigo Huescas vuelve a sonreír",
+            "source": "NVI Noticias",
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUHo5NGhYSjhRSmVJS2hoUU1CcEc4a2VaZlRFaXhnNVpTUThYWGQ2RzZCLXRHLWRnUzQ3R0g4WmpBV0RkVTQ3YkVHLWhsRl9nYTJuODJGUDdBYWhhMURlUXFsdlhCazFGdVhxSkk0bFFIUE9tZzgtdkFsWlVhQWhWcko1R2hSMkp3?oc=5",
+            "published_at": "2026-10-05T10:13:47Z"
+          }
+        ]
+      },
+      "motivo": "ningún jugador tuvo minutos"
     }
   }
 }
