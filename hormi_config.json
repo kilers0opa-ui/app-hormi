@@ -42,7 +42,8 @@
         2024,
         2025,
         2026
-      ]
+      ],
+      "seccion": "legion"
     },
     {
       "key": "raul",
@@ -93,7 +94,8 @@
         2024,
         2025,
         2026
-      ]
+      ],
+      "seccion": "legion"
     },
     {
       "key": "quinones",
@@ -140,7 +142,8 @@
         2024,
         2025,
         2026
-      ]
+      ],
+      "seccion": "legion"
     },
     {
       "key": "mora",
@@ -178,7 +181,9 @@
         2024,
         2025,
         2026
-      ]
+      ],
+      "seccion": "promesas",
+      "nacimiento": "2008-10-14"
     },
     {
       "key": "vasquez",
@@ -223,7 +228,8 @@
         2024,
         2025,
         2026
-      ]
+      ],
+      "seccion": "legion"
     },
     {
       "key": "gimenez",
@@ -267,7 +273,8 @@
         2024,
         2025,
         2026
-      ]
+      ],
+      "seccion": "legion"
     },
     {
       "key": "chavez",
@@ -309,7 +316,8 @@
         2024,
         2025,
         2026
-      ]
+      ],
+      "seccion": "legion"
     },
     {
       "key": "obed",
@@ -350,7 +358,8 @@
         2024,
         2025,
         2026
-      ]
+      ],
+      "seccion": "legion"
     },
     {
       "key": "fidalgo",
@@ -397,7 +406,8 @@
         2024,
         2025,
         2026
-      ]
+      ],
+      "seccion": "legion"
     },
     {
       "key": "huescas",
@@ -438,7 +448,274 @@
         2024,
         2025,
         2026
-      ]
+      ],
+      "seccion": "legion"
+    },
+    {
+      "key": "montes",
+      "name": "César Montes",
+      "apodo": "Montes",
+      "player_id": 2873,
+      "player_search_term": "Montes",
+      "search_first_name": "cesar",
+      "search_last_name": "montes",
+      "targets": [
+        {
+          "key": "lokomotiv",
+          "label": "Lokomotiv Moscú",
+          "emoji": "🚂",
+          "team_id": 597,
+          "search": "Lokomotiv",
+          "country": "Russia",
+          "season": 2026,
+          "kind": "club",
+          "crest_url": "https://media.api-sports.io/football/teams/597.png"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png"
+        }
+      ],
+      "career_seasons": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "seccion": "legion",
+      "nacimiento": "1997-02-24"
+    },
+    {
+      "key": "luis_chavez",
+      "name": "Luis Chávez",
+      "apodo": "Luis Chávez",
+      "nombre_gol": "Luis Chávez",
+      "player_id": 35690,
+      "player_search_term": "Chavez",
+      "search_first_name": "luis",
+      "search_last_name": "chavez",
+      "targets": [
+        {
+          "key": "dinamo",
+          "label": "Dinamo Moscú",
+          "emoji": "⚡",
+          "team_id": 1088,
+          "search": "Dynamo",
+          "country": "Russia",
+          "season": 2026,
+          "kind": "club",
+          "crest_url": "https://media.api-sports.io/football/teams/1088.png"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png"
+        }
+      ],
+      "career_seasons": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "seccion": "legion",
+      "nacimiento": "1996-01-15"
+    },
+    {
+      "key": "fimbres",
+      "name": "Iker Fimbres",
+      "apodo": "Fimbres",
+      "player_id": 426512,
+      "player_search_term": "Fimbres",
+      "search_first_name": "iker",
+      "search_last_name": "fimbres",
+      "targets": [
+        {
+          "key": "monterrey",
+          "label": "Monterrey",
+          "emoji": "⛰️",
+          "team_id": 2282,
+          "search": "Monterrey",
+          "country": "Mexico",
+          "season": 2026,
+          "kind": "club",
+          "crest_url": "https://media.api-sports.io/football/teams/2282.png"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png"
+        }
+      ],
+      "career_seasons": [
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "seccion": "promesas",
+      "nacimiento": "2005-06-02"
+    },
+    {
+      "key": "campillo",
+      "name": "Diego Campillo",
+      "apodo": "Campillo",
+      "player_id": 141155,
+      "player_search_term": "Campillo",
+      "search_first_name": "diego",
+      "search_last_name": "campillo",
+      "targets": [
+        {
+          "key": "chivas",
+          "label": "Chivas",
+          "emoji": "🐐",
+          "team_id": 2278,
+          "search": "Guadalajara Chivas",
+          "country": "Mexico",
+          "season": 2026,
+          "kind": "club",
+          "crest_url": "https://media.api-sports.io/football/teams/2278.png"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png"
+        }
+      ],
+      "career_seasons": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "seccion": "promesas",
+      "nacimiento": "2001-10-19"
+    },
+    {
+      "key": "camberos",
+      "name": "Hugo Camberos",
+      "apodo": "Camberos",
+      "player_id": 453887,
+      "player_search_term": "Camberos",
+      "search_first_name": "hugo",
+      "search_last_name": "camberos",
+      "targets": [
+        {
+          "key": "chivas",
+          "label": "Chivas",
+          "emoji": "🐐",
+          "team_id": 2278,
+          "search": "Guadalajara Chivas",
+          "country": "Mexico",
+          "season": 2026,
+          "kind": "club",
+          "crest_url": "https://media.api-sports.io/football/teams/2278.png"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png"
+        }
+      ],
+      "career_seasons": [
+        2024,
+        2025,
+        2026
+      ],
+      "seccion": "promesas",
+      "nacimiento": "2007-07-21"
+    },
+    {
+      "key": "sandoval",
+      "name": "Santiago Sandoval",
+      "apodo": "Sandoval",
+      "player_id": 524762,
+      "player_search_term": "Sandoval",
+      "search_first_name": "santiago",
+      "search_last_name": "sandoval",
+      "targets": [
+        {
+          "key": "chivas",
+          "label": "Chivas",
+          "emoji": "🐐",
+          "team_id": 2278,
+          "search": "Guadalajara Chivas",
+          "country": "Mexico",
+          "season": 2026,
+          "kind": "club",
+          "crest_url": "https://media.api-sports.io/football/teams/2278.png"
+        },
+        {
+          "key": "seleccion",
+          "label": "Selección Mexicana",
+          "emoji": "🇲🇽",
+          "team_id": 16,
+          "season": 2026,
+          "kind": "seleccion",
+          "search": "Mexico",
+          "country": "Mexico",
+          "crest_url": "https://media.api-sports.io/football/teams/16.png"
+        }
+      ],
+      "career_seasons": [
+        2025,
+        2026
+      ],
+      "seccion": "promesas",
+      "nacimiento": "2007-08-07"
     }
-  ]
+  ],
+  "archivados": [],
+  "promesas_edad_limite": 26
 }
