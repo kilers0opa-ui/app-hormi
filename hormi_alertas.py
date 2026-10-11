@@ -355,6 +355,7 @@ NOMBRES_ES = {
     "Maritimo": "Marítimo", "FC Copenhagen": "FC Copenhague",
     "Guadalajara Chivas": "Chivas", "Lokomotiv": "Lokomotiv Moscú", "Dynamo": "Dinamo Moscú",
     "CSKA Moscow": "CSKA Moscú", "Spartak Moscow": "Spartak Moscú",
+    "Al-Qadisiyah FC": "Al-Qadsiah", "Al Hilal Saudi FC": "Al Hilal", "Al-Nassr": "Al Nassr",
 }
 
 LIGAS_ES = {
