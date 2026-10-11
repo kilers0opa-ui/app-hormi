@@ -207,8 +207,77 @@ class FcmSender:
             log(f"⚠️  FCM: no se pudo enviar el push real — {err}")
 
 
+# ═══════════════════════════════════════════════════════ secciones de la app
+# "legion" = Legión Extranjera · "promesas" = Jóvenes promesas (campo "seccion" de cada jugador en el config).
+# Reglas (acordadas con Aldo, oct-2026):
+#   · Una promesa que ficha por un club de Europa o de Arabia Saudita sube a Legión Extranjera.
+#   · Un jugador de Legión que regresa a la Liga MX (club de México) se archiva: deja de seguirse.
+#   · Una promesa que cumple config["promesas_edad_limite"] años (26) se archiva.
+# Archivar = sacarlo de config["players"] y pasarlo a config["archivados"]: así TODAS las fases (motor,
+# videos, historial, fondos...) dejan de gastar peticiones en él sin tocar su código. La app lo oculta
+# (status.json → "archivados"). Para reactivarlo basta con regresarlo a "players" a mano.
+# Países como los nombra API-Football (con guiones).
+PAISES_EUROPA = {
+    "England", "Scotland", "Wales", "Northern-Ireland", "Ireland", "Spain", "Portugal", "France", "Italy",
+    "Germany", "Netherlands", "Belgium", "Luxembourg", "Switzerland", "Austria", "Denmark", "Sweden", "Norway",
+    "Finland", "Iceland", "Faroe-Islands", "Poland", "Czech-Republic", "Slovakia", "Hungary", "Slovenia",
+    "Croatia", "Serbia", "Bosnia", "Montenegro", "North-Macedonia", "Albania", "Kosovo", "Greece", "Cyprus",
+    "Malta", "Bulgaria", "Romania", "Moldova", "Ukraine", "Belarus", "Russia", "Lithuania", "Latvia", "Estonia",
+    "Turkey", "Georgia", "Armenia", "Azerbaijan", "Kazakhstan", "Israel", "Andorra", "San-Marino",
+    "Gibraltar", "Liechtenstein",
+}
+PAISES_ASCENSO = PAISES_EUROPA | {"Saudi-Arabia"}
+EDAD_LIMITE_DEFAULT = 26
+
+
+def edad(nacimiento, hoy=None):
+    try:
+        n = datetime.strptime(nacimiento, "%Y-%m-%d").date()
+    except (TypeError, ValueError):
+        return None
+    hoy = hoy or datetime.now(LOCAL_TZ).date()
+    return hoy.year - n.year - ((hoy.month, hoy.day) < (n.month, n.day))
+
+
+def archivar(config, player, motivo):
+    config["players"] = [p for p in config["players"] if p["key"] != player["key"]]
+    player["archivado"] = {"fecha": datetime.now(LOCAL_TZ).date().isoformat(), "motivo": motivo}
+    config.setdefault("archivados", []).append(player)
+    log(f"  📦 {player['name']} archivado: {motivo}")
+
+
+def regla_por_fichaje(player, country):
+    """'ascenso' | 'archivar' | None según la sección del jugador y el país de su club nuevo."""
+    seccion = player.get("seccion", "legion")
+    if seccion == "promesas" and country in PAISES_ASCENSO:
+        return "ascenso"
+    if seccion == "legion" and country == "Mexico":
+        return "archivar"
+    return None
+
+
+def revisar_edades(config, notifier, fcm):
+    """Promesas que ya cumplieron la edad límite → archivadas (con aviso). True si cambió el config."""
+    limite = config.get("promesas_edad_limite", EDAD_LIMITE_DEFAULT)
+    changed = False
+    for player in list(config["players"]):
+        if player.get("seccion") != "promesas":
+            continue
+        e = edad(player.get("nacimiento"))
+        if e is None or e < limite:
+            continue
+        nombre = re.sub(r'\s*"[^"]*"\s*', " ", player["name"]).strip()
+        archivar(config, player, f"cumplió {e} años")
+        title = f"🎂 {nombre} cumplió {e} años"
+        body = "Sale de Jóvenes promesas y deja de seguirse en la app."
+        notifier.send(title, body, 3)
+        fcm.send("transfer", title, body, player["key"])
+        changed = True
+    return changed
+
+
 # ═══════════════════════════════════════════════════════ logica principal
-def check_player(player, notifier, fcm):
+def check_player(player, notifier, fcm, config=None):
     """True si detecto y aplico un cambio de equipo para este jugador."""
     player_id = player.get("player_id")
     if not player_id:
@@ -250,6 +319,14 @@ def check_player(player, notifier, fcm):
     apodo = re.sub(r'\s*"[^"]*"\s*', " ", player["name"]).strip()
     title = f"🚨 ¡{apodo} cambió de equipo!"
     message = f"Ahora juega en {new_label}" + (f" (antes {old_label})" if old_label else "")
+    regla = regla_por_fichaje(player, info.get("country") or target.get("country")) if config else None
+    if regla == "ascenso":
+        player["seccion"] = "legion"
+        message += ". Sube a la Legión Extranjera."
+        log(f"  ⬆️  sube a Legión Extranjera ({info.get('country')})")
+    elif regla == "archivar":
+        archivar(config, player, f"regresó a la Liga MX ({new_label})")
+        message += ". Regresa a la Liga MX: deja de seguirse en la app."
     notifier.send(title, message, 5)
     fcm.send("transfer", title, message, player["key"], target["key"], target.get("crest_url"))
     return True
@@ -304,10 +381,12 @@ def main():
     fcm = FcmSender(config.get("fcm_project_id"))
 
     changed = False
-    for player in players:
+    for player in list(players):
         log(f"👤 {player['name']}")
-        if check_player(player, notifier, fcm):
+        if check_player(player, notifier, fcm, config):
             changed = True
+    if not args.jugador and revisar_edades(config, notifier, fcm):
+        changed = True
 
     if changed:
         save_json(CONFIG_FILE, config)

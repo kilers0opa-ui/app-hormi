@@ -68,7 +68,7 @@ def actualizar(config, solo=None):
                     "home": ha.nombre_es(fx["teams"]["home"]["name"]), "away": ha.nombre_es(fx["teams"]["away"]["name"]),
                     "home_logo": fx["teams"]["home"].get("logo"), "away_logo": fx["teams"]["away"].get("logo"),
                     "home_goals": g.get("home"), "away_goals": g.get("away"),
-                    "league": ha.liga_es(fx["league"]["name"]),
+                    "league": ha.liga_es(fx["league"]),
                     "league_logo": fx["league"].get("logo"), "league_tipo": ha._liga_tipo(fx["league"].get("name")),
                     "team_key": target["key"], "team_label": target["label"], "emoji": target["emoji"],
                     "crest_url": target.get("crest_url"),

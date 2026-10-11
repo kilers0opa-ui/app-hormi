@@ -198,7 +198,7 @@ def build_team_standings(target):
             log(f"    {league['name']} {season}: sin tabla todavía (previas, eliminación directa o aún no empieza)")
             continue
         row["league_id"] = league_id
-        row["league_name"] = league["name"]
+        row["league_name"] = {235: "Liga Premier de Rusia", 237: "Copa de Rusia"}.get(league.get("id")) or league["name"]
         log(f"    {league['name']} {season}: lugar {row['rank']}/{row['total_teams']} · {row['points']} pts")
         result.append(row)
     return result or None

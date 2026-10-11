@@ -11,7 +11,7 @@ on:
   workflow_dispatch:        # para poder correrlo manual desde la pestaña Actions
     inputs:
       jugador:
-        description: "Limitar a un jugador (vacío = todos: armando, raul, quinones, mora, vasquez, gimenez, chavez, obed, fidalgo, huescas)"
+        description: "Limitar a un jugador (vacío = todos: armando, raul, quinones, mora, vasquez, gimenez, chavez, obed, fidalgo, huescas, montes, luis_chavez, fimbres, campillo, camberos, sandoval)"
         type: choice
         default: ""
         options:
@@ -26,6 +26,12 @@ on:
           - obed
           - fidalgo
           - huescas
+          - montes
+          - luis_chavez
+          - fimbres
+          - campillo
+          - camberos
+          - sandoval
 
 concurrency:
   group: hormi-videos   # PROPIO de este workflow: nunca comparte cola con el motor de alertas (hormi-chequeo), así una corrida de videos jamás puede retrasar una alerta de gol

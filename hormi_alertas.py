@@ -353,6 +353,8 @@ NOMBRES_ES = {
     # clubes (solo los que la API trae sin acento / en otro idioma)
     "Olympiakos Piraeus": "Olympiakos", "Atletico Madrid": "Atlético de Madrid", "Alaves": "Alavés",
     "Maritimo": "Marítimo", "FC Copenhagen": "FC Copenhague",
+    "Guadalajara Chivas": "Chivas", "Lokomotiv": "Lokomotiv Moscú", "Dynamo": "Dinamo Moscú",
+    "CSKA Moscow": "CSKA Moscú", "Spartak Moscow": "Spartak Moscú",
 }
 
 LIGAS_ES = {
@@ -381,8 +383,17 @@ LIGAS_ES = {
 }
 
 
-def liga_es(name):
-    return LIGAS_ES.get(name, name)
+# Ligas que se llaman igual que otra de otro país: se traducen por (nombre, país).
+LIGAS_PAIS_ES = {
+    ("Premier League", "Russia"): "Liga Premier de Rusia", ("Cup", "Russia"): "Copa de Rusia",
+    ("Super Cup", "Russia"): "Supercopa de Rusia", ("Super Cup", "Mexico"): "Campeón de Campeones",
+}
+
+
+def liga_es(name, country=None):
+    if isinstance(name, dict):   # se puede pasar el objeto "league" completo de la API
+        name, country = name.get("name"), name.get("country")
+    return LIGAS_PAIS_ES.get((name, country)) or LIGAS_ES.get(name, name)
 
 
 def nombre_es(name):
@@ -455,7 +466,7 @@ def analyze(data, player, target):
     fx = data["fixture"]
     fid, status = fx["id"], fx["status"]["short"]
     home, away = data["teams"]["home"], data["teams"]["away"]
-    league = liga_es(data["league"]["name"])
+    league = liga_es(data["league"])
     match = f"{nombre_es(home['name'])} vs {nombre_es(away['name'])}"
 
     def score():
@@ -632,7 +643,7 @@ def registrar_ultimo(player, target, snap, info):
         "home": nombre_es(snap["teams"]["home"]["name"]), "away": nombre_es(snap["teams"]["away"]["name"]),
         "home_logo": snap["teams"]["home"].get("logo"), "away_logo": snap["teams"]["away"].get("logo"),
         "home_goals": g.get("home"), "away_goals": g.get("away"),
-        "league": liga_es(snap["league"]["name"]),
+        "league": liga_es(snap["league"]),
         "league_logo": snap["league"].get("logo"), "league_tipo": _liga_tipo(snap["league"].get("name")),
         "eventos": info.get("eventos") or [],
         "team_key": target["key"], "team_label": target["label"], "emoji": target["emoji"],
@@ -1090,7 +1101,7 @@ def _fixture_meta(fx):
     """Datos del partido que se guardan en el horario (para el aviso 'Juega mañana')."""
     return {"home": nombre_es(fx["teams"]["home"]["name"]), "away": nombre_es(fx["teams"]["away"]["name"]),
             "home_logo": fx["teams"]["home"].get("logo"), "away_logo": fx["teams"]["away"].get("logo"),
-            "league": liga_es((fx.get("league") or {}).get("name")),
+            "league": liga_es(fx.get("league") or {}),
             "league_logo": (fx.get("league") or {}).get("logo"),
             "league_tipo": _liga_tipo((fx.get("league") or {}).get("name")), "liga_v": LIGA_V,
             "season": (fx.get("league") or {}).get("season"),
@@ -1441,7 +1452,7 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         "fixture_id": snap["fixture"]["id"],
         "home": nombre_es(snap["teams"]["home"]["name"]),
         "away": nombre_es(snap["teams"]["away"]["name"]),
-        "league": liga_es(snap["league"]["name"]),
+        "league": liga_es(snap["league"]),
         "score": info.get("score"),
         "summary": info.get("summary"),
     }
@@ -1696,6 +1707,10 @@ def chequeo(args, notifier, config, fcm=None):
         "updated_at": now_iso(),
         "app_name": config.get("app_name", ""),
         "players": status_out,
+        # Sección de cada jugador en la app ("legion" = Legión Extranjera, "promesas" = Jóvenes promesas) y los
+        # que ya no se siguen (archivados por las reglas de hormi_transferencias.py: la app los oculta).
+        "secciones": {p["key"]: p.get("seccion", "legion") for p in config["players"]},
+        "archivados": [p["key"] for p in config.get("archivados") or []],
         "calendario_seleccion": cal,
         # Convocatoria actual (+ historial) para la pantalla "Selección Mexicana → Convocados" de la app.
         "convocatoria": load_json(CONVOCATORIA_FILE, None)})

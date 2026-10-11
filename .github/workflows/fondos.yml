@@ -27,6 +27,12 @@ on:
           - obed
           - fidalgo
           - huescas
+          - montes
+          - luis_chavez
+          - fimbres
+          - campillo
+          - camberos
+          - sandoval
       solo:
         description: "Qué hacer"
         type: choice

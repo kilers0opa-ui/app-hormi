@@ -8,7 +8,7 @@ on:
   workflow_dispatch:       # para poder correrlo manual desde la pestaña Actions
     inputs:
       jugador:
-        description: "Limitar a un jugador (vacío = todos: armando, raul, quinones, mora, vasquez, gimenez, chavez, obed, fidalgo, huescas)"
+        description: "Limitar a un jugador (vacío = todos: armando, raul, quinones, mora, vasquez, gimenez, chavez, obed, fidalgo, huescas, montes, luis_chavez, fimbres, campillo, camberos, sandoval)"
         type: choice
         default: ""
         options:
@@ -23,6 +23,12 @@ on:
           - obed
           - fidalgo
           - huescas
+          - montes
+          - luis_chavez
+          - fimbres
+          - campillo
+          - camberos
+          - sandoval
 
 concurrency:
   group: hormi-chequeo   # comparte grupo con las demás fases (NO con el motor de alertas, que tiene el suyo: hormi-motor); el push reintenta con pull --rebase

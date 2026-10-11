@@ -141,7 +141,7 @@ def season_rows(player_id, season):
                 continue  # ni jugó ni anotó con ese equipo/competición esa temporada
             rows.append({
                 "league_id": league.get("id"),
-                "league_name": league.get("name") or "?",
+                "league_name": LEAGUE_NAME_FIX.get(league.get("id")) or league.get("name") or "?",
                 "league_logo": league.get("logo"),
                 "team_id": team.get("id"),
                 "team_name": team.get("name") or "?",
@@ -155,7 +155,7 @@ def season_rows(player_id, season):
 
 
 # Nombres en español para competiciones que la API llama de forma genérica.
-LEAGUE_NAME_FIX = {199: "Copa de Grecia"}
+LEAGUE_NAME_FIX = {199: "Copa de Grecia", 235: "Liga Premier de Rusia", 237: "Copa de Rusia"}
 FINISHED = ("FT", "AET", "PEN")
 
 
