@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T14:57:59.025871-06:00",
+  "updated_at": "2026-10-11T03:11:35.940157-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -157,16 +157,16 @@
             "minutes": 62
           },
           {
-            "league_id": 197,
-            "league_name": "Super League 1",
-            "league_logo": "https://media.api-sports.io/football/leagues/197.png",
-            "team_id": 553,
-            "team_name": "Olympiakos Piraeus",
-            "team_logo": "https://media.api-sports.io/football/teams/553.png",
-            "played": 4,
-            "goals": 0,
-            "assists": 0,
-            "minutes": 148
+            "league_id": 10,
+            "league_name": "Friendlies",
+            "league_logo": "https://media.api-sports.io/football/leagues/10.png",
+            "team_id": 16,
+            "team_name": "Mexico",
+            "team_logo": "https://media.api-sports.io/football/teams/16.png",
+            "played": 9,
+            "goals": 1,
+            "assists": 1,
+            "minutes": 381
           },
           {
             "league_id": 262,
@@ -181,16 +181,16 @@
             "minutes": 195
           },
           {
-            "league_id": 10,
-            "league_name": "Friendlies",
-            "league_logo": "https://media.api-sports.io/football/leagues/10.png",
-            "team_id": 16,
-            "team_name": "Mexico",
-            "team_logo": "https://media.api-sports.io/football/teams/16.png",
-            "played": 9,
-            "goals": 1,
-            "assists": 1,
-            "minutes": 381
+            "league_id": 197,
+            "league_name": "Super League 1",
+            "league_logo": "https://media.api-sports.io/football/leagues/197.png",
+            "team_id": 553,
+            "team_name": "Olympiakos Piraeus",
+            "team_logo": "https://media.api-sports.io/football/teams/553.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 148
           },
           {
             "league_id": 199,
@@ -1884,18 +1884,6 @@
             "minutes": 100
           },
           {
-            "league_id": 135,
-            "league_name": "Serie A",
-            "league_logo": "https://media.api-sports.io/football/leagues/135.png",
-            "team_id": 495,
-            "team_name": "Genoa",
-            "team_logo": "https://media.api-sports.io/football/teams/495.png",
-            "played": 4,
-            "goals": 1,
-            "assists": 0,
-            "minutes": 341
-          },
-          {
             "league_id": 10,
             "league_name": "Friendlies",
             "league_logo": "https://media.api-sports.io/football/leagues/10.png",
@@ -1906,6 +1894,18 @@
             "goals": 2,
             "assists": 0,
             "minutes": 533
+          },
+          {
+            "league_id": 135,
+            "league_name": "Serie A",
+            "league_logo": "https://media.api-sports.io/football/leagues/135.png",
+            "team_id": 495,
+            "team_name": "Genoa",
+            "team_logo": "https://media.api-sports.io/football/teams/495.png",
+            "played": 5,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 431
           }
         ],
         "2017": [
@@ -3448,10 +3448,10 @@
             "team_id": 201,
             "team_name": "AZ Alkmaar",
             "team_logo": "https://media.api-sports.io/football/teams/201.png",
-            "played": 7,
+            "played": 8,
             "goals": 1,
             "assists": 3,
-            "minutes": 561
+            "minutes": 651
           }
         ]
       },
@@ -4770,18 +4770,6 @@
             "minutes": 170
           },
           {
-            "league_id": 262,
-            "league_name": "Liga MX",
-            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
-            "team_id": 2280,
-            "team_name": "Club Tijuana",
-            "team_logo": "https://media.api-sports.io/football/teams/2280.png",
-            "played": 7,
-            "goals": 5,
-            "assists": 1,
-            "minutes": 420
-          },
-          {
             "league_id": 10,
             "league_name": "Friendlies",
             "league_logo": "https://media.api-sports.io/football/leagues/10.png",
@@ -4792,6 +4780,18 @@
             "goals": 1,
             "assists": 0,
             "minutes": 170
+          },
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2280,
+            "team_name": "Club Tijuana",
+            "team_logo": "https://media.api-sports.io/football/teams/2280.png",
+            "played": 7,
+            "goals": 5,
+            "assists": 1,
+            "minutes": 420
           }
         ]
       },
