@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T14:25:18.671615-06:00",
+  "updated_at": "2026-10-11T14:27:52.261059-06:00",
   "cuota": {
     "fecha": "2026-10-11",
     "busquedas": 0,
@@ -236,14 +236,30 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-11T20:27:51.544315+00:00",
+      "noticias": {
+        "armando": [
+          {
+            "title": "¿Cómo quedó el Olympiacos vs Panathinaikos hoy? resultado y goles de la ‘Hormiga’ González en Liga de Grecia 2026",
+            "source": "AS México",
+            "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPRFVZQ21VQ0JKYXFPaUhURnpIaFM3T2VwSWxpR3hzdFlSdFdLeERQY21iWGlfanZjU2tRa2djN1dEWnE4Y2s4SllCX0xfTDQzOUJaMWthdHhmRjJGRV9xYVNiczBFNFF2T0JmUmxVci1wYlZWckR6bVM3R3F6T2FVYmJwSDV0ZU56b3RrT3QyQUc4ZmNLcExBcFFwSTAxdHhoYWFOMzhGdmFJYXN4NkNvd19PQ09nbzBKU3BXZTA4aEJET0ZDU0V4TGJWaWkxU0NmNDFVQVZoNGh6YXM2dlpGMUUtS2k3T0FtRTh4Q1NMQVJTQkROUllacmZ0UUhYWGVCc0JFWjBlYznSAZwCQVVfeXFMUFJrMGlfTE92eDdTcHpPUl9uMFAxMnlIOWhNcy0tU1NIbmV1Qkw2Q2tCV2ZYNDc3VlpIdHJnT3Q1dGIzZFNudXEyUkMxTnlkNGNkaDV4eFFla3NnaDFETVJuWFZPYlNYdElIb00zcG5ldDVvUF9KSHFzSVkzYzBfV09oZ1ZZcWFZT3JNa1FHUXhtcnpkSDN6LWlSMERZNS01dURWY25YWk9YdTIwR1Y2NkhWZjJwYjc3WUwyM1pnQkx3bzVybnFOcEV5VWtQZjFSeHNrT1lXMkFhbFN0dmwzOEZ3czd1Nk5zRklsNE83dzd3Q053eWh6U1FaU3NPOFhVR2N4SElobmtzRGtDTmF3Zm5FVVJraEIweDhwZ2o?oc=5",
+            "published_at": "2026-10-11T20:20:01Z"
+          },
+          {
+            "title": "Armando González no juega en la victoria de Olympiacos sobre Panathinaikos - esto",
+            "source": "El Sol de México",
+            "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOLVJUUFpFRWFvZlFoMDBnUzZ0UjBHTWo5YV81cDJYMmZ3Rl9uVHU2WmN3cEthRWRwRFJwMXFvSVlMRDdOemJKVUJrVFN3TXBoZUZDWnkyUDB6VTBaWVlZOGRTY1dyb01NWHE4VlJQNzZGRXBtcS1zSVRfZ2djRVRCSGtmdGhldDNlaXFYZ3Jhbi1QRGVmNFdaN0k2LTRCTldfMDFtS3FjWDJFVmpGanNzUjNid29oTGtPUkRTa1ltUzY1REF5NG5N?oc=5",
+            "published_at": "2026-10-11T20:15:00Z"
+          }
+        ]
+      },
+      "motivo": "ningún jugador tuvo minutos"
     }
   }
 }
