@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T13:33:26.771813-06:00",
+  "updated_at": "2026-10-11T13:58:26.734123-06:00",
   "cuota": {
     "fecha": "2026-10-11",
     "busquedas": 0,
@@ -161,8 +161,8 @@
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 2,
-      "ultima_noticia": "2026-10-11T19:00:23.294525+00:00",
+      "noticias_pasadas": 3,
+      "ultima_noticia": "2026-10-11T19:58:26.227777+00:00",
       "noticias": {
         "huescas": [
           {
@@ -220,6 +220,30 @@
         ]
       },
       "motivo": "ningún jugador tuvo minutos"
+    },
+    "1593329": {
+      "fixture_id": 1593329,
+      "home": "Olympiakos",
+      "away": "Panathinaikos",
+      "league": "Superliga de Grecia",
+      "score": "Olympiakos 1-0 Panathinaikos",
+      "final_seen_at": "2026-10-11T19:56:40.178079+00:00",
+      "jugadores": {
+        "armando": {
+          "team_key": "olympiacos",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
