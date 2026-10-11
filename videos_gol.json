@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T13:01:25.678925-06:00",
+  "updated_at": "2026-10-11T13:05:17.829467-06:00",
   "cuota": {
     "fecha": "2026-10-11",
     "busquedas": 0,
@@ -196,14 +196,30 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-11T19:05:17.318218+00:00",
+      "noticias": {
+        "fidalgo": [
+          {
+            "title": "Dónde ver Betis vs Osasuna: Hora y canal TV para Álvaro Fidalgo en LaLiga 2026-27",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOYUZETEhfM3V2cUtJenhFQjFKSnAweFdyQnNoX1pBQlRaZUlMMzQyMkVlQTVyTV9fQjdrNGc5OWMyZVhTVDJBNFMzand1TUJoU0E2ZFlhSG82ekdobkFlckVVWFpVS1I5eWZmVWpPRUFGQ1E5M3dNSEV0dFVmUzJhYzhFQnlQVm02ZE83WlAtM0ZhLWk2UnZDTERNSV8wWE9yanJ5ZGdKcDhCT1QweWlIUHlsTFVZWHlORFhpSkcxYkhBTS1uQ3BIV3p0RERuYTTSAc8BQVVfeXFMTjlYNnRkTTNpeUY3MFE1bTRhSHhpS3hDY1UzQk5WekgxUGtMOFBmWWZFaUlCZUZUcUNlRjRyd1B4NENKUEVwWHdJeVAyOGhTcTNzUmtKV1R3andlNXRPdWctQ284QXdSSDljMGFaMnp6UFZTRl8ydHNhZU1QS2JGOUxpN1h2N25ucDhoa256Z1R4SUZ6YUNuOHhheDhhbE1qWVVkT3ZFSGZ6T005YzFpR3p5MlJBU1AwdjI5ZVczZXJUVlQyTFVfNmhJUXJRdU93?oc=5",
+            "published_at": "2026-10-11T14:33:30Z"
+          },
+          {
+            "title": "Betis vs Osasuna; la hora para VER EN VIVO a Álvaro Fidalgo en la Jornada 8 de LaLiga",
+            "source": "TV Azteca",
+            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxObFFPQ2pEZHNmZGcwSlBiNE84UG5DLVM5c19vNGRUOE40aFVwaE5MbFJmR3BrMDljbzFSb2pkMm5iOV9TRXBDNjUtOGJtdWpNSnAwcWlpeW9ONDBINkx4aC1DWGh1b1N1aHE0MzVzT2NUWU1rWV9OYU1HY2kzdmNqRzBqbVUyQjhFVTZ1REpRbDNfanlUYnpBalk3eWfSAZwBQVVfeXFMTmxRT0NqRGRzZmRnMEpQYjRPOFBuQy1TOXNfbzRkVDhONGhVcGhOTGxSZkdwazA5Y28xUm9qZDJuYjlfU0VwQzY1LThibXVqTUpwMHFpaXlvTjQwSDZMeGgtQ1hodW9TdWhxNDM1c09jVFlNa1lfTmFNR2NpM3Zjakcwam1VMkI4RVU2dURKUWwzX2p5VGJ6QWpZN3ln?oc=5",
+            "published_at": "2026-10-11T12:43:00Z"
+          }
+        ]
+      },
+      "motivo": "ningún jugador tuvo minutos"
     }
   }
 }
