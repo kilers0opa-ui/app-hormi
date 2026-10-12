@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-12T09:45:19.830735-06:00",
+  "updated_at": "2026-10-12T10:15:22.815645-06:00",
   "cuota": {
     "fecha": "2026-10-12",
-    "busquedas": 0,
-    "busquedas_resumen": 0
+    "busquedas": 1,
+    "busquedas_resumen": 1
   },
   "goles": {
     "camberos:chivas:9:goal:453887:1:gol": {
@@ -242,13 +242,28 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-12T16:15:22.034583+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-12T16:15:22.034583+00:00",
+      "noticias": {
+        "quinones": [
+          {
+            "title": "Primer ‘obstáculo’ de Julián Quiñones en su sueño por la Champions",
+            "source": "AS México",
+            "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPdUE4Mk1Wcy0xYmRwRUNvOURQal9TUkxtaU1XZGlOLWtscjdxbVFsczNhbjA1TW5hMG8yUUxGYUJzdXp3SU9lMHg0T0JYY3FHcDJaZy1jd0g2alJlSWJLVVNPVnBDMFVOV3VJRUtuX0U0X2V4SEYtdmZscHZUV21QNVlNM3ZQN2JHcDZSMUIzazVRMnU1RHE2Z3BicWpHSTh1V0htM1hhZklQS2UyY0thNnFHWEREVlVNWkYyNjRNWnd2d2NwdUHSAdoBQVVfeXFMTmRhQ3U1blBTRTNVV25mY2ZFSmY0SXhEeUViX0hOenJxSHZLaFBaVUltYTlpallqd2dGbTVhd3BWOGRNU0Z2eXZTb25rTFQ0X2N6aUlfc3dfbld1Q09qdEF1ckhnb1VzZmJ6Zmx2ank2aUw1S1pBNmhfekFCMDZQYTBOQlpHR0k0WHpwQ1VGSVlLV1ZQXzA2ajJfZkl5TEdPalJLWWVNU29qcWZXOWc5d3BDWGdsUUdhRE0wT3RqcnBHM2ticGZjYTlkcDRzdFZSbGdCWElhZTU3YUE?oc=5",
+            "published_at": "2026-10-12T15:44:43Z"
+          },
+          {
+            "title": "Julián Quiñones brilla en la goleada del Al Qadsiah ante Al-Kholood con gol a lo panenka y dos asistencias",
+            "source": "XEVT",
+            "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOcDhtWHJvWnVNcWFaUW5qakk5SjV2R1Y4Z3h1MmZUVDdTVFM3bHd4X0xvTW4zRXprTWswdWFwMno3RHpJNlBXaXhZanlhRW82QTBRQnVZVkpJUVpNeXA3R0k4cTlSOWZuZm55Zzc2bUZEckM1RjNDdC0wUENRUDh2MTdwTFpxR2RkTkVxYk5GNmdUMUtqLXJYaVhCWS1ENjY3RDRONVJ0VmZweEtNMGMzTzM4bkJqd3J4NzZkLTB6YW9hUW5pQVdfMDE3dWF2Mjd2ZjdteXdqdFNJMG8?oc=5",
+            "published_at": "2026-10-10T00:11:00Z"
+          }
+        ]
+      }
     }
   }
 }
