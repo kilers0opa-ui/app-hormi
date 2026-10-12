@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-12T10:45:20.224306-06:00",
+  "updated_at": "2026-10-12T11:45:23.167805-06:00",
   "cuota": {
     "fecha": "2026-10-12",
-    "busquedas": 2,
-    "busquedas_resumen": 2
+    "busquedas": 3,
+    "busquedas_resumen": 3
   },
   "goles": {
     "camberos:chivas:9:goal:453887:1:gol": {
@@ -241,29 +241,30 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
-      "intentos": 2,
+      "status": "omitido",
+      "intentos": 3,
       "fallos": 0,
-      "ultimo_intento": "2026-10-12T16:45:19.346781+00:00",
+      "ultimo_intento": "2026-10-12T17:45:22.257871+00:00",
       "video": null,
-      "noticias_pasadas": 2,
-      "ultima_noticia": "2026-10-12T16:45:19.346781+00:00",
+      "noticias_pasadas": 3,
+      "ultima_noticia": "2026-10-12T17:45:22.257871+00:00",
       "noticias": {
         "quinones": [
+          {
+            "title": "¡Golazo anulado a Julián Quiñones! El VAR le roba el festejo en la Champions de Asia",
+            "source": "Excélsior",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUGszNFA0ckJ6YV8xSGVhX1l6WnpvR3o4UHlPblR1dUt3aF9QOTd6bDktOURpN3RLSURlZjYzc0FoYi1uNFFFRncxMW9UNTlmOUdxbkFkdm9MVUZJdml6Z05mdG5fVXRLUVlUT0NDRkpBRkRvYU11WldBd2RKWDFsRXhyMTBKVFFwMW1Ucy03amdJQmNidTBNdnpfSDBvTmdfb2pycGlB0gGrAUFVX3lxTE1Ba1o3MjNJWDdzaXl3cE00MHBpcFI5Q2VubGx0ZFlwRUpIdlVSQXJiU0Uyel9HZW5yV0lLMlBhSnpKWXhTU1pXckI1Vll4dE5WVnQxR25HeWpPNk9TcWlXUFUxMGlRRDJqREtZT1h2bXdKNWlFTjg3N01ReUJxYWNLX3ZTLVZMTDNOZ3RkMC1DMG5CYkM3enBscWFxcFRjNzR1aHVRdlJqOExRaw?oc=5",
+            "published_at": "2026-10-12T16:47:58Z"
+          },
           {
             "title": "¿Qué pasó con Julián Quiñones y Al-Qadsiah? Así fue la visita del mexicano al Pakhtakor de Uzbekistán",
             "source": "El Heraldo de México",
             "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPV2oxVC1RMThvTTNpQngwUGpILWMyQWUxeTl2UW05WHd0Vl9selhjcVJWXzBLLUVOekx2UVJ6d1dfSDFXc0V2bzVQMU8wUWt5M1ZxNkF4S28xRFdoUEJTbS1BNThMMWZ6ZnFoS2xWSHA4WFo4T0JEbGtDb0xydnRNV3lNT3NEUDJBQ1FabHRjTUNKQmtfVzVISkw3YWcyZzdaR1QwTl91Mzh1TU1tOWQ3dV9JLXdPaHNWUENmZDdIZWNkeENhMDFrUk1nQlMzVWJrek9TZkNBWVo5Z1lJN3pVM041SzRrX29BUjhPV18wOXUyZw?oc=5",
             "published_at": "2026-10-12T16:16:00Z"
-          },
-          {
-            "title": "¡A Julián Quiñones le anularon un gol! Al Qadsiah deja ir el triunfo ante Pakhtakor en Champions",
-            "source": "Fox Sports",
-            "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOVnVGMUU4ZmpldU45VnREZkEtbG5rQ1l6TGI3bG80SjdKM1hRRlRwOXlhd01XcXlEa0dpZ0ZPbkxYNHA2OTBaenR4LTlCT2QyRlhuQVpyZ2pieE40X3NaV2pkTFY5ZTBFRUg5cld3dnJVY2pNal9BdVVDSnNjWGlEcFU0cVYtLXVHWm1BMm9EREpvc09tOFBuU3FMdHdkNXFOZXl4MUF2SXJRUUVJclh1V1JIRkpKVTRiSURsRk9HQlJiQ2pBRWFBNHdpZlJ4bmoy?oc=5",
-            "published_at": "2026-10-12T16:09:48Z"
           }
         ]
-      }
+      },
+      "motivo": "sin resumen tras los intentos"
     }
   }
 }
