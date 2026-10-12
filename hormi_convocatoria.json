@@ -10,13 +10,19 @@
       "gimenez",
       "chavez",
       "obed",
-      "fidalgo"
+      "fidalgo",
+      "luis_chavez",
+      "campillo",
+      "camberos",
+      "sandoval"
     ],
     "dudosos": [],
     "no_convocados": [
       "raul",
       "quinones",
-      "huescas"
+      "huescas",
+      "montes",
+      "fimbres"
     ],
     "fuentes": [
       "en",
@@ -131,14 +137,14 @@
         "nombre": "Diego Campillo",
         "pos": "Defensa",
         "club": "C. D. Guadalajara",
-        "key": null,
+        "key": "campillo",
         "confirmado": true
       },
       {
         "nombre": "Luis Chávez",
         "pos": "Mediocampista",
         "club": "F. C. Dinamo Moscú",
-        "key": null,
+        "key": "luis_chavez",
         "confirmado": true
       },
       {
@@ -194,14 +200,14 @@
         "nombre": "Hugo Camberos",
         "pos": "Mediocampista",
         "club": "C. D. Guadalajara",
-        "key": null,
+        "key": "camberos",
         "confirmado": true
       },
       {
         "nombre": "Santiago Sandoval",
         "pos": "Mediocampista",
         "club": "C. D. Guadalajara",
-        "key": null,
+        "key": "sandoval",
         "confirmado": true
       },
       {
@@ -248,7 +254,7 @@
       }
     ],
     "fuente": "https://en.wikipedia.org/wiki/Mexico_national_football_team#Current_squad · https://es.wikipedia.org/wiki/Selección_de_fútbol_de_México#Última_convocatoria",
-    "actualizado": "2026-10-10T21:20:40-06:00"
+    "actualizado": "2026-10-11T20:31:26-06:00"
   },
   "historial": [
     {
