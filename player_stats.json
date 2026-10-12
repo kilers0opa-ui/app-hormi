@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T03:15:21.968722-06:00",
+  "updated_at": "2026-10-12T09:41:46.867028-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -2534,82 +2534,69 @@
             "team_id": 2933,
             "team_name": "Al-Qadisiyah FC",
             "team_logo": "https://media.api-sports.io/football/teams/2933.png",
-            "played": 1,
+            "played": 2,
             "goals": 1,
             "assists": 0,
-            "minutes": 84,
+            "minutes": 174,
             "estimated": true
           }
         ]
       },
       "applied_fixtures": {
         "al_qadsiah": [
-          1603041
+          1603041,
+          1629927
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1603041,
-        "kickoff": "2026-10-09T07:50:00-06:00",
-        "home": "Al Kholood",
-        "away": "Al-Qadisiyah FC",
-        "home_logo": "https://media.api-sports.io/football/teams/10509.png",
+        "fixture_id": 1629927,
+        "kickoff": "2026-10-12T07:45:00-06:00",
+        "home": "Pakhtakor",
+        "away": "Al-Qadsiah",
+        "home_logo": "https://media.api-sports.io/football/teams/4220.png",
         "away_logo": "https://media.api-sports.io/football/teams/2933.png",
-        "home_goals": 0,
-        "away_goals": 5,
-        "league": "Liga Profesional Saudí",
-        "team_key": "al_qadsiah",
-        "team_label": "Al-Qadsiah",
-        "emoji": "🔴",
-        "crest_url": "https://media.api-sports.io/football/teams/2933.png",
-        "minutes": 90,
-        "goals": 1,
-        "assists": 2,
-        "league_logo": "https://media.api-sports.io/football/leagues/307.png",
-        "league_tipo": "liga",
+        "home_goals": 1,
+        "away_goals": 1,
+        "league": "Liga de Campeones de Asia",
+        "league_logo": "https://media.api-sports.io/football/leagues/17.png",
+        "league_tipo": "copa",
         "eventos": [
           {
-            "min": "4'",
+            "min": "33'",
+            "tipo": "amarilla",
+            "nombre": "Akmal Mozgovoy",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "35'",
             "tipo": "gol",
             "nombre": "Tijjani Reijnders",
             "lado": "V",
             "mio": false
           },
           {
-            "min": "13'",
-            "tipo": "gol",
-            "nombre": "Christopher Bonsu Baah",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "40'",
-            "tipo": "gol",
-            "nombre": "Musab Al-Juwayr",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "67'",
-            "tipo": "gol",
-            "nombre": "Mateo Retegui",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "84'",
+            "min": "62'",
             "tipo": "amarilla",
-            "nombre": "Coba Gomes da Costa",
+            "nombre": "Ali Badra Diabaté",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "89'",
+            "tipo": "pen",
+            "nombre": "Dostonbek Khamdamov",
             "lado": "L",
             "mio": false
-          },
-          {
-            "min": "86'",
-            "tipo": "pen",
-            "nombre": "Julián Quiñones",
-            "lado": "V",
-            "mio": true
           }
-        ]
+        ],
+        "team_key": "al_qadsiah",
+        "team_label": "Al-Qadsiah",
+        "emoji": "⚔️",
+        "crest_url": "https://media.api-sports.io/football/teams/2933.png",
+        "minutes": 90,
+        "goals": 0,
+        "assists": 0
       }
     },
     "gimenez": {
