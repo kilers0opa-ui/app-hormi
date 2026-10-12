@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-11T16:20:19.955800-06:00",
+  "updated_at": "2026-10-12T09:45:19.830735-06:00",
   "cuota": {
-    "fecha": "2026-10-11",
-    "busquedas": 2,
+    "fecha": "2026-10-12",
+    "busquedas": 0,
     "busquedas_resumen": 0
   },
   "goles": {
@@ -19,53 +19,6 @@
     }
   },
   "partidos": {
-    "1550140": {
-      "fixture_id": 1550140,
-      "home": "Genoa",
-      "away": "Fiorentina",
-      "league": "Serie A",
-      "score": "Genoa 2-1 Fiorentina",
-      "final_seen_at": "2026-10-10T14:57:59.822003+00:00",
-      "jugadores": {
-        "vasquez": {
-          "team_key": "genoa",
-          "minutes": 90,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "resuelto",
-      "intentos": 1,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-10T15:30:22.081328+00:00",
-      "video": {
-        "id": "v8mx5CYWzA8",
-        "title": "CON MASTANTUONO DESDE EL ARRANQUE LA FIORE CAYÓ ANTE EL GENOA | Genoa 2-1 Fiorentina | RESUMEN",
-        "channel": "ESPN Fans",
-        "published_at": "2026-10-10T15:14:13Z",
-        "thumbnail": "https://i.ytimg.com/vi/v8mx5CYWzA8/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=v8mx5CYWzA8",
-        "embeddable": true
-      },
-      "noticias_pasadas": 3,
-      "ultima_noticia": "2026-10-10T16:00:25.476358+00:00",
-      "noticias": {
-        "vasquez": [
-          {
-            "title": "¿Buena o mala suerte? Johan Vásquez anota autogol, pero Genoa gana su primer partido",
-            "source": "TUDN",
-            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRmFfYnBQX01rS002VzJFNWtwOEMwOS1ORjFnUVRKRTNGVVhJZ3Yxak9qeE1vUUFEa2t6SnpHVmkwUGhHeXVvdW82NGNKcEJoSUpWVnBFRE1DOGp4Vy1pY0hzRnRtOHdoQk9sTDJHY1hrWEdvbFE1VlNXdWN3cXVJTnpKbFM0UC1FOUFkOGFBYzc3RkxESEc3ZDNPM25URHhseUlWam5R?oc=5",
-            "published_at": "2026-10-10T15:19:54Z"
-          },
-          {
-            "title": "Johan Vásquez marca autogol, pero el Genoa derrota a la Fiorentina y consigue su primera victoria",
-            "source": "Claro Sports",
-            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNUmVxTzNLb0xTMWNONDBISlNDU0xLUTRObHNPUDloTVNHLU5IN0RZbk5kaFlqX1BEdmg4V1owUk1EYWFQS2hTdWJmVGd1TUZ5SmxCYlVsWDJPOUZoOE1JY2J2VkFTc2ZVR0oySl9oNmpmTG42Y200bi1neUVLR0dhR3dzQ0kzMThlVHBtM29iMVRzQ1NyNW54bmktRzdFWVpxZm5keG1tdGowSV9DdmppQlBiWUdPTTZ2X0g4Nm5B?oc=5",
-            "published_at": "2026-10-10T15:07:19Z"
-          }
-        ]
-      }
-    },
     "1552181": {
       "fixture_id": 1552181,
       "home": "Feyenoord",
@@ -272,6 +225,30 @@
         ]
       },
       "motivo": "ningún jugador tuvo minutos"
+    },
+    "1629927": {
+      "fixture_id": 1629927,
+      "home": "Pakhtakor",
+      "away": "Al-Qadsiah",
+      "league": "Liga de Campeones de Asia",
+      "score": "Pakhtakor 1-1 Al-Qadsiah",
+      "final_seen_at": "2026-10-12T15:41:46.849509+00:00",
+      "jugadores": {
+        "quinones": {
+          "team_key": "al_qadsiah",
+          "minutes": 90,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
