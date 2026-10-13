@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-12T11:45:23.167805-06:00",
+  "updated_at": "2026-10-13T11:40:28.380111-06:00",
   "cuota": {
-    "fecha": "2026-10-12",
-    "busquedas": 3,
-    "busquedas_resumen": 3
+    "fecha": "2026-10-13",
+    "busquedas": 0,
+    "busquedas_resumen": 0
   },
   "goles": {
     "camberos:chivas:9:goal:453887:1:gol": {
@@ -19,93 +19,6 @@
     }
   },
   "partidos": {
-    "1552181": {
-      "fixture_id": 1552181,
-      "home": "Feyenoord",
-      "away": "AZ Alkmaar",
-      "league": "Eredivisie",
-      "score": "Feyenoord 2-0 AZ Alkmaar",
-      "final_seen_at": "2026-10-10T18:40:39.696251+00:00",
-      "jugadores": {
-        "chavez": {
-          "team_key": "az_alkmaar",
-          "minutes": 90,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "resuelto",
-      "intentos": 1,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-10T19:15:19.518683+00:00",
-      "video": {
-        "id": "ESPP9B9RBpY",
-        "title": "Feyenoord 2-0 AZ Alkmaar | Feyenoord le ROBA el INVICTO al AZ de MATEO CHÁVEZ |  Resumen",
-        "channel": "ESPN MX",
-        "published_at": "2026-10-10T19:13:00Z",
-        "thumbnail": "https://i.ytimg.com/vi/ESPP9B9RBpY/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=ESPP9B9RBpY",
-        "embeddable": true
-      },
-      "noticias_pasadas": 3,
-      "ultima_noticia": "2026-10-10T19:45:16.750759+00:00",
-      "noticias": {
-        "chavez": [
-          {
-            "title": "¡Feyenoord le roba el invicto al Az Alkmaar de Mateo Chávez !",
-            "source": "ESPN Argentina",
-            "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQaUJ0VU9aV05tM3FSdE1NMDhnUEVIaGtJN05VY3EzX3B1bnBWend4R3hIM2ItWGR4Yjl5Sldyd1FwQ01MdW50a3FsemIzZGYydmxwcjFUQ0VCaTlSZHRHR09PNlI4M0JmU25nRG81TlNMUkVheTBsc0RDU2puSHoyUExDWXlKbF9zVlNHai1XSU5pTUtGX1gtemlrcW1rY1UyWEt5WUdZNUYxUGc?oc=5",
-            "published_at": "2026-10-10T19:24:31Z"
-          },
-          {
-            "title": "¡Mateo Chávez pierde INVICTO Y LIDERATO! Feyenoord termina con paso perfecto de AZ Alkmaar",
-            "source": "Fox Sports",
-            "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQY01CUmtmQXQ1RTNYVExvUzNhaHFEbXFWU21oYkFSUFJFcDVoODNoWFRsUDN2YWZOVEkzbkxuQ1BNRHZ6dnY5NUtsX01QaDktdTNFaEFEZko4XzVjVmdzbElidDZUQWd5RnlMMDVONU8tSXFyOFE1QWk3QldZNFFpaGdpcDFBV2NGczd0Z1ZpU3dVc0ZnWGZtRDVVeVdPbnhudHdOcFMwNXpaZkU1RGxKN3RzbE45bWlvUVh3V2FWM2hkTHZQcnZMTw?oc=5",
-            "published_at": "2026-10-10T18:57:32Z"
-          }
-        ]
-      }
-    },
-    "1575515": {
-      "fixture_id": 1575515,
-      "home": "Marítimo",
-      "away": "FC Porto",
-      "league": "Liga Portugal",
-      "score": "Marítimo 1-2 FC Porto",
-      "final_seen_at": "2026-10-10T18:57:59.252556+00:00",
-      "jugadores": {
-        "gimenez": {
-          "team_key": "porto",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "omitido",
-      "intentos": 0,
-      "fallos": 0,
-      "ultimo_intento": null,
-      "video": null,
-      "noticias_pasadas": 3,
-      "ultima_noticia": "2026-10-10T19:58:34.177295+00:00",
-      "noticias": {
-        "gimenez": [
-          {
-            "title": "Santiago Gimenez relegado a la banca y sin minutos en victoria del Porto",
-            "source": "Excélsior",
-            "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxObUkyOXhvRGZqcElYZEQ2dEtGbENqSjI4UjVodTU2UHJCbFJCMWY4R01YUlV6VE5ReVhPQVJNc2NsQXJsNWlyY3BOV2c0aER6ZGI5dTlmV2lZcWNLN0RvZnNCc0ppd2NtWFpLOW9iN1NnLVJjazFkRGZHeEZlczlVYnFBekPSAYoBQVVfeXFMUEVaMnQ1SkVCdDZfZElnVVVjSDRfLWxUU0lyQlpCbUtNX1MyakZoZlJ0SzVwbHVmb09CSG81T0FIMk1IMzVZUWVzWnpnbEEyeTV3WVdseDRBWUYxTUtLdlFXczByRUxGTGF6c0R2YU9hSWNCMWNIY3pCd0RPUEZJeDU2RTFoaUpaSEZB?oc=5",
-            "published_at": "2026-10-10T19:46:33Z"
-          },
-          {
-            "title": "¿Cómo quedó el Marítimo vs FC Porto? Cronología de la victoria de los Dragones con Santiago Giménez en la banca",
-            "source": "MARCA",
-            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQTE1Nb0JGMUtsQmFfMEZvbnBIN1BiOElpT0N4cFVJSVo5VDkwb2JZVVMxT05mZ3NLTlluVXc1b0Q5QnVzaTBfQ1dKOUtIQ1dzMlkzQ0Y2d2tCdFY1SXlGSG1Vc29kZFQ5MlVDVEt1LVllQVF4cDBLWHk1blVOZk9hdVNXQUFaaTR5dlpLa1daY01sNW0tZlhZLXc4WGg?oc=5",
-            "published_at": "2026-10-10T19:09:20Z"
-          }
-        ]
-      },
-      "motivo": "ningún jugador tuvo minutos"
-    },
     "1549030": {
       "fixture_id": 1549030,
       "home": "FC Midtjylland",
@@ -265,6 +178,30 @@
         ]
       },
       "motivo": "sin resumen tras los intentos"
+    },
+    "1563664": {
+      "fixture_id": 1563664,
+      "home": "Lokomotiv Moscú",
+      "away": "Akron",
+      "league": "Copa de Rusia",
+      "score": "Lokomotiv Moscú 1-1 Akron",
+      "final_seen_at": "2026-10-13T17:37:56.586016+00:00",
+      "jugadores": {
+        "montes": {
+          "team_key": "lokomotiv",
+          "minutes": 46,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
