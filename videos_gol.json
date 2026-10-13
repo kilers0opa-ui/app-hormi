@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-13T12:00:29.344862-06:00",
+  "updated_at": "2026-10-13T12:10:22.531682-06:00",
   "cuota": {
     "fecha": "2026-10-13",
-    "busquedas": 0,
-    "busquedas_resumen": 0
+    "busquedas": 1,
+    "busquedas_resumen": 1
   },
   "goles": {
     "camberos:chivas:9:goal:453887:1:gol": {
@@ -155,13 +155,28 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-13T18:10:21.707206+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-13T18:10:21.707206+00:00",
+      "noticias": {
+        "montes": [
+          {
+            "title": "Regreso triunfal: César 'Cachorro' Montes supera su lesión y se estrena como goleador con el Lokomotiv de Moscú",
+            "source": "Diario de Morelos",
+            "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOUVZyYWZNYi1LWnhaUk92UjBkdkFyZHhZRHJHYzllNW84ZzJRM1pXb0gxeWV3N2xkLXdZYnc0b05VMVZ3ZGpPczcwQXpCY1FScnVqM20xeHBnZ3hpdmhwaWEyaGowSndDaWtyQ1BQSHZwNHZQYWVQSm02RV9QUDRnQldKZ0stdVZ3azI5bHF1b3dubVNDMlR3dHdzMVl2aERzeFhuUFhIMGh6UnZteEd6d0FqaENxRi1icUZkRjdrbGNmN1V3b3JBZjVUeFdmS3BzN3J5ZDJZMEXSAd4BQVVfeXFMTk9ScFE4ajR0V3BEd2ZjNmxzc3ZFSHp6bDdFNWlETHlIRHRreFdLbFlsLXJRNnFZd2wzSmw1bEpsTUF0TW4yQkEzZ2xZaGxoRUJkUmZVQ3VXdHM3ZkFzMExQNW9zaFpwQ2NzUm1qRktPR3ROQk0yZmZjaGZNU053ZWhYM2hwVHVLQndiYVlVamVSamd1Vmx0dmplTFVMT1dxelVubDQ4UFE2OXFUUUJTa2VRRUxYQ09NNl9DU0RVNWJSYVhidEVhb0MxbVBtQTZvWjhOLTczdnNCRS1rX2p3?oc=5",
+            "published_at": "2026-10-11T15:03:36Z"
+          },
+          {
+            "title": "César Montes anota con el Lokomotiv en la goleada sobre el Fakel Vorónezh",
+            "source": "XEVT",
+            "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOV19CblYwdnBjVUw5UWJVcXZKRHZxbE52RDFnYjdhd29Mbkx5QjNoN2E4Yi1mSXBpVXoyaXhKQWZ0c2JxT19aRElENzVuRHczUzYyanFFQk5mZTZXRjFLZW9jdGx1bnMwUmNKbXlXejhUbl9JX3VkYk9DUG9IOFp6NTFOSVh3amRDU1haSUdYaWJ2eWYzd1RKTWg0NlNlVzhuQUFxekxVVnlsSzR3SUJZ?oc=5",
+            "published_at": "2026-10-11T00:17:12Z"
+          }
+        ]
+      }
     }
   }
 }
