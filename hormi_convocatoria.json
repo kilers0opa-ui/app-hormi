@@ -2,13 +2,11 @@
   "seleccion": {
     "desde": "2026-09-26",
     "hasta": "2026-10-06",
-    "jugadores_en_lista": 32,
+    "jugadores_en_lista": 29,
     "convocados": [
       "armando",
-      "mora",
       "vasquez",
       "gimenez",
-      "chavez",
       "obed",
       "fidalgo",
       "luis_chavez",
@@ -16,7 +14,10 @@
       "camberos",
       "sandoval"
     ],
-    "dudosos": [],
+    "dudosos": [
+      "mora",
+      "chavez"
+    ],
     "no_convocados": [
       "raul",
       "quinones",
@@ -124,7 +125,7 @@
         "pos": "Defensa",
         "club": "AZ Alkmaar",
         "key": "chavez",
-        "confirmado": true
+        "confirmado": false
       },
       {
         "nombre": "Jesús Gallardo",
@@ -187,14 +188,14 @@
         "pos": "Mediocampista",
         "club": "C. Tijuana",
         "key": "mora",
-        "confirmado": true
+        "confirmado": false
       },
       {
         "nombre": "Luis Romo",
         "pos": "Mediocampista",
         "club": "C. D. Guadalajara",
         "key": null,
-        "confirmado": true
+        "confirmado": false
       },
       {
         "nombre": "Hugo Camberos",
@@ -229,7 +230,7 @@
         "pos": "Delantero",
         "club": "Los Ángeles Galaxy",
         "key": null,
-        "confirmado": true
+        "confirmado": false
       },
       {
         "nombre": "Santiago Giménez",
@@ -254,7 +255,7 @@
       }
     ],
     "fuente": "https://en.wikipedia.org/wiki/Mexico_national_football_team#Current_squad · https://es.wikipedia.org/wiki/Selección_de_fútbol_de_México#Última_convocatoria",
-    "actualizado": "2026-10-11T20:31:26-06:00"
+    "actualizado": "2026-10-12T20:32:01-06:00"
   },
   "historial": [
     {
