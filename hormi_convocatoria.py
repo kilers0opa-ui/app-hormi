@@ -333,6 +333,13 @@ def avisar(prev, sel, nueva, config):
     antes = (prev.get("convocados") or []) + (prev.get("dudosos") or []) if not nueva else []
     if not nueva and set(van) == set(antes):
         return
+    # Misma lista de Wikipedia (mismos nombres) y solo cambió a quién reconoce la app (p. ej. se agregaron
+    # jugadores nuevos a la app y ya venían en esa lista): no es un cambio de convocatoria, no se avisa.
+    def _lista(c):
+        return {(j.get("nombre"), bool(j.get("confirmado"))) for j in (c.get("jugadores") or [])}
+    if not nueva and prev.get("jugadores") and _lista(prev) == _lista(sel):
+        print("Misma lista de convocados (solo cambió el reconocimiento de jugadores de la app): sin aviso.")
+        return
     import hormi_alertas as ha
     fcm = ha.FcmSender(config.get("fcm_project_id"))
     if not fcm.enabled:
