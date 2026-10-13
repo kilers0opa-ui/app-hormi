@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-13T12:40:24.921021-06:00",
+  "updated_at": "2026-10-13T13:40:23.238384-06:00",
   "cuota": {
     "fecha": "2026-10-13",
-    "busquedas": 2,
-    "busquedas_resumen": 2
+    "busquedas": 3,
+    "busquedas_resumen": 3
   },
   "goles": {
     "camberos:chivas:9:goal:453887:1:gol": {
@@ -114,13 +114,13 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
-      "intentos": 2,
+      "status": "omitido",
+      "intentos": 3,
       "fallos": 0,
-      "ultimo_intento": "2026-10-13T18:40:24.110180+00:00",
+      "ultimo_intento": "2026-10-13T19:40:22.283303+00:00",
       "video": null,
-      "noticias_pasadas": 2,
-      "ultima_noticia": "2026-10-13T18:40:24.110180+00:00",
+      "noticias_pasadas": 3,
+      "ultima_noticia": "2026-10-13T19:40:22.283303+00:00",
       "noticias": {
         "montes": [
           {
@@ -136,7 +136,8 @@
             "published_at": "2026-10-11T00:17:12Z"
           }
         ]
-      }
+      },
+      "motivo": "sin resumen tras los intentos"
     }
   }
 }
