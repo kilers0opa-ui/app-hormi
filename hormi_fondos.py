@@ -483,6 +483,39 @@ def buscar_fotos(player):
 
 
 # ------------------------------------------------------------------ principal
+THUMB_DIR = os.path.join(OUT_DIR, "thumbs")
+THUMB_W = 360
+
+
+def _miniaturas(salida, general):
+    from PIL import Image
+    os.makedirs(THUMB_DIR, exist_ok=True)
+    usadas = set()
+    items = [i for v in salida.values() for k in ("generados", "fotos", "contexto", "mios") for i in v.get(k, [])]
+    items += [i for c in general.get("categorias", []) for i in c.get("items", [])]
+    for it in items:
+        url = it.get("url") or ""
+        if not url.startswith(RAW_BASE):
+            continue
+        fname, _, query = url[len(RAW_BASE):].partition("?")
+        src = os.path.join(OUT_DIR, fname)
+        if not os.path.exists(src):
+            continue
+        dst = os.path.join(THUMB_DIR, fname)
+        try:
+            if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src):
+                im = Image.open(src).convert("RGB")
+                im.thumbnail((THUMB_W, THUMB_W * 3), Image.LANCZOS)
+                im.save(dst, "JPEG", quality=78, optimize=True, progressive=True)
+            it["thumb"] = f"{RAW_BASE}thumbs/{fname}" + (f"?{query}" if query else "")
+            usadas.add(fname)
+        except Exception as e:
+            print(f"  (miniatura de {fname}: {e})")
+    for fn in os.listdir(THUMB_DIR):
+        if fn not in usadas:
+            os.remove(os.path.join(THUMB_DIR, fn))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--solo", choices=["generar", "fotos", "general", "mios"], default=None)
@@ -569,6 +602,9 @@ def main():
             for k in ("fotos", "contexto", "mios"):
                 v[k] = [i for i in v.get(k, []) if i.get("id") not in excl and "commons_" + i.get("id", "") not in excl]
         general = {"categorias": [dict(c, items=[i for i in c["items"] if i.get("id") not in excl]) for c in general.get("categorias", [])]}
+    # Miniaturas (≈360 px de ancho) para la cuadrícula de la app: con datos móviles, bajar cada fondo completo
+    # (300 KB – 1 MB) solo para verlo chiquito hacía que la pantalla no cargara.
+    _miniaturas(salida, general)
     nuevo = {"updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
              "players": salida, "general": general}
     # No reescribir (y no hacer commit vacío) si nada cambió salvo la hora.
