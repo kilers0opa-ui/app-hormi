@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-14T15:25:17.668287-06:00",
+  "updated_at": "2026-10-14T15:30:27.241167-06:00",
   "cuota": {
     "fecha": "2026-10-14",
-    "busquedas": 0,
-    "busquedas_resumen": 0
+    "busquedas": 1,
+    "busquedas_resumen": 1
   },
   "goles": {},
   "partidos": {
@@ -69,13 +69,42 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-14T21:30:25.805172+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-14T21:30:25.805172+00:00",
+      "noticias": {
+        "gimenez": [
+          {
+            "title": "Santiago Gimenez deja ir el empate en casa del Betis",
+            "source": "TUDN",
+            "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPeVBTUERqbHROeFJpc1ZIQWdpN0pEejlETW9pQUxtN3dsMmFhbk03UGdBcDRoLTZLbmRqSjBWLTlncHlobnB4LUNOMzBiMVRNRXNTck9peTlYblBiSDFMeTlfTDVVLWZwUVBkSUZQb3VjWFhLOFFUaXlFR0lnZFNnaFUweUszQ0NCVjhVcU01MUhoMHVQRFNqcXhMVkxwV0tjdmFwblpIMVoyQWxnQlVnYVpBQWRhcmpZU1QwcmdZTENsWnUwVjRhME1ZX3R6VWRaNWZYTUs2OA?oc=5",
+            "published_at": "2026-10-14T21:05:37Z"
+          },
+          {
+            "title": "Fidalgo vs Santiago Giménez: ¿Cuándo fue la última vez que dos mexicanos se enfrentaron en Champions League?",
+            "source": "Récord",
+            "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPY2lkRkMzcGphT1VfUGc0SWNfeXFBQjlUTkctRkZkbkVrU0pOOVBHbG1nMUJVck4tWmdmTi1IRzlPMV82emZJbGRtNHl1TllFMTJmTGYyT1g2ZFJRT0k2TVp1cC11MDZnTThvajNWeW5xZ0dRT0c1akdWaFBuZTA5RUx0LUJmNjItUW9wZmJJamFLXzI2S3g2YlpDMW04NTJBMWZoaV9jeHZpakdwU0tJTVAxUkp3QlNvckt2TFd6VWc2eUp3NDJXWVMxeGV2aENlWEotZU1CbkhSVThTUFAxaGd0X2hScU9WdDZpMmNvVG5TQQ?oc=5",
+            "published_at": "2026-10-14T15:48:00Z"
+          }
+        ],
+        "fidalgo": [
+          {
+            "title": "Betis - Porto EN VIVO | Álvaro Fidalgo vs Santi Giménez hoy en directo en Champions League",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNV2lqb19YYVZJNXNOUm02N3kwTmhMc3pTN0xubTh5d0c5QjNiQTJtYmZRUEhUOU1UcHNhREdlWTNwUk15MzU3RGZPZG50c00wNlgxYkZPNXo0Vk4xZVdtdlE1VlV4U0ZjMjJOeFRFbllDWGk3SjR0ektSdUpqT0phcXhYNmZoYkF1MmhCM1NUVE93LVp5MDA0?oc=5",
+            "published_at": "2026-10-14T18:44:09Z"
+          },
+          {
+            "title": "¿Por qué no juegan Álvaro Fidalgo y Santi Giménez el Real Betis vs Porto en Champions League?",
+            "source": "Bolavip México",
+            "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNU0JfeTE0WXU1SXpVRGo3NXVGd0I0TWpuOXpQWmQtZzRWYThLZjMtYldqNHMwd05XcVZhS0pfOXNWc2N1OWRpWjBsWGxzamV0OEllT1VCdHZQVXFFYi1VTGR5TE1iMkdIVXZIY3hIZnR0aC1PbG9tRnY4X3JFSDFOUWctS1hJYlpfcDg1eEVPZHg5Nnd5QjNMSG12TXU5ejNHUFBwSjE5Umh0YmVkU3E4bnVHcVhLcEdzSUl5Y1I4YUFyR09OTHA1eDgxeGphTTVsdTVqaFN1M3bSAd4BQVVfeXFMT0lhWWg2QkxSOUxISzQ4RmQyRWJwOWYwWklyXzVGc0dTby1vZ2k4OEd2N0lNWlJXNmk0d1VucHl4amZuM19YMWpKVWFpaTNCOEFrQ2s2RGJScHFmQ29fX1AzdGF2QTA0ekZoQko2am5Lb3VXcGlmcFFNNEsyLWI5TU01TkZpanBnMG5UM1hkNkllTHYwOUpnWWdLR3JxZHFCMVBzU2FId2FnbGEyNndzTmhSTnlnMDlQMWNnSEwwX29fX1JQNVhmdkdma0pTY3liMDJMaHNvWDh3WEd4U19n?oc=5",
+            "published_at": "2026-10-14T17:48:41Z"
+          }
+        ]
+      }
     }
   }
 }
