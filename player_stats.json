@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T16:58:58.266311-06:00",
+  "updated_at": "2026-10-14T17:49:15.257156-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -312,7 +312,8 @@
           "duelos_ganados": 1,
           "regates": 1,
           "regates_ok": 0
-        }
+        },
+        "eventos_v": 2
       }
     },
     "raul": {
@@ -1446,7 +1447,8 @@
           "pases_pct": 45,
           "duelos": 4,
           "duelos_ganados": 2
-        }
+        },
+        "eventos_v": 2
       }
     },
     "vasquez": {
@@ -1982,9 +1984,9 @@
         "league_tipo": "liga",
         "eventos": [
           {
-            "min": "7'",
+            "min": "8'",
             "tipo": "gol",
-            "nombre": "Milutin Osmajić",
+            "nombre": "M. Osmajic",
             "lado": "L",
             "mio": false
           },
@@ -2018,17 +2020,17 @@
           },
           {
             "min": "73'",
-            "tipo": "autogol",
-            "nombre": "Johan Vásquez",
-            "lado": "V",
-            "mio": true
-          },
-          {
-            "min": "73'",
             "tipo": "amarilla",
             "nombre": "Hamed Junior Traorè",
             "lado": "L",
             "mio": false
+          },
+          {
+            "min": "73'",
+            "tipo": "autogol",
+            "nombre": "J. Vasquez",
+            "lado": "V",
+            "mio": true
           },
           {
             "min": "84'",
@@ -2047,7 +2049,7 @@
           {
             "min": "90+1'",
             "tipo": "amarilla",
-            "nombre": "Vítor Manuel Carvalho Oliveira",
+            "nombre": "Vitinha",
             "lado": "L",
             "mio": false
           },
@@ -2066,7 +2068,8 @@
           "duelos_ganados": 3,
           "regates": 1,
           "regates_ok": 0
-        }
+        },
+        "eventos_v": 2
       }
     },
     "quinones": {
@@ -2602,7 +2605,7 @@
           {
             "min": "62'",
             "tipo": "amarilla",
-            "nombre": "Ali Badra Diabaté",
+            "nombre": "Ali Diabaté",
             "lado": "V",
             "mio": false
           },
@@ -2629,7 +2632,8 @@
           "duelos_ganados": 3,
           "regates": 3,
           "regates_ok": 1
-        }
+        },
+        "eventos_v": 2
       }
     },
     "gimenez": {
@@ -3269,6 +3273,13 @@
             "mio": false
           },
           {
+            "min": "85'",
+            "tipo": "entra",
+            "nombre": "Santiago Giménez",
+            "lado": "V",
+            "mio": true
+          },
+          {
             "min": "86'",
             "tipo": "amarilla",
             "nombre": "Santiago Giménez",
@@ -3297,7 +3308,8 @@
           "pases_pct": 100,
           "duelos": 5,
           "duelos_ganados": 3
-        }
+        },
+        "eventos_v": 2
       }
     },
     "chavez": {
@@ -3580,7 +3592,7 @@
           {
             "min": "13'",
             "tipo": "gol",
-            "nombre": "Nacho Ferri",
+            "nombre": "Nacho",
             "lado": "L",
             "mio": false
           },
@@ -3588,6 +3600,13 @@
             "min": "23'",
             "tipo": "amarilla",
             "nombre": "Ro Zangelo Daal",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "43'",
+            "tipo": "gol",
+            "nombre": "?",
             "lado": "V",
             "mio": false
           },
@@ -3601,7 +3620,7 @@
           {
             "min": "59'",
             "tipo": "gol",
-            "nombre": "Javi López",
+            "nombre": "J. Lopez",
             "lado": "L",
             "mio": false
           },
@@ -3622,7 +3641,8 @@
           "duelos_ganados": 9,
           "regates": 1,
           "regates_ok": 1
-        }
+        },
+        "eventos_v": 2
       }
     },
     "obed": {
@@ -4019,7 +4039,8 @@
           "duelos": 2,
           "duelos_ganados": 1,
           "mejor_equipo": true
-        }
+        },
+        "eventos_v": 2
       }
     },
     "fidalgo": {
@@ -4557,7 +4578,8 @@
           "duelos_ganados": 4,
           "regates": 3,
           "regates_ok": 0
-        }
+        },
+        "eventos_v": 2
       }
     },
     "huescas": {
@@ -5004,7 +5026,8 @@
           "regates": 3,
           "regates_ok": 2,
           "mejor_equipo": true
-        }
+        },
+        "eventos_v": 2
       }
     },
     "montes": {
@@ -5702,7 +5725,7 @@
         "league_tipo": "copa",
         "eventos": [
           {
-            "min": "26'",
+            "min": "25'",
             "tipo": "amarilla",
             "nombre": "Zelimkhan Bakaev",
             "lado": "L",
@@ -5711,19 +5734,19 @@
           {
             "min": "46'",
             "tipo": "sale",
-            "nombre": "César Montes",
+            "nombre": "C. Montes",
             "lado": "L",
             "mio": true
           },
           {
             "min": "48'",
             "tipo": "gol",
-            "nombre": "Sergey Pinyaev",
+            "nombre": "S. Pinyaev",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "52'",
+            "min": "49'",
             "tipo": "amarilla",
             "nombre": "Sergey Pinyaev",
             "lado": "L",
@@ -5732,7 +5755,7 @@
           {
             "min": "61'",
             "tipo": "gol",
-            "nombre": "Artem Shumanskiy",
+            "nombre": "A. Shumansky",
             "lado": "V",
             "mio": false
           },
@@ -5751,6 +5774,34 @@
             "mio": false
           },
           {
+            "min": "90'",
+            "tipo": "pen",
+            "nombre": "Sergey Pinyaev",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "90'",
+            "tipo": "pen",
+            "nombre": "Khetag Khosonov",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "90'",
+            "tipo": "pen",
+            "nombre": "Milutin Vidosavljević",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "90'",
+            "tipo": "pen",
+            "nombre": "Dmitriy Pestryakov",
+            "lado": "V",
+            "mio": false
+          },
+          {
             "min": "90+1'",
             "tipo": "amarilla",
             "nombre": "Yomar Rocha",
@@ -5765,7 +5816,8 @@
         "minutes": 46,
         "goals": 0,
         "assists": 0,
-        "sin_stats": true
+        "sin_stats": true,
+        "eventos_v": 2
       }
     },
     "luis_chavez": {
@@ -6252,6 +6304,13 @@
             "mio": false
           },
           {
+            "min": "46'",
+            "tipo": "entra",
+            "nombre": "L. Chavez",
+            "lado": "V",
+            "mio": true
+          },
+          {
             "min": "62'",
             "tipo": "amarilla",
             "nombre": "Tyler Adams",
@@ -6292,7 +6351,8 @@
           "pases_pct": 69,
           "duelos": 4,
           "duelos_ganados": 3
-        }
+        },
+        "eventos_v": 2
       }
     },
     "fimbres": {
@@ -6493,6 +6553,13 @@
             "nombre": "Miguel Borja",
             "lado": "L",
             "mio": false
+          },
+          {
+            "min": "88'",
+            "tipo": "entra",
+            "nombre": "Iker Fimbres",
+            "lado": "V",
+            "mio": true
           }
         ],
         "stats": {
@@ -6502,7 +6569,8 @@
           "pases_pct": 100,
           "duelos": 1,
           "duelos_ganados": 1
-        }
+        },
+        "eventos_v": 2
       }
     },
     "campillo": {
@@ -6759,16 +6827,16 @@
             "mio": false
           },
           {
-            "min": "45'",
+            "min": "46'",
             "tipo": "sale",
-            "nombre": "Diego Campillo",
+            "nombre": "D. Campillo Del Campo",
             "lado": "V",
             "mio": true
           },
           {
             "min": "52'",
             "tipo": "gol",
-            "nombre": "Kevin Zenon",
+            "nombre": "K. Zenon",
             "lado": "L",
             "mio": false
           },
@@ -6789,7 +6857,7 @@
           {
             "min": "86'",
             "tipo": "gol",
-            "nombre": "Ángel Sepúlveda",
+            "nombre": "A. Sepulveda",
             "lado": "V",
             "mio": false
           },
@@ -6824,7 +6892,8 @@
           "duelos_ganados": 1,
           "regates": 1,
           "regates_ok": 0
-        }
+        },
+        "eventos_v": 2
       }
     },
     "camberos": {
@@ -7001,7 +7070,7 @@
           {
             "min": "52'",
             "tipo": "gol",
-            "nombre": "Kevin Zenon",
+            "nombre": "K. Zenon",
             "lado": "L",
             "mio": false
           },
@@ -7013,6 +7082,13 @@
             "mio": false
           },
           {
+            "min": "66'",
+            "tipo": "entra",
+            "nombre": "H. Camberos",
+            "lado": "V",
+            "mio": true
+          },
+          {
             "min": "84'",
             "tipo": "amarilla",
             "nombre": "Kevin Castañeda",
@@ -7022,7 +7098,7 @@
           {
             "min": "86'",
             "tipo": "gol",
-            "nombre": "Ángel Sepúlveda",
+            "nombre": "A. Sepulveda",
             "lado": "V",
             "mio": false
           },
@@ -7055,7 +7131,8 @@
           "pases_pct": 71,
           "duelos": 2,
           "duelos_ganados": 0
-        }
+        },
+        "eventos_v": 2
       }
     },
     "sandoval": {
@@ -7158,7 +7235,7 @@
           {
             "min": "52'",
             "tipo": "gol",
-            "nombre": "Kevin Zenon",
+            "nombre": "K. Zenon",
             "lado": "L",
             "mio": false
           },
@@ -7170,6 +7247,13 @@
             "mio": false
           },
           {
+            "min": "66'",
+            "tipo": "entra",
+            "nombre": "S. Sandoval",
+            "lado": "V",
+            "mio": true
+          },
+          {
             "min": "84'",
             "tipo": "amarilla",
             "nombre": "Kevin Castañeda",
@@ -7179,7 +7263,7 @@
           {
             "min": "86'",
             "tipo": "gol",
-            "nombre": "Ángel Sepúlveda",
+            "nombre": "A. Sepulveda",
             "lado": "V",
             "mio": false
           },
@@ -7212,7 +7296,8 @@
           "pases_pct": 75,
           "duelos": 5,
           "duelos_ganados": 1
-        }
+        },
+        "eventos_v": 2
       }
     }
   }
