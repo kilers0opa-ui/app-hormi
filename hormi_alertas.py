@@ -418,22 +418,33 @@ def _liga_tipo(name):
 
 def _eventos(data, player_id):
     """Detalles del partido para la app (sección "Detalles"): goles de ambos equipos, amarillas y rojas, y
-    cuando SALE tu jugador. lado: 'L' local / 'V' visitante; mio: es tu jugador."""
+    cuando ENTRA (si empezó en la banca) o SALE tu jugador. lado: 'L' local / 'V' visitante; mio: es tu jugador.
+    En los cambios la API a veces pone al que entra como "player" y otras como "assist": por eso se decide con la
+    alineación (suplente → su primer cambio es la entrada), igual que los avisos de analyze()."""
     home_id = ((data.get("teams") or {}).get("home") or {}).get("id")
+    suplente = any(p["player"]["id"] == player_id
+                   for t in data.get("lineups") or [] for p in t.get("substitutes") or [])
+    entro = False
     out = []
     for e in sorted(data.get("events") or [], key=lambda e: (e["time"]["elapsed"] or 0, e["time"].get("extra") or 0)):
         etype, detail = (e.get("type") or "").lower(), e.get("detail") or ""
         pid = (e.get("player") or {}).get("id")
+        aid = (e.get("assist") or {}).get("id")
+        nombre = (e.get("player") or {}).get("name") or "?"
+        mio = pid == player_id
         if etype == "goal" and detail != "Missed Penalty":
             tipo = "pen" if detail == "Penalty" else ("autogol" if detail == "Own Goal" else "gol")
         elif etype == "card":
             tipo = "roja" if ("red" in detail.lower() or "second yellow" in detail.lower()) else "amarilla"
-        elif etype == "subst" and pid == player_id:
-            tipo = "sale"
+        elif etype == "subst" and player_id in (pid, aid):
+            tipo = "entra" if (suplente and not entro) else "sale"
+            entro = entro or tipo == "entra"
+            nombre = ((e.get("player") if pid == player_id else e.get("assist")) or {}).get("name") or nombre
+            mio = True
         else:
             continue
-        out.append({"min": minute_txt(e["time"]), "tipo": tipo, "nombre": (e.get("player") or {}).get("name") or "?",
-                    "lado": "L" if (e.get("team") or {}).get("id") == home_id else "V", "mio": pid == player_id})
+        out.append({"min": minute_txt(e["time"]), "tipo": tipo, "nombre": nombre,
+                    "lado": "L" if (e.get("team") or {}).get("id") == home_id else "V", "mio": mio})
     return out
 
 
@@ -609,6 +620,8 @@ def analyze(data, player, target):
             current_status = "en_cancha"
         elif out_minute is not None:
             current_status = "banca"
+    elif role == "banca" and entered and status in FINISHED:
+        current_status = "entro"   # entró de cambio (la app: "Entró de cambio"), no "En la banca"
     elif role is None and (not data.get("lineups") or banca_pendiente) and status in LIVE:
         # Partido (club o Selección) en curso sin alineación publicada: NO se asume que juega. Solo "en_cancha" si
         # un evento lo prueba (gol, asistencia, cambio); si no, "sin_alineacion" (la app lo muestra como
