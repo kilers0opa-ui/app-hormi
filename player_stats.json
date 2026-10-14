@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T14:57:42.812104-06:00",
+  "updated_at": "2026-10-14T16:58:58.266311-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -303,7 +303,16 @@
             "lado": "V",
             "mio": false
           }
-        ]
+        ],
+        "stats": {
+          "rating": 5.9,
+          "tiros": 1,
+          "pases_pct": 73,
+          "duelos": 5,
+          "duelos_ganados": 1,
+          "regates": 1,
+          "regates_ok": 0
+        }
       }
     },
     "raul": {
@@ -1429,7 +1438,15 @@
           }
         ],
         "league_logo": "https://media.api-sports.io/football/leagues/48.png",
-        "league_tipo": "copa"
+        "league_tipo": "copa",
+        "stats": {
+          "rating": 6.0,
+          "tiros": 1,
+          "tiros_puerta": 0,
+          "pases_pct": 45,
+          "duelos": 4,
+          "duelos_ganados": 2
+        }
       }
     },
     "vasquez": {
@@ -2041,7 +2058,15 @@
             "lado": "L",
             "mio": false
           }
-        ]
+        ],
+        "stats": {
+          "rating": 6.0,
+          "pases_pct": 83,
+          "duelos": 10,
+          "duelos_ganados": 3,
+          "regates": 1,
+          "regates_ok": 0
+        }
       }
     },
     "quinones": {
@@ -2595,7 +2620,16 @@
         "crest_url": "https://media.api-sports.io/football/teams/2933.png",
         "minutes": 90,
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "stats": {
+          "rating": 6.2,
+          "tiros": 3,
+          "pases_pct": 79,
+          "duelos": 12,
+          "duelos_ganados": 3,
+          "regates": 3,
+          "regates_ok": 1
+        }
       }
     },
     "gimenez": {
@@ -3114,10 +3148,10 @@
             "team_id": 212,
             "team_name": "FC Porto",
             "team_logo": "https://media.api-sports.io/football/teams/212.png",
-            "played": 2,
+            "played": 1,
             "goals": 0,
             "assists": 0,
-            "minutes": 22
+            "minutes": 17
           }
         ],
         "2017": [
@@ -3255,7 +3289,15 @@
         "crest_url": "https://media.api-sports.io/football/teams/212.png",
         "minutes": 5,
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "stats": {
+          "rating": 6.5,
+          "tiros": 3,
+          "tiros_puerta": 2,
+          "pases_pct": 100,
+          "duelos": 5,
+          "duelos_ganados": 3
+        }
       }
     },
     "chavez": {
@@ -3570,7 +3612,17 @@
             "lado": "V",
             "mio": false
           }
-        ]
+        ],
+        "stats": {
+          "rating": 5.8,
+          "tiros": 1,
+          "tiros_puerta": 0,
+          "pases_pct": 59,
+          "duelos": 13,
+          "duelos_ganados": 9,
+          "regates": 1,
+          "regates_ok": 1
+        }
       }
     },
     "obed": {
@@ -3958,7 +4010,16 @@
             "lado": "V",
             "mio": false
           }
-        ]
+        ],
+        "stats": {
+          "rating": 7.2,
+          "tiros": 2,
+          "tiros_puerta": 1,
+          "pases_pct": 98,
+          "duelos": 2,
+          "duelos_ganados": 1,
+          "mejor_equipo": true
+        }
       }
     },
     "fidalgo": {
@@ -4488,7 +4549,15 @@
             "lado": "L",
             "mio": true
           }
-        ]
+        ],
+        "stats": {
+          "rating": 6.7,
+          "pases_pct": 92,
+          "duelos": 8,
+          "duelos_ganados": 4,
+          "regates": 3,
+          "regates_ok": 0
+        }
       }
     },
     "huescas": {
@@ -4924,7 +4993,18 @@
           }
         ],
         "league_logo": "https://media.api-sports.io/football/leagues/10.png",
-        "league_tipo": "amistoso"
+        "league_tipo": "amistoso",
+        "stats": {
+          "rating": 8.2,
+          "tiros": 1,
+          "tiros_puerta": 1,
+          "pases_pct": 94,
+          "duelos": 13,
+          "duelos_ganados": 8,
+          "regates": 3,
+          "regates_ok": 2,
+          "mejor_equipo": true
+        }
       }
     },
     "montes": {
@@ -5684,7 +5764,8 @@
         "crest_url": "https://media.api-sports.io/football/teams/597.png",
         "minutes": 46,
         "goals": 0,
-        "assists": 0
+        "assists": 0,
+        "sin_stats": true
       }
     },
     "luis_chavez": {
@@ -6205,7 +6286,13 @@
             "lado": "L",
             "mio": false
           }
-        ]
+        ],
+        "stats": {
+          "rating": 6.7,
+          "pases_pct": 69,
+          "duelos": 4,
+          "duelos_ganados": 3
+        }
       }
     },
     "fimbres": {
@@ -6407,7 +6494,15 @@
             "lado": "L",
             "mio": false
           }
-        ]
+        ],
+        "stats": {
+          "rating": 6.3,
+          "tiros": 0,
+          "tiros_puerta": 0,
+          "pases_pct": 100,
+          "duelos": 1,
+          "duelos_ganados": 1
+        }
       }
     },
     "campillo": {
@@ -6719,7 +6814,17 @@
             "lado": "L",
             "mio": false
           }
-        ]
+        ],
+        "stats": {
+          "rating": 6.2,
+          "tiros": 0,
+          "tiros_puerta": 0,
+          "pases_pct": 82,
+          "duelos": 5,
+          "duelos_ganados": 1,
+          "regates": 1,
+          "regates_ok": 0
+        }
       }
     },
     "camberos": {
@@ -6942,7 +7047,15 @@
             "lado": "L",
             "mio": false
           }
-        ]
+        ],
+        "stats": {
+          "rating": 6.2,
+          "tiros": 0,
+          "tiros_puerta": 0,
+          "pases_pct": 71,
+          "duelos": 2,
+          "duelos_ganados": 0
+        }
       }
     },
     "sandoval": {
@@ -7091,7 +7204,15 @@
             "lado": "L",
             "mio": false
           }
-        ]
+        ],
+        "stats": {
+          "rating": 6.0,
+          "tiros": 1,
+          "tiros_puerta": 0,
+          "pases_pct": 75,
+          "duelos": 5,
+          "duelos_ganados": 1
+        }
       }
     }
   }
