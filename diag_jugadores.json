@@ -1,585 +1,95 @@
 {
- "armando": {
-  "liga": "Super League 1",
-  "pais": "Greece",
-  "fecha": "2026-10-11",
-  "equipos_con_datos": 2,
-  "stats": {
-   "games": {
-    "minutes": null,
-    "number": 34,
-    "position": "F",
-    "rating": null,
-    "captain": false,
-    "substitute": true
-   },
-   "offsides": null,
-   "shots": {
-    "total": null,
-    "on": null
-   },
-   "goals": {
-    "total": null,
-    "conceded": 0,
-    "assists": null,
-    "saves": null
-   },
-   "passes": {
-    "total": null,
-    "key": null,
-    "accuracy": null
-   },
-   "tackles": {
-    "total": null,
-    "blocks": null,
-    "interceptions": null
-   },
-   "duels": {
-    "total": null,
-    "won": null
-   },
-   "dribbles": {
-    "attempts": null,
-    "success": null,
-    "past": null
-   },
-   "fouls": {
-    "drawn": null,
-    "committed": null
-   },
-   "cards": {
-    "yellow": 0,
-    "red": 0
-   },
-   "penalty": {
-    "won": null,
-    "commited": null,
-    "scored": 0,
-    "missed": 0,
-    "saved": null
-   }
-  }
- },
- "raul": {
-  "liga": "Championship",
-  "pais": "England",
-  "fecha": "2026-10-13",
-  "equipos_con_datos": 2,
-  "stats": null
- },
- "quinones": {
-  "liga": "AFC Champions League Elite",
-  "pais": "World",
-  "fecha": "2026-10-12",
-  "equipos_con_datos": 2,
-  "stats": {
-   "games": {
-    "minutes": 90,
-    "number": 33,
-    "position": "F",
-    "rating": "6.2",
-    "captain": false,
-    "substitute": false
-   },
-   "offsides": 1,
-   "shots": {
-    "total": 3,
-    "on": null
-   },
-   "goals": {
-    "total": null,
-    "conceded": 0,
-    "assists": 0,
-    "saves": null
-   },
-   "passes": {
-    "total": 43,
-    "key": 2,
-    "accuracy": "34"
-   },
-   "tackles": {
-    "total": 1,
-    "blocks": null,
-    "interceptions": 1
-   },
-   "duels": {
-    "total": 12,
-    "won": 3
-   },
-   "dribbles": {
-    "attempts": 3,
-    "success": 1,
-    "past": null
-   },
-   "fouls": {
-    "drawn": null,
-    "committed": null
-   },
-   "cards": {
-    "yellow": 0,
-    "red": 0
-   },
-   "penalty": {
-    "won": null,
-    "commited": null,
-    "scored": 0,
-    "missed": 0,
-    "saved": null
-   }
-  }
- },
- "mora": {
-  "liga": "Liga MX",
-  "pais": "Mexico",
-  "fecha": "2026-10-10",
-  "equipos_con_datos": 2,
-  "stats": null
- },
- "vasquez": {
-  "liga": "Serie A",
-  "pais": "Italy",
-  "fecha": "2026-10-10",
-  "equipos_con_datos": 2,
-  "stats": {
-   "games": {
-    "minutes": 90,
-    "number": 22,
-    "position": "D",
-    "rating": "6",
-    "captain": true,
-    "substitute": false
-   },
-   "offsides": null,
-   "shots": {
-    "total": null,
-    "on": null
-   },
-   "goals": {
-    "total": null,
-    "conceded": 0,
-    "assists": 0,
-    "saves": null
-   },
-   "passes": {
-    "total": 18,
-    "key": null,
-    "accuracy": "15"
-   },
-   "tackles": {
-    "total": 2,
-    "blocks": 2,
-    "interceptions": 4
-   },
-   "duels": {
-    "total": 10,
-    "won": 3
-   },
-   "dribbles": {
-    "attempts": 1,
-    "success": null,
-    "past": 3
-   },
-   "fouls": {
-    "drawn": null,
-    "committed": 2
-   },
-   "cards": {
-    "yellow": 1,
-    "red": 0
-   },
-   "penalty": {
-    "won": null,
-    "commited": null,
-    "scored": 0,
-    "missed": 0,
-    "saved": null
-   }
-  }
- },
- "gimenez": {
-  "liga": "UEFA Champions League",
-  "pais": "World",
-  "fecha": "2026-10-14",
-  "equipos_con_datos": 2,
-  "stats": {
-   "games": {
-    "minutes": 5,
-    "number": 29,
-    "position": "F",
-    "rating": "6.47",
-    "captain": false,
-    "substitute": false
-   },
-   "offsides": 0,
-   "shots": {
-    "total": 3,
-    "on": 2
-   },
-   "goals": {
-    "total": 0,
-    "conceded": null,
-    "assists": 0,
-    "saves": 0
-   },
-   "passes": {
-    "total": 1,
-    "key": 0,
-    "accuracy": "1"
-   },
-   "tackles": {
-    "total": 2,
-    "blocks": 0,
-    "interceptions": 0
-   },
-   "duels": {
-    "total": 5,
-    "won": 3
-   },
-   "dribbles": {
-    "attempts": 0,
-    "success": 0,
-    "past": null
-   },
-   "fouls": {
-    "drawn": 0,
-    "committed": 1
-   },
-   "cards": {
-    "yellow": 1,
-    "red": 0
-   },
-   "penalty": {
-    "won": null,
-    "commited": null,
-    "scored": 0,
-    "missed": null,
-    "saved": null
-   }
-  }
- },
- "chavez": {
-  "liga": "Eredivisie",
-  "pais": "Netherlands",
-  "fecha": "2026-10-10",
-  "equipos_con_datos": 2,
-  "stats": {
-   "games": {
-    "minutes": 90,
-    "number": 5,
-    "position": "D",
-    "rating": "5.79",
-    "captain": false,
-    "substitute": false
-   },
-   "offsides": 0,
-   "shots": {
-    "total": 1,
-    "on": 0
-   },
-   "goals": {
-    "total": 0,
-    "conceded": null,
-    "assists": 0,
-    "saves": 0
-   },
-   "passes": {
-    "total": 37,
-    "key": 1,
-    "accuracy": "22"
-   },
-   "tackles": {
-    "total": 5,
-    "blocks": 1,
-    "interceptions": 0
-   },
-   "duels": {
-    "total": 13,
-    "won": 9
-   },
-   "dribbles": {
-    "attempts": 1,
-    "success": 1,
-    "past": null
-   },
-   "fouls": {
-    "drawn": 1,
-    "committed": 1
-   },
-   "cards": {
-    "yellow": 0,
-    "red": 0
-   },
-   "penalty": {
-    "won": null,
-    "commited": null,
-    "scored": 0,
-    "missed": null,
-    "saved": null
-   }
-  }
- },
- "obed": {
-  "liga": "UEFA Champions League",
-  "pais": "World",
-  "fecha": "2026-10-13",
-  "equipos_con_datos": 2,
-  "stats": null
- },
- "huescas": {
-  "liga": "Superliga",
-  "pais": "Denmark",
-  "fecha": "2026-10-11",
-  "equipos_con_datos": 2,
-  "stats": {
-   "games": {
-    "minutes": 0,
-    "number": 13,
-    "position": "D",
-    "rating": "0",
-    "captain": false,
-    "substitute": false
-   },
-   "offsides": 0,
-   "shots": {
-    "total": 0,
-    "on": 0
-   },
-   "goals": {
-    "total": 0,
-    "conceded": null,
-    "assists": 0,
-    "saves": 0
-   },
-   "passes": {
-    "total": 0,
-    "key": 0,
-    "accuracy": "0"
-   },
-   "tackles": {
-    "total": 0,
-    "blocks": 0,
-    "interceptions": 0
-   },
-   "duels": {
-    "total": 0,
-    "won": 0
-   },
-   "dribbles": {
-    "attempts": 0,
-    "success": 0,
-    "past": null
-   },
-   "fouls": {
-    "drawn": 0,
-    "committed": 0
-   },
-   "cards": {
-    "yellow": 0,
-    "red": 0
-   },
-   "penalty": {
-    "won": null,
-    "commited": null,
-    "scored": 0,
-    "missed": null,
-    "saved": null
-   }
-  }
- },
  "montes": {
-  "liga": "Cup",
-  "pais": "Russia",
-  "fecha": "2026-10-13",
-  "equipos_con_datos": 0,
-  "stats": null
+  "fecha": "2026-10-10",
+  "rating": "8.9",
+  "min": 90,
+  "shots": {
+   "total": 1,
+   "on": 1
+  },
+  "passes": {
+   "total": 41,
+   "key": null,
+   "accuracy": "34"
+  },
+  "duels": {
+   "total": 13,
+   "won": 9
+  },
+  "drib": {
+   "attempts": null,
+   "success": null,
+   "past": null
+  }
  },
  "luis_chavez": {
-  "liga": "Cup",
-  "pais": "Russia",
-  "fecha": "2026-10-14",
-  "equipos_con_datos": 0,
-  "stats": null
- },
- "fimbres": {
-  "liga": "Liga MX",
-  "pais": "Mexico",
-  "fecha": "2026-10-11",
-  "equipos_con_datos": 2,
-  "stats": {
-   "games": {
-    "minutes": 2,
-    "number": 11,
-    "position": "M",
-    "rating": "6.29",
-    "captain": false,
-    "substitute": false
-   },
-   "offsides": 0,
-   "shots": {
-    "total": 0,
-    "on": 0
-   },
-   "goals": {
-    "total": 0,
-    "conceded": null,
-    "assists": 0,
-    "saves": 0
-   },
-   "passes": {
-    "total": 5,
-    "key": 0,
-    "accuracy": "5"
-   },
-   "tackles": {
-    "total": 1,
-    "blocks": 0,
-    "interceptions": 0
-   },
-   "duels": {
-    "total": 1,
-    "won": 1
-   },
-   "dribbles": {
-    "attempts": 0,
-    "success": 0,
-    "past": null
-   },
-   "fouls": {
-    "drawn": 0,
-    "committed": 0
-   },
-   "cards": {
-    "yellow": 0,
-    "red": 0
-   },
-   "penalty": {
-    "won": null,
-    "commited": null,
-    "scored": 0,
-    "missed": null,
-    "saved": null
-   }
+  "fecha": "2026-09-17",
+  "rating": "7",
+  "min": 69,
+  "shots": {
+   "total": 2,
+   "on": 1
+  },
+  "passes": {
+   "total": 54,
+   "key": null,
+   "accuracy": "44"
+  },
+  "duels": {
+   "total": 8,
+   "won": 4
+  },
+  "drib": {
+   "attempts": 1,
+   "success": null,
+   "past": 1
   }
  },
- "campillo": {
-  "liga": "Liga MX",
-  "pais": "Mexico",
-  "fecha": "2026-10-11",
-  "equipos_con_datos": 2,
-  "stats": {
-   "games": {
-    "minutes": 45,
-    "number": 3,
-    "position": "D",
-    "rating": "6.2",
-    "captain": false,
-    "substitute": false
-   },
-   "offsides": 0,
-   "shots": {
-    "total": 0,
-    "on": 0
-   },
-   "goals": {
-    "total": 0,
-    "conceded": null,
-    "assists": 0,
-    "saves": 0
-   },
-   "passes": {
-    "total": 17,
-    "key": 0,
-    "accuracy": "14"
-   },
-   "tackles": {
-    "total": 0,
-    "blocks": 0,
-    "interceptions": 0
-   },
-   "duels": {
-    "total": 5,
-    "won": 1
-   },
-   "dribbles": {
-    "attempts": 1,
-    "success": 0,
-    "past": null
-   },
-   "fouls": {
-    "drawn": 0,
-    "committed": 0
-   },
-   "cards": {
-    "yellow": 0,
-    "red": 0
-   },
-   "penalty": {
-    "won": null,
-    "commited": null,
-    "scored": 0,
-    "missed": null,
-    "saved": null
-   }
+ "armando": {
+  "fecha": "2026-09-20",
+  "rating": "6.5",
+  "min": 14,
+  "shots": {
+   "total": null,
+   "on": null
+  },
+  "passes": {
+   "total": 3,
+   "key": null,
+   "accuracy": "3"
+  },
+  "duels": {
+   "total": 1,
+   "won": null
+  },
+  "drib": {
+   "attempts": null,
+   "success": null,
+   "past": null
   }
  },
- "seleccion": {
-  "liga": "Friendlies",
-  "fecha": "2026-10-07",
-  "equipos_con_datos": 2,
-  "ejemplo": {
-   "games": {
-    "minutes": 90,
-    "number": 29,
-    "position": "G",
-    "rating": "6",
-    "captain": false,
-    "substitute": false
-   },
-   "offsides": null,
-   "shots": {
-    "total": null,
-    "on": null
-   },
-   "goals": {
-    "total": null,
-    "conceded": 2,
-    "assists": 0,
-    "saves": 2
-   },
-   "passes": {
-    "total": 24,
-    "key": null,
-    "accuracy": "12"
-   },
-   "tackles": {
-    "total": null,
-    "blocks": null,
-    "interceptions": null
-   },
-   "duels": {
-    "total": null,
-    "won": null
-   },
-   "dribbles": {
-    "attempts": null,
-    "success": null,
-    "past": null
-   },
-   "fouls": {
-    "drawn": null,
-    "committed": null
-   },
-   "cards": {
-    "yellow": 0,
-    "red": 0
-   },
-   "penalty": {
-    "won": null,
-    "commited": null,
-    "scored": 0,
-    "missed": 0,
-    "saved": 0
-   }
+ "raul": "sin partido con minutos en las últimas 3",
+ "quinones": {
+  "fecha": "2026-10-09",
+  "rating": "8.2",
+  "min": 90,
+  "shots": {
+   "total": 5,
+   "on": 3
+  },
+  "passes": {
+   "total": 24,
+   "key": 3,
+   "accuracy": "22"
+  },
+  "duels": {
+   "total": 8,
+   "won": 4
+  },
+  "drib": {
+   "attempts": 3,
+   "success": 2,
+   "past": null
   }
  }
 }
