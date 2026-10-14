@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T03:26:18.234935-06:00",
+  "updated_at": "2026-10-14T14:57:42.812104-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -3114,10 +3114,10 @@
             "team_id": 212,
             "team_name": "FC Porto",
             "team_logo": "https://media.api-sports.io/football/teams/212.png",
-            "played": 1,
+            "played": 2,
             "goals": 0,
             "assists": 0,
-            "minutes": 17
+            "minutes": 22
           }
         ],
         "2017": [
@@ -3139,64 +3139,123 @@
         "seleccion": [
           1629004,
           1629006
+        ],
+        "porto": [
+          1635635
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1629006,
-        "kickoff": "2026-10-06T20:30:00-06:00",
-        "home": "México",
-        "away": "Chile",
-        "home_logo": "https://media.api-sports.io/football/teams/16.png",
-        "away_logo": "https://media.api-sports.io/football/teams/2383.png",
-        "home_goals": 0,
+        "fixture_id": 1635635,
+        "kickoff": "2026-10-14T13:00:00-06:00",
+        "home": "Real Betis",
+        "away": "FC Porto",
+        "home_logo": "https://media.api-sports.io/football/teams/543.png",
+        "away_logo": "https://media.api-sports.io/football/teams/212.png",
+        "home_goals": 3,
         "away_goals": 2,
-        "league": "Amistoso",
-        "team_key": "seleccion",
-        "team_label": "Selección Mexicana",
-        "emoji": "🇲🇽",
-        "crest_url": "https://media.api-sports.io/football/teams/16.png",
-        "minutes": 26,
-        "goals": 0,
-        "assists": 0,
-        "league_logo": "https://media.api-sports.io/football/leagues/10.png",
-        "league_tipo": "amistoso",
+        "league": "Champions League",
+        "league_logo": "https://media.api-sports.io/football/leagues/2.png",
+        "league_tipo": "copa",
         "eventos": [
           {
-            "min": "44'",
+            "min": "42'",
             "tipo": "amarilla",
-            "nombre": "Jesús Gallardo",
+            "nombre": "Francesco Farioli",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "47'",
+            "tipo": "gol",
+            "nombre": "Abde Ezzalzouli",
             "lado": "L",
             "mio": false
           },
           {
             "min": "54'",
             "tipo": "gol",
-            "nombre": "M. Gutierrez",
+            "nombre": "Gabri Veiga",
             "lado": "V",
             "mio": false
           },
           {
-            "min": "65'",
+            "min": "56'",
+            "tipo": "amarilla",
+            "nombre": "André Silva",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "56'",
+            "tipo": "amarilla",
+            "nombre": "Nelson Deossa",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "56'",
+            "tipo": "amarilla",
+            "nombre": "Abde Ezzalzouli",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "61'",
             "tipo": "gol",
-            "nombre": "V. Pizarro",
+            "nombre": "Samuel Aghehowa",
             "lado": "V",
             "mio": false
           },
           {
             "min": "73'",
             "tipo": "amarilla",
-            "nombre": "Everardo López",
+            "nombre": "Alan Gonzalo Varela",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "74'",
+            "tipo": "gol",
+            "nombre": "Cucho Hernández",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "78'",
+            "min": "77'",
             "tipo": "amarilla",
-            "nombre": "Darío Osorio",
+            "nombre": "Dani Ceballos",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "84'",
+            "tipo": "pen",
+            "nombre": "Isco",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "86'",
+            "tipo": "amarilla",
+            "nombre": "Santiago Giménez",
             "lado": "V",
+            "mio": true
+          },
+          {
+            "min": "90+3'",
+            "tipo": "amarilla",
+            "nombre": "Ángel Ortiz",
+            "lado": "L",
             "mio": false
           }
-        ]
+        ],
+        "team_key": "porto",
+        "team_label": "Porto",
+        "emoji": "🐉",
+        "crest_url": "https://media.api-sports.io/football/teams/212.png",
+        "minutes": 5,
+        "goals": 0,
+        "assists": 0
       }
     },
     "chavez": {

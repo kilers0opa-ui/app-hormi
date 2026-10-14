@@ -9,17 +9,24 @@
   ],
   "finales": [
     {
-      "fixture_id": 1563664,
-      "home": "Lokomotiv Moscú",
-      "away": "Akron",
-      "league": "Copa de Rusia",
-      "score": "Lokomotiv Moscú 1-1 Akron",
-      "final_seen_at": "2026-10-13T17:37:56.586016+00:00",
+      "fixture_id": 1635635,
+      "home": "Real Betis",
+      "away": "FC Porto",
+      "league": "Champions League",
+      "score": "Real Betis 3-2 FC Porto",
+      "final_seen_at": "2026-10-14T20:57:42.800899+00:00",
       "jugadores": [
         {
-          "player_key": "montes",
-          "team_key": "lokomotiv",
-          "minutes": 46,
+          "player_key": "gimenez",
+          "team_key": "porto",
+          "minutes": 5,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "player_key": "fidalgo",
+          "team_key": "betis",
+          "minutes": 0,
           "goals": 0,
           "assists": 0
         }
