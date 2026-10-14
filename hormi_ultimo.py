@@ -85,6 +85,16 @@ def actualizar(config, solo=None):
                                  league_logo=lg.get("logo"), league_tipo=ha._liga_tipo(lg.get("name")))
             except Exception as err:
                 hh.log(f"⚠️  {player['name']}: no se pudieron leer los detalles del último partido — {err}")
+        if mejor and "stats" not in mejor and mejor.get("fixture_id") and not mejor.get("sin_stats"):
+            # Calificación y números del partido (1 petición, una sola vez). Si la liga no los publica
+            # (p. ej. Copa de Rusia) se marca para no volver a pedirlos cada día.
+            try:
+                tid = next((t.get("team_id") for t in player["targets"] if t["key"] == mejor.get("team_key")), None)
+                res = ha.api("/fixtures/players", {"fixture": mejor["fixture_id"]})
+                st = ha.stats_jugador(res, player.get("player_id"), tid) if res else None
+                mejor = dict(mejor, stats=st) if st else dict(mejor, sin_stats=True)
+            except Exception as err:
+                hh.log(f"⚠️  {player['name']}: no se pudo leer la calificación del último partido — {err}")
         if mejor and mejor != entry.get("ultimo_partido"):
             entry["ultimo_partido"] = mejor
             cambios += 1

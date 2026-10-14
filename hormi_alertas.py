@@ -281,7 +281,8 @@ class FcmSender:
         self._token = self._creds.token
         self._token_at = time.time()
 
-    def send(self, tipo, title, body, player_key=None, team_key=None, player_keys=None, extra=None):
+    def send(self, tipo, title, body, player_key=None, team_key=None, player_keys=None, extra=None,
+             topic=None, ttl=None):
         """tipo: 'goal' (dispara la pantalla de ¡GOOOOL! en la app) o
         cualquier otro string para una notificación normal. La app usa el
         tipo para decidir sonido/vibración/silencio (pantalla de
@@ -303,7 +304,7 @@ class FcmSender:
         url = f"https://fcm.googleapis.com/v1/projects/{self.project_id}/messages:send"
         payload = {
             "message": {
-                "topic": self.TOPIC,
+                "topic": topic or self.TOPIC,
                 "data": {"type": tipo, "title": title, "body": body,
                          "player_key": player_key or "", "team_key": team_key or "",
                          "player_keys": ",".join(player_keys or []),
@@ -314,7 +315,7 @@ class FcmSender:
                 # el modo Doze del teléfono (minutos u horas). HIGH los entrega
                 # al instante. TTL: un aviso de gol que no se pudo entregar en
                 # 30 min ya no sirve — mejor descartarlo que llegar tarde.
-                "android": {"priority": "HIGH", "ttl": "1800s"},
+                "android": {"priority": "HIGH", "ttl": ttl or "1800s"},
             }
         }
         req = urllib.request.Request(
@@ -891,6 +892,208 @@ def _payload_grupo(g, jug, title, body):
                       ensure_ascii=False, separators=(",", ":"))
 
 
+# ═══════════════════════════════════════════════════════ marcador en vivo (notificación fija en la app)
+# Un push SILENCIOSO por partido cada ~2-3 min (o al instante si cambia el marcador o el periodo); la app lo
+# muestra como UNA notificación fija que se va actualizando y la quita al final ("live_end"). Va a un tema
+# aparte: solo lo reciben las versiones de la app que saben mostrarlo (las viejas lo pintarían como aviso
+# normal, con sonido, cada 2 minutos).
+LIVE_TOPIC = "hormi_live_v1"
+_VIVO = {}          # fixture_id -> datos de esta pasada (se junta a todos los jugadores del partido)
+_VIVO_ENVIADO = {}  # fixture_id -> (marcador, periodo, minuto, time) del último push
+
+
+def anotar_vivo(player, snap, info):
+    estado = info.get("status")
+    if estado not in ("titular", "banca", "en_cancha", "entro"):
+        return
+    st = snap["fixture"]["status"]
+    short = st.get("short")
+    if not (short in LIVE or short in FINISHED or short in CANCELLED):
+        return
+    fid = snap["fixture"]["id"]
+    gl = snap.get("goals") or {}
+    g = _VIVO.setdefault(fid, {
+        "short": short, "elapsed": st.get("elapsed") or 0, "extra": st.get("extra") or 0,
+        "home": nombre_es(snap["teams"]["home"]["name"]), "away": nombre_es(snap["teams"]["away"]["name"]),
+        "hg": gl.get("home") or 0, "ag": gl.get("away") or 0, "liga": liga_es(snap["league"]), "jug": []})
+    if any(j["key"] == player["key"] for j in g["jug"]):
+        return
+    goles = [e["min"] for e in info.get("eventos") or [] if e.get("mio") and e.get("tipo") in ("gol", "pen")]
+    g["jug"].append({"key": player["key"], "name": display_name(player), "estado": estado, "goles": goles})
+
+
+def enviar_vivo(fcm):
+    if not fcm or not getattr(fcm, "enabled", False):
+        _VIVO.clear()
+        return
+    ahora = time.time()
+    for fid, g in _VIVO.items():
+        keys = [j["key"] for j in g["jug"]]
+        prev = _VIVO_ENVIADO.get(fid)
+        if g["short"] in FINISHED or g["short"] in CANCELLED:
+            if prev and prev[0] != "fin":
+                fcm.send("live_end", "", "", None, None, keys, extra={"fixture_id": fid}, topic=LIVE_TOPIC, ttl="900s")
+                _VIVO_ENVIADO[fid] = ("fin", None, 0, ahora)
+            continue
+        minuto = g["elapsed"] + g["extra"]
+        marcador = f"{g['hg']}-{g['ag']}"
+        if (prev and prev[0] == marcador and prev[1] == g["short"] and minuto - prev[2] < 3
+                and ahora - prev[3] < 300):
+            continue   # nada nuevo: no gastar batería del celular
+        minuto_txt = {"HT": "Medio tiempo", "BT": "Descanso", "P": "Penales", "INT": "Interrumpido"}.get(
+            g["short"], f"{g['elapsed']}'" + (f"+{g['extra']}" if g["extra"] else ""))
+        fcm.send("live", f"{g['home']} {g['hg']}-{g['ag']} {g['away']}", minuto_txt, None, None, keys,
+                 extra={"fixture_id": fid, "home": g["home"], "away": g["away"], "hg": g["hg"], "ag": g["ag"],
+                        "minuto": minuto_txt, "elapsed": g["elapsed"], "periodo": g["short"], "liga": g["liga"],
+                        "jugadores": json.dumps(g["jug"], ensure_ascii=False, separators=(",", ":"))},
+                 topic=LIVE_TOPIC, ttl="240s")
+        _VIVO_ENVIADO[fid] = (marcador, g["short"], minuto, ahora)
+    _VIVO.clear()
+
+
+# ═══════════════════════════════════════════════════════ calificación del partido
+# Al terminar un partido en el que tu jugador tuvo minutos, se anota como pendiente; en las pasadas
+# siguientes se pide /fixtures/players (1 petición por partido, máx. cada 8 min) hasta que la API publica la
+# calificación (suele tardar unos minutos), y entonces: se guarda en "Último partido" y se manda el aviso.
+CALIF_MAX = timedelta(hours=4)
+CALIF_REINTENTO = timedelta(minutes=8)
+
+
+def anotar_calificacion(pend, hechas, player, target, snap, info):
+    s = info.get("summary")
+    if not s or not s.get("minutes") or snap["fixture"]["status"].get("short") not in FINISHED:
+        return
+    fid = snap["fixture"]["id"]
+    k = f"{fid}:{player['key']}"
+    if k in pend or k in hechas:
+        return
+    home, away = snap["teams"]["home"], snap["teams"]["away"]
+    rival = away if home.get("id") == target.get("team_id") else home
+    pend[k] = {"fid": fid, "player": player["key"], "pid": player.get("player_id"), "team_key": target["key"],
+               "team_id": target.get("team_id"), "kind": target.get("kind"), "desde": now_iso(),
+               "rival": nombre_es(rival.get("name") or ""), "match": f"{nombre_es(home['name'])} vs {nombre_es(away['name'])}",
+               "minutes": s["minutes"], "goals": s["goals"], "assists": s["assists"]}
+
+
+def _num(v):
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return None
+
+
+def stats_jugador(res, pid, team_id):
+    """Números de UN jugador en /fixtures/players: {"rating": 7.8, "tiros": 4, ...} (solo lo que trae la API)."""
+    mios, ratings_equipo = None, []
+    for t in res or []:
+        for pl in t.get("players") or []:
+            st = (pl.get("statistics") or [{}])[0]
+            r = _num((st.get("games") or {}).get("rating"))
+            if t.get("team", {}).get("id") == team_id and r and (st.get("games") or {}).get("minutes"):
+                ratings_equipo.append(r)
+            if pl["player"]["id"] == pid:
+                mios = st
+    if not mios:
+        return None
+    r = _num((mios.get("games") or {}).get("rating"))
+    if not r:
+        return None
+    sh, pa, du, dr = (mios.get(x) or {} for x in ("shots", "passes", "duels", "dribbles"))
+    out = {"rating": round(r, 1)}
+    if sh.get("total") is not None:
+        out["tiros"] = sh["total"]
+        if sh.get("on") is not None:
+            out["tiros_puerta"] = sh["on"]
+    tot, ok = pa.get("total"), _num(pa.get("accuracy"))
+    if tot and ok is not None:
+        # Según la liga, "accuracy" viene como % o como número de pases buenos: si cabe en el total, son pases.
+        out["pases_pct"] = int(round(ok / tot * 100)) if ok <= tot else int(round(ok))
+    if du.get("total"):
+        out["duelos"] = du["total"]
+        out["duelos_ganados"] = du.get("won") or 0
+    if dr.get("attempts"):
+        out["regates"] = dr["attempts"]
+        out["regates_ok"] = dr.get("success") or 0
+    if ratings_equipo and r >= max(ratings_equipo) and len(ratings_equipo) > 3:
+        out["mejor_equipo"] = True
+    return out
+
+
+def _texto_calificacion(it, st):
+    partes = [f"{it['minutes']}'"]
+    if it["goals"]:
+        partes.append(f"{it['goals']} gol" + ("es" if it["goals"] > 1 else ""))
+    if it["assists"]:
+        partes.append(f"{it['assists']} asist.")
+    if st.get("tiros"):
+        partes.append(f"{st['tiros']} tiro" + ("s" if st["tiros"] > 1 else "") +
+                      (f" ({st['tiros_puerta']} a puerta)" if st.get("tiros_puerta") else ""))
+    if st.get("mejor_equipo"):
+        partes.append("mejor de su equipo")
+    return " · ".join(partes)
+
+
+def procesar_calificaciones(pend, hechas, config, fcm, notifier=None):
+    ahora = datetime.now(LOCAL_TZ)
+    nombres = {p["key"]: display_name(p) for p in config["players"]}
+    por_partido = {}
+    for k, it in list(pend.items()):
+        desde = _parse(it.get("desde")) or ahora
+        if ahora - desde > CALIF_MAX:
+            log(f"⭐ sin calificación de la API para {k}: se deja")
+            hechas.add(k)
+            pend.pop(k)
+            continue
+        ult = _parse(it.get("intento"))
+        if ult and ahora - ult < CALIF_REINTENTO:
+            continue
+        por_partido.setdefault(it["fid"], []).append((k, it))
+    if not por_partido:
+        return
+    stats_file = load_json(STATS_FILE, {"updated_at": None, "players": {}})
+    stats_sucio = False
+    for fid, items in por_partido.items():
+        res = api("/fixtures/players", {"fixture": fid})
+        listos = []
+        for k, it in items:
+            st = stats_jugador(res, it["pid"], it["team_id"]) if res else None
+            if not st:
+                it["intento"] = now_iso()
+                continue
+            listos.append((k, it, st))
+            up = (stats_file.get("players", {}).get(it["player"]) or {}).get("ultimo_partido")
+            if up and up.get("fixture_id") == fid:
+                up["stats"] = st
+                stats_sucio = True
+        if not listos:
+            continue
+        sel = [x for x in listos if x[1]["kind"] == "seleccion"]
+        for k, it, st in listos:
+            hechas.add(k)
+            pend.pop(k, None)
+            if it["kind"] == "seleccion":
+                continue
+            title = f"⭐ {nombres.get(it['player'], it['player'])}: {st['rating']} contra {it['rival']}"
+            body = _texto_calificacion(it, st)
+            log(f"📲 {title} — {body}")
+            if fcm:
+                fcm.send("rating", title, body, it["player"], it["team_key"])
+        if sel and fcm:
+            items_g = [{"key": it["player"], "name": nombres.get(it["player"], it["player"]), "rol": "convocado",
+                        "rating": st["rating"],
+                        "title": f"⭐ {nombres.get(it['player'], it['player'])}: {st['rating']} contra {it['rival']}",
+                        "body": _texto_calificacion(it, st)} for k, it, st in sel]
+            title = f"⭐ Calificaciones · {sel[0][1]['match']}"
+            body = " · ".join(f"{i['name']} {i['rating']}" for i in items_g)
+            grupo = json.dumps({"title": title, "body": body, "label": "Selección Mexicana", "emoji": "⭐",
+                                "items": items_g}, ensure_ascii=False, separators=(",", ":"))
+            log(f"📲 {title} — {body}")
+            fcm.send("rating", title, body, None, "seleccion", [i["key"] for i in items_g], extra={"grupo": grupo})
+    if stats_sucio:
+        stats_file["updated_at"] = now_iso()
+        save_json(STATS_FILE, stats_file)
+
+
 def enviar_grupos(notifier, fcm):
     """Manda los avisos unificados juntados en esta pasada. Solo cuentan los jugadores que estuvieron
     en el partido (titular/banca); la app lo muestra si AL MENOS UNO de ellos es Favorito."""
@@ -1252,6 +1455,8 @@ def send_reminders(config, notifier, fcm, schedule_out, reminders_sent):
 
 _WARNED = set()      # avisos que ya se mostraron en este proceso (el modo vigilar repite pasadas cada minuto)
 _SNAP_CACHE = {}     # fixture_id -> foto del partido, válida solo durante UNA pasada
+_CALIF_PEND = {}     # "fid:jugador" -> partido terminado esperando su calificación (se guarda en hormi_estado.json)
+_CALIF_HECHAS = set()
 # Antes del partido (hasta PRE_RAPIDO del kickoff) solo puede salir la alineación: se consulta
 # cada PRE_PASO en vez de cada pasada de 20 s y, entre consultas, se reusa la última foto.
 PRE_PASO = 60                          # segundos
@@ -1455,6 +1660,11 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         if len(_p) == 2 and _p[1].count(":") == 3:
             sent.add(f"{_p[0]}:subst:" + ":".join(_p[1].split(":")[2:]))
     alerts, info = analyze(snap, player, target)
+    try:
+        anotar_vivo(player, snap, info)
+        anotar_calificacion(_CALIF_PEND, _CALIF_HECHAS, player, target, snap, info)
+    except Exception as err:
+        log(f"⚠️  vivo/calificación: {err}")
     # Corrección manual (hormi_manual.json): {"<fixture_id>": {"<jugador>": "banca"|"no_convocado"}}. Solo
     # aplica al ESTADO cuando la API no sabe del jugador (sin alineación / banca incompleta); no manda avisos.
     if info.get("status") in ("sin_alineacion", "no_convocado"):
@@ -1616,6 +1826,8 @@ def chequeo(args, notifier, config, fcm=None):
     _GRUPOS.clear()
     _NEXT_CACHE.clear()
     state = load_json(STATE_FILE, {})
+    _CALIF_PEND.clear(); _CALIF_PEND.update(state.get("calif_pend") or {})
+    _CALIF_HECHAS.clear(); _CALIF_HECHAS.update(state.get("calif_hechas") or [])
     sent_raw = state.get("sent", {})
     reminders_sent = set(state.get("reminders", []))
     schedule_raw = load_json(SCHEDULE_FILE, {})
@@ -1701,6 +1913,14 @@ def chequeo(args, notifier, config, fcm=None):
         enviar_grupos(notifier, fcm)
     except Exception as err:
         log(f"⚠️  no se pudieron mandar los avisos unificados de la Selección — {err}")
+    try:
+        enviar_vivo(fcm)
+    except Exception as err:
+        log(f"⚠️  marcador en vivo: {err}")
+    try:
+        procesar_calificaciones(_CALIF_PEND, _CALIF_HECHAS, config, fcm, notifier)
+    except Exception as err:
+        log(f"⚠️  calificaciones: {err}")
 
     # "Juega mañana": solo en pasadas completas (con --jugador/--solo el
     # horario de los demás no se toca).
@@ -1713,7 +1933,8 @@ def chequeo(args, notifier, config, fcm=None):
             log(f"⚠️  no se pudieron mandar los avisos de 'Juega mañana' — {err}")
     # Los ids llevan la fecha del partido: se conservan los más recientes.
     reminders_keep = sorted(reminders_sent, key=lambda r: r.split(":", 1)[1])[-60:]
-    save_json(STATE_FILE, {"sent": sent_out, "reminders": reminders_keep})
+    save_json(STATE_FILE, {"sent": sent_out, "reminders": reminders_keep, "calif_pend": _CALIF_PEND,
+                           "calif_hechas": sorted(_CALIF_HECHAS)[-200:]})
     save_json(SCHEDULE_FILE, schedule_out)
     try:
         cal = calendario_seleccion(load_json(STATUS_FILE, {}).get("calendario_seleccion"), config)
