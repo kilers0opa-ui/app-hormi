@@ -375,21 +375,20 @@
   },
   "luis_chavez": {
     "dinamo": {
-      "fixture_id": 1563659,
-      "kickoff": "2026-10-14T09:30:00-06:00",
-      "why": "hoy",
-      "refreshed_at": "2026-10-14T11:35:26.839577-06:00",
-      "home": "Akhmat",
-      "away": "Dinamo Moscú",
-      "home_logo": "https://media.api-sports.io/football/teams/1085.png",
-      "away_logo": "https://media.api-sports.io/football/teams/1088.png",
-      "league": "Copa de Rusia",
-      "league_logo": "https://media.api-sports.io/football/leagues/237.png",
-      "league_tipo": "copa",
+      "fixture_id": 1561413,
+      "kickoff": "2026-10-18T07:15:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-14T12:30:09.465282-06:00",
+      "home": "Dinamo Moscú",
+      "away": "CSKA Moscú",
+      "home_logo": "https://media.api-sports.io/football/teams/1088.png",
+      "away_logo": "https://media.api-sports.io/football/teams/555.png",
+      "league": "Liga Premier de Rusia",
+      "league_logo": "https://media.api-sports.io/football/leagues/235.png",
+      "league_tipo": "liga",
       "liga_v": 2,
       "season": 2026,
-      "fx_status": "FT",
-      "done": true
+      "fx_status": "NS"
     },
     "seleccion": {
       "fixture_id": 1644691,
