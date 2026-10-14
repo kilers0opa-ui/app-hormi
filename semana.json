@@ -1,0 +1,183 @@
+{
+ "desde": "2026-10-05",
+ "hasta": "2026-10-11",
+ "titulo": "5 – 11 oct 2026",
+ "generado": "2026-10-14T16:59:26-06:00",
+ "imagen": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/semana/semana_2026-10-05.jpg?v=e1726480",
+ "totales": {
+  "goles": 2,
+  "asistencias": 2,
+  "partidos": 15,
+  "minutos": 761,
+  "jugaron": 12
+ },
+ "mvp": {
+  "key": "montes",
+  "name": "César Montes",
+  "partidos": 1,
+  "min": 90,
+  "goles": 1,
+  "asist": 0,
+  "rating": 8.9
+ },
+ "goleadores": [
+  {
+   "key": "quinones",
+   "name": "Julián Quiñones",
+   "goles": 1,
+   "equipo": "Al-Qadsiah"
+  },
+  {
+   "key": "montes",
+   "name": "César Montes",
+   "goles": 1,
+   "equipo": "Lokomotiv Moscú"
+  }
+ ],
+ "jugadores": [
+  {
+   "key": "quinones",
+   "name": "Julián Quiñones",
+   "partidos": 1,
+   "min": 90,
+   "goles": 1,
+   "asist": 2,
+   "rating": 8.2,
+   "equipos_gol": [
+    "Al-Qadsiah"
+   ]
+  },
+  {
+   "key": "montes",
+   "name": "César Montes",
+   "partidos": 1,
+   "min": 90,
+   "goles": 1,
+   "asist": 0,
+   "rating": 8.9,
+   "equipos_gol": [
+    "Lokomotiv Moscú"
+   ]
+  },
+  {
+   "key": "vasquez",
+   "name": "Johan Vásquez",
+   "partidos": 2,
+   "min": 116,
+   "goles": 0,
+   "asist": 0,
+   "rating": 6.2,
+   "equipos_gol": [
+    "Genoa"
+   ]
+  },
+  {
+   "key": "chavez",
+   "name": "Mateo Chávez",
+   "partidos": 1,
+   "min": 90,
+   "goles": 0,
+   "asist": 0,
+   "rating": 5.8,
+   "equipos_gol": [
+    "AZ Alkmaar"
+   ]
+  },
+  {
+   "key": "fidalgo",
+   "name": "Álvaro Fidalgo",
+   "partidos": 1,
+   "min": 82,
+   "goles": 0,
+   "asist": 0,
+   "rating": 6.7,
+   "equipos_gol": [
+    "Selección Mexicana"
+   ]
+  },
+  {
+   "key": "obed",
+   "name": "Obed Vargas",
+   "partidos": 1,
+   "min": 72,
+   "goles": 0,
+   "asist": 0,
+   "rating": 7.2,
+   "equipos_gol": [
+    "Selección Mexicana"
+   ]
+  },
+  {
+   "key": "armando",
+   "name": "Armando González",
+   "partidos": 1,
+   "min": 64,
+   "goles": 0,
+   "asist": 0,
+   "rating": 5.9,
+   "equipos_gol": [
+    "Selección Mexicana"
+   ]
+  },
+  {
+   "key": "campillo",
+   "name": "Diego Campillo",
+   "partidos": 1,
+   "min": 45,
+   "goles": 0,
+   "asist": 0,
+   "rating": 6.2,
+   "equipos_gol": [
+    "Chivas"
+   ]
+  },
+  {
+   "key": "camberos",
+   "name": "Hugo Camberos",
+   "partidos": 2,
+   "min": 42,
+   "goles": 0,
+   "asist": 0,
+   "rating": 6.4,
+   "equipos_gol": [
+    "Chivas"
+   ]
+  },
+  {
+   "key": "sandoval",
+   "name": "Santiago Sandoval",
+   "partidos": 2,
+   "min": 42,
+   "goles": 0,
+   "asist": 0,
+   "rating": 6.3,
+   "equipos_gol": [
+    "Chivas"
+   ]
+  },
+  {
+   "key": "gimenez",
+   "name": "Santiago Giménez",
+   "partidos": 1,
+   "min": 26,
+   "goles": 0,
+   "asist": 0,
+   "rating": 6.7,
+   "equipos_gol": [
+    "Selección Mexicana"
+   ]
+  },
+  {
+   "key": "fimbres",
+   "name": "Iker Fimbres",
+   "partidos": 1,
+   "min": 2,
+   "goles": 0,
+   "asist": 0,
+   "rating": 6.3,
+   "equipos_gol": [
+    "Monterrey"
+   ]
+  }
+ ]
+}
