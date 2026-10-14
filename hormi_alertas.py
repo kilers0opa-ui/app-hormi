@@ -417,6 +417,9 @@ def _liga_tipo(name):
     return "liga"
 
 
+EVENTOS_V = 2   # sube si cambia cómo se arman los Detalles: hormi_ultimo.py recalcula los ya guardados
+
+
 def _eventos(data, player_id):
     """Detalles del partido para la app (sección "Detalles"): goles de ambos equipos, amarillas y rojas, y
     cuando ENTRA (si empezó en la banca) o SALE tu jugador. lado: 'L' local / 'V' visitante; mio: es tu jugador.
@@ -660,7 +663,7 @@ def registrar_ultimo(player, target, snap, info):
         "home_goals": g.get("home"), "away_goals": g.get("away"),
         "league": liga_es(snap["league"]),
         "league_logo": snap["league"].get("logo"), "league_tipo": _liga_tipo(snap["league"].get("name")),
-        "eventos": info.get("eventos") or [],
+        "eventos": info.get("eventos") or [], "eventos_v": EVENTOS_V,
         "team_key": target["key"], "team_label": target["label"], "emoji": target["emoji"],
         "crest_url": target.get("crest_url"),
         "minutes": s["minutes"], "goals": s["goals"], "assists": s["assists"],
