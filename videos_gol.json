@@ -1,104 +1,12 @@
 {
-  "updated_at": "2026-10-13T13:40:23.238384-06:00",
+  "updated_at": "2026-10-14T15:00:26.389633-06:00",
   "cuota": {
-    "fecha": "2026-10-13",
-    "busquedas": 3,
-    "busquedas_resumen": 3
+    "fecha": "2026-10-14",
+    "busquedas": 0,
+    "busquedas_resumen": 0
   },
-  "goles": {
-    "camberos:chivas:9:goal:453887:1:gol": {
-      "player_key": "camberos",
-      "team_key": "chivas",
-      "goal_seen_at": "2026-10-11T21:47:22.020250+00:00",
-      "status": "omitido",
-      "intentos": 2,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-11T22:20:19.703398+00:00",
-      "video": null,
-      "motivo": "sin video tras los intentos"
-    }
-  },
+  "goles": {},
   "partidos": {
-    "1593329": {
-      "fixture_id": 1593329,
-      "home": "Olympiakos",
-      "away": "Panathinaikos",
-      "league": "Superliga de Grecia",
-      "score": "Olympiakos 1-0 Panathinaikos",
-      "final_seen_at": "2026-10-11T19:56:40.178079+00:00",
-      "jugadores": {
-        "armando": {
-          "team_key": "olympiacos",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "omitido",
-      "intentos": 0,
-      "fallos": 0,
-      "ultimo_intento": null,
-      "video": null,
-      "noticias_pasadas": 3,
-      "ultima_noticia": "2026-10-11T22:00:26.180775+00:00",
-      "noticias": {
-        "armando": [
-          {
-            "title": "Olympiacos Gana a Panathinaikos en el Clásico de Grecia sin la Hormiga González",
-            "source": "N+",
-            "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMndvNlg0emlTZThYWWhpODlxU1hDN3lFR1g1V3BIVHByOEd0NDZ4ZkhfMDBmY1dIM0tJWWh5ZnJrWHJTcFJqbDloSzNRYl9ZMEZyaVV0a1ZwX3UwSjh5eFYxYlRBZm5mejlTNm1YSHhyRmdreWl1MENDUkJVWUhaRE1OaGhVYVRRMmNsc0JaMWw2Y3hjb2ZJQWRLQ1hRR0N1?oc=5",
-            "published_at": "2026-10-11T21:07:07Z"
-          },
-          {
-            "title": "Hormiga González se queda en la banca y extiende su racha sin anotar con Olympiacos en Liga",
-            "source": "Récord",
-            "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOMmNJdXF6T0JSdVh1X00yZUlJTlZVeVE3NFVWQkxNWTJQTFRyOUlKd29rTk9WSVJrZE1uMUhqZkkxVEZUUkxXaEU1b2c1a1BoczJPTU90QW5EV1dxUUxJRkdhNWt2NkxERXJNTlk4Z0hrZHJkZENFZzhlS3FsSUU3aDhJajdzN0JaV2FqcHBySWpjWE5CZjlRcnJsT2tUSmU5RU52c3NXajhaWlN5ckFEOHRaN3lRdFFfUTM3bUsxbldKZDAxSXpBRVY3eUt1S3plaUNmcVNsQ0RzbER2V3Jr?oc=5",
-            "published_at": "2026-10-11T20:24:00Z"
-          }
-        ]
-      },
-      "motivo": "ningún jugador tuvo minutos"
-    },
-    "1629927": {
-      "fixture_id": 1629927,
-      "home": "Pakhtakor",
-      "away": "Al-Qadsiah",
-      "league": "Liga de Campeones de Asia",
-      "score": "Pakhtakor 1-1 Al-Qadsiah",
-      "final_seen_at": "2026-10-12T15:41:46.849509+00:00",
-      "jugadores": {
-        "quinones": {
-          "team_key": "al_qadsiah",
-          "minutes": 90,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "omitido",
-      "intentos": 3,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-12T17:45:22.257871+00:00",
-      "video": null,
-      "noticias_pasadas": 3,
-      "ultima_noticia": "2026-10-12T17:45:22.257871+00:00",
-      "noticias": {
-        "quinones": [
-          {
-            "title": "¡Golazo anulado a Julián Quiñones! El VAR le roba el festejo en la Champions de Asia",
-            "source": "Excélsior",
-            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUGszNFA0ckJ6YV8xSGVhX1l6WnpvR3o4UHlPblR1dUt3aF9QOTd6bDktOURpN3RLSURlZjYzc0FoYi1uNFFFRncxMW9UNTlmOUdxbkFkdm9MVUZJdml6Z05mdG5fVXRLUVlUT0NDRkpBRkRvYU11WldBd2RKWDFsRXhyMTBKVFFwMW1Ucy03amdJQmNidTBNdnpfSDBvTmdfb2pycGlB0gGrAUFVX3lxTE1Ba1o3MjNJWDdzaXl3cE00MHBpcFI5Q2VubGx0ZFlwRUpIdlVSQXJiU0Uyel9HZW5yV0lLMlBhSnpKWXhTU1pXckI1Vll4dE5WVnQxR25HeWpPNk9TcWlXUFUxMGlRRDJqREtZT1h2bXdKNWlFTjg3N01ReUJxYWNLX3ZTLVZMTDNOZ3RkMC1DMG5CYkM3enBscWFxcFRjNzR1aHVRdlJqOExRaw?oc=5",
-            "published_at": "2026-10-12T16:47:58Z"
-          },
-          {
-            "title": "¿Qué pasó con Julián Quiñones y Al-Qadsiah? Así fue la visita del mexicano al Pakhtakor de Uzbekistán",
-            "source": "El Heraldo de México",
-            "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPV2oxVC1RMThvTTNpQngwUGpILWMyQWUxeTl2UW05WHd0Vl9selhjcVJWXzBLLUVOekx2UVJ6d1dfSDFXc0V2bzVQMU8wUWt5M1ZxNkF4S28xRFdoUEJTbS1BNThMMWZ6ZnFoS2xWSHA4WFo4T0JEbGtDb0xydnRNV3lNT3NEUDJBQ1FabHRjTUNKQmtfVzVISkw3YWcyZzdaR1QwTl91Mzh1TU1tOWQ3dV9JLXdPaHNWUENmZDdIZWNkeENhMDFrUk1nQlMzVWJrek9TZkNBWVo5Z1lJN3pVM041SzRrX29BUjhPV18wOXUyZw?oc=5",
-            "published_at": "2026-10-12T16:16:00Z"
-          }
-        ]
-      },
-      "motivo": "sin resumen tras los intentos"
-    },
     "1563664": {
       "fixture_id": 1563664,
       "home": "Lokomotiv Moscú",
@@ -138,6 +46,36 @@
         ]
       },
       "motivo": "sin resumen tras los intentos"
+    },
+    "1635635": {
+      "fixture_id": 1635635,
+      "home": "Real Betis",
+      "away": "FC Porto",
+      "league": "Champions League",
+      "score": "Real Betis 3-2 FC Porto",
+      "final_seen_at": "2026-10-14T20:57:42.800899+00:00",
+      "jugadores": {
+        "gimenez": {
+          "team_key": "porto",
+          "minutes": 5,
+          "goals": 0,
+          "assists": 0
+        },
+        "fidalgo": {
+          "team_key": "betis",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
