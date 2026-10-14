@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-14T16:55:18.400427-06:00",
+  "updated_at": "2026-10-14T16:58:49.969368-06:00",
   "cuota": {
     "fecha": "2026-10-14",
-    "busquedas": 2,
-    "busquedas_resumen": 2
+    "busquedas": 3,
+    "busquedas_resumen": 3
   },
   "goles": {},
   "partidos": {
@@ -68,13 +68,13 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
-      "intentos": 2,
+      "status": "omitido",
+      "intentos": 3,
       "fallos": 0,
-      "ultimo_intento": "2026-10-14T22:00:26.022576+00:00",
+      "ultimo_intento": "2026-10-14T22:58:48.637756+00:00",
       "video": null,
-      "noticias_pasadas": 2,
-      "ultima_noticia": "2026-10-14T22:00:26.022576+00:00",
+      "noticias_pasadas": 3,
+      "ultima_noticia": "2026-10-14T22:58:48.637756+00:00",
       "noticias": {
         "gimenez": [
           {
@@ -92,19 +92,20 @@
         ],
         "fidalgo": [
           {
-            "title": "Betis - Porto EN VIVO | Álvaro Fidalgo vs Santi Giménez hoy en directo en Champions League",
-            "source": "MARCA",
-            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNV2lqb19YYVZJNXNOUm02N3kwTmhMc3pTN0xubTh5d0c5QjNiQTJtYmZRUEhUOU1UcHNhREdlWTNwUk15MzU3RGZPZG50c00wNlgxYkZPNXo0Vk4xZVdtdlE1VlV4U0ZjMjJOeFRFbllDWGk3SjR0ektSdUpqT0phcXhYNmZoYkF1MmhCM1NUVE93LVp5MDA0?oc=5",
-            "published_at": "2026-10-14T18:44:09Z"
-          },
-          {
             "title": "¿Por qué no juegan Álvaro Fidalgo y Santi Giménez el Real Betis vs Porto en Champions League?",
             "source": "Bolavip México",
             "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNU0JfeTE0WXU1SXpVRGo3NXVGd0I0TWpuOXpQWmQtZzRWYThLZjMtYldqNHMwd05XcVZhS0pfOXNWc2N1OWRpWjBsWGxzamV0OEllT1VCdHZQVXFFYi1VTGR5TE1iMkdIVXZIY3hIZnR0aC1PbG9tRnY4X3JFSDFOUWctS1hJYlpfcDg1eEVPZHg5Nnd5QjNMSG12TXU5ejNHUFBwSjE5Umh0YmVkU3E4bnVHcVhLcEdzSUl5Y1I4YUFyR09OTHA1eDgxeGphTTVsdTVqaFN1M3bSAd4BQVVfeXFMT0lhWWg2QkxSOUxISzQ4RmQyRWJwOWYwWklyXzVGc0dTby1vZ2k4OEd2N0lNWlJXNmk0d1VucHl4amZuM19YMWpKVWFpaTNCOEFrQ2s2RGJScHFmQ29fX1AzdGF2QTA0ekZoQko2am5Lb3VXcGlmcFFNNEsyLWI5TU01TkZpanBnMG5UM1hkNkllTHYwOUpnWWdLR3JxZHFCMVBzU2FId2FnbGEyNndzTmhSTnlnMDlQMWNnSEwwX29fX1JQNVhmdkdma0pTY3liMDJMaHNvWDh3WEd4U19n?oc=5",
             "published_at": "2026-10-14T17:48:41Z"
+          },
+          {
+            "title": "Álvaro Fidalgo y Santi Gimenez chocan en la Champions: dos mexicanos que buscan salir de la sombra en Europa",
+            "source": "Infobae",
+            "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPelFIY3FCUmc2eHFzdGtQM3RBaHU1dG85am9kUjBpUXJHc2FGS2lJdFlWRDdQS0tmWF9oUmVtMzBLVlIteERRVWNIVkhFNmIyRFk5OTJITzRONllxdUx3REY4MEt3S1hTeUQxaUFFV3BURElGVnhBT01vUXptNVFfRThUOG5iWkt3U0stck1FLXZRWXRMUGpWa2NrY01UU0VNejU1Z1otZUdLQ09meGxxdS1aUjB3MHFRSzRHX2V5cEdFdGFON0thNzhtYkE0UnZzOU9BRUdkUmxiaWxONG9SR1BmbUgwcDVvVHd3dU5sRU3SAYsCQVVfeXFMUHVFQUhwZGJGRGU1emUwQUFpMlJjb0QxRDRnN2F0dlFtaEJxOTd5WUZRZWR4V1JPcXBmcXh6LVdoalRFalFXZHljVGY3cjVzcno2dVpsVGxXdFlRekJ4dEhKMG1UYl93QzlfaG1TWDlEeEQxUTZDZzlMME9vTmN5SkxHQ2JnemZQZDVYNDNYWFdNWkR4NlFucVJSTlZnUDdhZUhhMWExVkN2bFg0czNJUjhNM0VXRzlPWWhjcEI3Si1xam9wa0xJSDYyaE9lbXNsaFlBU25nOXhmek1UX1lidVdSeVE0ODJfekhRd0FQNGR0cFFpVDRJTEJGMWhXMlFPRVlKRm5Lcl80ZGZB?oc=5",
+            "published_at": "2026-10-14T17:06:00Z"
           }
         ]
-      }
+      },
+      "motivo": "sin resumen tras los intentos"
     }
   }
 }
