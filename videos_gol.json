@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-15T13:05:27.504812-06:00",
+  "updated_at": "2026-10-15T13:10:24.096453-06:00",
   "cuota": {
     "fecha": "2026-10-15",
-    "busquedas": 0,
-    "busquedas_resumen": 0
+    "busquedas": 1,
+    "busquedas_resumen": 1
   },
   "goles": {},
   "partidos": {
@@ -83,13 +83,28 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-15T19:10:23.316690+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-15T19:10:23.316690+00:00",
+      "noticias": {
+        "chavez": [
+          {
+            "title": "Mateo Chávez ve acción en triunfo del AZ Alkmaar sobre el Hapoel Beer",
+            "source": "Soy Futbol",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZUhVVWVFQ3FIS1hJaVo2c2R0d2w1NDU4bkJXSVgwVFZyWU5tczZPNjdScFV4cGU1LUR1Zy1VSTVBc1REV0hIYXpTN0FteGdEdjJCVWN3YzdYRzFyM0loNmtZMVhRYjZFTndOTXl3MG9sT2cxaWNvaFlyR1ozOEVwbDBwb25vZ3E4RHlwdThYVU83ZHZTa3Y0eVNxemhtdTNrb0NIUmQ4cnA4TEFXQTFBcXNHTWtFTmZTelE4QlppeGjSAcYBQVVfeXFMUEIzVjFydE1qYkFTUk12TXU1WmNlTTNoSjQ4eUYyYTJLbkR6YnZhZE1tVlZ0blM2dHVSRXlqay0xREVBMmt4YnNUSFRvWnlKVWJvUDRQSDdUM1JIOExkVE12WVNDYTh5QlVfc3Y0SVFBNjR2dFN0VnMzNkpMUW1XVXhUampOOGNlX1J1QW9iRW1pdUpUWUZKQXFYeWRDMW4wT0xlYmJudTBXVUtER0otLVpjZ0FZblBHdlFtMmtoVExYTFdJdkVn?oc=5",
+            "published_at": "2026-10-15T19:02:17Z"
+          },
+          {
+            "title": "¿Anotó Mateo Chávez? AZ Alkmaar vence a Hapoel Be'er Sheva en la Europa League",
+            "source": "El Heraldo de México",
+            "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOSjg4cWhfa09ZOU1Jc0ZXU1gwUVYwS2daNW1sZ2NqeTlFVm1zU2pycEpRN2c4b2dWVDk0TFp6ZWZBbFhXcmZiN1ZIQTV5QVpfMC1SZWJzbm5uRmxSd0NpTmdTamJJYlFIQ1E0MjVSb3pTc29wZy1yMnJVNlRRR2ppaDRfbi1DS1BfcnJtN21KZ1F1eHZGbl9nbFFYR04tam5zWTNBOE5UVXpTQnhBN012Z2F4VHRUNnhJZkxTSUVKd0VzZVI5T0ZYWTZGejQ5elByU0E?oc=5",
+            "published_at": "2026-10-15T18:43:00Z"
+          }
+        ]
+      }
     }
   }
 }
