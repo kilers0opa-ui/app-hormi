@@ -92,9 +92,10 @@ DEFAULTS = {
     "gol_caducidad_horas": 3,         # un gol/partido pendiente más viejo que esto se omite
     "gol_retencion_horas": 48,        # cuánto se conserva un gol/partido en videos_gol.json
     # --- modo --eventos: final de partido (resumen + noticia principal)
-    "resumen_intentos_min": [30, 60, 120],     # minutos después del final en que se busca el resumen (3 intentos) y se refresca la noticia
+    "resumen_intentos_min": [30, 60, 120, 180, 300],   # minutos después del final en que se busca el resumen (5 intentos; los canales oficiales a veces lo suben 2-3 h después) y se refresca la noticia
+    "resumen_caducidad_horas": 6,         # un resumen pendiente más viejo que esto se omite (los goles usan gol_caducidad_horas)
     "resumen_margen_min": 10,             # el resumen puede haberse publicado hasta N min antes de que se detectara el final
-    "resumen_max_busquedas_dia": 35,      # de las 90 búsquedas del día, máximo 35 pueden ser de resúmenes: los goles siempre conservan cuota
+    "resumen_max_busquedas_dia": 50,      # de las 90 búsquedas del día, máximo 35 pueden ser de resúmenes: los goles siempre conservan cuota
     "resumen_solo_con_minutos": True,     # solo se busca resumen si algún jugador del roster tuvo minutos
     # Calidad del resumen: solo se acepta el de un canal confiable (estos nombres, o el canal oficial de alguno de
     # los dos equipos). Los videos de canales raros (voz de IA, "reacciones", narraciones de relleno) se descartan.
@@ -496,7 +497,7 @@ def send_video_push(config, player, video, team_key):
         log(f"     ⚠️  fallo enviando la notificación del video: {err}")
 
 
-def _due(n, base, last_iso, offsets, settings, now):
+def _due(n, base, last_iso, offsets, settings, now, caducidad_h=None):
     """None = todavía no toca · 'normal' | 'final' = toca ·
     'agotado' | 'caducado' = ya no se hace más. n = intentos hechos; base =
     momento del evento; offsets = minutos después del evento de cada intento."""
@@ -504,7 +505,7 @@ def _due(n, base, last_iso, offsets, settings, now):
         return "agotado"
     if base is None:
         return "agotado"
-    if now - base > timedelta(hours=settings["gol_caducidad_horas"]):
+    if now - base > timedelta(hours=caducidad_h or settings["gol_caducidad_horas"]):
         return "caducado"
     if now < base + timedelta(minutes=offsets[n]):
         return None
@@ -537,7 +538,8 @@ def pick_goal_video(candidates):
 
 TEAM_STOP = {"fc", "cf", "sc", "ac", "as", "cd", "ud", "club", "de", "del", "la", "el", "the", "and"}
 TEAM_GENERIC = {"real", "united", "city", "sporting", "deportivo", "athletic"}
-RESUMEN_WORDS = ("resumen", "highlights", "goles", "goals", "compacto", "melhores", "resume", "extended")
+RESUMEN_WORDS = ("resumen", "highlights", "goles", "goals", "compacto", "melhores", "resume", "extended",
+                 "samenvatting", "hoogtepunten")
 
 
 def team_prefixes(name, aliases=()):
@@ -632,7 +634,7 @@ def send_summary_push(config, players, video, st):
 def _finales_step(out, config, settings, sources, notify, now):
     """Final de partido: (1) refresca la noticia principal de cada jugador
     (RSS, gratis) a los +30 y +60 min; (2) busca el resumen en YouTube a los
-    +30 y +60 min (2 intentos, ni uno más). Devuelve True si cambió algo."""
+    +30, +60, +120, +180 y +300 min (resumen_intentos_min). Devuelve True si cambió algo."""
     partidos = out.setdefault("partidos", {})
     cuota = out["cuota"]
     pending = (load_json(PENDING_FILE, {}).get("finales")) or []
@@ -697,7 +699,8 @@ def _finales_step(out, config, settings, sources, notify, now):
         # 4) resumen del partido (YouTube)
         if st["status"] != "pendiente":
             continue
-        when = _due(st["intentos"], base, st.get("ultimo_intento"), offsets, settings, now)
+        when = _due(st["intentos"], base, st.get("ultimo_intento"), offsets, settings, now,
+                    settings.get("resumen_caducidad_horas"))
         if when is None:
             continue
         if when in ("agotado", "caducado"):
@@ -721,10 +724,13 @@ def _finales_step(out, config, settings, sources, notify, now):
         away_pref = team_prefixes(st.get("away") or "", aliases.get(st.get("away")) or [])
         since = base - timedelta(minutes=settings["resumen_margen_min"])
         # Cada intento usa una búsqueda distinta (los videos de relleno suelen salir primero con "order=date")
-        base_q = f"{st.get('home')} {st.get('away')} resumen goles"
-        query = [base_q, base_q + " TUDN ESPN Fox Sports Claro Sports", f"{st.get('home')} {st.get('away')} highlights resumen"][min(st["intentos"], 2)]
+        # Búsquedas cortas: con muchas palabras YouTube devuelve casi nada (AZ-Hapoel "resumen goles" dio 1 resultado
+        # y "AZ Alkmaar vs Hapoel Beer Sheva" sí trajo el de Claro Sports). El filtro de resumen lo hacemos nosotros.
+        h, a = st.get("home"), st.get("away")
+        consultas = [f"{h} vs {a}", f"{h} {a} resumen", f"{h} vs {a}", f"{h} {a} highlights", f"{h} vs {a}"]
+        query = consultas[min(st["intentos"], len(consultas) - 1)]
         log(f"🔎 resumen {match} · intento {st['intentos'] + 1} · {query!r} · desde {since:%H:%M} UTC")
-        found = search_videos(query, published_after=since, max_results=15)
+        found = search_videos(query, published_after=since, max_results=50)   # 50 cuesta lo mismo que 15 (100 u.); con 15 el oficial quedaba tapado
         changed = True
         if found is None:
             st["fallos"] += 1
@@ -815,7 +821,7 @@ def _goals_step(out, config, settings, sources, notify, now):
         since = goal_at - timedelta(minutes=settings["gol_margen_min"])
         query = (per_player.get(player["key"]) or {}).get("query_video_gol") or f'"{full}" gol'
         log(f"🔎 gol de {full} · intento {st['intentos'] + 1} · {query!r} · desde {since:%H:%M} UTC")
-        found = search_videos(query, published_after=since, max_results=15)
+        found = search_videos(query, published_after=since, max_results=50)   # 50 cuesta lo mismo que 15 (100 u.); con 15 el oficial quedaba tapado
         changed = True
         if found is None:
             st["fallos"] += 1
