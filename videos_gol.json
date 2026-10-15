@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-15T17:35:21.179919-06:00",
+  "updated_at": "2026-10-15T17:40:20.834334-06:00",
   "cuota": {
     "fecha": "2026-10-15",
-    "busquedas": 9,
-    "busquedas_resumen": 9
+    "busquedas": 10,
+    "busquedas_resumen": 10
   },
   "goles": {},
   "partidos": {
@@ -82,11 +82,19 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
-      "intentos": 4,
+      "status": "resuelto",
+      "intentos": 5,
       "fallos": 0,
-      "ultimo_intento": "2026-10-15T21:39:40.227903+00:00",
-      "video": null,
+      "ultimo_intento": "2026-10-15T23:40:19.825910+00:00",
+      "video": {
+        "id": "4zbmbxe8dyw",
+        "title": "AZ Alkmaar 2-1 Hapoel Be&#39;er | AZ y MATEO CHÁVEZ SUMEN su primera VICTORIA en Europa League | Resumen",
+        "channel": "ESPN MX",
+        "published_at": "2026-10-15T19:26:06Z",
+        "thumbnail": "https://i.ytimg.com/vi/4zbmbxe8dyw/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=4zbmbxe8dyw",
+        "embeddable": true
+      },
       "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-15T20:40:20.480852+00:00",
       "noticias": {
