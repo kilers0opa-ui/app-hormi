@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T12:39:19.784783-06:00",
+  "updated_at": "2026-10-15T14:53:38.507616-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -151,10 +151,10 @@
             "team_id": 553,
             "team_name": "Olympiakos Piraeus",
             "team_logo": "https://media.api-sports.io/football/teams/553.png",
-            "played": 1,
+            "played": 2,
             "goals": 1,
             "assists": 0,
-            "minutes": 62
+            "minutes": 85
           },
           {
             "league_id": 10,
@@ -239,81 +239,83 @@
         "seleccion": [
           1629004,
           1629006
+        ],
+        "olympiacos": [
+          1636295
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1629006,
-        "kickoff": "2026-10-06T20:30:00-06:00",
-        "home": "México",
-        "away": "Chile",
-        "home_logo": "https://media.api-sports.io/football/teams/16.png",
-        "away_logo": "https://media.api-sports.io/football/teams/2383.png",
+        "fixture_id": 1636295,
+        "kickoff": "2026-10-15T13:00:00-06:00",
+        "home": "Marseille",
+        "away": "Olympiakos",
+        "home_logo": "https://media.api-sports.io/football/teams/81.png",
+        "away_logo": "https://media.api-sports.io/football/teams/553.png",
         "home_goals": 0,
-        "away_goals": 2,
-        "league": "Amistoso",
-        "team_key": "seleccion",
-        "team_label": "Selección Mexicana",
-        "emoji": "🇲🇽",
-        "crest_url": "https://media.api-sports.io/football/teams/16.png",
-        "minutes": 64,
-        "goals": 0,
-        "assists": 0,
-        "league_logo": "https://media.api-sports.io/football/leagues/10.png",
-        "league_tipo": "amistoso",
+        "away_goals": 1,
+        "league": "Europa League",
+        "league_logo": "https://media.api-sports.io/football/leagues/3.png",
+        "league_tipo": "copa",
         "eventos": [
           {
-            "min": "44'",
+            "min": "36'",
             "tipo": "amarilla",
-            "nombre": "Jesús Gallardo",
+            "nombre": "Keyliane Abdallah",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "54'",
+            "min": "42'",
             "tipo": "gol",
-            "nombre": "M. Gutierrez",
+            "nombre": "Santiago Hezze",
             "lado": "V",
             "mio": false
           },
           {
-            "min": "64'",
-            "tipo": "sale",
-            "nombre": "A. Gonzalez",
-            "lado": "L",
+            "min": "43'",
+            "tipo": "amarilla",
+            "nombre": "Panagiotis Retsos",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "60'",
+            "tipo": "amarilla",
+            "nombre": "Bruno Onyemaechi",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "67'",
+            "tipo": "entra",
+            "nombre": "Armando González",
+            "lado": "V",
             "mio": true
           },
           {
-            "min": "65'",
-            "tipo": "gol",
-            "nombre": "V. Pizarro",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "73'",
+            "min": "77'",
             "tipo": "amarilla",
-            "nombre": "Everardo López",
+            "nombre": "Bamo Meite",
             "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "78'",
-            "tipo": "amarilla",
-            "nombre": "Darío Osorio",
-            "lado": "V",
             "mio": false
           }
         ],
+        "eventos_v": 4,
+        "team_key": "olympiacos",
+        "team_label": "Olympiacos",
+        "emoji": "🏛️",
+        "crest_url": "https://media.api-sports.io/football/teams/553.png",
+        "minutes": 23,
+        "goals": 0,
+        "assists": 0,
         "stats": {
-          "rating": 5.9,
-          "tiros": 1,
-          "pases_pct": 73,
-          "duelos": 5,
-          "duelos_ganados": 1,
-          "regates": 1,
-          "regates_ok": 0
-        },
-        "eventos_v": 4
+          "rating": 6.5,
+          "tiros": 2,
+          "tiros_puerta": 1,
+          "pases_pct": 71,
+          "duelos": 7,
+          "duelos_ganados": 4
+        }
       }
     },
     "raul": {
@@ -4847,10 +4849,95 @@
             "assists": 0,
             "minutes": 90,
             "estimated": true
+          },
+          {
+            "league_id": 848,
+            "league_name": "UEFA Europa Conference League",
+            "team_id": 400,
+            "team_name": "FC Copenhague",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 20
           }
         ]
       },
-      "applied_fixtures": {}
+      "applied_fixtures": {
+        "copenhague": [
+          1636406
+        ]
+      },
+      "ultimo_partido": {
+        "fixture_id": 1636406,
+        "kickoff": "2026-10-15T13:00:00-06:00",
+        "home": "FC Copenhague",
+        "away": "SC Braga",
+        "home_logo": "https://media.api-sports.io/football/teams/400.png",
+        "away_logo": "https://media.api-sports.io/football/teams/217.png",
+        "home_goals": 3,
+        "away_goals": 0,
+        "league": "Conference League",
+        "league_logo": "https://media.api-sports.io/football/leagues/848.png",
+        "league_tipo": "copa",
+        "eventos": [
+          {
+            "min": "49'",
+            "tipo": "gol",
+            "nombre": "M. Elyounoussi",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "70'",
+            "tipo": "entra",
+            "nombre": "R. Huescas",
+            "lado": "L",
+            "mio": true
+          },
+          {
+            "min": "71'",
+            "tipo": "amarilla",
+            "nombre": "A. Markgraf",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "79'",
+            "tipo": "gol",
+            "nombre": "A. Cornelius",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "85'",
+            "tipo": "amarilla",
+            "nombre": "H. Nemeth",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "86'",
+            "tipo": "gol",
+            "nombre": "A. Cornelius",
+            "lado": "L",
+            "mio": false
+          }
+        ],
+        "eventos_v": 4,
+        "team_key": "copenhague",
+        "team_label": "FC Copenhague",
+        "emoji": "🦁",
+        "crest_url": "https://media.api-sports.io/football/teams/400.png",
+        "minutes": 20,
+        "goals": 0,
+        "assists": 0,
+        "stats": {
+          "rating": 6.6,
+          "pases_pct": 100,
+          "duelos": 1,
+          "duelos_ganados": 1
+        }
+      }
     },
     "mora": {
       "seasons": {
