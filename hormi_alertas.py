@@ -417,7 +417,7 @@ def _liga_tipo(name):
     return "liga"
 
 
-EVENTOS_V = 3   # sube si cambia cómo se arman los Detalles: hormi_ultimo.py recalcula los ya guardados
+EVENTOS_V = 4   # sube si cambia cómo se arman los Detalles: hormi_ultimo.py recalcula los ya guardados
 
 
 def _goles_anulados(data):
@@ -466,15 +466,16 @@ def _eventos(data, player_id):
                    for t in data.get("lineups") or [] for p in t.get("substitutes") or [])
     entro = False
     out = []
-    anulados = _goles_anulados(data)
-    evs = [e for i, e in enumerate(data.get("events") or []) if i not in anulados]
-    for e in sorted(evs, key=lambda e: (e["time"]["elapsed"] or 0, e["time"].get("extra") or 0)):
+    anulados = {id(e) for i, e in enumerate(data.get("events") or []) if i in _goles_anulados(data)}
+    for e in sorted(data.get("events") or [], key=lambda e: (e["time"]["elapsed"] or 0, e["time"].get("extra") or 0)):
         etype, detail = (e.get("type") or "").lower(), e.get("detail") or ""
         pid = (e.get("player") or {}).get("id")
         aid = (e.get("assist") or {}).get("id")
-        nombre = (e.get("player") or {}).get("name") or "?"
+        nombre = (e.get("player") or {}).get("name") or ""
         mio = pid == player_id
-        if etype == "goal" and detail != "Missed Penalty":
+        if id(e) in anulados:
+            tipo = "anulado"   # la app lo muestra "🚫 Gol anulado" (con el nombre si la API lo trae)
+        elif etype == "goal" and detail != "Missed Penalty":
             tipo = "pen" if detail == "Penalty" else ("autogol" if detail == "Own Goal" else "gol")
         elif etype == "card":
             tipo = "roja" if ("red" in detail.lower() or "second yellow" in detail.lower()) else "amarilla"
