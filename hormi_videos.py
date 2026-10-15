@@ -110,6 +110,18 @@ DEFAULTS = {
                             "reaccion", "reacciona", " en vivo ", " en directo ", " live ", "prediccion", " previa ",
                             "analisis", " ia ", "inteligencia artificial", "narracion", "narrado", "de infarto"],
     "resumen_notificar": True,
+    # Canales que se revisan DIRECTO (sus últimas subidas, 1 unidad cada uno) en cada pasada mientras haya un resumen
+    # pendiente. El buscador de YouTube tarda horas en indexar videos nuevos: ESPN MX subió el de AZ-Hapoel 47 min
+    # después del final y la búsqueda no lo vio sino hasta 5 h después. Mirando sus subidas se ve al instante.
+    "canales_resumen_ids": {
+        "ESPN MX": "UC4vmPjKs8tJM0HMd9JmgZ-g",
+        "Claro Sports": "UCqfCJBfrFSO4tZM1LNZTBFQ",
+        "TNT Sports México": "UCPZOI6QrL73FQXoZEqgvOFA",
+        "FOX Sports MX": "UCUf4RLsG_TsjinvtL2jT-VA",
+        "TUDN México": "UCTIyEyDNHPrwVFPhpi5dm0A",
+        "ESPN Deportes": "UC08mnbiC4FykqpHqbEWgFcg",
+    },
+    "canales_resumen_desde_min": 20,   # desde cuántos minutos después del final se revisan esos canales
     # País donde tiene que poderse ver el video (goles y resúmenes): se descartan los bloqueados ahí por
     # el canal (p. ej. Fox Deportes bloquea muchos clips en México), los no incrustables y los +18.
     "region_visible": "MX",            # manda "Ya está disponible el resumen del partido de {jugador}" cuando el resumen aparece (False = apagado)
@@ -631,6 +643,23 @@ def send_summary_push(config, players, video, st):
             log(f"     ⚠️  fallo enviando la notificación unificada del resumen: {err}")
 
 
+_SUBIDAS = None
+
+
+def _subidas_canales(settings):
+    """Últimas subidas de los canales de canales_resumen_ids (una sola vez por corrida, 1 unidad por canal)."""
+    global _SUBIDAS
+    if _SUBIDAS is None:
+        _SUBIDAS = []
+        for nombre, cid in (settings.get("canales_resumen_ids") or {}).items():
+            try:
+                _SUBIDAS += channel_uploads(cid, max_items=50)
+            except Exception as err:
+                log(f"     ⚠️  no se pudieron leer las subidas de {nombre}: {err}")
+        log(f"📺 {len(_SUBIDAS)} subidas recientes de {len(settings.get('canales_resumen_ids') or {})} canales confiables")
+    return _SUBIDAS
+
+
 def _finales_step(out, config, settings, sources, notify, now):
     """Final de partido: (1) refresca la noticia principal de cada jugador
     (RSS, gratis) a los +30 y +60 min; (2) busca el resumen en YouTube a los
@@ -696,7 +725,33 @@ def _finales_step(out, config, settings, sources, notify, now):
                 st["ultima_noticia"] = now.isoformat()
                 changed = True
 
-        # 4) resumen del partido (YouTube)
+        # 4a) resumen en las subidas de los canales confiables (barato y sin el retraso del buscador)
+        if (st["status"] == "pendiente" and base is not None
+                and now >= base + timedelta(minutes=settings.get("canales_resumen_desde_min", 20))
+                and now - base <= timedelta(hours=settings.get("resumen_caducidad_horas") or settings["gol_caducidad_horas"])
+                and any((j.get("minutes") or 0) > 0 for j in st["jugadores"].values())):
+            home_pref = team_prefixes(st.get("home") or "", aliases.get(st.get("home")) or [])
+            away_pref = team_prefixes(st.get("away") or "", aliases.get(st.get("away")) or [])
+            since_iso = (base - timedelta(minutes=settings["resumen_margen_min"])).strftime("%Y-%m-%dT%H:%M:%SZ")
+            used = {s2["video"]["id"] for k2, s2 in partidos.items() if k2 != fid and s2.get("video")}
+            cands = [e for e in _subidas_canales(settings)
+                     if is_match_summary(e, home_pref, away_pref)
+                     and (e.get("published_at") or "") >= since_iso
+                     and e["id"] not in used and not resumen_descartado(e, settings)]
+            vis = filter_visibles(cands, settings.get("region_visible")) if cands else []
+            if vis:
+                best = sorted(vis, key=lambda e: e.get("published_at") or "")[0]
+                video = strip_private([best])[0]
+                video["embeddable"] = True   # filter_visibles ya lo verificó
+                st["status"], st["video"] = "resuelto", video
+                st.pop("motivo", None)
+                changed = True
+                log(f"✅ resumen {match} en subidas de {video['channel']}: {video['title']!r}")
+                if notify and settings.get("resumen_notificar") and not st.get("silencioso"):
+                    send_summary_push(config, players, video, st)
+                continue
+
+        # 4b) resumen del partido (búsqueda en YouTube, respaldo)
         if st["status"] != "pendiente":
             continue
         when = _due(st["intentos"], base, st.get("ultimo_intento"), offsets, settings, now,
