@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T14:40:21.155185-06:00",
+  "updated_at": "2026-10-15T14:55:18.207354-06:00",
   "cuota": {
     "fecha": "2026-10-15",
     "busquedas": 3,
@@ -106,6 +106,54 @@
         ]
       },
       "motivo": "sin resumen tras los intentos"
+    },
+    "1636295": {
+      "fixture_id": 1636295,
+      "home": "Marseille",
+      "away": "Olympiakos",
+      "league": "Europa League",
+      "score": "Marseille 0-1 Olympiakos",
+      "final_seen_at": "2026-10-15T20:53:36.786190+00:00",
+      "jugadores": {
+        "armando": {
+          "team_key": "olympiacos",
+          "minutes": 23,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
+    },
+    "1636406": {
+      "fixture_id": 1636406,
+      "home": "FC Copenhague",
+      "away": "SC Braga",
+      "league": "Conference League",
+      "score": "FC Copenhague 3-0 SC Braga",
+      "final_seen_at": "2026-10-15T20:53:37.135273+00:00",
+      "jugadores": {
+        "huescas": {
+          "team_key": "copenhague",
+          "minutes": 20,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
