@@ -2,7 +2,13 @@ import json, traceback
 out = {}
 try:
     import hormi_alertas as ha
-    r = ha.api("fixtures", {"id": 1552181})
+    import time
+    r = None
+    for i in range(6):
+        try:
+            r = ha.api("fixtures", {"id": 1552181}); break
+        except Exception:
+            time.sleep(10)
     d = (r or [{}])[0]
     out = {"goals": d.get("goals"), "err": ha.last_api_error,
            "events": [e for e in d.get("events") or [] if (e.get("type") or "").lower() in ("goal", "var")]}
