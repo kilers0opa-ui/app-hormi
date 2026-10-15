@@ -417,7 +417,43 @@ def _liga_tipo(name):
     return "liga"
 
 
-EVENTOS_V = 2   # sube si cambia cómo se arman los Detalles: hormi_ultimo.py recalcula los ya guardados
+EVENTOS_V = 3   # sube si cambia cómo se arman los Detalles: hormi_ultimo.py recalcula los ya guardados
+
+
+def _goles_anulados(data):
+    """ids (posición en data["events"]) de goles que NO cuentan. La API a veces deja en la lista un gol anulado
+    (VAR / fuera de lugar): sin jugador (player null) y/o con un evento "Var" de "Goal cancelled" cerca.
+    Regla: si por equipo hay más goles en la lista que en el marcador, se descartan los sobrantes, primero los
+    cancelados por VAR y luego los que no traen jugador. Un gol con nombre nunca se quita; además se quita
+    siempre el que tenga su VAR de anulación (mismo equipo, ±3 min)."""
+    evs = data.get("events") or []
+    goles = (data.get("goals") or {})
+    teams = data.get("teams") or {}
+    marcador = {((teams.get("home") or {}).get("id")): goles.get("home"),
+                ((teams.get("away") or {}).get("id")): goles.get("away")}
+    var_cancel = [((e.get("team") or {}).get("id"), (e.get("time") or {}).get("elapsed") or 0)
+                  for e in evs if (e.get("type") or "").lower() == "var"
+                  and any(w in (e.get("detail") or "").lower() for w in ("cancel", "disallow", "anulad"))]
+    fuera, por_equipo = set(), {}
+    for i, e in enumerate(evs):
+        if (e.get("type") or "").lower() != "goal" or e.get("detail") == "Missed Penalty":
+            continue
+        tid, minuto = (e.get("team") or {}).get("id"), (e.get("time") or {}).get("elapsed") or 0
+        if any(t == tid and abs(m - minuto) <= 3 for t, m in var_cancel):
+            fuera.add(i)
+            continue
+        por_equipo.setdefault(tid, []).append(i)
+    for tid, idx in por_equipo.items():
+        tope = marcador.get(tid)
+        if tope is None:
+            continue
+        sobran = len(idx) - tope
+        for i in [i for i in idx if not (evs[i].get("player") or {}).get("name")]:
+            if sobran <= 0:
+                break
+            fuera.add(i)
+            sobran -= 1
+    return fuera
 
 
 def _eventos(data, player_id):
@@ -430,7 +466,9 @@ def _eventos(data, player_id):
                    for t in data.get("lineups") or [] for p in t.get("substitutes") or [])
     entro = False
     out = []
-    for e in sorted(data.get("events") or [], key=lambda e: (e["time"]["elapsed"] or 0, e["time"].get("extra") or 0)):
+    anulados = _goles_anulados(data)
+    evs = [e for i, e in enumerate(data.get("events") or []) if i not in anulados]
+    for e in sorted(evs, key=lambda e: (e["time"]["elapsed"] or 0, e["time"].get("extra") or 0)):
         etype, detail = (e.get("type") or "").lower(), e.get("detail") or ""
         pid = (e.get("player") or {}).get("id")
         aid = (e.get("assist") or {}).get("id")
@@ -455,7 +493,9 @@ def _eventos(data, player_id):
 def _goles_texto(data):
     """Goles del partido hasta ahora (ambos equipos), uno por línea: '⚽ El Kaabi 23' (Olympiacos)'."""
     lineas = []
-    for e in sorted(data.get("events") or [], key=lambda e: (e["time"]["elapsed"] or 0, e["time"].get("extra") or 0)):
+    anulados = _goles_anulados(data)
+    evs = [e for i, e in enumerate(data.get("events") or []) if i not in anulados]
+    for e in sorted(evs, key=lambda e: (e["time"]["elapsed"] or 0, e["time"].get("extra") or 0)):
         if (e.get("type") or "").lower() != "goal" or e.get("detail") == "Missed Penalty":
             continue
         extra = " (pen.)" if e.get("detail") == "Penalty" else (" (a.g.)" if e.get("detail") == "Own Goal" else "")
