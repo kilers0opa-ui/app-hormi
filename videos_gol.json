@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-15T15:50:19.834607-06:00",
+  "updated_at": "2026-10-15T15:55:21.397433-06:00",
   "cuota": {
     "fecha": "2026-10-15",
-    "busquedas": 6,
-    "busquedas_resumen": 6
+    "busquedas": 8,
+    "busquedas_resumen": 8
   },
   "goles": {},
   "partidos": {
@@ -121,26 +121,34 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
-      "intentos": 1,
+      "status": "resuelto",
+      "intentos": 2,
       "fallos": 0,
-      "ultimo_intento": "2026-10-15T21:25:24.158357+00:00",
-      "video": null,
-      "noticias_pasadas": 1,
-      "ultima_noticia": "2026-10-15T21:25:24.158357+00:00",
+      "ultimo_intento": "2026-10-15T21:55:18.627192+00:00",
+      "video": {
+        "id": "Hr0A1MYiBl0",
+        "title": "Marsella 0-1 Olympiacos | La HORMIGA y OLYMPIACOS SUMAN valiosos 3 puntos en Europa League | Resumen",
+        "channel": "ESPN MX",
+        "published_at": "2026-10-15T21:43:59Z",
+        "thumbnail": "https://i.ytimg.com/vi/Hr0A1MYiBl0/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=Hr0A1MYiBl0",
+        "embeddable": true
+      },
+      "noticias_pasadas": 2,
+      "ultima_noticia": "2026-10-15T21:55:18.627192+00:00",
       "noticias": {
         "armando": [
           {
-            "title": "'Hormiga' González se pierde un golazo ante Marsella en Europa League",
-            "source": "TUDN",
-            "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQX1JMdXFzTnkzbzdlQndDb0ZRSUNLVEJhUkU3cWg2RW9sa2RtVnVZbW5NM0d4aFFoVWswTHlzVktqWmJzWFRYUmFSVktmNlZRaHlqOEpDUG1OZnRqb1pKa2hWcGdsRDJ6TlFWcmJiSHdOQzBlN1VCVzlFcXhUOVpQLXgwS2FwdXFvbTRvbEQ3OENJQi15dnZEcDBwODFHQ01WWEE4QTRmdHBuUXZLRjZueV9DSFRqaXR1eFRYdFBDRDVFNlptRGZjUg?oc=5",
-            "published_at": "2026-10-15T21:04:55Z"
+            "title": "‘Hormiga’ González y Mateo Chávez juegan como suplentes en Europa League",
+            "source": "ABC Noticias",
+            "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQMVYyNlE5cGhLLXFRQkhodlBrRnI1NVFBWXkyN2RjUkwzcXoyWnNhd3ZULWRBSV9mc2JEdVUyNTVNNk9KZTYxT3JSbGE0UktHUkRhemlRa3UxaXRvMmE0MXpacy1UdjlnWEVrNng3OWJwQXhzaWdLR0JxSVZ3Qy1iSTVWWXFhM0paZ2FpTkM3dzUyTFpmS0xiQVF6bHQ4dkRCU0oxQWdlQW9Hd1JjZ1l4UjA2cHV1b29oUjUycHhlMlB5WW8?oc=5",
+            "published_at": "2026-10-15T21:43:15Z"
           },
           {
-            "title": "¡Reaparece Hormiga González! Olympiacos DERROTA a Marsella y SIGUE PERFECTO en Europa League",
-            "source": "Fox Sports",
-            "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNX0R6X1RHYTJVajYtV1JGYWt3ekg5ZnpGRnlvbzJna2o1RUpPMkZBS1ppclkwVFpjNWxjZEpjNmxxV2R3bThnMjc1Tm1SVWVpMW9JYjJJSFpHQURJOXVCREg5THlyZTFDMUxvWXVzaVo4MDNxYUR4YlpEYTItNlR2dUJhZ3BibVdzQnU0Z3Q3TFM2SUYtNkNBR1pOWFlTYjVoZHp3aWxRbDZvSW1VYUVKY1N2b1lOQlN5Z3AyOXpWLUFlRm5tLWZNZlF6dzQ?oc=5",
-            "published_at": "2026-10-15T21:04:36Z"
+            "title": "Armando Hormiga González destaca en el triunfo del Olympiacos vs Olympique de Marsella en Europa League - esto",
+            "source": "El Sol de México",
+            "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNblNyUDJ5QlhwbThvb2JscGIyWXkxUk1wRTllbm1tV2tDdFpycFpZa3Q0SXFpek9DYW4zQjIySzRpQUg1Zy1VWlItVmIyM3RjeXBTbXRkRjdCdndZbHBpSUNUTGQ2MFBDVUR4UWEzNlY2azlxNjFPZU9fZnRiX21UTUhuMndYd3BzNnlhVFZBRUpHSURiRFNrT2RXM3pkYmw4YlpTTVBsLVNCMm5KNzlYYkxIRDBIYVhsa3BRZ2JocG1XWF9ZWjNRZi1Jb2lDaUMyUGNPenpCOUI5RzFTTEZJZEJkWXRBQUhWYXF2S2J3?oc=5",
+            "published_at": "2026-10-15T21:31:55Z"
           }
         ]
       }
@@ -161,19 +169,19 @@
         }
       },
       "status": "pendiente",
-      "intentos": 1,
+      "intentos": 2,
       "fallos": 0,
-      "ultimo_intento": "2026-10-15T21:25:24.158357+00:00",
+      "ultimo_intento": "2026-10-15T21:55:18.627192+00:00",
       "video": null,
-      "noticias_pasadas": 1,
-      "ultima_noticia": "2026-10-15T21:25:24.158357+00:00",
+      "noticias_pasadas": 2,
+      "ultima_noticia": "2026-10-15T21:55:18.627192+00:00",
       "noticias": {
         "huescas": [
           {
-            "title": "Rodrigo Huescas vuelve a las canchas en partido oficial tras un año",
-            "source": "TUDN",
-            "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxON2FKY1daRDh4SUY5TTctUl9tNGE5ME56dHROaldnRjUyRl9abUYyV1ZoRFdTejBySVBRN2FMb2M3Ul9aV0RpVDFJd3ZhRnZVdFdTY3RQVWtVelJYSU54OEkwdzFGVS03N3NPRlIzdU92aXFwS0Q4NXJ5ZlE3alBkLXYxUDBUOGUyM2MycW9TMWJCWUxjdTZ3OWhHN0l4V0h4bWl2ZnVPd1p1dlp3Mm5lQXNDTENsRFkwZjIzaVk5UDNLM2d1OHlaY1pmLXozUnB0aWY5c3lrVUI2S3lSWmlDM1pKdTU0WFBjRzY1dmdn?oc=5",
-            "published_at": "2026-10-15T21:10:07Z"
+            "title": "Rodrigo Huescas vuelve a jugar con el Copenhague tras un año fuera de las canchas",
+            "source": "Excélsior",
+            "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNUy1UMVhFclk5NHl3Q0l3eHJ2NnI1UzJBWlRBSFc4blhaeUNmWUhGMGl2Q0txVUlBalpxZFM3d29lZmY4SnBuMkFtWExIaGcwalhrbXV2cWxUMzN0akxEajlocGRtTzEweno0Vjg0d0ZjTEoyNHFoaTJCZVVvQkUxaldhcnNaakNjUkg4UzhZNzJ1NE1EYmhRUUdjNzR1aFNpd1JqUWxBb9IBrAFBVV95cUxOS1NDNWdmQnJUNzVIXzZ0MkNDNFQyS2dEcjQ4YTI4amwtWFQ2RDNSZnpXdlBGWlVEYjZOcHVPeEgwanNWUjZDdzdsUkhNMW1iZGJOZUZUR1lUcldFRmk5WGF1WktoRTRXUnM5LVZ6NUJPQjNqSzZnLU1fX3p2UE1uY0RVTlRIRHNSTDNPRlVrVk1VSEdtamhYVHNjdmZtX2d5cVV3cGVrUU9QeDFk?oc=5",
+            "published_at": "2026-10-15T21:22:08Z"
           },
           {
             "title": "¡Rodrigo Huescas está de regreso! El mexicano vuelve a las canchas en el estreno del Copenhague en la Conference",
