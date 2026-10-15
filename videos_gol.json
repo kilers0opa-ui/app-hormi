@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-15T14:35:19.719024-06:00",
+  "updated_at": "2026-10-15T14:40:21.155185-06:00",
   "cuota": {
     "fecha": "2026-10-15",
-    "busquedas": 2,
-    "busquedas_resumen": 2
+    "busquedas": 3,
+    "busquedas_resumen": 3
   },
   "goles": {},
   "partidos": {
@@ -82,29 +82,30 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
-      "intentos": 2,
+      "status": "omitido",
+      "intentos": 3,
       "fallos": 0,
-      "ultimo_intento": "2026-10-15T19:40:23.165168+00:00",
+      "ultimo_intento": "2026-10-15T20:40:20.480852+00:00",
       "video": null,
-      "noticias_pasadas": 2,
-      "ultima_noticia": "2026-10-15T19:40:23.165168+00:00",
+      "noticias_pasadas": 3,
+      "ultima_noticia": "2026-10-15T20:40:20.480852+00:00",
       "noticias": {
         "chavez": [
-          {
-            "title": "Mateo Chávez suma minutos en Europa durante la victoria del AZ Alkmaar sobre Hapoel",
-            "source": "Debate",
-            "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPS0V1UjFUUmtfMUZQckw5SWVGRFNaOHlYOXdGdmx2UnJvVERlUWEyNkdJdmxBQmE1Q2VNTThEcmVZcTNrZVdhazJLQWNhVzNRMkt1aEpfZFlyWDZqeUtveWxHMVk5UkFRd1N2UGVQbXIxejNGQW1na09Xd0wxSGRpVUdTeTVaQTBMSXd2QnFjTlAzNHM3T3Jfa21XOE5vVG1sX2l2WUFZeGhhSS1JbE16Q0NnUDRiUlQ5UjJDU2M1U0VoamR1SlBQb3h2OE1hMjB3T1Bz?oc=5",
-            "published_at": "2026-10-15T19:08:36Z"
-          },
           {
             "title": "AZ Alkmaar consigue su primera victoria en la Europa League; Mateo Chávez suma minutos",
             "source": "Claro Sports",
             "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNRlctcDhQa3NXd0JjQ1M4aXotRVl6WVhCSU9tMm1FcThfQ3NlZkdNSGlTM2JRN2FLWkRudlVuNGFMc3NmVEZfUTFDSmNpdWZ6c2ZzcElYR0t1bjBpeVlWeFdieUpVS0gya1JSVEhTMU1NUVNrbXpmMklqeDlCbTBIckZxSDI2bXc0dUszbTRXbXZFd2pfM2h2WW1jZFlzUU9HZ2VTN3Awa2ltWEVxSUpOLThJVlFIZzRFZE1ya0h2LUltWUJvQXduM2VfOHhsTzJL?oc=5",
             "published_at": "2026-10-15T18:42:33Z"
+          },
+          {
+            "title": "¡Orgullo Chiva! 'Hormiga' González y Mateo Chávez ponen a México en la Europa League",
+            "source": "Radio Fórmula",
+            "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPZW5oX0ZNdGdibG5halUzSWZlUE5CTUhiOEgweXg4M2tLb0d4XzlzRUpBRzNHOUY1ZzBQck9XN3JYVHpkcHI5OURIVGtZdU8xeUNiRzZyMm91dm4yYUJ1cXFsWHBJUFRiYnBZSkFiX3J0SGcwN1hwYnc4cVZWdTQyd01yVUROLU9zSllkdUp5ajNTZlYxVW1MRzlfenVpRlN6Um1sMEM2c0JfSDFQd2Zad1RmLUx2alVtcEVUQ2dicUk1ZUgwSUllNnVIZTFPOFg2cDZ6bmFoUdIB3AFBVV95cUxPUUxTbUxMaExVZWp0RXhUb0NqWDdOOHpSbVFMVEZDblEzOEU5dzU0bk9FSmxYR1hvMkNFRWF3ZEdfdXpTS1pFRl9WUTZmbXFYUkk4bUJlWkRWRDltSnJfTXRJak5xMDVHMXBLeTlIUUJNWUlGcXR1MDFpZkJRa2w2bTdiWkVmZlVpM2FTR2V1OXBXMEo0WC1FajRKb3lEbDJ2ZWZOeEFPcTlYLVhvQU9JbnlJZ19Vc1FvYkZPV0ZXeUowZlg3QVVyeTFLMnVKRlNvTlowcWhJMzFad1ky?oc=5",
+            "published_at": "2026-10-15T18:29:22Z"
           }
         ]
-      }
+      },
+      "motivo": "sin resumen tras los intentos"
     }
   }
 }
