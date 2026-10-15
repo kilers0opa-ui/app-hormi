@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T09:06:57.665709-06:00",
+  "updated_at": "2026-10-15T12:39:19.784783-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -3523,10 +3523,10 @@
             "team_id": 201,
             "team_name": "AZ Alkmaar",
             "team_logo": "https://media.api-sports.io/football/teams/201.png",
-            "played": 1,
+            "played": 2,
             "goals": 0,
             "assists": 0,
-            "minutes": 90
+            "minutes": 104
           },
           {
             "league_id": 10,
@@ -3559,83 +3559,126 @@
           1629004
         ],
         "az_alkmaar": [
-          1552181
+          1552181,
+          1636222
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1552181,
-        "kickoff": "2026-10-10T10:45:00-06:00",
-        "home": "Feyenoord",
-        "away": "AZ Alkmaar",
-        "home_logo": "https://media.api-sports.io/football/teams/209.png",
-        "away_logo": "https://media.api-sports.io/football/teams/201.png",
+        "fixture_id": 1636222,
+        "kickoff": "2026-10-15T10:45:00-06:00",
+        "home": "AZ Alkmaar",
+        "away": "Hapoel Beer Sheva",
+        "home_logo": "https://media.api-sports.io/football/teams/201.png",
+        "away_logo": "https://media.api-sports.io/football/teams/563.png",
         "home_goals": 2,
-        "away_goals": 0,
-        "league": "Eredivisie",
-        "team_key": "az_alkmaar",
-        "team_label": "AZ Alkmaar",
-        "emoji": "🧀",
-        "crest_url": "https://media.api-sports.io/football/teams/201.png",
-        "minutes": 90,
-        "goals": 0,
-        "assists": 0,
-        "league_logo": "https://media.api-sports.io/football/leagues/88.png",
-        "league_tipo": "liga",
+        "away_goals": 1,
+        "league": "Europa League",
+        "league_logo": "https://media.api-sports.io/football/leagues/3.png",
+        "league_tipo": "copa",
         "eventos": [
           {
-            "min": "11'",
+            "min": "39'",
             "tipo": "amarilla",
-            "nombre": "Lewis Schouten",
+            "nombre": "Pedro Miguel Santos Amador",
             "lado": "V",
             "mio": false
           },
           {
-            "min": "13'",
-            "tipo": "gol",
-            "nombre": "Nacho Ferri",
+            "min": "45'",
+            "tipo": "amarilla",
+            "nombre": "Seiya Maikuma",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "23'",
+            "min": "49'",
+            "tipo": "gol",
+            "nombre": "Peer Koopmeiners",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "52'",
             "tipo": "amarilla",
-            "nombre": "Ro Zangelo Daal",
+            "nombre": "Eilel Peretz",
             "lado": "V",
             "mio": false
           },
           {
-            "min": "45+2'",
+            "min": "52'",
             "tipo": "amarilla",
-            "nombre": "Oussama Targhalline",
+            "nombre": "Ayoub Oufkir",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "59'",
+            "min": "55'",
             "tipo": "gol",
-            "nombre": "Javi López",
+            "nombre": "Forson Amankwah",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "76'",
+            "tipo": "amarilla",
+            "nombre": "Djibril diop",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "76'",
+            "tipo": "entra",
+            "nombre": "Mateo Chávez",
+            "lado": "L",
+            "mio": true
+          },
+          {
+            "min": "77'",
+            "tipo": "pen",
+            "nombre": "Mexx Meerdink",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "67'",
+            "min": "78'",
             "tipo": "amarilla",
-            "nombre": "Wouter Goes",
+            "nombre": "Calvin Stengs",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "83'",
+            "tipo": "amarilla",
+            "nombre": "Denso Kasius",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "90+1'",
+            "tipo": "amarilla",
+            "nombre": "Adrián Ugarriza",
             "lado": "V",
             "mio": false
           }
         ],
+        "eventos_v": 4,
+        "team_key": "az_alkmaar",
+        "team_label": "AZ Alkmaar",
+        "emoji": "🧀",
+        "crest_url": "https://media.api-sports.io/football/teams/201.png",
+        "minutes": 14,
+        "goals": 0,
+        "assists": 0,
         "stats": {
-          "rating": 5.8,
-          "tiros": 1,
+          "rating": 6.5,
+          "tiros": 0,
           "tiros_puerta": 0,
-          "pases_pct": 59,
-          "duelos": 13,
-          "duelos_ganados": 9,
+          "pases_pct": 80,
+          "duelos": 1,
+          "duelos_ganados": 1,
           "regates": 1,
           "regates_ok": 1
-        },
-        "eventos_v": 4
+        }
       }
     },
     "obed": {
