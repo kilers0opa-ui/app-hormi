@@ -112,7 +112,37 @@ def display_name(player):
     return re.sub(r'\s*"[^"]*"\s*', " ", player["name"]).strip()
 
 
+def _horarios_manual():
+    """{fixture_id: datetime} de hormi_config.json → "horarios_manual". La API a veces trae fechas provisionales
+    (p. ej. México-Jamaica el 9 nov 15:00 cuando el oficial es el 14 nov 19:00). Esto corrige la hora en TODO el
+    sistema (calendario, avisos, vigilancia del motor), porque se aplica a cada respuesta de /fixtures."""
+    try:
+        raw = json.loads(CONFIG_FILE.read_text(encoding="utf-8")).get("horarios_manual") or {}
+        return {int(k): datetime.fromisoformat(v) for k, v in raw.items() if not str(k).startswith("_")}
+    except Exception:
+        return {}
+
+
+def _aplicar_horarios(endpoint, resp):
+    if not resp or not endpoint.startswith("/fixtures") or not isinstance(resp, list):
+        return resp
+    manual = _horarios_manual()
+    if not manual:
+        return resp
+    for f in resp:
+        fx = f.get("fixture") if isinstance(f, dict) else None
+        if fx and fx.get("id") in manual:
+            ko = manual[fx["id"]]
+            fx["timestamp"] = int(ko.timestamp())
+            fx["date"] = ko.isoformat()
+    return resp
+
+
 def api(endpoint, params, use_cache=False):
+    return _aplicar_horarios(endpoint, _api(endpoint, params, use_cache))
+
+
+def _api(endpoint, params, use_cache=False):
     """GET a API-Football. Misma caché que la Fase 1 (mismos nombres)."""
     global _last_request_at, last_api_error
     last_api_error = None
@@ -1852,7 +1882,10 @@ def calendario_seleccion(prev, config):
             ts = datetime.now(LOCAL_TZ)
     sel = (load_json(CONVOCATORIA_FILE, {}) or {}).get("seleccion") or {}
     out = []
+    manual = _horarios_manual()
     for m in partidos:
+        if m.get("fixture_id") in manual:
+            m = {**m, "kickoff": manual[m["fixture_id"]].astimezone(LOCAL_TZ).isoformat()}
         ko = _parse(m.get("kickoff"))
         if ko and ko < datetime.now(LOCAL_TZ) - timedelta(hours=3):
             continue   # ya pasó
