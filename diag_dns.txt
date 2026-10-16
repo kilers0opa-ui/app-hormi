@@ -1,0 +1,38 @@
+== getent
+2606:4700:10::ac42:a4f5 v3.football.api-sports.io
+2606:4700:10::6814:2724 v3.football.api-sports.io
+== dig sistema
+104.20.39.36
+172.66.164.245
+== dig 8.8.8.8
+104.20.39.36
+172.66.164.245
+== dig 1.1.1.1
+172.66.164.245
+104.20.39.36
+== curl status
+{"get":"status","parameters":[],"errors":[],"results":0,"paging":{"current":1,"total":1},"response":{"account":{"firstname":"Aldo","lastname":"L\u00f3pez","email":"kilers0opa@gmail.com"},"subscription":{"plan":"Pro","end":"2026-11-02T06:13:03+00:00","active":true},"requests":{"current":940,"limit_day":7500}}}
+== resolv.conf
+# This is /run/systemd/resolve/stub-resolv.conf managed by man:systemd-resolved(8).
+# Do not edit.
+#
+# This file might be symlinked as /etc/resolv.conf. If you're looking at
+# /etc/resolv.conf and seeing this text, you have followed the symlink.
+#
+# This is a dynamic resolv.conf file for connecting local clients to the
+# internal DNS stub resolver of systemd-resolved. This file lists all
+# configured search domains.
+#
+# Run "resolvectl status" to see details about the uplink DNS servers
+# currently in use.
+#
+# Third party programs should typically not access this file directly, but only
+# through the symlink at /etc/resolv.conf. To manage man:resolv.conf(5) in a
+# different way, replace this symlink by a static file or a different symlink.
+#
+# See man:systemd-resolved.service(8) for details about the supported modes of
+# operation for /etc/resolv.conf.
+
+nameserver 127.0.0.53
+options edns0 trust-ad
+search ig43cqcci1gejdzkoztyar2hqf.gx.internal.cloudapp.net
