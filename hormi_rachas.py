@@ -62,7 +62,7 @@ def stats_partido(fid, team_id, cache):
     k = f"{fid}:{team_id}"
     if k in cache:
         return cache[k]
-    res = ha.api("fixtures/players", {"fixture": fid, "team": team_id})
+    res = ha.api("/fixtures/players", {"fixture": fid, "team": team_id})
     if res is None:
         return None   # error de la API: se reintenta en la siguiente corrida
     out = {}
@@ -148,7 +148,7 @@ def main():
         if t:
             tid = t["team_id"]
             if tid not in por_equipo:
-                fx = ha.api("fixtures", {"team": tid, "last": ULTIMOS}) or []
+                fx = ha.api("/fixtures", {"team": tid, "last": ULTIMOS}) or []
                 por_equipo[tid] = sorted([f for f in fx if (f.get("fixture") or {}).get("status", {}).get("short") in TERMINADOS],
                                          key=lambda f: f["fixture"]["timestamp"], reverse=True)
             partidos = []
