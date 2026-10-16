@@ -43,7 +43,10 @@ RACHAS = [
     ("titular", "Partidos seguidos de titular"),
     ("jugando", "Partidos seguidos jugando"),
 ]
-EN_RACHA = {"gol": 2, "ga": 2, "titular": 5, "jugando": 5}   # desde cuánto se pinta "EN RACHA" en la app
+# Defensas: en vez de "con gol", partidos seguidos sin recibir gol jugando al menos 60' (portería en cero).
+RACHA_DEFENSA = ("cero", "Partidos seguidos sin recibir gol")
+MIN_CERO = 60
+EN_RACHA = {"gol": 2, "ga": 2, "cero": 2, "titular": 5, "jugando": 5}   # desde cuánto se pinta "EN RACHA" en la app
 
 
 def log(msg):
@@ -90,6 +93,7 @@ def racha(partidos, cond):
 def conds():
     return {
         "gol": lambda p: p["goles"] > 0,
+        "cero": lambda p: p["min"] >= MIN_CERO and p.get("recibidos") == 0,
         "ga": lambda p: p["goles"] + p["asist"] > 0,
         "titular": lambda p: p["titular"] and p["min"] > 0,
         "jugando": lambda p: p["min"] > 0,
@@ -156,11 +160,16 @@ def main():
                 sp = stats_partido(f["fixture"]["id"], tid, cache)
                 if sp is None:
                     break   # sin datos de ese partido: no inventamos rachas, se completa en la siguiente corrida
-                partidos.append(sp.get(pid) or {"min": 0, "titular": False, "goles": 0, "asist": 0})
+                fila = dict(sp.get(pid) or {"min": 0, "titular": False, "goles": 0, "asist": 0})
+                local = ((f.get("teams") or {}).get("home") or {}).get("id") == tid
+                gl = f.get("goals") or {}
+                fila["recibidos"] = gl.get("away" if local else "home")
+                partidos.append(fila)
             entry["club"] = t.get("label")
             entry["partidos_revisados"] = len(partidos)
             c = conds()
-            for rid, titulo in RACHAS:
+            lista = RACHAS if player.get("posicion") != "defensa" else [RACHA_DEFENSA] + RACHAS[1:]
+            for rid, titulo in lista:
                 actual = racha(partidos, c[rid])
                 entry["rachas"].append({"id": rid, "titulo": titulo, "actual": actual,
                                         "en_racha": actual >= EN_RACHA[rid],
@@ -173,6 +182,9 @@ def main():
             if ahora_r.get("gol", 0) >= 3 and ahora_r["gol"] > antes_r.get("gol", 0):
                 avisos.append((key, t, f"🔥 {nombre} lleva {ahora_r['gol']} partidos seguidos anotando",
                                f"Racha goleadora con {t.get('label') if t else 'su club'}"))
+            elif ahora_r.get("cero", 0) >= 3 and ahora_r["cero"] > antes_r.get("cero", ahora_r["cero"]):
+                avisos.append((key, t, f"🧱 {nombre}: {ahora_r['cero']} partidos seguidos sin recibir gol",
+                               f"Muralla con {t.get('label') if t else 'su club'}"))
             elif ahora_r.get("ga", 0) >= 3 and ahora_r["ga"] > antes_r.get("ga", 0):
                 avisos.append((key, t, f"🔥 {nombre}: {ahora_r['ga']} partidos seguidos con gol o asistencia",
                                f"En racha con {t.get('label') if t else 'su club'}"))
