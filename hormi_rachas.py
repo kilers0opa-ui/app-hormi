@@ -81,6 +81,21 @@ def stats_partido(fid, team_id, cache):
     return out
 
 
+def titulares(fids, team_id, cache):
+    """Ids de los 11 titulares de ese equipo en cada partido, de la alineación (startXI). El campo
+    'substitute' de /fixtures/players NO es confiable (marcó titular a Armando cuando entró de cambio en
+    Marsella). /fixtures?ids=… trae hasta 20 partidos completos (con alineaciones) en 1 petición."""
+    faltan = [f for f in fids if f"xi:{f}:{team_id}" not in cache]
+    for i in range(0, len(faltan), 20):
+        res = ha.api("/fixtures", {"ids": "-".join(str(f) for f in faltan[i:i + 20])})
+        for fx in res or []:
+            fid = (fx.get("fixture") or {}).get("id")
+            for lu in fx.get("lineups") or []:
+                if (lu.get("team") or {}).get("id") == team_id and lu.get("startXI"):
+                    cache[f"xi:{fid}:{team_id}"] = [str((x.get("player") or {}).get("id")) for x in lu["startXI"]]
+    return {f: cache.get(f"xi:{f}:{team_id}") for f in fids}
+
+
 def racha(partidos, cond):
     n = 0
     for p in partidos:
@@ -156,11 +171,15 @@ def main():
                 por_equipo[tid] = sorted([f for f in fx if (f.get("fixture") or {}).get("status", {}).get("short") in TERMINADOS],
                                          key=lambda f: f["fixture"]["timestamp"], reverse=True)
             partidos = []
+            xi = titulares([f["fixture"]["id"] for f in por_equipo[tid]], tid, cache)
             for f in por_equipo[tid]:
                 sp = stats_partido(f["fixture"]["id"], tid, cache)
                 if sp is None:
                     break   # sin datos de ese partido: no inventamos rachas, se completa en la siguiente corrida
                 fila = dict(sp.get(pid) or {"min": 0, "titular": False, "goles": 0, "asist": 0})
+                once = xi.get(f["fixture"]["id"])
+                if once is not None:
+                    fila["titular"] = pid in once   # la alineación manda; si no hay alineación se queda lo de la API
                 local = ((f.get("teams") or {}).get("home") or {}).get("id") == tid
                 gl = f.get("goals") or {}
                 fila["recibidos"] = gl.get("away" if local else "home")
