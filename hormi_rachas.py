@@ -200,7 +200,8 @@ def main():
         fcm = ha.FcmSender(config.get("fcm_project_id"))
         for key, t, title, body in avisos:
             try:
-                fcm.send("racha", title, body, key, (t or {}).get("key"))
+                fcm.send("racha", title, body, key, (t or {}).get("key"),
+                         extra={"tab": "hitos" if title.startswith("🏅") else "rachas"})   # la app abre esa pestaña
             except Exception as err:
                 log(f"⚠️  no se pudo mandar el aviso de racha ({key}): {err}")
 
