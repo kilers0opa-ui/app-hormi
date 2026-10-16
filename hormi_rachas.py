@@ -1,0 +1,209 @@
+#!/usr/bin/env python3
+"""
+Rachas e hitos de cada jugador → rachas.json (lo lee la app en Estadísticas).
+
+Rachas (con su club, últimos partidos oficiales):
+  - gol: partidos seguidos anotando
+  - ga: partidos seguidos con gol o asistencia
+  - titular: partidos seguidos de titular
+  - jugando: partidos seguidos con minutos
+  Se cuentan del partido más reciente hacia atrás. "puntos" = los últimos 8 (el primero es el más reciente).
+
+Hitos (toda su carrera, de player_stats.json):
+  - goles y partidos con clubes, goles y partidos con la Selección.
+  Muestra cuánto le falta para la siguiente meta (1, 5, 10, 15, 20, 25, 30, 40, 50, ...).
+
+Avisos (tipo "racha"):
+  - Racha de gol o de gol/asistencia que llega a 3 o más (y cada vez que crece).
+  - Racha de titular o jugando al llegar a 10, 20, 30...
+  - Hito cumplido: "🏅 Armando González llegó a 40 goles con clubes".
+  La primera corrida (sin rachas.json previo) no avisa nada: solo arma el estado.
+
+Peticiones: 1 por equipo (/fixtures?team&last=N) + 1 por partido terminado nuevo (/fixtures/players,
+se guarda en rachas_cache.json y no se vuelve a pedir).
+"""
+import argparse
+import json
+from datetime import datetime
+from pathlib import Path
+
+import hormi_alertas as ha
+
+OUT = Path("rachas.json")
+CACHE = Path("rachas_cache.json")
+ULTIMOS = 20          # partidos del club que se revisan
+PUNTOS = 8            # puntos que se muestran en la app
+TERMINADOS = {"FT", "AET", "PEN"}
+SELECCION_IDS = {16}
+METAS_GOLES = [1, 5, 10, 15, 20, 25, 30, 40, 50, 60, 75, 100, 125, 150, 175, 200, 250, 300, 400, 500]
+METAS_PARTIDOS = [1, 10, 25, 50, 75, 100, 150, 200, 250, 300, 350, 400, 500, 600, 700, 800]
+RACHAS = [
+    ("gol", "Partidos seguidos con gol"),
+    ("ga", "Partidos seguidos con gol o asistencia"),
+    ("titular", "Partidos seguidos de titular"),
+    ("jugando", "Partidos seguidos jugando"),
+]
+EN_RACHA = {"gol": 2, "ga": 2, "titular": 5, "jugando": 5}   # desde cuánto se pinta "EN RACHA" en la app
+
+
+def log(msg):
+    ha.log(msg)
+
+
+def club_target(player):
+    for t in player.get("targets") or []:
+        if t.get("kind") != "seleccion" and t.get("team_id"):
+            return t
+    return None
+
+
+def stats_partido(fid, team_id, cache):
+    """{player_id: {min, titular, goles, asist}} de ese equipo en ese partido (con caché)."""
+    k = f"{fid}:{team_id}"
+    if k in cache:
+        return cache[k]
+    res = ha.api("fixtures/players", {"fixture": fid, "team": team_id})
+    if res is None:
+        return None   # error de la API: se reintenta en la siguiente corrida
+    out = {}
+    for t in res:
+        for p in t.get("players") or []:
+            pid = (p.get("player") or {}).get("id")
+            st = (p.get("statistics") or [{}])[0]
+            g = st.get("games") or {}
+            gl = st.get("goals") or {}
+            out[str(pid)] = {"min": g.get("minutes") or 0, "titular": g.get("substitute") is False,
+                             "goles": gl.get("total") or 0, "asist": gl.get("assists") or 0}
+    cache[k] = out
+    return out
+
+
+def racha(partidos, cond):
+    n = 0
+    for p in partidos:
+        if not cond(p):
+            break
+        n += 1
+    return n
+
+
+def conds():
+    return {
+        "gol": lambda p: p["goles"] > 0,
+        "ga": lambda p: p["goles"] + p["asist"] > 0,
+        "titular": lambda p: p["titular"] and p["min"] > 0,
+        "jugando": lambda p: p["min"] > 0,
+    }
+
+
+def hitos(seasons):
+    tot = {"goles_club": 0, "partidos_club": 0, "goles_sel": 0, "partidos_sel": 0}
+    for rows in (seasons or {}).values():
+        for r in rows:
+            sel = r.get("team_id") in SELECCION_IDS or (r.get("team_name") or "").lower() in ("mexico", "méxico")
+            tot["goles_sel" if sel else "goles_club"] += r.get("goals") or 0
+            tot["partidos_sel" if sel else "partidos_club"] += r.get("played") or 0
+    defs = [("goles_club", "Goles con clubes", METAS_GOLES, "gol", "goles"),
+            ("partidos_club", "Partidos con clubes", METAS_PARTIDOS, "partido", "partidos"),
+            ("goles_sel", "Goles con la Selección", METAS_GOLES, "gol", "goles"),
+            ("partidos_sel", "Partidos con la Selección", METAS_PARTIDOS, "partido", "partidos")]
+    out = []
+    for hid, titulo, metas, uno, varios in defs:
+        v = tot[hid]
+        if hid.endswith("_sel") and tot["partidos_sel"] == 0:
+            continue
+        meta = next((m for m in metas if m > v), None)
+        previo = max([m for m in metas if m <= v], default=0)
+        falta = (meta - v) if meta else 0
+        out.append({"id": hid, "titulo": titulo, "valor": v, "meta": meta, "previo": previo,
+                    "texto": (f"A {falta} {uno if falta == 1 else varios} de {meta}" if meta else "")})
+    return out
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--sin-avisos", action="store_true", help="no manda push (pruebas)")
+    args = ap.parse_args()
+
+    config = ha.load_json(ha.CONFIG_FILE, {})
+    archivados = set(config.get("archivados") or [])
+    stats = ha.load_json(Path("player_stats.json"), {}).get("players") or {}
+    prev = ha.load_json(OUT, None)
+    primera = prev is None
+    prev_players = (prev or {}).get("players") or {}
+    cache = ha.load_json(CACHE, {})
+    por_equipo = {}
+    avisos = []
+    out = {"updated_at": datetime.now(ha.LOCAL_TZ).isoformat(), "players": {}}
+
+    for player in config.get("players") or []:
+        key = player["key"]
+        if key in archivados:
+            continue
+        nombre = ha.display_name(player)
+        pid = str(player.get("player_id"))
+        entry = {"rachas": [], "hitos": hitos((stats.get(key) or {}).get("seasons")),
+                 "logros": list((prev_players.get(key) or {}).get("logros") or [])}
+        t = club_target(player)
+        if t:
+            tid = t["team_id"]
+            if tid not in por_equipo:
+                fx = ha.api("fixtures", {"team": tid, "last": ULTIMOS}) or []
+                por_equipo[tid] = sorted([f for f in fx if (f.get("fixture") or {}).get("status", {}).get("short") in TERMINADOS],
+                                         key=lambda f: f["fixture"]["timestamp"], reverse=True)
+            partidos = []
+            for f in por_equipo[tid]:
+                sp = stats_partido(f["fixture"]["id"], tid, cache)
+                if sp is None:
+                    break   # sin datos de ese partido: no inventamos rachas, se completa en la siguiente corrida
+                partidos.append(sp.get(pid) or {"min": 0, "titular": False, "goles": 0, "asist": 0})
+            entry["club"] = t.get("label")
+            entry["partidos_revisados"] = len(partidos)
+            c = conds()
+            for rid, titulo in RACHAS:
+                actual = racha(partidos, c[rid])
+                entry["rachas"].append({"id": rid, "titulo": titulo, "actual": actual,
+                                        "en_racha": actual >= EN_RACHA[rid],
+                                        "puntos": [c[rid](p) for p in partidos[:PUNTOS]]})
+
+        # ── avisos (comparando con la corrida anterior)
+        if not primera:
+            antes_r = {r["id"]: r["actual"] for r in (prev_players.get(key) or {}).get("rachas") or []}
+            ahora_r = {r["id"]: r["actual"] for r in entry["rachas"]}
+            if ahora_r.get("gol", 0) >= 3 and ahora_r["gol"] > antes_r.get("gol", 0):
+                avisos.append((key, t, f"🔥 {nombre} lleva {ahora_r['gol']} partidos seguidos anotando",
+                               f"Racha goleadora con {t.get('label') if t else 'su club'}"))
+            elif ahora_r.get("ga", 0) >= 3 and ahora_r["ga"] > antes_r.get("ga", 0):
+                avisos.append((key, t, f"🔥 {nombre}: {ahora_r['ga']} partidos seguidos con gol o asistencia",
+                               f"En racha con {t.get('label') if t else 'su club'}"))
+            for rid, txt in (("titular", "de titular"), ("jugando", "jugando")):
+                n = ahora_r.get(rid, 0)
+                if n >= 10 and n % 10 == 0 and n > antes_r.get(rid, 0):
+                    avisos.append((key, t, f"💪 {nombre} lleva {n} partidos seguidos {txt}", t.get("label") if t else ""))
+            antes_h = {h["id"]: h["valor"] for h in (prev_players.get(key) or {}).get("hitos") or []}
+            for h in entry["hitos"]:
+                if h["previo"] > 0 and antes_h.get(h["id"], h["valor"]) < h["previo"] <= h["valor"]:
+                    unidad = "goles" if h["id"].startswith("goles") else "partidos"
+                    donde = "con la Selección" if h["id"].endswith("_sel") else "con clubes"
+                    txt = f"{h['previo']} {unidad} {donde}" if h["previo"] > 1 else f"su primer {'gol' if unidad == 'goles' else 'partido'} {donde}"
+                    avisos.append((key, t, f"🏅 {nombre} llegó a {txt}", "Nuevo hito en su carrera"))
+                    entry["logros"].insert(0, {"texto": txt[0].upper() + txt[1:], "fecha": datetime.now(ha.LOCAL_TZ).date().isoformat()})
+            entry["logros"] = entry["logros"][:5]
+        out["players"][key] = entry
+
+    ha.save_json(OUT, out)
+    ha.save_json(CACHE, cache)
+    log(f"rachas.json: {len(out['players'])} jugadores · {len(cache)} partidos en caché · {len(avisos)} aviso(s)"
+        + (" · primera corrida, sin avisos" if primera else ""))
+
+    if avisos and not args.sin_avisos:
+        fcm = ha.FcmSender(config.get("fcm_project_id"))
+        for key, t, title, body in avisos:
+            try:
+                fcm.send("racha", title, body, key, (t or {}).get("key"))
+            except Exception as err:
+                log(f"⚠️  no se pudo mandar el aviso de racha ({key}): {err}")
+
+
+if __name__ == "__main__":
+    main()
