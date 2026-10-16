@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T13:42:23.428279-06:00",
+  "updated_at": "2026-10-16T14:31:46.530207-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -424,16 +424,16 @@
     "vasquez": {
       "rachas": [
         {
-          "id": "gol",
-          "titulo": "Partidos seguidos con gol",
+          "id": "cero",
+          "titulo": "Partidos seguidos sin recibir gol",
           "actual": 0,
           "en_racha": false,
           "puntos": [
             false,
             false,
             false,
-            true,
-            true,
+            false,
+            false,
             false,
             false,
             false
@@ -634,19 +634,19 @@
     "chavez": {
       "rachas": [
         {
-          "id": "gol",
-          "titulo": "Partidos seguidos con gol",
+          "id": "cero",
+          "titulo": "Partidos seguidos sin recibir gol",
           "actual": 0,
           "en_racha": false,
           "puntos": [
             false,
             false,
-            false,
-            false,
-            false,
-            false,
             true,
-            false
+            false,
+            false,
+            false,
+            false,
+            true
           ]
         },
         {
@@ -949,8 +949,8 @@
     "huescas": {
       "rachas": [
         {
-          "id": "gol",
-          "titulo": "Partidos seguidos con gol",
+          "id": "cero",
+          "titulo": "Partidos seguidos sin recibir gol",
           "actual": 0,
           "en_racha": false,
           "puntos": [
@@ -1054,8 +1054,8 @@
     "montes": {
       "rachas": [
         {
-          "id": "gol",
-          "titulo": "Partidos seguidos con gol",
+          "id": "cero",
+          "titulo": "Partidos seguidos sin recibir gol",
           "actual": 0,
           "en_racha": false,
           "puntos": [
@@ -1369,8 +1369,8 @@
     "campillo": {
       "rachas": [
         {
-          "id": "gol",
-          "titulo": "Partidos seguidos con gol",
+          "id": "cero",
+          "titulo": "Partidos seguidos sin recibir gol",
           "actual": 0,
           "en_racha": false,
           "puntos": [
@@ -1378,8 +1378,8 @@
             false,
             false,
             false,
-            false,
-            false,
+            true,
+            true,
             false,
             false
           ]
