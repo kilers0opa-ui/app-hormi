@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T14:53:38.507616-06:00",
+  "updated_at": "2026-10-16T03:25:26.249097-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -145,18 +145,6 @@
             "minutes": 164
           },
           {
-            "league_id": 3,
-            "league_name": "UEFA Europa League",
-            "league_logo": "https://media.api-sports.io/football/leagues/3.png",
-            "team_id": 553,
-            "team_name": "Olympiakos Piraeus",
-            "team_logo": "https://media.api-sports.io/football/teams/553.png",
-            "played": 2,
-            "goals": 1,
-            "assists": 0,
-            "minutes": 85
-          },
-          {
             "league_id": 10,
             "league_name": "Friendlies",
             "league_logo": "https://media.api-sports.io/football/leagues/10.png",
@@ -191,6 +179,18 @@
             "goals": 0,
             "assists": 0,
             "minutes": 148
+          },
+          {
+            "league_id": 3,
+            "league_name": "UEFA Europa League",
+            "league_logo": "https://media.api-sports.io/football/leagues/3.png",
+            "team_id": 553,
+            "team_name": "Olympiakos Piraeus",
+            "team_logo": "https://media.api-sports.io/football/teams/553.png",
+            "played": 2,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 85
           },
           {
             "league_id": 199,
@@ -2520,18 +2520,6 @@
             "minutes": 202
           },
           {
-            "league_id": 307,
-            "league_name": "Pro League",
-            "league_logo": "https://media.api-sports.io/football/leagues/307.png",
-            "team_id": 2933,
-            "team_name": "Al-Qadisiyah FC",
-            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
-            "played": 8,
-            "goals": 4,
-            "assists": 3,
-            "minutes": 720
-          },
-          {
             "league_id": 17,
             "league_name": "AFC Champions League Elite",
             "league_logo": "https://media.api-sports.io/football/leagues/17.png",
@@ -2542,6 +2530,18 @@
             "goals": 1,
             "assists": 0,
             "minutes": 174
+          },
+          {
+            "league_id": 307,
+            "league_name": "Pro League",
+            "league_logo": "https://media.api-sports.io/football/leagues/307.png",
+            "team_id": 2933,
+            "team_name": "Al-Qadisiyah FC",
+            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
+            "played": 8,
+            "goals": 4,
+            "assists": 3,
+            "minutes": 720
           },
           {
             "league_id": 826,
@@ -3519,18 +3519,6 @@
             "minutes": 78
           },
           {
-            "league_id": 3,
-            "league_name": "UEFA Europa League",
-            "league_logo": "https://media.api-sports.io/football/leagues/3.png",
-            "team_id": 201,
-            "team_name": "AZ Alkmaar",
-            "team_logo": "https://media.api-sports.io/football/teams/201.png",
-            "played": 2,
-            "goals": 0,
-            "assists": 0,
-            "minutes": 104
-          },
-          {
             "league_id": 10,
             "league_name": "Friendlies",
             "league_logo": "https://media.api-sports.io/football/leagues/10.png",
@@ -3553,6 +3541,18 @@
             "goals": 1,
             "assists": 3,
             "minutes": 651
+          },
+          {
+            "league_id": 3,
+            "league_name": "UEFA Europa League",
+            "league_logo": "https://media.api-sports.io/football/leagues/3.png",
+            "team_id": 201,
+            "team_name": "AZ Alkmaar",
+            "team_logo": "https://media.api-sports.io/football/teams/201.png",
+            "played": 2,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 104
           }
         ]
       },
@@ -4838,6 +4838,18 @@
         ],
         "2026": [
           {
+            "league_id": 848,
+            "league_name": "UEFA Europa Conference League",
+            "league_logo": "https://media.api-sports.io/football/leagues/848.png",
+            "team_id": 400,
+            "team_name": "FC Copenhagen",
+            "team_logo": "https://media.api-sports.io/football/teams/400.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 20
+          },
+          {
             "league_id": 119,
             "league_name": "Superliga",
             "league_logo": "https://media.api-sports.io/football/leagues/119.png",
@@ -4849,16 +4861,6 @@
             "assists": 0,
             "minutes": 90,
             "estimated": true
-          },
-          {
-            "league_id": 848,
-            "league_name": "UEFA Europa Conference League",
-            "team_id": 400,
-            "team_name": "FC Copenhague",
-            "played": 1,
-            "goals": 0,
-            "assists": 0,
-            "minutes": 20
           }
         ]
       },
