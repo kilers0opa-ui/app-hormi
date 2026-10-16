@@ -1,0 +1,1685 @@
+{
+  "updated_at": "2026-10-16T09:47:09.835260-06:00",
+  "players": {
+    "armando": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 33,
+          "meta": 40,
+          "previo": 30,
+          "texto": "A 7 goles de 40"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 94,
+          "meta": 100,
+          "previo": 75,
+          "texto": "A 6 partidos de 100"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 1,
+          "meta": 5,
+          "previo": 1,
+          "texto": "A 4 goles de 5"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 11,
+          "meta": 25,
+          "previo": 10,
+          "texto": "A 14 partidos de 25"
+        }
+      ],
+      "logros": [],
+      "club": "Olympiacos",
+      "partidos_revisados": 20
+    },
+    "raul": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            true,
+            false,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 160,
+          "meta": 175,
+          "previo": 150,
+          "texto": "A 15 goles de 175"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 551,
+          "meta": 600,
+          "previo": 500,
+          "texto": "A 49 partidos de 600"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 45,
+          "meta": 50,
+          "previo": 40,
+          "texto": "A 5 goles de 50"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 125,
+          "meta": 150,
+          "previo": 100,
+          "texto": "A 25 partidos de 150"
+        }
+      ],
+      "logros": [],
+      "club": "Wolves",
+      "partidos_revisados": 19
+    },
+    "quinones": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 160,
+          "meta": 175,
+          "previo": 150,
+          "texto": "A 15 goles de 175"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 346,
+          "meta": 350,
+          "previo": 300,
+          "texto": "A 4 partidos de 350"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 5,
+          "meta": 10,
+          "previo": 5,
+          "texto": "A 5 goles de 10"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 27,
+          "meta": 50,
+          "previo": 25,
+          "texto": "A 23 partidos de 50"
+        }
+      ],
+      "logros": [],
+      "club": "Al-Qadsiah",
+      "partidos_revisados": 20
+    },
+    "mora": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 18,
+          "meta": 20,
+          "previo": 15,
+          "texto": "A 2 goles de 20"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 66,
+          "meta": 75,
+          "previo": 50,
+          "texto": "A 9 partidos de 75"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 1,
+          "meta": 5,
+          "previo": 1,
+          "texto": "A 4 goles de 5"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 13,
+          "meta": 25,
+          "previo": 10,
+          "texto": "A 12 partidos de 25"
+        }
+      ],
+      "logros": [],
+      "club": "Tijuana",
+      "partidos_revisados": 20
+    },
+    "vasquez": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 16,
+          "meta": 20,
+          "previo": 15,
+          "texto": "A 4 goles de 20"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 302,
+          "meta": 350,
+          "previo": 300,
+          "texto": "A 48 partidos de 350"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 2,
+          "meta": 5,
+          "previo": 1,
+          "texto": "A 3 goles de 5"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 51,
+          "meta": 75,
+          "previo": 50,
+          "texto": "A 24 partidos de 75"
+        }
+      ],
+      "logros": [],
+      "club": "Genoa",
+      "partidos_revisados": 20
+    },
+    "gimenez": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 95,
+          "meta": 100,
+          "previo": 75,
+          "texto": "A 5 goles de 100"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 252,
+          "meta": 300,
+          "previo": 250,
+          "texto": "A 48 partidos de 300"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 4,
+          "meta": 5,
+          "previo": 1,
+          "texto": "A 1 gol de 5"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 49,
+          "meta": 50,
+          "previo": 25,
+          "texto": "A 1 partido de 50"
+        }
+      ],
+      "logros": [],
+      "club": "Porto",
+      "partidos_revisados": 20
+    },
+    "chavez": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 11,
+          "en_racha": true,
+          "puntos": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 11,
+          "en_racha": true,
+          "puntos": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 4,
+          "meta": 5,
+          "previo": 1,
+          "texto": "A 1 gol de 5"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 128,
+          "meta": 150,
+          "previo": 100,
+          "texto": "A 22 partidos de 150"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 1,
+          "meta": 5,
+          "previo": 1,
+          "texto": "A 4 goles de 5"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 14,
+          "meta": 25,
+          "previo": 10,
+          "texto": "A 11 partidos de 25"
+        }
+      ],
+      "logros": [],
+      "club": "AZ Alkmaar",
+      "partidos_revisados": 19
+    },
+    "obed": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 8,
+          "meta": 10,
+          "previo": 5,
+          "texto": "A 2 goles de 10"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 181,
+          "meta": 200,
+          "previo": 150,
+          "texto": "A 19 partidos de 200"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 0,
+          "meta": 1,
+          "previo": 0,
+          "texto": "A 1 gol de 1"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 13,
+          "meta": 25,
+          "previo": 10,
+          "texto": "A 12 partidos de 25"
+        }
+      ],
+      "logros": [],
+      "club": "Atlético Madrid",
+      "partidos_revisados": 20
+    },
+    "fidalgo": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            true,
+            false,
+            true,
+            true,
+            false
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 37,
+          "meta": 40,
+          "previo": 30,
+          "texto": "A 3 goles de 40"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 384,
+          "meta": 400,
+          "previo": 350,
+          "texto": "A 16 partidos de 400"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 1,
+          "meta": 5,
+          "previo": 1,
+          "texto": "A 4 goles de 5"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 11,
+          "meta": 25,
+          "previo": 10,
+          "texto": "A 14 partidos de 25"
+        }
+      ],
+      "logros": [],
+      "club": "Real Betis",
+      "partidos_revisados": 19
+    },
+    "huescas": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 10,
+          "meta": 15,
+          "previo": 10,
+          "texto": "A 5 goles de 15"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 153,
+          "meta": 200,
+          "previo": 150,
+          "texto": "A 47 partidos de 200"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 0,
+          "meta": 1,
+          "previo": 0,
+          "texto": "A 1 gol de 1"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 5,
+          "meta": 10,
+          "previo": 1,
+          "texto": "A 5 partidos de 10"
+        }
+      ],
+      "logros": [],
+      "club": "FC Copenhague",
+      "partidos_revisados": 20
+    },
+    "montes": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 24,
+          "meta": 25,
+          "previo": 20,
+          "texto": "A 1 gol de 25"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 376,
+          "meta": 400,
+          "previo": 350,
+          "texto": "A 24 partidos de 400"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 4,
+          "meta": 5,
+          "previo": 1,
+          "texto": "A 1 gol de 5"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 72,
+          "meta": 75,
+          "previo": 50,
+          "texto": "A 3 partidos de 75"
+        }
+      ],
+      "logros": [],
+      "club": "Lokomotiv Moscú",
+      "partidos_revisados": 20
+    },
+    "luis_chavez": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 26,
+          "meta": 30,
+          "previo": 25,
+          "texto": "A 4 goles de 30"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 305,
+          "meta": 350,
+          "previo": 300,
+          "texto": "A 45 partidos de 350"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 5,
+          "meta": 10,
+          "previo": 5,
+          "texto": "A 5 goles de 10"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 48,
+          "meta": 50,
+          "previo": 25,
+          "texto": "A 2 partidos de 50"
+        }
+      ],
+      "logros": [],
+      "club": "Dinamo Moscú",
+      "partidos_revisados": 18
+    },
+    "fimbres": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 8,
+          "meta": 10,
+          "previo": 5,
+          "texto": "A 2 goles de 10"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 91,
+          "meta": 100,
+          "previo": 75,
+          "texto": "A 9 partidos de 100"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 0,
+          "meta": 1,
+          "previo": 0,
+          "texto": "A 1 gol de 1"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 1,
+          "meta": 10,
+          "previo": 1,
+          "texto": "A 9 partidos de 10"
+        }
+      ],
+      "logros": [],
+      "club": "Monterrey",
+      "partidos_revisados": 20
+    },
+    "campillo": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 6,
+          "meta": 10,
+          "previo": 5,
+          "texto": "A 4 goles de 10"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 198,
+          "meta": 200,
+          "previo": 150,
+          "texto": "A 2 partidos de 200"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 0,
+          "meta": 1,
+          "previo": 0,
+          "texto": "A 1 gol de 1"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 3,
+          "meta": 10,
+          "previo": 1,
+          "texto": "A 7 partidos de 10"
+        }
+      ],
+      "logros": [],
+      "club": "Chivas",
+      "partidos_revisados": 19
+    },
+    "camberos": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            true,
+            false,
+            true,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 10,
+          "meta": 15,
+          "previo": 10,
+          "texto": "A 5 goles de 15"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 66,
+          "meta": 75,
+          "previo": 50,
+          "texto": "A 9 partidos de 75"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 0,
+          "meta": 1,
+          "previo": 0,
+          "texto": "A 1 gol de 1"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 2,
+          "meta": 10,
+          "previo": 1,
+          "texto": "A 8 partidos de 10"
+        }
+      ],
+      "logros": [],
+      "club": "Chivas",
+      "partidos_revisados": 19
+    },
+    "sandoval": {
+      "rachas": [
+        {
+          "id": "gol",
+          "titulo": "Partidos seguidos con gol",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false
+          ]
+        }
+      ],
+      "hitos": [
+        {
+          "id": "goles_club",
+          "titulo": "Goles con clubes",
+          "valor": 9,
+          "meta": 10,
+          "previo": 5,
+          "texto": "A 1 gol de 10"
+        },
+        {
+          "id": "partidos_club",
+          "titulo": "Partidos con clubes",
+          "valor": 8,
+          "meta": 10,
+          "previo": 1,
+          "texto": "A 2 partidos de 10"
+        },
+        {
+          "id": "goles_sel",
+          "titulo": "Goles con la Selección",
+          "valor": 0,
+          "meta": 1,
+          "previo": 0,
+          "texto": "A 1 gol de 1"
+        },
+        {
+          "id": "partidos_sel",
+          "titulo": "Partidos con la Selección",
+          "valor": 3,
+          "meta": 10,
+          "previo": 1,
+          "texto": "A 7 partidos de 10"
+        }
+      ],
+      "logros": [],
+      "club": "Chivas",
+      "partidos_revisados": 19
+    }
+  }
+}
