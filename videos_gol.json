@@ -1,72 +1,12 @@
 {
-  "updated_at": "2026-10-15T17:50:25.671260-06:00",
+  "updated_at": "2026-10-17T08:00:28.575933-06:00",
   "cuota": {
-    "fecha": "2026-10-15",
-    "busquedas": 10,
-    "busquedas_resumen": 10
+    "fecha": "2026-10-17",
+    "busquedas": 0,
+    "busquedas_resumen": 0
   },
   "goles": {},
   "partidos": {
-    "1635635": {
-      "fixture_id": 1635635,
-      "home": "Real Betis",
-      "away": "FC Porto",
-      "league": "Champions League",
-      "score": "Real Betis 3-2 FC Porto",
-      "final_seen_at": "2026-10-14T20:57:42.800899+00:00",
-      "jugadores": {
-        "gimenez": {
-          "team_key": "porto",
-          "minutes": 5,
-          "goals": 0,
-          "assists": 0
-        },
-        "fidalgo": {
-          "team_key": "betis",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "omitido",
-      "intentos": 3,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-14T22:58:48.637756+00:00",
-      "video": null,
-      "noticias_pasadas": 5,
-      "ultima_noticia": "2026-10-14T22:58:48.637756+00:00",
-      "noticias": {
-        "gimenez": [
-          {
-            "title": "Santiago Giménez no pudo salvar al Porto y recibió su primera amarilla",
-            "source": "FOX Deportes",
-            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPVE14dHZDaDdhTVM0LXFGd0ZVQU1VVmpRRmRvb2htN2t4VUo1TUlxT09Ib2YzbnJkZzhCRDZyQWdBckh1Y1g0Z0FDYUJNWGZpYkdGck1tT09sWncyUTE5U3BEWWpUVExObXRKYzJlTlUwMmdHc0dpQlJyZmZyb2lfOVZpa0lST085cFRRMEhOYVVsSXJsY0p4cGFFTGJnU280bkR3TGZ3LWRYNGw0Nkh3VTUyaUJzak5Ub3FXYw?oc=5",
-            "published_at": "2026-10-14T21:52:12Z"
-          },
-          {
-            "title": "Santiago Giménez cerca del gol en la derrota del Porto ante Betis - esto",
-            "source": "El Sol de México",
-            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQSTFqY3NORS1KVTRIZGZqcDFxemwtQnJQRHJMXzU4V0JXclJqNWVGa1U4VktZM1FUYTRBVEVYWDZKb0ZNdV92dnFNY25UamVMWkdoT1Q3aVd1alBrUDU1UTF2MjdEN0h2VlJWblVOR0psZ1AtcmtkRFRLTklPQzBMQS1CLTVDMkRXdXNMWFNnUmpHZ0lkQWFYLXpwcXJJVHNra2dhZ3hxSm9JY2Y0VjdTeXg0dlJvcGFGQ3Jr?oc=5",
-            "published_at": "2026-10-14T21:39:51Z"
-          }
-        ],
-        "fidalgo": [
-          {
-            "title": "¿Por qué no juegan Álvaro Fidalgo y Santi Giménez el Real Betis vs Porto en Champions League?",
-            "source": "Bolavip México",
-            "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNU0JfeTE0WXU1SXpVRGo3NXVGd0I0TWpuOXpQWmQtZzRWYThLZjMtYldqNHMwd05XcVZhS0pfOXNWc2N1OWRpWjBsWGxzamV0OEllT1VCdHZQVXFFYi1VTGR5TE1iMkdIVXZIY3hIZnR0aC1PbG9tRnY4X3JFSDFOUWctS1hJYlpfcDg1eEVPZHg5Nnd5QjNMSG12TXU5ejNHUFBwSjE5Umh0YmVkU3E4bnVHcVhLcEdzSUl5Y1I4YUFyR09OTHA1eDgxeGphTTVsdTVqaFN1M3bSAd4BQVVfeXFMT0lhWWg2QkxSOUxISzQ4RmQyRWJwOWYwWklyXzVGc0dTby1vZ2k4OEd2N0lNWlJXNmk0d1VucHl4amZuM19YMWpKVWFpaTNCOEFrQ2s2RGJScHFmQ29fX1AzdGF2QTA0ekZoQko2am5Lb3VXcGlmcFFNNEsyLWI5TU01TkZpanBnMG5UM1hkNkllTHYwOUpnWWdLR3JxZHFCMVBzU2FId2FnbGEyNndzTmhSTnlnMDlQMWNnSEwwX29fX1JQNVhmdkdma0pTY3liMDJMaHNvWDh3WEd4U19n?oc=5",
-            "published_at": "2026-10-14T17:48:41Z"
-          },
-          {
-            "title": "Álvaro Fidalgo y Santi Gimenez chocan en la Champions: dos mexicanos que buscan salir de la sombra en Europa",
-            "source": "Infobae",
-            "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPelFIY3FCUmc2eHFzdGtQM3RBaHU1dG85am9kUjBpUXJHc2FGS2lJdFlWRDdQS0tmWF9oUmVtMzBLVlIteERRVWNIVkhFNmIyRFk5OTJITzRONllxdUx3REY4MEt3S1hTeUQxaUFFV3BURElGVnhBT01vUXptNVFfRThUOG5iWkt3U0stck1FLXZRWXRMUGpWa2NrY01UU0VNejU1Z1otZUdLQ09meGxxdS1aUjB3MHFRSzRHX2V5cEdFdGFON0thNzhtYkE0UnZzOU9BRUdkUmxiaWxONG9SR1BmbUgwcDVvVHd3dU5sRU3SAYsCQVVfeXFMUHVFQUhwZGJGRGU1emUwQUFpMlJjb0QxRDRnN2F0dlFtaEJxOTd5WUZRZWR4V1JPcXBmcXh6LVdoalRFalFXZHljVGY3cjVzcno2dVpsVGxXdFlRekJ4dEhKMG1UYl93QzlfaG1TWDlEeEQxUTZDZzlMME9vTmN5SkxHQ2JnemZQZDVYNDNYWFdNWkR4NlFucVJSTlZnUDdhZUhhMWExVkN2bFg0czNJUjhNM0VXRzlPWWhjcEI3Si1xam9wa0xJSDYyaE9lbXNsaFlBU25nOXhmek1UX1lidVdSeVE0ODJfekhRd0FQNGR0cFFpVDRJTEJGMWhXMlFPRVlKRm5Lcl80ZGZB?oc=5",
-            "published_at": "2026-10-14T17:06:00Z"
-          }
-        ]
-      },
-      "motivo": "sin resumen tras los intentos"
-    },
     "1636222": {
       "fixture_id": 1636222,
       "home": "AZ Alkmaar",
@@ -142,7 +82,7 @@
         "url": "https://www.youtube.com/watch?v=Hr0A1MYiBl0",
         "embeddable": true
       },
-      "noticias_pasadas": 3,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-15T22:55:17.581842+00:00",
       "noticias": {
         "armando": [
@@ -176,12 +116,12 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 3,
       "fallos": 0,
       "ultimo_intento": "2026-10-15T22:55:17.581842+00:00",
       "video": null,
-      "noticias_pasadas": 3,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-15T22:55:17.581842+00:00",
       "noticias": {
         "huescas": [
@@ -198,7 +138,32 @@
             "published_at": "2026-10-15T21:22:08Z"
           }
         ]
-      }
+      },
+      "motivo": "caducado"
+    },
+    "1570416": {
+      "fixture_id": 1570416,
+      "home": "Espanyol",
+      "away": "Atlético de Madrid",
+      "league": "La Liga",
+      "score": "Espanyol 0-1 Atlético de Madrid",
+      "final_seen_at": "2026-10-17T13:55:24.486069+00:00",
+      "jugadores": {
+        "obed": {
+          "team_key": "atletico_madrid",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
