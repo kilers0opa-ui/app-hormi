@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T12:30:23.369672-06:00",
+  "updated_at": "2026-10-17T12:35:20.703103-06:00",
   "cuota": {
     "fecha": "2026-10-17",
     "busquedas": 0,
@@ -192,6 +192,30 @@
         "montes": {
           "team_key": "lokomotiv",
           "minutes": 90,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
+    },
+    "1570413": {
+      "fixture_id": 1570413,
+      "home": "Real Betis",
+      "away": "Barcelona",
+      "league": "La Liga",
+      "score": "Real Betis 2-5 Barcelona",
+      "final_seen_at": "2026-10-17T18:31:03.124309+00:00",
+      "jugadores": {
+        "fidalgo": {
+          "team_key": "betis",
+          "minutes": 20,
           "goals": 0,
           "assists": 0
         }
