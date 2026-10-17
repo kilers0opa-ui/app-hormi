@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-17T15:30:28.232428-06:00",
+  "updated_at": "2026-10-17T15:35:26.124292-06:00",
   "cuota": {
     "fecha": "2026-10-17",
-    "busquedas": 8,
-    "busquedas_resumen": 8
+    "busquedas": 9,
+    "busquedas_resumen": 9
   },
   "goles": {},
   "partidos": {
@@ -101,12 +101,20 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
-      "intentos": 3,
+      "status": "resuelto",
+      "intentos": 4,
       "fallos": 0,
-      "ultimo_intento": "2026-10-17T20:33:07.290949+00:00",
-      "video": null,
-      "noticias_pasadas": 3,
+      "ultimo_intento": "2026-10-17T21:35:19.909194+00:00",
+      "video": {
+        "id": "zOusoEmhEtQ",
+        "title": "Real Betis vs Barcelona highlights #laliga #barcelona #betisbarca ",
+        "channel": "Barcelonabloodman ",
+        "published_at": "2026-10-17T19:42:04Z",
+        "thumbnail": "https://i.ytimg.com/vi/zOusoEmhEtQ/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=zOusoEmhEtQ",
+        "embeddable": true
+      },
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-17T20:33:07.290949+00:00",
       "noticias": {
         "fidalgo": [
