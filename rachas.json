@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T11:39:33.020476-06:00",
+  "updated_at": "2026-10-17T12:42:29.625995-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -894,17 +894,17 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
+            true,
             false,
             false,
             false,
             true,
             false,
             true,
-            true,
-            false
+            true
           ]
         }
       ],
@@ -920,10 +920,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 384,
+          "valor": 385,
           "meta": 400,
           "previo": 350,
-          "texto": "A 16 partidos de 400"
+          "texto": "A 15 partidos de 400"
         },
         {
           "id": "goles_sel",
@@ -944,7 +944,7 @@
       ],
       "logros": [],
       "club": "Real Betis",
-      "partidos_revisados": 18
+      "partidos_revisados": 19
     },
     "huescas": {
       "rachas": [
@@ -1060,8 +1060,8 @@
           "en_racha": false,
           "puntos": [
             false,
-            true,
             false,
+            true,
             false,
             false,
             false,
@@ -1076,8 +1076,8 @@
           "en_racha": false,
           "puntos": [
             false,
-            true,
             false,
+            true,
             false,
             false,
             false,
@@ -1088,33 +1088,33 @@
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
+            true,
             false,
             true,
             false,
             false,
             false,
             false,
-            true,
-            false
+            true
           ]
         },
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
+            true,
             false,
             true,
             false,
             false,
             false,
             false,
-            true,
-            false
+            true
           ]
         }
       ],
@@ -1130,10 +1130,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 376,
+          "valor": 377,
           "meta": 400,
           "previo": 350,
-          "texto": "A 24 partidos de 400"
+          "texto": "A 23 partidos de 400"
         },
         {
           "id": "goles_sel",
@@ -1154,7 +1154,7 @@
       ],
       "logros": [],
       "club": "Lokomotiv Moscú",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "luis_chavez": {
       "rachas": [
