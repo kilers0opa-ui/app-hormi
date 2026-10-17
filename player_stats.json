@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T12:28:43.681653-06:00",
+  "updated_at": "2026-10-17T12:31:04.090143-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -4491,10 +4491,10 @@
             "team_id": 543,
             "team_name": "Real Betis",
             "team_logo": "https://media.api-sports.io/football/teams/543.png",
-            "played": 2,
+            "played": 3,
             "goals": 0,
             "assists": 0,
-            "minutes": 31
+            "minutes": 51
           }
         ],
         "2015": [
@@ -4544,80 +4544,141 @@
         "seleccion": [
           1629004,
           1629006
+        ],
+        "betis": [
+          1570413
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1629006,
-        "kickoff": "2026-10-06T20:30:00-06:00",
-        "home": "México",
-        "away": "Chile",
-        "home_logo": "https://media.api-sports.io/football/teams/16.png",
-        "away_logo": "https://media.api-sports.io/football/teams/2383.png",
-        "home_goals": 0,
-        "away_goals": 2,
-        "league": "Amistoso",
-        "team_key": "seleccion",
-        "team_label": "Selección Mexicana",
-        "emoji": "🇲🇽",
-        "crest_url": "https://media.api-sports.io/football/teams/16.png",
-        "minutes": 82,
-        "goals": 0,
-        "assists": 0,
-        "league_logo": "https://media.api-sports.io/football/leagues/10.png",
-        "league_tipo": "amistoso",
+        "fixture_id": 1570413,
+        "kickoff": "2026-10-17T10:30:00-06:00",
+        "home": "Real Betis",
+        "away": "Barcelona",
+        "home_logo": "https://media.api-sports.io/football/teams/543.png",
+        "away_logo": "https://media.api-sports.io/football/teams/529.png",
+        "home_goals": 2,
+        "away_goals": 5,
+        "league": "La Liga",
+        "league_logo": "https://media.api-sports.io/football/leagues/140.png",
+        "league_tipo": "liga",
         "eventos": [
           {
-            "min": "44'",
+            "min": "10'",
+            "tipo": "gol",
+            "nombre": "Lamine Yamal",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "20'",
             "tipo": "amarilla",
-            "nombre": "Jesús Gallardo",
+            "nombre": "Fermín López",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "22'",
+            "tipo": "amarilla",
+            "nombre": "Héctor Bellerín",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "27'",
+            "tipo": "gol",
+            "nombre": "Diego Valentín Gómez",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "41'",
+            "tipo": "gol",
+            "nombre": "Rodrigo Hernandez Cascante",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "45'",
+            "tipo": "amarilla",
+            "nombre": "Manuel Luis Pellegrini Ripamonti",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "51'",
+            "tipo": "gol",
+            "nombre": "Gabriel Jesus",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "53'",
+            "tipo": "gol",
+            "nombre": "Abde Ezzalzouli",
             "lado": "L",
             "mio": false
           },
           {
             "min": "54'",
-            "tipo": "gol",
-            "nombre": "M. Gutierrez",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "65'",
-            "tipo": "gol",
-            "nombre": "V. Pizarro",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "73'",
-            "tipo": "amarilla",
-            "nombre": "Everardo López",
+            "tipo": "roja",
+            "nombre": "Facundo Bernal",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "78'",
+            "min": "55'",
             "tipo": "amarilla",
-            "nombre": "Darío Osorio",
+            "nombre": "Lamine Yamal",
             "lado": "V",
             "mio": false
           },
           {
-            "min": "82'",
-            "tipo": "sale",
-            "nombre": "A. Fidalgo",
+            "min": "61'",
+            "tipo": "amarilla",
+            "nombre": "Diego Llorente",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "62'",
+            "tipo": "gol",
+            "nombre": "Eric García",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "70'",
+            "tipo": "entra",
+            "nombre": "Álvaro Fidalgo",
             "lado": "L",
             "mio": true
+          },
+          {
+            "min": "81'",
+            "tipo": "gol",
+            "nombre": "Daniel Olmo Carvajal",
+            "lado": "V",
+            "mio": false
           }
         ],
+        "eventos_v": 4,
+        "team_key": "betis",
+        "team_label": "Real Betis",
+        "emoji": "🌴",
+        "crest_url": "https://media.api-sports.io/football/teams/543.png",
+        "minutes": 20,
+        "goals": 0,
+        "assists": 0,
         "stats": {
-          "rating": 6.7,
-          "pases_pct": 92,
-          "duelos": 8,
-          "duelos_ganados": 4,
-          "regates": 3,
-          "regates_ok": 0
-        },
-        "eventos_v": 4
+          "rating": 6.0,
+          "tiros": 0,
+          "tiros_puerta": 0,
+          "pases_pct": 80,
+          "duelos": 3,
+          "duelos_ganados": 3,
+          "regates": 1,
+          "regates_ok": 1
+        }
       }
     },
     "huescas": {
