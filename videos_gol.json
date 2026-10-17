@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-17T13:00:33.935983-06:00",
+  "updated_at": "2026-10-17T13:05:21.122436-06:00",
   "cuota": {
     "fecha": "2026-10-17",
-    "busquedas": 1,
-    "busquedas_resumen": 1
+    "busquedas": 2,
+    "busquedas_resumen": 2
   },
   "goles": {},
   "partidos": {
@@ -189,13 +189,28 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-17T19:05:18.513191+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-17T19:05:18.513191+00:00",
+      "noticias": {
+        "fidalgo": [
+          {
+            "title": "Barcelona golea de visita al Real Betis con Álvaro Fidalgo en la cancha - esto",
+            "source": "El Sol de México",
+            "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdUtJeFIzcVo4TkRHcHZGNjlBUHJaSU43SGtNN2V6V3ZvVWF0OE9pTGZ0NTQ2ajlFNFVrbE40alowV2hnSGR3WHRsVHM1NjM0MlZsNUFadG96cVFGQVVCaHk2a3hGR2o1M1VKQzlqZ3pNREU1ekRwWnIySVRQQXNwRFRSazltN2RlbEJNdDRuWFhoY250cEVDRkJ2WWZ5V2RPbnY3X09TWHZ4TlhuM2RsdEFKSVJNRnBUMW03UV9YU0Zmams?oc=5",
+            "published_at": "2026-10-17T18:43:43Z"
+          },
+          {
+            "title": "Álvaro Fidalgo, UN MES después, TIENE MINUTOS en el partido de GOLAZOS entre Barcelona y Betis",
+            "source": "Fox Sports",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNYjVQZXRJem16V0dDeU4wRklaWGd4WktHMzhGc2ZicVRDZ05ROWdZMTBqYjE0bDlpQkVEMS1JcXhEa0g5cllhdFppakJEendzUWV1ZnpmU0hORUdnbGItcHBhSmE5eEUxdmE4Y0FoTXBHUjM4RExJanp0MzZXMkJURkFQZnhtdFdZNDVEVGY0aklNbjU5LUpqTGZmSVZhMFpUcmdJU3lQMGJPX3l3LUxXTWhzM1BRNldoN0lvWGVsYw?oc=5",
+            "published_at": "2026-10-17T17:54:27Z"
+          }
+        ]
+      }
     }
   }
 }
