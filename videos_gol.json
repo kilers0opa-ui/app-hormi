@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-17T12:55:21.805459-06:00",
+  "updated_at": "2026-10-17T13:00:33.935983-06:00",
   "cuota": {
     "fecha": "2026-10-17",
-    "busquedas": 0,
-    "busquedas_resumen": 0
+    "busquedas": 1,
+    "busquedas_resumen": 1
   },
   "goles": {},
   "partidos": {
@@ -150,13 +150,28 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-17T19:00:24.535418+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-17T19:00:24.535418+00:00",
+      "noticias": {
+        "montes": [
+          {
+            "title": "Regreso triunfal: César 'Cachorro' Montes supera su lesión y se estrena como goleador con el Lokomotiv de Moscú",
+            "source": "Diario de Morelos",
+            "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOUVZyYWZNYi1LWnhaUk92UjBkdkFyZHhZRHJHYzllNW84ZzJRM1pXb0gxeWV3N2xkLXdZYnc0b05VMVZ3ZGpPczcwQXpCY1FScnVqM20xeHBnZ3hpdmhwaWEyaGowSndDaWtyQ1BQSHZwNHZQYWVQSm02RV9QUDRnQldKZ0stdVZ3azI5bHF1b3dubVNDMlR3dHdzMVl2aERzeFhuUFhIMGh6UnZteEd6d0FqaENxRi1icUZkRjdrbGNmN1V3b3JBZjVUeFdmS3BzN3J5ZDJZMEXSAd4BQVVfeXFMTk9ScFE4ajR0V3BEd2ZjNmxzc3ZFSHp6bDdFNWlETHlIRHRreFdLbFlsLXJRNnFZd2wzSmw1bEpsTUF0TW4yQkEzZ2xZaGxoRUJkUmZVQ3VXdHM3ZkFzMExQNW9zaFpwQ2NzUm1qRktPR3ROQk0yZmZjaGZNU053ZWhYM2hwVHVLQndiYVlVamVSamd1Vmx0dmplTFVMT1dxelVubDQ4UFE2OXFUUUJTa2VRRUxYQ09NNl9DU0RVNWJSYVhidEVhb0MxbVBtQTZvWjhOLTczdnNCRS1rX2p3?oc=5",
+            "published_at": "2026-10-11T15:03:36Z"
+          },
+          {
+            "title": "El mexicano Cesar Montes anota gol con el Lokomotiv en la goleada sobre el Fakel Vorónezh en Rusia",
+            "source": "XEVT",
+            "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxORXptaEg1MVZyc2xEQy0zYVRrSFd0MVI4bFE4MVg4UU9OT2hHZE53ZHF0MlJtVm5TLXZ5S1pmUnhIWERjSl9YWDM5M2pHYk1SSjJFV2xQYkdjbTdNcDFqNzdjWW5VaU5PWTFMRUVMbjU0WFZ5bWdqYnp0blBXNXo0NHhNbmN4T2hXOHBjRUJWUUZ0d3NOYV84TV8yTXF6Sm9VVFVzc1luenRZb1pJYjFseFFmeVZHOERFZ3k4QXo5Z0pJLWs4MkxCYnA1M3o5QmNR?oc=5",
+            "published_at": "2026-10-10T22:18:00Z"
+          }
+        ]
+      }
     },
     "1570413": {
       "fixture_id": 1570413,
