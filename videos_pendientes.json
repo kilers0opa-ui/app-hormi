@@ -9,23 +9,6 @@
   ],
   "finales": [
     {
-      "fixture_id": 1570416,
-      "home": "Espanyol",
-      "away": "Atlético de Madrid",
-      "league": "La Liga",
-      "score": "Espanyol 0-1 Atlético de Madrid",
-      "final_seen_at": "2026-10-17T13:55:24.486069+00:00",
-      "jugadores": [
-        {
-          "player_key": "obed",
-          "team_key": "atletico_madrid",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        }
-      ]
-    },
-    {
       "fixture_id": 1561415,
       "home": "Lokomotiv Moscú",
       "away": "FC Krasnodar",
@@ -54,6 +37,23 @@
           "player_key": "fidalgo",
           "team_key": "betis",
           "minutes": 20,
+          "goals": 0,
+          "assists": 0
+        }
+      ]
+    },
+    {
+      "fixture_id": 1550148,
+      "home": "AS Roma",
+      "away": "Genoa",
+      "league": "Serie A",
+      "score": "AS Roma 2-0 Genoa",
+      "final_seen_at": "2026-10-17T20:37:36.405501+00:00",
+      "jugadores": [
+        {
+          "player_key": "vasquez",
+          "team_key": "genoa",
+          "minutes": 90,
           "goals": 0,
           "assists": 0
         }

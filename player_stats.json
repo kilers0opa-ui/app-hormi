@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T12:31:04.090143-06:00",
+  "updated_at": "2026-10-17T14:37:37.218228-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -1923,10 +1923,10 @@
             "team_id": 495,
             "team_name": "Genoa",
             "team_logo": "https://media.api-sports.io/football/teams/495.png",
-            "played": 5,
+            "played": 6,
             "goals": 1,
             "assists": 0,
-            "minutes": 431
+            "minutes": 521
           }
         ],
         "2017": [
@@ -1962,19 +1962,74 @@
           1629006
         ],
         "genoa": [
-          1550140
+          1550140,
+          1550148
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1550140,
-        "kickoff": "2026-10-10T07:00:00-06:00",
-        "home": "Genoa",
-        "away": "Fiorentina",
-        "home_logo": "https://media.api-sports.io/football/teams/495.png",
-        "away_logo": "https://media.api-sports.io/football/teams/502.png",
+        "fixture_id": 1550148,
+        "kickoff": "2026-10-17T12:45:00-06:00",
+        "home": "AS Roma",
+        "away": "Genoa",
+        "home_logo": "https://media.api-sports.io/football/teams/497.png",
+        "away_logo": "https://media.api-sports.io/football/teams/495.png",
         "home_goals": 2,
-        "away_goals": 1,
+        "away_goals": 0,
         "league": "Serie A",
+        "league_logo": "https://media.api-sports.io/football/leagues/135.png",
+        "league_tipo": "liga",
+        "eventos": [
+          {
+            "min": "43'",
+            "tipo": "amarilla",
+            "nombre": "Matias Soule",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "50'",
+            "tipo": "gol",
+            "nombre": "Santiago Thomas Castro",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "51'",
+            "tipo": "amarilla",
+            "nombre": "Johan Vásquez",
+            "lado": "V",
+            "mio": true
+          },
+          {
+            "min": "65'",
+            "tipo": "amarilla",
+            "nombre": "Leo Østigård",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "68'",
+            "tipo": "gol",
+            "nombre": "Emanuele Lulli",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "76'",
+            "tipo": "amarilla",
+            "nombre": "Niccolò Pisilli",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "81'",
+            "tipo": "amarilla",
+            "nombre": "Mikael Ellertsson",
+            "lado": "V",
+            "mio": false
+          }
+        ],
+        "eventos_v": 4,
         "team_key": "genoa",
         "team_label": "Genoa",
         "emoji": "🦅",
@@ -1982,96 +2037,14 @@
         "minutes": 90,
         "goals": 0,
         "assists": 0,
-        "league_logo": "https://media.api-sports.io/football/leagues/135.png",
-        "league_tipo": "liga",
-        "eventos": [
-          {
-            "min": "8'",
-            "tipo": "gol",
-            "nombre": "M. Osmajic",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "15'",
-            "tipo": "amarilla",
-            "nombre": "Luca Ranieri",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "15'",
-            "tipo": "gol",
-            "nombre": "Junior Messias",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "21'",
-            "tipo": "amarilla",
-            "nombre": "Christ Inao Oulaï",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "60'",
-            "tipo": "amarilla",
-            "nombre": "Viery",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "73'",
-            "tipo": "amarilla",
-            "nombre": "Hamed Junior Traorè",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "73'",
-            "tipo": "autogol",
-            "nombre": "J. Vasquez",
-            "lado": "V",
-            "mio": true
-          },
-          {
-            "min": "84'",
-            "tipo": "amarilla",
-            "nombre": "Johan Vásquez",
-            "lado": "L",
-            "mio": true
-          },
-          {
-            "min": "85'",
-            "tipo": "amarilla",
-            "nombre": "Samuel Wiafe",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "90+1'",
-            "tipo": "amarilla",
-            "nombre": "Vitinha",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "90+5'",
-            "tipo": "amarilla",
-            "nombre": "Stefano Sabelli",
-            "lado": "L",
-            "mio": false
-          }
-        ],
         "stats": {
-          "rating": 6.0,
-          "pases_pct": 83,
-          "duelos": 10,
-          "duelos_ganados": 3,
-          "regates": 1,
-          "regates_ok": 0
-        },
-        "eventos_v": 4
+          "rating": 6.2,
+          "tiros": 1,
+          "tiros_puerta": 0,
+          "pases_pct": 76,
+          "duelos": 11,
+          "duelos_ganados": 6
+        }
       }
     },
     "quinones": {
