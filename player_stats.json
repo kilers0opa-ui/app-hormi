@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T03:20:06.934373-06:00",
+  "updated_at": "2026-10-17T12:28:43.681653-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -5811,10 +5811,10 @@
             "team_id": 597,
             "team_name": "Lokomotiv",
             "team_logo": "https://media.api-sports.io/football/teams/597.png",
-            "played": 4,
+            "played": 5,
             "goals": 1,
             "assists": 0,
-            "minutes": 300
+            "minutes": 390
           },
           {
             "league_id": 237,
@@ -5833,116 +5833,112 @@
       },
       "applied_fixtures": {
         "lokomotiv": [
-          1563664
+          1563664,
+          1561415
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1563664,
-        "kickoff": "2026-10-13T09:30:00-06:00",
+        "fixture_id": 1561415,
+        "kickoff": "2026-10-17T10:30:00-06:00",
         "home": "Lokomotiv Moscú",
-        "away": "Akron",
+        "away": "FC Krasnodar",
         "home_logo": "https://media.api-sports.io/football/teams/597.png",
-        "away_logo": "https://media.api-sports.io/football/teams/6786.png",
-        "home_goals": 1,
-        "away_goals": 1,
-        "league": "Copa de Rusia",
-        "league_logo": "https://media.api-sports.io/football/leagues/237.png",
-        "league_tipo": "copa",
+        "away_logo": "https://media.api-sports.io/football/teams/621.png",
+        "home_goals": 3,
+        "away_goals": 3,
+        "league": "Liga Premier de Rusia",
+        "league_logo": "https://media.api-sports.io/football/leagues/235.png",
+        "league_tipo": "liga",
         "eventos": [
           {
-            "min": "25'",
+            "min": "2'",
             "tipo": "amarilla",
-            "nombre": "Zelimkhan Bakaev",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "46'",
-            "tipo": "sale",
-            "nombre": "C. Montes",
+            "nombre": "César Montes",
             "lado": "L",
             "mio": true
           },
           {
-            "min": "48'",
+            "min": "5'",
             "tipo": "gol",
-            "nombre": "S. Pinyaev",
-            "lado": "L",
+            "nombre": "Joao Batxi",
+            "lado": "V",
             "mio": false
           },
           {
-            "min": "49'",
+            "min": "12'",
             "tipo": "amarilla",
-            "nombre": "Sergey Pinyaev",
+            "nombre": "Gerzino Nyamsi",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "61'",
+            "min": "16'",
             "tipo": "gol",
-            "nombre": "A. Shumansky",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "85'",
-            "tipo": "amarilla",
-            "nombre": "Georgiy Dzhikiya",
+            "nombre": "Nikolay Titkov",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "85'",
-            "tipo": "amarilla",
-            "nombre": "Slobodan Tedić",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "90'",
-            "tipo": "pen",
-            "nombre": "Sergey Pinyaev",
+            "min": "71'",
+            "tipo": "gol",
+            "nombre": "Aleksandr Rudenko",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "90'",
-            "tipo": "pen",
-            "nombre": "Khetag Khosonov",
-            "lado": "V",
+            "min": "77'",
+            "tipo": "amarilla",
+            "nombre": "Maksim Nenakhov",
+            "lado": "L",
             "mio": false
           },
           {
-            "min": "90'",
-            "tipo": "pen",
-            "nombre": "Milutin Vidosavljević",
-            "lado": "V",
+            "min": "78'",
+            "tipo": "gol",
+            "nombre": "Aleksandr Kovalenko",
+            "lado": "L",
             "mio": false
           },
           {
-            "min": "90'",
-            "tipo": "pen",
-            "nombre": "Dmitriy Pestryakov",
+            "min": "86'",
+            "tipo": "gol",
+            "nombre": "Lucas Olaza",
             "lado": "V",
             "mio": false
           },
           {
             "min": "90+1'",
+            "tipo": "gol",
+            "nombre": "Jhon Cordoba",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "90+4'",
             "tipo": "amarilla",
-            "nombre": "Yomar Rocha",
+            "nombre": "Joao Batxi",
             "lado": "V",
             "mio": false
           }
         ],
+        "eventos_v": 4,
         "team_key": "lokomotiv",
         "team_label": "Lokomotiv Moscú",
         "emoji": "🚂",
         "crest_url": "https://media.api-sports.io/football/teams/597.png",
-        "minutes": 46,
+        "minutes": 90,
         "goals": 0,
         "assists": 0,
-        "sin_stats": true,
-        "eventos_v": 4
+        "stats": {
+          "rating": 6.1,
+          "tiros": 2,
+          "tiros_puerta": 1,
+          "pases_pct": 48,
+          "duelos": 18,
+          "duelos_ganados": 12,
+          "regates": 2,
+          "regates_ok": 1
+        }
       }
     },
     "luis_chavez": {
