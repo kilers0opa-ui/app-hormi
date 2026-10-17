@@ -239,21 +239,11 @@
   },
   "obed": {
     "atletico_madrid": {
-      "fixture_id": 1570416,
-      "kickoff": "2026-10-17T06:00:00-06:00",
-      "why": "hoy",
-      "refreshed_at": "2026-10-17T07:55:38.005472-06:00",
-      "home": "Espanyol",
-      "away": "Atlético de Madrid",
-      "home_logo": "https://media.api-sports.io/football/teams/540.png",
-      "away_logo": "https://media.api-sports.io/football/teams/530.png",
-      "league": "La Liga",
-      "league_logo": "https://media.api-sports.io/football/leagues/140.png",
-      "league_tipo": "liga",
-      "liga_v": 2,
-      "season": 2026,
-      "fx_status": "FT",
-      "done": true
+      "refreshed_at": "2026-10-17T09:00:22.842357-06:00",
+      "last_error": {
+        "bug": "This is on our side, please report us this bug on https://dashboard.api-football.com",
+        "error": "5xEr"
+      }
     },
     "seleccion": {
       "fixture_id": 1644691,
