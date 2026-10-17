@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T09:00:26.207552-06:00",
+  "updated_at": "2026-10-17T12:30:23.369672-06:00",
   "cuota": {
     "fecha": "2026-10-17",
     "busquedas": 0,
@@ -161,7 +161,7 @@
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-17T15:00:25.762191+00:00",
       "noticias": {
         "obed": [
@@ -180,6 +180,30 @@
         ]
       },
       "motivo": "ningún jugador tuvo minutos"
+    },
+    "1561415": {
+      "fixture_id": 1561415,
+      "home": "Lokomotiv Moscú",
+      "away": "FC Krasnodar",
+      "league": "Liga Premier de Rusia",
+      "score": "Lokomotiv Moscú 3-3 FC Krasnodar",
+      "final_seen_at": "2026-10-17T18:28:43.112220+00:00",
+      "jugadores": {
+        "montes": {
+          "team_key": "lokomotiv",
+          "minutes": 90,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
