@@ -240,11 +240,20 @@
   },
   "obed": {
     "atletico_madrid": {
-      "refreshed_at": "2026-10-17T09:00:22.842357-06:00",
-      "last_error": {
-        "bug": "This is on our side, please report us this bug on https://dashboard.api-football.com",
-        "error": "5xEr"
-      }
+      "fixture_id": 1635738,
+      "kickoff": "2026-10-20T13:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-17T15:00:27.762369-06:00",
+      "home": "VfB Stuttgart",
+      "away": "Atlético de Madrid",
+      "home_logo": "https://media.api-sports.io/football/teams/172.png",
+      "away_logo": "https://media.api-sports.io/football/teams/530.png",
+      "league": "Champions League",
+      "league_logo": "https://media.api-sports.io/football/leagues/2.png",
+      "league_tipo": "copa",
+      "liga_v": 2,
+      "season": 2026,
+      "fx_status": "NS"
     },
     "seleccion": {
       "fixture_id": 1644691,
