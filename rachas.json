@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T13:36:36.988463-06:00",
+  "updated_at": "2026-10-17T14:40:13.265762-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -448,9 +448,9 @@
             false,
             false,
             false,
-            true,
-            true,
             false,
+            true,
+            true,
             false,
             false
           ]
@@ -458,14 +458,14 @@
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 1,
+          "actual": 2,
           "en_racha": false,
           "puntos": [
             true,
-            false,
-            false,
-            false,
             true,
+            false,
+            false,
+            false,
             true,
             true,
             true
@@ -474,13 +474,13 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 1,
+          "actual": 2,
           "en_racha": false,
           "puntos": [
             true,
-            false,
-            false,
             true,
+            false,
+            false,
             true,
             true,
             true,
@@ -500,10 +500,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 302,
+          "valor": 303,
           "meta": 350,
           "previo": 300,
-          "texto": "A 48 partidos de 350"
+          "texto": "A 47 partidos de 350"
         },
         {
           "id": "goles_sel",
@@ -524,7 +524,7 @@
       ],
       "logros": [],
       "club": "Genoa",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "gimenez": {
       "rachas": [
