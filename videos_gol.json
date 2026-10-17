@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T14:35:23.813399-06:00",
+  "updated_at": "2026-10-17T14:40:30.509565-06:00",
   "cuota": {
     "fecha": "2026-10-17",
     "busquedas": 6,
@@ -211,6 +211,30 @@
           }
         ]
       }
+    },
+    "1550148": {
+      "fixture_id": 1550148,
+      "home": "AS Roma",
+      "away": "Genoa",
+      "league": "Serie A",
+      "score": "AS Roma 2-0 Genoa",
+      "final_seen_at": "2026-10-17T20:37:36.405501+00:00",
+      "jugadores": {
+        "vasquez": {
+          "team_key": "genoa",
+          "minutes": 90,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
