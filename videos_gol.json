@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T08:25:15.180817-06:00",
+  "updated_at": "2026-10-17T08:30:20.649702-06:00",
   "cuota": {
     "fecha": "2026-10-17",
     "busquedas": 0,
@@ -156,14 +156,30 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-17T14:30:20.159747+00:00",
+      "noticias": {
+        "obed": [
+          {
+            "title": "Obed Vargas sigue viviendo un auténtico vía crucis en el Atlético",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQc19UR1VpLUlhSHZSQ2dYVUVnblYzSThmQllUYjgxek5BYlpJTjh4clNUUGVTMlRsZkFrSEV5XzFqVU9OOC00OHJuS2REdGd5OGwwMWdNNlQ1OWxqb21TWmxabW1jdWVtT3JTcmhYRWY0SFFlZ0NIdHRhVFVfejc1RW8weGs1TVlmbUpaQl9iYW9qYlh1ZXhQVkZtM2l1RTJZMDJUcXZFUU1CV1I4VXlPXzVTUXVnSUV5SWNRc9IBvAFBVV95cUxNM1FsMGRROE9rWDRRN3YzNDZsU3lKRUlKMjV1VTdUYk1HNVBMNHcyTklONzc2aHJ0Y3pqUUszWU05SjFZMThMZWs2NEkxWTljSXUzWWdWZWI3b25uUDFSa1lqbVRZZVdlekFOMFNJRUR2dFplX1pxTDQ3X3d6QlJlQm9Dbjc2Sjk3QzR0SGdPdVRDcTVkQlBxOEZMdnpnSnpVaVlmLWtvQ0UwSFhSTjhHbmhGbVR0YTZaYldSaQ?oc=5",
+            "published_at": "2026-10-17T14:14:20Z"
+          },
+          {
+            "title": "Obed Vargas sigue borrado por Cholo Simeone: Resumen Espanyol vs Atlético de Madrid",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOb1RrTUc1ZzV5OGs0dzdfSDdjVlA1REQ5aU9vSjN6WVptZUN1Szk3VVJKcHh2UUZQcUJNNzdwb0dKb19QYVpNOVVCU2VneEVBdXZVcFFTTmRtZHJaN2tXWkhEOG12bU5Cc0l1QkVFbkVOaTVPd3MzUFlTVl9HVXlCb091LXpDanFrcV95aXRITHlVLXZJUVptRy0yQ0V4ZG9seWtyWmRQTk14bkQySTA4VzZyMWpWZERBVlNkdF96T0RIenA3TFVzMEJLd2VISnBaZ2FsNEMxbktNT2xEd19PN9IB4AFBVV95cUxPbDNKa28zLVRBd0RhRkdTMTN0eFVOczd4UFNNSm5GTDdfT3FfXzQ0X2RnTHJlaFhVQW93X0ZlVGZFS2tjSTdmeFdYRXlqVm9URHZUVTd1QWUtbEI0N0dQQkZ1dGJuREQ1NDRaWnN0ZnNTV1lvVS1CUU03U3dzT0VUNG1qT1Mzcm1FSnUtT25vTE44MDlXeVE4bXpuOFJtbVJWOFhOdUh2Umk1MzlWM2c5SVBsSk9fdlhIc1VHS25GQ0tKUmRzRi16UzlidnRVR1J0VjROY3VadkxYUkw4WERiYQ?oc=5",
+            "published_at": "2026-10-17T13:55:57Z"
+          }
+        ]
+      },
+      "motivo": "ningún jugador tuvo minutos"
     }
   }
 }
