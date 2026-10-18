@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T09:40:42.945249-06:00",
+  "updated_at": "2026-10-18T10:43:00.648293-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -12,8 +12,8 @@
             false,
             false,
             false,
-            true,
             false,
+            true,
             false,
             false,
             false
@@ -28,8 +28,8 @@
             false,
             false,
             false,
-            true,
             false,
+            true,
             false,
             false,
             false
@@ -44,9 +44,9 @@
             false,
             false,
             false,
-            true,
-            true,
             false,
+            true,
+            true,
             false,
             false
           ]
@@ -54,17 +54,17 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 1,
+          "actual": 2,
           "en_racha": false,
           "puntos": [
             true,
-            false,
-            true,
-            true,
             true,
             false,
             true,
-            false
+            true,
+            true,
+            false,
+            true
           ]
         }
       ],
@@ -80,10 +80,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 94,
+          "valor": 95,
           "meta": 100,
           "previo": 75,
-          "texto": "A 6 partidos de 100"
+          "texto": "A 5 partidos de 100"
         },
         {
           "id": "goles_sel",
@@ -104,7 +104,7 @@
       ],
       "logros": [],
       "club": "Olympiacos",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "raul": {
       "rachas": [
@@ -1049,7 +1049,7 @@
       ],
       "logros": [],
       "club": "FC Copenhague",
-      "partidos_revisados": 20
+      "partidos_revisados": 19
     },
     "montes": {
       "rachas": [
