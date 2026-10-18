@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T15:40:26.785193-06:00",
+  "updated_at": "2026-10-17T19:15:20.664122-06:00",
   "cuota": {
     "fecha": "2026-10-17",
     "busquedas": 9,
@@ -62,7 +62,7 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 4,
       "fallos": 0,
       "ultimo_intento": "2026-10-17T21:30:21.491196+00:00",
@@ -84,7 +84,8 @@
             "published_at": "2026-10-10T22:18:00Z"
           }
         ]
-      }
+      },
+      "motivo": "caducado"
     },
     "1570413": {
       "fixture_id": 1570413,
@@ -161,7 +162,7 @@
         "url": "https://www.youtube.com/watch?v=e-ObLpk8MOs",
         "embeddable": true
       },
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-17T21:40:19.311792+00:00",
       "noticias": {
         "vasquez": [
@@ -179,6 +180,42 @@
           }
         ]
       }
+    },
+    "1550996": {
+      "fixture_id": 1550996,
+      "home": "Chivas",
+      "away": "Tigres UANL",
+      "league": "Liga MX",
+      "score": "Chivas 1-1 Tigres UANL",
+      "final_seen_at": "2026-10-18T01:12:15.669227+00:00",
+      "jugadores": {
+        "campillo": {
+          "team_key": "chivas",
+          "minutes": 90,
+          "goals": 0,
+          "assists": 0
+        },
+        "camberos": {
+          "team_key": "chivas",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        },
+        "sandoval": {
+          "team_key": "chivas",
+          "minutes": 86,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
