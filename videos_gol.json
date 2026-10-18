@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T09:10:21.999864-06:00",
+  "updated_at": "2026-10-18T09:15:29.450628-06:00",
   "cuota": {
     "fecha": "2026-10-18",
     "busquedas": 0,
@@ -276,14 +276,37 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "resuelto",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
-      "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "video": {
+        "id": "Lf9YV16PC4M",
+        "title": "Cambuur 2-2 AZ Alkmaar | De LOCURA, MEERDINK RESCATA EMPATE para el AZ | Eredivisie | Resumen",
+        "channel": "ESPN MX",
+        "published_at": "2026-10-18T15:10:54Z",
+        "thumbnail": "https://i.ytimg.com/vi/Lf9YV16PC4M/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=Lf9YV16PC4M",
+        "embeddable": true
+      },
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-18T15:15:19.973824+00:00",
+      "noticias": {
+        "chavez": [
+          {
+            "title": "¡Mateo Chávez y AZ sufrieron de visita! Rascaron el empate ante Cambuur con gol de penal al 83",
+            "source": "Fox Sports",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPY1FnWVp0UGxwYk5QelNFUktYcVl2bksyTlh5b0tZSHBwUkVkZ2FWSGhzU1VBaW1OaUQtQU93ZjgxZVN4SnhBcDBOSTZmSmJTT1ZaeGNXbl9JVUJDNGFiNmFOSTNmSWxRby1ySmJUVEtBSGtHYlpySVVYd2I1MUpvcmEwYm93QnlKYnFGSzJfREJKTVpfbmdxUFBHX1NnbGE1RVF4cGFlbjVETmxvaVRNcHNYdEhab09MQVQwZjE2X0kySGhZOUxKdnY2bGRCQQ?oc=5",
+            "published_at": "2026-10-18T14:35:33Z"
+          },
+          {
+            "title": "Mateo Chávez reconoce a familiar en dinámica tras el triunfo de AZ Alkmaar: ‘Es mi tío’ (VIDEO)",
+            "source": "Fox Sports",
+            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZFRvWVNxZWlZYllMcVpETTVETF83d1J0ZHdIeHJJU3lDMGVJN083cEVON1JZQ3FVN2JsbVhHY1JUdkZXZkxacW5KeUZGWWwxd1p1YWU2TXNDX1EtRXdnV3VFSEtSWkRtNHlmQlVfRDdrNmJrb1Q4ajFyMVRTTEZvRlM3WHNhZ1gwLUw2RkdvRTliSS13N0o5ZzZ5UGk4dEVMVHRWa2NNc2xMSjVmU0VteU9kMlFpUmhWbUdiMVRMamhxbXhxcXdZTEVzNA?oc=5",
+            "published_at": "2026-10-15T22:52:34Z"
+          }
+        ]
+      }
     }
   }
 }
