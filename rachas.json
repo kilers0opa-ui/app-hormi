@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T08:41:01.537088-06:00",
+  "updated_at": "2026-10-18T09:40:42.945249-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -641,12 +641,12 @@
           "puntos": [
             false,
             false,
+            false,
             true,
             false,
             false,
             false,
-            false,
-            true
+            false
           ]
         },
         {
@@ -661,18 +661,18 @@
             false,
             false,
             false,
-            true,
-            false
+            false,
+            true
           ]
         },
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
-            false,
             true,
+            false,
             true,
             true,
             true,
@@ -684,7 +684,7 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 11,
+          "actual": 12,
           "en_racha": true,
           "puntos": [
             true,
@@ -710,10 +710,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 128,
+          "valor": 129,
           "meta": 150,
           "previo": 100,
-          "texto": "A 22 partidos de 150"
+          "texto": "A 21 partidos de 150"
         },
         {
           "id": "goles_sel",
@@ -734,7 +734,7 @@
       ],
       "logros": [],
       "club": "AZ Alkmaar",
-      "partidos_revisados": 18
+      "partidos_revisados": 19
     },
     "obed": {
       "rachas": [
@@ -1199,10 +1199,10 @@
             false,
             false,
             false,
-            true,
-            true,
-            true,
             false,
+            true,
+            true,
+            true,
             false
           ]
         },
@@ -1215,11 +1215,11 @@
             false,
             false,
             false,
-            true,
-            true,
-            true,
             false,
-            true
+            true,
+            true,
+            true,
+            false
           ]
         }
       ],
@@ -1259,7 +1259,7 @@
       ],
       "logros": [],
       "club": "Dinamo Moscú",
-      "partidos_revisados": 17
+      "partidos_revisados": 18
     },
     "fimbres": {
       "rachas": [
