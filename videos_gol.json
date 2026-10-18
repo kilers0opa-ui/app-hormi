@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-18T10:20:27.795563-06:00",
+  "updated_at": "2026-10-18T10:25:29.289255-06:00",
   "cuota": {
     "fecha": "2026-10-18",
-    "busquedas": 0,
-    "busquedas_resumen": 0
+    "busquedas": 1,
+    "busquedas_resumen": 1
   },
   "goles": {},
   "partidos": {
@@ -324,13 +324,28 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-18T16:25:17.632939+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-18T16:25:17.632939+00:00",
+      "noticias": {
+        "armando": [
+          {
+            "title": "¡Volvió la Hormiga! Olympiacos venció de visita al Panetolikos; Armando González tuvo minutos",
+            "source": "Fox Sports",
+            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQbG1aNTd3aXdiVExuWDVOWEpxVHBXU1RRQmsxZ05wS2hzYUN2Y1p3aXBXUElHUXVabXdfZ0ZGRjNKQURhNkYtV1k3TmVaR0lhMWxsa0hUczU3SkVid1hHWXdhRVlleGhnZ0c2MzR3LTdtZFFFNjlZM0Utb0hJYXl1TTl3VGxCZUN4ZG12T05tYi1UXzR0NnlxREhuNXpuTWhlMzlsY3NmYXFtSVpJOUlLNDZZa3AxaDlDX3dpMlZUTU9VaTYwTUVrWXFrQQ?oc=5",
+            "published_at": "2026-10-18T16:11:55Z"
+          },
+          {
+            "title": "Panetolikos 0-1 Olympiacos, en vivo la Hormiga González en la Superliga de Grecia: ¡Comienza la segunda parte!",
+            "source": "Claro Sports",
+            "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQakREVDB5TTJNNG9KTjJaTjV6dm0tN0RoVGlNRTd4T2U5TENHSWEtMW5zNlU4ZkdtMnp2d1o5dU5rQ2NneV9HY3FZSHdFeUlsUFFjb09hSjc3S2xIdUFEX0F0Ml9BZlFXdl9kQk5vdUc5ZjZPSVJqT09xeklRdXBQQnl0M0ZhNzV2ajJ1bnBoLUwtYUtHaW5ZQkVXMVF0RjdjVDhzemlyX3RKc2RxMTdMNlpEZ3VDV3YtVUljekFlVl9zSlFoanhPbDFTN29kbUZtZ0d1TDZXajR1QjdFaDZnbU9QZVBwTTFXQzVWcFlVOGlNRXhudkE?oc=5",
+            "published_at": "2026-10-18T13:26:46Z"
+          }
+        ]
+      }
     }
   }
 }
