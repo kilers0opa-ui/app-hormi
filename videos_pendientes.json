@@ -9,40 +9,6 @@
   ],
   "finales": [
     {
-      "fixture_id": 1561415,
-      "home": "Lokomotiv Moscú",
-      "away": "FC Krasnodar",
-      "league": "Liga Premier de Rusia",
-      "score": "Lokomotiv Moscú 3-3 FC Krasnodar",
-      "final_seen_at": "2026-10-17T18:28:43.112220+00:00",
-      "jugadores": [
-        {
-          "player_key": "montes",
-          "team_key": "lokomotiv",
-          "minutes": 90,
-          "goals": 0,
-          "assists": 0
-        }
-      ]
-    },
-    {
-      "fixture_id": 1570413,
-      "home": "Real Betis",
-      "away": "Barcelona",
-      "league": "La Liga",
-      "score": "Real Betis 2-5 Barcelona",
-      "final_seen_at": "2026-10-17T18:31:03.124309+00:00",
-      "jugadores": [
-        {
-          "player_key": "fidalgo",
-          "team_key": "betis",
-          "minutes": 20,
-          "goals": 0,
-          "assists": 0
-        }
-      ]
-    },
-    {
       "fixture_id": 1550148,
       "home": "AS Roma",
       "away": "Genoa",
@@ -54,6 +20,37 @@
           "player_key": "vasquez",
           "team_key": "genoa",
           "minutes": 90,
+          "goals": 0,
+          "assists": 0
+        }
+      ]
+    },
+    {
+      "fixture_id": 1550996,
+      "home": "Chivas",
+      "away": "Tigres UANL",
+      "league": "Liga MX",
+      "score": "Chivas 1-1 Tigres UANL",
+      "final_seen_at": "2026-10-18T01:12:15.669227+00:00",
+      "jugadores": [
+        {
+          "player_key": "campillo",
+          "team_key": "chivas",
+          "minutes": 90,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "player_key": "camberos",
+          "team_key": "chivas",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "player_key": "sandoval",
+          "team_key": "chivas",
+          "minutes": 86,
           "goals": 0,
           "assists": 0
         }
