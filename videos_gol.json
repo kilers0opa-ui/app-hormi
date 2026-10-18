@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T09:45:20.107042-06:00",
+  "updated_at": "2026-10-18T09:55:15.563214-06:00",
   "cuota": {
     "fecha": "2026-10-18",
     "busquedas": 0,
@@ -307,6 +307,30 @@
           }
         ]
       }
+    },
+    "1593336": {
+      "fixture_id": 1593336,
+      "home": "Panetolikos",
+      "away": "Olympiakos",
+      "league": "Superliga de Grecia",
+      "score": "Panetolikos 0-2 Olympiakos",
+      "final_seen_at": "2026-10-18T15:54:01.930284+00:00",
+      "jugadores": {
+        "armando": {
+          "team_key": "olympiacos",
+          "minutes": 10,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
