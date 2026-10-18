@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-17T22:10:23.270639-06:00",
+  "updated_at": "2026-10-18T08:43:58.413754-06:00",
   "cuota": {
-    "fecha": "2026-10-17",
-    "busquedas": 12,
-    "busquedas_resumen": 12
+    "fecha": "2026-10-18",
+    "busquedas": 0,
+    "busquedas_resumen": 0
   },
   "goles": {},
   "partidos": {
@@ -208,12 +208,12 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 3,
       "fallos": 0,
       "ultimo_intento": "2026-10-18T03:15:20.106718+00:00",
       "video": null,
-      "noticias_pasadas": 3,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-18T03:15:20.106718+00:00",
       "noticias": {
         "campillo": [
@@ -258,7 +258,32 @@
             "published_at": "2026-10-16T17:37:09Z"
           }
         ]
-      }
+      },
+      "motivo": "caducado"
+    },
+    "1552195": {
+      "fixture_id": 1552195,
+      "home": "Cambuur",
+      "away": "AZ Alkmaar",
+      "league": "Eredivisie",
+      "score": "Cambuur 2-2 AZ Alkmaar",
+      "final_seen_at": "2026-10-18T14:43:22.142008+00:00",
+      "jugadores": {
+        "chavez": {
+          "team_key": "az_alkmaar",
+          "minutes": 63,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
