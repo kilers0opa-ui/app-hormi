@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T20:44:45.281931-06:00",
+  "updated_at": "2026-10-18T21:48:10.248899-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -1308,23 +1308,23 @@
             false,
             false,
             false,
-            true
+            false
           ]
         },
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
-            true,
-            false,
             false,
             true,
             false,
+            false,
             true,
             false,
-            true
+            true,
+            false
           ]
         }
       ],
@@ -1364,7 +1364,7 @@
       ],
       "logros": [],
       "club": "Monterrey",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "campillo": {
       "rachas": [
