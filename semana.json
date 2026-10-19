@@ -1,144 +1,71 @@
 {
- "desde": "2026-10-05",
- "hasta": "2026-10-11",
- "titulo": "5 – 11 oct 2026",
- "generado": "2026-10-14T16:59:26-06:00",
- "imagen": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/semana/semana_2026-10-05.jpg?v=e1726480",
+ "desde": "2026-10-12",
+ "hasta": "2026-10-18",
+ "titulo": "12 – 18 oct 2026",
+ "generado": "2026-10-19T09:16:55-06:00",
+ "imagen": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/semana/semana_2026-10-12.jpg?v=767e607b",
  "totales": {
-  "goles": 2,
-  "asistencias": 2,
-  "partidos": 15,
-  "minutos": 761,
-  "jugaron": 12
+  "goles": 0,
+  "asistencias": 0,
+  "partidos": 13,
+  "minutos": 647,
+  "jugaron": 10
  },
  "mvp": {
-  "key": "montes",
-  "name": "César Montes",
+  "key": "sandoval",
+  "name": "Santiago Sandoval",
   "partidos": 1,
-  "min": 90,
-  "goles": 1,
+  "min": 86,
+  "goles": 0,
   "asist": 0,
-  "rating": 8.9
+  "rating": 7.3
  },
- "goleadores": [
-  {
-   "key": "quinones",
-   "name": "Julián Quiñones",
-   "goles": 1,
-   "equipo": "Al-Qadsiah"
-  },
-  {
-   "key": "montes",
-   "name": "César Montes",
-   "goles": 1,
-   "equipo": "Lokomotiv Moscú"
-  }
- ],
+ "goleadores": [],
  "jugadores": [
   {
-   "key": "quinones",
-   "name": "Julián Quiñones",
-   "partidos": 1,
-   "min": 90,
-   "goles": 1,
-   "asist": 2,
-   "rating": 8.2,
-   "equipos_gol": [
-    "Al-Qadsiah"
-   ]
-  },
-  {
    "key": "montes",
    "name": "César Montes",
-   "partidos": 1,
-   "min": 90,
-   "goles": 1,
+   "partidos": 2,
+   "min": 136,
+   "goles": 0,
    "asist": 0,
-   "rating": 8.9,
+   "rating": 6.1,
    "equipos_gol": [
     "Lokomotiv Moscú"
    ]
   },
   {
-   "key": "vasquez",
-   "name": "Johan Vásquez",
-   "partidos": 2,
-   "min": 116,
-   "goles": 0,
-   "asist": 0,
-   "rating": 6.2,
-   "equipos_gol": [
-    "Genoa"
-   ]
-  },
-  {
-   "key": "chavez",
-   "name": "Mateo Chávez",
+   "key": "quinones",
+   "name": "Julián Quiñones",
    "partidos": 1,
    "min": 90,
    "goles": 0,
    "asist": 0,
-   "rating": 5.8,
+   "rating": 6.2,
    "equipos_gol": [
-    "AZ Alkmaar"
+    "Al-Qadsiah"
    ]
   },
   {
-   "key": "fidalgo",
-   "name": "Álvaro Fidalgo",
+   "key": "vasquez",
+   "name": "Johan Vásquez",
    "partidos": 1,
-   "min": 82,
+   "min": 90,
    "goles": 0,
    "asist": 0,
-   "rating": 6.7,
+   "rating": 6.0,
    "equipos_gol": [
-    "Selección Mexicana"
-   ]
-  },
-  {
-   "key": "obed",
-   "name": "Obed Vargas",
-   "partidos": 1,
-   "min": 72,
-   "goles": 0,
-   "asist": 0,
-   "rating": 7.2,
-   "equipos_gol": [
-    "Selección Mexicana"
-   ]
-  },
-  {
-   "key": "armando",
-   "name": "Armando González",
-   "partidos": 1,
-   "min": 64,
-   "goles": 0,
-   "asist": 0,
-   "rating": 5.9,
-   "equipos_gol": [
-    "Selección Mexicana"
+    "Genoa"
    ]
   },
   {
    "key": "campillo",
    "name": "Diego Campillo",
    "partidos": 1,
-   "min": 45,
+   "min": 90,
    "goles": 0,
    "asist": 0,
-   "rating": 6.2,
-   "equipos_gol": [
-    "Chivas"
-   ]
-  },
-  {
-   "key": "camberos",
-   "name": "Hugo Camberos",
-   "partidos": 2,
-   "min": 42,
-   "goles": 0,
-   "asist": 0,
-   "rating": 6.4,
+   "rating": 6.6,
    "equipos_gol": [
     "Chivas"
    ]
@@ -146,37 +73,73 @@
   {
    "key": "sandoval",
    "name": "Santiago Sandoval",
+   "partidos": 1,
+   "min": 86,
+   "goles": 0,
+   "asist": 0,
+   "rating": 7.3,
+   "equipos_gol": [
+    "Chivas"
+   ]
+  },
+  {
+   "key": "chavez",
+   "name": "Mateo Chávez",
    "partidos": 2,
-   "min": 42,
+   "min": 77,
    "goles": 0,
    "asist": 0,
    "rating": 6.3,
    "equipos_gol": [
-    "Chivas"
+    "AZ Alkmaar"
+   ]
+  },
+  {
+   "key": "armando",
+   "name": "Armando González",
+   "partidos": 2,
+   "min": 33,
+   "goles": 0,
+   "asist": 0,
+   "rating": 6.7,
+   "equipos_gol": [
+    "Olympiacos"
+   ]
+  },
+  {
+   "key": "fidalgo",
+   "name": "Álvaro Fidalgo",
+   "partidos": 1,
+   "min": 20,
+   "goles": 0,
+   "asist": 0,
+   "rating": 6.9,
+   "equipos_gol": [
+    "Real Betis"
+   ]
+  },
+  {
+   "key": "huescas",
+   "name": "Rodrigo Huescas",
+   "partidos": 1,
+   "min": 20,
+   "goles": 0,
+   "asist": 0,
+   "rating": 6.9,
+   "equipos_gol": [
+    "FC Copenhague"
    ]
   },
   {
    "key": "gimenez",
    "name": "Santiago Giménez",
    "partidos": 1,
-   "min": 26,
+   "min": 5,
    "goles": 0,
    "asist": 0,
-   "rating": 6.7,
+   "rating": 6.5,
    "equipos_gol": [
-    "Selección Mexicana"
-   ]
-  },
-  {
-   "key": "fimbres",
-   "name": "Iker Fimbres",
-   "partidos": 1,
-   "min": 2,
-   "goles": 0,
-   "asist": 0,
-   "rating": 6.3,
-   "equipos_gol": [
-    "Monterrey"
+    "Porto"
    ]
   }
  ]
