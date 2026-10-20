@@ -2,7 +2,7 @@
  "desde": "2026-10-12",
  "hasta": "2026-10-18",
  "titulo": "12 – 18 oct 2026",
- "generado": "2026-10-19T09:16:55-06:00",
+ "generado": "2026-10-20T11:15:52-06:00",
  "imagen": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/semana/semana_2026-10-12.jpg?v=767e607b",
  "totales": {
   "goles": 0,
@@ -142,5 +142,168 @@
     "Porto"
    ]
   }
- ]
+ ],
+ "todos": [
+  {
+   "key": "sandoval",
+   "name": "Santiago Sandoval",
+   "estado": "jugo",
+   "rating": 7.3,
+   "partidos": 1,
+   "min": 86,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "huescas",
+   "name": "Rodrigo Huescas",
+   "estado": "jugo",
+   "rating": 6.9,
+   "partidos": 1,
+   "min": 20,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "fidalgo",
+   "name": "Álvaro Fidalgo",
+   "estado": "jugo",
+   "rating": 6.9,
+   "partidos": 1,
+   "min": 20,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "armando",
+   "name": "Armando González",
+   "estado": "jugo",
+   "rating": 6.7,
+   "partidos": 2,
+   "min": 33,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "campillo",
+   "name": "Diego Campillo",
+   "estado": "jugo",
+   "rating": 6.6,
+   "partidos": 1,
+   "min": 90,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "gimenez",
+   "name": "Santiago Giménez",
+   "estado": "jugo",
+   "rating": 6.5,
+   "partidos": 1,
+   "min": 5,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "chavez",
+   "name": "Mateo Chávez",
+   "estado": "jugo",
+   "rating": 6.3,
+   "partidos": 2,
+   "min": 77,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "quinones",
+   "name": "Julián Quiñones",
+   "estado": "jugo",
+   "rating": 6.2,
+   "partidos": 1,
+   "min": 90,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "montes",
+   "name": "César Montes",
+   "estado": "jugo",
+   "rating": 6.1,
+   "partidos": 2,
+   "min": 136,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "vasquez",
+   "name": "Johan Vásquez",
+   "estado": "jugo",
+   "rating": 6.0,
+   "partidos": 1,
+   "min": 90,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "camberos",
+   "name": "Hugo Camberos",
+   "estado": "banca",
+   "rating": null,
+   "partidos": 0,
+   "min": 0,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "obed",
+   "name": "Obed Vargas",
+   "estado": "banca",
+   "rating": null,
+   "partidos": 0,
+   "min": 0,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "mora",
+   "name": "Gilberto Mora",
+   "estado": "no_convocado",
+   "rating": null,
+   "partidos": 0,
+   "min": 0,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "fimbres",
+   "name": "Iker Fimbres",
+   "estado": "no_convocado",
+   "rating": null,
+   "partidos": 0,
+   "min": 0,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "luis_chavez",
+   "name": "Luis Chávez",
+   "estado": "no_convocado",
+   "rating": null,
+   "partidos": 0,
+   "min": 0,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "raul",
+   "name": "Raúl Jiménez",
+   "estado": "no_convocado",
+   "rating": null,
+   "partidos": 0,
+   "min": 0,
+   "goles": 0,
+   "asist": 0
+  }
+ ],
+ "criterio_mvp": "Mejor calificación promedio entre los que jugaron 60' o más; si empatan, más goles + asistencias."
 }
