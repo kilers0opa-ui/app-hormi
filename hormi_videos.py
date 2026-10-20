@@ -82,7 +82,7 @@ NEWS_RSS = "https://news.google.com/rss/search"
 LOCAL_TZ = timezone(timedelta(hours=-6))
 
 DEFAULTS = {
-    "max_noticias": 2,       # tope de noticias guardadas por jugador (pocas y buenas, no un feed)
+    "max_noticias": 3,       # tope de noticias guardadas por jugador (pocas y buenas, no un feed)
     "dias_retencion": 30,    # lo guardado más viejo que esto se descarta. Las políticas de la API de YouTube exigen borrar o refrescar sus datos a los 30 días: NO subir de 30
     # --- modo --eventos: goles
     "gol_intentos_min": [15, 30],     # minutos después del gol en que se busca (2 intentos, ni uno más)
@@ -337,10 +337,63 @@ def fill_embeddable(entries):
 
 # ------------------------------------------------------------------- News --
 
-def fetch_news(query, limit=15):
+# Ediciones de Google Noticias. "mx" y "es" en español; la "local" es la del país del club (se traduce).
+EDICIONES = {
+    "mx": {"hl": "es-419", "gl": "MX", "ceid": "MX:es-419", "pais": "México", "idioma": "es"},
+    "es": {"hl": "es", "gl": "ES", "ceid": "ES:es", "pais": "España", "idioma": "es"},
+}
+# Prensa local por club (clave del equipo en hormi_config.json). Clubes de México o España no llevan edición local
+# (ya la cubren "mx" / "es"). Un club nuevo sin entrada aquí simplemente no tiene noticia local.
+EDICION_LOCAL = {
+    "olympiacos": {"hl": "el", "gl": "GR", "ceid": "GR:el", "pais": "Grecia", "idioma": "el"},
+    "az_alkmaar": {"hl": "nl", "gl": "NL", "ceid": "NL:nl", "pais": "Países Bajos", "idioma": "nl"},
+    "porto": {"hl": "pt-PT", "gl": "PT", "ceid": "PT:pt-150", "pais": "Portugal", "idioma": "pt"},
+    "copenhague": {"hl": "da", "gl": "DK", "ceid": "DK:da", "pais": "Dinamarca", "idioma": "da"},
+    "lokomotiv": {"hl": "ru", "gl": "RU", "ceid": "RU:ru", "pais": "Rusia", "idioma": "ru"},
+    "dinamo": {"hl": "ru", "gl": "RU", "ceid": "RU:ru", "pais": "Rusia", "idioma": "ru"},
+    "wolves": {"hl": "en-GB", "gl": "GB", "ceid": "GB:en", "pais": "Inglaterra", "idioma": "en"},
+    "genoa": {"hl": "it", "gl": "IT", "ceid": "IT:it", "pais": "Italia", "idioma": "it"},
+    "al_qadsiah": {"hl": "ar", "gl": "SA", "ceid": "SA:ar", "pais": "Arabia Saudita", "idioma": "ar"},
+}
+TRADUCCIONES_FILE = Path("traducciones_cache.json")
+AZURE_URL = "https://api.cognitive.microsofttranslator.com/translate"
+
+
+def traducir(textos, origen):
+    """Titulares al español con Azure Translator (plan gratis: 2 millones de caracteres al mes). Guarda cada
+    traducción en traducciones_cache.json para no volver a pagar el mismo titular. Sin clave → None."""
+    key = os.environ.get("AZURE_TRANSLATOR_KEY")
+    if not key or not textos:
+        return None
+    cache = load_json(TRADUCCIONES_FILE, {})
+    faltan = [t for t in dict.fromkeys(textos) if t not in cache]
+    if faltan:
+        headers = {"Ocp-Apim-Subscription-Key": key, "Content-Type": "application/json; charset=UTF-8"}
+        region = os.environ.get("AZURE_TRANSLATOR_REGION")
+        if region:
+            headers["Ocp-Apim-Subscription-Region"] = region
+        url = f"{AZURE_URL}?api-version=3.0&to=es&from={urllib.parse.quote(origen)}"
+        body = json.dumps([{"Text": t} for t in faltan[:25]]).encode("utf-8")
+        try:
+            req = urllib.request.Request(url, data=body, headers=headers, method="POST")
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                res = json.loads(resp.read().decode("utf-8"))
+            for t, r in zip(faltan[:25], res):
+                cache[t] = ((r.get("translations") or [{}])[0]).get("text") or t
+            log(f"     🌐 {len(faltan[:25])} titular(es) traducidos ({sum(len(t) for t in faltan[:25])} caracteres)")
+        except Exception as err:
+            log(f"     ⚠️  no se pudo traducir con Azure: {err}")
+        if len(cache) > 3000:   # tope: se quedan las más recientes
+            cache = dict(list(cache.items())[-2000:])
+        save_json(TRADUCCIONES_FILE, cache)
+    return {t: cache[t] for t in textos if t in cache}
+
+
+def fetch_news(query, limit=15, edicion=None):
     """Titulares desde el RSS de Google Noticias. Solo se guarda título, medio,
     fecha y enlace — nunca el cuerpo de la nota."""
-    params = {"q": query, "hl": "es-419", "gl": "MX", "ceid": "MX:es-419"}
+    ed = edicion or EDICIONES["mx"]
+    params = {"q": query, "hl": ed["hl"], "gl": ed["gl"], "ceid": ed["ceid"]}
     url = f"{NEWS_RSS}?{urllib.parse.urlencode(params)}"
     try:
         root = ET.fromstring(http_get(url))
@@ -425,6 +478,12 @@ def title_mentions_player(title, player):
     return bool(alias) and all(has(t) for t in alias)
 
 
+def mentions_surname(title, player):
+    """Para la prensa local ya traducida: basta el apellido (la traducción a veces cambia el nombre de pila)."""
+    last = normalize(player.get("search_last_name") or "")
+    return bool(last) and re.search(rf"\b{re.escape(last)}\b", normalize(title)) is not None
+
+
 def curate_news(news, player, cap):
     """Solo titulares que nombran al jugador, sin títulos repetidos (el mismo
     titular llega a veces con dos enlaces), más reciente primero, con tope."""
@@ -473,12 +532,61 @@ def news_query(player, overrides):
     return overrides.get("query_noticias") or " ".join(x for x in (f'"{full}"', club) if x)
 
 
+def club_key(player):
+    for t in player.get("targets", []):
+        if t.get("kind") == "club":
+            return t.get("key")
+    return None
+
+
 def build_for_player(player, overrides):
-    """Solo noticias. Los videos ya NO se buscan de forma abierta (traía videos
-    de aficionados): llegan únicamente por eventos, ver process_events."""
+    """Solo noticias, de 3 ediciones: México, España y la prensa local del club (traducida). Los videos ya NO
+    se buscan de forma abierta (traía videos de aficionados): llegan únicamente por eventos (process_events)."""
     query = news_query(player, overrides)
-    log(f"   📰 noticias · {query!r}")
-    return {"noticias": fetch_news(query)}
+    out = {}
+    for ed_key, ed in EDICIONES.items():
+        log(f"   📰 noticias {ed['pais']} · {query!r}")
+        items = fetch_news(query, edicion=ed)
+        if items is not None:
+            out[ed_key] = [dict(n, edicion=ed_key) for n in items]
+    local = overrides.get("edicion_local") or EDICION_LOCAL.get(club_key(player) or "")
+    if local and os.environ.get("AZURE_TRANSLATOR_KEY"):
+        # Sin comillas: la prensa local suele escribir el nombre en su alfabeto/idioma y Google empata mejor así.
+        q_local = overrides.get("query_local") or " ".join(x for x in (full_name(player), club_label(player)) if x)
+        log(f"   📰 noticias {local['pais']} (se traducen) · {q_local!r}")
+        items = fetch_news(q_local, edicion=local) or []
+        items = [n for n in items[:10]]
+        tr = traducir([n["title"] for n in items], local["idioma"]) or {}
+        out["local"] = [dict(n, title=tr[n["title"]], title_original=n["title"], edicion="local",
+                             pais=local["pais"], traducida=True) for n in items if n["title"] in tr]
+    elif local:
+        log("     (sin AZURE_TRANSLATOR_KEY: se omite la prensa local)")
+    return {"noticias_ed": out}
+
+
+def curate_por_edicion(news, player, cap):
+    """Una noticia por edición (México, España, prensa local), la más reciente que de verdad hable del
+    jugador; si una edición no trae nada, se completa con otra de las demás. Sin titulares repetidos."""
+    def valida(n):
+        if n.get("edicion") == "local":
+            return mentions_surname(n.get("title") or "", player) or title_mentions_player(n.get("title_original") or "", player)
+        return title_mentions_player(n.get("title") or "", player)
+    ordered = sorted([n for n in news if valida(n)], key=lambda n: n.get("published_at") or "", reverse=True)
+    seen, elegidas = set(), []
+    def clave(n):
+        return re.sub(r"[^a-z0-9 ]+", "", normalize(n.get("title") or ""))
+    for ed in ("mx", "es", "local"):
+        n = next((x for x in ordered if (x.get("edicion") or "mx") == ed and clave(x) not in seen), None)
+        if n:
+            seen.add(clave(n))
+            elegidas.append(n)
+    for n in ordered:
+        if len(elegidas) >= cap:
+            break
+        if clave(n) not in seen:
+            seen.add(clave(n))
+            elegidas.append(n)
+    return elegidas[:cap]
 
 
 def strip_private(entries):
@@ -995,10 +1103,10 @@ def main():
         entry = output["players"].setdefault(player["key"], {"videos": [], "noticias": []})
         entry["videos"] = []   # la búsqueda abierta se retiró: los videos llegan por eventos (videos_gol.json)
         merged_news = entry.get("noticias") or []
-        if fresh.get("noticias") is not None:
-            merged_news = merge(merged_news, fresh["noticias"], "url", 10_000, settings["dias_retencion"])
+        for items in (fresh.get("noticias_ed") or {}).values():
+            merged_news = merge(merged_news, items, "url", 10_000, settings["dias_retencion"])
         # se cura SIEMPRE (también lo ya guardado), así una corrida limpia lo que quedó de antes
-        entry["noticias"] = curate_news(merged_news, player, settings["max_noticias"])
+        entry["noticias"] = curate_por_edicion(merged_news, player, settings["max_noticias"])
         log(f"     → {len(entry['noticias'])} noticias guardadas")
 
     output["updated_at"] = datetime.now(LOCAL_TZ).isoformat()
