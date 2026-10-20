@@ -861,7 +861,7 @@ def _finales_step(out, config, settings, sources, notify, now):
                         continue
                     fresh = fetch_news(news_query(player, per_player.get(pk) or {}))
                     if fresh is not None:
-                        st["noticias"][pk] = curate_news(fresh, player, settings["max_noticias"])
+                        st["noticias"][pk] = [dict(n, edicion="mx") for n in curate_news(fresh, player, settings["max_noticias"])]
                 st["noticias_pasadas"] = len(offsets) if when == "final" else st["noticias_pasadas"] + 1
                 st["ultima_noticia"] = now.isoformat()
                 changed = True
