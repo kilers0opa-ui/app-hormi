@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T03:30:15.149636-06:00",
+  "updated_at": "2026-10-20T03:27:03.189570-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -169,18 +169,6 @@
             "minutes": 85
           },
           {
-            "league_id": 262,
-            "league_name": "Liga MX",
-            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
-            "team_id": 2278,
-            "team_name": "Guadalajara Chivas",
-            "team_logo": "https://media.api-sports.io/football/teams/2278.png",
-            "played": 3,
-            "goals": 0,
-            "assists": 0,
-            "minutes": 195
-          },
-          {
             "league_id": 197,
             "league_name": "Super League 1",
             "league_logo": "https://media.api-sports.io/football/leagues/197.png",
@@ -191,6 +179,18 @@
             "goals": 0,
             "assists": 0,
             "minutes": 158
+          },
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2278,
+            "team_name": "Guadalajara Chivas",
+            "team_logo": "https://media.api-sports.io/football/teams/2278.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 195
           },
           {
             "league_id": 199,
@@ -3110,18 +3110,6 @@
             "minutes": 172
           },
           {
-            "league_id": 94,
-            "league_name": "Primeira Liga",
-            "league_logo": "https://media.api-sports.io/football/leagues/94.png",
-            "team_id": 212,
-            "team_name": "FC Porto",
-            "team_logo": "https://media.api-sports.io/football/teams/212.png",
-            "played": 2,
-            "goals": 1,
-            "assists": 0,
-            "minutes": 43
-          },
-          {
             "league_id": 2,
             "league_name": "UEFA Champions League",
             "league_logo": "https://media.api-sports.io/football/leagues/2.png",
@@ -3132,6 +3120,18 @@
             "goals": 0,
             "assists": 0,
             "minutes": 22
+          },
+          {
+            "league_id": 94,
+            "league_name": "Primeira Liga",
+            "league_logo": "https://media.api-sports.io/football/leagues/94.png",
+            "team_id": 212,
+            "team_name": "FC Porto",
+            "team_logo": "https://media.api-sports.io/football/teams/212.png",
+            "played": 2,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 43
           }
         ],
         "2017": [
@@ -3523,10 +3523,10 @@
             "team_id": 201,
             "team_name": "AZ Alkmaar",
             "team_logo": "https://media.api-sports.io/football/teams/201.png",
-            "played": 8,
+            "played": 9,
             "goals": 1,
             "assists": 3,
-            "minutes": 651
+            "minutes": 714
           }
         ]
       },
@@ -6642,7 +6642,7 @@
             "played": 7,
             "goals": 0,
             "assists": 0,
-            "minutes": 114
+            "minutes": 127
           }
         ]
       },
