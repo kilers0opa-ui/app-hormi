@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-20T14:10:25.075426-06:00",
+  "updated_at": "2026-10-20T14:53:57.635615-06:00",
   "cuota": {
     "fecha": "2026-10-20",
-    "busquedas": 3,
-    "busquedas_resumen": 3
+    "busquedas": 4,
+    "busquedas_resumen": 4
   },
   "goles": {},
   "partidos": {
@@ -23,11 +23,11 @@
         }
       },
       "status": "pendiente",
-      "intentos": 3,
+      "intentos": 4,
       "fallos": 0,
-      "ultimo_intento": "2026-10-20T19:15:19.940367+00:00",
+      "ultimo_intento": "2026-10-20T20:53:48.350488+00:00",
       "video": null,
-      "noticias_pasadas": 3,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-20T19:15:19.940367+00:00",
       "noticias": {
         "quinones": [
@@ -54,6 +54,54 @@
           }
         ]
       }
+    },
+    "1635738": {
+      "fixture_id": 1635738,
+      "home": "VfB Stuttgart",
+      "away": "Atlético de Madrid",
+      "league": "Champions League",
+      "score": "VfB Stuttgart 1-1 Atlético de Madrid",
+      "final_seen_at": "2026-10-20T20:51:20.786385+00:00",
+      "jugadores": {
+        "obed": {
+          "team_key": "atletico_madrid",
+          "minutes": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
+    },
+    "1635655": {
+      "fixture_id": 1635655,
+      "home": "FC Porto",
+      "away": "PSV Eindhoven",
+      "league": "Champions League",
+      "score": "FC Porto 0-1 PSV Eindhoven",
+      "final_seen_at": "2026-10-20T20:52:40.456799+00:00",
+      "jugadores": {
+        "gimenez": {
+          "team_key": "porto",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
