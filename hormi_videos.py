@@ -564,10 +564,17 @@ def build_for_player(player, overrides):
     return {"noticias_ed": out}
 
 
+RELATO_RE = re.compile(r"(disparo por|tiro atajado|se estrella en el poste|anota para|^cerca\b|^gol\b.*anota|tarjeta amarilla para|sustitucion|cambio en )")
+
+
 def curate_por_edicion(news, player, cap):
     """Una noticia por edición (México, España, prensa local), la más reciente que de verdad hable del
     jugador; si una edición no trae nada, se completa con otra de las demás. Sin titulares repetidos."""
     def valida(n):
+        t = n.get("title") or ""
+        # Fuera: "titulares" que solo son el nombre, y los automáticos de sitios de minuto a minuto.
+        if len(re.findall(r"\w+", t)) < 5 or RELATO_RE.search(normalize(t)):
+            return False
         if n.get("edicion") == "local":
             return mentions_surname(n.get("title") or "", player) or title_mentions_player(n.get("title_original") or "", player)
         return title_mentions_player(n.get("title") or "", player)
