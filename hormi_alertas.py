@@ -1021,6 +1021,21 @@ _VIVO = {}          # fixture_id -> datos de esta pasada (se junta a todos los j
 _VIVO_ENVIADO = {}  # fixture_id -> (marcador, periodo, minuto, time) del último push
 
 
+def _ultimo_gol(snap):
+    """Texto del último gol para la notificación en vivo: "Último gol: R. Alvarado 58' (Chivas)"."""
+    tanda = _tanda(snap)
+    anulados = _goles_anulados(snap)
+    goles = [e for i, e in enumerate(snap.get("events") or [])
+             if (e.get("type") or "").lower() == "goal" and e.get("detail") != "Missed Penalty"
+             and i not in anulados and id(e) not in tanda]
+    if not goles:
+        return ""
+    e = max(goles, key=lambda e: ((e.get("time") or {}).get("elapsed") or 0, (e.get("time") or {}).get("extra") or 0))
+    quien = (e.get("player") or {}).get("name") or "?"
+    extra = " (pen.)" if e.get("detail") == "Penalty" else (" (a.g.)" if e.get("detail") == "Own Goal" else "")
+    return f"Último gol: {quien} {minute_txt(e['time'])}{extra} ({nombre_es((e.get('team') or {}).get('name') or '')})"
+
+
 def anotar_vivo(player, snap, info):
     estado = info.get("status")
     if estado not in ("titular", "banca", "en_cancha", "entro"):
@@ -1034,7 +1049,9 @@ def anotar_vivo(player, snap, info):
     g = _VIVO.setdefault(fid, {
         "short": short, "elapsed": st.get("elapsed") or 0, "extra": st.get("extra") or 0,
         "home": nombre_es(snap["teams"]["home"]["name"]), "away": nombre_es(snap["teams"]["away"]["name"]),
-        "hg": gl.get("home") or 0, "ag": gl.get("away") or 0, "liga": liga_es(snap["league"]), "jug": []})
+        "hg": gl.get("home") or 0, "ag": gl.get("away") or 0, "liga": liga_es(snap["league"]), "jug": [],
+        "home_logo": snap["teams"]["home"].get("logo") or "", "away_logo": snap["teams"]["away"].get("logo") or "",
+        "ultimo": _ultimo_gol(snap), "pen": _penales(snap) or ""})
     if any(j["key"] == player["key"] for j in g["jug"]):
         return
     goles = [e["min"] for e in info.get("eventos") or [] if e.get("mio") and e.get("tipo") in ("gol", "pen")]
@@ -1063,7 +1080,9 @@ def enviar_vivo(fcm):
             g["short"], f"{g['elapsed']}'" + (f"+{g['extra']}" if g["extra"] else ""))
         fcm.send("live", f"{g['home']} {g['hg']}-{g['ag']} {g['away']}", minuto_txt, None, None, keys,
                  extra={"fixture_id": fid, "home": g["home"], "away": g["away"], "hg": g["hg"], "ag": g["ag"],
-                        "minuto": minuto_txt, "elapsed": g["elapsed"], "periodo": g["short"], "liga": g["liga"],
+                        "minuto": minuto_txt, "elapsed": g["elapsed"], "extra": g["extra"], "periodo": g["short"],
+                        "liga": g["liga"], "home_logo": g["home_logo"], "away_logo": g["away_logo"],
+                        "ultimo": g["ultimo"], "pen": g["pen"],
                         "jugadores": json.dumps(g["jug"], ensure_ascii=False, separators=(",", ":"))},
                  topic=LIVE_TOPIC, ttl="240s")
         _VIVO_ENVIADO[fid] = (marcador, g["short"], minuto, ahora)
