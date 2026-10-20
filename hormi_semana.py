@@ -61,10 +61,14 @@ def _fecha(fx):
     return datetime.fromtimestamp(fx["fixture"]["timestamp"], ha.LOCAL_TZ).date()
 
 
+AUSENCIAS = {}   # jugador -> motivo si su club jugó y él no tuvo minutos: "banca" | "no_convocado"
+
+
 def recolectar(config, ini, fin):
-    """{jugador: [apariciones]} de la semana."""
+    """{jugador: [apariciones]} de la semana. De paso anota en AUSENCIAS por qué no jugó el que no jugó."""
     por_equipo, stats_partido = {}, {}
     out = {}
+    AUSENCIAS.clear()
     for p in config["players"]:
         pid = p.get("player_id")
         for t in p["targets"]:
@@ -84,6 +88,11 @@ def recolectar(config, ini, fin):
                               if pl["player"]["id"] == pid), None)
                 if res:
                     if not linea or not (linea.get("games") or {}).get("minutes"):
+                        if t.get("kind") != "seleccion":
+                            # en la lista del partido sin minutos = banca; fuera de la lista = no convocado
+                            motivo = "banca" if linea else "no_convocado"
+                            if AUSENCIAS.get(p["key"]) != "banca":
+                                AUSENCIAS[p["key"]] = motivo
                         continue   # no jugó
                     g = (linea.get("goals") or {}).get("total") or 0
                     a = (linea.get("goals") or {}).get("assists") or 0
@@ -118,6 +127,24 @@ def resumir(config, apariciones):
                     "equipos_gol": equipos or [aps[0]["equipo"]]})
     if not jug:
         return None
+    # Todos los jugadores (no archivados), para ver por qué el MVP fue ese: los que jugaron con su promedio
+    # (o N/A si la liga no publica calificación) y los que no, con el motivo.
+    archivados = set(config.get("archivados") or [])
+    jugaron = {j["key"]: j for j in jug}
+    todos = []
+    for p in config["players"]:
+        if p["key"] in archivados:
+            continue
+        if p["key"] in jugaron:
+            j = jugaron[p["key"]]
+            todos.append({"key": j["key"], "name": j["name"], "estado": "jugo", "rating": j["rating"],
+                          "partidos": j["partidos"], "min": j["min"], "goles": j["goles"], "asist": j["asist"]})
+        else:
+            todos.append({"key": p["key"], "name": nombres.get(p["key"], p["key"]),
+                          "estado": AUSENCIAS.get(p["key"], "sin_partido"), "rating": None,
+                          "partidos": 0, "min": 0, "goles": 0, "asist": 0})
+    orden_estado = {"jugo": 0, "banca": 1, "no_convocado": 2, "sin_partido": 3}
+    todos.sort(key=lambda j: (orden_estado.get(j["estado"], 9), -(j["rating"] or 0), -j["min"], j["name"]))
     cand = [j for j in jug if j["min"] >= 60] or jug
     mvp = max(cand, key=lambda j: (j["rating"] or 0, j["goles"] + j["asist"], j["min"]))
     goleadores = sorted([j for j in jug if j["goles"]], key=lambda j: (-j["goles"], -j["asist"], j["name"]))
@@ -129,6 +156,8 @@ def resumir(config, apariciones):
         "goleadores": [{"key": j["key"], "name": j["name"], "goles": j["goles"], "equipo": " / ".join(j["equipos_gol"])}
                        for j in goleadores],
         "jugadores": sorted(jug, key=lambda j: (-(j["goles"] + j["asist"]), -j["min"])),
+        "todos": todos,
+        "criterio_mvp": "Mejor calificación promedio entre los que jugaron 60' o más; si empatan, más goles + asistencias.",
     }
 
 
