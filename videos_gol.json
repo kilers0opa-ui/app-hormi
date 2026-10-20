@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-20T15:20:40.523440-06:00",
+  "updated_at": "2026-10-20T15:25:35.424631-06:00",
   "cuota": {
     "fecha": "2026-10-20",
-    "busquedas": 4,
-    "busquedas_resumen": 4
+    "busquedas": 5,
+    "busquedas_resumen": 5
   },
   "goles": {},
   "partidos": {
@@ -71,13 +71,37 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-20T21:25:19.911331+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-20T21:25:19.911331+00:00",
+      "noticias": {
+        "obed": [
+          {
+            "title": "Debuta Obed Vargas en la Champions League",
+            "source": "Reforma",
+            "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQamVkUGVfdUd2NEtKMlJxMFI3bllwalR2SUxFeWNON0hpN1J0Q3lRLUc3MzQ3WHJQNFZHM3dxSlQ5ZnQ1eXB3ejkyZmpnMWF1dDVuLW1pVDNXN1ZXVmM4cVBPb3BXdDJjMVNRSENxMWF4Z0xmODh1OTdScENHZ3gtS1BucHRIdw?oc=5",
+            "published_at": "2026-10-20T21:20:13Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Obed Vargas debuta en Champions League tras casi cinco meses sin jugar con el Atlético",
+            "source": "Claro Sports",
+            "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPN2J0SDJtdHlQSUJ3MUtsUndHbGlzMXEtcEIyOUIySGFVckVQREFQT2ROY0poYUNGYU5JZDY3YU5JdmoyeFZKR3RlaEZsZ1g3RmFDeTN6Yk82UEwyYlBlTENIUzA4VkdyQ04zUm5oYTRnQ2ZOZ0xuTzRKOUV6Tmd4NU9WSjJ6WW1hRzVFZmtHSFE0cnc1cGdaUFNxTWZOSlpYQVVDblR5aGVRWGVHOGgtaWJIdHVkNzdPWEt2VnB6YnNLSE53VU9IRWdzLUQ3Y2NMajk4bUZR?oc=5",
+            "published_at": "2026-10-20T21:18:58Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "¡Obed Vargas debutó en Champions League! Así fue su partido en el Atlético de Madrid vs. Stuttgart",
+            "source": "Juanfutbol",
+            "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQWnM4SHE4bGloVWNRcXlscDdJVjFOYkhjeHZMZVZZZzFwV016OE9hOWsyMGZpb3F5Z3FUSGFwcEoyS2ZHbVNYSmVJaXZSV0NZY1dGbTBmc0JxOF80djhBU3k4MU9iUE1fSjRRanFNdldwOG5LS05nbTRRVnZLLUVGc3pNLWhSeFcxbktVMU1YQTNKeXVHejl5TDMtV0NVNl9tNDhHdXhUNGdWcjN5RndtSjRHQ2pkdXV5TEM4ODktX0phaGVobE13VE9sWjRnWW0xdVkzUWd0Vm1aSWxlZ1E?oc=5",
+            "published_at": "2026-10-20T21:09:55Z",
+            "edicion": "mx"
+          }
+        ]
+      }
     },
     "1635655": {
       "fixture_id": 1635655,
@@ -94,14 +118,39 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-20T21:25:19.911331+00:00",
+      "noticias": {
+        "gimenez": [
+          {
+            "title": "Santiago Giménez borrado, no lo meten ni con la urgencia de un gol: Resumen Porto vs. PSV",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPTDEyUmF6aDlTdS1CLUYxc1dwUmt4UTR3eTFXTl9HeUZrY1hXRE1YbDB0MjNhWEZUOGgxTWt3ZzJaMzFtMUFWYmZ1cVZXaDRURzRIdkx5UXRpUGlmVzBlOFpXTTkzWW5ZaDZhRUJ6TzJjdlFoRFY2eXpWaTcySGRrZjRKdDBSVVB4a3V6NTc1aFdET3VYbTFtOUlyZUxvZDJ6VVVNTEp3OUtaa3lyT0wtc21mcDZGdXFNYm1xTmU3dnhxTlEteGs0YVQ3WEh5OVVKYUHSAdIBQVVfeXFMT29lbVQtYTh0bWY5UFpBUHhWZGg1QVpCek5XdzFOWDlSNDZubTF5NEhQbUxMQ3pZZm91OHo3NkxwUTRiYkRpbEFkUVJyV2xEVGVWUzV4QTNWa0xaeXh6aXZkMkJrLWV6SjlYT2huY2oxY0dPdTV0clNQdVB1cUYzaVRzWnQ5cTBGLTM2VVl4aENDWkkyZnVCVXNveDdMQU5mRnhHNkZPNko1cERaQ3I4ZTFsZG80TnJULTBsWFUwN0ZQVXFBemxxZ0lCSmoyNDVtWXl3?oc=5",
+            "published_at": "2026-10-20T20:52:32Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Santiago Giménez responde a rumores sobre supuestos problemas psicológicos",
+            "source": "AS México",
+            "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNbU52RTNTcE9obmFfUjktd1VQTFZfOFBCVzNUbDdtR0tYREdtbUdybmZwdXpQdjBYMjFibEtOc3c0OE9mMUlfOU5VVnhNZWJJNGZ3ek0wd1FNa1ExMXYwRFE2YVl0MmF3YWswRTZmbzJXNE9mRlU1WXlFcnA3TUFISGllSkxEdXFObkZyb1RfTjlKUl9sRE92SXRIaW9UNVpJRklodXFYWHJnR0IyMFdadk02cjh2YmhBLVBTRlYzd29JbGNlQVFSZGxzWXdDVXdLaE5B0gHnAUFVX3lxTFBHTU83c1hrdnZPWEJmcTR6VUd3ZVhvd2tWSUtTbWY2YTlDbjJPOF83LXFOZExqeUhHUFA1dkpoaU5CbFpocDFpR0hCRTUyT0ltcDVyblVuMXVMS2dlWHJPY2l5dFozVDd2cG9LNWEweEN5cE1oT280azlFM0RQOGh2OWJjMG1CNHhudEFacS1FcFpRZW55blYyR3pTbEQ1YjVTNVh2Q0lmU2hLY3VJb2tYRWdjSGZSX2xvUnZyTVJ0d3hETE5hWGlkZXQxSWhJZUl6bENfTjVfX0dSWWlLUGZ1V2pndlQyMA?oc=5",
+            "published_at": "2026-10-20T20:24:10Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Porto vs PSV: A qué hora y dónde ver en vivo a Santiago Giménez en la Champions League desde México",
+            "source": "Grupo Animal",
+            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ2ZacFBGQS0xSkVnaExmZTRtOUI2STNoNkZKdDZxMGF5M3VRTlZPbF9MbW0wd1ZIZ0hydklYQXlGbEZJd1FISDhlb25wN00xTVNRQUxsSlFRdkp0U25YeVBLZVhXMW9uczRJY2hMVVpSU1NCR0doRWhlUFBRMmFhaGV2NW9XbE1aOHhjdl9ub2NqQjhFQVVvc1RUR2s?oc=5",
+            "published_at": "2026-10-20T16:37:57Z",
+            "edicion": "mx"
+          }
+        ]
+      },
+      "motivo": "ningún jugador tuvo minutos"
     }
   }
 }
