@@ -447,7 +447,7 @@ def _liga_tipo(name):
     return "liga"
 
 
-EVENTOS_V = 4   # sube si cambia cómo se arman los Detalles: hormi_ultimo.py recalcula los ya guardados
+EVENTOS_V = 5   # sube si cambia cómo se arman los Detalles: hormi_ultimo.py recalcula los ya guardados
 
 
 def _goles_anulados(data):
@@ -465,8 +465,9 @@ def _goles_anulados(data):
                   for e in evs if (e.get("type") or "").lower() == "var"
                   and any(w in (e.get("detail") or "").lower() for w in ("cancel", "disallow", "anulad"))]
     fuera, por_equipo = set(), {}
+    tanda = _tanda(data)
     for i, e in enumerate(evs):
-        if (e.get("type") or "").lower() != "goal" or e.get("detail") == "Missed Penalty":
+        if (e.get("type") or "").lower() != "goal" or e.get("detail") == "Missed Penalty" or _es_tanda(e, tanda):
             continue
         tid, minuto = (e.get("team") or {}).get("id"), (e.get("time") or {}).get("elapsed") or 0
         if any(t == tid and abs(m - minuto) <= 3 for t, m in var_cancel):
@@ -486,6 +487,41 @@ def _goles_anulados(data):
     return fuera
 
 
+def _penales(data):
+    """Marcador de la tanda de penales ("1-3") o None si no hubo tanda."""
+    pen = ((data.get("score") or {}).get("penalty")) or {}
+    if pen.get("home") is None or pen.get("away") is None:
+        return None
+    return f"{pen['home']}-{pen['away']}"
+
+
+def _tanda(data):
+    """ids (id() de Python) de los eventos de la tanda de penales. La API los marca con comments =
+    "Penalty Shootout"; si no los marca, se toman los últimos penales (anotados o fallados) que sobran
+    respecto al marcador del partido."""
+    evs = data.get("events") or []
+    marcados = {id(e) for e in evs if "shootout" in (e.get("comments") or "").lower()}
+    pen = ((data.get("score") or {}).get("penalty")) or {}
+    if marcados or pen.get("home") is None:
+        return marcados
+    total = (pen.get("home") or 0) + (pen.get("away") or 0)
+    orden = sorted(evs, key=lambda e: ((e.get("time") or {}).get("elapsed") or 0, (e.get("time") or {}).get("extra") or 0))
+    anotados = 0
+    for e in reversed(orden):
+        if (e.get("type") or "").lower() != "goal" or e.get("detail") not in ("Penalty", "Missed Penalty"):
+            break
+        if e.get("detail") == "Penalty":
+            if anotados == total:
+                break
+            anotados += 1
+        marcados.add(id(e))
+    return marcados
+
+
+def _es_tanda(e, tanda=None):
+    return id(e) in tanda if tanda is not None else "shootout" in (e.get("comments") or "").lower()
+
+
 def _eventos(data, player_id):
     """Detalles del partido para la app (sección "Detalles"): goles de ambos equipos, amarillas y rojas, y
     cuando ENTRA (si empezó en la banca) o SALE tu jugador. lado: 'L' local / 'V' visitante; mio: es tu jugador.
@@ -497,14 +533,20 @@ def _eventos(data, player_id):
     entro = False
     out = []
     anulados = {id(e) for i, e in enumerate(data.get("events") or []) if i in _goles_anulados(data)}
+    tanda = _tanda(data)
     for e in sorted(data.get("events") or [], key=lambda e: (e["time"]["elapsed"] or 0, e["time"].get("extra") or 0)):
         etype, detail = (e.get("type") or "").lower(), e.get("detail") or ""
         pid = (e.get("player") or {}).get("id")
         aid = (e.get("assist") or {}).get("id")
         nombre = (e.get("player") or {}).get("name") or ""
         mio = pid == player_id
-        if id(e) in anulados:
+        if etype == "goal" and _es_tanda(e, tanda):
+            # Tanda de penales: van aparte en la app ("Tanda de penales"), no como goles del partido.
+            tipo = "tanda_fallo" if detail == "Missed Penalty" else "tanda_gol"
+        elif id(e) in anulados:
             tipo = "anulado"   # la app lo muestra "🚫 Gol anulado" (con el nombre si la API lo trae)
+        elif etype == "goal" and detail == "Missed Penalty":
+            tipo = "pen_fallado"   # penal fallado durante el partido
         elif etype == "goal" and detail != "Missed Penalty":
             tipo = "pen" if detail == "Penalty" else ("autogol" if detail == "Own Goal" else "gol")
         elif etype == "card":
@@ -516,7 +558,7 @@ def _eventos(data, player_id):
             mio = True
         else:
             continue
-        out.append({"min": minute_txt(e["time"]), "tipo": tipo, "nombre": nombre,
+        out.append({"min": "" if tipo.startswith("tanda") else minute_txt(e["time"]), "tipo": tipo, "nombre": nombre,
                     "lado": "L" if (e.get("team") or {}).get("id") == home_id else "V", "mio": mio})
     return out
 
@@ -524,10 +566,11 @@ def _eventos(data, player_id):
 def _goles_texto(data):
     """Goles del partido hasta ahora (ambos equipos), uno por línea: '⚽ El Kaabi 23' (Olympiacos)'."""
     lineas = []
+    tanda = _tanda(data)
     anulados = _goles_anulados(data)
     evs = [e for i, e in enumerate(data.get("events") or []) if i not in anulados]
     for e in sorted(evs, key=lambda e: (e["time"]["elapsed"] or 0, e["time"].get("extra") or 0)):
-        if (e.get("type") or "").lower() != "goal" or e.get("detail") == "Missed Penalty":
+        if (e.get("type") or "").lower() != "goal" or e.get("detail") == "Missed Penalty" or _es_tanda(e, tanda):
             continue
         extra = " (pen.)" if e.get("detail") == "Penalty" else (" (a.g.)" if e.get("detail") == "Own Goal" else "")
         lineas.append(f"⚽ {e['player'].get('name') or '?'} {minute_txt(e['time'])}{extra} ({nombre_es(e['team']['name'])})")
@@ -558,7 +601,9 @@ def analyze(data, player, target):
 
     def score():
         g = data["goals"]
-        return f"{nombre_es(home['name'])} {g['home'] or 0}-{g['away'] or 0} {nombre_es(away['name'])}"
+        pen = _penales(data)
+        return (f"{nombre_es(home['name'])} {g['home'] or 0}-{g['away'] or 0} {nombre_es(away['name'])}"
+                + (f" (pen. {pen})" if pen else ""))
 
     alerts = []
 
@@ -707,7 +752,7 @@ def analyze(data, player, target):
                      "league_logo": (data.get("league") or {}).get("logo"),
                      "league_tipo": _liga_tipo((data.get("league") or {}).get("name")),
                      "eventos": _eventos(data, player_id),
-                     "score": score(), "goals": goals, "assists": assists,
+                     "score": score(), "goals": goals, "assists": assists, "penales": _penales(data),
                      "summary": summary, **({"banca_pendiente": True} if banca_pendiente else {})}
 
 
@@ -731,7 +776,7 @@ def registrar_ultimo(player, target, snap, info):
         "fixture_id": fx["id"], "kickoff": kickoff,
         "home": nombre_es(snap["teams"]["home"]["name"]), "away": nombre_es(snap["teams"]["away"]["name"]),
         "home_logo": snap["teams"]["home"].get("logo"), "away_logo": snap["teams"]["away"].get("logo"),
-        "home_goals": g.get("home"), "away_goals": g.get("away"),
+        "home_goals": g.get("home"), "away_goals": g.get("away"), "penales": _penales(snap),
         "league": liga_es(snap["league"]),
         "league_logo": snap["league"].get("logo"), "league_tipo": _liga_tipo(snap["league"].get("name")),
         "eventos": info.get("eventos") or [], "eventos_v": EVENTOS_V,
@@ -1141,28 +1186,33 @@ def procesar_calificaciones(pend, hechas, config, fcm, notifier=None):
                 stats_sucio = True
         if not listos:
             continue
-        sel = [x for x in listos if x[1]["kind"] == "seleccion"]
+        # Varios jugadores del mismo equipo en el partido (Selección o club, p. ej. 3 de Chivas): UN aviso.
+        etiquetas = {t["key"]: t["label"] for p in config["players"] for t in p["targets"]}
+        por_equipo = {}
         for k, it, st in listos:
             hechas.add(k)
             pend.pop(k, None)
-            if it["kind"] == "seleccion":
+            por_equipo.setdefault(it["team_key"], []).append((k, it, st))
+        for tkey, grupo_eq in por_equipo.items():
+            if len(grupo_eq) == 1:
+                k, it, st = grupo_eq[0]
+                title = f"⭐ {nombres.get(it['player'], it['player'])}: {st['rating']} contra {it['rival']}"
+                body = _texto_calificacion(it, st)
+                log(f"📲 {title} — {body}")
+                if fcm:
+                    fcm.send("rating", title, body, it["player"], it["team_key"])
                 continue
-            title = f"⭐ {nombres.get(it['player'], it['player'])}: {st['rating']} contra {it['rival']}"
-            body = _texto_calificacion(it, st)
-            log(f"📲 {title} — {body}")
-            if fcm:
-                fcm.send("rating", title, body, it["player"], it["team_key"])
-        if sel and fcm:
             items_g = [{"key": it["player"], "name": nombres.get(it["player"], it["player"]), "rol": "convocado",
                         "rating": st["rating"],
                         "title": f"⭐ {nombres.get(it['player'], it['player'])}: {st['rating']} contra {it['rival']}",
-                        "body": _texto_calificacion(it, st)} for k, it, st in sel]
-            title = f"⭐ Calificaciones · {sel[0][1]['match']}"
+                        "body": _texto_calificacion(it, st)} for k, it, st in grupo_eq]
+            title = f"⭐ Calificaciones · {grupo_eq[0][1]['match']}"
             body = " · ".join(f"{i['name']} {i['rating']}" for i in items_g)
-            grupo = json.dumps({"title": title, "body": body, "label": "Selección Mexicana", "emoji": "⭐",
+            grupo = json.dumps({"title": title, "body": body, "label": etiquetas.get(tkey, tkey), "emoji": "⭐",
                                 "items": items_g}, ensure_ascii=False, separators=(",", ":"))
             log(f"📲 {title} — {body}")
-            fcm.send("rating", title, body, None, "seleccion", [i["key"] for i in items_g], extra={"grupo": grupo})
+            if fcm:
+                fcm.send("rating", title, body, None, tkey, [i["key"] for i in items_g], extra={"grupo": grupo})
     if stats_sucio:
         stats_file["updated_at"] = now_iso()
         save_json(STATS_FILE, stats_file)
@@ -1172,6 +1222,13 @@ def enviar_grupos(notifier, fcm):
     """Manda los avisos unificados juntados en esta pasada. Solo cuentan los jugadores que estuvieron
     en el partido (titular/banca); la app lo muestra si AL MENOS UNO de ellos es Favorito."""
     for (tkey, fid, tipo), g in list(_GRUPOS.items()):
+        if len(g["jugadores"]) == 1:
+            # Un solo jugador en ese partido: su aviso de siempre, sin agrupar.
+            j = g["jugadores"][0]
+            notifier.send(j["title"], j["body"], 4 if tipo == "lineup" else 3)
+            if fcm:
+                fcm.send(fcm_tipo(tipo), j["title"], j["body"], j["key"], tkey)
+            continue
         jug = [j for j in g["jugadores"] if j["status"] not in ("no_convocado", "sin_partido", "cancelado")]
         if tipo == "lineup":
             # La alineación sí incluye a los no convocados (es justo lo que quieres saber de ellos).
@@ -1757,7 +1814,7 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         "score": info.get("score"),
         "summary": info.get("summary"),
     }
-    grupo = [] if target.get("kind") == "seleccion" else None
+    grupo = []   # inicio/medio tiempo/final/alineación: uno por partido aunque haya varios jugadores (ver enviar_grupos)
     n = dispatch(alerts, sent, notifier, fcm, player["key"], key, match_info=match_info, grupo=grupo)
     if grupo:
         anotar_grupo(player, target, info, fid, grupo)

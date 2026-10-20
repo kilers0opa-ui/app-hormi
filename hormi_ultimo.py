@@ -82,6 +82,7 @@ def actualizar(config, solo=None):
                 if res:
                     lg = res[0].get("league") or {}
                     mejor = dict(mejor, eventos=ha._eventos(res[0], player.get("player_id")), eventos_v=ha.EVENTOS_V,
+                                 penales=ha._penales(res[0]),
                                  league_logo=lg.get("logo"), league_tipo=ha._liga_tipo(lg.get("name")))
             except Exception as err:
                 hh.log(f"⚠️  {player['name']}: no se pudieron leer los detalles del último partido — {err}")
