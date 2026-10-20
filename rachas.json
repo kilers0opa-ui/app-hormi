@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T14:47:19.760327-06:00",
+  "updated_at": "2026-10-20T15:45:02.551691-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -538,8 +538,8 @@
             false,
             false,
             false,
-            true,
             false,
+            true,
             false,
             false
           ]
@@ -554,8 +554,8 @@
             false,
             false,
             false,
-            true,
             false,
+            true,
             false,
             false
           ]
@@ -579,17 +579,17 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
+            false,
             true,
             false,
             false,
             false,
             true,
             true,
-            true,
-            false
+            true
           ]
         }
       ],
@@ -629,7 +629,7 @@
       ],
       "logros": [],
       "club": "Porto",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "chavez": {
       "rachas": [
@@ -789,10 +789,10 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
-            false,
+            true,
             false,
             false,
             false,
@@ -815,10 +815,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 182,
+          "valor": 183,
           "meta": 200,
           "previo": 150,
-          "texto": "A 18 partidos de 200"
+          "texto": "A 17 partidos de 200"
         },
         {
           "id": "goles_sel",
@@ -839,7 +839,7 @@
       ],
       "logros": [],
       "club": "Atlético Madrid",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "fidalgo": {
       "rachas": [
