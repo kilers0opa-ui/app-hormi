@@ -120,6 +120,8 @@ DEFAULTS = {
         "FOX Sports MX": "UCUf4RLsG_TsjinvtL2jT-VA",
         "TUDN México": "UCTIyEyDNHPrwVFPhpi5dm0A",
         "ESPN Deportes": "UC08mnbiC4FykqpHqbEWgFcg",
+        "LIGA BBVA MX": "UCq8BPLXtFeiSFOvmJrknWGg",
+        "Chivas": "UCbtodmCOE5CDdVvVvUzwQfQ",
     },
     "canales_resumen_desde_min": 20,   # desde cuántos minutos después del final se revisan esos canales
     # País donde tiene que poderse ver el video (goles y resúmenes): se descartan los bloqueados ahí por
@@ -578,11 +580,35 @@ def is_match_summary(entry, home_pref, away_pref):
             and any(w in title for w in RESUMEN_WORDS))
 
 
+CANAL_GENERICO = {"fc", "cf", "sc", "ac", "club", "clube", "oficial", "official", "tv", "channel", "canal", "youtube", "de", "the",
+                  "balompie", "futbol", "football", "calcio", "real", "united", "city", "deportivo", "athletic"}
+
+
+def canal_del_equipo(ch_norm, prefixes):
+    """El canal ES el del equipo ("Real Betis Balompié", "Chivas", "Olympiacos FC"), no uno que solo lo
+    contiene ("Barcelonabloodman", "Chivas EMILIANO Aficionados"): todas sus palabras (quitando FC, TV,
+    oficial...) deben ser palabras del equipo, y debe haber al menos una."""
+    words = [w for w in re.findall(r"[a-z0-9]+", ch_norm) if w not in CANAL_GENERICO and len(w) > 2]
+    if not words:
+        return False
+    return all(any(w.startswith(p) and len(w) <= len(p) + 6 for p in prefixes) for w in words)
+
+
 def resumen_confiable(entry, home_pref, away_pref, settings):
     """True si el canal es de los confiables o el oficial de alguno de los dos equipos."""
     ch = normalize(entry.get("channel") or "") + " "
     return (any(t in ch for t in settings.get("canales_confiables") or [])
-            or mentions_team(ch, home_pref) or mentions_team(ch, away_pref))
+            or canal_del_equipo(ch, home_pref) or canal_del_equipo(ch, away_pref))
+
+
+MARCADOR_RE = re.compile(r"\b\d{1,2}\s*[-–]\s*\d{1,2}\b")
+
+
+def resumen_de_canal_oficial(entry, home_pref, away_pref):
+    """En las subidas de los canales oficiales (liga, club, TUDN...), un video con los dos equipos y el
+    marcador en el título es el resumen aunque no diga "resumen" (la Liga MX titula "CHIVAS 1-1 TIGRES | ...")."""
+    title = normalize(entry.get("title") or "")
+    return mentions_team(title, home_pref) and mentions_team(title, away_pref) and bool(MARCADOR_RE.search(title))
 
 
 def resumen_descartado(entry, settings):
@@ -735,7 +761,7 @@ def _finales_step(out, config, settings, sources, notify, now):
             since_iso = (base - timedelta(minutes=settings["resumen_margen_min"])).strftime("%Y-%m-%dT%H:%M:%SZ")
             used = {s2["video"]["id"] for k2, s2 in partidos.items() if k2 != fid and s2.get("video")}
             cands = [e for e in _subidas_canales(settings)
-                     if is_match_summary(e, home_pref, away_pref)
+                     if (is_match_summary(e, home_pref, away_pref) or resumen_de_canal_oficial(e, home_pref, away_pref))
                      and (e.get("published_at") or "") >= since_iso
                      and e["id"] not in used and not resumen_descartado(e, settings)]
             vis = filter_visibles(cands, settings.get("region_visible")) if cands else []
