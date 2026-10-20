@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T11:17:47.714981-06:00",
+  "updated_at": "2026-10-20T14:51:22.306731-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -3917,10 +3917,10 @@
             "team_id": 530,
             "team_name": "Atletico Madrid",
             "team_logo": "https://media.api-sports.io/football/teams/530.png",
-            "played": 1,
+            "played": 2,
             "goals": 0,
             "assists": 0,
-            "minutes": 90,
+            "minutes": 102,
             "estimated": true
           }
         ],
@@ -3955,82 +3955,82 @@
         "seleccion": [
           1629004,
           1629006
+        ],
+        "atletico_madrid": [
+          1635738
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1629006,
-        "kickoff": "2026-10-06T20:30:00-06:00",
-        "home": "México",
-        "away": "Chile",
-        "home_logo": "https://media.api-sports.io/football/teams/16.png",
-        "away_logo": "https://media.api-sports.io/football/teams/2383.png",
-        "home_goals": 0,
-        "away_goals": 2,
-        "league": "Amistoso",
-        "team_key": "seleccion",
-        "team_label": "Selección Mexicana",
-        "emoji": "🇲🇽",
-        "crest_url": "https://media.api-sports.io/football/teams/16.png",
-        "minutes": 72,
-        "goals": 0,
-        "assists": 0,
-        "league_logo": "https://media.api-sports.io/football/leagues/10.png",
-        "league_tipo": "amistoso",
+        "fixture_id": 1635738,
+        "kickoff": "2026-10-20T13:00:00-06:00",
+        "home": "VfB Stuttgart",
+        "away": "Atlético de Madrid",
+        "home_logo": "https://media.api-sports.io/football/teams/172.png",
+        "away_logo": "https://media.api-sports.io/football/teams/530.png",
+        "home_goals": 1,
+        "away_goals": 1,
+        "penales": null,
+        "league": "Champions League",
+        "league_logo": "https://media.api-sports.io/football/leagues/2.png",
+        "league_tipo": "copa",
         "eventos": [
           {
-            "min": "44'",
+            "min": "17'",
             "tipo": "amarilla",
-            "nombre": "Jesús Gallardo",
+            "nombre": "Maximilian Mittelstädt",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "54'",
+            "min": "36'",
             "tipo": "gol",
-            "nombre": "M. Gutierrez",
+            "nombre": "Jamie Leweling",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "47'",
+            "tipo": "gol",
+            "nombre": "Julián Álvarez",
             "lado": "V",
             "mio": false
           },
           {
-            "min": "65'",
-            "tipo": "gol",
-            "nombre": "V. Pizarro",
+            "min": "64'",
+            "tipo": "roja",
+            "nombre": "Morten Hjulmand",
             "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "72'",
-            "tipo": "sale",
-            "nombre": "O. Vargas",
-            "lado": "L",
-            "mio": true
-          },
-          {
-            "min": "73'",
-            "tipo": "amarilla",
-            "nombre": "Everardo López",
-            "lado": "L",
             "mio": false
           },
           {
             "min": "78'",
+            "tipo": "entra",
+            "nombre": "Obed Vargas",
+            "lado": "V",
+            "mio": true
+          },
+          {
+            "min": "85'",
             "tipo": "amarilla",
-            "nombre": "Darío Osorio",
+            "nombre": "Diego Pablo Simeone",
             "lado": "V",
             "mio": false
           }
         ],
-        "stats": {
-          "rating": 7.2,
-          "tiros": 2,
-          "tiros_puerta": 1,
-          "pases_pct": 98,
-          "duelos": 2,
-          "duelos_ganados": 1,
-          "mejor_equipo": true
-        },
         "eventos_v": 5,
-        "penales": null
+        "team_key": "atletico_madrid",
+        "team_label": "Atlético Madrid",
+        "emoji": "🔴",
+        "crest_url": "https://media.api-sports.io/football/teams/530.png",
+        "minutes": 12,
+        "goals": 0,
+        "assists": 0,
+        "stats": {
+          "rating": 6.2,
+          "tiros": 0,
+          "tiros_puerta": 0,
+          "pases_pct": 100
+        }
       }
     },
     "fidalgo": {
