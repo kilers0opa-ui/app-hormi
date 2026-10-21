@@ -1,4 +1,14 @@
 {
-  "updated_at": "2026-10-20T21:02:02.924137-06:00",
-  "players": {}
+  "updated_at": "2026-10-20T21:48:14.812744-06:00",
+  "players": {
+    "raul": {
+      "estado": "lesion",
+      "motivo": "rodilla",
+      "motivo_api": "Knee Injury",
+      "partido": "Wolves vs Watford",
+      "fixture_id": 1563226,
+      "kickoff": "2026-10-24T08:00:00-06:00",
+      "team_key": "wolves"
+    }
+  }
 }
