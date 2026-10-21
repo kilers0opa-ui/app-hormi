@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-20T20:35:27.624887-06:00",
+  "updated_at": "2026-10-20T20:40:32.718842-06:00",
   "cuota": {
     "fecha": "2026-10-20",
-    "busquedas": 5,
-    "busquedas_resumen": 5
+    "busquedas": 6,
+    "busquedas_resumen": 6
   },
   "goles": {},
   "partidos": {
@@ -189,13 +189,83 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-21T02:40:20.398519+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-21T02:40:20.398519+00:00",
+      "noticias": {
+        "campillo": [
+          {
+            "title": "¿Era roja? La falta sobre Diego Campillo que generó polémica en el Chivas vs Necaxa",
+            "source": "El Heraldo de México",
+            "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOc1hCalhWTlZRSC10cmJvb1VESTQtOWdENDdmaGg4TEVrMmdCM3RFTjJCQ0tqeU5rMGVOTXBNYm1ZcGZhVi1KSnJUODZGSDBMNGNRXzl0SWRCbll2dmhKbGFaNjFVMXB4c3R5VG9Lb2g2ZnUxMnF6bFkyV1RlbWNQcGxWTjk3eW53SDZrZHFoeEN3ZzVBTm1YUlgyd0JDZjk5U25jd2FoR0psY01feTlyU1lpazdQZ05fTG1GZ0FoOFRyRHNtLThIdmo5OEJWQVJrMmsybEFCZk40MnQ4?oc=5",
+            "published_at": "2026-10-21T01:46:00Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Diego Campillo cumple 25 años: la historia del defensa de Chivas",
+            "source": "ABC Noticias",
+            "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQQUtOQm9iZmhJSngzclZTWGUwY2tKVzhJaU11M3NacjVTVVFsSjlsUDR0QjRyam5yOHZuRWJUdzZDazg0YXFZODYzRF9qei1fY1RrczZfN2l5MmdjU2NmeEg4YmR3dmswd251SXUxdEFUZ1NNdmNGakpSMEVlZXdwUTlxUDBvUmxPWmQ0ZVZfdTlBbUZjY3htRjdEdXlkd1NKa2QwSEJlN2hJMXd2aEJianFEdEVUT0dkcVE?oc=5",
+            "published_at": "2026-10-19T23:05:00Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Diego Campillo: de la Cantera Rojiblanca a pieza clave de Chivas",
+            "source": "Chivas",
+            "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQVUQ1M3VTRzJuQVFmZnU4VGplQVBWMm1QakVsak9mMm9sd25JUmxyTC1yZUt3dGlwNWR4NlJCTVB6M0FLS2ZYaGVHSFFDMWhndV94M0xiOWpoMk9wX2VmbUh2RndjY0RJZWJXNEk5bmp1QjdIbzIxdWpjX2pNdVJpRUxqcnpzMUtCNG05dGtnYXE1ME5Fang0NEh3ZFhWLXdNeFQ0TDlfMTl4VnlKUUc1WnZhY0tWN2c?oc=5",
+            "published_at": "2026-10-19T18:41:58Z",
+            "edicion": "mx"
+          }
+        ],
+        "camberos": [
+          {
+            "title": "Hugo Camberos cambia la cancha por los tacos al pastor después de entrenar con Chivas",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPOUF2X0xXLWNFRnR5cmJGdFdwS3FxX29BajI3RFkzalp4ajJBNVpIdVRkVTZiSWxqV1BDNDRYaTFFamFTWlFzY0N5NlhWUURvdEVjU0FXVFFnYmRzOUVTLTUwcFQtRzRIOUlFLWEteHkwUkxYUE11STdNT1gyUTc3RG04emFrMXdadk03NXd2VnJYVzZwcVhIYmlqdmJWWG9hWGVaWFlnOWYzVEdMb2dtNTQxVUpkN3A0bEE?oc=5",
+            "published_at": "2026-10-19T19:55:00Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Hugo Camberos revela que Gilberto Mora fue clave en su adaptación con la Selección Mexicana",
+            "source": "Excélsior",
+            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPLTUyTlFJamRXcjlJWGV4cWY0RDFWekgwSkhGZGtFeFg1ZVJfb1pRR290bEoweTRaN3licUxCVFZhb01kSVotOERrYTMxNFZMdHlKSTN3RDBCQ2tPQlB6Q0VOUHVhc2UwZ0YyNm1pT0J4bWJTTGoxYWU4UHBkUVJqZk5PLV94aWxWZE5IbG1VSEpBaVl3NVF6b3lONk9BbU9xZWg3VjVUZW1LQW5ubWl5b0dWanBYdVJZUkE3S9IBwgFBVV95cUxPa0lPQkZ1MFdVVnFjcnZoekhhRVcxbmMtZHdxZmJONU1MZTRkcjBwUk94TjJ3Z2hmLW1SS005Q3ZsbnpxMW9LLW5qUF96d25fRDNaV1RzbkVERDl1eTVtbzAyaWtndnFBM29KdWwyWC1zV2xja3VzaUZqYjRPWTZrU2xpUEpzbGdaRlF6b3haOXRLVl9JbWVUTzNPR0RPRXBuajBaRGd4Z1dKMk5rQlN2VVVoWG9KWWpQZHVsMkdCRVRqQQ?oc=5",
+            "published_at": "2026-10-07T07:00:00Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "¿Por qué Hugo Camberos no jugó ante Estados Unidos? Esto dijo Rafa Márquez",
+            "source": "Mediotiempo",
+            "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQTHl5MWMza20xUDN2MWNmTkZQUTYxd3VOa29lVzF5TmUwbzRyX014czVUeFdnOWdoZUltdEE3alBmUllPYmVlTHhuSklqb21ydTZpWWJrODJlVUlTNElpZmZaNC1aSWZSdll6MzE4OGN3VVJwSXd6eVljSWN1WkM2YWMyX1pTNTE2RnRMYy1zUUYzV0XSAZMBQVVfeXFMUDhxVGhZYlR0VzBiUDVYdGNlMXd3VGlXUXdkeDY2MFMzckl0ZmVPSlliWjhSZlV2V3dFMS1xcE84Y0tmWkZwTk50NlJNWnduMExHRFRmb2F6UTlVYV9mN08tMTA0dVVDVjlrSnpsYi1BejJnNkpmaWpvemE2S2dLLUZWQVVQSUxOV0J4MkRUR2JIWUtV?oc=5",
+            "published_at": "2026-10-05T07:00:00Z",
+            "edicion": "mx"
+          }
+        ],
+        "sandoval": [
+          {
+            "title": "Tigres volverá a medirse con el Chivas de Santiago Sandoval, su último verdugo",
+            "source": "OnceDiario",
+            "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOeXEwLWtwbXl5bFhZNEowQmVaWDFhSWNaeTlsbGF6cS16R04wYTRjZ0R3Y19rLThGbHhDelA2UXc5ZEE0cHJ4a2pzME54WUVrWld4bG45ajZuRGVUb1JvR1pCNWo1WE4wV2MyM0dKY0tFNERiSW40am9hanM5b2JWU0JNbVY3NGhzTkRPa0U1QkVvX0RnZWQtOE45aFI4ODQwY2J4bXFLUFp3ZUxJalNXUXBIc29hRWJ5bFBOeXJ6eFB6anQ1?oc=5",
+            "published_at": "2026-10-16T17:37:09Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Santiago Sandoval le da una noticia increíble a Chivas: podría recibir una fortuna",
+            "source": "TV Azteca",
+            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOQ294OGxFRkZXTF8tLTBDTWcydzBEdThSZ3ZMcHEtMnoyM1RUVHBnYW9mektWb3M4akowRVJ6RUV1UnoyalJzdGFzdGZxaWhPZk1pSDhtVWNCUWpkemdiYTdkdUlYeXZ4Njg3TXZNUnljckFhb2RaOWY3LU5pQl9XYUNPT2hDOXdfRlc0U0hIQlAzTEtkalNBalhwdjfSAaoBQVVfeXFMTjN6MXhLbkhwV1hLd3c1TDBYWEhJSUxnNkthSl9uaHRKNUdKMVA2WVJwbHlWbWQtWXlrNFVfNkwzUUR5enk2dEd6b09FaDJfNVJMTFlQWDY4SERxY1FnVWxoUVVBZENNZGd3LUV5ZnY2VVBEUUYxVWxCWGpvb0luT3YzNkF5VjhjeFViZ2FOck96bm9XOXRDRkFaZ2RQUTFTazBfMXB3b2VJQVE?oc=5",
+            "published_at": "2026-10-14T17:32:23Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Santiago Sandoval tendría la proyección más alta de transferencia de todo Chivas y América",
+            "source": "Rebaño Pasión",
+            "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNcjlZUE43aEVBRThFVFJKX25qTktGNC01QldLTHZZUHF4N1ZtV19nc3FzSUx1YjlIRUJRMk5xOUM5emotb0xqTk9vcVY1bkFGSXd1bTFzMDc1TmlPUjZjZzAxZnl4U1F5c1k0enJ2N2dtM1JOdkk2NWkteFdYZThOQ3lyb2ZacVFfSzJmRFcxUVFmVG1YYzUzanFKRHhrRVNaOEVzWkZ1R2VuT1ZLdzdRT0dPNms5X1FTc1JXUmRiVjNjV0pPXzNYZEFCc3dmd3Y5ZG9lQVdJVdIB1wFBVV95cUxNcjlZUE43aEVBRThFVFJKX25qTktGNC01QldLTHZZUHF4N1ZtV19nc3FzSUx1YjlIRUJRMk5xOUM5emotb0xqTk9vcVY1bkFGSXd1bTFzMDc1TmlPUjZjZzAxZnl4U1F5c1k0enJ2N2dtM1JOdkk2NWkteFdYZThOQ3lyb2ZacVFfSzJmRFcxUVFmVG1YYzUzanFKRHhrRVNaOEVzWkZ1R2VuT1ZLdzdRT0dPNms5X1FTc1JXUmRiVjNjV0pPXzNYZEFCc3dmd3Y5ZG9lQVdJVQ?oc=5",
+            "published_at": "2026-10-14T03:32:06Z",
+            "edicion": "mx"
+          }
+        ]
+      }
     }
   }
 }
