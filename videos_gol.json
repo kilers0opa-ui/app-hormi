@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-20T22:40:30.375716-06:00",
+  "updated_at": "2026-10-21T14:53:20.289856-06:00",
   "cuota": {
-    "fecha": "2026-10-20",
-    "busquedas": 8,
-    "busquedas_resumen": 8
+    "fecha": "2026-10-21",
+    "busquedas": 0,
+    "busquedas_resumen": 0
   },
   "goles": {},
   "partidos": {
@@ -201,7 +201,7 @@
         "url": "https://www.youtube.com/watch?v=jTUyMmpg8Zc",
         "embeddable": true
       },
-      "noticias_pasadas": 3,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-21T04:10:20.853110+00:00",
       "noticias": {
         "campillo": [
@@ -274,6 +274,30 @@
           }
         ]
       }
+    },
+    "1635636": {
+      "fixture_id": 1635636,
+      "home": "Real Betis",
+      "away": "Feyenoord",
+      "league": "Champions League",
+      "score": "Real Betis 1-0 Feyenoord",
+      "final_seen_at": "2026-10-21T20:53:09.565218+00:00",
+      "jugadores": {
+        "fidalgo": {
+          "team_key": "betis",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
