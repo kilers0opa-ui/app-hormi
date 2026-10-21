@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T14:51:22.306731-06:00",
+  "updated_at": "2026-10-20T20:05:38.970494-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -6917,63 +6917,51 @@
             "team_id": 2278,
             "team_name": "Guadalajara Chivas",
             "team_logo": "https://media.api-sports.io/football/teams/2278.png",
-            "played": 11,
+            "played": 12,
             "goals": 0,
             "assists": 0,
-            "minutes": 776
+            "minutes": 837
           }
         ]
       },
       "applied_fixtures": {
         "chivas": [
-          1550996
+          1550996,
+          1551004
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1550996,
-        "kickoff": "2026-10-17T17:07:00-06:00",
+        "fixture_id": 1551004,
+        "kickoff": "2026-10-20T18:07:00-06:00",
         "home": "Chivas",
-        "away": "Tigres UANL",
+        "away": "Necaxa",
         "home_logo": "https://media.api-sports.io/football/teams/2278.png",
-        "away_logo": "https://media.api-sports.io/football/teams/2279.png",
+        "away_logo": "https://media.api-sports.io/football/teams/2288.png",
         "home_goals": 1,
-        "away_goals": 1,
+        "away_goals": 0,
+        "penales": null,
         "league": "Liga MX",
         "league_logo": "https://media.api-sports.io/football/leagues/262.png",
         "league_tipo": "liga",
         "eventos": [
           {
-            "min": "36'",
-            "tipo": "gol",
-            "nombre": "J. Brunetta",
+            "min": "14'",
+            "tipo": "amarilla",
+            "nombre": "Miguel Rodriguez",
             "lado": "V",
             "mio": false
           },
           {
-            "min": "45+2'",
-            "tipo": "roja",
-            "nombre": "Juan Brunetta",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "51'",
-            "tipo": "amarilla",
-            "nombre": "Santiago Sandoval",
+            "min": "61'",
+            "tipo": "sale",
+            "nombre": "Diego Campillo",
             "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "67'",
-            "tipo": "amarilla",
-            "nombre": "Fernando González",
-            "lado": "L",
-            "mio": false
+            "mio": true
           },
           {
             "min": "77'",
-            "tipo": "gol",
-            "nombre": "J. Carrillo",
+            "tipo": "autogol",
+            "nombre": "Agustin Oliveros",
             "lado": "L",
             "mio": false
           }
@@ -6983,18 +6971,17 @@
         "team_label": "Chivas",
         "emoji": "🐐",
         "crest_url": "https://media.api-sports.io/football/teams/2278.png",
-        "minutes": 90,
+        "minutes": 61,
         "goals": 0,
         "assists": 0,
         "stats": {
-          "rating": 6.7,
+          "rating": 7.8,
           "tiros": 0,
           "tiros_puerta": 0,
-          "pases_pct": 87,
-          "duelos": 3,
+          "pases_pct": 94,
+          "duelos": 2,
           "duelos_ganados": 2
-        },
-        "penales": null
+        }
       }
     },
     "camberos": {
@@ -7119,136 +7106,70 @@
             "team_id": 2278,
             "team_name": "Guadalajara Chivas",
             "team_logo": "https://media.api-sports.io/football/teams/2278.png",
-            "played": 8,
+            "played": 9,
             "goals": 0,
             "assists": 1,
-            "minutes": 373
+            "minutes": 418
           }
         ]
       },
-      "applied_fixtures": {},
+      "applied_fixtures": {
+        "chivas": [
+          1551004
+        ]
+      },
       "ultimo_partido": {
-        "fixture_id": 1550988,
-        "kickoff": "2026-10-10T19:00:00-06:00",
-        "home": "Atlas",
-        "away": "Chivas",
-        "home_logo": "https://media.api-sports.io/football/teams/2283.png",
-        "away_logo": "https://media.api-sports.io/football/teams/2278.png",
+        "fixture_id": 1551004,
+        "kickoff": "2026-10-20T18:07:00-06:00",
+        "home": "Chivas",
+        "away": "Necaxa",
+        "home_logo": "https://media.api-sports.io/football/teams/2278.png",
+        "away_logo": "https://media.api-sports.io/football/teams/2288.png",
         "home_goals": 1,
-        "away_goals": 1,
+        "away_goals": 0,
+        "penales": null,
         "league": "Liga MX",
         "league_logo": "https://media.api-sports.io/football/leagues/262.png",
         "league_tipo": "liga",
-        "team_key": "chivas",
-        "team_label": "Chivas",
-        "emoji": "🐐",
-        "crest_url": "https://media.api-sports.io/football/teams/2278.png",
-        "minutes": 24,
-        "goals": 0,
-        "assists": 0,
         "eventos": [
           {
-            "min": "26'",
+            "min": "14'",
             "tipo": "amarilla",
-            "nombre": "Juan José Purata",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "30'",
-            "tipo": "amarilla",
-            "nombre": "Richard Ledezma",
+            "nombre": "Miguel Rodriguez",
             "lado": "V",
             "mio": false
           },
           {
-            "min": "41'",
-            "tipo": "amarilla",
-            "nombre": "Daniel Aguirre",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "52'",
-            "tipo": "gol",
-            "nombre": "K. Zenon",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "63'",
-            "tipo": "amarilla",
-            "nombre": "Florián Monzón",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "66'",
+            "min": "45'",
             "tipo": "entra",
-            "nombre": "H. Camberos",
-            "lado": "V",
+            "nombre": "Hugo Camberos",
+            "lado": "L",
             "mio": true
           },
           {
-            "min": "76'",
-            "tipo": "pen_fallado",
-            "nombre": "Ángel Sepúlveda",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "84'",
-            "tipo": "amarilla",
-            "nombre": "Kevin Castañeda",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "86'",
-            "tipo": "gol",
-            "nombre": "A. Sepulveda",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "89'",
-            "tipo": "amarilla",
-            "nombre": "Santiago Sandoval",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "90+8'",
-            "tipo": "amarilla",
-            "nombre": "Kevin Castañeda",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "90+8'",
-            "tipo": "roja",
-            "nombre": "Kevin Castañeda",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "90+9'",
-            "tipo": "amarilla",
-            "nombre": "Adonis Frías",
+            "min": "77'",
+            "tipo": "autogol",
+            "nombre": "Agustin Oliveros",
             "lado": "L",
             "mio": false
           }
         ],
-        "stats": {
-          "rating": 6.2,
-          "tiros": 0,
-          "tiros_puerta": 0,
-          "pases_pct": 71,
-          "duelos": 2,
-          "duelos_ganados": 0
-        },
         "eventos_v": 5,
-        "penales": null
+        "team_key": "chivas",
+        "team_label": "Chivas",
+        "emoji": "🐐",
+        "crest_url": "https://media.api-sports.io/football/teams/2278.png",
+        "minutes": 45,
+        "goals": 0,
+        "assists": 0,
+        "stats": {
+          "rating": 7.0,
+          "tiros": 1,
+          "tiros_puerta": 1,
+          "pases_pct": 73,
+          "duelos": 6,
+          "duelos_ganados": 3
+        }
       }
     },
     "sandoval": {
@@ -7299,72 +7220,53 @@
             "team_id": 2278,
             "team_name": "Guadalajara Chivas",
             "team_logo": "https://media.api-sports.io/football/teams/2278.png",
-            "played": 9,
+            "played": 10,
             "goals": 2,
             "assists": 0,
-            "minutes": 520
+            "minutes": 565
           }
         ]
       },
       "applied_fixtures": {
         "chivas": [
-          1550996
+          1550996,
+          1551004
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1550996,
-        "kickoff": "2026-10-17T17:07:00-06:00",
+        "fixture_id": 1551004,
+        "kickoff": "2026-10-20T18:07:00-06:00",
         "home": "Chivas",
-        "away": "Tigres UANL",
+        "away": "Necaxa",
         "home_logo": "https://media.api-sports.io/football/teams/2278.png",
-        "away_logo": "https://media.api-sports.io/football/teams/2279.png",
+        "away_logo": "https://media.api-sports.io/football/teams/2288.png",
         "home_goals": 1,
-        "away_goals": 1,
+        "away_goals": 0,
+        "penales": null,
         "league": "Liga MX",
         "league_logo": "https://media.api-sports.io/football/leagues/262.png",
         "league_tipo": "liga",
         "eventos": [
           {
-            "min": "36'",
-            "tipo": "gol",
-            "nombre": "J. Brunetta",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "45+2'",
-            "tipo": "roja",
-            "nombre": "Juan Brunetta",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "51'",
+            "min": "14'",
             "tipo": "amarilla",
+            "nombre": "Miguel Rodriguez",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "45'",
+            "tipo": "entra",
             "nombre": "Santiago Sandoval",
             "lado": "L",
             "mio": true
           },
           {
-            "min": "67'",
-            "tipo": "amarilla",
-            "nombre": "Fernando González",
-            "lado": "L",
-            "mio": false
-          },
-          {
             "min": "77'",
-            "tipo": "gol",
-            "nombre": "J. Carrillo",
+            "tipo": "autogol",
+            "nombre": "Agustin Oliveros",
             "lado": "L",
             "mio": false
-          },
-          {
-            "min": "86'",
-            "tipo": "sale",
-            "nombre": "S. Sandoval",
-            "lado": "L",
-            "mio": true
           }
         ],
         "eventos_v": 5,
@@ -7372,20 +7274,17 @@
         "team_label": "Chivas",
         "emoji": "🐐",
         "crest_url": "https://media.api-sports.io/football/teams/2278.png",
-        "minutes": 86,
+        "minutes": 45,
         "goals": 0,
         "assists": 0,
         "stats": {
-          "rating": 6.3,
-          "tiros": 3,
+          "rating": 6.8,
+          "tiros": 0,
           "tiros_puerta": 0,
-          "pases_pct": 83,
-          "duelos": 17,
-          "duelos_ganados": 11,
-          "regates": 4,
-          "regates_ok": 1
-        },
-        "penales": null
+          "pases_pct": 58,
+          "duelos": 7,
+          "duelos_ganados": 4
+        }
       }
     }
   }
