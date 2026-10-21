@@ -200,17 +200,17 @@ def main():
             ahora_r = {r["id"]: r["actual"] for r in entry["rachas"]}
             if ahora_r.get("gol", 0) >= 3 and ahora_r["gol"] > antes_r.get("gol", 0):
                 avisos.append((key, t, f"🔥 {nombre} lleva {ahora_r['gol']} partidos seguidos anotando",
-                               f"Racha goleadora con {t.get('label') if t else 'su club'}"))
+                               f"Racha goleadora con {t.get('label') if t else 'su club'}", "gol"))
             elif ahora_r.get("cero", 0) >= 3 and ahora_r["cero"] > antes_r.get("cero", ahora_r["cero"]):
                 avisos.append((key, t, f"🧱 {nombre}: {ahora_r['cero']} partidos seguidos sin recibir gol",
-                               f"Muralla con {t.get('label') if t else 'su club'}"))
+                               f"Muralla con {t.get('label') if t else 'su club'}", "cero"))
             elif ahora_r.get("ga", 0) >= 3 and ahora_r["ga"] > antes_r.get("ga", 0):
                 avisos.append((key, t, f"🔥 {nombre}: {ahora_r['ga']} partidos seguidos con gol o asistencia",
-                               f"En racha con {t.get('label') if t else 'su club'}"))
+                               f"En racha con {t.get('label') if t else 'su club'}", "ga"))
             for rid, txt in (("titular", "de titular"), ("jugando", "jugando")):
                 n = ahora_r.get(rid, 0)
                 if n >= 10 and n % 10 == 0 and n > antes_r.get(rid, 0):
-                    avisos.append((key, t, f"💪 {nombre} lleva {n} partidos seguidos {txt}", t.get("label") if t else ""))
+                    avisos.append((key, t, f"💪 {nombre} lleva {n} partidos seguidos {txt}", t.get("label") if t else "", rid))
             antes_h = {h["id"]: h["valor"] for h in (prev_players.get(key) or {}).get("hitos") or []}
             for h in entry["hitos"]:
                 if h["previo"] > 0 and antes_h.get(h["id"], h["valor"]) < h["previo"] <= h["valor"]:
