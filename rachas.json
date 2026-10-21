@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T19:47:08.420657-06:00",
+  "updated_at": "2026-10-20T20:44:45.555027-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -1371,17 +1371,17 @@
         {
           "id": "cero",
           "titulo": "Partidos seguidos sin recibir gol",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
+            true,
             false,
             false,
             false,
             false,
             false,
             true,
-            true,
-            false
+            true
           ]
         },
         {
@@ -1403,13 +1403,13 @@
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 2,
+          "actual": 3,
           "en_racha": false,
           "puntos": [
             true,
             true,
-            false,
             true,
+            false,
             true,
             true,
             true,
@@ -1419,13 +1419,13 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 2,
+          "actual": 3,
           "en_racha": false,
           "puntos": [
             true,
             true,
-            false,
             true,
+            false,
             true,
             true,
             true,
@@ -1445,10 +1445,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 199,
-          "meta": 200,
-          "previo": 150,
-          "texto": "A 1 partido de 200"
+          "valor": 200,
+          "meta": 250,
+          "previo": 200,
+          "texto": "A 50 partidos de 250"
         },
         {
           "id": "goles_sel",
@@ -1467,9 +1467,14 @@
           "texto": "A 7 partidos de 10"
         }
       ],
-      "logros": [],
+      "logros": [
+        {
+          "texto": "200 partidos con clubes",
+          "fecha": "2026-10-20"
+        }
+      ],
       "club": "Chivas",
-      "partidos_revisados": 18
+      "partidos_revisados": 19
     },
     "camberos": {
       "rachas": [
@@ -1502,7 +1507,7 @@
             false,
             false,
             false,
-            true
+            false
           ]
         },
         {
@@ -1514,9 +1519,9 @@
             false,
             false,
             false,
-            true,
             false,
             true,
+            false,
             true,
             true
           ]
@@ -1524,13 +1529,13 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
-            false,
             true,
             false,
             true,
+            false,
             true,
             true,
             true,
@@ -1550,10 +1555,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 66,
+          "valor": 67,
           "meta": 75,
           "previo": 50,
-          "texto": "A 9 partidos de 75"
+          "texto": "A 8 partidos de 75"
         },
         {
           "id": "goles_sel",
@@ -1574,7 +1579,7 @@
       ],
       "logros": [],
       "club": "Chivas",
-      "partidos_revisados": 18
+      "partidos_revisados": 19
     },
     "sandoval": {
       "rachas": [
@@ -1589,8 +1594,8 @@
             false,
             false,
             false,
-            true,
             false,
+            true,
             false
           ]
         },
@@ -1605,21 +1610,21 @@
             false,
             false,
             false,
-            true,
             false,
+            true,
             false
           ]
         },
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
+            false,
             true,
             false,
             false,
-            true,
             true,
             true,
             true,
@@ -1629,13 +1634,13 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 2,
+          "actual": 3,
           "en_racha": false,
           "puntos": [
             true,
             true,
-            false,
             true,
+            false,
             true,
             true,
             true,
@@ -1655,10 +1660,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 9,
-          "meta": 10,
-          "previo": 1,
-          "texto": "A 1 partido de 10"
+          "valor": 10,
+          "meta": 25,
+          "previo": 10,
+          "texto": "A 15 partidos de 25"
         },
         {
           "id": "goles_sel",
@@ -1677,9 +1682,14 @@
           "texto": "A 7 partidos de 10"
         }
       ],
-      "logros": [],
+      "logros": [
+        {
+          "texto": "10 partidos con clubes",
+          "fecha": "2026-10-20"
+        }
+      ],
       "club": "Chivas",
-      "partidos_revisados": 18
+      "partidos_revisados": 19
     }
   }
 }
