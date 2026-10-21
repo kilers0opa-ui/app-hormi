@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T21:03:29.185097-06:00",
+  "updated_at": "2026-10-21T03:27:15.458203-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -3591,10 +3591,10 @@
             "team_id": 2933,
             "team_name": "Al-Qadisiyah FC",
             "team_logo": "https://media.api-sports.io/football/teams/2933.png",
-            "played": 8,
+            "played": 9,
             "goals": 4,
             "assists": 3,
-            "minutes": 720
+            "minutes": 810
           },
           {
             "league_id": 826,
@@ -4492,18 +4492,6 @@
             "minutes": 172
           },
           {
-            "league_id": 2,
-            "league_name": "UEFA Champions League",
-            "league_logo": "https://media.api-sports.io/football/leagues/2.png",
-            "team_id": 212,
-            "team_name": "FC Porto",
-            "team_logo": "https://media.api-sports.io/football/teams/212.png",
-            "played": 2,
-            "goals": 0,
-            "assists": 0,
-            "minutes": 22
-          },
-          {
             "league_id": 94,
             "league_name": "Primeira Liga",
             "league_logo": "https://media.api-sports.io/football/leagues/94.png",
@@ -4514,6 +4502,18 @@
             "goals": 1,
             "assists": 0,
             "minutes": 43
+          },
+          {
+            "league_id": 2,
+            "league_name": "UEFA Champions League",
+            "league_logo": "https://media.api-sports.io/football/leagues/2.png",
+            "team_id": 212,
+            "team_name": "FC Porto",
+            "team_logo": "https://media.api-sports.io/football/teams/212.png",
+            "played": 2,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 22
           }
         ],
         "2017": [
@@ -6056,6 +6056,18 @@
             "minutes": 336
           },
           {
+            "league_id": 2,
+            "league_name": "UEFA Champions League",
+            "league_logo": "https://media.api-sports.io/football/leagues/2.png",
+            "team_id": 530,
+            "team_name": "Atletico Madrid",
+            "team_logo": "https://media.api-sports.io/football/teams/530.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 12
+          },
+          {
             "league_id": 140,
             "league_name": "La Liga",
             "league_logo": "https://media.api-sports.io/football/leagues/140.png",
@@ -6066,19 +6078,6 @@
             "goals": 0,
             "assists": 0,
             "minutes": 360,
-            "estimated": true
-          },
-          {
-            "league_id": 2,
-            "league_name": "UEFA Champions League",
-            "league_logo": "https://media.api-sports.io/football/leagues/2.png",
-            "team_id": 530,
-            "team_name": "Atletico Madrid",
-            "team_logo": "https://media.api-sports.io/football/teams/530.png",
-            "played": 2,
-            "goals": 0,
-            "assists": 0,
-            "minutes": 102,
             "estimated": true
           }
         ],
@@ -6947,18 +6946,6 @@
             "minutes": 458
           },
           {
-            "league_id": 2,
-            "league_name": "UEFA Champions League",
-            "league_logo": "https://media.api-sports.io/football/leagues/2.png",
-            "team_id": 543,
-            "team_name": "Real Betis",
-            "team_logo": "https://media.api-sports.io/football/teams/543.png",
-            "played": 1,
-            "goals": 0,
-            "assists": 0,
-            "minutes": 29
-          },
-          {
             "league_id": 140,
             "league_name": "La Liga",
             "league_logo": "https://media.api-sports.io/football/leagues/140.png",
@@ -6969,6 +6956,18 @@
             "goals": 0,
             "assists": 0,
             "minutes": 51
+          },
+          {
+            "league_id": 2,
+            "league_name": "UEFA Champions League",
+            "league_logo": "https://media.api-sports.io/football/leagues/2.png",
+            "team_id": 543,
+            "team_name": "Real Betis",
+            "team_logo": "https://media.api-sports.io/football/teams/543.png",
+            "played": 1,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 29
           }
         ],
         "2015": [
