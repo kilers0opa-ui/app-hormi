@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T14:47:10.550132-06:00",
+  "updated_at": "2026-10-21T15:46:48.522733-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -894,16 +894,16 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
-            true,
-            false,
-            false,
             false,
             true,
             false,
+            false,
+            false,
             true,
+            false,
             true
           ]
         }
@@ -944,7 +944,7 @@
       ],
       "logros": [],
       "club": "Real Betis",
-      "partidos_revisados": 18
+      "partidos_revisados": 19
     },
     "huescas": {
       "rachas": [
