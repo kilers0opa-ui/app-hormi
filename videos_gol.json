@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-20T21:05:26.140857-06:00",
+  "updated_at": "2026-10-20T21:10:39.726498-06:00",
   "cuota": {
     "fecha": "2026-10-20",
-    "busquedas": 6,
-    "busquedas_resumen": 6
+    "busquedas": 7,
+    "busquedas_resumen": 7
   },
   "goles": {},
   "partidos": {
@@ -189,12 +189,12 @@
         }
       },
       "status": "pendiente",
-      "intentos": 1,
+      "intentos": 2,
       "fallos": 0,
-      "ultimo_intento": "2026-10-21T02:40:20.398519+00:00",
+      "ultimo_intento": "2026-10-21T03:10:22.479517+00:00",
       "video": null,
-      "noticias_pasadas": 1,
-      "ultima_noticia": "2026-10-21T02:40:20.398519+00:00",
+      "noticias_pasadas": 2,
+      "ultima_noticia": "2026-10-21T03:10:22.479517+00:00",
       "noticias": {
         "campillo": [
           {
@@ -251,17 +251,17 @@
             "edicion": "mx"
           },
           {
-            "title": "Santiago Sandoval le da una noticia increíble a Chivas: podría recibir una fortuna",
-            "source": "TV Azteca",
-            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOQ294OGxFRkZXTF8tLTBDTWcydzBEdThSZ3ZMcHEtMnoyM1RUVHBnYW9mektWb3M4akowRVJ6RUV1UnoyalJzdGFzdGZxaWhPZk1pSDhtVWNCUWpkemdiYTdkdUlYeXZ4Njg3TXZNUnljckFhb2RaOWY3LU5pQl9XYUNPT2hDOXdfRlc0U0hIQlAzTEtkalNBalhwdjfSAaoBQVVfeXFMTjN6MXhLbkhwV1hLd3c1TDBYWEhJSUxnNkthSl9uaHRKNUdKMVA2WVJwbHlWbWQtWXlrNFVfNkwzUUR5enk2dEd6b09FaDJfNVJMTFlQWDY4SERxY1FnVWxoUVVBZENNZGd3LUV5ZnY2VVBEUUYxVWxCWGpvb0luT3YzNkF5VjhjeFViZ2FOck96bm9XOXRDRkFaZ2RQUTFTazBfMXB3b2VJQVE?oc=5",
-            "published_at": "2026-10-14T17:32:23Z",
-            "edicion": "mx"
-          },
-          {
             "title": "Santiago Sandoval tendría la proyección más alta de transferencia de todo Chivas y América",
             "source": "Rebaño Pasión",
             "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNcjlZUE43aEVBRThFVFJKX25qTktGNC01QldLTHZZUHF4N1ZtV19nc3FzSUx1YjlIRUJRMk5xOUM5emotb0xqTk9vcVY1bkFGSXd1bTFzMDc1TmlPUjZjZzAxZnl4U1F5c1k0enJ2N2dtM1JOdkk2NWkteFdYZThOQ3lyb2ZacVFfSzJmRFcxUVFmVG1YYzUzanFKRHhrRVNaOEVzWkZ1R2VuT1ZLdzdRT0dPNms5X1FTc1JXUmRiVjNjV0pPXzNYZEFCc3dmd3Y5ZG9lQVdJVdIB1wFBVV95cUxNcjlZUE43aEVBRThFVFJKX25qTktGNC01QldLTHZZUHF4N1ZtV19nc3FzSUx1YjlIRUJRMk5xOUM5emotb0xqTk9vcVY1bkFGSXd1bTFzMDc1TmlPUjZjZzAxZnl4U1F5c1k0enJ2N2dtM1JOdkk2NWkteFdYZThOQ3lyb2ZacVFfSzJmRFcxUVFmVG1YYzUzanFKRHhrRVNaOEVzWkZ1R2VuT1ZLdzdRT0dPNms5X1FTc1JXUmRiVjNjV0pPXzNYZEFCc3dmd3Y5ZG9lQVdJVQ?oc=5",
             "published_at": "2026-10-14T03:32:06Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Santiago Sandoval se confiesa tras su primer llamado y debut en Selección Mexicana",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQX3JjRzVDY3hNOTltWTlfOXRrVmhmRXVnUG1GN1VnR3h6VHp4Z2pDR3E1OXJfbUVLRWhadW5nc1Z3NVJXNG5iaG9jZDM5ekN2T1Z5SXFkYlBGNGN6VkMxb0d6THBDbHF2MmhRTjc2cVdDT25MbnpadW0wWDVBMVVJVy1IbnBndVpLODVBaExkb3Q4WHpHU2xYV1B5VDdhd3R5M1NMTXlIajdiUWNTeTk3VmpSNGxiVUQ2UkdmQlRNd3U0clVFYlHSAcYBQVVfeXFMTjljSVplUlA5UHdGSzhiSWRaMHF4Y2NXWnM0a0ZDcVJWYTVzWjRzYWJ5S2tESXlpcVhyaHAzdzhMRG13MzYzd0t4VzZwOEgzd2xHZUxSak9vQk5hMlNnM29TNXVDN0F6OW9ITk9DMFJvTzJtdUNoM0xCdWswcUtxUUxwbkZMQU44dXlOTXBseF9JVGEzNlZMZEdPYmhGQmh5QjdVeDYwYVFUdjNSOUx1WEtDVkxHYVVaaEx4cW9aZW05dTdYSkRn?oc=5",
+            "published_at": "2026-10-07T07:00:00Z",
             "edicion": "mx"
           }
         ]
