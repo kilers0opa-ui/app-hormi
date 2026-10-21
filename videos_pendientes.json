@@ -9,65 +9,17 @@
   ],
   "finales": [
     {
-      "fixture_id": 1635738,
-      "home": "VfB Stuttgart",
-      "away": "Atlético de Madrid",
+      "fixture_id": 1635636,
+      "home": "Real Betis",
+      "away": "Feyenoord",
       "league": "Champions League",
-      "score": "VfB Stuttgart 1-1 Atlético de Madrid",
-      "final_seen_at": "2026-10-20T20:51:20.786385+00:00",
+      "score": "Real Betis 1-0 Feyenoord",
+      "final_seen_at": "2026-10-21T20:53:09.565218+00:00",
       "jugadores": [
         {
-          "player_key": "obed",
-          "team_key": "atletico_madrid",
-          "minutes": 12,
-          "goals": 0,
-          "assists": 0
-        }
-      ]
-    },
-    {
-      "fixture_id": 1635655,
-      "home": "FC Porto",
-      "away": "PSV Eindhoven",
-      "league": "Champions League",
-      "score": "FC Porto 0-1 PSV Eindhoven",
-      "final_seen_at": "2026-10-20T20:52:40.456799+00:00",
-      "jugadores": [
-        {
-          "player_key": "gimenez",
-          "team_key": "porto",
+          "player_key": "fidalgo",
+          "team_key": "betis",
           "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        }
-      ]
-    },
-    {
-      "fixture_id": 1551004,
-      "home": "Chivas",
-      "away": "Necaxa",
-      "league": "Liga MX",
-      "score": "Chivas 1-0 Necaxa",
-      "final_seen_at": "2026-10-21T02:05:38.199846+00:00",
-      "jugadores": [
-        {
-          "player_key": "campillo",
-          "team_key": "chivas",
-          "minutes": 61,
-          "goals": 0,
-          "assists": 0
-        },
-        {
-          "player_key": "camberos",
-          "team_key": "chivas",
-          "minutes": 45,
-          "goals": 0,
-          "assists": 0
-        },
-        {
-          "player_key": "sandoval",
-          "team_key": "chivas",
-          "minutes": 45,
           "goals": 0,
           "assists": 0
         }
