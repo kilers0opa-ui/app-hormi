@@ -2,7 +2,8 @@
 """
 Disponibilidad: lesiones y suspensiones de los jugadores para su PRÓXIMO partido con su club → disponibilidad.json.
 
-Por equipo: /fixtures?team&next=1 (el próximo partido) + /injuries?fixture (quién no va o está en duda).
+Por equipo: /fixtures?team&next=1 (el próximo partido) + /injuries?team&season (bajas del partido más reciente que
+ya tenga lista; la del próximo partido la publica la API hasta ~1 día antes).
 ≈ 2 peticiones por equipo (≈ 26 al día por corrida). La app pone la etiqueta en Inicio, Legión y la agenda.
 
 Avisos (tipo "disponibilidad"), comparando con la corrida anterior:
@@ -71,7 +72,16 @@ def main():
         if tid not in por_equipo:
             nxt = ha.api("/fixtures", {"team": tid, "next": 1})
             fx = nxt[0] if nxt else None
-            lista = None if nxt is None else (ha.api("/injuries", {"fixture": fx["fixture"]["id"]}) if fx else [])
+            # La lista de bajas de un partido la publica la API hasta ~1 día antes: se usa la del partido MÁS
+            # RECIENTE del equipo que ya la tenga (de las últimas 3 semanas). Si ya salió la del próximo, es esa.
+            todas = None if nxt is None else ha.api("/injuries", {"team": tid, "season": t.get("season") or 2026})
+            lista = None
+            if todas is not None:
+                limite = datetime.now(ha.LOCAL_TZ).timestamp() - 21 * 86400
+                fechas = [x["fixture"]["timestamp"] for x in todas
+                          if (x.get("fixture") or {}).get("timestamp") and x["fixture"]["timestamp"] >= limite]
+                ultima = max(fechas) if fechas else None
+                lista = [x for x in todas if ultima and (x.get("fixture") or {}).get("timestamp") == ultima]
             por_equipo[tid] = (fx, lista)
         fx, lista = por_equipo[tid]
         if lista is None:   # error de la API: se conserva lo anterior de este jugador
