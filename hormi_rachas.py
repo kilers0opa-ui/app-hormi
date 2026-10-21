@@ -217,7 +217,7 @@ def main():
                     unidad = "goles" if h["id"].startswith("goles") else "partidos"
                     donde = "con la Selección" if h["id"].endswith("_sel") else "con clubes"
                     txt = f"{h['previo']} {unidad} {donde}" if h["previo"] > 1 else f"su primer {'gol' if unidad == 'goles' else 'partido'} {donde}"
-                    avisos.append((key, t, f"🏅 {nombre} llegó a {txt}", "Nuevo hito en su carrera"))
+                    avisos.append((key, t, f"🏅 {nombre} llegó a {txt}", "Nuevo hito en su carrera", h["id"]))
                     entry["logros"].insert(0, {"texto": txt[0].upper() + txt[1:], "fecha": datetime.now(ha.LOCAL_TZ).date().isoformat()})
             entry["logros"] = entry["logros"][:5]
         out["players"][key] = entry
@@ -229,10 +229,12 @@ def main():
 
     if avisos and not args.sin_avisos:
         fcm = ha.FcmSender(config.get("fcm_project_id"))
-        for key, t, title, body in avisos:
+        for key, t, title, body, *foco in avisos:
             try:
-                fcm.send("racha", title, body, key, (t or {}).get("key"),
-                         extra={"tab": "hitos" if title.startswith("🏅") else "rachas"})   # la app abre esa pestaña
+                extra = {"tab": "hitos" if title.startswith("🏅") else "rachas", "player": key}   # la app abre esa pestaña y ese jugador
+                if foco:
+                    extra["item"] = foco[0]   # id del hito para resaltarlo
+                fcm.send("racha", title, body, key, (t or {}).get("key"), extra=extra)
             except Exception as err:
                 log(f"⚠️  no se pudo mandar el aviso de racha ({key}): {err}")
 

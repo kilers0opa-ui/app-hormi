@@ -1,0 +1,41 @@
+name: Disponibilidad (lesiones y suspensiones) - App Hormi
+
+on:
+  schedule:
+    # Dos veces al día (9:40 y 17:40 hora CDMX): ~26 peticiones por corrida.
+    - cron: "40 15 * * *"
+    - cron: "40 23 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: hormi-disponibilidad
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  disponibilidad:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install google-auth requests
+      - name: Revisar lesiones y suspensiones
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+          FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
+        run: python hormi_disponibilidad.py
+      - name: Subir resultado
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name "app-hormi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add disponibilidad.json 2>/dev/null || true
+          git commit -m "chore: disponibilidad [skip ci]" || exit 0
+          for i in 1 2 3 4; do git pull --rebase origin main && git push && break; sleep 5; done

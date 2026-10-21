@@ -447,7 +447,7 @@ def _liga_tipo(name):
     return "liga"
 
 
-EVENTOS_V = 5   # sube si cambia cómo se arman los Detalles: hormi_ultimo.py recalcula los ya guardados
+EVENTOS_V = 6   # sube si cambia cómo se arman los Detalles: hormi_ultimo.py recalcula los ya guardados
 
 
 def _goles_anulados(data):
@@ -520,6 +520,63 @@ def _tanda(data):
 
 def _es_tanda(e, tanda=None):
     return id(e) in tanda if tanda is not None else "shootout" in (e.get("comments") or "").lower()
+
+
+def _alineacion(data, player_id):
+    """Alineación para la app ("Ver alineación"): formación, color y, por jugador, número, nombre, posición en la
+    cancha (grid "fila:columna" de la API) y lo que le pasó (gol, tarjetas, salió/entró y en qué minuto).
+    None si la API todavía no publica alineaciones."""
+    lineups = data.get("lineups") or []
+    if len(lineups) < 2 or not all(l.get("startXI") for l in lineups):
+        return None
+    home_id = ((data.get("teams") or {}).get("home") or {}).get("id")
+    titulares = {(x.get("player") or {}).get("id") for l in lineups for x in l.get("startXI") or []}
+    ev = {}
+    def marca(pid, k, v=True):
+        if pid:
+            ev.setdefault(pid, {})[k] = v
+    tanda = _tanda(data)
+    anulados = _goles_anulados(data)
+    entraron = set()
+    for i, e in enumerate(sorted(data.get("events") or [], key=lambda e: ((e.get("time") or {}).get("elapsed") or 0,
+                                                                          (e.get("time") or {}).get("extra") or 0))):
+        t = (e.get("type") or "").lower()
+        det = e.get("detail") or ""
+        pid = (e.get("player") or {}).get("id")
+        aid = (e.get("assist") or {}).get("id")
+        minuto = minute_txt(e["time"])
+        if t == "goal" and det != "Missed Penalty" and id(e) not in tanda:
+            if det == "Own Goal":
+                marca(pid, "autogol", ev.get(pid, {}).get("autogol", 0) + 1)
+            else:
+                marca(pid, "goles", ev.get(pid, {}).get("goles", 0) + 1)
+                if aid:
+                    marca(aid, "asist", ev.get(aid, {}).get("asist", 0) + 1)
+        elif t == "card":
+            marca(pid, "roja" if ("red" in det.lower() or "second" in det.lower()) else "amarilla", minuto)
+        elif t == "subst" and pid and aid:
+            # La API a veces invierte quién entra y quién sale: sale el que ya estaba en la cancha.
+            sale, entra = (pid, aid) if (pid in titulares or pid in entraron) else (aid, pid)
+            marca(sale, "sale", minuto)
+            marca(entra, "entra", minuto)
+            entraron.add(entra)
+    equipos = []
+    for l in sorted(lineups, key=lambda l: 0 if (l.get("team") or {}).get("id") == home_id else 1):
+        tm = l.get("team") or {}
+        col = ((tm.get("colors") or {}).get("player") or {})
+        def jug(x):
+            p = x.get("player") or {}
+            d = {"id": p.get("id"), "n": p.get("name") or "", "num": p.get("number"), "pos": p.get("pos"),
+                 "g": p.get("grid")}
+            d.update(ev.get(p.get("id"), {}))
+            if p.get("id") == player_id:
+                d["mio"] = True
+            return d
+        equipos.append({"nombre": nombre_es(tm.get("name") or ""), "logo": tm.get("logo"), "formacion": l.get("formation"),
+                        "color": col.get("primary"), "color_num": col.get("number"),
+                        "titulares": [jug(x) for x in l.get("startXI") or []],
+                        "suplentes": [jug(x) for x in l.get("substitutes") or []]})
+    return {"local": equipos[0], "visita": equipos[1]}
 
 
 def _eventos(data, player_id):
@@ -752,6 +809,7 @@ def analyze(data, player, target):
                      "league_logo": (data.get("league") or {}).get("logo"),
                      "league_tipo": _liga_tipo((data.get("league") or {}).get("name")),
                      "eventos": _eventos(data, player_id),
+                     "alineacion": _alineacion(data, player_id),
                      "score": score(), "goals": goals, "assists": assists, "penales": _penales(data),
                      "summary": summary, **({"banca_pendiente": True} if banca_pendiente else {})}
 
@@ -780,6 +838,7 @@ def registrar_ultimo(player, target, snap, info):
         "league": liga_es(snap["league"]),
         "league_logo": snap["league"].get("logo"), "league_tipo": _liga_tipo(snap["league"].get("name")),
         "eventos": info.get("eventos") or [], "eventos_v": EVENTOS_V,
+        "alineacion": info.get("alineacion"),
         "team_key": target["key"], "team_label": target["label"], "emoji": target["emoji"],
         "crest_url": target.get("crest_url"),
         "minutes": s["minutes"], "goals": s["goals"], "assists": s["assists"],
