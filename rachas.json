@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T20:45:11.639866-06:00",
+  "updated_at": "2026-10-21T21:46:51.555623-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -327,11 +327,11 @@
             false,
             false,
             false,
-            true,
             false,
             true,
             false,
-            true
+            true,
+            false
           ]
         },
         {
@@ -343,11 +343,11 @@
             false,
             false,
             false,
-            true,
             false,
             true,
             false,
-            true
+            true,
+            false
           ]
         },
         {
@@ -359,11 +359,11 @@
             false,
             false,
             false,
-            true,
-            true,
-            true,
             false,
-            true
+            true,
+            true,
+            true,
+            false
           ]
         },
         {
@@ -375,11 +375,11 @@
             false,
             false,
             false,
-            true,
-            true,
-            true,
             false,
-            true
+            true,
+            true,
+            true,
+            false
           ]
         }
       ],
@@ -419,7 +419,7 @@
       ],
       "logros": [],
       "club": "Tijuana",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "vasquez": {
       "rachas": [
@@ -1314,17 +1314,17 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
-            false,
-            true,
-            false,
-            false,
             true,
             false,
             true,
-            false
+            false,
+            false,
+            true,
+            false,
+            true
           ]
         }
       ],
@@ -1340,10 +1340,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 91,
+          "valor": 92,
           "meta": 100,
           "previo": 75,
-          "texto": "A 9 partidos de 100"
+          "texto": "A 8 partidos de 100"
         },
         {
           "id": "goles_sel",
@@ -1364,7 +1364,7 @@
       ],
       "logros": [],
       "club": "Monterrey",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "campillo": {
       "rachas": [
