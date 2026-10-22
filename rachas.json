@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T11:50:30.063604-06:00",
+  "updated_at": "2026-10-22T12:53:28.997944-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -678,8 +678,8 @@
             false,
             false,
             false,
-            true,
             false,
+            true,
             false,
             false,
             false
@@ -698,18 +698,18 @@
             false,
             false,
             false,
-            true
+            false
           ]
         },
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
-            true,
             false,
             true,
+            false,
             true,
             true,
             true,
@@ -720,10 +720,10 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 12,
-          "en_racha": true,
+          "actual": 0,
+          "en_racha": false,
           "puntos": [
-            true,
+            false,
             true,
             true,
             true,
@@ -776,7 +776,7 @@
         "partidos_sel:10"
       ],
       "club": "AZ Alkmaar",
-      "partidos_revisados": 18
+      "partidos_revisados": 19
     },
     "obed": {
       "rachas": [
@@ -1036,10 +1036,10 @@
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
-            false,
+            true,
             false,
             false,
             false,
@@ -1052,12 +1052,12 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
-            false,
             true,
             false,
+            true,
             false,
             false,
             false,
@@ -1078,10 +1078,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 153,
+          "valor": 154,
           "meta": 200,
           "previo": 150,
-          "texto": "A 47 partidos de 200"
+          "texto": "A 46 partidos de 200"
         },
         {
           "id": "goles_sel",
@@ -1107,7 +1107,7 @@
         "partidos_sel:1"
       ],
       "club": "FC Copenhague",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "montes": {
       "rachas": [
