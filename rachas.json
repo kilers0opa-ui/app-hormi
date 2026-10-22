@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-22T14:44:54.929135-06:00",
+  "updated_at": "2026-10-22T15:43:46.022784-06:00",
   "players": {
     "armando": {
       "rachas": [
         {
           "id": "gol",
           "titulo": "Partidos seguidos con gol",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
+            true,
             false,
             false,
             false,
             false,
             true,
-            false,
             false,
             false
           ]
@@ -22,15 +22,15 @@
         {
           "id": "ga",
           "titulo": "Partidos seguidos con gol o asistencia",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
+            true,
             false,
             false,
             false,
             false,
             true,
-            false,
             false,
             false
           ]
@@ -45,26 +45,26 @@
             false,
             false,
             false,
-            true,
-            true,
             false,
+            true,
+            true,
             false
           ]
         },
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 2,
+          "actual": 3,
           "en_racha": false,
           "puntos": [
             true,
             true,
-            false,
-            true,
-            true,
             true,
             false,
-            true
+            true,
+            true,
+            true,
+            false
           ]
         }
       ],
@@ -72,18 +72,18 @@
         {
           "id": "goles_club",
           "titulo": "Goles con clubes",
-          "valor": 33,
+          "valor": 34,
           "meta": 40,
           "previo": 30,
-          "texto": "A 7 goles de 40"
+          "texto": "A 6 goles de 40"
         },
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 95,
+          "valor": 96,
           "meta": 100,
           "previo": 75,
-          "texto": "A 5 partidos de 100"
+          "texto": "A 4 partidos de 100"
         },
         {
           "id": "goles_sel",
@@ -110,7 +110,7 @@
         "partidos_sel:10"
       ],
       "club": "Olympiacos",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "raul": {
       "rachas": [
