@@ -257,7 +257,12 @@ def mis_fondos(keys_jugadores):
                         data = fh.read()
                     img = Image.open(io.BytesIO(data))
                 else:
-                    img = _mejorar_foto(Image.open(ruta).convert("RGB"))
+                    orig = Image.open(ruta).convert("RGB")
+                    try:
+                        img = _mejorar_foto(orig)
+                    except Exception as e:   # si la mejora falla, la foto entra tal cual (antes se descartaba)
+                        print(f"  (mis_fondos/{key}/{fn}: sin mejora: {e})")
+                        img = orig
                     buf = io.BytesIO()
                     img.save(buf, "JPEG", quality=92, optimize=True, subsampling=0)
                     data = buf.getvalue()
