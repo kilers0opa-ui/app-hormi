@@ -409,21 +409,21 @@
   },
   "fimbres": {
     "monterrey": {
-      "fixture_id": 1551007,
-      "kickoff": "2026-10-21T19:00:00-06:00",
-      "why": "hoy",
-      "refreshed_at": "2026-10-21T15:12:20.101276-06:00",
-      "home": "Puebla",
-      "away": "Monterrey",
-      "home_logo": "https://media.api-sports.io/football/teams/2291.png",
-      "away_logo": "https://media.api-sports.io/football/teams/2282.png",
+      "fixture_id": 1551014,
+      "kickoff": "2026-10-24T18:00:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-21T21:00:06.343765-06:00",
+      "next_checked": "2026-10-21",
+      "home": "Monterrey",
+      "away": "Chivas",
+      "home_logo": "https://media.api-sports.io/football/teams/2282.png",
+      "away_logo": "https://media.api-sports.io/football/teams/2278.png",
       "league": "Liga MX",
       "league_logo": "https://media.api-sports.io/football/leagues/262.png",
       "league_tipo": "liga",
       "liga_v": 2,
       "season": 2026,
-      "fx_status": "NS",
-      "done": true
+      "fx_status": "NS"
     },
     "seleccion": {
       "fixture_id": 1644691,
