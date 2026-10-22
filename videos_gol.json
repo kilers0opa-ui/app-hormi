@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-22T13:40:44.623945-06:00",
+  "updated_at": "2026-10-22T13:44:27.794680-06:00",
   "cuota": {
     "fecha": "2026-10-22",
-    "busquedas": 1,
-    "busquedas_resumen": 1
+    "busquedas": 2,
+    "busquedas_resumen": 2
   },
   "goles": {},
   "partidos": {
@@ -396,14 +396,21 @@
         }
       },
       "status": "pendiente",
-      "intentos": 1,
+      "intentos": 2,
       "fallos": 0,
-      "ultimo_intento": "2026-10-22T19:12:43.814839+00:00",
+      "ultimo_intento": "2026-10-22T19:44:18.596338+00:00",
       "video": null,
-      "noticias_pasadas": 1,
-      "ultima_noticia": "2026-10-22T19:12:43.814839+00:00",
+      "noticias_pasadas": 2,
+      "ultima_noticia": "2026-10-22T19:44:18.596338+00:00",
       "noticias": {
         "huescas": [
+          {
+            "title": "¡Rodrigo Huescas vuelve a ser titular con Copenhague tras más de un año lesionado!",
+            "source": "Récord",
+            "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQUm9tMFJGYjZ1cVBYTlFkU3RkemNkVUNNSEtmRWxLb0RhMEdMOWZnQ0x5UWZ2cEx6SldTYkdNcFVOemJKRXJIOVk1Yi1nM3VpdDhuSFIwbWZqaGpvZkRfNFF5bU5TVjY2RGdfZEctSmE4TDBuRkh4amljeTQwNzlNN2xpa0VmU3FqUm13NXdQUkpObnVxOGRORnN3TU1vUVpiMXRwMkY3X2c0M3Z2TlJBSzg3RkIxdXFvZ2p2U1hVVXk1am9SZXpwb2prSHFhQ1FU?oc=5",
+            "published_at": "2026-10-22T19:29:00Z",
+            "edicion": "mx"
+          },
           {
             "title": "Rodrigo Huescas vuelve a la titularidad con el Copenhague en la Conference League 2026",
             "source": "Claro Sports",
@@ -412,17 +419,10 @@
             "edicion": "mx"
           },
           {
-            "title": "¡Volvió después de un año! Rodrigo Huescas jugó su primer partido oficial",
-            "source": "FOX Deportes",
-            "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNR25OYnNHLXFnc21RY3VKaThlR0MzRUlpU2Npamt4eGRlMndMbURvYkw3SEdoY3MtSGdYX1B5eW1BTDE4bmZYbFRJeDdod18zelVscElHNi1IRFo0LUFEY2VJcWozdjVXOXVyZUg2RWFYZmZSdHZ6VUNQeTNfcW1jTXp4ZWFXeVpLMlhPeHEyWUJQdERxeFdkaEo5Q1JBd2ZUei1OUG9JX0NOMXVxeTBtVjMxNDlERmZ0TlA3WFhuZXpBdw?oc=5",
-            "published_at": "2026-10-16T01:48:56Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Atención al regreso de Rodrigo Huescas con el Copenhague en la Conference League",
-            "source": "AS México",
-            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQbmV0akFCU0YxaFpDZ19PczEtU09TdVh2MEt1Y2dKYk9IdVBOTVRsaGFUbzJaQ0Q2TERVbmFFSEU0bHE1MlRNVzRJMGJUeGVHa0lCcXc0VjgxQXdrZDRxRjRmQ1UtWmcwak9Nb0M0cy0wWHdqNlEzNjNRRVlUMk5NTmgyc2F5bklFOXNQSmdJSnJWUkVSYlRTbGE4c2Y0LVRreGpGYjhGb1o4TnF5MnN0R1h0UTA3SEJFNUd1YdIB0AFBVV95cUxOeW9pdFFpbXlacjZiMEkxWDJxb1I4WGF2eFczNlRlZmItcHFtX0dFVU4yMng0MHhLSm5aZHlGOTNvVlRaZkt5N0ZoZlJxaW1sUTdDZ2ZZUzkzQkU0ZVI0NFVyeXhyVWVNSHEtZXdjY1JaZGo0OU5JSWZ6Z0dha1owMHNZY0dMLVlCRUtIV0otaUFzSGdhYkpjZ21TcVhrS1UyY3BGWnpfelNvQ3lfWlBUeHVCd3U4NDAxbkMxY1lldTlPX2VHX0daeGpwT2dUcDJa?oc=5",
-            "published_at": "2026-10-16T01:45:35Z",
+            "title": "Rodrigo Huescas regresa a las canchas con Copenhague tras lesión y se hace presente en UEFA Conference League",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNS00ydWVvZTVpZkxnN3BsMWFENWZEekdLeW40M1dSbEFQX1ltSjlSRjdOWGZndDZDQi1obGNwdzFOY0JYazQtd0V3cThkTXcyZmdvSmk3elBweGhuMHoyQUhqbXNVSEdPZ2xuMmFnbXVsR0ljQWhEbGFNZWpEVXRmMmNQYzMwNG5sTFdhNzBHWlVFdkJ5ZUFib2xYMlV0dG9IRXRFNTYzMm9PR0I0V0wyeFVNcmpCeXRLUVV2cDJKeEwwZGxlbndENVQzeE1qY2ZiajdiUmRHQlBGVjgyMnpESHhrUXTSAeQBQVVfeXFMTmtDT3VmazNTbUQ0LXI0LVJyRGRKME8wZnVCa0RaRU9HdmJLQ0tGRXFBeFpUaVFmTHZxUUxCbXRBUDczYmtPRDZ3X3RIMUZyZENqNDdpUjdiWThlY0h1VUp6dnUzcERDclFkM28zZV9Dbjlfa2h6Z1pLV0QwZ0syd2V2ZTNBa2RSRWxwNy1YNTFBNXJkcXl0N19yenZKYWRIUDd2WjBqV2xkUjRmLXo0ZjViMFVtQlN0dzdfbjBFTTYtTzZuOVBvWmdkT2FqR05kQjRRU2N2em4xWUJRaEQySUNKemVv?oc=5",
+            "published_at": "2026-10-15T22:14:27Z",
             "edicion": "mx"
           }
         ]
