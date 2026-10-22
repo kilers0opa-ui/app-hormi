@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T12:40:20.417843-06:00",
+  "updated_at": "2026-10-22T12:45:23.578658-06:00",
   "cuota": {
     "fecha": "2026-10-22",
     "busquedas": 0,
@@ -342,6 +342,30 @@
         "chavez": {
           "team_key": "az_alkmaar",
           "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
+    },
+    "1636397": {
+      "fixture_id": 1636397,
+      "home": "FK Crvena Zvezda",
+      "away": "FC Copenhague",
+      "league": "Conference League",
+      "score": "FK Crvena Zvezda 2-2 FC Copenhague",
+      "final_seen_at": "2026-10-22T18:41:58.308056+00:00",
+      "jugadores": {
+        "huescas": {
+          "team_key": "copenhague",
+          "minutes": 62,
           "goals": 0,
           "assists": 0
         }
