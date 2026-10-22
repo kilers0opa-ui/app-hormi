@@ -11,13 +11,14 @@ Si un gol que YA SE AVISÓ deja de ser del jugador, manda una corrección (una s
 Costo: 1 petición por cada 20 partidos (/fixtures?ids=...) → normalmente 1 al día. Corre en historial.yml.
 """
 import argparse
+from pathlib import Path
 from datetime import datetime, timedelta
 
 import hormi_alertas as ha
 
 STATS_FILE = ha.STATS_FILE
-ESTADO_FILE = "hormi_estado.json"
-REV_FILE = "revision.json"   # correcciones ya avisadas (para no repetirlas)
+ESTADO_FILE = ha.STATE_FILE
+REV_FILE = Path("revision.json")   # correcciones ya avisadas (para no repetirlas)
 DIAS = 3
 
 
@@ -70,8 +71,11 @@ def main():
     archivados = set(config.get("archivados") or [])
     stats = ha.load_json(STATS_FILE, {"players": {}})
     estado = ha.load_json(ESTADO_FILE, {})
-    # "sent": {jugador: [llaves de avisos ya mandados]}
-    enviados = {k for v in (estado.get("sent") or {}).values() for k in (v if isinstance(v, list) else [])}
+    def _llaves(v):
+        if isinstance(v, dict):
+            return [k for x in v.values() for k in _llaves(x)]
+        return list(v) if isinstance(v, list) else []
+    enviados = set(_llaves(estado.get("sent") or {}))   # {jugador: {equipo: [llaves]}}
     rev = ha.load_json(REV_FILE, {"avisadas": []})
     avisadas = set(rev.get("avisadas") or [])
     limite = datetime.now(ha.LOCAL_TZ) - timedelta(days=DIAS)
