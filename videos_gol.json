@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-22T14:40:41.521524-06:00",
+  "updated_at": "2026-10-22T14:45:30.544645-06:00",
   "cuota": {
     "fecha": "2026-10-22",
-    "busquedas": 2,
-    "busquedas_resumen": 2
+    "busquedas": 3,
+    "busquedas_resumen": 3
   },
   "goles": {
     "armando:olympiacos:1636308:goal:291713:1:gol": {
@@ -407,16 +407,23 @@
         }
       },
       "status": "pendiente",
-      "intentos": 2,
+      "intentos": 3,
       "fallos": 0,
-      "ultimo_intento": "2026-10-22T19:44:18.596338+00:00",
+      "ultimo_intento": "2026-10-22T20:45:23.244362+00:00",
       "video": null,
-      "noticias_pasadas": 2,
-      "ultima_noticia": "2026-10-22T19:44:18.596338+00:00",
+      "noticias_pasadas": 3,
+      "ultima_noticia": "2026-10-22T20:45:23.244362+00:00",
       "noticias": {
         "huescas": [
           {
-            "title": "¡Rodrigo Huescas vuelve a ser titular con Copenhague tras más de un año lesionado!",
+            "title": "Dos golazos complican a Rodrigo Huescas y Copenhague en Conference League",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNcWxVQVpiMlA0dGhpSG5kNmVNdEJQc1lpUUNjLTdCd2E1ZkRlRGcyWm9WaXpxSGpkS19fOUREOFFEVWRINEhHMS1TTXhlNlhHN0I5QnAyOHdwYy01eHdOX1ZkanNhRG5idVdmaHNrSVNfc0ZOc1N5Z0x0MEpuanhUNGpEOHFhM2tCQ2k4Z253aUsyLW1hakVwT1V3aTQ5dm5LZWdwb1VDNEktVjFldXRHRnYyMnFqVGM1QS1TYnZ4UF9Xb01SV1IxdHBJTVJIa3haeVZ6edIB1AFBVV95cUxPUXdxMlc2NkhBaGJvLTRPWUxDc29oSDFJd3MwQ196LTBsWUlGc1FxeFBTOUswZUhYRXlDdUdkVVh5RklVUnNCc0FFcmdjN054bEo4cFBFbFlCNndXUVMwSUpiRDhmWlE4V1Jpc2hNTkxFZkctUndhN0NINHRROWtlMGx4RVZYbG1PNGZiQU8zbXoxcGUwcDNEaEFVaU5NWGNFWWFmb2RfbWRjMWxLdUo4M3ExVUVweTRSd3ZuaVFxVlpKWldJYXNUUnNqT0dBYlpVTnUyTA?oc=5",
+            "published_at": "2026-10-22T20:00:20Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Se lesionó, se perdió el Mundial, pero luchó ante la adversidad: así ha sido la historia de Rodrigo Huescas",
             "source": "Récord",
             "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQUm9tMFJGYjZ1cVBYTlFkU3RkemNkVUNNSEtmRWxLb0RhMEdMOWZnQ0x5UWZ2cEx6SldTYkdNcFVOemJKRXJIOVk1Yi1nM3VpdDhuSFIwbWZqaGpvZkRfNFF5bU5TVjY2RGdfZEctSmE4TDBuRkh4amljeTQwNzlNN2xpa0VmU3FqUm13NXdQUkpObnVxOGRORnN3TU1vUVpiMXRwMkY3X2c0M3Z2TlJBSzg3RkIxdXFvZ2p2U1hVVXk1am9SZXpwb2prSHFhQ1FU?oc=5",
             "published_at": "2026-10-22T19:29:00Z",
@@ -427,13 +434,6 @@
             "source": "Claro Sports",
             "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNR3Rrb0VqZGxfRzllTS0xamtjZ3hDMGtELXRNRXpYZVJxWmhlaVpWMUNiT1c5X3VHemlmVW5Td1hIaEhOdWhqOGU2d3dzMDdZdEROY1F0ZmIwUTBpNE91LTFIWTZUaDdUdzVQREg4MHBSdVdOdUpWS3p5QzhuMW5xcnRxTjlRQmJpb0M0dWpIYkV4V0NUM2NDMEdrd3VRUzl6VGVOUlM3N2ZWQW53MkJ4bTlPVlRFb2MzOGZ0RGZTVnFFWC1uTkctaVRiMV83MHc4LU9qTHVyWk82VDZra2c?oc=5",
             "published_at": "2026-10-22T18:42:53Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Rodrigo Huescas regresa a las canchas con Copenhague tras lesión y se hace presente en UEFA Conference League",
-            "source": "MARCA",
-            "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNS00ydWVvZTVpZkxnN3BsMWFENWZEekdLeW40M1dSbEFQX1ltSjlSRjdOWGZndDZDQi1obGNwdzFOY0JYazQtd0V3cThkTXcyZmdvSmk3elBweGhuMHoyQUhqbXNVSEdPZ2xuMmFnbXVsR0ljQWhEbGFNZWpEVXRmMmNQYzMwNG5sTFdhNzBHWlVFdkJ5ZUFib2xYMlV0dG9IRXRFNTYzMm9PR0I0V0wyeFVNcmpCeXRLUVV2cDJKeEwwZGxlbndENVQzeE1qY2ZiajdiUmRHQlBGVjgyMnpESHhrUXTSAeQBQVVfeXFMTmtDT3VmazNTbUQ0LXI0LVJyRGRKME8wZnVCa0RaRU9HdmJLQ0tGRXFBeFpUaVFmTHZxUUxCbXRBUDczYmtPRDZ3X3RIMUZyZENqNDdpUjdiWThlY0h1VUp6dnUzcERDclFkM28zZV9Dbjlfa2h6Z1pLV0QwZ0syd2V2ZTNBa2RSRWxwNy1YNTFBNXJkcXl0N19yenZKYWRIUDd2WjBqV2xkUjRmLXo0ZjViMFVtQlN0dzdfbjBFTTYtTzZuOVBvWmdkT2FqR05kQjRRU2N2em4xWUJRaEQySUNKemVv?oc=5",
-            "published_at": "2026-10-15T22:14:27Z",
             "edicion": "mx"
           }
         ]
