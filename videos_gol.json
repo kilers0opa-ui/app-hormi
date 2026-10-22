@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T15:55:20.207903-06:00",
+  "updated_at": "2026-10-21T21:00:26.962658-06:00",
   "cuota": {
     "fecha": "2026-10-21",
     "busquedas": 0,
@@ -295,7 +295,7 @@
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-21T21:55:19.652962+00:00",
       "noticias": {
         "fidalgo": [
@@ -323,6 +323,30 @@
         ]
       },
       "motivo": "ningún jugador tuvo minutos"
+    },
+    "1551007": {
+      "fixture_id": 1551007,
+      "home": "Puebla",
+      "away": "Monterrey",
+      "league": "Liga MX",
+      "score": "Puebla 1-4 Monterrey",
+      "final_seen_at": "2026-10-22T02:57:25.041458+00:00",
+      "jugadores": {
+        "fimbres": {
+          "team_key": "monterrey",
+          "minutes": 32,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
