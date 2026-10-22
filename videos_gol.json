@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-22T13:10:36.548967-06:00",
+  "updated_at": "2026-10-22T13:12:51.895638-06:00",
   "cuota": {
     "fecha": "2026-10-22",
-    "busquedas": 0,
-    "busquedas_resumen": 0
+    "busquedas": 1,
+    "busquedas_resumen": 1
   },
   "goles": {},
   "partidos": {
@@ -396,13 +396,37 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-22T19:12:43.814839+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-22T19:12:43.814839+00:00",
+      "noticias": {
+        "huescas": [
+          {
+            "title": "Rodrigo Huescas vuelve a la titularidad con el Copenhague en la Conference League 2026",
+            "source": "Claro Sports",
+            "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNR3Rrb0VqZGxfRzllTS0xamtjZ3hDMGtELXRNRXpYZVJxWmhlaVpWMUNiT1c5X3VHemlmVW5Td1hIaEhOdWhqOGU2d3dzMDdZdEROY1F0ZmIwUTBpNE91LTFIWTZUaDdUdzVQREg4MHBSdVdOdUpWS3p5QzhuMW5xcnRxTjlRQmJpb0M0dWpIYkV4V0NUM2NDMEdrd3VRUzl6VGVOUlM3N2ZWQW53MkJ4bTlPVlRFb2MzOGZ0RGZTVnFFWC1uTkctaVRiMV83MHc4LU9qTHVyWk82VDZra2c?oc=5",
+            "published_at": "2026-10-22T18:42:53Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "¡Volvió después de un año! Rodrigo Huescas jugó su primer partido oficial",
+            "source": "FOX Deportes",
+            "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNR25OYnNHLXFnc21RY3VKaThlR0MzRUlpU2Npamt4eGRlMndMbURvYkw3SEdoY3MtSGdYX1B5eW1BTDE4bmZYbFRJeDdod18zelVscElHNi1IRFo0LUFEY2VJcWozdjVXOXVyZUg2RWFYZmZSdHZ6VUNQeTNfcW1jTXp4ZWFXeVpLMlhPeHEyWUJQdERxeFdkaEo5Q1JBd2ZUei1OUG9JX0NOMXVxeTBtVjMxNDlERmZ0TlA3WFhuZXpBdw?oc=5",
+            "published_at": "2026-10-16T01:48:56Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Atención al regreso de Rodrigo Huescas con el Copenhague en la Conference League",
+            "source": "AS México",
+            "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQbmV0akFCU0YxaFpDZ19PczEtU09TdVh2MEt1Y2dKYk9IdVBOTVRsaGFUbzJaQ0Q2TERVbmFFSEU0bHE1MlRNVzRJMGJUeGVHa0lCcXc0VjgxQXdrZDRxRjRmQ1UtWmcwak9Nb0M0cy0wWHdqNlEzNjNRRVlUMk5NTmgyc2F5bklFOXNQSmdJSnJWUkVSYlRTbGE4c2Y0LVRreGpGYjhGb1o4TnF5MnN0R1h0UTA3SEJFNUd1YdIB0AFBVV95cUxOeW9pdFFpbXlacjZiMEkxWDJxb1I4WGF2eFczNlRlZmItcHFtX0dFVU4yMng0MHhLSm5aZHlGOTNvVlRaZkt5N0ZoZlJxaW1sUTdDZ2ZZUzkzQkU0ZVI0NFVyeXhyVWVNSHEtZXdjY1JaZGo0OU5JSWZ6Z0dha1owMHNZY0dMLVlCRUtIV0otaUFzSGdhYkpjZ21TcVhrS1UyY3BGWnpfelNvQ3lfWlBUeHVCd3U4NDAxbkMxY1lldTlPX2VHX0daeGpwT2dUcDJa?oc=5",
+            "published_at": "2026-10-16T01:45:35Z",
+            "edicion": "mx"
+          }
+        ]
+      }
     }
   }
 }
