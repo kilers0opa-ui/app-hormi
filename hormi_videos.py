@@ -653,13 +653,18 @@ def next_attempt(st, settings, now):
                 settings["gol_intentos_min"], settings, now)
 
 
-def pick_goal_video(candidates):
-    """El clip más probable: primero los que dicen 'gol' en el título; entre
-    ellos, el que se publicó antes (el primero en salir tras el gol)."""
+def pick_goal_video(candidates, settings=None, team_pref=None):
+    """El clip más probable: primero los de canales oficiales (televisoras/ligas de canales_confiables o el
+    canal del propio equipo) — los de fans a veces no dejan reproducir dentro de la app aunque YouTube diga que
+    sí —; luego los que dicen 'gol' en el título; y entre ellos, el que se publicó antes."""
+    def oficial(e):
+        ch = normalize(e.get("channel") or "") + " "
+        return (any(t in ch for t in (settings or {}).get("canales_confiables") or [])
+                or bool(team_pref and canal_del_equipo(ch, team_pref)))
     def score(e):
         title = normalize(e.get("title") or "")
         has_word = any(w in title for w in GOAL_WORDS)
-        return (not has_word, e.get("published_at") or "")
+        return (not oficial(e), not has_word, e.get("published_at") or "")
     return sorted(candidates, key=score)[0]
 
 
@@ -1039,7 +1044,8 @@ def _goals_step(out, config, settings, sources, notify, now):
         candidates = filter_visibles(candidates, settings.get("region_visible"))
         log(f"     {len(found)} resultados · {len(candidates)} válidos y visibles en {settings.get('region_visible')}")
         if candidates:
-            video = strip_private([pick_goal_video(candidates)])[0]
+            tgt = next((t for t in player.get("targets") or [] if t.get("key") == st.get("team_key")), {})
+            video = strip_private([pick_goal_video(candidates, settings, team_prefixes(tgt.get("label") or ""))])[0]
             st["status"], st["video"] = "resuelto", video
             log(f"     ✅ {video['title']!r} ({video['channel']})")
             if notify and not st.get("silencioso"):
