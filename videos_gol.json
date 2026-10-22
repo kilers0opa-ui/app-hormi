@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-22T15:20:31.326718-06:00",
+  "updated_at": "2026-10-22T15:23:17.195854-06:00",
   "cuota": {
     "fecha": "2026-10-22",
-    "busquedas": 4,
+    "busquedas": 5,
     "busquedas_resumen": 3
   },
   "goles": {
@@ -11,18 +11,23 @@
       "team_key": "olympiacos",
       "goal_seen_at": "2026-10-22T20:35:40.272859+00:00",
       "status": "resuelto",
-      "intentos": 1,
+      "intentos": 2,
       "fallos": 0,
-      "ultimo_intento": "2026-10-22T20:55:17.553593+00:00",
+      "ultimo_intento": "2026-10-22T21:23:12.355796+00:00",
       "video": {
-        "id": "qHaNadNUd_U",
-        "title": "Gol de la Hormiga 🐜 González en Europa League",
-        "channel": "Pepelotera Oficial",
-        "published_at": "2026-10-22T20:40:20Z",
-        "thumbnail": "https://i.ytimg.com/vi/qHaNadNUd_U/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=qHaNadNUd_U",
+        "id": "o29kE53tyJg",
+        "title": "¡HORMIGA GONZÁLEZ ANOTA EL GOL DE LA VICTORIA! 🔥",
+        "channel": "Desde las Gradas MX",
+        "published_at": "2026-10-22T21:03:00Z",
+        "thumbnail": "https://i.ytimg.com/vi/o29kE53tyJg/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=o29kE53tyJg",
         "embeddable": true
-      }
+      },
+      "verificado": "2026-10-22T21:23:12.355796+00:00",
+      "descartados": [
+        "qHaNadNUd_U"
+      ],
+      "silencioso": true
     }
   },
   "partidos": {
