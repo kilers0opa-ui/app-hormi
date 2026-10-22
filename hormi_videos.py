@@ -90,7 +90,11 @@ DEFAULTS = {
     "gol_min_entre_intentos": 10,     # si el worker se atrasa, separa los intentos al menos N min
     "gol_max_busquedas_dia": 90,      # tope de búsquedas de YouTube al día (goles + resúmenes): 90 x 100 = 9,000 de las 10,000 unidades gratis (deja ~1,000 para videos.list)
     "gol_caducidad_horas": 3,         # un gol/partido pendiente más viejo que esto se omite
-    "gol_retencion_horas": 48,        # cuánto se conserva un gol/partido en videos_gol.json
+    "gol_retencion_horas": 48,
+    "gol_reverificar_min": 30,        # cada cuánto se vuelve a revisar que el video de un gol siga disponible
+    "gol_reverificar_horas": 24,      # ... durante cuántas horas después del gol (1 unidad por cada 50 videos)
+    # Videos quitados a mano (id de YouTube): nunca se usan y, si ya estaban puestos, se quitan y se busca otro.
+    "videos_descartados": [],        # cuánto se conserva un gol/partido en videos_gol.json
     # --- modo --eventos: final de partido (resumen + noticia principal)
     "resumen_intentos_min": [30, 60, 120, 180, 300],   # minutos después del final en que se busca el resumen (5 intentos; los canales oficiales a veces lo suben 2-3 h después) y se refresca la noticia
     "resumen_caducidad_horas": 6,         # un resumen pendiente más viejo que esto se omite (los goles usan gol_caducidad_horas)
@@ -307,10 +311,14 @@ def filter_visibles(entries, region):
             continue
         rr = (it.get("contentDetails") or {}).get("regionRestriction") or {}
         bloqueado = region in (rr.get("blocked") or []) or ("allowed" in rr and region not in (rr.get("allowed") or []))
-        no_embed = (it.get("status") or {}).get("embeddable") is False
+        stt = it.get("status") or {}
+        no_embed = stt.get("embeddable") is False
+        # Reclamo de derechos (UEFA, LaLiga...), borrado o ya no público: YouTube lo bloquea en todos lados.
+        rechazado = stt.get("uploadStatus") in ("rejected", "deleted", "failed") or stt.get("privacyStatus") not in (None, "public")
         edad = ((it.get("contentDetails") or {}).get("contentRating") or {}).get("ytRating") == "ytAgeRestricted"
-        if bloqueado or no_embed or edad:
-            motivo = "bloqueado en " + region if bloqueado else ("no se puede incrustar" if no_embed else "restricción de edad")
+        if bloqueado or no_embed or edad or rechazado:
+            motivo = ("bloqueado en " + region if bloqueado else "no se puede incrustar" if no_embed
+                      else "restricción de edad" if edad else f"bloqueado ({stt.get('rejectionReason') or stt.get('uploadStatus') or stt.get('privacyStatus')})")
             log(f"     🚫 {e.get('title')!r} ({e.get('channel')}): {motivo}")
             continue
         ok.append(e)
@@ -970,6 +978,42 @@ def _finales_step(out, config, settings, sources, notify, now):
 
 # ----------------------------------------------------------- Modo eventos --
 
+def _reverificar_goles(state, settings, now):
+    manual = set(settings.get("videos_descartados") or [])
+    revisar = []
+    for key, st in state.items():
+        v = st.get("video")
+        if st.get("status") != "resuelto" or not v:
+            continue
+        goal_at = parse_ts(st.get("goal_seen_at")) or now
+        last = parse_ts(st.get("verificado"))
+        if v["id"] in manual:
+            revisar.append((key, st, True))
+        elif now - goal_at <= timedelta(hours=settings["gol_reverificar_horas"]) and (
+                not last or now - last >= timedelta(minutes=settings["gol_reverificar_min"])):
+            revisar.append((key, st, False))
+    if not revisar:
+        return False
+    a_checar = [st["video"] for _, st, forzado in revisar if not forzado]
+    vivos = {e["id"] for e in filter_visibles(a_checar, settings.get("region_visible"))} if a_checar else set()
+    if a_checar and not vivos and _youtube_disabled:
+        return False   # sin acceso a YouTube: no se quita nada a ciegas
+    for key, st, forzado in revisar:
+        v = st["video"]
+        st["verificado"] = now.isoformat()
+        if not forzado and v["id"] in vivos:
+            continue
+        log(f"🧹 video del gol {key} ya no disponible: {v.get('title')!r} ({v.get('channel')}) — se quita y se busca otro")
+        st.setdefault("descartados", []).append(v["id"])
+        st["video"] = None
+        st["status"] = "pendiente"
+        # Una búsqueda más (la última): next_attempt la da por "final".
+        st["intentos"] = max(0, len(settings["gol_intentos_min"]) - 1)
+        st["ultimo_intento"] = None
+        st["silencioso"] = True   # el reemplazo no vuelve a mandar notificación
+    return True
+
+
 def _goals_step(out, config, settings, sources, notify, now):
     state = out.setdefault("goles", {})
     cuota = out["cuota"]
@@ -995,6 +1039,11 @@ def _goals_step(out, config, settings, sources, notify, now):
                 if (parse_ts(st.get("goal_seen_at")) or now) < cutoff]:
         del state[key]
         changed = True
+
+    # 2.5) ¿siguen disponibles los videos ya puestos? Un video puede caerse DESPUÉS de publicarse (reclamo de
+    #      derechos de la UEFA/liga, el canal lo borra o lo hace privado). Si se cayó: se quita, se anota como
+    #      descartado y se hace una búsqueda más (si el gol todavía está dentro de su caducidad).
+    changed = _reverificar_goles(state, settings, now) or changed
 
     # 3) un intento por gol pendiente al que ya le toca
     for key, st in state.items():
@@ -1040,7 +1089,8 @@ def _goals_step(out, config, settings, sources, notify, now):
         candidates = [e for e in found
                       if mentions_player(e, tokens)
                       and (e.get("published_at") or "") >= since_iso
-                      and e["id"] not in used]
+                      and e["id"] not in used
+                      and e["id"] not in set(st.get("descartados") or []) | set(settings.get("videos_descartados") or [])]
         candidates = filter_visibles(candidates, settings.get("region_visible"))
         log(f"     {len(found)} resultados · {len(candidates)} válidos y visibles en {settings.get('region_visible')}")
         if candidates:
