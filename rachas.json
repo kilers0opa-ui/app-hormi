@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T02:51:56.814060-06:00",
+  "updated_at": "2026-10-22T03:49:13.815981-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -1340,10 +1340,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 92,
+          "valor": 91,
           "meta": 100,
           "previo": 75,
-          "texto": "A 8 partidos de 100"
+          "texto": "A 9 partidos de 100"
         },
         {
           "id": "goles_sel",
@@ -1445,10 +1445,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 199,
-          "meta": 200,
-          "previo": 150,
-          "texto": "A 1 partido de 200"
+          "valor": 200,
+          "meta": 250,
+          "previo": 200,
+          "texto": "A 50 partidos de 250"
         },
         {
           "id": "goles_sel",
@@ -1468,6 +1468,10 @@
         }
       ],
       "logros": [
+        {
+          "texto": "200 partidos con clubes",
+          "fecha": "2026-10-22"
+        },
         {
           "texto": "200 partidos con clubes",
           "fecha": "2026-10-20"
@@ -1555,10 +1559,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 66,
+          "valor": 67,
           "meta": 75,
           "previo": 50,
-          "texto": "A 9 partidos de 75"
+          "texto": "A 8 partidos de 75"
         },
         {
           "id": "goles_sel",
