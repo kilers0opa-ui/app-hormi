@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T14:55:21.162991-06:00",
+  "updated_at": "2026-10-22T15:15:32.894260-06:00",
   "cuota": {
     "fecha": "2026-10-22",
     "busquedas": 4,
@@ -357,11 +357,19 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "resuelto",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
-      "video": null,
+      "video": {
+        "id": "9UL3dYoPObI",
+        "title": "HORMIGA GONZÁLEZ le da el TRIUNFO a su equipo | Olympiacos 1-0 Sparta Praha |  | UEL | Resumen",
+        "channel": "ESPN MX",
+        "published_at": "2026-10-22T21:13:46Z",
+        "thumbnail": "https://i.ytimg.com/vi/9UL3dYoPObI/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=9UL3dYoPObI",
+        "embeddable": true
+      },
       "noticias_pasadas": 0,
       "ultima_noticia": null,
       "noticias": {}
