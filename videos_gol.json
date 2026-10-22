@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-22T14:45:30.544645-06:00",
+  "updated_at": "2026-10-22T14:55:21.162991-06:00",
   "cuota": {
     "fecha": "2026-10-22",
-    "busquedas": 3,
+    "busquedas": 4,
     "busquedas_resumen": 3
   },
   "goles": {
@@ -10,119 +10,22 @@
       "player_key": "armando",
       "team_key": "olympiacos",
       "goal_seen_at": "2026-10-22T20:35:40.272859+00:00",
-      "status": "pendiente",
-      "intentos": 0,
-      "fallos": 0,
-      "ultimo_intento": null,
-      "video": null
-    }
-  },
-  "partidos": {
-    "1635738": {
-      "fixture_id": 1635738,
-      "home": "VfB Stuttgart",
-      "away": "Atlético de Madrid",
-      "league": "Champions League",
-      "score": "VfB Stuttgart 1-1 Atlético de Madrid",
-      "final_seen_at": "2026-10-20T20:51:20.786385+00:00",
-      "jugadores": {
-        "obed": {
-          "team_key": "atletico_madrid",
-          "minutes": 12,
-          "goals": 0,
-          "assists": 0
-        }
-      },
       "status": "resuelto",
       "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": "2026-10-20T21:25:19.911331+00:00",
+      "ultimo_intento": "2026-10-22T20:55:17.553593+00:00",
       "video": {
-        "id": "kOHotpfPQLs",
-        "title": "RESUMEN: STUTTGART 1-1 ATLÉTICO DE MADRID I FASE DE LIGA I JORNADA 3 I UEFA CHAMPIONS LEAGUE",
-        "channel": "TNT Sports México",
-        "published_at": "2026-10-20T21:33:59Z",
-        "thumbnail": "https://i.ytimg.com/vi/kOHotpfPQLs/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=kOHotpfPQLs",
+        "id": "qHaNadNUd_U",
+        "title": "Gol de la Hormiga 🐜 González en Europa League",
+        "channel": "Pepelotera Oficial",
+        "published_at": "2026-10-22T20:40:20Z",
+        "thumbnail": "https://i.ytimg.com/vi/qHaNadNUd_U/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=qHaNadNUd_U",
         "embeddable": true
-      },
-      "noticias_pasadas": 5,
-      "ultima_noticia": "2026-10-20T21:51:44.519385+00:00",
-      "noticias": {
-        "obed": [
-          {
-            "title": "Stuttgart vs Atlético de Madrid: Obed Vargas Debuta en la Champions League 2026",
-            "source": "N+",
-            "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPR1hzLVZla3phYmUwZjkzX2wzLUxMODR1TWpfLUZOZUN2dUNYWGJXQWJ1MTh5c2Y5bE5EWjJTbEhRSThLYk5IT09EZjNrYS1mNFc2NjMzMlppa3hYaVZrWUUxdDdGdWt1Ym1qQ0x3RjMxWlp6Vk9YUG9fcGt2WXczdTkwNzh5SW9yYjBXallnaDNHTm9mbDJnaVhBV25maFAxSGp3anlMSzFxc25MdzZsbXB2UzV5Znc?oc=5",
-            "published_at": "2026-10-20T21:40:50Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Mexicano Obed Vargas debuta en la Champions League",
-            "source": "ESPN México",
-            "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPVmUtaVRaQWN6RnF4M1dRNnRtLTh6TTRCbTZ2cExjVjRQSm9pLVMyVXg2Y2FJZnpnVXBGWDNvWU1yREx2cDdybjNRWHFGOUJWUUN4X3M4SWRaR0dZV2RGQ3hYU01ubnlueUVRNGt5bExzU0dNaWJtdjZiYW41SHUxT1RDWEFGZFUwU2psb2dRWUFkZ3NLWDBTWWJkZTVtQjhCaV9Wa1A2RTJReGc1QzNMZQ?oc=5",
-            "published_at": "2026-10-20T21:35:56Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Obed Vargas reaparece en el escenario más grande de Europa",
-            "source": "AS México",
-            "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSGQ2VzlhODZ5X2VyeC1rR01PbEdvbGhjUVVjbWZDbUU1cnUxaGFKdEhvVmhLdTFkb0pLN1Z0NmdUUEpkZlpKNDFmZThiUVhwUThwR3RhVTlrYThkWWNaZ3FHSzJvSHJpWFRodUtDdU41TGF1NU5hSHdlX3lxcTRkSWRQeXFMVXh4NXFMQjVEMEJCUUkyMHZvaUd4Skh0OTJFcy1EWHY0b05WZ9IBvgFBVV95cUxNTUtiM0pRZU93UHFYaG95SG5hS3RLSWRfNW9CLU1NMmJZRlp3cUppcVROWkQ3dGdMU1NZSlZGTjdvNWRHbjZZUjdIdm5CNVlrRF82VkVXUEg0TjhXeE81WURSSzRoeklCUV80bGpqblNJcVNXUXFTR08yTm1ZcWNaZTBQOHBQX2hab3pmbXVoVnpwd0lGVlE4VlAwY3dlX3Fqb2pnQTNBNENUT2VDR0NuN0xUWUJOT2NiVU1WenlR?oc=5",
-            "published_at": "2026-10-20T21:30:40Z",
-            "edicion": "mx"
-          }
-        ]
       }
-    },
-    "1635655": {
-      "fixture_id": 1635655,
-      "home": "FC Porto",
-      "away": "PSV Eindhoven",
-      "league": "Champions League",
-      "score": "FC Porto 0-1 PSV Eindhoven",
-      "final_seen_at": "2026-10-20T20:52:40.456799+00:00",
-      "jugadores": {
-        "gimenez": {
-          "team_key": "porto",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "omitido",
-      "intentos": 0,
-      "fallos": 0,
-      "ultimo_intento": null,
-      "video": null,
-      "noticias_pasadas": 5,
-      "ultima_noticia": "2026-10-20T21:55:21.081361+00:00",
-      "noticias": {
-        "gimenez": [
-          {
-            "title": "PSV derrota al Porto de Santiago Giménez en la Champions League",
-            "source": "sdpnoticias",
-            "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPTDNNUFhRbHhKc3JicFowcXRWRk4tQkU5WmRFZGtyUUpGVlA5TmMxNF83RzdXR21RYk5zc1JTQ2NtTXRuWTRRdXROOVh5QXk0YTdRWmVNbXhsVWMtNW1VN0xJT1ZlOEN1X0tsajY5UDlMU1lIZ01ta19aSjdETWoxOWFMNUtXLUJldHFMZTJDQWJXZ3ctanV6Vi15VWJ6dHExejVZ?oc=5",
-            "published_at": "2026-10-20T21:40:07Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Santiago Giménez borrado, no lo meten ni con la urgencia de un gol: Resumen Porto vs. PSV",
-            "source": "MARCA",
-            "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPTDEyUmF6aDlTdS1CLUYxc1dwUmt4UTR3eTFXTl9HeUZrY1hXRE1YbDB0MjNhWEZUOGgxTWt3ZzJaMzFtMUFWYmZ1cVZXaDRURzRIdkx5UXRpUGlmVzBlOFpXTTkzWW5ZaDZhRUJ6TzJjdlFoRFY2eXpWaTcySGRrZjRKdDBSVVB4a3V6NTc1aFdET3VYbTFtOUlyZUxvZDJ6VVVNTEp3OUtaa3lyT0wtc21mcDZGdXFNYm1xTmU3dnhxTlEteGs0YVQ3WEh5OVVKYUHSAdIBQVVfeXFMT29lbVQtYTh0bWY5UFpBUHhWZGg1QVpCek5XdzFOWDlSNDZubTF5NEhQbUxMQ3pZZm91OHo3NkxwUTRiYkRpbEFkUVJyV2xEVGVWUzV4QTNWa0xaeXh6aXZkMkJrLWV6SjlYT2huY2oxY0dPdTV0clNQdVB1cUYzaVRzWnQ5cTBGLTM2VVl4aENDWkkyZnVCVXNveDdMQU5mRnhHNkZPNko1cERaQ3I4ZTFsZG80TnJULTBsWFUwN0ZQVXFBemxxZ0lCSmoyNDVtWXl3?oc=5",
-            "published_at": "2026-10-20T20:52:32Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Santiago Giménez responde a rumores sobre supuestos problemas psicológicos",
-            "source": "AS México",
-            "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNbU52RTNTcE9obmFfUjktd1VQTFZfOFBCVzNUbDdtR0tYREdtbUdybmZwdXpQdjBYMjFibEtOc3c0OE9mMUlfOU5VVnhNZWJJNGZ3ek0wd1FNa1ExMXYwRFE2YVl0MmF3YWswRTZmbzJXNE9mRlU1WXlFcnA3TUFISGllSkxEdXFObkZyb1RfTjlKUl9sRE92SXRIaW9UNVpJRklodXFYWHJnR0IyMFdadk02cjh2YmhBLVBTRlYzd29JbGNlQVFSZGxzWXdDVXdLaE5B0gHnAUFVX3lxTFBHTU83c1hrdnZPWEJmcTR6VUd3ZVhvd2tWSUtTbWY2YTlDbjJPOF83LXFOZExqeUhHUFA1dkpoaU5CbFpocDFpR0hCRTUyT0ltcDVyblVuMXVMS2dlWHJPY2l5dFozVDd2cG9LNWEweEN5cE1oT280azlFM0RQOGh2OWJjMG1CNHhudEFacS1FcFpRZW55blYyR3pTbEQ1YjVTNVh2Q0lmU2hLY3VJb2tYRWdjSGZSX2xvUnZyTVJ0d3hETE5hWGlkZXQxSWhJZUl6bENfTjVfX0dSWWlLUGZ1V2pndlQyMA?oc=5",
-            "published_at": "2026-10-20T20:24:10Z",
-            "edicion": "mx"
-          }
-        ]
-      },
-      "motivo": "ningún jugador tuvo minutos"
-    },
+    }
+  },
+  "partidos": {
     "1551004": {
       "fixture_id": 1551004,
       "home": "Chivas",
@@ -438,6 +341,30 @@
           }
         ]
       }
+    },
+    "1636308": {
+      "fixture_id": 1636308,
+      "home": "Olympiakos",
+      "away": "Sparta Praha",
+      "league": "Europa League",
+      "score": "Olympiakos 1-0 Sparta Praha",
+      "final_seen_at": "2026-10-22T20:50:20.036028+00:00",
+      "jugadores": {
+        "armando": {
+          "team_key": "olympiacos",
+          "minutes": 28,
+          "goals": 1,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
