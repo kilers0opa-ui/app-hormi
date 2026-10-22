@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T21:25:31.314349-06:00",
+  "updated_at": "2026-10-21T21:30:39.341304-06:00",
   "cuota": {
     "fecha": "2026-10-21",
     "busquedas": 0,
@@ -339,14 +339,46 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "resuelto",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
-      "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "video": {
+        "id": "FBrVGWh74v0",
+        "title": "Puebla 1-4 Monterrey | ¡RAYADOS GANA, GUSTA y GOLEA a domicilio a PUEBLA que NO levanta! | RESUMEN",
+        "channel": "ESPN MX",
+        "published_at": "2026-10-22T03:28:12Z",
+        "thumbnail": "https://i.ytimg.com/vi/FBrVGWh74v0/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=FBrVGWh74v0",
+        "embeddable": true
+      },
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-22T03:30:27.949320+00:00",
+      "noticias": {
+        "fimbres": [
+          {
+            "title": "¡GOOOL! Iker Fimbres anota para Monterrey.",
+            "source": "TUDN",
+            "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQMUZrNVR4TXF1VGlqaS1jN3V5X2E5ZlB5THBvVG95QnJXa3Q1Q3ZwREdsT2stSWJPTHNXUmF3cnZpTjhwem5ybGdLT1F5Uy1JTmtmYndpeU9KVjdPOEFxaFAtSWhtQ2pXcUNiSjBDZHhCcTliUVNFZk1lWnp4aERjMGFRN2Zac0FBRVlr?oc=5",
+            "published_at": "2026-10-20T03:59:00Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "¡TIRO ATAJADO! disparo por Iker Fimbres.",
+            "source": "TUDN",
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxObXBBZ2ZjS3ZzYTZCc2g3VjFpd3ZRRXkweFY2X1BHQkc4c1B5TWU1OEMtS2t2WWgyU3o1SERaM180cWFxVnVxektQVlMzaDYwOFlUcU9FSzZOYnFlelZRaHFyS0JpeVJCa0pzVlgzYTBHT2pjcVJYVmd1c04tRWtnSlgxMHFQMnNoUEE?oc=5",
+            "published_at": "2026-10-19T05:41:44Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Íker Fimbres pierde minutos con Rayados bajo el mando de Almeyda",
+            "source": "Récord",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQV1RzdmNiT0I4MEdYaE91clpMSlJPYUpTdFZ2dk40eVJjZTRXeFdfOTJhTjdsUWN6Z3ZXc0s2Z1Z0QllLbW9JMDE5cWF5Qjk2SHNyRHJ6R1g1RWRwNXZuMEpvb05XaUVYOWVIcmQ2c2x3R2liX2RkTGs2U0JLZS12WUNpOXF3NjFOQWxQTXhyMGR0b05Dc2FLVzRJSE9lTC1ONVVUQ054ZzU5Um8xZVZ0NE5PYUxJOGhoVjFJ?oc=5",
+            "published_at": "2026-09-23T07:00:00Z",
+            "edicion": "mx"
+          }
+        ]
+      }
     }
   }
 }
