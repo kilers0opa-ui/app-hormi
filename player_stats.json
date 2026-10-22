@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T14:50:21.877052-06:00",
+  "updated_at": "2026-10-22T14:59:31.682502-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -7872,7 +7872,7 @@
             "mio": false
           },
           {
-            "min": "90+4'",
+            "min": "90+3'",
             "tipo": "roja",
             "nombre": "S. Gudelj",
             "lado": "L",
@@ -7909,7 +7909,7 @@
                 "num": 45,
                 "pos": "D",
                 "g": "2:2",
-                "roja": "90+4'"
+                "roja": "90+3'"
               },
               {
                 "id": 36920,
@@ -7987,6 +7987,22 @@
                 "entra": "62'"
               },
               {
+                "id": 108017,
+                "n": "Mohammad Abu Fani",
+                "num": 15,
+                "pos": "M",
+                "g": null,
+                "entra": "84'"
+              },
+              {
+                "id": 68106,
+                "n": "Loizos Loizou",
+                "num": 75,
+                "pos": "F",
+                "g": null,
+                "entra": "84'"
+              },
+              {
                 "id": 496789,
                 "n": "Savo Radanović",
                 "num": 50,
@@ -8036,27 +8052,11 @@
                 "g": null
               },
               {
-                "id": 108017,
-                "n": "Mohammad Abu Fani",
-                "num": 15,
-                "pos": "M",
-                "g": null,
-                "entra": "84'"
-              },
-              {
                 "id": 606918,
                 "n": "Ye-geon Kim",
                 "num": 19,
                 "pos": "M",
                 "g": null
-              },
-              {
-                "id": 68106,
-                "n": "Loizos Loizou",
-                "num": 75,
-                "pos": "F",
-                "g": null,
-                "entra": "84'"
               },
               {
                 "id": 18830,
@@ -11227,8 +11227,7 @@
                 "n": "J. Vargas",
                 "num": 4,
                 "pos": "D",
-                "g": "2:2",
-                "asist": 1
+                "g": "2:2"
               },
               {
                 "id": 35893,
