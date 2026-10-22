@@ -1,61 +1,12 @@
 {
-  "updated_at": "2026-10-21T22:00:26.259270-06:00",
+  "updated_at": "2026-10-22T12:40:20.417843-06:00",
   "cuota": {
-    "fecha": "2026-10-21",
+    "fecha": "2026-10-22",
     "busquedas": 0,
     "busquedas_resumen": 0
   },
   "goles": {},
   "partidos": {
-    "1603061": {
-      "fixture_id": 1603061,
-      "home": "Al Taawon",
-      "away": "Al-Qadsiah",
-      "league": "Liga Profesional Saudí",
-      "score": "Al Taawon 0-1 Al-Qadsiah",
-      "final_seen_at": "2026-10-20T17:11:21.960288+00:00",
-      "jugadores": {
-        "quinones": {
-          "team_key": "al_qadsiah",
-          "minutes": 90,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "omitido",
-      "intentos": 4,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-20T20:53:48.350488+00:00",
-      "video": null,
-      "noticias_pasadas": 5,
-      "ultima_noticia": "2026-10-20T19:15:19.940367+00:00",
-      "noticias": {
-        "quinones": [
-          {
-            "title": "Julián Quiñones colabora en gol de último minuto para el triunfo y liderato de Al Qadsiah ante Al Taawoun",
-            "source": "Mediotiempo",
-            "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQdE1JWkJENjF5TFZHUTc0UThRZHBHREhnZXFoQ3JRekpwQVRWb3ljMVJSV3VZRTBpbHA0TnpCSlZfOGNSQk9zVmloeWdnd3FvcXBLZjk2V1l3cGJGMlNNbkZ6clhJVUpoOTJlZmp1S3FYWWtrcUt6TUlaNDBHc0tIUEI1T0ZpWFNyLTdOUTFBeS1HelllSVVqSG1MVkNLME9hLVZnaDlmTjFhTEh3dUlvMDh4ZDU3YU5kVF9Rbk93YjRsRW5hX2wycUtiSERCazVtUUxnT29XZjJGZXFhVElyQWtVMktWRWlyQ3VWczlUZHJ6YTNaSHfSAfYBQVVfeXFMTlVwak16eGdBRm9kZE9PYU9MaXlpRlhhaHdtdWotMlVwUVdqYWwtLW5sUlNRWVBqZXV2Y0lQVXo3N0QwSzdpZlh1VmVqMVdhaUdQRjZ0Wl9WQWNYMlZrSnZNM2FFMFROMk85THBNV0hreE9lMVZteUplQzdoaURFNEc5VGlhWll0WjYxWFVjSlQxOV9wSGNqdXluZldLX0NPRXZfVFl3QndPTDE1c2dzNHRRd0E1M1ZEdHNzeTZ0N0JpcXBnOTd2a1BIRWRwaUVySzZDbGl0SlcxMzJlZTFJQUVyVGZJdFI5cmpyZ3NIaDhaN3ZwNHVn?oc=5",
-            "published_at": "2026-10-20T17:47:00Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "¡Ganan y son líderes! Julián Quiñones y el Al Qadisiya derrotan de último minuto a Al Taawoun",
-            "source": "Fox Sports",
-            "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPYi1RNDlXZHNsX0NjcEx1OVdfOXdkcllzQ3hVc3VHNGNOWlJYSGloelB6TUxNcHllVHVuWlIwY1JDa0xGSTA4RkNjelpJQ1NXeW15cGRNNkowRVhiM2FtT1YzOXhNUGtsWGl6QVRUaXFDbFZnaTlNU1ZLTnVKalQtNm51ZEJtOE94aU9GMEZKVVVkc2tyY05JRDhKS09tekgxSzU5RUxlcF9oVmZFQkE5Ml9yV2puaHA0WUNtc193dmU5NlFTSVNtUkY2d2o?oc=5",
-            "published_at": "2026-10-20T17:28:34Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Julián Quiñones participa en gol y es nuevo líder de la Saudi Pro League: Resumen Al Taawoon vs Al Qadisiya",
-            "source": "MARCA",
-            "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPSEVWMlZNZjZCTGZEOEExU1lGVEQ1OFhhQ3BfMkMtUVFRRjBmN1U5YW5EUl9ybnB3ZkxTb19td3FUcUZnZ3dyYkpic083ZE0xcnRtd3RJXzVkMHplby1qeGxnbi1hV3JRMkQxRmstV1NmSmU5UzAxR1hndWpNbmNldmpsalVEMl9BUmFfbnRnN0dBYVRQZUZmOE5RdUNyTk12RE1zT3FtdnB1bmtZc3RkVVhLZEFpSVo0aVNpSHBFTUl3VTdORmttMk40a1lxSmhucHZtUVlaUFRmR2pjN0ZNR2NJa0FFTGp0UEgxUy1LMNIB7wFBVV95cUxNQlVSbncxLWc1MU5HUmJCNV9qQWtCUVE4ZEZBaE5qODBmT2tLZ2VCX1RJak4tLWROYmxKc3VVN3lRbUpkc0dOQ3RBaWxDWVd4dnYyYmdGZGxucGxxRUtpXzdtWnYtQTlJUlNCM2wwMmdKdVhiTUpaQlh5QnlTa19mblBRaEtLbmtWcTFjb1ZkN1o2R2paLWJBcTdUWDhhM1dsSWJwU2pQWTVGLTFBMGtzNllwQ09Kd05acUM0WmFZRjZtaEIzcTlGdTZnVWVFVHdhYzRhMzFVSm5sdGdaQTY5Z1YxWXlFclVfdERCVnJqaw?oc=5",
-            "published_at": "2026-10-20T17:11:13Z",
-            "edicion": "mx"
-          }
-        ]
-      },
-      "motivo": "caducado"
-    },
     "1635738": {
       "fixture_id": 1635738,
       "home": "VfB Stuttgart",
@@ -352,7 +303,7 @@
         "url": "https://www.youtube.com/watch?v=FBrVGWh74v0",
         "embeddable": true
       },
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-22T04:00:25.854890+00:00",
       "noticias": {
         "fimbres": [
@@ -379,6 +330,30 @@
           }
         ]
       }
+    },
+    "1636215": {
+      "fixture_id": 1636215,
+      "home": "Ararat-Armenia",
+      "away": "AZ Alkmaar",
+      "league": "Europa League",
+      "score": "Ararat-Armenia 0-4 AZ Alkmaar",
+      "final_seen_at": "2026-10-22T18:36:38.287030+00:00",
+      "jugadores": {
+        "chavez": {
+          "team_key": "az_alkmaar",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
