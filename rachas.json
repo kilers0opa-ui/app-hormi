@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T11:42:44.470263-06:00",
+  "updated_at": "2026-10-22T11:50:30.063604-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -103,6 +103,12 @@
         }
       ],
       "logros": [],
+      "avisados": [
+        "goles_club:30",
+        "goles_sel:1",
+        "partidos_club:75",
+        "partidos_sel:10"
+      ],
       "club": "Olympiacos",
       "partidos_revisados": 20
     },
@@ -208,6 +214,12 @@
         }
       ],
       "logros": [],
+      "avisados": [
+        "goles_club:150",
+        "goles_sel:40",
+        "partidos_club:500",
+        "partidos_sel:100"
+      ],
       "club": "Wolves",
       "partidos_revisados": 19
     },
@@ -313,6 +325,12 @@
         }
       ],
       "logros": [],
+      "avisados": [
+        "goles_club:150",
+        "goles_sel:5",
+        "partidos_club:300",
+        "partidos_sel:25"
+      ],
       "club": "Al-Qadsiah",
       "partidos_revisados": 20
     },
@@ -418,6 +436,12 @@
         }
       ],
       "logros": [],
+      "avisados": [
+        "goles_club:15",
+        "goles_sel:1",
+        "partidos_club:50",
+        "partidos_sel:10"
+      ],
       "club": "Tijuana",
       "partidos_revisados": 20
     },
@@ -523,6 +547,12 @@
         }
       ],
       "logros": [],
+      "avisados": [
+        "goles_club:15",
+        "goles_sel:1",
+        "partidos_club:300",
+        "partidos_sel:50"
+      ],
       "club": "Genoa",
       "partidos_revisados": 20
     },
@@ -628,6 +658,12 @@
         }
       ],
       "logros": [],
+      "avisados": [
+        "goles_club:75",
+        "goles_sel:1",
+        "partidos_club:250",
+        "partidos_sel:25"
+      ],
       "club": "Porto",
       "partidos_revisados": 20
     },
@@ -733,6 +769,12 @@
         }
       ],
       "logros": [],
+      "avisados": [
+        "goles_club:1",
+        "goles_sel:1",
+        "partidos_club:100",
+        "partidos_sel:10"
+      ],
       "club": "AZ Alkmaar",
       "partidos_revisados": 18
     },
@@ -838,6 +880,11 @@
         }
       ],
       "logros": [],
+      "avisados": [
+        "goles_club:5",
+        "partidos_club:150",
+        "partidos_sel:10"
+      ],
       "club": "Atlético Madrid",
       "partidos_revisados": 20
     },
@@ -943,6 +990,12 @@
         }
       ],
       "logros": [],
+      "avisados": [
+        "goles_club:30",
+        "goles_sel:1",
+        "partidos_club:350",
+        "partidos_sel:10"
+      ],
       "club": "Real Betis",
       "partidos_revisados": 19
     },
@@ -1048,6 +1101,11 @@
         }
       ],
       "logros": [],
+      "avisados": [
+        "goles_club:10",
+        "partidos_club:150",
+        "partidos_sel:1"
+      ],
       "club": "FC Copenhague",
       "partidos_revisados": 19
     },
@@ -1153,6 +1211,12 @@
         }
       ],
       "logros": [],
+      "avisados": [
+        "goles_club:20",
+        "goles_sel:1",
+        "partidos_club:350",
+        "partidos_sel:50"
+      ],
       "club": "Lokomotiv Moscú",
       "partidos_revisados": 20
     },
@@ -1258,6 +1322,12 @@
         }
       ],
       "logros": [],
+      "avisados": [
+        "goles_club:25",
+        "goles_sel:5",
+        "partidos_club:300",
+        "partidos_sel:25"
+      ],
       "club": "Dinamo Moscú",
       "partidos_revisados": 18
     },
@@ -1363,6 +1433,11 @@
         }
       ],
       "logros": [],
+      "avisados": [
+        "goles_club:5",
+        "partidos_club:75",
+        "partidos_sel:1"
+      ],
       "club": "Monterrey",
       "partidos_revisados": 20
     },
@@ -1470,12 +1545,13 @@
       "logros": [
         {
           "texto": "200 partidos con clubes",
-          "fecha": "2026-10-22"
-        },
-        {
-          "texto": "200 partidos con clubes",
           "fecha": "2026-10-20"
         }
+      ],
+      "avisados": [
+        "goles_club:5",
+        "partidos_club:200",
+        "partidos_sel:1"
       ],
       "club": "Chivas",
       "partidos_revisados": 19
@@ -1582,6 +1658,11 @@
         }
       ],
       "logros": [],
+      "avisados": [
+        "goles_club:10",
+        "partidos_club:50",
+        "partidos_sel:1"
+      ],
       "club": "Chivas",
       "partidos_revisados": 19
     },
@@ -1691,6 +1772,11 @@
           "texto": "10 partidos con clubes",
           "fecha": "2026-10-20"
         }
+      ],
+      "avisados": [
+        "goles_club:5",
+        "partidos_club:1",
+        "partidos_sel:1"
       ],
       "club": "Chivas",
       "partidos_revisados": 19
