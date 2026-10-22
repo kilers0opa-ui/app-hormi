@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T20:57:27.052146-06:00",
+  "updated_at": "2026-10-22T03:28:32.359317-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -6946,18 +6946,6 @@
             "minutes": 458
           },
           {
-            "league_id": 140,
-            "league_name": "La Liga",
-            "league_logo": "https://media.api-sports.io/football/leagues/140.png",
-            "team_id": 543,
-            "team_name": "Real Betis",
-            "team_logo": "https://media.api-sports.io/football/teams/543.png",
-            "played": 3,
-            "goals": 0,
-            "assists": 0,
-            "minutes": 51
-          },
-          {
             "league_id": 2,
             "league_name": "UEFA Champions League",
             "league_logo": "https://media.api-sports.io/football/leagues/2.png",
@@ -6968,6 +6956,18 @@
             "goals": 0,
             "assists": 0,
             "minutes": 29
+          },
+          {
+            "league_id": 140,
+            "league_name": "La Liga",
+            "league_logo": "https://media.api-sports.io/football/leagues/140.png",
+            "team_id": 543,
+            "team_name": "Real Betis",
+            "team_logo": "https://media.api-sports.io/football/teams/543.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 51
           }
         ],
         "2015": [
@@ -11073,10 +11073,10 @@
             "team_id": 2282,
             "team_name": "Monterrey",
             "team_logo": "https://media.api-sports.io/football/teams/2282.png",
-            "played": 8,
+            "played": 7,
             "goals": 0,
             "assists": 0,
-            "minutes": 159
+            "minutes": 127
           }
         ]
       },
@@ -11729,10 +11729,10 @@
             "team_id": 2278,
             "team_name": "Guadalajara Chivas",
             "team_logo": "https://media.api-sports.io/football/teams/2278.png",
-            "played": 11,
+            "played": 12,
             "goals": 0,
             "assists": 0,
-            "minutes": 776
+            "minutes": 837
           }
         ]
       },
@@ -12257,10 +12257,10 @@
             "team_id": 2278,
             "team_name": "Guadalajara Chivas",
             "team_logo": "https://media.api-sports.io/football/teams/2278.png",
-            "played": 8,
+            "played": 9,
             "goals": 0,
             "assists": 1,
-            "minutes": 373
+            "minutes": 418
           }
         ]
       },
