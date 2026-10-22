@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T03:28:32.359317-06:00",
+  "updated_at": "2026-10-22T12:41:59.057310-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -7765,10 +7765,10 @@
             "team_id": 400,
             "team_name": "FC Copenhagen",
             "team_logo": "https://media.api-sports.io/football/teams/400.png",
-            "played": 1,
+            "played": 2,
             "goals": 0,
             "assists": 0,
-            "minutes": 20
+            "minutes": 82
           },
           {
             "league_id": 119,
@@ -7787,452 +7787,483 @@
       },
       "applied_fixtures": {
         "copenhague": [
-          1636406
+          1636406,
+          1636397
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1636406,
-        "kickoff": "2026-10-15T13:00:00-06:00",
-        "home": "FC Copenhague",
-        "away": "SC Braga",
-        "home_logo": "https://media.api-sports.io/football/teams/400.png",
-        "away_logo": "https://media.api-sports.io/football/teams/217.png",
-        "home_goals": 3,
-        "away_goals": 0,
+        "fixture_id": 1636397,
+        "kickoff": "2026-10-22T10:45:00-06:00",
+        "home": "FK Crvena Zvezda",
+        "away": "FC Copenhague",
+        "home_logo": "https://media.api-sports.io/football/teams/598.png",
+        "away_logo": "https://media.api-sports.io/football/teams/400.png",
+        "home_goals": 2,
+        "away_goals": 2,
+        "penales": null,
         "league": "Conference League",
         "league_logo": "https://media.api-sports.io/football/leagues/848.png",
         "league_tipo": "copa",
         "eventos": [
           {
-            "min": "49'",
-            "tipo": "gol",
-            "nombre": "M. Elyounoussi",
+            "min": "12'",
+            "tipo": "amarilla",
+            "nombre": "J. Suzuki",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "22'",
+            "tipo": "amarilla",
+            "nombre": "Y. Nakayama",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "70'",
-            "tipo": "entra",
-            "nombre": "R. Huescas",
+            "min": "29'",
+            "tipo": "autogol",
+            "nombre": "M. Gashtarov",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "34'",
+            "tipo": "gol",
+            "nombre": "T. Elsnik",
             "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "38'",
+            "tipo": "amarilla",
+            "nombre": "R. Krunic",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "40'",
+            "tipo": "amarilla",
+            "nombre": "H. Nemeth",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "41'",
+            "tipo": "gol",
+            "nombre": "V. Kostov",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "62'",
+            "tipo": "sale",
+            "nombre": "R. Huescas",
+            "lado": "V",
             "mio": true
           },
           {
-            "min": "71'",
-            "tipo": "amarilla",
-            "nombre": "Ákos Markgráf",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "79'",
+            "min": "70'",
             "tipo": "gol",
-            "nombre": "A. Cornelius",
-            "lado": "L",
+            "nombre": "M. Carrizo",
+            "lado": "V",
             "mio": false
           },
           {
-            "min": "85'",
-            "tipo": "amarilla",
-            "nombre": "Hunor Németh",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "86'",
-            "tipo": "gol",
-            "nombre": "A. Cornelius",
+            "min": "90+4'",
+            "tipo": "roja",
+            "nombre": "S. Gudelj",
             "lado": "L",
             "mio": false
           }
         ],
         "eventos_v": 6,
-        "team_key": "copenhague",
-        "team_label": "FC Copenhague",
-        "emoji": "🦁",
-        "crest_url": "https://media.api-sports.io/football/teams/400.png",
-        "minutes": 20,
-        "goals": 0,
-        "assists": 0,
-        "stats": {
-          "rating": 6.6,
-          "pases_pct": 100,
-          "duelos": 1,
-          "duelos_ganados": 1
-        },
-        "penales": null,
         "alineacion": {
           "local": {
-            "nombre": "FC Copenhague",
-            "logo": "https://media.api-sports.io/football/teams/400.png",
-            "formacion": "4-4-1-1",
+            "nombre": "FK Crvena Zvezda",
+            "logo": "https://media.api-sports.io/football/teams/598.png",
+            "formacion": "3-2-4-1",
             "color": "ffffff",
-            "color_num": "3454a5",
+            "color_num": "121111",
             "titulares": [
               {
-                "id": 24894,
-                "n": "D. Ramaj",
+                "id": 41089,
+                "n": "Matheus",
                 "num": 1,
                 "pos": "G",
                 "g": "1:1"
               },
               {
-                "id": 351014,
-                "n": "J. Suzuki",
-                "num": 20,
+                "id": 491074,
+                "n": "Matej Gaštarov",
+                "num": 60,
                 "pos": "D",
-                "g": "2:4"
+                "g": "2:3",
+                "autogol": 1
               },
               {
-                "id": 25312,
-                "n": "F. Beijmo",
-                "num": 2,
-                "pos": "D",
-                "g": "2:3"
-              },
-              {
-                "id": 443849,
-                "n": "A. Markgraf",
-                "num": 6,
+                "id": 495936,
+                "n": "Stefan Gudelj",
+                "num": 45,
                 "pos": "D",
                 "g": "2:2",
-                "amarilla": "71'"
+                "roja": "90+4'"
               },
               {
-                "id": 1173,
-                "n": "B. Meling",
-                "num": 24,
+                "id": 36920,
+                "n": "Yuta Nakayama",
+                "num": 3,
                 "pos": "D",
                 "g": "2:1",
-                "asist": 1
+                "amarilla": "22'"
               },
               {
-                "id": 354831,
-                "n": "T. Maseko",
-                "num": 12,
-                "pos": "M",
-                "g": "3:4",
-                "asist": 1
-              },
-              {
-                "id": 1234,
-                "n": "A. Kral",
-                "num": 33,
-                "pos": "M",
-                "g": "3:3",
-                "sale": "70'"
-              },
-              {
-                "id": 349212,
-                "n": "W. Clem",
-                "num": 36,
+                "id": 187926,
+                "n": "Tomás Händel",
+                "num": 20,
                 "pos": "M",
                 "g": "3:2",
-                "sale": "84'"
-              },
-              {
-                "id": 422779,
-                "n": "Robert",
-                "num": 16,
-                "pos": "M",
-                "g": "3:1",
-                "sale": "70'"
-              },
-              {
-                "id": 18946,
-                "n": "M. Elyounoussi",
-                "num": 10,
-                "pos": "F",
-                "g": "4:1",
-                "goles": 1,
                 "sale": "62'"
               },
               {
-                "id": 426288,
-                "n": "V. Dadason",
-                "num": 39,
+                "id": 31054,
+                "n": "Rade Krunić",
+                "num": 33,
+                "pos": "M",
+                "g": "3:1",
+                "amarilla": "38'"
+              },
+              {
+                "id": 264495,
+                "n": "Vladimir Lučić",
+                "num": 37,
                 "pos": "F",
-                "g": "5:1",
-                "sale": "61'"
+                "g": "4:4",
+                "asist": 1,
+                "sale": "84'"
+              },
+              {
+                "id": 17789,
+                "n": "Timi Max Elšnik",
+                "num": 21,
+                "pos": "M",
+                "g": "4:3",
+                "goles": 1
+              },
+              {
+                "id": 462208,
+                "n": "Vasilije Kostov",
+                "num": 22,
+                "pos": "M",
+                "g": "4:2",
+                "goles": 1,
+                "sale": "84'"
+              },
+              {
+                "id": 21584,
+                "n": "Mihailo Ristić",
+                "num": 23,
+                "pos": "F",
+                "g": "4:1",
+                "asist": 1
+              },
+              {
+                "id": 284072,
+                "n": "Ahmadou Bamba Dieng",
+                "num": 9,
+                "pos": "F",
+                "g": "5:1"
               }
             ],
             "suplentes": [
               {
-                "id": 2784,
-                "n": "R. A. Runarsson",
-                "num": 31,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 568382,
-                "n": "T. Breum-Harild",
-                "num": 51,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 24985,
-                "n": "A. Sorensen",
-                "num": 4,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 2431,
-                "n": "M. Lopez",
-                "num": 15,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 310199,
-                "n": "R. Huescas",
-                "num": 13,
-                "pos": "D",
-                "g": null,
-                "entra": "70'",
-                "mio": true
-              },
-              {
-                "id": 15,
-                "n": "T. Delaney",
-                "num": 27,
-                "pos": "M",
-                "g": null,
-                "entra": "70'"
-              },
-              {
-                "id": 419587,
-                "n": "H. Nemeth",
-                "num": 28,
-                "pos": "M",
-                "g": null,
-                "entra": "84'",
-                "amarilla": "85'"
-              },
-              {
-                "id": 529934,
-                "n": "M. Nasnas",
-                "num": 34,
+                "id": 146008,
+                "n": "Muhammed-Cham Saračević",
+                "num": 70,
                 "pos": "M",
                 "g": null,
                 "entra": "62'"
               },
               {
-                "id": 567955,
-                "n": "G. Olsen",
-                "num": 45,
+                "id": 496789,
+                "n": "Savo Radanović",
+                "num": 50,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 2821,
+                "n": "Miloš Veljković",
+                "num": 13,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 319388,
+                "n": "Franklin Tebo",
+                "num": 30,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 353,
+                "n": "Mirko Ivanić",
+                "num": 4,
                 "pos": "M",
                 "g": null
               },
               {
-                "id": 1274,
-                "n": "A. Cornelius",
-                "num": 14,
-                "pos": "F",
-                "g": null,
-                "entra": "61'",
-                "goles": 2
+                "id": 408543,
+                "n": "Mahmudu Bajo",
+                "num": 6,
+                "pos": "M",
+                "g": null
               },
               {
-                "id": 449247,
-                "n": "M. Carrizo",
-                "num": 7,
+                "id": 394173,
+                "n": "Kristiyan Balov",
+                "num": 8,
                 "pos": "F",
                 "g": null
               },
               {
-                "id": 633096,
-                "n": "G. Vianney Ndjee",
-                "num": 44,
+                "id": 50910,
+                "n": "Aleksandar Katai",
+                "num": 10,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 108017,
+                "n": "Mohammad Abu Fani",
+                "num": 15,
+                "pos": "M",
+                "g": null,
+                "entra": "84'"
+              },
+              {
+                "id": 606918,
+                "n": "Ye-geon Kim",
+                "num": 19,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 68106,
+                "n": "Loizos Loizou",
+                "num": 75,
+                "pos": "F",
+                "g": null,
+                "entra": "84'"
+              },
+              {
+                "id": 18830,
+                "n": "Marko Arnautović",
+                "num": 7,
                 "pos": "F",
                 "g": null
               }
             ]
           },
           "visita": {
-            "nombre": "SC Braga",
-            "logo": "https://media.api-sports.io/football/teams/217.png",
-            "formacion": "3-4-1-2",
-            "color": "ff0000",
-            "color_num": "ffffff",
+            "nombre": "FC Copenhague",
+            "logo": "https://media.api-sports.io/football/teams/400.png",
+            "formacion": "3-4-2-1",
+            "color": "ffffff",
+            "color_num": "3454a5",
             "titulares": [
               {
-                "id": 359001,
-                "n": "Bernardo",
-                "num": 31,
+                "id": 24894,
+                "n": "Diant Ramaj",
+                "num": 1,
                 "pos": "G",
                 "g": "1:1"
               },
               {
-                "id": 137721,
-                "n": "G. Lagerbielke",
-                "num": 14,
+                "id": 25312,
+                "n": "Felix Beijmo",
+                "num": 2,
                 "pos": "D",
                 "g": "2:3"
               },
               {
-                "id": 182857,
-                "n": "Sergio Barcia",
-                "num": 22,
+                "id": 24985,
+                "n": "Asger Sørensen",
+                "num": 4,
                 "pos": "D",
-                "g": "2:2",
-                "sale": "75'"
+                "g": "2:2"
               },
               {
-                "id": 162535,
-                "n": "B. Arrey-Mbi",
-                "num": 26,
+                "id": 351014,
+                "n": "Junnosuke Suzuki",
+                "num": 20,
                 "pos": "D",
-                "g": "2:1"
+                "g": "2:1",
+                "amarilla": "12'",
+                "sale": "46'"
               },
               {
-                "id": 336575,
-                "n": "Travassos",
-                "num": 7,
+                "id": 310199,
+                "n": "Rodrigo Huescas",
+                "num": 13,
                 "pos": "M",
                 "g": "3:4",
-                "sale": "84'"
+                "sale": "62'",
+                "mio": true
               },
               {
-                "id": 2677,
-                "n": "J. Moutinho",
-                "num": 8,
+                "id": 419587,
+                "n": "Hunor Németh",
+                "num": 28,
                 "pos": "M",
                 "g": "3:3",
-                "sale": "75'"
+                "amarilla": "40'"
               },
               {
-                "id": 330295,
-                "n": "Gorby",
-                "num": 29,
+                "id": 15,
+                "n": "Thomas Delaney",
+                "num": 27,
                 "pos": "M",
                 "g": "3:2"
               },
               {
-                "id": 41103,
-                "n": "R. Horta",
-                "num": 21,
+                "id": 1173,
+                "n": "Birger Meling",
+                "num": 24,
                 "pos": "M",
                 "g": "3:1"
               },
               {
-                "id": 336570,
-                "n": "D. E. Tiknaz",
-                "num": 34,
+                "id": 449247,
+                "n": "Maher Carrizo",
+                "num": 7,
                 "pos": "F",
-                "g": "4:1"
+                "g": "4:2",
+                "goles": 1,
+                "sale": "80'"
               },
               {
-                "id": 202838,
-                "n": "D. Huseinbasic",
-                "num": 23,
+                "id": 422779,
+                "n": "Robert",
+                "num": 16,
                 "pos": "F",
-                "g": "5:2",
-                "sale": "60'"
+                "g": "4:1",
+                "sale": "62'"
               },
               {
-                "id": 1302,
-                "n": "J. Wind",
-                "num": 19,
+                "id": 1274,
+                "n": "Andreas Cornelius",
+                "num": 14,
                 "pos": "F",
                 "g": "5:1",
-                "sale": "60'"
+                "sale": "46'"
               }
             ],
             "suplentes": [
               {
-                "id": 41090,
-                "n": "T. Sa",
-                "num": 12,
+                "id": 443849,
+                "n": "Ákos Markgráf",
+                "num": 6,
+                "pos": "D",
+                "g": null,
+                "entra": "46'",
+                "asist": 1
+              },
+              {
+                "id": 426288,
+                "n": "Viktor Bjarki Dadason",
+                "num": 39,
+                "pos": "F",
+                "g": null,
+                "entra": "46'"
+              },
+              {
+                "id": 2431,
+                "n": "Marcos López",
+                "num": 15,
+                "pos": "D",
+                "g": null,
+                "entra": "62'"
+              },
+              {
+                "id": 15934,
+                "n": "Mads Emil Madsen",
+                "num": 21,
+                "pos": "M",
+                "g": null,
+                "entra": "62'"
+              },
+              {
+                "id": 18946,
+                "n": "Mohamed Elyounoussi",
+                "num": 10,
+                "pos": "M",
+                "g": null,
+                "entra": "80'"
+              },
+              {
+                "id": 2784,
+                "n": "Rúnar Alex Rúnarsson",
+                "num": 31,
                 "pos": "G",
                 "g": null
               },
               {
-                "id": 180320,
-                "n": "A. Bajrami",
+                "id": 568382,
+                "n": "Tobias Breum-Harild",
+                "num": 51,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 504208,
+                "n": "Kenay Myrie",
+                "num": 18,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 529934,
+                "n": "Marvin Nasnas",
+                "num": 34,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 349212,
+                "n": "William Clem",
+                "num": 36,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 633096,
+                "n": "Geovanni Vianney",
                 "num": 44,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 153290,
-                "n": "V. Gomez",
-                "num": 2,
-                "pos": "D",
-                "g": null,
-                "entra": "75'"
-              },
-              {
-                "id": 68090,
-                "n": "A. Barisic",
-                "num": 37,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 9355,
-                "n": "Vitor Carvalho",
-                "num": 6,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 361371,
-                "n": "D. Rodrigues",
-                "num": 50,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 380434,
-                "n": "M. Dorgeles",
-                "num": 20,
-                "pos": "M",
-                "g": null,
-                "entra": "84'"
-              },
-              {
-                "id": 266630,
-                "n": "Gabriel Silva",
-                "num": 11,
-                "pos": "F",
-                "g": null,
-                "entra": "60'"
-              },
-              {
-                "id": 491086,
-                "n": "T. Marques",
-                "num": 16,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 263530,
-                "n": "P. Victor",
-                "num": 10,
-                "pos": "F",
-                "g": null,
-                "entra": "60'"
-              },
-              {
-                "id": 936,
-                "n": "F. Navarro",
-                "num": 9,
                 "pos": "F",
                 "g": null
               },
               {
-                "id": 371911,
-                "n": "J. Milosevic",
-                "num": 17,
-                "pos": "F",
-                "g": null,
-                "entra": "75'"
+                "id": 567955,
+                "n": "Gunnar Orri Olsen",
+                "num": 45,
+                "pos": "M",
+                "g": null
               }
             ]
           }
+        },
+        "team_key": "copenhague",
+        "team_label": "FC Copenhague",
+        "emoji": "🦁",
+        "crest_url": "https://media.api-sports.io/football/teams/400.png",
+        "minutes": 62,
+        "goals": 0,
+        "assists": 0,
+        "stats": {
+          "rating": 6.3,
+          "pases_pct": 76,
+          "duelos": 3,
+          "duelos_ganados": 1
         }
       }
     },
