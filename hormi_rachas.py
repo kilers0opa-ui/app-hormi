@@ -161,8 +161,16 @@ def main():
             continue
         nombre = ha.display_name(player)
         pid = str(player.get("player_id"))
-        entry = {"rachas": [], "hitos": hitos((stats.get(key) or {}).get("seasons")),
-                 "logros": list((prev_players.get(key) or {}).get("logros") or [])}
+        prev_e = prev_players.get(key) or {}
+        # Hitos ya avisados ("partidos_club:200"): el conteo a veces baja y sube (199 → 200 → 199 → 200) y no
+        # debe volver a avisar. Incluye los que ya estaban logrados en la corrida anterior.
+        avisados = set(prev_e.get("avisados") or []) | {f"{h['id']}:{h['previo']}" for h in prev_e.get("hitos") or [] if h.get("previo", 0) > 0}
+        logros = []
+        for l in reversed(prev_e.get("logros") or []):   # sin repetidos: se queda la fecha en que lo logró primero
+            if all(l.get("texto") != x.get("texto") for x in logros):
+                logros.insert(0, l)
+        entry = {"rachas": [], "hitos": hitos((stats.get(key) or {}).get("seasons")), "logros": logros,
+                 "avisados": sorted(avisados)}
         t = club_target(player)
         if t:
             tid = t["team_id"]
@@ -213,7 +221,10 @@ def main():
                     avisos.append((key, t, f"💪 {nombre} lleva {n} partidos seguidos {txt}", t.get("label") if t else "", rid))
             antes_h = {h["id"]: h["valor"] for h in (prev_players.get(key) or {}).get("hitos") or []}
             for h in entry["hitos"]:
-                if h["previo"] > 0 and antes_h.get(h["id"], h["valor"]) < h["previo"] <= h["valor"]:
+                marca = f"{h['id']}:{h['previo']}"
+                if h["previo"] > 0 and marca not in avisados and antes_h.get(h["id"], h["valor"]) < h["previo"] <= h["valor"]:
+                    avisados.add(marca)
+                    entry["avisados"] = sorted(avisados)
                     unidad = "goles" if h["id"].startswith("goles") else "partidos"
                     donde = "con la Selección" if h["id"].endswith("_sel") else "con clubes"
                     txt = f"{h['previo']} {unidad} {donde}" if h["previo"] > 1 else f"su primer {'gol' if unidad == 'goles' else 'partido'} {donde}"
