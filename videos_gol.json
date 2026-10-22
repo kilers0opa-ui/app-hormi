@@ -1,11 +1,22 @@
 {
-  "updated_at": "2026-10-22T14:35:41.224250-06:00",
+  "updated_at": "2026-10-22T14:40:41.521524-06:00",
   "cuota": {
     "fecha": "2026-10-22",
     "busquedas": 2,
     "busquedas_resumen": 2
   },
-  "goles": {},
+  "goles": {
+    "armando:olympiacos:1636308:goal:291713:1:gol": {
+      "player_key": "armando",
+      "team_key": "olympiacos",
+      "goal_seen_at": "2026-10-22T20:35:40.272859+00:00",
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null
+    }
+  },
   "partidos": {
     "1635738": {
       "fixture_id": 1635738,
@@ -351,29 +362,29 @@
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 2,
-      "ultima_noticia": "2026-10-22T19:40:32.784801+00:00",
+      "noticias_pasadas": 3,
+      "ultima_noticia": "2026-10-22T20:40:25.992321+00:00",
       "noticias": {
         "chavez": [
           {
-            "title": "¿Y Mateo Chávez? AZ Alkmaar golea al Ararat en la Europa League",
-            "source": "El Sol de México",
-            "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPbzZQQklEbXdLdUxuMk82MV9XVjJBZWVtblkzdEoyVmNXWldSTm9iaHNpNDc1Zm42dHo1N0trNm1qMUtBa19mZE1xRVRDXzhvOG9FQ2kzRWE2VjBWbUNFaFpOdnp5a2FKeXBmRXlNVnVFM05RZUNvTGo3b0JVUE1kWDZIU0lUSHhueWVhdTM2ZEhmWXh1aHdWallmblBTSzh6LUVxMW1PZHljQnM?oc=5",
-            "published_at": "2026-10-22T19:07:36Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "¿Por qué Mateo Chávez no jugó en la goleada del AZ Alkmaar sobre Ararat-Armenia en la Europa League?",
+            "title": "Golea AZ Alkmaar sin Mateo Chávez",
             "source": "El Heraldo de México",
-            "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQY1MwZzRDbnpwWTVQdTg0NzdJMEZPcGctOUZiWG90bDBQUFN2a1RLTHBqeC1iUUZKTEF0Qkx2LXBQOW9DUndrTnZoRThUVHNUVzhGZmdTbXJjVllzNnZ1TmZHWTI0RWp4VzZrZmdoV0Z0TTF1b0Mzd2NZU1dMRmo0R0Npc0owdDBUSlZqY0s5SVZIV1ozSDJTcHhYekV2d2VlY0dvSnBXdThwZlRUZWs5RUltTVpRa2RXUndQMnpSeTN3eHhFNGlVOC1WNWxGNVFMMzJsYmo3WTVyREVKSGVIeG1yTTcxcVNKcnNVQ0N6bm9LTms?oc=5",
-            "published_at": "2026-10-22T18:54:00Z",
+            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQV1VLOEp0RDBBRl9XSnhyS2xhODEzNWNlUFctVEVfM0xfZjdRa2xXLVhlLWJiR2k3dWt6ZDBYQXFpVFd0TUFVQmxtTi1hLUI2S25GUlFJWjJaMi1nVUpCNE1sQzNkUEhWRV9PODNBWURheWdZSktMSlRSc3RJalZUbWlCc3E2dGxaUW9wSVpGdE8wVVdBRG1weHRoNW0?oc=5",
+            "published_at": "2026-10-22T20:10:00Z",
             "edicion": "mx"
           },
           {
             "title": "Los de Mateo Chávez ganan, gustan y golean en Europa League: Resumen Ararat Armenia vs AZ Alkmaar",
             "source": "MARCA",
-            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOVnphSTFCSk16LW00Nzh3U1ZncFFSaDIzTEtwT2R3bEJWSmlYVWNWWVR2SU5FVXJSYXJxRzdXbE9xVkVWSUFwaU9hNDNzZFZQRGtmQmxNa0diUTBPUWMzOWpldmkzS3JBN3pGWTc4RmVCS0ZHV3VRSzhvUHRKOExmTFZFX0t0Tk9JNk14UjVRUHlrVkNWWDZUSHRWQkJUVTQybnFsclhFMl9GVmVMY1BRb1R3R29DWGtLcVVXbmV1OVdRd3FPRjhwLWxEcFRKYlZSNGhybDhfbFJaVXR4ZHpyTGNDbWlmSkRnUUFr0gHrAUFVX3lxTE10LUhhNDBERGdGamJQYld2cllobUpQQ0x1Y0F1QVJrZHdPZEVlV1F4VkEzTktnbENtYUJyNWtHaVowZXlUYm1JOFE3bEVZRzlVSkdfa1RPczZNcVRVQW9RMXVobEFRcmU5ZzZwbklNcTFnVTcwWFBfZHBSbHRmem4wWW9LUVFBUVhIc0c4VGxrcTFoalI4ZlAwUm82RktTWGprdDF6YXlQdTZTY1JKMFFVdldfRm5pSXNremhIRjc5eDduMUszYmdCQ1cyVVlwVFJvOUI0UWNBTzB0Q2dnTEZfcmctLUdCU1Z6ZGs?oc=5",
+            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOVnphSTFCSk16LW00Nzh3U1ZncFFSaDIzTEtwT2R3bEJWSmlYVWNWWVR2SU5FVXJSYXJxRzdXbE9xVkVWSUFwaU9hNDNzZFZQRGtmQmxNa0diUTBPUWMzOWpldmkzS3JBN3pGWTc4RmVCS0ZHV3VRSzhvUHRKOExmTFZFX0t0Tk9JNk14UjVRUHlrVkNWWDZUSHRWQkJUVTQybnFsclhFMl9GVmVMY1BRb1R3R29DWGtLcVVXbmV1OVdRd3FPRjhwLWxEcFRKYlZSNGhybDhfbFJaVXR4ZHpyTGNDbWlmSkRnUUFr?oc=5",
             "published_at": "2026-10-22T18:36:58Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Hormiga González y Mateo Chávez en la Europa League: ¿a qué hora juegan y dónde verlos?",
+            "source": "Soy Futbol",
+            "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOLWpxcUZKWFR5UzlKY3VuQ0QwbW95em5IeUE2M2J6cFpTc3dhT2ZSYXdJV2RlZzhjWFVPMWwzZkVnR2QtS1JlbDZESkZETDloZjExMWluLWVIX1RtdXYxYkZ5ZDB6cDZvZFpCcTVQeXNQQmVObmljQ2hObHBVLUJUSmcwMktxcGptTWlESVd5cmMyRHRqOFo2X0xPcmE1bE9UX0ZCQUFLZFhaTmZNb3JmMHpwUnFBNkFKMU9hRG1VOXRDM2pFTGhER3Y4TXBKTHFYWGNRRtIB2gFBVV95cUxNbG9iZDJWQ3g1Smc4RlctTGFWQ1JGaGdGM01tUEFMRUdIb1hfTGJkWF82VmlqZWhudnNtMUl1UlpPbGVlVWhuNlV3dGxsaWJnMkpoV3JhTmFjeFNFTlRXaXNnMElxWjdBck83Wlhlck1fRmZhS0V6TEhNbmIyR1k1UENqY09laWEySFp1V0hCZS0ybTFqQTR4Nl9VOGpRMDRhT1V6TmJvc0pBN09lQ3BkbDBIajhiaXZRc0YyYjVoaU41eWVJUTNwWkgxTmhDemZ3dXlCd3FOTG44dw?oc=5",
+            "published_at": "2026-10-22T16:04:10Z",
             "edicion": "mx"
           }
         ]
