@@ -883,7 +883,7 @@ def tarjeta_gol_vigente(player, target, snap, info, fid):
 def tarjeta_partido_para(player, u, previa=None):
     """Tarjeta del partido (1:1) en u["tarjeta"]: se regenera solo si cambió algo de lo que muestra. Vale 24 h."""
     import hormi_tarjetas as T
-    firma = hashlib.sha1(json.dumps(["v2"] + [u.get(x) for x in ("fixture_id", "home_goals", "away_goals", "penales", "minutes",
+    firma = hashlib.sha1(json.dumps(["v3"] + [u.get(x) for x in ("fixture_id", "home_goals", "away_goals", "penales", "minutes",
                                                          "goals", "assists", "stats", "eventos")],
                                     sort_keys=True, default=str).encode()).hexdigest()[:10]
     prev = (previa or {}).get("tarjeta") if (previa or {}).get("fixture_id") == u.get("fixture_id") else None
