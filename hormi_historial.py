@@ -342,6 +342,38 @@ def quitar_duplicados(seasons):
     return limpio, avisos
 
 
+def sumar_goles_oficiales(player, result):
+    """Goles que el organizador oficial le dio al jugador pero API-Football marca como autogol o de otro
+    (hormi_config.json → "goles_oficiales"). Se suman a su competición solo si la API no se los cuenta ya en
+    las estadísticas de ese partido (así nunca hay doble conteo)."""
+    cfg = load_json(CONFIG_FILE, {})
+    mios = [g for g in cfg.get("goles_oficiales") or [] if isinstance(g, dict) and g.get("jugador") == player["key"]]
+    por_fixture = {}
+    for g in mios:
+        por_fixture[int(g["fixture"])] = por_fixture.get(int(g["fixture"]), 0) + 1
+    pid = player["player_id"]
+    for fid, n in por_fixture.items():
+        fx = (api("/fixtures", {"id": fid}) or [None])[0]
+        if not fx:
+            continue
+        lg = fx.get("league") or {}
+        rows = result.get(str(lg.get("season")))
+        if rows is None:
+            continue
+        ya = 0
+        for t in api("/fixtures/players", {"fixture": fid}) or []:
+            for pl in t.get("players") or []:
+                if (pl.get("player") or {}).get("id") == pid:
+                    ya = ((pl.get("statistics") or [{}])[0].get("goals") or {}).get("total") or 0
+        # La API puede quitarle el gol en el partido pero seguir contándolo en la temporada un tiempo; se compara
+        # con los goles que la API le da en ese partido.
+        faltan = max(n - ya, 0) if ya < n else 0
+        row = next((r for r in rows if r.get("league_id") == lg.get("id")), None)
+        if faltan and row:
+            row["goals"] += faltan
+            log(f"    ✅ {lg.get('name')} {lg.get('season')}: +{faltan} gol(es) oficial(es) que la API marca como autogol")
+
+
 def build_player_seasons(player, only_season=None):
     if not player.get("player_id"):
         log(f"⚠️  {player['name']}: sin player_id todavía en {CONFIG_FILE} "
@@ -389,6 +421,10 @@ def build_player_seasons(player, only_season=None):
             log(f"    {len(rows)} competición(es) · {g} gol(es) · {a} asistencia(s) · {comps}")
         else:
             log("    sin minutos esa temporada (o el plan aún no la cubre)")
+    try:
+        sumar_goles_oficiales(player, result)
+    except Exception as err:
+        log(f"    ⚠️  goles oficiales: {err}")
     return result
 
 

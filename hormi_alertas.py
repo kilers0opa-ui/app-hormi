@@ -139,8 +139,71 @@ def _aplicar_horarios(endpoint, resp):
     return resp
 
 
+def goles_oficiales():
+    """hormi_config.json → "goles_oficiales": goles que el organizador oficial (UEFA, Liga MX…) le dio a tu jugador
+    aunque API-Football los marque como autogol o de otro. [{"fixture": 1636308, "minuto": 78, "jugador": "armando"}]"""
+    try:
+        cfg = json.loads(CONFIG_FILE.read_text(encoding="utf-8"))
+        ids = {p["key"]: (p.get("player_id"), p.get("name")) for p in cfg.get("players") or []}
+        out = []
+        for g in cfg.get("goles_oficiales") or []:
+            if isinstance(g, dict) and g.get("jugador") in ids and g.get("fixture") and g.get("minuto"):
+                pid, nombre = ids[g["jugador"]]
+                nombre = re.sub(r'\s*"[^"]*"\s*', " ", nombre or "").strip()   # sin el apodo entre comillas
+                out.append({"fixture": int(g["fixture"]), "minuto": int(g["minuto"]), "player_id": pid, "nombre": nombre})
+        return out
+    except Exception:
+        return []
+
+
+def _corregir_eventos(eventos, fid, oficiales):
+    for g in oficiales:
+        if g["fixture"] != fid:
+            continue
+        for e in eventos or []:
+            if ((e.get("type") or "").lower() == "goal" and (e.get("time") or {}).get("elapsed") == g["minuto"]
+                    and (e.get("detail") or "") != "Missed Penalty" and (e.get("player") or {}).get("id") != g["player_id"]):
+                e["detail"] = "Normal Goal"
+                e["player"] = {"id": g["player_id"], "name": g["nombre"]}
+                e["assist"] = {"id": None, "name": None}
+
+
+def _aplicar_goles_oficiales(endpoint, params, resp):
+    if not resp or not isinstance(resp, list) or not endpoint.startswith("/fixtures"):
+        return resp
+    oficiales = goles_oficiales()
+    if not oficiales:
+        return resp
+    if endpoint == "/fixtures/events":
+        try:
+            _corregir_eventos(resp, int(params.get("fixture")), oficiales)
+        except (TypeError, ValueError):
+            pass
+    elif endpoint == "/fixtures/players":
+        try:
+            fid = int(params.get("fixture"))
+        except (TypeError, ValueError):
+            return resp
+        n = {}
+        for g in oficiales:
+            if g["fixture"] == fid:
+                n[g["player_id"]] = n.get(g["player_id"], 0) + 1
+        for t in resp:
+            for pl in (t.get("players") if isinstance(t, dict) else None) or []:
+                k = (pl.get("player") or {}).get("id")
+                if k in n:
+                    for st in pl.get("statistics") or []:
+                        gl = st.setdefault("goals", {})
+                        gl["total"] = max(gl.get("total") or 0, n[k])
+    elif endpoint == "/fixtures":
+        for f in resp:
+            if isinstance(f, dict) and f.get("events"):
+                _corregir_eventos(f["events"], (f.get("fixture") or {}).get("id"), oficiales)
+    return resp
+
+
 def api(endpoint, params, use_cache=False):
-    return _aplicar_horarios(endpoint, _api(endpoint, params, use_cache))
+    return _aplicar_goles_oficiales(endpoint, params, _aplicar_horarios(endpoint, _api(endpoint, params, use_cache)))
 
 
 def _api(endpoint, params, use_cache=False):
