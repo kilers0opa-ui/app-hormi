@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-23T14:00:26.318727-06:00",
+  "updated_at": "2026-10-23T14:30:42.525348-06:00",
   "cuota": {
     "fecha": "2026-10-23",
-    "busquedas": 1,
-    "busquedas_resumen": 0
+    "busquedas": 2,
+    "busquedas_resumen": 1
   },
   "goles": {
     "armando:olympiacos:1636308:goal:291713:1:gol": {
@@ -319,13 +319,37 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-23T20:30:26.184589+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-23T20:30:26.184589+00:00",
+      "noticias": {
+        "quinones": [
+          {
+            "title": "Julián Quiñones marca, pero Al-Qadsiah cae ante Al-Hilal y pierde el liderato",
+            "source": "Soy Futbol",
+            "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNVjNaOUNfZG1icDcxQ21oOTkzS3Q0YWdDdVd1M2szM1hFYnp6TkVlRzFsUTFrQUlEcUZBZnFTNUFBbXoyNC0zcWFIbDBxWExKbHZWVmJ2WHlyZGFqSHUwcjBUVkRja3NUeWFhWnVXRGpNRGN1d2tPX2pWMUpUY0JiQnZWN1lNZkFla3Y3SVVFRGlYcUZMd3NlTEJMenlVdFZHVFNvd2dhcVJ5S2hJc2JnWEhUS3p6N0hGMWgyU0gtRG81cnpQS0pGSEZB?oc=5",
+            "published_at": "2026-10-23T20:15:44Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Julián Quiñones hace GOLAZO de cabeza con el Al-Qadsiah y sigue imparable (VIDEO)",
+            "source": "La Razón de México",
+            "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPcEJZVlJ4SUpMd1YybS11a0lOQjVmdDRaVXdhSDhkTWhWUjU5ZGdFMExaMlkxekxwRTZuX2t2RFdKM2U2LVIzRlRDR004WFJMYXF2UklCazFuTmh2TUgwdi1NZTNwWDhJMWhqVUhjdWtfeTN4SjExWkp4bE01TzQwVG9LWWhsaVpKdUE5TkJTMHlNeko2MWxwTEpnamJiNzBvajhhRkhaa3g2M2NJUjVGbmRwVEhaSW9VaWNZSDh2OGc3d0XSAd4BQVVfeXFMTS1VVGZyZ3NwQWhtMjJsWW5RT1BreXpIeHRaY2NWcEZ4MWNXdDBiQWhQbkROOHRGTjVCc3RUbldzbG1ndzhtNGJSZmVqVnQzamRHNnRsei1ZV0NBcHlZVmpPOXF2UU1mRzQzZXFUS1pTVHVMQktheHBBNjFJcFREdGxzX2FDTFRxdEVBV3pEUVlOOEtLMXBmS0tZQWhyRVRHOUdaZXhNWGZUUmFEUDVtaWNFbGgybUpPbzNOX3BmZHZsaTNOTlVYem5HaHhnN3c0MXhFNWdpSTRmdmp3SjVB?oc=5",
+            "published_at": "2026-10-23T19:55:45Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Julián Quiñones vuelve a anotar con el Al-Qadsiah: así fue su gol vs. Al-Hilal",
+            "source": "Mediotiempo",
+            "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOVmJfcVk0RFVKVlIzcGh3TUF1MFNwbWgzRjRZYmRNblc3cXplRmJUcUhZMjNDbmRrVUlyS1BmODJpYUliV01PUERpMGhVbzR6UHk5UHlUZWVrQ1B3a1lWM3RxWEl1MDNiWTE0VThqUFAzOTI4NERTV2ZseExXZnZFenk3LTlEcml6amlQUVRYa3FpOV8zU0HSAZYBQVVfeXFMTlBlanVWWFJnNlVDSk9mdnVtWE5heGwtX2Fkall0QUlaT1l5aXlaTUVmVGtVS3lDazl1QjZVVGl6NWwzQ0lHOGp1UUNFWEFVc2FrSEhRb29DM2VackxoamtWTU14VU5pNFFjc2JFdEd2X0lCd3l2QjEySVJzUzZSc2pjVmpLU0hFbzlaZGgxejkzRld3ZlVn?oc=5",
+            "published_at": "2026-10-23T19:49:34Z",
+            "edicion": "mx"
+          }
+        ]
+      }
     }
   }
 }
