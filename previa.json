@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T05:09:35.313234-06:00",
+  "updated_at": "2026-10-23T07:19:32.540505-06:00",
   "partidos": {
     "1603068": {
       "fixture_id": 1603068,
@@ -528,11 +528,188 @@
           ]
         }
       ]
+    },
+    "1570425": {
+      "fixture_id": 1570425,
+      "kickoff": "2026-10-24T13:00:00-06:00",
+      "home": "Atlético de Madrid",
+      "away": "Deportivo La Coruna",
+      "home_id": 530,
+      "away_id": 544,
+      "home_logo": "https://media.api-sports.io/football/teams/530.png",
+      "away_logo": "https://media.api-sports.io/football/teams/544.png",
+      "league": "La Liga",
+      "tabla": {
+        "liga": "La Liga",
+        "home": {
+          "rank": 2,
+          "pts": 22,
+          "pj": 9
+        },
+        "away": {
+          "rank": 9,
+          "pts": 11,
+          "pj": 9
+        }
+      },
+      "forma_home": [
+        {
+          "r": "G",
+          "rival": "Real Madrid",
+          "marcador": "2-1",
+          "fid": 1570394,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Alavés",
+          "marcador": "2-1",
+          "fid": 1570403,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Manchester United",
+          "marcador": "2-0",
+          "fid": 1635623,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Espanyol",
+          "marcador": "1-0",
+          "fid": 1570416,
+          "local": false
+        },
+        {
+          "r": "E",
+          "rival": "VfB Stuttgart",
+          "marcador": "1-1",
+          "fid": 1635738,
+          "local": false
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "E",
+          "rival": "Real Betis",
+          "marcador": "1-1",
+          "fid": 1570396,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "Penafiel",
+          "marcador": "2-2",
+          "fid": 1642888,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "FC Porto",
+          "marcador": "1-3",
+          "fid": 1643495,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Real Sociedad",
+          "marcador": "2-3",
+          "fid": 1570412,
+          "local": false
+        },
+        {
+          "r": "E",
+          "rival": "Levante",
+          "marcador": "1-1",
+          "fid": 1570415,
+          "local": true
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2026-01-13",
+          "home": "Deportivo La Coruna",
+          "away": "Atlético de Madrid",
+          "home_id": 544,
+          "marcador": "0-1",
+          "ganador": 530
+        },
+        {
+          "fecha": "2018-04-01",
+          "home": "Atlético de Madrid",
+          "away": "Deportivo La Coruna",
+          "home_id": 530,
+          "marcador": "1-0",
+          "ganador": 530
+        },
+        {
+          "fecha": "2017-11-04",
+          "home": "Deportivo La Coruna",
+          "away": "Atlético de Madrid",
+          "home_id": 544,
+          "marcador": "0-1",
+          "ganador": 530
+        },
+        {
+          "fecha": "2017-03-02",
+          "home": "Deportivo La Coruna",
+          "away": "Atlético de Madrid",
+          "home_id": 544,
+          "marcador": "1-1",
+          "ganador": null
+        },
+        {
+          "fecha": "2016-09-25",
+          "home": "Atlético de Madrid",
+          "away": "Deportivo La Coruna",
+          "home_id": 530,
+          "marcador": "1-0",
+          "ganador": 530
+        }
+      ],
+      "hecho": "2026-10-23T07:19:32.540505-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "obed",
+          "lado": "L",
+          "rachas": {},
+          "minutos": [
+            {
+              "rival": "Real Madrid",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Alavés",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Manchester United",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Espanyol",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "VfB Stuttgart",
+              "min": 12,
+              "goles": 0
+            }
+          ]
+        }
+      ]
     }
   },
   "jugadores": {
     "quinones": 1603068,
     "luis_chavez": 1561420,
-    "raul": 1563226
+    "raul": 1563226,
+    "obed": 1570425
   }
 }
