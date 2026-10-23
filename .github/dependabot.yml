@@ -1,0 +1,12 @@
+# Avisa (con un Pull Request) cuando hay versiones nuevas de las piezas que usan los procesos y de las
+# librerías de Python. Nada se actualiza solo: hay que revisar y aceptar el PR.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "monthly"
