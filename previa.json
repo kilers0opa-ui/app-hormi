@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T07:19:32.540505-06:00",
+  "updated_at": "2026-10-23T09:14:34.163788-06:00",
   "partidos": {
     "1603068": {
       "fixture_id": 1603068,
@@ -704,12 +704,189 @@
           ]
         }
       ]
+    },
+    "1575521": {
+      "fixture_id": 1575521,
+      "kickoff": "2026-10-24T13:30:00-06:00",
+      "home": "GIL Vicente",
+      "away": "FC Porto",
+      "home_id": 762,
+      "away_id": 212,
+      "home_logo": "https://media.api-sports.io/football/teams/762.png",
+      "away_logo": "https://media.api-sports.io/football/teams/212.png",
+      "league": "Liga Portugal",
+      "tabla": {
+        "liga": "Primeira Liga",
+        "home": {
+          "rank": 6,
+          "pts": 14,
+          "pj": 8
+        },
+        "away": {
+          "rank": 1,
+          "pts": 24,
+          "pj": 8
+        }
+      },
+      "forma_home": [
+        {
+          "r": "P",
+          "rival": "Benfica",
+          "marcador": "1-3",
+          "fid": 1575493,
+          "local": false
+        },
+        {
+          "r": "E",
+          "rival": "Marítimo",
+          "marcador": "1-1",
+          "fid": 1575504,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Moreirense",
+          "marcador": "1-0",
+          "fid": 1575516,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "União Santarém",
+          "marcador": "3-2",
+          "fid": 1641824,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "SC Braga",
+          "marcador": "2-1",
+          "fid": 1575458,
+          "local": false
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "G",
+          "rival": "Benfica",
+          "marcador": "3-1",
+          "fid": 1575503,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Deportivo La Coruna",
+          "marcador": "3-1",
+          "fid": 1643495,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Marítimo",
+          "marcador": "2-1",
+          "fid": 1575515,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Real Betis",
+          "marcador": "2-3",
+          "fid": 1635635,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "PSV Eindhoven",
+          "marcador": "0-1",
+          "fid": 1635655,
+          "local": true
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2026-07-22",
+          "home": "GIL Vicente",
+          "away": "FC Porto",
+          "home_id": 762,
+          "marcador": "1-0",
+          "ganador": 762
+        },
+        {
+          "fecha": "2026-01-26",
+          "home": "FC Porto",
+          "away": "GIL Vicente",
+          "home_id": 212,
+          "marcador": "3-0",
+          "ganador": 212
+        },
+        {
+          "fecha": "2025-08-18",
+          "home": "GIL Vicente",
+          "away": "FC Porto",
+          "home_id": 762,
+          "marcador": "0-2",
+          "ganador": 212
+        },
+        {
+          "fecha": "2025-01-19",
+          "home": "GIL Vicente",
+          "away": "FC Porto",
+          "home_id": 762,
+          "marcador": "3-1",
+          "ganador": 762
+        },
+        {
+          "fecha": "2024-08-10",
+          "home": "FC Porto",
+          "away": "GIL Vicente",
+          "home_id": 212,
+          "marcador": "3-0",
+          "ganador": 212
+        }
+      ],
+      "hecho": "2026-10-23T09:14:34.163788-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "gimenez",
+          "lado": "V",
+          "rachas": {},
+          "minutos": [
+            {
+              "rival": "Benfica",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Deportivo La Coruna",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Marítimo",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Real Betis",
+              "min": 5,
+              "goles": 0
+            },
+            {
+              "rival": "PSV Eindhoven",
+              "min": 0,
+              "goles": 0
+            }
+          ]
+        }
+      ]
     }
   },
   "jugadores": {
     "quinones": 1603068,
     "luis_chavez": 1561420,
     "raul": 1563226,
-    "obed": 1570425
+    "obed": 1570425,
+    "gimenez": 1575521
   }
 }
