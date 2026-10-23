@@ -2,12 +2,13 @@ name: Noticias - App Hormi
 
 on:
   schedule:
-    # Dos veces al día, en horarios distintos a los de las demás fases
-    # (tabla 12:00 UTC, transferencias 15:00 UTC, historial 09:00 UTC).
-    # Solo noticias (RSS de Google Noticias): NO gasta cuota de YouTube. Los
-    # videos llegan por eventos (goles y finales) en video-gol.yml.
-    - cron: "30 17 * * *"   # 11:30 hora de México (UTC-6)
-    - cron: "30 1 * * *"    # 19:30 hora de México
+    # Tres veces al día (mediodía, tarde y noche de México, para cubrir la mañana europea y la noche
+    # mexicana). Solo noticias (RSS de Google Noticias): NO gasta cuota de YouTube; la traducción (Azure)
+    # solo traduce titulares nuevos (caché). Los videos llegan por eventos en video-gol.yml.
+    # Unos minutos antes de la hora en punto: a las :00 GitHub suele retrasar las corridas.
+    - cron: "52 17 * * *"   # 11:52 hora de México (UTC-6)
+    - cron: "52 22 * * *"   # 16:52 hora de México
+    - cron: "52 3 * * *"    # 21:52 hora de México
   workflow_dispatch:        # para poder correrlo manual desde la pestaña Actions
     inputs:
       jugador:
