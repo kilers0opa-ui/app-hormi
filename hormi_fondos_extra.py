@@ -240,9 +240,9 @@ def mis_fondos(keys_jugadores):
             if not fn.lower().endswith(_EXT):
                 continue
             stem = os.path.splitext(fn)[0]
-            n_foto += 1
             # Nombres de cámara/descarga (hash largo o solo números) no sirven de título.
             if re.fullmatch(r"[0-9a-fA-F]{16,}|\d+|img[-_ ]?\d+|image\d*", stem, re.I):
+                n_foto += 1   # solo cuentan las que no tienen nombre (sin huecos en "Mi foto N")
                 titulo = f"Mi foto {n_foto}"
             else:
                 titulo = stem.replace("_", " ").replace("-", " ").strip().title()
