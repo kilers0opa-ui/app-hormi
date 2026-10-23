@@ -979,6 +979,12 @@ def apply_live_delta(player, target, snap, info):
     row["goals"] += summary["goals"]
     row["assists"] += summary["assists"]
     row["minutes"] += summary["minutes"]
+    # Se anota el ajuste en vivo: el historial diario (Fase 3) no lo borra mientras la API todavía no cuenta ese
+    # partido (la API de temporada tarda en actualizarse; antes el conteo bajaba 200 → 199 y volvía a subir).
+    vivos = [d for d in entry.get("deltas_vivos") or []
+             if (_parse(d.get("ts")) or datetime.now(LOCAL_TZ)) > datetime.now(LOCAL_TZ) - timedelta(days=7)]
+    vivos.append({"fid": fixture_id, "season": season_key, "league_id": league.get("id"), "ts": now_iso()})
+    entry["deltas_vivos"] = vivos
 
     stats["updated_at"] = now_iso()
     save_json(STATS_FILE, stats)

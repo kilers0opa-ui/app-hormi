@@ -319,6 +319,13 @@ def build_player_seasons(player, only_season=None):
     return result
 
 
+def _ts(v):
+    try:
+        return datetime.fromisoformat(v)
+    except (TypeError, ValueError):
+        return None
+
+
 def main():
     parser = argparse.ArgumentParser(description="Fase 3 · Historial real por competición")
     parser.add_argument("--jugador", help="Limita a un jugador por su 'key' (armando, raul, quinones, mora)")
@@ -345,6 +352,20 @@ def main():
             continue
         entry = stats["players"].setdefault(
             player["key"], {"seasons": {}, "applied_fixtures": {}})
+        # Partidos que el motor ya sumó en vivo en las últimas 72 h: si la API todavía no los cuenta (trae menos
+        # partidos jugados que lo que ya teníamos en esa competición), se conserva lo que había. Así el conteo no
+        # baja y vuelve a subir. Pasadas 72 h manda la API (por si de verdad corrigió algo).
+        limite = datetime.now(LOCAL_TZ) - timedelta(hours=72)
+        recientes = {(str(d.get("season")), d.get("league_id")) for d in entry.get("deltas_vivos") or []
+                     if (_ts(d.get("ts")) or limite) > limite}
+        for season, rows in seasons_data.items():
+            viejas = {r.get("league_id"): r for r in (entry.get("seasons") or {}).get(season) or []}
+            for i, r in enumerate(rows):
+                v = viejas.get(r.get("league_id"))
+                if v and (season, r.get("league_id")) in recientes and (r.get("played") or 0) < (v.get("played") or 0):
+                    log(f"    ⏳ {season} · {r.get('league_name')}: la API aún no cuenta el último partido "
+                        f"({r.get('played')} vs {v.get('played')}); se conserva el conteo en vivo")
+                    rows[i] = {**r, **{k: v.get(k) for k in ("played", "goals", "assists", "minutes")}}
         entry.setdefault("seasons", {}).update(seasons_data)
         entry["seasons"], quitadas = quitar_duplicados(entry["seasons"])
         for q in quitadas:
