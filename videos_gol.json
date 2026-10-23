@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-23T14:30:42.525348-06:00",
+  "updated_at": "2026-10-23T14:35:28.425792-06:00",
   "cuota": {
     "fecha": "2026-10-23",
-    "busquedas": 2,
+    "busquedas": 3,
     "busquedas_resumen": 1
   },
   "goles": {
@@ -28,19 +28,23 @@
       "team_key": "al_qadsiah",
       "goal_seen_at": "2026-10-23T18:32:10.256281+00:00",
       "status": "resuelto",
-      "intentos": 1,
+      "intentos": 2,
       "fallos": 0,
-      "ultimo_intento": "2026-10-23T18:50:22.886117+00:00",
+      "ultimo_intento": "2026-10-23T20:35:19.356497+00:00",
       "video": {
-        "id": "OsvPxGSHCRY",
-        "title": "GOL DE JULIÁN QUIÑONES | Al Qadsiah 1-1 Al Hilal | Jornada 11 | SPL 2026",
-        "channel": "Fox Deportes",
-        "published_at": "2026-10-23T18:35:42Z",
-        "thumbnail": "https://i.ytimg.com/vi/OsvPxGSHCRY/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=OsvPxGSHCRY",
+        "id": "6zJDGtXWEnU",
+        "title": "Gol de Julián Quiñones en la #SaudíProLeague para el empate ante el Al Hilal",
+        "channel": "Goolazos",
+        "published_at": "2026-10-23T18:50:56Z",
+        "thumbnail": "https://i.ytimg.com/vi/6zJDGtXWEnU/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=6zJDGtXWEnU",
         "embeddable": true
       },
-      "verificado": "2026-10-23T20:00:26.193355+00:00"
+      "verificado": "2026-10-23T20:35:19.356497+00:00",
+      "descartados": [
+        "OsvPxGSHCRY"
+      ],
+      "silencioso": true
     }
   },
   "partidos": {
