@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T03:26:39.457008-06:00",
+  "updated_at": "2026-10-23T07:26:11.816372-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -290,10 +290,10 @@
           },
           {
             "min": "78'",
-            "tipo": "gol",
-            "nombre": "Armando González",
+            "tipo": "autogol",
+            "nombre": "Sivert Heggheim Mannsverk",
             "lado": "L",
-            "mio": true
+            "mio": false
           },
           {
             "min": "80'",
@@ -433,7 +433,6 @@
                 "pos": "F",
                 "g": null,
                 "entra": "62'",
-                "goles": 1,
                 "mio": true
               },
               {
@@ -442,8 +441,7 @@
                 "num": 27,
                 "pos": "D",
                 "g": null,
-                "entra": "74'",
-                "asist": 1
+                "entra": "74'"
               },
               {
                 "id": 324034,
@@ -614,7 +612,8 @@
                 "num": 20,
                 "pos": "M",
                 "g": null,
-                "entra": "45'"
+                "entra": "45'",
+                "autogol": 1
               },
               {
                 "id": 66425,
@@ -684,7 +683,7 @@
         "emoji": "🏛️",
         "crest_url": "https://media.api-sports.io/football/teams/553.png",
         "minutes": 28,
-        "goals": 1,
+        "goals": 0,
         "assists": 0,
         "stats": {
           "rating": 7.4,
@@ -695,9 +694,9 @@
           "duelos_ganados": 1
         },
         "tarjeta": {
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/armando_partido.jpg?v=58f13d25",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/armando_partido.jpg?v=ac8b7b4d",
           "hasta": "2026-10-23T15:00:00-06:00",
-          "firma": "1bbc5e534b"
+          "firma": "d4b1cdc6a6"
         }
       },
       "deltas_vivos": [
