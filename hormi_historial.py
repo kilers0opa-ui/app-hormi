@@ -344,8 +344,8 @@ def quitar_duplicados(seasons):
 
 def sumar_goles_oficiales(player, result):
     """Goles que el organizador oficial le dio al jugador pero API-Football marca como autogol o de otro
-    (hormi_config.json → "goles_oficiales"). Se suman a su competición solo si la API no se los cuenta ya en
-    las estadísticas de ese partido (así nunca hay doble conteo)."""
+    (hormi_config.json → "goles_oficiales"). Se suman a su competición solo si el total de la API no los
+    trae ya (así nunca hay doble conteo)."""
     cfg = load_json(CONFIG_FILE, {})
     mios = [g for g in cfg.get("goles_oficiales") or [] if isinstance(g, dict) and g.get("jugador") == player["key"]]
     por_fixture = {}
@@ -360,18 +360,27 @@ def sumar_goles_oficiales(player, result):
         rows = result.get(str(lg.get("season")))
         if rows is None:
             continue
-        ya = 0
-        for t in api("/fixtures/players", {"fixture": fid}) or []:
-            for pl in t.get("players") or []:
-                if (pl.get("player") or {}).get("id") == pid:
-                    ya = ((pl.get("statistics") or [{}])[0].get("goals") or {}).get("total") or 0
-        # La API puede quitarle el gol en el partido pero seguir contándolo en la temporada un tiempo; se compara
-        # con los goles que la API le da en ese partido.
-        faltan = max(n - ya, 0) if ya < n else 0
         row = next((r for r in rows if r.get("league_id") == lg.get("id")), None)
-        if faltan and row:
+        if not row:
+            continue
+        # El total de temporada de la API a veces ya trae el gol (se calculó antes de que lo cambiaran a autogol) y a
+        # veces no. Se compara con la suma partido por partido de esa competición: si el total ya es mayor o igual a
+        # esa suma (sin los partidos corregidos) + los goles oficiales, ya está contado.
+        tid = row.get("team_id")
+        if (tid, lg.get("season")) not in _fx_cache:
+            _fx_cache[(tid, lg.get("season"))] = api("/fixtures", {"team": tid, "season": lg.get("season")}) or []
+        suma = 0
+        for f in _fx_cache[(tid, lg.get("season"))]:
+            if ((f.get("league") or {}).get("id") != lg.get("id") or f["fixture"]["status"]["short"] not in FINISHED
+                    or f["fixture"]["id"] in por_fixture):
+                continue   # los partidos con gol oficial se cuentan aparte (n), digan lo que digan sus estadísticas
+            suma += ((_fixture_players(f["fixture"]["id"], tid) or {}).get(pid) or {}).get("goals", 0)
+        faltan = min(max(suma + n - row["goals"], 0), n)
+        if faltan:
             row["goals"] += faltan
             log(f"    ✅ {lg.get('name')} {lg.get('season')}: +{faltan} gol(es) oficial(es) que la API marca como autogol")
+        else:
+            log(f"    ✅ {lg.get('name')} {lg.get('season')}: el total de la API ya incluye el gol oficial")
 
 
 def build_player_seasons(player, only_season=None):
