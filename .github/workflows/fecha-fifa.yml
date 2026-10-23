@@ -1,0 +1,39 @@
+name: Fecha FIFA (Modo Selección) - App Hormi
+
+on:
+  schedule:
+    # Cada hora (:40). Fuera de fecha FIFA no gasta peticiones; en fecha FIFA, 1 por corrida + 1 por partido.
+    - cron: "40 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: hormi-fecha-fifa
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  fecha:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6.1.0
+        with:
+          ref: main
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6.3.0
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Armar la fecha FIFA
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: python hormi_fecha_fifa.py
+      - name: Subir resultado
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name "app-hormi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add fecha_fifa.json 2>/dev/null || true
+          git commit -m "chore: fecha FIFA [skip ci]" || exit 0
+          for i in 1 2 3 4; do git pull --rebase origin main && git push && break; sleep 5; done
