@@ -14,7 +14,9 @@ Avisos (tipo "disponibilidad"), comparando con la corrida anterior:
 La primera corrida (sin disponibilidad.json) no avisa: solo arma el estado.
 """
 import argparse
-from datetime import datetime
+import re
+import unicodedata
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import hormi_alertas as ha
@@ -47,6 +49,38 @@ def clasificar(tipo, motivo):
     zona = next((v for k, v in ZONAS.items() if k in m), None)
     texto = zona or (motivo or "lesión")
     return ("duda" if (tipo or "").lower() == "questionable" else "lesion"), texto
+
+
+LIGA_MX = 262
+CLAVE_BAJA = re.compile(r"\b(lesi[oó]n|lesionad[oa]|baja|bajas|desgarro|esguince|fractura|parte m[eé]dico|operad[oa]|"
+                        r"cirug[ií]a|suspendid[oa]|suspensi[oó]n|se pierde|fuera por)\b", re.I)
+DESCARTE = re.compile(r"\b(regres[ao]|vuelve|volver[aá]|recuper[ao]|recuperad[oa]|alta|ya entrena|listo para|"
+                      r"reaparece|de vuelta|descart[ao] lesi[oó]n|sin lesi[oó]n)\b", re.I)
+
+
+def _norm(s):
+    return unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
+
+
+def noticia_baja(p):
+    """La nota más reciente (≤ 48 h) que diga que el jugador está lesionado/suspendido. None si no hay."""
+    import hormi_videos as hv
+    nombre = (p.get("name") or "").replace(f'"{p.get("apodo")}" ', "")
+    apellido = _norm(p.get("search_last_name") or nombre.split()[-1])
+    q = f'"{nombre}" (lesión OR lesionado OR baja OR desgarro OR "parte médico" OR operado OR suspendido) when:2d'
+    notas = hv.fetch_news(q, limit=15) or []
+    limite = datetime.now(timezone.utc) - timedelta(hours=48)
+    buenas = []
+    for n in notas:
+        t = n.get("title") or ""
+        try:
+            pub = datetime.fromisoformat((n.get("published_at") or "").replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if pub < limite or apellido not in _norm(t) or not CLAVE_BAJA.search(t) or DESCARTE.search(t):
+            continue
+        buenas.append((pub, n))
+    return max(buenas, key=lambda x: x[0])[1] if buenas else None
 
 
 def main():
@@ -104,6 +138,30 @@ def main():
             "team_key": t["key"],
         }
 
+    # ── Liga MX: la API no trae lesiones de la Liga MX. Se usan (1) la roja directa de su último partido y
+    #    (2) noticias de las últimas 48 h con reglas estrictas, como "Posible baja" (con el enlace a la nota).
+    stats = ha.load_json(ha.Path("player_stats.json"), {}) or {}
+    for p in config["players"]:
+        if p["key"] in archivados or p["key"] in out["players"]:
+            continue
+        t = next((x for x in p["targets"] if x.get("kind") != "seleccion" and x.get("team_id")), None)
+        fx = (por_equipo.get(t["team_id"]) or (None, None))[0] if t else None
+        if not fx or (fx.get("league") or {}).get("id") != LIGA_MX:
+            continue
+        base = {"partido": f"{ha.nombre_es(fx['teams']['home']['name'])} vs {ha.nombre_es(fx['teams']['away']['name'])}",
+                "fixture_id": fx["fixture"]["id"], "team_key": t["key"],
+                "kickoff": datetime.fromtimestamp(fx["fixture"]["timestamp"], ha.LOCAL_TZ).isoformat()}
+        u = ((stats.get("players") or {}).get(p["key"]) or {}).get("ultimo_partido") or {}
+        roja = next((e for e in u.get("eventos") or [] if e.get("mio") and e.get("tipo") == "roja"), None)
+        if roja and u.get("team_key") == t["key"] and (u.get("kickoff") or "") < base["kickoff"] and \
+                datetime.fromisoformat(base["kickoff"]) - datetime.fromisoformat(u["kickoff"]) < timedelta(days=12):
+            out["players"][p["key"]] = {**base, "estado": "suspension", "motivo": f"tarjeta roja ({roja.get('min')})"}
+            continue
+        nota = noticia_baja(p)
+        if nota:
+            out["players"][p["key"]] = {**base, "estado": "posible", "motivo": nota["title"], "url": nota["url"],
+                                        "fuente": nota.get("source")}
+
     # ── avisos
     if not primera:
         for key, d in out["players"].items():
@@ -116,6 +174,8 @@ def main():
                 avisos.append((key, d["team_key"], f"🚑 {nombre}: baja por lesión", f"{d['motivo'].capitalize()} · se pierde {d['partido']}"))
             elif d["estado"] == "suspension":
                 avisos.append((key, d["team_key"], f"🟥 {nombre}: suspendido", f"{d['motivo'].capitalize()} · se pierde {d['partido']}"))
+            elif d["estado"] == "posible":
+                avisos.append((key, d["team_key"], f"⚠️ {nombre}: posible baja", f"{d['motivo']} ({d.get('fuente') or 'prensa'})"))
             else:
                 avisos.append((key, d["team_key"], f"❓ {nombre}: en duda para el partido", f"{d['motivo'].capitalize()} · {d['partido']}"))
         for key, a in antes.items():
