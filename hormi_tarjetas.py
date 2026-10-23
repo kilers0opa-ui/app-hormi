@@ -234,11 +234,16 @@ def tarjeta_partido(player, u, apodo, posicion=None):
     for x, nombre in ((235, u.get("home") or ""), (W - 235, u.get("away") or "")):
         d.text((x, 395), nombre, font=_fit(d, nombre, 300, 32), fill=WHITE, anchor="mm")
     d.line([(110, 450), (W - 110, 450)], fill=(60, 68, 80), width=2)
-    bg, cara = _foto(player["key"], u.get("team_key") or "")
-    lado = int(bg.width * .55)
-    cx = int(cara * bg.width)
-    x0 = max(0, min(bg.width - lado, cx - lado // 2))
-    B_av = _circulo(bg.crop((x0, int(bg.height * .02), x0 + lado, int(bg.height * .02) + lado)), 210, GOLD)
+    # Foto: el ícono del jugador (el mismo de la app, ya centrado en la cara); si no hay, un recorte de su ilustración.
+    av = ASSETS / f"avatar_{player['key']}.jpg"
+    if av.exists():
+        B_av = _circulo(Image.open(av).convert("RGB"), 210, GOLD)
+    else:
+        bg, cara = _foto(player["key"], u.get("team_key") or "")
+        lado = int(bg.width * .55)
+        cx = int(cara * bg.width)
+        x0 = max(0, min(bg.width - lado, cx - lado // 2))
+        B_av = _circulo(bg.crop((x0, int(bg.height * .02), x0 + lado, int(bg.height * .02) + lado)), 210, GOLD)
     _paste(B, B_av, (110, 500))
     d.text((350, 540), apodo, font=_fit(d, apodo, 620, 62), fill=WHITE, anchor="lm")
     sub = player.get("name", "").replace(f'"{apodo}" ', "")
