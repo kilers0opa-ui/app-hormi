@@ -14,6 +14,7 @@ Avisos (tipo "disponibilidad"), comparando con la corrida anterior:
 La primera corrida (sin disponibilidad.json) no avisa: solo arma el estado.
 """
 import argparse
+import json
 import re
 import unicodedata
 from datetime import datetime, timedelta, timezone
@@ -176,12 +177,32 @@ def main():
 
     # ── Bajas a mano (bajas_manual.json): mandan sobre la API y las noticias mientras no pase su fecha "hasta".
     #    estado: lesion | suspension | duda | disponible ("disponible" quita una baja equivocada).
+    #    Sin "hasta": vale hasta que el jugador vuelve a una alineación (titular o banca) o juega un partido
+    #    posterior a cuando se puso; entonces se quita sola (y llega "✅ ya está disponible").
     manual = ha.load_json(ha.Path("bajas_manual.json"), {}) or {}
     hoy = datetime.now(ha.LOCAL_TZ).date().isoformat()
+    status = (ha.load_json(ha.Path("status.json"), {}) or {}).get("players") or {}
+    cerradas = dict((prev or {}).get("manual_cerradas") or {})   # bajas a mano ya quitadas solas (no se reactivan)
     for key, m in manual.items():
         if key.startswith("_") or not isinstance(m, dict) or (m.get("hasta") or "9999") < hoy:
             continue
         estado = (m.get("estado") or "").lower()
+        firma = json.dumps(m, sort_keys=True, ensure_ascii=False)
+        if cerradas.get(key) == firma:
+            continue   # ya volvió a jugar; si la vuelves a necesitar, cambia algo de la línea (fecha o motivo)
+        if estado != "disponible" and not m.get("hasta"):
+            a_ = antes.get(key) or {}
+            desde = a_.get("desde") if a_.get("manual") else None
+            desde = desde or datetime.now(ha.LOCAL_TZ).isoformat()
+            u = ((stats.get("players") or {}).get(key) or {}).get("ultimo_partido") or {}
+            jugo = (u.get("minutes") or 0) > 0 and (u.get("kickoff") or "") > desde
+            en_lista = any(t.get("status") in ("titular", "banca", "en_cancha") and (t.get("kickoff") or "") > desde
+                           for t in ((status.get(key) or {}).get("targets") or {}).values())
+            if jugo or en_lista:
+                ha.log(f"{key}: volvió a una alineación — la baja puesta a mano (sin fecha) se quita sola")
+                out["players"].pop(key, None)
+                cerradas[key] = firma
+                continue
         if estado == "disponible":
             out["players"].pop(key, None)
             continue
@@ -194,10 +215,14 @@ def main():
             continue
         out["players"][key] = {
             "estado": estado, "motivo": m.get("motivo") or "", "manual": True, "hasta": m.get("hasta"),
+            "desde": ((antes.get(key) or {}).get("desde") if (antes.get(key) or {}).get("manual") else None)
+                     or datetime.now(ha.LOCAL_TZ).isoformat(),
             "partido": f"{ha.nombre_es(fx['teams']['home']['name'])} vs {ha.nombre_es(fx['teams']['away']['name'])}",
             "fixture_id": fx["fixture"]["id"], "team_key": t["key"],
             "kickoff": datetime.fromtimestamp(fx["fixture"]["timestamp"], ha.LOCAL_TZ).isoformat(),
         }
+
+    out["manual_cerradas"] = {k: v for k, v in cerradas.items() if k in manual}
 
     # ── avisos
     if not primera:
