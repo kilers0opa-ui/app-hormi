@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T22:24:23.077545-06:00",
+  "updated_at": "2026-10-23T00:42:18.047548-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -163,10 +163,10 @@
             "team_id": 553,
             "team_name": "Olympiakos Piraeus",
             "team_logo": "https://media.api-sports.io/football/teams/553.png",
-            "played": 3,
-            "goals": 2,
+            "played": 2,
+            "goals": 1,
             "assists": 0,
-            "minutes": 113
+            "minutes": 85
           },
           {
             "league_id": 197,
@@ -4537,7 +4537,8 @@
             "assists": 0,
             "minutes": 3
           }
-        ]
+        ],
+        "2018": []
       },
       "applied_fixtures": {
         "seleccion": [
@@ -7773,10 +7774,10 @@
             "team_id": 400,
             "team_name": "FC Copenhagen",
             "team_logo": "https://media.api-sports.io/football/teams/400.png",
-            "played": 2,
+            "played": 1,
             "goals": 0,
             "assists": 0,
-            "minutes": 82
+            "minutes": 20
           },
           {
             "league_id": 119,
@@ -7791,7 +7792,8 @@
             "minutes": 90,
             "estimated": true
           }
-        ]
+        ],
+        "2020": []
       },
       "applied_fixtures": {
         "copenhague": [
@@ -10478,6 +10480,33 @@
             "minutes": 111,
             "estimated": true
           }
+        ],
+        "2013": [],
+        "2014": [
+          {
+            "league_id": null,
+            "league_name": "Liga MX",
+            "league_logo": null,
+            "team_id": 2280,
+            "team_name": "Club Tijuana",
+            "team_logo": "https://media.api-sports.io/football/teams/2280.png",
+            "played": 4,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 37
+          },
+          {
+            "league_id": null,
+            "league_name": "Copa MX",
+            "league_logo": null,
+            "team_id": 2280,
+            "team_name": "Club Tijuana",
+            "team_logo": "https://media.api-sports.io/football/teams/2280.png",
+            "played": 9,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 395
+          }
         ]
       },
       "applied_fixtures": {},
@@ -11117,10 +11146,10 @@
             "team_id": 2282,
             "team_name": "Monterrey",
             "team_logo": "https://media.api-sports.io/football/teams/2282.png",
-            "played": 7,
+            "played": 8,
             "goals": 0,
             "assists": 0,
-            "minutes": 127
+            "minutes": 159
           }
         ]
       },
@@ -12310,6 +12339,20 @@
             "assists": 1,
             "minutes": 418
           }
+        ],
+        "2023": [
+          {
+            "league_id": 263,
+            "league_name": "Liga de Expansión MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/263.png",
+            "team_id": 14278,
+            "team_name": "Tapatío",
+            "team_logo": "https://media.api-sports.io/football/teams/14278.png",
+            "played": 16,
+            "goals": 2,
+            "assists": 0,
+            "minutes": 683
+          }
         ]
       },
       "applied_fixtures": {
@@ -12720,7 +12763,7 @@
             "team_id": 2278,
             "team_name": "Guadalajara Chivas",
             "team_logo": "https://media.api-sports.io/football/teams/2278.png",
-            "played": 0,
+            "played": 1,
             "goals": 6,
             "assists": 1,
             "minutes": 1573
@@ -12734,7 +12777,7 @@
             "team_id": 2278,
             "team_name": "Guadalajara Chivas",
             "team_logo": "https://media.api-sports.io/football/teams/2278.png",
-            "played": 0,
+            "played": 1,
             "goals": 1,
             "assists": 0,
             "minutes": 19
@@ -12758,10 +12801,10 @@
             "team_id": 2278,
             "team_name": "Guadalajara Chivas",
             "team_logo": "https://media.api-sports.io/football/teams/2278.png",
-            "played": 9,
+            "played": 10,
             "goals": 2,
             "assists": 0,
-            "minutes": 520
+            "minutes": 565
           }
         ]
       },
