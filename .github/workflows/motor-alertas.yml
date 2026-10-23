@@ -45,7 +45,7 @@ jobs:
           python-version: "3.11"
 
       - name: Instalar dependencias (push real vía FCM)
-        run: pip install google-auth requests
+        run: pip install google-auth requests pillow
 
       - name: Configurar git
         run: |
@@ -65,6 +65,7 @@ jobs:
         if: ${{ !cancelled() && (inputs.modo || 'vigilar') != 'prueba' }}
         run: |
           git add status.json hormi_estado.json hormi_horario.json player_stats.json
+          git add tarjetas tarjetas_estado.json 2>/dev/null || true
           # Solo existe después del primer gol alertado. Protegido con '|| true' para que,
           # pase lo que pase con este archivo, el guardado del estado de las alertas nunca falle por él.
           [ -f videos_pendientes.json ] && git add videos_pendientes.json || true

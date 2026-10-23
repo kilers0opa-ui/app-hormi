@@ -54,6 +54,7 @@ Push real (opcional, además de ntfy):
 """
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -814,6 +815,62 @@ def analyze(data, player, target):
                      "summary": summary, **({"banca_pendiente": True} if banca_pendiente else {})}
 
 
+TARJETA_GOL_VIGENCIA = timedelta(minutes=10)
+
+
+def tarjeta_gol_vigente(player, target, snap, info, fid):
+    """Tarjeta de gol para compartir (hormi_tarjetas.py): se genera cuando el jugador anota (y se reemplaza si
+    vuelve a anotar: marcador actual, DOBLETE...) y vale 10 min de reloj real. La deja en info["tarjeta_gol"]
+    para la app y devuelve su URL (para el push de gol). Si el gol se anula (goles = 0), se quita."""
+    est = load_json(TARJETAS_STATE, {})
+    ahora = datetime.now(LOCAL_TZ)
+    # limpieza: lo de hace más de un día
+    for k in [k for k, v in est.items() if (_parse(v.get("hasta")) or ahora) < ahora - timedelta(days=1)]:
+        est.pop(k)
+    k = f"{player['key']}:{fid}"
+    goles = info.get("goals") or 0
+    e = est.get(k)
+    cambio = False
+    if goles <= 0 and e:
+        est.pop(k)
+        e, cambio = None, True
+    elif goles > 0 and snap["fixture"]["status"].get("short") in LIVE and (not e or e.get("goles") != goles):
+        import hormi_tarjetas as T
+        mios = [ev for ev in (info.get("eventos") or []) if ev.get("mio") and ev.get("tipo") in ("gol", "pen")]
+        minuto = mios[-1]["min"] if mios else ""
+        g = snap.get("goals") or {}
+        url = T.tarjeta_gol(player, target, nombre_es(snap["teams"]["home"]["name"]), nombre_es(snap["teams"]["away"]["name"]),
+                            snap["teams"]["home"].get("logo"), snap["teams"]["away"].get("logo"),
+                            g.get("home") or 0, g.get("away") or 0, minuto, liga_es(snap["league"]), goles)
+        e = {"goles": goles, "url": url, "hasta": (ahora + TARJETA_GOL_VIGENCIA).isoformat()}
+        est[k] = e
+        cambio = True
+        log(f"🖼️  tarjeta de gol de {player['name']} ({goles} gol(es)) lista por 10 min")
+    if cambio:
+        save_json(TARJETAS_STATE, est)
+    if e and (_parse(e.get("hasta")) or ahora) > ahora:
+        info["tarjeta_gol"] = {"url": e["url"], "hasta": e["hasta"], "goles": e["goles"]}
+        return e["url"]
+    return None
+
+
+def tarjeta_partido_para(player, u, previa=None):
+    """Tarjeta del partido (1:1) en u["tarjeta"]: se regenera solo si cambió algo de lo que muestra. Vale 24 h."""
+    import hormi_tarjetas as T
+    firma = hashlib.sha1(json.dumps([u.get(x) for x in ("fixture_id", "home_goals", "away_goals", "penales", "minutes",
+                                                         "goals", "assists", "stats", "eventos")],
+                                    sort_keys=True, default=str).encode()).hexdigest()[:10]
+    prev = (previa or {}).get("tarjeta") if (previa or {}).get("fixture_id") == u.get("fixture_id") else None
+    if prev and prev.get("firma") == firma:
+        u["tarjeta"] = prev
+        return
+    url = T.tarjeta_partido(player, u, player.get("apodo") or display_name(player))
+    ko = _parse(u.get("kickoff"))
+    fin = (ko + timedelta(hours=2)) if ko else datetime.now(LOCAL_TZ)   # ~final del partido
+    hasta = (prev or {}).get("hasta") or (fin + timedelta(hours=24)).isoformat()
+    u["tarjeta"] = {"url": url, "hasta": hasta, "firma": firma}
+
+
 def registrar_ultimo(player, target, snap, info):
     """Guarda en player_stats.json (players.<jugador>.ultimo_partido) el ÚLTIMO partido en el que el
     jugador tuvo minutos, de su club o de la Selección (el más reciente). Lo muestra la app en
@@ -843,6 +900,12 @@ def registrar_ultimo(player, target, snap, info):
         "crest_url": target.get("crest_url"),
         "minutes": s["minutes"], "goals": s["goals"], "assists": s["assists"],
     }
+    if cur and cur.get("fixture_id") == fx["id"] and cur.get("stats"):
+        entry["ultimo_partido"]["stats"] = cur["stats"]   # la calificación que ya había llegado no se pierde
+    try:
+        tarjeta_partido_para(player, entry["ultimo_partido"], cur)
+    except Exception as err:
+        log(f"⚠️  tarjeta del partido de {player['name']}: {err}")
     stats["updated_at"] = now_iso()
     save_json(STATS_FILE, stats)
 
@@ -1014,7 +1077,7 @@ def alert_type(key):
 
 
 def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None,
-             register_video=True, match_info=None, grupo=None):
+             register_video=True, match_info=None, grupo=None, tarjeta=None):
     """grupo: lista opcional. Si viene, los avisos de inicio y final NO se mandan aquí: se anotan
     en ella (y se dan por enviados) para mandar UNO solo por partido de la Selección en vez de
     uno por jugador (ver enviar_grupos)."""
@@ -1026,7 +1089,9 @@ def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None,
             else:
                 notifier.send(title, message, priority)
                 if fcm:
-                    fcm.send(fcm_tipo(alert_type(key)), title, message, player_key, team_key)
+                    # Gol con tarjeta para compartir: la notificación trae la acción "Compartir".
+                    extra = {"tarjeta": tarjeta} if tarjeta and key.endswith(":gol") else None
+                    fcm.send(fcm_tipo(alert_type(key)), title, message, player_key, team_key, extra=extra)
             sent.add(key)
             new += 1
             # Va al final, con la alerta ya enviada. No aplica en repeticiones
@@ -1262,6 +1327,12 @@ def procesar_calificaciones(pend, hechas, config, fcm, notifier=None):
             if up and up.get("fixture_id") == fid:
                 up["stats"] = st
                 stats_sucio = True
+                pl = next((p for p in config["players"] if p["key"] == it["player"]), None)
+                if pl:
+                    try:
+                        tarjeta_partido_para(pl, up, dict(up))   # con la calificación
+                    except Exception as err:
+                        log(f"⚠️  tarjeta del partido de {it['player']}: {err}")
         if not listos:
             continue
         # Varios jugadores del mismo equipo en el partido (Selección o club, p. ej. 3 de Chivas): UN aviso.
@@ -1893,7 +1964,12 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         "summary": info.get("summary"),
     }
     grupo = []   # inicio/medio tiempo/final/alineación: uno por partido aunque haya varios jugadores (ver enviar_grupos)
-    n = dispatch(alerts, sent, notifier, fcm, player["key"], key, match_info=match_info, grupo=grupo)
+    tarjeta = None
+    try:
+        tarjeta = tarjeta_gol_vigente(player, target, snap, info, fid)
+    except Exception as err:
+        log(f"⚠️  tarjeta de gol de {player['name']}: {err}")
+    n = dispatch(alerts, sent, notifier, fcm, player["key"], key, match_info=match_info, grupo=grupo, tarjeta=tarjeta)
     if grupo:
         anotar_grupo(player, target, info, fid, grupo)
     if n:
@@ -2182,7 +2258,9 @@ PASO_VIGILAR = 20                        # segundos entre pasadas
 MIN_PAUSA_VIGILAR = 10
 MAX_FALLOS_SEGUIDOS = 5
 
-STATE_OWNED_FILES = (STATUS_FILE, STATE_FILE, SCHEDULE_FILE, PENDING_VIDEOS_FILE)
+TARJETAS_STATE = Path("tarjetas_estado.json")   # tarjeta de gol vigente por jugador (10 min)
+TARJETAS_DIR = Path("tarjetas")
+STATE_OWNED_FILES = (STATUS_FILE, STATE_FILE, SCHEDULE_FILE, PENDING_VIDEOS_FILE, TARJETAS_STATE, TARJETAS_DIR)
 
 
 def active_soon(config):

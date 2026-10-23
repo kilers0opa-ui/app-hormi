@@ -137,6 +137,23 @@ def main():
                     body = f"{u.get('home')} {g.get('home')}-{g.get('away')} {u.get('away')} · {u.get('league') or ''}".strip(" ·")
                     avisos.append((p["key"], u.get("team_key"), f"✏️ Corrección: {txt}", body))
 
+    # Tarjeta del partido (para compartir, 24 h): se crea si falta y se rehace si la API corrigió algo.
+    for p in config["players"]:
+        u = (stats.get("players", {}).get(p["key"]) or {}).get("ultimo_partido") or {}
+        try:
+            reciente = u.get("fixture_id") and datetime.fromisoformat(u["kickoff"]) >= datetime.now(ha.LOCAL_TZ) - timedelta(hours=30)
+        except Exception:
+            reciente = False
+        if not reciente or p["key"] in archivados:
+            continue
+        antes_t = dict(u.get("tarjeta") or {})
+        try:
+            ha.tarjeta_partido_para(p, u, dict(u))
+        except Exception as err:
+            ha.log(f"⚠️  tarjeta del partido de {p['key']}: {err}")
+            continue
+        if u.get("tarjeta") != antes_t:
+            cambios += 1
     if cambios:
         stats["updated_at"] = ha.now_iso()
         ha.save_json(STATS_FILE, stats)
