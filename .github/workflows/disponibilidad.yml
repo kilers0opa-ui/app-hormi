@@ -5,6 +5,10 @@ on:
     # Dos veces al día (9:40 y 17:40 hora CDMX): ~26 peticiones por corrida.
     - cron: "40 15 * * *"
     - cron: "40 23 * * *"
+  push:
+    # Al editar las bajas a mano se aplica de inmediato.
+    paths:
+      - "bajas_manual.json"
   workflow_dispatch:
 
 concurrency:

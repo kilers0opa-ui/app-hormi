@@ -1,0 +1,9 @@
+{
+  "_instrucciones": [
+    "Bajas puestas a mano. Mandan sobre la API y las noticias hasta la fecha 'hasta' (incluida); después se ignoran solas.",
+    "La clave es la del jugador: armando, raul, quinones, mora, vasquez, gimenez, chavez, obed, fidalgo, huescas, montes, luis_chavez, fimbres, campillo, camberos, sandoval.",
+    "estado: lesion | suspension | duda | disponible  ('disponible' quita una baja equivocada de la API o de las noticias).",
+    "motivo es opcional (p. ej. 'rodilla'). Al guardar este archivo en GitHub se actualiza la app en 1-2 minutos.",
+    "Ejemplo: \"sandoval\": {\"estado\": \"lesion\", \"hasta\": \"2026-11-05\", \"motivo\": \"tobillo\"}"
+  ]
+}

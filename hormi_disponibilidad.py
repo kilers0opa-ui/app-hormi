@@ -174,6 +174,31 @@ def main():
             # Sin motivo: la app solo dice "Lesionado · se pierde X vs Y" / "Suspendido" / "En duda".
             out["players"][p["key"]] = {**base, "estado": estado, "motivo": "", "fuente_noticia": t, "url": nota["url"]}
 
+    # ── Bajas a mano (bajas_manual.json): mandan sobre la API y las noticias mientras no pase su fecha "hasta".
+    #    estado: lesion | suspension | duda | disponible ("disponible" quita una baja equivocada).
+    manual = ha.load_json(ha.Path("bajas_manual.json"), {}) or {}
+    hoy = datetime.now(ha.LOCAL_TZ).date().isoformat()
+    for key, m in manual.items():
+        if key.startswith("_") or not isinstance(m, dict) or (m.get("hasta") or "9999") < hoy:
+            continue
+        estado = (m.get("estado") or "").lower()
+        if estado == "disponible":
+            out["players"].pop(key, None)
+            continue
+        if estado not in ("lesion", "suspension", "duda"):
+            continue
+        p = next((x for x in config["players"] if x["key"] == key), None)
+        t = next((x for x in (p or {}).get("targets", []) if x.get("kind") != "seleccion" and x.get("team_id")), None)
+        fx = (por_equipo.get(t["team_id"]) or (None, None))[0] if t else None
+        if not fx:
+            continue
+        out["players"][key] = {
+            "estado": estado, "motivo": m.get("motivo") or "", "manual": True, "hasta": m.get("hasta"),
+            "partido": f"{ha.nombre_es(fx['teams']['home']['name'])} vs {ha.nombre_es(fx['teams']['away']['name'])}",
+            "fixture_id": fx["fixture"]["id"], "team_key": t["key"],
+            "kickoff": datetime.fromtimestamp(fx["fixture"]["timestamp"], ha.LOCAL_TZ).isoformat(),
+        }
+
     # ── avisos
     if not primera:
         for key, d in out["players"].items():
