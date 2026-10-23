@@ -72,6 +72,55 @@ def _norm(s):
     return unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
 
 
+AMARILLAS_CACHE = ha.Path("amarillas_cache.json")   # {fixture:team: {player_id: amarillas que cuentan}}
+RONDA_REGULAR = re.compile(r"^(Apertura|Clausura) - (\d+)$")
+_fixtures_mx = {}
+
+
+def suspension_amarillas(p, t, fx_next, cache):
+    """Liga MX: cada 5 amarillas en la fase regular (17 jornadas) = 1 partido de suspensión. En Play-In y Liguilla
+    el conteo se reinicia (no se cuentan). Si su amarilla número 5, 10, 15... fue en el ÚLTIMO partido de liga de su
+    equipo, se pierde el siguiente. Las amarillas de una expulsión por doble amarilla no cuentan (eso es roja).
+    Costo: 1 petición por equipo por corrida + 1 por partido nuevo (se guarda en amarillas_cache.json)."""
+    tid, pid = t["team_id"], p.get("player_id")
+    season = (fx_next.get("league") or {}).get("season")
+    torneo = ((fx_next.get("league") or {}).get("round") or "").split(" - ")[0]   # Apertura / Clausura
+    if not season or torneo not in ("Apertura", "Clausura"):
+        return None
+    if tid not in _fixtures_mx:
+        _fixtures_mx[tid] = ha.api("/fixtures", {"team": tid, "league": LIGA_MX, "season": season}) or []
+    jugados = sorted([f for f in _fixtures_mx[tid] if f["fixture"]["status"].get("short") in ("FT", "AET", "PEN")],
+                     key=lambda f: f["fixture"]["timestamp"])
+    if not jugados:
+        return None
+    regulares = [f for f in jugados if (m := RONDA_REGULAR.match((f["league"].get("round") or "")))
+                 and m.group(1) == torneo]
+    total = 0
+    cruce = None
+    for f in regulares:
+        k = f"{f['fixture']['id']}:{tid}"
+        if k not in cache:
+            res = ha.api("/fixtures/players", {"fixture": f["fixture"]["id"], "team": tid})
+            if res is None:
+                return None   # sin datos completos no se afirma nada
+            fila = {}
+            for team in res:
+                for pl in team.get("players") or []:
+                    c = ((pl.get("statistics") or [{}])[0].get("cards") or {})
+                    y, r = c.get("yellow") or 0, c.get("red") or 0
+                    if y and not r:   # doble amarilla = roja: esas no acumulan
+                        fila[str(pl["player"]["id"])] = y
+            cache[k] = fila
+        antes = total
+        total += cache[k].get(str(pid), 0)
+        if total // 5 > antes // 5:
+            cruce = f
+    # Solo si la amarilla que completó el ciclo fue en su último partido de liga.
+    if cruce and cruce["fixture"]["id"] == jugados[-1]["fixture"]["id"]:
+        return f"acumulación de amarillas ({total})"
+    return None
+
+
 def noticia_baja(p):
     """La nota más reciente (≤ 48 h) que diga que el jugador está lesionado/suspendido. None si no hay."""
     import hormi_videos as hv
@@ -152,6 +201,7 @@ def main():
     # ── Liga MX: la API no trae lesiones de la Liga MX. Se usan (1) la roja directa de su último partido y
     #    (2) noticias de las últimas 48 h con reglas estrictas, como "Posible baja" (con el enlace a la nota).
     stats = ha.load_json(ha.Path("player_stats.json"), {}) or {}
+    cache_am = ha.load_json(AMARILLAS_CACHE, {}) or {}
     for p in config["players"]:
         if p["key"] in archivados or p["key"] in out["players"]:
             continue
@@ -168,12 +218,22 @@ def main():
                 datetime.fromisoformat(base["kickoff"]) - datetime.fromisoformat(u["kickoff"]) < timedelta(days=12):
             out["players"][p["key"]] = {**base, "estado": "suspension", "motivo": f"tarjeta roja ({roja.get('min')})"}
             continue
+        try:
+            am = suspension_amarillas(p, t, fx, cache_am)
+        except Exception as err:
+            ha.log(f"⚠️  amarillas de {p['key']}: {err}")
+            am = None
+        if am:
+            out["players"][p["key"]] = {**base, "estado": "suspension", "motivo": am}
+            continue
         nota = noticia_baja(p)
         if nota:
             t = nota["title"]
             estado = "lesion" if LESION_RE.search(t) else "suspension" if SUSP_RE.search(t) else "duda"
             # Sin motivo: la app solo dice "Lesionado · se pierde X vs Y" / "Suspendido" / "En duda".
             out["players"][p["key"]] = {**base, "estado": estado, "motivo": "", "fuente_noticia": t, "url": nota["url"]}
+
+    ha.save_json(AMARILLAS_CACHE, cache_am)
 
     # ── Bajas a mano (bajas_manual.json): mandan sobre la API y las noticias mientras no pase su fecha "hasta".
     #    estado: lesion | suspension | duda | disponible ("disponible" quita una baja equivocada).
