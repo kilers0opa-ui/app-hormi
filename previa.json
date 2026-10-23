@@ -1,182 +1,6 @@
 {
-  "updated_at": "2026-10-23T11:12:32.150724-06:00",
+  "updated_at": "2026-10-23T13:14:36.305109-06:00",
   "partidos": {
-    "1603068": {
-      "fixture_id": 1603068,
-      "kickoff": "2026-10-23T12:00:00-06:00",
-      "home": "Al-Qadsiah",
-      "away": "Al-Hilal Saudi FC",
-      "home_id": 2933,
-      "away_id": 2932,
-      "home_logo": "https://media.api-sports.io/football/teams/2933.png",
-      "away_logo": "https://media.api-sports.io/football/teams/2932.png",
-      "league": "Liga Profesional Saudí",
-      "tabla": {
-        "liga": "Pro League",
-        "home": {
-          "rank": 1,
-          "pts": 25,
-          "pj": 10
-        },
-        "away": {
-          "rank": 2,
-          "pts": 24,
-          "pj": 9
-        }
-      },
-      "forma_home": [
-        {
-          "r": "G",
-          "rival": "Al-Wasl FC",
-          "marcador": "2-1",
-          "fid": 1629916,
-          "local": true
-        },
-        {
-          "r": "G",
-          "rival": "Al Kholood",
-          "marcador": "5-0",
-          "fid": 1603041,
-          "local": false
-        },
-        {
-          "r": "E",
-          "rival": "Pakhtakor",
-          "marcador": "1-1",
-          "fid": 1629927,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Abha",
-          "marcador": "2-1",
-          "fid": 1603050,
-          "local": true
-        },
-        {
-          "r": "G",
-          "rival": "Al Taawon",
-          "marcador": "1-0",
-          "fid": 1603061,
-          "local": false
-        }
-      ],
-      "forma_away": [
-        {
-          "r": "G",
-          "rival": "Al Taawon",
-          "marcador": "6-0",
-          "fid": 1603033,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Al-Gharafa",
-          "marcador": "2-1",
-          "fid": 1629924,
-          "local": true
-        },
-        {
-          "r": "G",
-          "rival": "Al-Ittihad FC",
-          "marcador": "3-2",
-          "fid": 1603040,
-          "local": true
-        },
-        {
-          "r": "G",
-          "rival": "Al Sadd",
-          "marcador": "2-0",
-          "fid": 1629939,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Al-Hazm",
-          "marcador": "1-0",
-          "fid": 1603058,
-          "local": true
-        }
-      ],
-      "historial": [
-        {
-          "fecha": "2026-01-29",
-          "home": "Al-Qadsiah",
-          "away": "Al-Hilal Saudi FC",
-          "home_id": 2933,
-          "marcador": "2-2",
-          "ganador": null
-        },
-        {
-          "fecha": "2025-09-13",
-          "home": "Al-Hilal Saudi FC",
-          "away": "Al-Qadsiah",
-          "home_id": 2932,
-          "marcador": "2-2",
-          "ganador": null
-        },
-        {
-          "fecha": "2025-05-26",
-          "home": "Al-Hilal Saudi FC",
-          "away": "Al-Qadsiah",
-          "home_id": 2932,
-          "marcador": "2-0",
-          "ganador": 2932
-        },
-        {
-          "fecha": "2025-01-27",
-          "home": "Al-Qadsiah",
-          "away": "Al-Hilal Saudi FC",
-          "home_id": 2933,
-          "marcador": "2-1",
-          "ganador": 2933
-        },
-        {
-          "fecha": "2021-03-20",
-          "home": "Al-Hilal Saudi FC",
-          "away": "Al-Qadsiah",
-          "home_id": 2932,
-          "marcador": "1-0",
-          "ganador": 2932
-        }
-      ],
-      "hecho": "2026-10-23T00:14:51.395318-06:00",
-      "v": 2,
-      "jugadores": [
-        {
-          "key": "quinones",
-          "lado": "L",
-          "rachas": {},
-          "minutos": [
-            {
-              "rival": "Al-Wasl FC",
-              "min": 84,
-              "goles": 1
-            },
-            {
-              "rival": "Al Kholood",
-              "min": 90,
-              "goles": 1
-            },
-            {
-              "rival": "Pakhtakor",
-              "min": 90,
-              "goles": 0
-            },
-            {
-              "rival": "Abha",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "Al Taawon",
-              "min": 90,
-              "goles": 0
-            }
-          ]
-        }
-      ]
-    },
     "1561420": {
       "fixture_id": 1561420,
       "kickoff": "2026-10-24T03:45:00-06:00",
@@ -316,7 +140,7 @@
           "ganador": 1088
         }
       ],
-      "hecho": "2026-10-23T00:14:51.395318-06:00",
+      "hecho": "2026-10-23T13:14:36.305109-06:00",
       "v": 2,
       "jugadores": [
         {
@@ -883,7 +707,6 @@
     }
   },
   "jugadores": {
-    "quinones": 1603068,
     "luis_chavez": 1561420,
     "raul": 1563226,
     "obed": 1570425,
