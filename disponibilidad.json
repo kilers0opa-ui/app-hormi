@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T20:05:21.852660-06:00",
+  "updated_at": "2026-10-22T20:08:40.852065-06:00",
   "players": {
     "raul": {
       "estado": "lesion",
@@ -11,14 +11,15 @@
       "team_key": "wolves"
     },
     "mora": {
+      "estado": "lesion",
+      "motivo": "tobillo",
+      "manual": true,
+      "hasta": "",
+      "desde": "2026-10-22T20:08:50.541929-06:00",
       "partido": "Club Tijuana vs Santos Laguna",
       "fixture_id": 1551019,
       "team_key": "tijuana",
-      "kickoff": "2026-10-25T21:00:00-06:00",
-      "estado": "duda",
-      "motivo": "",
-      "fuente_noticia": "Por qué no juega Gilberto Mora en Toluca vs. Xolos por el Apertura 2026 de la Liga MX",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOSy1jX0NRbFc1NEZNZHBXZkJkMVNTMFI2Y2hNNFk4S055MnlrU1ZvUmtWX1pCdXNBS0ZYSk52aUpTUWpzUDFBdFFNRzlBNDF6bkRmbnNVM1dkbGNOYVhZLUhzYktjdVdDLVloMExWdjJuaElJY1QzbC14RkVjUHFpRXZJUU15aUtZcG83TzlSQW85SV9fT0NOTGNhUjdOSWJlUUJIaWpfX0pXYkFtOVBVUWtrZGPSAboBQVVfeXFMT0RmUFd5YWt5TlFWTno1OFBOdFM0cUlpTXR2VmRIMlFEUUlSckdXWXhyQ0diTXhtanRvdkFSQnZueDU1eWJsbTZoekE3akJXRTdtamNBM0FmWEhDUTAyVkV6Sk5FbDdZakFSYlNwYUR3cHl5bk5YdlhLWWdqM1daUnZ6LWhzdWxiSU82QmJpUVVfMFYwTTU4eUJ0NTd2eHMtWUpFMXpQQnh6RGJybzBEdGRLV01rQU9zUWlB?oc=5"
+      "kickoff": "2026-10-25T21:00:00-06:00"
     }
   },
   "manual_cerradas": {}
