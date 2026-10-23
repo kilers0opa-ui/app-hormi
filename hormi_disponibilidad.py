@@ -9,7 +9,7 @@ ya tenga lista; la del próximo partido la publica la API hasta ~1 día antes).
 Avisos (tipo "disponibilidad"), comparando con la corrida anterior:
   - 🚑 "Raúl Jiménez: baja por lesión" (rodilla · se pierde Wolves vs Everton)
   - 🟥 "César Montes: suspendido" (acumulación de amarillas · ...)
-  - 🩹 "X: en duda para el partido" (la API lo marca "Questionable")
+  - ⚠️ "X: en duda para el partido" (la API lo marca "Questionable")
   - ✅ "X ya está disponible" (deja de aparecer en la lista de su siguiente partido)
 La primera corrida (sin disponibilidad.json) no avisa: solo arma el estado.
 """
@@ -161,7 +161,7 @@ def main():
             continue
         nota = noticia_baja(p)
         if nota:
-            out["players"][p["key"]] = {**base, "estado": "posible", "motivo": nota["title"], "url": nota["url"],
+            out["players"][p["key"]] = {**base, "estado": "duda", "motivo": nota["title"], "url": nota["url"],
                                         "fuente": nota.get("source")}
 
     # ── avisos
@@ -176,10 +176,10 @@ def main():
                 avisos.append((key, d["team_key"], f"🚑 {nombre}: baja por lesión", f"{d['motivo'].capitalize()} · se pierde {d['partido']}"))
             elif d["estado"] == "suspension":
                 avisos.append((key, d["team_key"], f"🟥 {nombre}: suspendido", f"{d['motivo'].capitalize()} · se pierde {d['partido']}"))
-            elif d["estado"] == "posible":
-                avisos.append((key, d["team_key"], f"⚠️ {nombre}: posible baja", f"{d['motivo']} ({d.get('fuente') or 'prensa'})"))
+            elif d.get("url"):   # Liga MX, por noticias
+                avisos.append((key, d["team_key"], f"⚠️ {nombre}: en duda para el partido", f"{d['motivo']} ({d.get('fuente') or 'prensa'})"))
             else:
-                avisos.append((key, d["team_key"], f"🩹 {nombre}: en duda para el partido", f"{d['motivo'].capitalize()} · {d['partido']}"))
+                avisos.append((key, d["team_key"], f"⚠️ {nombre}: en duda para el partido", f"{d['motivo'].capitalize()} · {d['partido']}"))
         for key, a in antes.items():
             if key not in out["players"] and key not in archivados and a.get("estado") in ("lesion", "suspension"):
                 p = next((x for x in config["players"] if x["key"] == key), None)
