@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T01:24:38.029476-06:00",
+  "updated_at": "2026-10-23T03:13:30.415467-06:00",
   "partidos": {
     "1603068": {
       "fixture_id": 1603068,
@@ -352,10 +352,187 @@
           ]
         }
       ]
+    },
+    "1563226": {
+      "fixture_id": 1563226,
+      "kickoff": "2026-10-24T08:00:00-06:00",
+      "home": "Wolves",
+      "away": "Watford",
+      "home_id": 39,
+      "away_id": 38,
+      "home_logo": "https://media.api-sports.io/football/teams/39.png",
+      "away_logo": "https://media.api-sports.io/football/teams/38.png",
+      "league": "Championship",
+      "tabla": {
+        "liga": "Championship",
+        "home": {
+          "rank": 7,
+          "pts": 18,
+          "pj": 11
+        },
+        "away": {
+          "rank": 20,
+          "pts": 11,
+          "pj": 11
+        }
+      },
+      "forma_home": [
+        {
+          "r": "G",
+          "rival": "West Brom",
+          "marcador": "1-0",
+          "fid": 1563177,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Middlesbrough",
+          "marcador": "0-1",
+          "fid": 1563183,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Bolton",
+          "marcador": "1-3",
+          "fid": 1563197,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Burnley",
+          "marcador": "2-1",
+          "fid": 1563205,
+          "local": false
+        },
+        {
+          "r": "E",
+          "rival": "Portsmouth",
+          "marcador": "1-1",
+          "fid": 1563150,
+          "local": true
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "P",
+          "rival": "Stoke City",
+          "marcador": "1-2",
+          "fid": 1563164,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Bristol City",
+          "marcador": "0-1",
+          "fid": 1563168,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Burnley",
+          "marcador": "0-4",
+          "fid": 1563188,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Cardiff",
+          "marcador": "1-5",
+          "fid": 1563194,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Charlton",
+          "marcador": "2-0",
+          "fid": 1563212,
+          "local": true
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2022-03-10",
+          "home": "Wolves",
+          "away": "Watford",
+          "home_id": 39,
+          "marcador": "4-0",
+          "ganador": 39
+        },
+        {
+          "fecha": "2021-09-11",
+          "home": "Watford",
+          "away": "Wolves",
+          "home_id": 38,
+          "marcador": "0-2",
+          "ganador": 39
+        },
+        {
+          "fecha": "2020-01-01",
+          "home": "Watford",
+          "away": "Wolves",
+          "home_id": 38,
+          "marcador": "2-1",
+          "ganador": 38
+        },
+        {
+          "fecha": "2019-09-28",
+          "home": "Wolves",
+          "away": "Watford",
+          "home_id": 39,
+          "marcador": "2-0",
+          "ganador": 39
+        },
+        {
+          "fecha": "2019-04-27",
+          "home": "Watford",
+          "away": "Wolves",
+          "home_id": 38,
+          "marcador": "1-2",
+          "ganador": 39
+        }
+      ],
+      "hecho": "2026-10-23T03:13:30.415467-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "raul",
+          "lado": "L",
+          "rachas": {},
+          "minutos": [
+            {
+              "rival": "West Brom",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Middlesbrough",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Bolton",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Burnley",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Portsmouth",
+              "min": 0,
+              "goles": 0
+            }
+          ]
+        }
+      ]
     }
   },
   "jugadores": {
     "quinones": 1603068,
-    "luis_chavez": 1561420
+    "luis_chavez": 1561420,
+    "raul": 1563226
   }
 }
