@@ -420,13 +420,27 @@ LIGAS_ES = {
 LIGAS_PAIS_ES = {
     ("Premier League", "Russia"): "Liga Premier de Rusia", ("Cup", "Russia"): "Copa de Rusia",
     ("Super Cup", "Russia"): "Supercopa de Rusia", ("Super Cup", "Mexico"): "Campeón de Campeones",
+    ("Superliga", "Denmark"): "Superliga de Dinamarca",
 }
+# Copas con nombre en su idioma → en español.
+LIGAS_ES.update({
+    "DBU Pokalen": "Copa de Dinamarca", "Taça da Liga": "Copa de la Liga de Portugal", "Taça de Portugal": "Copa de Portugal",
+    "KNVB Beker": "Copa de Países Bajos", "Coppa Italia": "Copa Italia", "King's Cup": "Copa del Rey de Arabia",
+})
+PAISES_ES = {"Greece": "Grecia", "Russia": "Rusia", "Saudi-Arabia": "Arabia Saudita", "Denmark": "Dinamarca",
+             "Netherlands": "Países Bajos", "Portugal": "Portugal", "Spain": "España", "Italy": "Italia",
+             "England": "Inglaterra", "Mexico": "México", "Germany": "Alemania", "France": "Francia"}
 
 
 def liga_es(name, country=None):
     if isinstance(name, dict):   # se puede pasar el objeto "league" completo de la API
         name, country = name.get("name"), name.get("country")
-    return LIGAS_PAIS_ES.get((name, country)) or LIGAS_ES.get(name, name)
+    out = LIGAS_PAIS_ES.get((name, country)) or LIGAS_ES.get(name)
+    if out:
+        return out
+    if name in ("Cup", "Super Cup") and country in PAISES_ES:   # "Cup" a secas: Copa de Grecia, etc.
+        return ("Copa de " if name == "Cup" else "Supercopa de ") + PAISES_ES[country]
+    return name
 
 
 def nombre_es(name):
