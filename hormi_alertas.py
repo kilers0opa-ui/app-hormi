@@ -815,6 +815,32 @@ def analyze(data, player, target):
                      "summary": summary, **({"banca_pendiente": True} if banca_pendiente else {})}
 
 
+_bajas_revisadas = set()
+
+
+def revisar_bajas_tras(fid):
+    """Si terminó un partido que algún jugador se perdía por baja, corre ya la revisión de disponibilidad
+    (disponibilidad.yml) para que la etiqueta pase al siguiente rival sin esperar las 3 h. Una vez por partido."""
+    if fid in _bajas_revisadas:
+        return
+    bajas = (load_json(Path("disponibilidad.json"), {}) or {}).get("players") or {}
+    if not any(b.get("fixture_id") == fid for b in bajas.values()):
+        return
+    _bajas_revisadas.add(fid)
+    token, repo = os.environ.get("GITHUB_TOKEN"), os.environ.get("GITHUB_REPOSITORY")
+    if not token or not repo:
+        return
+    try:
+        req = urllib.request.Request(
+            f"https://api.github.com/repos/{repo}/actions/workflows/disponibilidad.yml/dispatches",
+            data=json.dumps({"ref": "main"}).encode(), method="POST",
+            headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"})
+        urllib.request.urlopen(req, timeout=15).close()
+        log(f"🩺 terminó el partido {fid} que un jugador se perdía: se revisan las bajas ya")
+    except Exception as err:
+        log(f"⚠️  no se pudo lanzar la revisión de bajas: {err}")
+
+
 TARJETA_GOL_VIGENCIA = timedelta(minutes=10)
 
 
@@ -2044,6 +2070,8 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     sin_final = st in FINISHED and not any(a[0].endswith(":final") for a in alerts)   # no era partido suyo: nada que avisar
     if (st in FINISHED or st in CANCELLED - {"SUSP"}) and (closing_key in sent or sin_final):
         entry["done"] = True
+    if st in FINISHED or st in CANCELLED - {"SUSP"}:
+        revisar_bajas_tras(fid)
 
 
 STATUS_HEARTBEAT = timedelta(minutes=60)   # la app muestra "Actualizado: <hora>" con este campo
