@@ -28,10 +28,10 @@ permissions:
 
 jobs:
   video-gol:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: main   # siempre lo más nuevo (una corrida en cola, si no, usa la versión de cuando se encoló y repite alertas ya enviadas)
 
@@ -83,7 +83,7 @@ jobs:
           print("hay=" + str(hay).lower())
           EOF
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         if: steps.check.outputs.hay == 'true'
         with:
           python-version: "3.11"
