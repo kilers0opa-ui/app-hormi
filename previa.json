@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T21:10:44.020362-06:00",
+  "updated_at": "2026-10-22T23:10:01.015803-06:00",
   "partidos": {
     "1603068": {
       "fixture_id": 1603068,
@@ -168,9 +168,185 @@
           ]
         }
       ]
+    },
+    "1561420": {
+      "fixture_id": 1561420,
+      "kickoff": "2026-10-24T03:45:00-06:00",
+      "home": "Akron",
+      "away": "Dinamo Moscú",
+      "home_id": 6786,
+      "away_id": 1088,
+      "home_logo": "https://media.api-sports.io/football/teams/6786.png",
+      "away_logo": "https://media.api-sports.io/football/teams/1088.png",
+      "league": "Liga Premier de Rusia",
+      "tabla": {
+        "liga": "Liga Premier de Rusia",
+        "home": {
+          "rank": 14,
+          "pts": 9,
+          "pj": 11
+        },
+        "away": {
+          "rank": 1,
+          "pts": 25,
+          "pj": 11
+        }
+      },
+      "forma_home": [
+        {
+          "r": "G",
+          "rival": "Akhmat",
+          "marcador": "2-0",
+          "fid": 1561395,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Krylia Sovetov",
+          "marcador": "0-4",
+          "fid": 1644438,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "FC Rostov",
+          "marcador": "0-1",
+          "fid": 1561406,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Lokomotiv Moscú",
+          "marcador": "1-1",
+          "fid": 1563664,
+          "local": false
+        },
+        {
+          "r": "E",
+          "rival": "Dinamo Makhachkala",
+          "marcador": "1-1",
+          "fid": 1561412,
+          "local": false
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "G",
+          "rival": "FC Rostov",
+          "marcador": "3-0",
+          "fid": 1561398,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Rodina Moskva",
+          "marcador": "3-2",
+          "fid": 1642961,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Rubin",
+          "marcador": "1-0",
+          "fid": 1561410,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Akhmat",
+          "marcador": "2-1",
+          "fid": 1563659,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "CSKA Moscú",
+          "marcador": "3-1",
+          "fid": 1561413,
+          "local": true
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2026-07-18",
+          "home": "Akron",
+          "away": "Dinamo Moscú",
+          "home_id": 6786,
+          "marcador": "0-1",
+          "ganador": 1088
+        },
+        {
+          "fecha": "2026-04-13",
+          "home": "Akron",
+          "away": "Dinamo Moscú",
+          "home_id": 6786,
+          "marcador": "2-3",
+          "ganador": 1088
+        },
+        {
+          "fecha": "2025-11-08",
+          "home": "Dinamo Moscú",
+          "away": "Akron",
+          "home_id": 1088,
+          "marcador": "1-2",
+          "ganador": 6786
+        },
+        {
+          "fecha": "2025-05-18",
+          "home": "Dinamo Moscú",
+          "away": "Akron",
+          "home_id": 1088,
+          "marcador": "2-1",
+          "ganador": 1088
+        },
+        {
+          "fecha": "2024-08-03",
+          "home": "Akron",
+          "away": "Dinamo Moscú",
+          "home_id": 6786,
+          "marcador": "0-2",
+          "ganador": 1088
+        }
+      ],
+      "hecho": "2026-10-22T23:10:01.015803-06:00",
+      "jugadores": [
+        {
+          "key": "luis_chavez",
+          "lado": "V",
+          "rachas": {},
+          "minutos": [
+            {
+              "rival": "FC Rostov",
+              "min": 69,
+              "goles": 0
+            },
+            {
+              "rival": "Rodina Moskva",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Rubin",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Akhmat",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "CSKA Moscú",
+              "min": 0,
+              "goles": 0
+            }
+          ]
+        }
+      ]
     }
   },
   "jugadores": {
-    "quinones": 1603068
+    "quinones": 1603068,
+    "luis_chavez": 1561420
   }
 }
