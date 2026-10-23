@@ -52,10 +52,12 @@ def clasificar(tipo, motivo):
 
 
 LIGA_MX = 262
-CLAVE_BAJA = re.compile(r"\b(lesi[oó]n|lesionad[oa]|baja|bajas|desgarro|esguince|fractura|parte m[eé]dico|operad[oa]|"
-                        r"cirug[ií]a|suspendid[oa]|suspensi[oó]n|se pierde|fuera por)\b", re.I)
+# "baja" solo cuenta como baja deportiva (no "Baja California", "a la baja", "dar de baja"...).
+CLAVE_BAJA = re.compile(r"\b(lesi[oó]n|lesionad[oa]|desgarro|esguince|fractura|parte m[eé]dico|operad[oa]|cirug[ií]a|"
+                        r"se pierde|fuera por|(es|ser[aá]|ser[ií]a|causa|causar[aá]|sensible|otra|nueva|confirma) baja|"
+                        r"baja (por|para|ante|contra|en el|del cl[aá]sico)|suspendid[oa] (por|para)|suspensi[oó]n de \d)", re.I)
 DESCARTE = re.compile(r"\b(regres[ao]|vuelve|volver[aá]|recuper[ao]|recuperad[oa]|alta|ya entrena|listo para|"
-                      r"reaparece|de vuelta|descart[ao] lesi[oó]n|sin lesi[oó]n)\b", re.I)
+                      r"reaparece|de vuelta|descart[ao] lesi[oó]n|sin lesi[oó]n|baja california|partido suspendido)\b", re.I)
 
 
 def _norm(s):
