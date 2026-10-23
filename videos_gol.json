@@ -1,150 +1,40 @@
 {
-  "updated_at": "2026-10-22T15:50:33.232016-06:00",
+  "updated_at": "2026-10-23T12:35:26.453646-06:00",
   "cuota": {
-    "fecha": "2026-10-22",
-    "busquedas": 6,
-    "busquedas_resumen": 4
+    "fecha": "2026-10-23",
+    "busquedas": 0,
+    "busquedas_resumen": 0
   },
   "goles": {
     "armando:olympiacos:1636308:goal:291713:1:gol": {
       "player_key": "armando",
       "team_key": "olympiacos",
       "goal_seen_at": "2026-10-22T20:35:40.272859+00:00",
-      "status": "resuelto",
-      "intentos": 2,
+      "status": "omitido",
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": "2026-10-22T21:23:12.355796+00:00",
-      "video": {
-        "id": "o29kE53tyJg",
-        "title": "¡HORMIGA GONZÁLEZ ANOTA EL GOL DE LA VICTORIA! 🔥",
-        "channel": "Desde las Gradas MX",
-        "published_at": "2026-10-22T21:03:00Z",
-        "thumbnail": "https://i.ytimg.com/vi/o29kE53tyJg/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=o29kE53tyJg",
-        "embeddable": true
-      },
-      "verificado": "2026-10-22T21:23:12.355796+00:00",
+      "ultimo_intento": null,
+      "video": null,
+      "verificado": "2026-10-23T18:35:26.324546+00:00",
       "descartados": [
-        "qHaNadNUd_U"
+        "qHaNadNUd_U",
+        "o29kE53tyJg"
       ],
-      "silencioso": true
+      "silencioso": true,
+      "motivo": "caducado"
+    },
+    "quinones:al_qadsiah:1603068:goal:35532:1:gol": {
+      "player_key": "quinones",
+      "team_key": "al_qadsiah",
+      "goal_seen_at": "2026-10-23T18:32:10.256281+00:00",
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null
     }
   },
   "partidos": {
-    "1551004": {
-      "fixture_id": 1551004,
-      "home": "Chivas",
-      "away": "Necaxa",
-      "league": "Liga MX",
-      "score": "Chivas 1-0 Necaxa",
-      "final_seen_at": "2026-10-21T02:05:38.199846+00:00",
-      "jugadores": {
-        "campillo": {
-          "team_key": "chivas",
-          "minutes": 61,
-          "goals": 0,
-          "assists": 0
-        },
-        "camberos": {
-          "team_key": "chivas",
-          "minutes": 45,
-          "goals": 0,
-          "assists": 0
-        },
-        "sandoval": {
-          "team_key": "chivas",
-          "minutes": 45,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "resuelto",
-      "intentos": 3,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-21T04:10:20.853110+00:00",
-      "video": {
-        "id": "jTUyMmpg8Zc",
-        "title": "CHIVAS 1-0 NECAXA | ¡El Rebaño regresa a la victoria ante los Rayos! | J13 AP2026",
-        "channel": "LIGA BBVA MX",
-        "published_at": "2026-10-21T04:37:27Z",
-        "thumbnail": "https://i.ytimg.com/vi/jTUyMmpg8Zc/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=jTUyMmpg8Zc",
-        "embeddable": true
-      },
-      "noticias_pasadas": 5,
-      "ultima_noticia": "2026-10-21T04:10:20.853110+00:00",
-      "noticias": {
-        "campillo": [
-          {
-            "title": "¿Era roja? La falta sobre Diego Campillo que generó polémica en el Chivas vs Necaxa",
-            "source": "El Heraldo de México",
-            "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOc1hCalhWTlZRSC10cmJvb1VESTQtOWdENDdmaGg4TEVrMmdCM3RFTjJCQ0tqeU5rMGVOTXBNYm1ZcGZhVi1KSnJUODZGSDBMNGNRXzl0SWRCbll2dmhKbGFaNjFVMXB4c3R5VG9Lb2g2ZnUxMnF6bFkyV1RlbWNQcGxWTjk3eW53SDZrZHFoeEN3ZzVBTm1YUlgyd0JDZjk5U25jd2FoR0psY01feTlyU1lpazdQZ05fTG1GZ0FoOFRyRHNtLThIdmo5OEJWQVJrMmsybEFCZk40MnQ4?oc=5",
-            "published_at": "2026-10-21T01:46:00Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Diego Campillo cumple 25 años: la historia del defensa de Chivas",
-            "source": "ABC Noticias",
-            "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQQUtOQm9iZmhJSngzclZTWGUwY2tKVzhJaU11M3NacjVTVVFsSjlsUDR0QjRyam5yOHZuRWJUdzZDazg0YXFZODYzRF9qei1fY1RrczZfN2l5MmdjU2NmeEg4YmR3dmswd251SXUxdEFUZ1NNdmNGakpSMEVlZXdwUTlxUDBvUmxPWmQ0ZVZfdTlBbUZjY3htRjdEdXlkd1NKa2QwSEJlN2hJMXd2aEJianFEdEVUT0dkcVE?oc=5",
-            "published_at": "2026-10-19T23:05:00Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Diego Campillo: de la Cantera Rojiblanca a pieza clave de Chivas",
-            "source": "Chivas",
-            "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQVUQ1M3VTRzJuQVFmZnU4VGplQVBWMm1QakVsak9mMm9sd25JUmxyTC1yZUt3dGlwNWR4NlJCTVB6M0FLS2ZYaGVHSFFDMWhndV94M0xiOWpoMk9wX2VmbUh2RndjY0RJZWJXNEk5bmp1QjdIbzIxdWpjX2pNdVJpRUxqcnpzMUtCNG05dGtnYXE1ME5Fang0NEh3ZFhWLXdNeFQ0TDlfMTl4VnlKUUc1WnZhY0tWN2c?oc=5",
-            "published_at": "2026-10-19T18:41:58Z",
-            "edicion": "mx"
-          }
-        ],
-        "camberos": [
-          {
-            "title": "Hugo Camberos cambia la cancha por los tacos al pastor después de entrenar con Chivas",
-            "source": "MARCA",
-            "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPOUF2X0xXLWNFRnR5cmJGdFdwS3FxX29BajI3RFkzalp4ajJBNVpIdVRkVTZiSWxqV1BDNDRYaTFFamFTWlFzY0N5NlhWUURvdEVjU0FXVFFnYmRzOUVTLTUwcFQtRzRIOUlFLWEteHkwUkxYUE11STdNT1gyUTc3RG04emFrMXdadk03NXd2VnJYVzZwcVhIYmlqdmJWWG9hWGVaWFlnOWYzVEdMb2dtNTQxVUpkN3A0bEE?oc=5",
-            "published_at": "2026-10-19T19:55:00Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Hugo Camberos, más completo y más influyente",
-            "source": "Chivas",
-            "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNOXczWEtxNVdzMUtOam0zeVlYajdmaTBZZkptT2p1enRabDl4WFlmTmtJZkd1RG1SYXI4WkNpTG9uOXhKZkJIZ2NBdWJKdDIyd1JPMUF1eFZkYm10UnRJeWhiSVJpSms1SkVpM0VfMURaZEY0NnNtUkpoRDZ3eVhTUFRCcnB6ajFNUXlxVW5manlXbDdlaVQ0N2hR?oc=5",
-            "published_at": "2026-08-31T22:58:32Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "'Hormiga' González ve a Santiago Sandoval y Hugo Camberos como sus sucesores en Chivas",
-            "source": "TUDN",
-            "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOMUg2bXRNOVFGbm1TVmlfZjdlWkxPWFRQUmRUOTVMS1BQa3hJd3g4b3NDVkdsODRlVTdQX2JVVTJpZ3hLbE9qeHVnRVBRbXo0UlpBdmZGaTdwN05wSEY5a3JqZFhFRGxxandFbS0wTzNKV2NNZjI3b055aTNjbVpqZ19JQ3VpZlVhNWNLdkNXNGpnaUFuMmNZSzROSlhTN2FaUXM3OWIxeldzSDY4V2dtZzFpbW5jV00?oc=5",
-            "published_at": "2026-08-24T07:00:00Z",
-            "edicion": "mx"
-          }
-        ],
-        "sandoval": [
-          {
-            "title": "Tigres volverá a medirse con el Chivas de Santiago Sandoval, su último verdugo",
-            "source": "OnceDiario",
-            "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOeXEwLWtwbXl5bFhZNEowQmVaWDFhSWNaeTlsbGF6cS16R04wYTRjZ0R3Y19rLThGbHhDelA2UXc5ZEE0cHJ4a2pzME54WUVrWld4bG45ajZuRGVUb1JvR1pCNWo1WE4wV2MyM0dKY0tFNERiSW40am9hanM5b2JWU0JNbVY3NGhzTkRPa0U1QkVvX0RnZWQtOE45aFI4ODQwY2J4bXFLUFp3ZUxJalNXUXBIc29hRWJ5bFBOeXJ6eFB6anQ1?oc=5",
-            "published_at": "2026-10-16T17:37:09Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Santiago Sandoval le da una noticia increíble a Chivas: podría recibir una fortuna",
-            "source": "TV Azteca",
-            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOQ294OGxFRkZXTF8tLTBDTWcydzBEdThSZ3ZMcHEtMnoyM1RUVHBnYW9mektWb3M4akowRVJ6RUV1UnoyalJzdGFzdGZxaWhPZk1pSDhtVWNCUWpkemdiYTdkdUlYeXZ4Njg3TXZNUnljckFhb2RaOWY3LU5pQl9XYUNPT2hDOXdfRlc0U0hIQlAzTEtkalNBalhwdjfSAaoBQVVfeXFMTjN6MXhLbkhwV1hLd3c1TDBYWEhJSUxnNkthSl9uaHRKNUdKMVA2WVJwbHlWbWQtWXlrNFVfNkwzUUR5enk2dEd6b09FaDJfNVJMTFlQWDY4SERxY1FnVWxoUVVBZENNZGd3LUV5ZnY2VVBEUUYxVWxCWGpvb0luT3YzNkF5VjhjeFViZ2FOck96bm9XOXRDRkFaZ2RQUTFTazBfMXB3b2VJQVE?oc=5",
-            "published_at": "2026-10-14T17:32:23Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Santiago Sandoval tendría la proyección más alta de transferencia de todo Chivas y América",
-            "source": "Rebaño Pasión",
-            "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNcjlZUE43aEVBRThFVFJKX25qTktGNC01QldLTHZZUHF4N1ZtV19nc3FzSUx1YjlIRUJRMk5xOUM5emotb0xqTk9vcVY1bkFGSXd1bTFzMDc1TmlPUjZjZzAxZnl4U1F5c1k0enJ2N2dtM1JOdkk2NWkteFdYZThOQ3lyb2ZacVFfSzJmRFcxUVFmVG1YYzUzanFKRHhrRVNaOEVzWkZ1R2VuT1ZLdzdRT0dPNms5X1FTc1JXUmRiVjNjV0pPXzNYZEFCc3dmd3Y5ZG9lQVdJVdIB1wFBVV95cUxNcjlZUE43aEVBRThFVFJKX25qTktGNC01QldLTHZZUHF4N1ZtV19nc3FzSUx1YjlIRUJRMk5xOUM5emotb0xqTk9vcVY1bkFGSXd1bTFzMDc1TmlPUjZjZzAxZnl4U1F5c1k0enJ2N2dtM1JOdkk2NWkteFdYZThOQ3lyb2ZacVFfSzJmRFcxUVFmVG1YYzUzanFKRHhrRVNaOEVzWkZ1R2VuT1ZLdzdRT0dPNms5X1FTc1JXUmRiVjNjV0pPXzNYZEFCc3dmd3Y5ZG9lQVdJVQ?oc=5",
-            "published_at": "2026-10-14T03:32:06Z",
-            "edicion": "mx"
-          }
-        ]
-      }
-    },
     "1635636": {
       "fixture_id": 1635636,
       "home": "Real Betis",
@@ -314,7 +204,7 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 4,
       "fallos": 0,
       "ultimo_intento": "2026-10-22T21:42:59.665422+00:00",
@@ -345,7 +235,8 @@
             "edicion": "mx"
           }
         ]
-      }
+      },
+      "motivo": "caducado"
     },
     "1636308": {
       "fixture_id": 1636308,
@@ -375,7 +266,7 @@
         "url": "https://www.youtube.com/watch?v=9UL3dYoPObI",
         "embeddable": true
       },
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-22T21:50:23.393054+00:00",
       "noticias": {
         "armando": [
