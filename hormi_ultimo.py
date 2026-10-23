@@ -107,6 +107,8 @@ def actualizar(config, solo=None):
 
 
 if __name__ == "__main__":
+    from hormi_pausa import salir_si_pausa
+    salir_si_pausa()
     cfg = hh.load_json(hh.CONFIG_FILE, None)
     if cfg is None:
         sys.exit("Falta hormi_config.json")

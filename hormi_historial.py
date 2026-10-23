@@ -85,6 +85,9 @@ def save_json(path, data):
 def api(endpoint, params):
     """GET a API-Football. Sin caché a propósito (a diferencia de la Fase 1):
     aquí queremos el total real y al día cada vez que se corre esta fase."""
+    from hormi_pausa import api_en_pausa
+    if api_en_pausa():
+        return None
     global _last_request_at, last_api_error
     last_api_error = None
     api_key = os.environ.get("APIFOOTBALL_KEY")
@@ -200,7 +203,9 @@ def contar_partidos(pid, tid, season, league_id, minutos):
     if c and c.get("min") == minutos:
         return c["pj"]
     if (tid, season) not in _fx_cache:
-        _fx_cache[(tid, season)] = api("/fixtures", {"team": tid, "season": season}) or []
+        _fx_cache[(tid, season)] = api("/fixtures", {"team": tid, "season": season})
+    if _fx_cache[(tid, season)] is None:
+        return (c or {}).get("pj") or 1   # la API no respondió: lo de antes (sin guardar nada nuevo)
     n = 0
     for fx in _fx_cache[(tid, season)]:
         if (fx.get("league") or {}).get("id") != league_id or fx["fixture"]["status"]["short"] not in FINISHED:
@@ -511,4 +516,6 @@ def main():
 
 
 if __name__ == "__main__":
+    from hormi_pausa import salir_si_pausa
+    salir_si_pausa()
     main()

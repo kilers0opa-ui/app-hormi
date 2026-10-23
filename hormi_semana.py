@@ -308,4 +308,6 @@ def main():
 
 
 if __name__ == "__main__":
+    from hormi_pausa import salir_si_pausa
+    salir_si_pausa()
     raise SystemExit(main())

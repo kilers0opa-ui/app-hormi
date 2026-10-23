@@ -208,6 +208,9 @@ def api(endpoint, params, use_cache=False):
 
 def _api(endpoint, params, use_cache=False):
     """GET a API-Football. Misma caché que la Fase 1 (mismos nombres)."""
+    from hormi_pausa import api_en_pausa
+    if api_en_pausa():
+        return None
     global _last_request_at, last_api_error
     last_api_error = None
     key = endpoint.strip("/").replace("/", "_") + "_" + "_".join(
@@ -2500,4 +2503,6 @@ def main():
 
 
 if __name__ == "__main__":
+    from hormi_pausa import salir_si_pausa
+    salir_si_pausa()
     main()

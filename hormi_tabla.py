@@ -72,6 +72,9 @@ def save_json(path, data):
 
 
 def api(endpoint, params):
+    from hormi_pausa import api_en_pausa
+    if api_en_pausa():
+        return None
     global _last_request_at
     api_key = os.environ.get("APIFOOTBALL_KEY")
     if not api_key:
@@ -243,4 +246,6 @@ def main():
 
 
 if __name__ == "__main__":
+    from hormi_pausa import salir_si_pausa
+    salir_si_pausa()
     main()
