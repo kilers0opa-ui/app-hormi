@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T00:42:18.047548-06:00",
+  "updated_at": "2026-10-23T00:53:42.903574-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -157,18 +157,6 @@
             "minutes": 381
           },
           {
-            "league_id": 3,
-            "league_name": "UEFA Europa League",
-            "league_logo": "https://media.api-sports.io/football/leagues/3.png",
-            "team_id": 553,
-            "team_name": "Olympiakos Piraeus",
-            "team_logo": "https://media.api-sports.io/football/teams/553.png",
-            "played": 3,
-            "goals": 2,
-            "assists": 0,
-            "minutes": 113
-          },
-          {
             "league_id": 197,
             "league_name": "Super League 1",
             "league_logo": "https://media.api-sports.io/football/leagues/197.png",
@@ -191,6 +179,18 @@
             "goals": 0,
             "assists": 0,
             "minutes": 195
+          },
+          {
+            "league_id": 3,
+            "league_name": "UEFA Europa League",
+            "league_logo": "https://media.api-sports.io/football/leagues/3.png",
+            "team_id": 553,
+            "team_name": "Olympiakos Piraeus",
+            "team_logo": "https://media.api-sports.io/football/teams/553.png",
+            "played": 3,
+            "goals": 2,
+            "assists": 0,
+            "minutes": 113
           },
           {
             "league_id": 199,
@@ -6083,19 +6083,6 @@
             "goals": 0,
             "assists": 0,
             "minutes": 12
-          },
-          {
-            "league_id": 140,
-            "league_name": "La Liga",
-            "league_logo": "https://media.api-sports.io/football/leagues/140.png",
-            "team_id": 530,
-            "team_name": "Atletico Madrid",
-            "team_logo": "https://media.api-sports.io/football/teams/530.png",
-            "played": 4,
-            "goals": 0,
-            "assists": 0,
-            "minutes": 360,
-            "estimated": true
           }
         ],
         "2021": [
@@ -7786,19 +7773,6 @@
             "goals": 0,
             "assists": 0,
             "minutes": 82
-          },
-          {
-            "league_id": 119,
-            "league_name": "Superliga",
-            "league_logo": "https://media.api-sports.io/football/leagues/119.png",
-            "team_id": 400,
-            "team_name": "FC Copenhagen",
-            "team_logo": "https://media.api-sports.io/football/teams/400.png",
-            "played": 1,
-            "goals": 0,
-            "assists": 0,
-            "minutes": 90,
-            "estimated": true
           }
         ],
         "2020": []
@@ -12779,7 +12753,7 @@
             "team_id": 2278,
             "team_name": "Guadalajara Chivas",
             "team_logo": "https://media.api-sports.io/football/teams/2278.png",
-            "played": 1,
+            "played": 34,
             "goals": 6,
             "assists": 1,
             "minutes": 1573
