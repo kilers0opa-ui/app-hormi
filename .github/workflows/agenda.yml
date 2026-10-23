@@ -28,7 +28,7 @@ jobs:
       - name: Armar la agenda
         env:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
-                  run: python hormi_agenda.py
+        run: python hormi_agenda.py
       - name: Subir resultado
         if: ${{ !cancelled() }}
         run: |
