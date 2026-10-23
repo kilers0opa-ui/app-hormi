@@ -52,10 +52,17 @@ def clasificar(tipo, motivo):
 
 
 LIGA_MX = 262
-# "baja" solo cuenta como baja deportiva (no "Baja California", "a la baja", "dar de baja"...).
-CLAVE_BAJA = re.compile(r"\b((por|sufre|sufri[oó]|con|una|nueva) lesi[oó]n|lesionad[oa]|desgarro|esguince|fractura|parte m[eé]dico|operad[oa]|cirug[ií]a|"
-                        r"se pierde|fuera por|(es|ser[aá]|ser[ií]a|causa|causar[aá]|sensible|otra|nueva|confirma) baja|"
-                        r"baja (por|para|ante|contra|en el|del cl[aá]sico)|suspendid[oa] (por|para)|suspensi[oó]n de \d)\b", re.I)
+# Noticias (Liga MX), en orden: LESIÓN clara → "Lesionado · se pierde X vs Y"; SUSPENSIÓN clara → "Suspendido";
+# cualquier otra ausencia (es baja, no viajó, se pierde, fuera de la lista...) → solo "En duda", sin el porqué
+# (las notas a veces dicen tonterías: no se muestra el titular ni el motivo).
+LESION_RE = re.compile(r"\b((por|sufre|sufri[oó]|con|una|nueva|grave) lesi[oó]n|lesionad[oa]|desgarro|esguince|fractura|"
+                       r"rotura|operad[oa]|cirug[ií]a|parte m[eé]dico)\b", re.I)
+SUSP_RE = re.compile(r"\b(suspendid[oa] (por|para)|suspensi[oó]n de \d|castigad[oa] (con|por))\b", re.I)
+DUDA_RE = re.compile(r"\b(no juega|no jugar[aá]|no ha jugado|se pierde|fuera por|no viaj[oó]|no viajar[aá]|no viaja|fuera de la (convocatoria|lista)|"
+                     r"no fue convocado|no estar[aá]|descartad[oa]|en duda|duda para|"
+                     r"(es|ser[aá]|ser[ií]a|causa|causar[aá]|sensible|otra|nueva|confirma) baja|"
+                     r"baja (por|para|ante|contra|en el|del cl[aá]sico))\b", re.I)
+CLAVE_BAJA = re.compile("|".join(r.pattern for r in (LESION_RE, SUSP_RE, DUDA_RE)), re.I)
 DESCARTE = re.compile(r"\b(regres[ao]|vuelve|volver[aá]|recuper[ao]|recuperad[oa]|alta|ya entrena|listo para|"
                       r"reaparece|de vuelta|descart[ao] lesi[oó]n|sin lesi[oó]n|baja california|partido suspendido)\b", re.I)
 
@@ -69,7 +76,8 @@ def noticia_baja(p):
     import hormi_videos as hv
     nombre = (p.get("name") or "").replace(f'"{p.get("apodo")}" ', "")
     apellido = _norm(p.get("search_last_name") or nombre.split()[-1])
-    q = f'"{nombre}" (lesión OR lesionado OR baja OR desgarro OR "parte médico" OR operado OR suspendido) when:2d'
+    q = (f'"{nombre}" (lesión OR lesionado OR baja OR desgarro OR "parte médico" OR operado OR suspendido OR "no viajó" '
+         f'OR "no juega" OR "se pierde" OR duda) when:2d')
     notas = hv.fetch_news(q, limit=15) or []
     limite = datetime.now(timezone.utc) - timedelta(hours=48)
     buenas = []
@@ -161,8 +169,10 @@ def main():
             continue
         nota = noticia_baja(p)
         if nota:
-            out["players"][p["key"]] = {**base, "estado": "duda", "motivo": nota["title"], "url": nota["url"],
-                                        "fuente": nota.get("source")}
+            t = nota["title"]
+            estado = "lesion" if LESION_RE.search(t) else "suspension" if SUSP_RE.search(t) else "duda"
+            # Sin motivo: la app solo dice "Lesionado · se pierde X vs Y" / "Suspendido" / "En duda".
+            out["players"][p["key"]] = {**base, "estado": estado, "motivo": "", "fuente_noticia": t, "url": nota["url"]}
 
     # ── avisos
     if not primera:
@@ -173,13 +183,11 @@ def main():
             p = next(x for x in config["players"] if x["key"] == key)
             nombre = ha.display_name(p)
             if d["estado"] == "lesion":
-                avisos.append((key, d["team_key"], f"🚑 {nombre}: baja por lesión", f"{d['motivo'].capitalize()} · se pierde {d['partido']}"))
+                avisos.append((key, d["team_key"], f"🚑 {nombre}: lesionado", (f"{d['motivo'].capitalize()} · " if d.get("motivo") else "") + f"se pierde {d['partido']}"))
             elif d["estado"] == "suspension":
-                avisos.append((key, d["team_key"], f"🟥 {nombre}: suspendido", f"{d['motivo'].capitalize()} · se pierde {d['partido']}"))
-            elif d.get("url"):   # Liga MX, por noticias
-                avisos.append((key, d["team_key"], f"⚠️ {nombre}: en duda para el partido", f"{d['motivo']} ({d.get('fuente') or 'prensa'})"))
+                avisos.append((key, d["team_key"], f"🟥 {nombre}: suspendido", (f"{d['motivo'].capitalize()} · " if d.get("motivo") else "") + f"se pierde {d['partido']}"))
             else:
-                avisos.append((key, d["team_key"], f"⚠️ {nombre}: en duda para el partido", f"{d['motivo'].capitalize()} · {d['partido']}"))
+                avisos.append((key, d["team_key"], f"⚠️ {nombre}: en duda", d["partido"]))
         for key, a in antes.items():
             if key not in out["players"] and key not in archivados and a.get("estado") in ("lesion", "suspension"):
                 p = next((x for x in config["players"] if x["key"] == key), None)
