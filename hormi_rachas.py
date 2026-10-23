@@ -23,6 +23,7 @@ Peticiones: 1 por equipo (/fixtures?team&last=N) + 1 por partido terminado nuevo
 se guarda en rachas_cache.json y no se vuelve a pedir).
 """
 import argparse
+import re
 import json
 from datetime import datetime
 from pathlib import Path
@@ -115,10 +116,17 @@ def conds():
     }
 
 
+# Selecciones juveniles (Mexico U20, Colombia U21, United States U20…): no son clubes ni la Selección mayor.
+JUVENIL_SEL_RE = re.compile(r"^(mexico|méxico|colombia|united states|usa|spain|españa|argentina|brazil|portugal|"
+                            r"netherlands|italy|germany|france|england)\s+u\d{2}$", re.I)
+
+
 def hitos(seasons):
     tot = {"goles_club": 0, "partidos_club": 0, "goles_sel": 0, "partidos_sel": 0}
     for rows in (seasons or {}).values():
         for r in rows:
+            if JUVENIL_SEL_RE.match((r.get("team_name") or "").strip()):
+                continue
             sel = r.get("team_id") in SELECCION_IDS or (r.get("team_name") or "").lower() in ("mexico", "méxico")
             tot["goles_sel" if sel else "goles_club"] += r.get("goals") or 0
             tot["partidos_sel" if sel else "partidos_club"] += r.get("played") or 0
@@ -169,7 +177,20 @@ def main():
         for l in reversed(prev_e.get("logros") or []):   # sin repetidos: se queda la fecha en que lo logró primero
             if all(l.get("texto") != x.get("texto") for x in logros):
                 logros.insert(0, l)
-        entry = {"rachas": [], "hitos": hitos((stats.get(key) or {}).get("seasons")), "logros": logros,
+        hs = hitos((stats.get(key) or {}).get("seasons"))
+        # Si los datos se corrigen hacia abajo (p. ej. 200 → 196 al quitar la Sub-23), se quitan los logros y las
+        # marcas de "ya avisado" que ya no se cumplen (por más de 2): así el aviso llega cuando de verdad llegue.
+        valor_h = {h["id"]: h["valor"] for h in hs}
+        def _vigente(l):
+            m = re.match(r"^(\d+) (goles|partidos) con (clubes|la Selección)", l.get("texto") or "")
+            if not m:
+                return True
+            hid = f"{m.group(2)}_{'club' if m.group(3) == 'clubes' else 'sel'}"
+            return valor_h.get(hid, 0) >= int(m.group(1)) - 2   # bajar 1-2 es vaivén de la API, no corrección
+        logros = [l for l in logros if _vigente(l)]
+        avisados = {a for a in avisados if not (a.split(":")[0] in valor_h and a.split(":")[-1].isdigit()
+                                                and valor_h[a.split(":")[0]] < int(a.split(":")[-1]) - 2)}
+        entry = {"rachas": [], "hitos": hs, "logros": logros,
                  "avisados": sorted(avisados)}
         t = club_target(player)
         if t:
