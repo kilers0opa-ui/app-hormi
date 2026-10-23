@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T00:57:44.490839-06:00",
+  "updated_at": "2026-10-23T00:59:13.312458-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -183,18 +183,18 @@
         {
           "id": "goles_club",
           "titulo": "Goles con clubes",
-          "valor": 160,
+          "valor": 159,
           "meta": 175,
           "previo": 150,
-          "texto": "A 15 goles de 175"
+          "texto": "A 16 goles de 175"
         },
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 551,
+          "valor": 541,
           "meta": 600,
           "previo": 500,
-          "texto": "A 49 partidos de 600"
+          "texto": "A 59 partidos de 600"
         },
         {
           "id": "goles_sel",
@@ -294,18 +294,18 @@
         {
           "id": "goles_club",
           "titulo": "Goles con clubes",
-          "valor": 160,
+          "valor": 156,
           "meta": 175,
           "previo": 150,
-          "texto": "A 15 goles de 175"
+          "texto": "A 19 goles de 175"
         },
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 347,
+          "valor": 334,
           "meta": 350,
           "previo": 300,
-          "texto": "A 3 partidos de 350"
+          "texto": "A 16 partidos de 350"
         },
         {
           "id": "goles_sel",
@@ -405,18 +405,18 @@
         {
           "id": "goles_club",
           "titulo": "Goles con clubes",
-          "valor": 18,
+          "valor": 15,
           "meta": 20,
           "previo": 15,
-          "texto": "A 2 goles de 20"
+          "texto": "A 5 goles de 20"
         },
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 66,
+          "valor": 61,
           "meta": 75,
           "previo": 50,
-          "texto": "A 9 partidos de 75"
+          "texto": "A 14 partidos de 75"
         },
         {
           "id": "goles_sel",
@@ -516,18 +516,18 @@
         {
           "id": "goles_club",
           "titulo": "Goles con clubes",
-          "valor": 16,
-          "meta": 20,
-          "previo": 15,
-          "texto": "A 4 goles de 20"
+          "valor": 14,
+          "meta": 15,
+          "previo": 10,
+          "texto": "A 1 gol de 15"
         },
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 303,
-          "meta": 350,
-          "previo": 300,
-          "texto": "A 47 partidos de 350"
+          "valor": 293,
+          "meta": 300,
+          "previo": 250,
+          "texto": "A 7 partidos de 300"
         },
         {
           "id": "goles_sel",
@@ -550,7 +550,6 @@
       "avisados": [
         "goles_club:15",
         "goles_sel:1",
-        "partidos_club:300",
         "partidos_sel:50"
       ],
       "club": "Genoa",
@@ -857,10 +856,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 178,
+          "valor": 169,
           "meta": 200,
           "previo": 150,
-          "texto": "A 22 partidos de 200"
+          "texto": "A 31 partidos de 200"
         },
         {
           "id": "goles_sel",
@@ -1070,18 +1069,18 @@
         {
           "id": "goles_club",
           "titulo": "Goles con clubes",
-          "valor": 10,
-          "meta": 15,
-          "previo": 10,
-          "texto": "A 5 goles de 15"
+          "valor": 9,
+          "meta": 10,
+          "previo": 5,
+          "texto": "A 1 gol de 10"
         },
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 153,
-          "meta": 200,
-          "previo": 150,
-          "texto": "A 47 partidos de 200"
+          "valor": 144,
+          "meta": 150,
+          "previo": 100,
+          "texto": "A 6 partidos de 150"
         },
         {
           "id": "goles_sel",
@@ -1103,7 +1102,6 @@
       "logros": [],
       "avisados": [
         "goles_club:10",
-        "partidos_club:150",
         "partidos_sel:1"
       ],
       "club": "FC Copenhague",
@@ -1188,10 +1186,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 377,
+          "valor": 364,
           "meta": 400,
           "previo": 350,
-          "texto": "A 23 partidos de 400"
+          "texto": "A 36 partidos de 400"
         },
         {
           "id": "goles_sel",
@@ -1402,18 +1400,18 @@
         {
           "id": "goles_club",
           "titulo": "Goles con clubes",
-          "valor": 8,
+          "valor": 7,
           "meta": 10,
           "previo": 5,
-          "texto": "A 2 goles de 10"
+          "texto": "A 3 goles de 10"
         },
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 92,
+          "valor": 88,
           "meta": 100,
           "previo": 75,
-          "texto": "A 8 partidos de 100"
+          "texto": "A 12 partidos de 100"
         },
         {
           "id": "goles_sel",
@@ -1520,10 +1518,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 200,
-          "meta": 250,
-          "previo": 200,
-          "texto": "A 50 partidos de 250"
+          "valor": 196,
+          "meta": 200,
+          "previo": 150,
+          "texto": "A 4 partidos de 200"
         },
         {
           "id": "goles_sel",
@@ -1542,15 +1540,9 @@
           "texto": "A 7 partidos de 10"
         }
       ],
-      "logros": [
-        {
-          "texto": "200 partidos con clubes",
-          "fecha": "2026-10-20"
-        }
-      ],
+      "logros": [],
       "avisados": [
         "goles_club:5",
-        "partidos_club:200",
         "partidos_sel:1"
       ],
       "club": "Chivas",
@@ -1627,18 +1619,18 @@
         {
           "id": "goles_club",
           "titulo": "Goles con clubes",
-          "valor": 12,
+          "valor": 10,
           "meta": 15,
           "previo": 10,
-          "texto": "A 3 goles de 15"
+          "texto": "A 5 goles de 15"
         },
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 83,
+          "valor": 79,
           "meta": 100,
           "previo": 75,
-          "texto": "A 17 partidos de 100"
+          "texto": "A 21 partidos de 100"
         },
         {
           "id": "goles_sel",
