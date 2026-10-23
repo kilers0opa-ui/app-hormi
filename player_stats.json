@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T14:59:31.682502-06:00",
+  "updated_at": "2026-10-22T19:08:52.181128-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -376,7 +376,7 @@
                 "num": 32,
                 "pos": "M",
                 "g": "3:1",
-                "sale": "63'"
+                "sale": "62'"
               },
               {
                 "id": 141901,
@@ -451,7 +451,7 @@
                 "num": 15,
                 "pos": "M",
                 "g": null,
-                "entra": "63'"
+                "entra": "62'"
               },
               {
                 "id": 379985,
@@ -693,6 +693,11 @@
           "pases_pct": 100,
           "duelos": 3,
           "duelos_ganados": 1
+        },
+        "tarjeta": {
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/armando_partido.jpg?v=17c5a344",
+          "hasta": "2026-10-23T15:00:00-06:00",
+          "firma": "16d2eb806a"
         }
       }
     },
@@ -8267,6 +8272,11 @@
           "pases_pct": 76,
           "duelos": 3,
           "duelos_ganados": 1
+        },
+        "tarjeta": {
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/huescas_partido.jpg?v=27a6317d",
+          "hasta": "2026-10-23T12:45:00-06:00",
+          "firma": "2174bb4947"
         }
       }
     },
@@ -11555,6 +11565,11 @@
           "duelos_ganados": 3,
           "regates": 1,
           "regates_ok": 0
+        },
+        "tarjeta": {
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/fimbres_partido.jpg?v=6a1c55de",
+          "hasta": "2026-10-22T21:00:00-06:00",
+          "firma": "c40d5a20a0"
         }
       }
     },
