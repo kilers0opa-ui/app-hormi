@@ -140,8 +140,10 @@ def season_rows(player_id, season):
             # titularidades + entradas de cambio.
             played = games.get("appearences") or ((games.get("lineups") or 0) + (subs.get("in") or 0))
             if not played and (games.get("minutes") or 0) > 0:
-                played = 1   # jugó pero la API no dice cuántos: al menos uno (se avisa en el log)
-                log(f"    ⚠️  {league.get('name')} {season}: la API no trae partidos jugados (solo minutos)")
+                # La API trae minutos pero no cuántos partidos (pasa en la Liga MX): se cuentan partido por partido.
+                played = contar_partidos(player_id, team.get("id"), season, league.get("id"), games.get("minutes"))
+                log(f"    ⚠️  {league.get('name')} {season}: la API no trae partidos jugados (solo minutos) → "
+                    f"{played} contados partido por partido")
             g, a = goals.get("total") or 0, goals.get("assists") or 0
             if played == 0 and not g and not a:
                 continue  # ni jugó ni anotó con ese equipo/competición esa temporada
@@ -165,13 +167,67 @@ LEAGUE_NAME_FIX = {199: "Copa de Grecia", 235: "Liga Premier de Rusia", 237: "Co
 FINISHED = ("FT", "AET", "PEN")
 
 
-def _fixture_involvement(pid, fx):
+PJ_CACHE_FILE = Path("historial_pj_cache.json")
+_pj_cache = None
+_fp_cache, _fx_cache = {}, {}
+
+
+def _fixture_players(fid, tid):
+    """{player_id: {"min", "goals", "assists"}} de un partido (/fixtures/players). {} si la API no lo tiene."""
+    k = (fid, tid)
+    if k not in _fp_cache:
+        res = api("/fixtures/players", {"fixture": fid, "team": tid})
+        filas = {}
+        for t in res or []:
+            for pl in t.get("players") or []:
+                st = (pl.get("statistics") or [{}])[0]
+                gl = st.get("goals") or {}
+                filas[(pl.get("player") or {}).get("id")] = {
+                    "min": (st.get("games") or {}).get("minutes") or 0,
+                    "goals": gl.get("total") or 0, "assists": gl.get("assists") or 0}
+        _fp_cache[k] = filas if res is not None else None
+    return _fp_cache[k]
+
+
+def contar_partidos(pid, tid, season, league_id, minutos):
+    """Partidos jugados (con minutos) de un jugador en una competición, contados uno por uno. Se guarda en
+    historial_pj_cache.json y solo se recuenta cuando cambian los minutos que da la API (≈1 petición por partido)."""
+    global _pj_cache
+    if _pj_cache is None:
+        _pj_cache = load_json(PJ_CACHE_FILE, {})
+    k = f"{pid}:{tid}:{season}:{league_id}"
+    c = _pj_cache.get(k)
+    if c and c.get("min") == minutos:
+        return c["pj"]
+    if (tid, season) not in _fx_cache:
+        _fx_cache[(tid, season)] = api("/fixtures", {"team": tid, "season": season}) or []
+    n = 0
+    for fx in _fx_cache[(tid, season)]:
+        if (fx.get("league") or {}).get("id") != league_id or fx["fixture"]["status"]["short"] not in FINISHED:
+            continue
+        fp = _fixture_players(fx["fixture"]["id"], tid)
+        if fp and (fp.get(pid) or {}).get("min", 0) > 0:
+            n += 1
+    n = max(n, 1)
+    _pj_cache[k] = {"min": minutos, "pj": n}
+    save_json(PJ_CACHE_FILE, _pj_cache)
+    return n
+
+
+def _fixture_involvement(pid, fx, tid=None):
     """Goles/asistencias/minutos de un jugador en UN partido terminado,
     calculados con los eventos y alineaciones del partido. Para competiciones
     que /players no trae (p. ej. la Copa de Grecia): la API a veces no
     publica sus estadísticas por jugador, pero sí los eventos del partido.
     Devuelve None si el jugador no participó."""
     fid = fx["fixture"]["id"]
+    if tid:
+        fp = _fixture_players(fid, tid)
+        if fp:   # la API sí tiene las estadísticas por jugador de ese partido: son las exactas
+            f = fp.get(pid)
+            if not f or (f["min"] <= 0 and not f["goals"] and not f["assists"]):
+                return None
+            return {"goals": f["goals"], "assists": f["assists"], "minutes": f["min"]}
     events = api("/fixtures/events", {"fixture": fid}) or []
     lineups = api("/fixtures/lineups", {"fixture": fid}) or []
     starter = bench = False
@@ -202,6 +258,8 @@ def _fixture_involvement(pid, fx):
             red = minute; seen = True
     if not (starter or bench or seen):
         return None
+    if not starter and sub_in is None and not goals and not assists:
+        return None   # en la banca y nunca entró (antes contaba como 90 min jugados)
     start = sub_in if sub_in is not None else 0
     end = sub_out if sub_out is not None else total
     if red is not None:
@@ -232,7 +290,7 @@ def supplement_rows(player, season, rows):
             if (fx["fixture"]["status"]["short"] not in FINISHED or lg.get("id") in covered
                     or "riendl" in (lg.get("name") or "")):
                 continue
-            part = _fixture_involvement(pid, fx)
+            part = _fixture_involvement(pid, fx, tid)
             if not part:
                 continue
             side = fx["teams"]["home"] if fx["teams"]["home"]["id"] == tid else fx["teams"]["away"]

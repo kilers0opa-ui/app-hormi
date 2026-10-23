@@ -72,7 +72,7 @@ jobs:
         run: |
           git config user.name "app-hormi-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add player_stats.json
+          git add player_stats.json historial_pj_cache.json 2>/dev/null || git add player_stats.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: actualiza historial de estadisticas (Fase 3) [skip ci]"
             for i in 1 2 3; do
@@ -82,10 +82,10 @@ jobs:
                 # El motor de alertas también puede tocar player_stats.json (suma el partido recién
                 # terminado). Esta fase recalcula todo desde la API, así que su versión gana.
                 git rebase --abort
-                cp player_stats.json /tmp/player_stats.json
+                cp player_stats.json /tmp/player_stats.json; cp historial_pj_cache.json /tmp/ 2>/dev/null || true
                 git fetch origin main && git reset --hard origin/main
-                cp /tmp/player_stats.json player_stats.json
-                git add player_stats.json
+                cp /tmp/player_stats.json player_stats.json; cp /tmp/historial_pj_cache.json . 2>/dev/null || true
+                git add player_stats.json; git add historial_pj_cache.json 2>/dev/null || true
                 git commit -m "chore: actualiza historial de estadisticas (Fase 3) [skip ci]"
                 git push && break
               fi
