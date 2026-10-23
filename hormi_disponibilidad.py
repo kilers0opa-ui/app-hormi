@@ -179,7 +179,11 @@ def main():
     #    estado: lesion | suspension | duda | disponible ("disponible" quita una baja equivocada).
     #    Sin "hasta": vale hasta que el jugador vuelve a una alineación (titular o banca) o juega un partido
     #    posterior a cuando se puso; entonces se quita sola (y llega "✅ ya está disponible").
-    manual = ha.load_json(ha.Path("bajas_manual.json"), {}) or {}
+    try:
+        manual = ha.load_json(ha.Path("bajas_manual.json"), {}) or {}
+    except Exception as err:   # un error de captura (coma de más/de menos) no debe tumbar toda la revisión
+        ha.log(f"⚠️  bajas_manual.json tiene un error y se ignora ({err})")
+        manual = {}
     hoy = datetime.now(ha.LOCAL_TZ).date().isoformat()
     status = (ha.load_json(ha.Path("status.json"), {}) or {}).get("players") or {}
     cerradas = dict((prev or {}).get("manual_cerradas") or {})   # bajas a mano ya quitadas solas (no se reactivan)
