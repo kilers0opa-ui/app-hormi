@@ -222,9 +222,15 @@ def main():
             antes_h = {h["id"]: h["valor"] for h in (prev_players.get(key) or {}).get("hitos") or []}
             for h in entry["hitos"]:
                 marca = f"{h['id']}:{h['previo']}"
-                if h["previo"] > 0 and marca not in avisados and antes_h.get(h["id"], h["valor"]) < h["previo"] <= h["valor"]:
+                antes_v = antes_h.get(h["id"], h["valor"])
+                if h["previo"] > 0 and marca not in avisados and antes_v < h["previo"] <= h["valor"]:
                     avisados.add(marca)
                     entry["avisados"] = sorted(avisados)
+                    # Un salto grande no es un partido nuevo, es una corrección de datos (p. ej. la API empezó a
+                    # contar bien los partidos de la Liga MX: 12 → 45). Se marca como visto, sin push ni logro.
+                    if h["valor"] - antes_v > (4 if h["id"].startswith("goles") else 2):
+                        ha.log(f"  {key}: {h['id']} {antes_v} → {h['valor']} es corrección de datos, sin aviso")
+                        continue
                     unidad = "goles" if h["id"].startswith("goles") else "partidos"
                     donde = "con la Selección" if h["id"].endswith("_sel") else "con clubes"
                     txt = f"{h['previo']} {unidad} {donde}" if h["previo"] > 1 else f"su primer {'gol' if unidad == 'goles' else 'partido'} {donde}"

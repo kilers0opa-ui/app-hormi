@@ -145,8 +145,8 @@ def season_rows(player_id, season):
                 log(f"    ⚠️  {league.get('name')} {season}: la API no trae partidos jugados (solo minutos) → "
                     f"{played} contados partido por partido")
             g, a = goals.get("total") or 0, goals.get("assists") or 0
-            if played == 0 and not g and not a:
-                continue  # ni jugó ni anotó con ese equipo/competición esa temporada
+            if played == 0 and not (games.get("minutes") or 0):
+                continue  # no jugó con ese equipo/competición esa temporada (un gol/asistencia sin minutos es basura de la API)
             rows.append({
                 "league_id": league.get("id"),
                 "league_name": LEAGUE_NAME_FIX.get(league.get("id")) or league.get("name") or "?",
