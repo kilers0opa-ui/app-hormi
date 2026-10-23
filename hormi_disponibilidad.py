@@ -184,6 +184,13 @@ def main():
     except Exception as err:   # un error de captura (coma de más/de menos) no debe tumbar toda la revisión
         ha.log(f"⚠️  bajas_manual.json tiene un error y se ignora ({err})")
         manual = {}
+        if not args.sin_avisos:   # que se note: si no, parece que "no pasa nada"
+            try:
+                ha.FcmSender(config.get("fcm_project_id")).send(
+                    "info", "⚠️ bajas_manual.json tiene un error",
+                    "No se pudo leer (revisa comas y llaves). Las bajas a mano no se aplicaron.")
+            except Exception:
+                pass
     hoy = datetime.now(ha.LOCAL_TZ).date().isoformat()
     status = (ha.load_json(ha.Path("status.json"), {}) or {}).get("players") or {}
     cerradas = dict((prev or {}).get("manual_cerradas") or {})   # bajas a mano ya quitadas solas (no se reactivan)

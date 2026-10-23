@@ -6,6 +6,6 @@
     "motivo es opcional (p. ej. 'rodilla'). Al guardar este archivo en GitHub se actualiza la app en 1-2 minutos.",
     "Ejemplo: \"sandoval\": {\"estado\": \"lesion\", \"hasta\": \"2026-11-05\", \"motivo\": \"tobillo\"}",
     "El servidor escribe en cada línea un campo \"_estado\" (✅ activa / ⏹️ desactivada / ❌ no reconocida); no hace falta tocarlo."
-  ]
+  ],
   "mora": {"estado": "lesion", "hasta": "", "motivo": "tobillo"}
 }
