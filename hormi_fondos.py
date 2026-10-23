@@ -591,6 +591,13 @@ def main():
     # En "General" solo quedan los escudos y lo que el dueño sube a mano.
     general = {"categorias": [c for c in general.get("categorias", []) if c["id"] in ("escudos", "mios")]}
 
+    # Versión pública (Play Store): sin fotos de terceros. Solo pósters/fondos generados por nosotros y escudos.
+    # hormi_config.json → "fondos_solo_propios": true (false para volver a mostrar Commons/Flickr y mis_fondos/).
+    if config.get("fondos_solo_propios"):
+        for v in salida.values():
+            v["fotos"], v["mios"], v["contexto"] = [], [], []
+        general = {"categorias": [c for c in general.get("categorias", []) if c["id"] == "escudos"]}
+
     for key in list(salida):
         salida[key].setdefault("generados", [])
         salida[key].setdefault("fotos", [])
