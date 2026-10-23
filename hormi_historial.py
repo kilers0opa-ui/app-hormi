@@ -135,7 +135,13 @@ def season_rows(player_id, season):
             team = s.get("team") or {}
             games = s.get("games") or {}
             goals = s.get("goals") or {}
-            played = games.get("appearences") or 0
+            subs = s.get("substitutes") or {}
+            # A veces la API deja "appearences" vacío aunque trae minutos (p. ej. Liga MX): se calcula con
+            # titularidades + entradas de cambio.
+            played = games.get("appearences") or ((games.get("lineups") or 0) + (subs.get("in") or 0))
+            if not played and (games.get("minutes") or 0) > 0:
+                played = 1   # jugó pero la API no dice cuántos: al menos uno (se avisa en el log)
+                log(f"    ⚠️  {league.get('name')} {season}: la API no trae partidos jugados (solo minutos)")
             g, a = goals.get("total") or 0, goals.get("assists") or 0
             if played == 0 and not g and not a:
                 continue  # ni jugó ni anotó con ese equipo/competición esa temporada
@@ -284,6 +290,15 @@ def build_player_seasons(player, only_season=None):
             "(hace falta correr Fase 1 con una temporada que el plan ya cubra) — se salta.")
         return {}
     seasons_cfg = list(player.get("career_seasons") or [])
+    # Temporadas que la API tiene de este jugador (1 petición): así no se pierde ninguna aunque el config no la
+    # tenga (en la Liga MX el Clausura 2025 es la temporada 2024 de la API).
+    if not only_season:
+        api_seasons = api("/players/seasons", {"player": player["player_id"]})
+        if api_seasons:
+            nuevas = sorted({int(x) for x in api_seasons if str(x).isdigit()} - set(seasons_cfg))
+            if nuevas:
+                log(f"  + temporadas que faltaban en el config: {nuevas}")
+                seasons_cfg = sorted(set(seasons_cfg) | set(nuevas))
     # Años nuevos se agregan solos: si la lista llega a 2026 y hoy es 2027,
     # se consulta también 2027 (y así cada año), sin tocar el config a mano.
     # Los torneos de selecciones usan año calendario, así que sin esto se
