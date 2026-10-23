@@ -87,13 +87,16 @@ jobs:
         run: |
           git config user.name "app-hormi-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add fondos.json fondos
+          git add fondos.json fondos mis_fondos_cache.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: actualiza fondos de pantalla [skip ci]"
-            for i in 1 2 3; do
-              git pull --rebase origin main && git push && break
-              sleep 5
+            ok=""
+            for i in 1 2 3 4 5; do
+              if git pull --rebase origin main && git push; then ok=1; break; fi
+              sleep 8
             done
+            # si no se pudo subir, la corrida marca error (antes quedaba "success" sin subir nada)
+            [ -n "$ok" ] || { echo "No se pudieron subir los fondos"; exit 1; }
           else
             echo "Sin cambios que subir."
           fi
