@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T13:43:43.124224-06:00",
+  "updated_at": "2026-10-23T14:46:29.945090-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -228,44 +228,44 @@
         {
           "id": "gol",
           "titulo": "Partidos seguidos con gol",
-          "actual": 0,
-          "en_racha": false,
-          "puntos": [
-            false,
-            false,
-            false,
-            true,
-            true,
-            true,
-            false,
-            true
-          ]
-        },
-        {
-          "id": "ga",
-          "titulo": "Partidos seguidos con gol o asistencia",
-          "actual": 0,
-          "en_racha": false,
-          "puntos": [
-            false,
-            false,
-            false,
-            true,
-            true,
-            true,
-            false,
-            true
-          ]
-        },
-        {
-          "id": "titular",
-          "titulo": "Partidos seguidos de titular",
           "actual": 1,
           "en_racha": false,
           "puntos": [
             true,
             false,
+            false,
+            false,
             true,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "ga",
+          "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 1,
+          "en_racha": false,
+          "puntos": [
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 2,
+          "en_racha": false,
+          "puntos": [
+            true,
+            true,
+            false,
             true,
             true,
             true,
@@ -276,12 +276,12 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 1,
+          "actual": 2,
           "en_racha": false,
           "puntos": [
             true,
-            false,
             true,
+            false,
             true,
             true,
             true,
@@ -294,18 +294,18 @@
         {
           "id": "goles_club",
           "titulo": "Goles con clubes",
-          "valor": 156,
+          "valor": 157,
           "meta": 175,
           "previo": 150,
-          "texto": "A 19 goles de 175"
+          "texto": "A 18 goles de 175"
         },
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 334,
+          "valor": 335,
           "meta": 350,
           "previo": 300,
-          "texto": "A 16 partidos de 350"
+          "texto": "A 15 partidos de 350"
         },
         {
           "id": "goles_sel",
@@ -332,7 +332,7 @@
         "partidos_sel:25"
       ],
       "club": "Al-Qadsiah",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "mora": {
       "rachas": [
