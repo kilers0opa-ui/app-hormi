@@ -73,12 +73,12 @@ def main():
             continue
         fid = str(p["fixture_id"])
         viejo = (prev.get("partidos") or {}).get(fid)
-        if viejo and (ha._parse(viejo.get("hecho")) or ahora - timedelta(days=1)) > ahora - timedelta(hours=12):
+        if viejo and viejo.get("v") == 2 and (ha._parse(viejo.get("hecho")) or ahora - timedelta(days=1)) > ahora - timedelta(hours=12):
             item = viejo
         else:
             hid, aid = p.get("home_id"), p.get("away_id")
-            ult_h = ha.api("/fixtures", {"team": hid, "last": 5})
-            ult_a = ha.api("/fixtures", {"team": aid, "last": 5})
+            ult_h = ha.api("/fixtures", {"team": hid, "last": 8})
+            ult_a = ha.api("/fixtures", {"team": aid, "last": 8})
             h2h = ha.api("/fixtures/headtohead", {"h2h": f"{hid}-{aid}", "last": 5})
             if ult_h is None or ult_a is None:
                 if viejo:
@@ -98,7 +98,7 @@ def main():
                     "home_id": hid, "away_id": aid, "home_logo": p.get("home_logo"), "away_logo": p.get("away_logo"),
                     "league": p.get("league"), "tabla": tabla(standings, hid, aid),
                     "forma_home": forma(ult_h, hid), "forma_away": forma(ult_a, aid), "historial": hist[:5],
-                    "hecho": ahora.isoformat()}
+                    "hecho": ahora.isoformat(), "v": 2}
             nuevas += 1
         # cómo llega cada jugador (siempre con lo más reciente de rachas)
         item["jugadores"] = []
