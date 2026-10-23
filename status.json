@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T13:56:11.082733-06:00",
+  "updated_at": "2026-10-23T13:56:27.270602-06:00",
   "app_name": "Legión MX",
   "players": {
     "armando": {
@@ -11,7 +11,7 @@
           "emoji": "🏛️",
           "crest_url": "https://media.api-sports.io/football/teams/553.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.677273-06:00",
+          "checked_at": "2026-10-23T13:56:27.106800-06:00",
           "match_reference": "próximo",
           "match": "Olympiakos vs Kalamata",
           "home": "Olympiakos",
@@ -28,7 +28,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.677299-06:00"
+          "checked_at": "2026-10-23T13:56:27.106823-06:00"
         }
       }
     },
@@ -41,14 +41,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.677759-06:00"
+          "checked_at": "2026-10-23T13:56:27.107204-06:00"
         },
         "wolves": {
           "label": "Wolves",
           "emoji": "🐺",
           "crest_url": "https://media.api-sports.io/football/teams/39.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.677744-06:00",
+          "checked_at": "2026-10-23T13:56:27.107188-06:00",
           "match_reference": "próximo",
           "match": "Wolves vs Watford",
           "home": "Wolves",
@@ -71,426 +71,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.890017-06:00"
+          "checked_at": "2026-10-23T13:56:27.263966-06:00"
         },
         "al_qadsiah": {
           "label": "Al-Qadsiah",
           "emoji": "⚔️",
           "crest_url": "https://media.api-sports.io/football/teams/2933.png",
-          "checked_at": "2026-10-23T13:56:09.889734-06:00",
-          "match_reference": "hoy",
-          "status": "titular",
-          "match": "Al-Qadsiah vs Al-Hilal Saudi FC",
-          "league": "Liga Profesional Saudí",
-          "league_logo": "https://media.api-sports.io/football/leagues/307.png",
-          "league_tipo": "liga",
-          "eventos": [
-            {
-              "min": "21'",
-              "tipo": "gol",
-              "nombre": "Gabriel Martinelli",
-              "lado": "V",
-              "mio": false
-            },
-            {
-              "min": "31'",
-              "tipo": "gol",
-              "nombre": "Julián Quiñones",
-              "lado": "L",
-              "mio": true
-            },
-            {
-              "min": "36'",
-              "tipo": "amarilla",
-              "nombre": "Hassan Al-Tambakti",
-              "lado": "V",
-              "mio": false
-            },
-            {
-              "min": "76'",
-              "tipo": "amarilla",
-              "nombre": "Mohammed Abu Al-Shamat",
-              "lado": "L",
-              "mio": false
-            },
-            {
-              "min": "77'",
-              "tipo": "gol",
-              "nombre": "Rúben Neves",
-              "lado": "V",
-              "mio": false
-            },
-            {
-              "min": "84'",
-              "tipo": "gol",
-              "nombre": "Sergej Milinković-Savić",
-              "lado": "V",
-              "mio": false
-            },
-            {
-              "min": "86'",
-              "tipo": "amarilla",
-              "nombre": "Rúben Neves",
-              "lado": "V",
-              "mio": false
-            },
-            {
-              "min": "87'",
-              "tipo": "gol",
-              "nombre": "Mateo Retegui",
-              "lado": "L",
-              "mio": false
-            }
-          ],
-          "alineacion": {
-            "local": {
-              "nombre": "Al-Qadsiah",
-              "logo": "https://media.api-sports.io/football/teams/2933.png",
-              "formacion": "3-5-2",
-              "color": null,
-              "color_num": null,
-              "titulares": [
-                {
-                  "id": 2918,
-                  "n": "K. Casteels",
-                  "num": 1,
-                  "pos": "G",
-                  "g": "1:1"
-                },
-                {
-                  "id": 304467,
-                  "n": "Jehad Abdullatif Ahm",
-                  "num": 4,
-                  "pos": "D",
-                  "g": "2:3"
-                },
-                {
-                  "id": 51449,
-                  "n": "G. Álvarez",
-                  "num": 17,
-                  "pos": "D",
-                  "g": "2:2"
-                },
-                {
-                  "id": 2614,
-                  "n": "N. Nández",
-                  "num": 8,
-                  "pos": "D",
-                  "g": "2:1",
-                  "sale": "18'"
-                },
-                {
-                  "id": 403087,
-                  "n": "Mohammed Abu Al Shamat",
-                  "num": 2,
-                  "pos": "M",
-                  "g": "3:5",
-                  "amarilla": "76'",
-                  "sale": "90+2'"
-                },
-                {
-                  "id": 306380,
-                  "n": "Musab Al Juwayr",
-                  "num": 10,
-                  "pos": "M",
-                  "g": "3:4",
-                  "asist": 1,
-                  "sale": "83'"
-                },
-                {
-                  "id": 19,
-                  "n": "J. Weigl",
-                  "num": 5,
-                  "pos": "M",
-                  "g": "3:3"
-                },
-                {
-                  "id": 36902,
-                  "n": "T. Reijnders",
-                  "num": 14,
-                  "pos": "M",
-                  "g": "3:2",
-                  "asist": 1
-                },
-                {
-                  "id": 411800,
-                  "n": "C. Bonsu Baah",
-                  "num": 22,
-                  "pos": "M",
-                  "g": "3:1"
-                },
-                {
-                  "id": 6420,
-                  "n": "M. Retegui",
-                  "num": 32,
-                  "pos": "F",
-                  "g": "4:2",
-                  "goles": 1
-                },
-                {
-                  "id": 35532,
-                  "n": "J. Quiñones",
-                  "num": 33,
-                  "pos": "F",
-                  "g": "4:1",
-                  "goles": 1,
-                  "mio": true
-                }
-              ],
-              "suplentes": [
-                {
-                  "id": 44322,
-                  "n": "Abdullah Al Salem",
-                  "num": 9,
-                  "pos": "F",
-                  "g": null
-                },
-                {
-                  "id": 44331,
-                  "n": "Yasir Al Shahrani",
-                  "num": 12,
-                  "pos": "D",
-                  "g": null,
-                  "entra": "18'"
-                },
-                {
-                  "id": 636444,
-                  "n": "A. Al Siyahi",
-                  "num": 35,
-                  "pos": "M",
-                  "g": null
-                },
-                {
-                  "id": 531443,
-                  "n": "E. Houssa",
-                  "num": 27,
-                  "pos": "M",
-                  "g": null
-                },
-                {
-                  "id": null,
-                  "n": "Abdulaziz Tariq Al Qarawi",
-                  "num": 42,
-                  "pos": "D",
-                  "g": null
-                },
-                {
-                  "id": 328403,
-                  "n": "Mohammed Al Qahtani",
-                  "num": 15,
-                  "pos": "F",
-                  "g": null,
-                  "entra": "83'"
-                },
-                {
-                  "id": 44449,
-                  "n": "Ahmed Al Kassar",
-                  "num": 28,
-                  "pos": "G",
-                  "g": null
-                },
-                {
-                  "id": 635839,
-                  "n": "Abdulmalik Al-Jaber",
-                  "num": 18,
-                  "pos": "M",
-                  "g": null
-                },
-                {
-                  "id": 44374,
-                  "n": "Turki Al Ammar",
-                  "num": 7,
-                  "pos": "M",
-                  "g": null,
-                  "entra": "90+2'"
-                }
-              ]
-            },
-            "visita": {
-              "nombre": "Al-Hilal Saudi FC",
-              "logo": "https://media.api-sports.io/football/teams/2932.png",
-              "formacion": "4-3-3",
-              "color": null,
-              "color_num": null,
-              "titulares": [
-                {
-                  "id": 2701,
-                  "n": "Y. Bounou",
-                  "num": 37,
-                  "pos": "G",
-                  "g": "1:1"
-                },
-                {
-                  "id": 326984,
-                  "n": "Mohammed Mater Mohsin Mahzari",
-                  "num": 2,
-                  "pos": "D",
-                  "g": "2:4"
-                },
-                {
-                  "id": 44362,
-                  "n": "Hassan Tambakti",
-                  "num": 87,
-                  "pos": "D",
-                  "g": "2:3",
-                  "amarilla": "36'",
-                  "sale": "74'"
-                },
-                {
-                  "id": 318,
-                  "n": "K. Koulibaly",
-                  "num": 3,
-                  "pos": "D",
-                  "g": "2:2"
-                },
-                {
-                  "id": 47300,
-                  "n": "T. Hernández",
-                  "num": 19,
-                  "pos": "D",
-                  "g": "2:1",
-                  "sale": "88'"
-                },
-                {
-                  "id": 1856,
-                  "n": "S. Milinković-Savić",
-                  "num": 22,
-                  "pos": "M",
-                  "g": "3:3",
-                  "asist": 1,
-                  "goles": 1
-                },
-                {
-                  "id": 44339,
-                  "n": "Nasser Al Dawsari",
-                  "num": 6,
-                  "pos": "M",
-                  "g": "3:2",
-                  "sale": "88'"
-                },
-                {
-                  "id": 2676,
-                  "n": "Rúben Neves",
-                  "num": 8,
-                  "pos": "M",
-                  "g": "3:1",
-                  "goles": 1,
-                  "amarilla": "86'"
-                },
-                {
-                  "id": 127769,
-                  "n": "Gabriel Martinelli",
-                  "num": 7,
-                  "pos": "F",
-                  "g": "4:3",
-                  "goles": 1,
-                  "sale": "49'"
-                },
-                {
-                  "id": 19366,
-                  "n": "O. Watkins",
-                  "num": 11,
-                  "pos": "F",
-                  "g": "4:2",
-                  "asist": 1
-                },
-                {
-                  "id": 37724,
-                  "n": "C. Summerville",
-                  "num": 38,
-                  "pos": "F",
-                  "g": "4:1",
-                  "sale": "88'"
-                }
-              ],
-              "suplentes": [
-                {
-                  "id": 606188,
-                  "n": "S. Dahal",
-                  "num": 72,
-                  "pos": "F",
-                  "g": null
-                },
-                {
-                  "id": 44411,
-                  "n": "Mohammed Al Owais",
-                  "num": 33,
-                  "pos": "G",
-                  "g": null
-                },
-                {
-                  "id": 442343,
-                  "n": "Murad Al Hawsawi",
-                  "num": 18,
-                  "pos": "M",
-                  "g": null
-                },
-                {
-                  "id": 202381,
-                  "n": "Moteb Al Harbi",
-                  "num": 24,
-                  "pos": "D",
-                  "g": null,
-                  "entra": "88'"
-                },
-                {
-                  "id": 44370,
-                  "n": "Nawaf Al Habashi",
-                  "num": 77,
-                  "pos": "M",
-                  "g": null
-                },
-                {
-                  "id": 44340,
-                  "n": "Salem Al Dawsari",
-                  "num": 29,
-                  "pos": "M",
-                  "g": null,
-                  "entra": "88'"
-                },
-                {
-                  "id": 44349,
-                  "n": "Mohamed Kanno",
-                  "num": 28,
-                  "pos": "M",
-                  "g": null,
-                  "entra": "88'"
-                },
-                {
-                  "id": 44507,
-                  "n": "Ali Lajami",
-                  "num": 78,
-                  "pos": "D",
-                  "g": null,
-                  "entra": "74'"
-                },
-                {
-                  "id": 2639,
-                  "n": "Sultan Mandash",
-                  "num": 27,
-                  "pos": "F",
-                  "g": null,
-                  "entra": "49'",
-                  "asist": 1
-                }
-              ]
-            }
-          },
-          "score": "Al-Qadsiah 2-3 Al-Hilal Saudi FC",
-          "goals": 1,
-          "assists": 0,
-          "penales": null,
-          "summary": {
-            "minutes": 90,
-            "goals": 1,
-            "assists": 0
-          },
-          "kickoff": "2026-10-23T12:00:00-06:00",
-          "home": "Al-Qadsiah",
-          "away": "Al-Hilal Saudi FC",
-          "home_logo": "https://media.api-sports.io/football/teams/2933.png",
-          "away_logo": "https://media.api-sports.io/football/teams/2932.png",
-          "periodo": "FT"
+          "status": "sin_partido",
+          "checked_at": "2026-10-23T13:56:27.263936-06:00"
         }
       }
     },
@@ -503,14 +91,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.890415-06:00"
+          "checked_at": "2026-10-23T13:56:27.264363-06:00"
         },
         "tijuana": {
           "label": "Tijuana",
           "emoji": "🐕",
           "crest_url": "https://media.api-sports.io/football/teams/2280.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.890398-06:00",
+          "checked_at": "2026-10-23T13:56:27.264330-06:00",
           "match_reference": "próximo",
           "match": "Club Tijuana vs Santos Laguna",
           "home": "Club Tijuana",
@@ -533,7 +121,7 @@
           "emoji": "🦅",
           "crest_url": "https://media.api-sports.io/football/teams/495.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.890769-06:00",
+          "checked_at": "2026-10-23T13:56:27.264726-06:00",
           "match_reference": "próximo",
           "match": "Genoa vs Venezia",
           "home": "Genoa",
@@ -550,7 +138,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.890784-06:00"
+          "checked_at": "2026-10-23T13:56:27.264744-06:00"
         }
       }
     },
@@ -563,14 +151,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.891120-06:00"
+          "checked_at": "2026-10-23T13:56:27.265074-06:00"
         },
         "porto": {
           "label": "Porto",
           "emoji": "🐉",
           "crest_url": "https://media.api-sports.io/football/teams/212.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.891106-06:00",
+          "checked_at": "2026-10-23T13:56:27.265059-06:00",
           "match_reference": "próximo",
           "match": "GIL Vicente vs FC Porto",
           "home": "GIL Vicente",
@@ -593,14 +181,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.891468-06:00"
+          "checked_at": "2026-10-23T13:56:27.265403-06:00"
         },
         "az_alkmaar": {
           "label": "AZ Alkmaar",
           "emoji": "🧀",
           "crest_url": "https://media.api-sports.io/football/teams/201.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.891453-06:00",
+          "checked_at": "2026-10-23T13:56:27.265387-06:00",
           "match_reference": "próximo",
           "match": "AZ Alkmaar vs Twente",
           "home": "AZ Alkmaar",
@@ -623,14 +211,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.891802-06:00"
+          "checked_at": "2026-10-23T13:56:27.265761-06:00"
         },
         "atletico_madrid": {
           "label": "Atlético Madrid",
           "emoji": "🔴",
           "crest_url": "https://media.api-sports.io/football/teams/530.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.891787-06:00",
+          "checked_at": "2026-10-23T13:56:27.265745-06:00",
           "match_reference": "próximo",
           "match": "Atlético de Madrid vs Deportivo La Coruna",
           "home": "Atlético de Madrid",
@@ -653,14 +241,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.892136-06:00"
+          "checked_at": "2026-10-23T13:56:27.266093-06:00"
         },
         "betis": {
           "label": "Real Betis",
           "emoji": "🌴",
           "crest_url": "https://media.api-sports.io/football/teams/543.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.892122-06:00",
+          "checked_at": "2026-10-23T13:56:27.266079-06:00",
           "match_reference": "próximo",
           "match": "Celta Vigo vs Real Betis",
           "home": "Celta Vigo",
@@ -683,14 +271,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.892485-06:00"
+          "checked_at": "2026-10-23T13:56:27.266409-06:00"
         },
         "copenhague": {
           "label": "FC Copenhague",
           "emoji": "🦁",
           "crest_url": "https://media.api-sports.io/football/teams/400.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.892471-06:00",
+          "checked_at": "2026-10-23T13:56:27.266395-06:00",
           "match_reference": "próximo",
           "match": "FC Copenhague vs Odense",
           "home": "FC Copenhague",
@@ -713,7 +301,7 @@
           "emoji": "🚂",
           "crest_url": "https://media.api-sports.io/football/teams/597.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.892810-06:00",
+          "checked_at": "2026-10-23T13:56:27.266771-06:00",
           "match_reference": "próximo",
           "match": "FC Rostov vs Lokomotiv Moscú",
           "home": "FC Rostov",
@@ -730,7 +318,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.892824-06:00"
+          "checked_at": "2026-10-23T13:56:27.266786-06:00"
         }
       }
     },
@@ -743,7 +331,7 @@
           "emoji": "⚡",
           "crest_url": "https://media.api-sports.io/football/teams/1088.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.893130-06:00",
+          "checked_at": "2026-10-23T13:56:27.267099-06:00",
           "match_reference": "próximo",
           "match": "Akron vs Dinamo Moscú",
           "home": "Akron",
@@ -760,7 +348,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.893143-06:00"
+          "checked_at": "2026-10-23T13:56:27.267113-06:00"
         }
       }
     },
@@ -773,7 +361,7 @@
           "emoji": "⛰️",
           "crest_url": "https://media.api-sports.io/football/teams/2282.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.893466-06:00",
+          "checked_at": "2026-10-23T13:56:27.267479-06:00",
           "match_reference": "próximo",
           "match": "Monterrey vs Chivas",
           "home": "Monterrey",
@@ -790,7 +378,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.893480-06:00"
+          "checked_at": "2026-10-23T13:56:27.267496-06:00"
         }
       }
     },
@@ -803,7 +391,7 @@
           "emoji": "🐐",
           "crest_url": "https://media.api-sports.io/football/teams/2278.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.893790-06:00",
+          "checked_at": "2026-10-23T13:56:27.267801-06:00",
           "match_reference": "próximo",
           "match": "Monterrey vs Chivas",
           "home": "Monterrey",
@@ -820,7 +408,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.893803-06:00"
+          "checked_at": "2026-10-23T13:56:27.267815-06:00"
         }
       }
     },
@@ -833,7 +421,7 @@
           "emoji": "🐐",
           "crest_url": "https://media.api-sports.io/football/teams/2278.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.894110-06:00",
+          "checked_at": "2026-10-23T13:56:27.268111-06:00",
           "match_reference": "próximo",
           "match": "Monterrey vs Chivas",
           "home": "Monterrey",
@@ -850,7 +438,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.894124-06:00"
+          "checked_at": "2026-10-23T13:56:27.268124-06:00"
         }
       }
     },
@@ -863,7 +451,7 @@
           "emoji": "🐐",
           "crest_url": "https://media.api-sports.io/football/teams/2278.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.894450-06:00",
+          "checked_at": "2026-10-23T13:56:27.268418-06:00",
           "match_reference": "próximo",
           "match": "Monterrey vs Chivas",
           "home": "Monterrey",
@@ -880,7 +468,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-23T13:56:09.894465-06:00"
+          "checked_at": "2026-10-23T13:56:27.268432-06:00"
         }
       }
     }
