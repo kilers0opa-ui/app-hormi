@@ -187,12 +187,25 @@ def main():
     hoy = datetime.now(ha.LOCAL_TZ).date().isoformat()
     status = (ha.load_json(ha.Path("status.json"), {}) or {}).get("players") or {}
     cerradas = dict((prev or {}).get("manual_cerradas") or {})   # bajas a mano ya quitadas solas (no se reactivan)
+    nombres = {x["key"] for x in config["players"]}
+    notas = {}   # key -> texto que se escribe en "_estado" de su línea (para que se vea si está activa o no)
+    hoy_txt = datetime.now(ha.LOCAL_TZ).strftime("%d/%m %H:%M")
     for key, m in manual.items():
-        if key.startswith("_") or not isinstance(m, dict) or (m.get("hasta") or "9999") < hoy:
+        if key.startswith("_") or not isinstance(m, dict):
+            continue
+        if key not in nombres:
+            notas[key] = "❌ no reconocida: la clave del jugador no existe (revisa la lista de claves)"
             continue
         estado = (m.get("estado") or "").lower()
-        firma = json.dumps(m, sort_keys=True, ensure_ascii=False)
+        if estado not in ("lesion", "suspension", "duda", "disponible"):
+            notas[key] = "❌ no reconocida: estado debe ser lesion, suspension, duda o disponible"
+            continue
+        if (m.get("hasta") or "9999") < hoy:
+            notas[key] = f"⏹️ desactivada: ya pasó su fecha ({m.get('hasta')})"
+            continue
+        firma = json.dumps({k: v for k, v in m.items() if not k.startswith("_")}, sort_keys=True, ensure_ascii=False)
         if cerradas.get(key) == firma:
+            notas[key] = "⏹️ desactivada: volvió a jugar. Para activarla otra vez cambia el motivo o pon fecha"
             continue   # ya volvió a jugar; si la vuelves a necesitar, cambia algo de la línea (fecha o motivo)
         if estado != "disponible" and not m.get("hasta"):
             a_ = antes.get(key) or {}
@@ -206,25 +219,38 @@ def main():
                 ha.log(f"{key}: volvió a una alineación — la baja puesta a mano (sin fecha) se quita sola")
                 out["players"].pop(key, None)
                 cerradas[key] = firma
+                notas[key] = f"⏹️ desactivada: volvió a la alineación ({hoy_txt}). Para activarla otra vez cambia el motivo o pon fecha"
                 continue
         if estado == "disponible":
             out["players"].pop(key, None)
-            continue
-        if estado not in ("lesion", "suspension", "duda"):
+            notas[key] = "✅ activa: se muestra como disponible" + (f" hasta el {m['hasta']}" if m.get("hasta") else "")
             continue
         p = next((x for x in config["players"] if x["key"] == key), None)
         t = next((x for x in (p or {}).get("targets", []) if x.get("kind") != "seleccion" and x.get("team_id")), None)
         fx = (por_equipo.get(t["team_id"]) or (None, None))[0] if t else None
         if not fx:
+            notas[key] = "⏸️ en espera: su club no tiene próximo partido programado"
             continue
+        partido = f"{ha.nombre_es(fx['teams']['home']['name'])} vs {ha.nombre_es(fx['teams']['away']['name'])}"
         out["players"][key] = {
             "estado": estado, "motivo": m.get("motivo") or "", "manual": True, "hasta": m.get("hasta"),
             "desde": ((antes.get(key) or {}).get("desde") if (antes.get(key) or {}).get("manual") else None)
                      or datetime.now(ha.LOCAL_TZ).isoformat(),
-            "partido": f"{ha.nombre_es(fx['teams']['home']['name'])} vs {ha.nombre_es(fx['teams']['away']['name'])}",
+            "partido": partido,
             "fixture_id": fx["fixture"]["id"], "team_key": t["key"],
             "kickoff": datetime.fromtimestamp(fx["fixture"]["timestamp"], ha.LOCAL_TZ).isoformat(),
         }
+        notas[key] = (f"✅ activa: se pierde {partido}"
+                      + (f" · hasta el {m['hasta']}" if m.get("hasta") else " · se quita sola cuando vuelva a una alineación"))
+
+    # Escribe el estado en el mismo archivo (campo "_estado" de cada línea) solo si cambió algo.
+    cambio = False
+    for key, nota in notas.items():
+        if manual[key].get("_estado") != nota:
+            manual[key]["_estado"] = nota
+            cambio = True
+    if cambio:
+        ha.Path("bajas_manual.json").write_text(json.dumps(manual, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     out["manual_cerradas"] = {k: v for k, v in cerradas.items() if k in manual}
 
