@@ -1,133 +1,8 @@
 {
-  "updated_at": "2026-10-22T23:01:19.696876-06:00",
-  "desde": "2026-10-20",
-  "hasta": "2026-10-29",
+  "updated_at": "2026-10-23T00:29:25.858672-06:00",
+  "desde": "2026-10-21",
+  "hasta": "2026-10-30",
   "partidos": [
-    {
-      "fixture_id": 1603061,
-      "kickoff": "2026-10-20T09:10:00-06:00",
-      "home": "Al Taawon",
-      "away": "Al-Qadsiah",
-      "home_id": 2936,
-      "away_id": 2933,
-      "home_logo": "https://media.api-sports.io/football/teams/2936.png",
-      "away_logo": "https://media.api-sports.io/football/teams/2933.png",
-      "league": "Liga Profesional Saudí",
-      "league_logo": "https://media.api-sports.io/football/leagues/307.png",
-      "status": "FT",
-      "home_goals": 0,
-      "away_goals": 1,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "quinones",
-          "team_key": "al_qadsiah",
-          "lado": "V"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1563150,
-      "kickoff": "2026-10-20T12:45:00-06:00",
-      "home": "Wolves",
-      "away": "Portsmouth",
-      "home_id": 39,
-      "away_id": 1355,
-      "home_logo": "https://media.api-sports.io/football/teams/39.png",
-      "away_logo": "https://media.api-sports.io/football/teams/1355.png",
-      "league": "Championship",
-      "league_logo": "https://media.api-sports.io/football/leagues/40.png",
-      "status": "FT",
-      "home_goals": 1,
-      "away_goals": 1,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "raul",
-          "team_key": "wolves",
-          "lado": "L"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1635655,
-      "kickoff": "2026-10-20T13:00:00-06:00",
-      "home": "FC Porto",
-      "away": "PSV Eindhoven",
-      "home_id": 212,
-      "away_id": 197,
-      "home_logo": "https://media.api-sports.io/football/teams/212.png",
-      "away_logo": "https://media.api-sports.io/football/teams/197.png",
-      "league": "Champions League",
-      "league_logo": "https://media.api-sports.io/football/leagues/2.png",
-      "status": "FT",
-      "home_goals": 0,
-      "away_goals": 1,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "gimenez",
-          "team_key": "porto",
-          "lado": "L"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1635738,
-      "kickoff": "2026-10-20T13:00:00-06:00",
-      "home": "VfB Stuttgart",
-      "away": "Atlético de Madrid",
-      "home_id": 172,
-      "away_id": 530,
-      "home_logo": "https://media.api-sports.io/football/teams/172.png",
-      "away_logo": "https://media.api-sports.io/football/teams/530.png",
-      "league": "Champions League",
-      "league_logo": "https://media.api-sports.io/football/leagues/2.png",
-      "status": "FT",
-      "home_goals": 1,
-      "away_goals": 1,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "obed",
-          "team_key": "atletico_madrid",
-          "lado": "V"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1551004,
-      "kickoff": "2026-10-20T18:07:00-06:00",
-      "home": "Chivas",
-      "away": "Necaxa",
-      "home_id": 2278,
-      "away_id": 2288,
-      "home_logo": "https://media.api-sports.io/football/teams/2278.png",
-      "away_logo": "https://media.api-sports.io/football/teams/2288.png",
-      "league": "Liga MX",
-      "league_logo": "https://media.api-sports.io/football/leagues/262.png",
-      "status": "FT",
-      "home_goals": 1,
-      "away_goals": 0,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "campillo",
-          "team_key": "chivas",
-          "lado": "L"
-        },
-        {
-          "key": "camberos",
-          "team_key": "chivas",
-          "lado": "L"
-        },
-        {
-          "key": "sandoval",
-          "team_key": "chivas",
-          "lado": "L"
-        }
-      ]
-    },
     {
       "fixture_id": 1635636,
       "kickoff": "2026-10-21T13:00:00-06:00",
@@ -566,7 +441,7 @@
       "away_id": 405,
       "home_logo": "https://media.api-sports.io/football/teams/400.png",
       "away_logo": "https://media.api-sports.io/football/teams/405.png",
-      "league": "Superliga",
+      "league": "Superliga de Dinamarca",
       "league_logo": "https://media.api-sports.io/football/leagues/119.png",
       "status": "NS",
       "home_goals": null,
@@ -635,7 +510,7 @@
       "away_id": 553,
       "home_logo": "https://media.api-sports.io/football/teams/12403.png",
       "away_logo": "https://media.api-sports.io/football/teams/553.png",
-      "league": "Cup",
+      "league": "Copa de Grecia",
       "league_logo": "https://media.api-sports.io/football/leagues/199.png",
       "status": "NS",
       "home_goals": null,
@@ -704,7 +579,7 @@
       "away_id": 238,
       "home_logo": "https://media.api-sports.io/football/teams/212.png",
       "away_logo": "https://media.api-sports.io/football/teams/238.png",
-      "league": "Taça da Liga",
+      "league": "Copa de la Liga de Portugal",
       "league_logo": "https://media.api-sports.io/football/leagues/97.png",
       "status": "NS",
       "home_goals": null,
@@ -750,7 +625,7 @@
       "away_id": 400,
       "home_logo": "https://media.api-sports.io/football/teams/6004.png",
       "away_logo": "https://media.api-sports.io/football/teams/400.png",
-      "league": "DBU Pokalen",
+      "league": "Copa de Dinamarca",
       "league_logo": "https://media.api-sports.io/football/leagues/121.png",
       "status": "NS",
       "home_goals": null,
