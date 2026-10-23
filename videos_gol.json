@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T12:50:23.775829-06:00",
+  "updated_at": "2026-10-23T14:00:26.318727-06:00",
   "cuota": {
     "fecha": "2026-10-23",
     "busquedas": 1,
@@ -39,7 +39,8 @@
         "thumbnail": "https://i.ytimg.com/vi/OsvPxGSHCRY/hqdefault.jpg",
         "url": "https://www.youtube.com/watch?v=OsvPxGSHCRY",
         "embeddable": true
-      }
+      },
+      "verificado": "2026-10-23T20:00:26.193355+00:00"
     }
   },
   "partidos": {
@@ -301,6 +302,30 @@
           }
         ]
       }
+    },
+    "1603068": {
+      "fixture_id": 1603068,
+      "home": "Al-Qadsiah",
+      "away": "Al-Hilal Saudi FC",
+      "league": "Liga Profesional Saudí",
+      "score": "Al-Qadsiah 2-3 Al-Hilal Saudi FC",
+      "final_seen_at": "2026-10-23T19:56:09.829409+00:00",
+      "jugadores": {
+        "quinones": {
+          "team_key": "al_qadsiah",
+          "minutes": 90,
+          "goals": 1,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
