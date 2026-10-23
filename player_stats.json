@@ -163,10 +163,10 @@
             "team_id": 553,
             "team_name": "Olympiakos Piraeus",
             "team_logo": "https://media.api-sports.io/football/teams/553.png",
-            "played": 2,
-            "goals": 1,
+            "played": 3,
+            "goals": 2,
             "assists": 0,
-            "minutes": 85
+            "minutes": 113
           },
           {
             "league_id": 197,
@@ -699,7 +699,15 @@
           "hasta": "2026-10-23T15:00:00-06:00",
           "firma": "1bbc5e534b"
         }
-      }
+      },
+      "deltas_vivos": [
+        {
+          "fid": 1636308,
+          "season": "2026",
+          "league_id": 3,
+          "ts": "2026-10-23T00:51:58-06:00"
+        }
+      ]
     },
     "raul": {
       "seasons": {
@@ -7774,10 +7782,10 @@
             "team_id": 400,
             "team_name": "FC Copenhagen",
             "team_logo": "https://media.api-sports.io/football/teams/400.png",
-            "played": 1,
+            "played": 2,
             "goals": 0,
             "assists": 0,
-            "minutes": 20
+            "minutes": 82
           },
           {
             "league_id": 119,
@@ -8280,7 +8288,15 @@
           "hasta": "2026-10-23T12:45:00-06:00",
           "firma": "4dd0fb2b3a"
         }
-      }
+      },
+      "deltas_vivos": [
+        {
+          "fid": null,
+          "season": "2026",
+          "league_id": 848,
+          "ts": "2026-10-23T00:51:58-06:00"
+        }
+      ]
     },
     "mora": {
       "seasons": {
