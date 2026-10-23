@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T00:59:13.312458-06:00",
+  "updated_at": "2026-10-23T01:53:16.986176-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -548,8 +548,10 @@
       ],
       "logros": [],
       "avisados": [
+        "goles_club:10",
         "goles_club:15",
         "goles_sel:1",
+        "partidos_club:250",
         "partidos_sel:50"
       ],
       "club": "Genoa",
@@ -1102,6 +1104,8 @@
       "logros": [],
       "avisados": [
         "goles_club:10",
+        "goles_club:5",
+        "partidos_club:100",
         "partidos_sel:1"
       ],
       "club": "FC Copenhague",
@@ -1543,6 +1547,7 @@
       "logros": [],
       "avisados": [
         "goles_club:5",
+        "partidos_club:150",
         "partidos_sel:1"
       ],
       "club": "Chivas",
