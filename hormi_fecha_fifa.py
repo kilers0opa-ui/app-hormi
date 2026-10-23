@@ -48,8 +48,14 @@ def main():
            "partidos": list(previos.values())}
 
     if activa or not (misma and terminados):
-        fxs = ha.api("/fixtures", {"team": MEXICO, "from": desde.isoformat(), "to": hasta.isoformat(),
-                                   "timezone": "America/Mexico_City"})
+        fxs = []
+        for season in sorted({desde.year, hasta.year}):   # selecciones: temporada = año calendario
+            res = ha.api("/fixtures", {"team": MEXICO, "season": season, "from": desde.isoformat(),
+                                       "to": hasta.isoformat(), "timezone": "America/Mexico_City"})
+            if res is None:
+                fxs = None
+                break
+            fxs += res
         if fxs is None:
             ha.log("fecha FIFA: la API no respondió; se conserva lo anterior")
             if prev:
