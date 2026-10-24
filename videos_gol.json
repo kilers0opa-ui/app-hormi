@@ -1,28 +1,11 @@
 {
-  "updated_at": "2026-10-23T16:45:34.772431-06:00",
+  "updated_at": "2026-10-24T15:00:27.193740-06:00",
   "cuota": {
-    "fecha": "2026-10-23",
-    "busquedas": 5,
-    "busquedas_resumen": 3
+    "fecha": "2026-10-24",
+    "busquedas": 0,
+    "busquedas_resumen": 0
   },
   "goles": {
-    "armando:olympiacos:1636308:goal:291713:1:gol": {
-      "player_key": "armando",
-      "team_key": "olympiacos",
-      "goal_seen_at": "2026-10-22T20:35:40.272859+00:00",
-      "status": "omitido",
-      "intentos": 1,
-      "fallos": 0,
-      "ultimo_intento": null,
-      "video": null,
-      "verificado": "2026-10-23T18:35:26.324546+00:00",
-      "descartados": [
-        "qHaNadNUd_U",
-        "o29kE53tyJg"
-      ],
-      "silencioso": true,
-      "motivo": "caducado"
-    },
     "quinones:al_qadsiah:1603068:goal:35532:1:gol": {
       "player_key": "quinones",
       "team_key": "al_qadsiah",
@@ -48,216 +31,6 @@
     }
   },
   "partidos": {
-    "1551007": {
-      "fixture_id": 1551007,
-      "home": "Puebla",
-      "away": "Monterrey",
-      "league": "Liga MX",
-      "score": "Puebla 1-4 Monterrey",
-      "final_seen_at": "2026-10-22T02:57:25.041458+00:00",
-      "jugadores": {
-        "fimbres": {
-          "team_key": "monterrey",
-          "minutes": 32,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "resuelto",
-      "intentos": 0,
-      "fallos": 0,
-      "ultimo_intento": null,
-      "video": {
-        "id": "FBrVGWh74v0",
-        "title": "Puebla 1-4 Monterrey | ¡RAYADOS GANA, GUSTA y GOLEA a domicilio a PUEBLA que NO levanta! | RESUMEN",
-        "channel": "ESPN MX",
-        "published_at": "2026-10-22T03:28:12Z",
-        "thumbnail": "https://i.ytimg.com/vi/FBrVGWh74v0/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=FBrVGWh74v0",
-        "embeddable": true
-      },
-      "noticias_pasadas": 5,
-      "ultima_noticia": "2026-10-22T04:00:25.854890+00:00",
-      "noticias": {
-        "fimbres": [
-          {
-            "title": "¡GOOOL! Iker Fimbres anota para Monterrey.",
-            "source": "TUDN",
-            "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQMUZrNVR4TXF1VGlqaS1jN3V5X2E5ZlB5THBvVG95QnJXa3Q1Q3ZwREdsT2stSWJPTHNXUmF3cnZpTjhwem5ybGdLT1F5Uy1JTmtmYndpeU9KVjdPOEFxaFAtSWhtQ2pXcUNiSjBDZHhCcTliUVNFZk1lWnp4aERjMGFRN2Zac0FBRVlr?oc=5",
-            "published_at": "2026-10-20T03:59:00Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "¡TIRO ATAJADO! disparo por Iker Fimbres.",
-            "source": "TUDN",
-            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxObXBBZ2ZjS3ZzYTZCc2g3VjFpd3ZRRXkweFY2X1BHQkc4c1B5TWU1OEMtS2t2WWgyU3o1SERaM180cWFxVnVxektQVlMzaDYwOFlUcU9FSzZOYnFlelZRaHFyS0JpeVJCa0pzVlgzYTBHT2pjcVJYVmd1c04tRWtnSlgxMHFQMnNoUEE?oc=5",
-            "published_at": "2026-10-19T05:41:44Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Íker Fimbres pierde minutos con Rayados bajo el mando de Almeyda",
-            "source": "Récord",
-            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQV1RzdmNiT0I4MEdYaE91clpMSlJPYUpTdFZ2dk40eVJjZTRXeFdfOTJhTjdsUWN6Z3ZXc0s2Z1Z0QllLbW9JMDE5cWF5Qjk2SHNyRHJ6R1g1RWRwNXZuMEpvb05XaUVYOWVIcmQ2c2x3R2liX2RkTGs2U0JLZS12WUNpOXF3NjFOQWxQTXhyMGR0b05Dc2FLVzRJSE9lTC1ONVVUQ054ZzU5Um8xZVZ0NE5PYUxJOGhoVjFJ?oc=5",
-            "published_at": "2026-09-23T07:00:00Z",
-            "edicion": "mx"
-          }
-        ]
-      }
-    },
-    "1636215": {
-      "fixture_id": 1636215,
-      "home": "Ararat-Armenia",
-      "away": "AZ Alkmaar",
-      "league": "Europa League",
-      "score": "Ararat-Armenia 0-4 AZ Alkmaar",
-      "final_seen_at": "2026-10-22T18:36:38.287030+00:00",
-      "jugadores": {
-        "chavez": {
-          "team_key": "az_alkmaar",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "omitido",
-      "intentos": 0,
-      "fallos": 0,
-      "ultimo_intento": null,
-      "video": null,
-      "noticias_pasadas": 5,
-      "ultima_noticia": "2026-10-22T20:40:25.992321+00:00",
-      "noticias": {
-        "chavez": [
-          {
-            "title": "Golea AZ Alkmaar sin Mateo Chávez",
-            "source": "El Heraldo de México",
-            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQV1VLOEp0RDBBRl9XSnhyS2xhODEzNWNlUFctVEVfM0xfZjdRa2xXLVhlLWJiR2k3dWt6ZDBYQXFpVFd0TUFVQmxtTi1hLUI2S25GUlFJWjJaMi1nVUpCNE1sQzNkUEhWRV9PODNBWURheWdZSktMSlRSc3RJalZUbWlCc3E2dGxaUW9wSVpGdE8wVVdBRG1weHRoNW0?oc=5",
-            "published_at": "2026-10-22T20:10:00Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Los de Mateo Chávez ganan, gustan y golean en Europa League: Resumen Ararat Armenia vs AZ Alkmaar",
-            "source": "MARCA",
-            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOVnphSTFCSk16LW00Nzh3U1ZncFFSaDIzTEtwT2R3bEJWSmlYVWNWWVR2SU5FVXJSYXJxRzdXbE9xVkVWSUFwaU9hNDNzZFZQRGtmQmxNa0diUTBPUWMzOWpldmkzS3JBN3pGWTc4RmVCS0ZHV3VRSzhvUHRKOExmTFZFX0t0Tk9JNk14UjVRUHlrVkNWWDZUSHRWQkJUVTQybnFsclhFMl9GVmVMY1BRb1R3R29DWGtLcVVXbmV1OVdRd3FPRjhwLWxEcFRKYlZSNGhybDhfbFJaVXR4ZHpyTGNDbWlmSkRnUUFr?oc=5",
-            "published_at": "2026-10-22T18:36:58Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Hormiga González y Mateo Chávez en la Europa League: ¿a qué hora juegan y dónde verlos?",
-            "source": "Soy Futbol",
-            "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOLWpxcUZKWFR5UzlKY3VuQ0QwbW95em5IeUE2M2J6cFpTc3dhT2ZSYXdJV2RlZzhjWFVPMWwzZkVnR2QtS1JlbDZESkZETDloZjExMWluLWVIX1RtdXYxYkZ5ZDB6cDZvZFpCcTVQeXNQQmVObmljQ2hObHBVLUJUSmcwMktxcGptTWlESVd5cmMyRHRqOFo2X0xPcmE1bE9UX0ZCQUFLZFhaTmZNb3JmMHpwUnFBNkFKMU9hRG1VOXRDM2pFTGhER3Y4TXBKTHFYWGNRRtIB2gFBVV95cUxNbG9iZDJWQ3g1Smc4RlctTGFWQ1JGaGdGM01tUEFMRUdIb1hfTGJkWF82VmlqZWhudnNtMUl1UlpPbGVlVWhuNlV3dGxsaWJnMkpoV3JhTmFjeFNFTlRXaXNnMElxWjdBck83Wlhlck1fRmZhS0V6TEhNbmIyR1k1UENqY09laWEySFp1V0hCZS0ybTFqQTR4Nl9VOGpRMDRhT1V6TmJvc0pBN09lQ3BkbDBIajhiaXZRc0YyYjVoaU41eWVJUTNwWkgxTmhDemZ3dXlCd3FOTG44dw?oc=5",
-            "published_at": "2026-10-22T16:04:10Z",
-            "edicion": "mx"
-          }
-        ]
-      },
-      "motivo": "ningún jugador tuvo minutos"
-    },
-    "1636397": {
-      "fixture_id": 1636397,
-      "home": "FK Crvena Zvezda",
-      "away": "FC Copenhague",
-      "league": "Conference League",
-      "score": "FK Crvena Zvezda 2-2 FC Copenhague",
-      "final_seen_at": "2026-10-22T18:41:58.308056+00:00",
-      "jugadores": {
-        "huescas": {
-          "team_key": "copenhague",
-          "minutes": 62,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "omitido",
-      "intentos": 4,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-22T21:42:59.665422+00:00",
-      "video": null,
-      "noticias_pasadas": 5,
-      "ultima_noticia": "2026-10-22T20:45:23.244362+00:00",
-      "noticias": {
-        "huescas": [
-          {
-            "title": "Dos golazos complican a Rodrigo Huescas y Copenhague en Conference League",
-            "source": "MARCA",
-            "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNcWxVQVpiMlA0dGhpSG5kNmVNdEJQc1lpUUNjLTdCd2E1ZkRlRGcyWm9WaXpxSGpkS19fOUREOFFEVWRINEhHMS1TTXhlNlhHN0I5QnAyOHdwYy01eHdOX1ZkanNhRG5idVdmaHNrSVNfc0ZOc1N5Z0x0MEpuanhUNGpEOHFhM2tCQ2k4Z253aUsyLW1hakVwT1V3aTQ5dm5LZWdwb1VDNEktVjFldXRHRnYyMnFqVGM1QS1TYnZ4UF9Xb01SV1IxdHBJTVJIa3haeVZ6edIB1AFBVV95cUxPUXdxMlc2NkhBaGJvLTRPWUxDc29oSDFJd3MwQ196LTBsWUlGc1FxeFBTOUswZUhYRXlDdUdkVVh5RklVUnNCc0FFcmdjN054bEo4cFBFbFlCNndXUVMwSUpiRDhmWlE4V1Jpc2hNTkxFZkctUndhN0NINHRROWtlMGx4RVZYbG1PNGZiQU8zbXoxcGUwcDNEaEFVaU5NWGNFWWFmb2RfbWRjMWxLdUo4M3ExVUVweTRSd3ZuaVFxVlpKWldJYXNUUnNqT0dBYlpVTnUyTA?oc=5",
-            "published_at": "2026-10-22T20:00:20Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Se lesionó, se perdió el Mundial, pero luchó ante la adversidad: así ha sido la historia de Rodrigo Huescas",
-            "source": "Récord",
-            "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQUm9tMFJGYjZ1cVBYTlFkU3RkemNkVUNNSEtmRWxLb0RhMEdMOWZnQ0x5UWZ2cEx6SldTYkdNcFVOemJKRXJIOVk1Yi1nM3VpdDhuSFIwbWZqaGpvZkRfNFF5bU5TVjY2RGdfZEctSmE4TDBuRkh4amljeTQwNzlNN2xpa0VmU3FqUm13NXdQUkpObnVxOGRORnN3TU1vUVpiMXRwMkY3X2c0M3Z2TlJBSzg3RkIxdXFvZ2p2U1hVVXk1am9SZXpwb2prSHFhQ1FU?oc=5",
-            "published_at": "2026-10-22T19:29:00Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Rodrigo Huescas vuelve a la titularidad con el Copenhague en la Conference League 2026",
-            "source": "Claro Sports",
-            "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNR3Rrb0VqZGxfRzllTS0xamtjZ3hDMGtELXRNRXpYZVJxWmhlaVpWMUNiT1c5X3VHemlmVW5Td1hIaEhOdWhqOGU2d3dzMDdZdEROY1F0ZmIwUTBpNE91LTFIWTZUaDdUdzVQREg4MHBSdVdOdUpWS3p5QzhuMW5xcnRxTjlRQmJpb0M0dWpIYkV4V0NUM2NDMEdrd3VRUzl6VGVOUlM3N2ZWQW53MkJ4bTlPVlRFb2MzOGZ0RGZTVnFFWC1uTkctaVRiMV83MHc4LU9qTHVyWk82VDZra2c?oc=5",
-            "published_at": "2026-10-22T18:42:53Z",
-            "edicion": "mx"
-          }
-        ]
-      },
-      "motivo": "caducado"
-    },
-    "1636308": {
-      "fixture_id": 1636308,
-      "home": "Olympiakos",
-      "away": "Sparta Praha",
-      "league": "Europa League",
-      "score": "Olympiakos 1-0 Sparta Praha",
-      "final_seen_at": "2026-10-22T20:50:20.036028+00:00",
-      "jugadores": {
-        "armando": {
-          "team_key": "olympiacos",
-          "minutes": 28,
-          "goals": 1,
-          "assists": 0
-        }
-      },
-      "status": "resuelto",
-      "intentos": 0,
-      "fallos": 0,
-      "ultimo_intento": null,
-      "video": {
-        "id": "9UL3dYoPObI",
-        "title": "HORMIGA GONZÁLEZ le da el TRIUNFO a su equipo | Olympiacos 1-0 Sparta Praha |  | UEL | Resumen",
-        "channel": "ESPN MX",
-        "published_at": "2026-10-22T21:13:46Z",
-        "thumbnail": "https://i.ytimg.com/vi/9UL3dYoPObI/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=9UL3dYoPObI",
-        "embeddable": true
-      },
-      "noticias_pasadas": 5,
-      "ultima_noticia": "2026-10-22T21:50:23.393054+00:00",
-      "noticias": {
-        "armando": [
-          {
-            "title": "Hormiga González da triunfo al Olympiacos, pero UEFA le quita el gol",
-            "source": "Grupo Animal",
-            "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNc1pYanY2dG5JRVFCOG5FUXJtZFFYNk5TX1lSVl9TckM1cjVpUDlvTGpfTVNsTGlaT1Z6RmU5a3BibUpTaEhldjhfU01aaWVFRXJ2R25reVlRRng5UFNnc0dwSEFiVGZ5YVgxUDNxOGFzSk5ZWTdwS3hKRTg0TVJGUS1QTnVuTktXMi1yY29LdTc1Yk1reUlYQWxsbWpaZk1R?oc=5",
-            "published_at": "2026-10-22T21:45:43Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "¡Callando bocas! Armando González vuelve a anotar y le da el gol del triunfo al Olympiacos en Europa League",
-            "source": "Rebaño Pasión",
-            "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNQ3NDNHdtVk11Tm9SOHI4YVJyY2NDUmhHblptcjBmNDV3Z1dfanhRSFY4LVVsYWd0eDF6Rm5IUmtJMTRhckYtWlp6cW5MZExyTjI5anVDNWdvMzZhMW9FUXMwU21lMFR5Nk5kZ0VrdU5yNFFMTHp5OGtkc0xBTFk4OTNRdTNuSEQ3RDdJRkJET01kakRVcGtDNUo2MDJwcXhzQ0ZfMDFSMjNCSm5UNWZWSURMb0k1SHFucFlWSmNnZUdVZ0tOWWI2Tmt3Y25DYXFSTnprMnhvZWxuUzU2WGNETtIB4AFBVV95cUxNQ3NDNHdtVk11Tm9SOHI4YVJyY2NDUmhHblptcjBmNDV3Z1dfanhRSFY4LVVsYWd0eDF6Rm5IUmtJMTRhckYtWlp6cW5MZExyTjI5anVDNWdvMzZhMW9FUXMwU21lMFR5Nk5kZ0VrdU5yNFFMTHp5OGtkc0xBTFk4OTNRdTNuSEQ3RDdJRkJET01kakRVcGtDNUo2MDJwcXhzQ0ZfMDFSMjNCSm5UNWZWSURMb0k1SHFucFlWSmNnZUdVZ0tOWWI2Tmt3Y25DYXFSTnprMnhvZWxuUzU2WGNETg?oc=5",
-            "published_at": "2026-10-22T21:32:04Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "La Hormiga González provoca el gol del triunfo del Olympiacos en Europa League",
-            "source": "emsavalles.com",
-            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNaFk1STBWZ3puU3M3b2V5QnRJSEZSdUREbV9nZS1iWG1pVmlHSFkyN1pNcFVMNnRzOHdfc21Ja1ZEMFNpc3E5amdGbzJMWWJfZzRGeThOMVFhdXlLRzBoMGNBTnVWOUZuS2s2VlJSMm5XTk0wNXdxeDVNZ3NqOWFhd2c4ekx2MzF3V2dmc1R4c3FYR3hXUHp2MEZ3dUJPX0hHLWhTRUhZVnNQUGlpZFRWWlRsQQ?oc=5",
-            "published_at": "2026-10-22T21:29:00Z",
-            "edicion": "mx"
-          }
-        ]
-      }
-    },
     "1603068": {
       "fixture_id": 1603068,
       "home": "Al-Qadsiah",
@@ -273,12 +46,12 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 3,
       "fallos": 0,
       "ultimo_intento": "2026-10-23T22:00:26.819342+00:00",
       "video": null,
-      "noticias_pasadas": 3,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-23T22:00:26.819342+00:00",
       "noticias": {
         "quinones": [
@@ -304,7 +77,32 @@
             "edicion": "mx"
           }
         ]
-      }
+      },
+      "motivo": "caducado"
+    },
+    "1570425": {
+      "fixture_id": 1570425,
+      "home": "Atlético de Madrid",
+      "away": "Deportivo La Coruna",
+      "league": "La Liga",
+      "score": "Atlético de Madrid 1-0 Deportivo La Coruna",
+      "final_seen_at": "2026-10-24T20:56:07.836695+00:00",
+      "jugadores": {
+        "obed": {
+          "team_key": "atletico_madrid",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
