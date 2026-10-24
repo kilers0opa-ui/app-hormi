@@ -1,182 +1,6 @@
 {
-  "updated_at": "2026-10-23T23:00:16.551425-06:00",
+  "updated_at": "2026-10-24T05:36:11.128480-06:00",
   "partidos": {
-    "1561420": {
-      "fixture_id": 1561420,
-      "kickoff": "2026-10-24T03:45:00-06:00",
-      "home": "Akron",
-      "away": "Dinamo Moscú",
-      "home_id": 6786,
-      "away_id": 1088,
-      "home_logo": "https://media.api-sports.io/football/teams/6786.png",
-      "away_logo": "https://media.api-sports.io/football/teams/1088.png",
-      "league": "Liga Premier de Rusia",
-      "tabla": {
-        "liga": "Liga Premier de Rusia",
-        "home": {
-          "rank": 14,
-          "pts": 9,
-          "pj": 11
-        },
-        "away": {
-          "rank": 1,
-          "pts": 25,
-          "pj": 11
-        }
-      },
-      "forma_home": [
-        {
-          "r": "G",
-          "rival": "Akhmat",
-          "marcador": "2-0",
-          "fid": 1561395,
-          "local": true
-        },
-        {
-          "r": "P",
-          "rival": "Krylia Sovetov",
-          "marcador": "0-4",
-          "fid": 1644438,
-          "local": false
-        },
-        {
-          "r": "P",
-          "rival": "FC Rostov",
-          "marcador": "0-1",
-          "fid": 1561406,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Lokomotiv Moscú",
-          "marcador": "1-1",
-          "fid": 1563664,
-          "local": false
-        },
-        {
-          "r": "E",
-          "rival": "Dinamo Makhachkala",
-          "marcador": "1-1",
-          "fid": 1561412,
-          "local": false
-        }
-      ],
-      "forma_away": [
-        {
-          "r": "G",
-          "rival": "FC Rostov",
-          "marcador": "3-0",
-          "fid": 1561398,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Rodina Moskva",
-          "marcador": "3-2",
-          "fid": 1642961,
-          "local": true
-        },
-        {
-          "r": "G",
-          "rival": "Rubin",
-          "marcador": "1-0",
-          "fid": 1561410,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Akhmat",
-          "marcador": "2-1",
-          "fid": 1563659,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "CSKA Moscú",
-          "marcador": "3-1",
-          "fid": 1561413,
-          "local": true
-        }
-      ],
-      "historial": [
-        {
-          "fecha": "2026-07-18",
-          "home": "Akron",
-          "away": "Dinamo Moscú",
-          "home_id": 6786,
-          "marcador": "0-1",
-          "ganador": 1088
-        },
-        {
-          "fecha": "2026-04-13",
-          "home": "Akron",
-          "away": "Dinamo Moscú",
-          "home_id": 6786,
-          "marcador": "2-3",
-          "ganador": 1088
-        },
-        {
-          "fecha": "2025-11-08",
-          "home": "Dinamo Moscú",
-          "away": "Akron",
-          "home_id": 1088,
-          "marcador": "1-2",
-          "ganador": 6786
-        },
-        {
-          "fecha": "2025-05-18",
-          "home": "Dinamo Moscú",
-          "away": "Akron",
-          "home_id": 1088,
-          "marcador": "2-1",
-          "ganador": 1088
-        },
-        {
-          "fecha": "2024-08-03",
-          "home": "Akron",
-          "away": "Dinamo Moscú",
-          "home_id": 6786,
-          "marcador": "0-2",
-          "ganador": 1088
-        }
-      ],
-      "hecho": "2026-10-23T13:14:36.305109-06:00",
-      "v": 2,
-      "jugadores": [
-        {
-          "key": "luis_chavez",
-          "lado": "V",
-          "rachas": {},
-          "minutos": [
-            {
-              "rival": "FC Rostov",
-              "min": 69,
-              "goles": 0
-            },
-            {
-              "rival": "Rodina Moskva",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "Rubin",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "Akhmat",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "CSKA Moscú",
-              "min": 0,
-              "goles": 0
-            }
-          ]
-        }
-      ]
-    },
     "1563226": {
       "fixture_id": 1563226,
       "kickoff": "2026-10-24T08:00:00-06:00",
@@ -316,7 +140,7 @@
           "ganador": 39
         }
       ],
-      "hecho": "2026-10-23T17:05:28.829338-06:00",
+      "hecho": "2026-10-24T05:36:11.128480-06:00",
       "v": 2,
       "jugadores": [
         {
@@ -844,7 +668,7 @@
           "ganador": 2278
         }
       ],
-      "hecho": "2026-10-23T15:08:20.223800-06:00",
+      "hecho": "2026-10-24T05:36:11.128480-06:00",
       "v": 2,
       "jugadores": [
         {
@@ -1157,10 +981,518 @@
           ]
         }
       ]
+    },
+    "1593343": {
+      "fixture_id": 1593343,
+      "kickoff": "2026-10-25T08:00:00-06:00",
+      "home": "Olympiakos",
+      "away": "Kalamata",
+      "home_id": 553,
+      "away_id": 5046,
+      "home_logo": "https://media.api-sports.io/football/teams/553.png",
+      "away_logo": "https://media.api-sports.io/football/teams/5046.png",
+      "league": "Superliga de Grecia",
+      "tabla": {
+        "liga": "Super League 1",
+        "home": {
+          "rank": 2,
+          "pts": 16,
+          "pj": 7
+        },
+        "away": {
+          "rank": 6,
+          "pts": 10,
+          "pj": 7
+        }
+      },
+      "forma_home": [
+        {
+          "r": "G",
+          "rival": "Levadiakos",
+          "marcador": "1-0",
+          "fid": 1593320,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Panathinaikos",
+          "marcador": "1-0",
+          "fid": 1593329,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Marseille",
+          "marcador": "1-0",
+          "fid": 1636295,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Panetolikos",
+          "marcador": "2-0",
+          "fid": 1593336,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Sparta Praha",
+          "marcador": "1-0",
+          "fid": 1636308,
+          "local": true
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "G",
+          "rival": "Volos NFC",
+          "marcador": "3-1",
+          "fid": 1593312,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "Larisa",
+          "marcador": "1-1",
+          "fid": 1635501,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Panathinaikos",
+          "marcador": "0-1",
+          "fid": 1593319,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "PAOK",
+          "marcador": "3-1",
+          "fid": 1593330,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "OFI",
+          "marcador": "4-3",
+          "fid": 1593332,
+          "local": true
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2020-01-15",
+          "home": "Olympiakos",
+          "away": "Kalamata",
+          "home_id": 553,
+          "marcador": "4-1",
+          "ganador": 553
+        },
+        {
+          "fecha": "2020-01-08",
+          "home": "Kalamata",
+          "away": "Olympiakos",
+          "home_id": 5046,
+          "marcador": "0-2",
+          "ganador": 553
+        }
+      ],
+      "hecho": "2026-10-24T05:36:11.128480-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "armando",
+          "lado": "L",
+          "rachas": {
+            "jugando": 3
+          },
+          "minutos": [
+            {
+              "rival": "Levadiakos",
+              "min": 14,
+              "goles": 0
+            },
+            {
+              "rival": "Panathinaikos",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Marseille",
+              "min": 23,
+              "goles": 0
+            },
+            {
+              "rival": "Panetolikos",
+              "min": 10,
+              "goles": 0
+            },
+            {
+              "rival": "Sparta Praha",
+              "min": 28,
+              "goles": 1
+            }
+          ]
+        }
+      ]
+    },
+    "1550160": {
+      "fixture_id": 1550160,
+      "kickoff": "2026-10-25T08:00:00-06:00",
+      "home": "Genoa",
+      "away": "Venezia",
+      "home_id": 495,
+      "away_id": 517,
+      "home_logo": "https://media.api-sports.io/football/teams/495.png",
+      "away_logo": "https://media.api-sports.io/football/teams/517.png",
+      "league": "Serie A",
+      "tabla": {
+        "liga": "Serie A",
+        "home": {
+          "rank": 17,
+          "pts": 4,
+          "pj": 7
+        },
+        "away": {
+          "rank": 20,
+          "pts": 3,
+          "pj": 7
+        }
+      },
+      "forma_home": [
+        {
+          "r": "G",
+          "rival": "Sudtirol",
+          "marcador": "1-0",
+          "fid": 1628957,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Parma",
+          "marcador": "1-2",
+          "fid": 1550134,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Rapid",
+          "marcador": "0-2",
+          "fid": 1642927,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Fiorentina",
+          "marcador": "2-1",
+          "fid": 1550140,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "AS Roma",
+          "marcador": "0-2",
+          "fid": 1550148,
+          "local": false
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "P",
+          "rival": "Frosinone",
+          "marcador": "2-3",
+          "fid": 1550111,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Fiorentina",
+          "marcador": "2-4",
+          "fid": 1550126,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Lazio",
+          "marcador": "0-2",
+          "fid": 1550136,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Atalanta",
+          "marcador": "1-3",
+          "fid": 1550137,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Napoli",
+          "marcador": "1-0",
+          "fid": 1550156,
+          "local": true
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2025-02-17",
+          "home": "Genoa",
+          "away": "Venezia",
+          "home_id": 495,
+          "marcador": "2-0",
+          "ganador": 495
+        },
+        {
+          "fecha": "2024-09-21",
+          "home": "Venezia",
+          "away": "Genoa",
+          "home_id": 517,
+          "marcador": "2-0",
+          "ganador": 517
+        },
+        {
+          "fecha": "2024-07-20",
+          "home": "Venezia",
+          "away": "Genoa",
+          "home_id": 517,
+          "marcador": "1-3",
+          "ganador": 495
+        },
+        {
+          "fecha": "2023-07-22",
+          "home": "Genoa",
+          "away": "Venezia",
+          "home_id": 495,
+          "marcador": "1-4",
+          "ganador": 517
+        },
+        {
+          "fecha": "2023-01-16",
+          "home": "Genoa",
+          "away": "Venezia",
+          "home_id": 495,
+          "marcador": "1-0",
+          "ganador": 495
+        }
+      ],
+      "hecho": "2026-10-24T05:36:11.128480-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "vasquez",
+          "lado": "L",
+          "rachas": {
+            "titular": 2,
+            "jugando": 2
+          },
+          "minutos": [
+            {
+              "rival": "Sudtirol",
+              "min": 10,
+              "goles": 1
+            },
+            {
+              "rival": "Parma",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Rapid",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Fiorentina",
+              "min": 90,
+              "goles": 0
+            },
+            {
+              "rival": "AS Roma",
+              "min": 90,
+              "goles": 0
+            }
+          ]
+        }
+      ]
+    },
+    "1570427": {
+      "fixture_id": 1570427,
+      "kickoff": "2026-10-25T09:15:00-06:00",
+      "home": "Celta Vigo",
+      "away": "Real Betis",
+      "home_id": 538,
+      "away_id": 543,
+      "home_logo": "https://media.api-sports.io/football/teams/538.png",
+      "away_logo": "https://media.api-sports.io/football/teams/543.png",
+      "league": "La Liga",
+      "tabla": {
+        "liga": "La Liga",
+        "home": {
+          "rank": 8,
+          "pts": 11,
+          "pj": 9
+        },
+        "away": {
+          "rank": 4,
+          "pts": 19,
+          "pj": 9
+        }
+      },
+      "forma_home": [
+        {
+          "r": "G",
+          "rival": "Racing Santander",
+          "marcador": "5-0",
+          "fid": 1570395,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "Elche",
+          "marcador": "0-0",
+          "fid": 1570406,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Juventus",
+          "marcador": "1-2",
+          "fid": 1636243,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Alavés",
+          "marcador": "2-1",
+          "fid": 1570414,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Celtic",
+          "marcador": "2-1",
+          "fid": 1636249,
+          "local": false
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "E",
+          "rival": "Deportivo La Coruna",
+          "marcador": "1-1",
+          "fid": 1570396,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Osasuna",
+          "marcador": "5-2",
+          "fid": 1570405,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "FC Porto",
+          "marcador": "3-2",
+          "fid": 1635635,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Barcelona",
+          "marcador": "2-5",
+          "fid": 1570413,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Feyenoord",
+          "marcador": "1-0",
+          "fid": 1635636,
+          "local": true
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2026-03-15",
+          "home": "Real Betis",
+          "away": "Celta Vigo",
+          "home_id": 543,
+          "marcador": "1-1",
+          "ganador": null
+        },
+        {
+          "fecha": "2025-08-27",
+          "home": "Celta Vigo",
+          "away": "Real Betis",
+          "home_id": 538,
+          "marcador": "1-1",
+          "ganador": null
+        },
+        {
+          "fecha": "2025-02-08",
+          "home": "Celta Vigo",
+          "away": "Real Betis",
+          "home_id": 538,
+          "marcador": "3-2",
+          "ganador": 538
+        },
+        {
+          "fecha": "2024-11-10",
+          "home": "Real Betis",
+          "away": "Celta Vigo",
+          "home_id": 543,
+          "marcador": "2-2",
+          "ganador": null
+        },
+        {
+          "fecha": "2024-04-12",
+          "home": "Real Betis",
+          "away": "Celta Vigo",
+          "home_id": 543,
+          "marcador": "2-1",
+          "ganador": 543
+        }
+      ],
+      "hecho": "2026-10-24T05:36:11.128480-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "fidalgo",
+          "lado": "V",
+          "rachas": {},
+          "minutos": [
+            {
+              "rival": "Deportivo La Coruna",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Osasuna",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "FC Porto",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Barcelona",
+              "min": 20,
+              "goles": 0
+            },
+            {
+              "rival": "Feyenoord",
+              "min": 0,
+              "goles": 0
+            }
+          ]
+        }
+      ]
     }
   },
   "jugadores": {
-    "luis_chavez": 1561420,
     "raul": 1563226,
     "obed": 1570425,
     "gimenez": 1575521,
@@ -1168,6 +1500,9 @@
     "campillo": 1551014,
     "camberos": 1551014,
     "sandoval": 1551014,
-    "montes": 1561423
+    "montes": 1561423,
+    "armando": 1593343,
+    "vasquez": 1550160,
+    "fidalgo": 1570427
   }
 }
