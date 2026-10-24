@@ -202,6 +202,19 @@ def _aplicar_goles_oficiales(endpoint, params, resp):
     return resp
 
 
+def _horario_con_manual(schedule):
+    """Aplica hormi_config.json → horarios_manual también a los horarios ya guardados en hormi_horario.json:
+    sin esto, un horario corregido a mano no se ve hasta que el motor vuelve a consultar ese partido."""
+    manual = _horarios_manual()
+    if not manual:
+        return schedule
+    for por_target in (schedule or {}).values():
+        for e in (por_target or {}).values() if isinstance(por_target, dict) else []:
+            if isinstance(e, dict) and e.get("fixture_id") in manual:
+                e["kickoff"] = manual[e["fixture_id"]].isoformat()
+    return schedule
+
+
 def api(endpoint, params, use_cache=False):
     return _aplicar_goles_oficiales(endpoint, params, _aplicar_horarios(endpoint, _api(endpoint, params, use_cache)))
 
@@ -2232,7 +2245,7 @@ def chequeo(args, notifier, config, fcm=None):
     _CALIF_HECHAS.clear(); _CALIF_HECHAS.update(state.get("calif_hechas") or [])
     sent_raw = state.get("sent", {})
     reminders_sent = set(state.get("reminders", []))
-    schedule_raw = load_json(SCHEDULE_FILE, {})
+    schedule_raw = _horario_con_manual(load_json(SCHEDULE_FILE, {}))
     status_raw = load_json(STATUS_FILE, {}).get("players", {})
 
     valid_player_keys = {p["key"] for p in config["players"]}
@@ -2381,7 +2394,7 @@ def active_soon(config):
     """¿Algún objetivo tiene un partido en curso o que empieza pronto?
     Mira hormi_horario.json (lo que ya se sabe), sin gastar peticiones."""
     now = datetime.now(LOCAL_TZ)
-    schedule = load_json(SCHEDULE_FILE, {})
+    schedule = _horario_con_manual(load_json(SCHEDULE_FILE, {}))
     for p in config["players"]:
         if not p.get("player_id"):
             continue
