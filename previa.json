@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T17:05:28.829338-06:00",
+  "updated_at": "2026-10-23T23:00:16.551425-06:00",
   "partidos": {
     "1561420": {
       "fixture_id": 1561420,
@@ -492,7 +492,7 @@
           "ganador": 530
         }
       ],
-      "hecho": "2026-10-23T07:19:32.540505-06:00",
+      "hecho": "2026-10-23T23:00:16.551425-06:00",
       "v": 2,
       "jugadores": [
         {
@@ -668,7 +668,7 @@
           "ganador": 212
         }
       ],
-      "hecho": "2026-10-23T09:14:34.163788-06:00",
+      "hecho": "2026-10-23T23:00:16.551425-06:00",
       "v": 2,
       "jugadores": [
         {
@@ -981,6 +981,182 @@
           ]
         }
       ]
+    },
+    "1561423": {
+      "fixture_id": 1561423,
+      "kickoff": "2026-10-25T04:45:00-06:00",
+      "home": "FC Rostov",
+      "away": "Lokomotiv Moscú",
+      "home_id": 779,
+      "away_id": 597,
+      "home_logo": "https://media.api-sports.io/football/teams/779.png",
+      "away_logo": "https://media.api-sports.io/football/teams/597.png",
+      "league": "Liga Premier de Rusia",
+      "tabla": {
+        "liga": "Liga Premier de Rusia",
+        "home": {
+          "rank": 9,
+          "pts": 12,
+          "pj": 11
+        },
+        "away": {
+          "rank": 12,
+          "pts": 11,
+          "pj": 11
+        }
+      },
+      "forma_home": [
+        {
+          "r": "P",
+          "rival": "Dinamo Moscú",
+          "marcador": "0-3",
+          "fid": 1561398,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "FC Krasnodar",
+          "marcador": "0-3",
+          "fid": 1644420,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Akron",
+          "marcador": "1-0",
+          "fid": 1561406,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "CSKA Moscú",
+          "marcador": "0-4",
+          "fid": 1563660,
+          "local": false
+        },
+        {
+          "r": "E",
+          "rival": "Baltika",
+          "marcador": "0-0",
+          "fid": 1561411,
+          "local": false
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "P",
+          "rival": "Arsenal Tula",
+          "marcador": "0-2",
+          "fid": 1642857,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "FC Orenburg",
+          "marcador": "2-0",
+          "fid": 1642933,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Fakel",
+          "marcador": "5-0",
+          "fid": 1561405,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Akron",
+          "marcador": "1-1",
+          "fid": 1563664,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "FC Krasnodar",
+          "marcador": "3-3",
+          "fid": 1561415,
+          "local": true
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2026-08-18",
+          "home": "FC Rostov",
+          "away": "Lokomotiv Moscú",
+          "home_id": 779,
+          "marcador": "1-0",
+          "ganador": 779
+        },
+        {
+          "fecha": "2026-01-24",
+          "home": "FC Rostov",
+          "away": "Lokomotiv Moscú",
+          "home_id": 779,
+          "marcador": "1-1",
+          "ganador": null
+        },
+        {
+          "fecha": "2025-11-30",
+          "home": "FC Rostov",
+          "away": "Lokomotiv Moscú",
+          "home_id": 779,
+          "marcador": "1-3",
+          "ganador": 597
+        },
+        {
+          "fecha": "2025-08-23",
+          "home": "Lokomotiv Moscú",
+          "away": "FC Rostov",
+          "home_id": 597,
+          "marcador": "3-3",
+          "ganador": null
+        },
+        {
+          "fecha": "2025-04-30",
+          "home": "Lokomotiv Moscú",
+          "away": "FC Rostov",
+          "home_id": 597,
+          "marcador": "0-2",
+          "ganador": 779
+        }
+      ],
+      "hecho": "2026-10-23T23:00:16.551425-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "montes",
+          "lado": "V",
+          "rachas": {},
+          "minutos": [
+            {
+              "rival": "Arsenal Tula",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "FC Orenburg",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Fakel",
+              "min": 90,
+              "goles": 1
+            },
+            {
+              "rival": "Akron",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "FC Krasnodar",
+              "min": 90,
+              "goles": 0
+            }
+          ]
+        }
+      ]
     }
   },
   "jugadores": {
@@ -991,6 +1167,7 @@
     "fimbres": 1551014,
     "campillo": 1551014,
     "camberos": 1551014,
-    "sandoval": 1551014
+    "sandoval": 1551014,
+    "montes": 1561423
   }
 }
