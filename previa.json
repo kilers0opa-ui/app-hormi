@@ -1,358 +1,6 @@
 {
-  "updated_at": "2026-10-24T12:59:37.179206-06:00",
+  "updated_at": "2026-10-24T16:43:00.930180-06:00",
   "partidos": {
-    "1570425": {
-      "fixture_id": 1570425,
-      "kickoff": "2026-10-24T13:00:00-06:00",
-      "home": "Atlético de Madrid",
-      "away": "Deportivo La Coruna",
-      "home_id": 530,
-      "away_id": 544,
-      "home_logo": "https://media.api-sports.io/football/teams/530.png",
-      "away_logo": "https://media.api-sports.io/football/teams/544.png",
-      "league": "La Liga",
-      "tabla": {
-        "liga": "La Liga",
-        "home": {
-          "rank": 2,
-          "pts": 22,
-          "pj": 9
-        },
-        "away": {
-          "rank": 9,
-          "pts": 11,
-          "pj": 9
-        }
-      },
-      "forma_home": [
-        {
-          "r": "G",
-          "rival": "Real Madrid",
-          "marcador": "2-1",
-          "fid": 1570394,
-          "local": true
-        },
-        {
-          "r": "G",
-          "rival": "Alavés",
-          "marcador": "2-1",
-          "fid": 1570403,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Manchester United",
-          "marcador": "2-0",
-          "fid": 1635623,
-          "local": true
-        },
-        {
-          "r": "G",
-          "rival": "Espanyol",
-          "marcador": "1-0",
-          "fid": 1570416,
-          "local": false
-        },
-        {
-          "r": "E",
-          "rival": "VfB Stuttgart",
-          "marcador": "1-1",
-          "fid": 1635738,
-          "local": false
-        }
-      ],
-      "forma_away": [
-        {
-          "r": "E",
-          "rival": "Real Betis",
-          "marcador": "1-1",
-          "fid": 1570396,
-          "local": true
-        },
-        {
-          "r": "E",
-          "rival": "Penafiel",
-          "marcador": "2-2",
-          "fid": 1642888,
-          "local": false
-        },
-        {
-          "r": "P",
-          "rival": "FC Porto",
-          "marcador": "1-3",
-          "fid": 1643495,
-          "local": true
-        },
-        {
-          "r": "P",
-          "rival": "Real Sociedad",
-          "marcador": "2-3",
-          "fid": 1570412,
-          "local": false
-        },
-        {
-          "r": "E",
-          "rival": "Levante",
-          "marcador": "1-1",
-          "fid": 1570415,
-          "local": true
-        }
-      ],
-      "historial": [
-        {
-          "fecha": "2026-01-13",
-          "home": "Deportivo La Coruna",
-          "away": "Atlético de Madrid",
-          "home_id": 544,
-          "marcador": "0-1",
-          "ganador": 530
-        },
-        {
-          "fecha": "2018-04-01",
-          "home": "Atlético de Madrid",
-          "away": "Deportivo La Coruna",
-          "home_id": 530,
-          "marcador": "1-0",
-          "ganador": 530
-        },
-        {
-          "fecha": "2017-11-04",
-          "home": "Deportivo La Coruna",
-          "away": "Atlético de Madrid",
-          "home_id": 544,
-          "marcador": "0-1",
-          "ganador": 530
-        },
-        {
-          "fecha": "2017-03-02",
-          "home": "Deportivo La Coruna",
-          "away": "Atlético de Madrid",
-          "home_id": 544,
-          "marcador": "1-1",
-          "ganador": null
-        },
-        {
-          "fecha": "2016-09-25",
-          "home": "Atlético de Madrid",
-          "away": "Deportivo La Coruna",
-          "home_id": 530,
-          "marcador": "1-0",
-          "ganador": 530
-        }
-      ],
-      "hecho": "2026-10-24T12:59:37.179206-06:00",
-      "v": 2,
-      "jugadores": [
-        {
-          "key": "obed",
-          "lado": "L",
-          "rachas": {},
-          "minutos": [
-            {
-              "rival": "Real Madrid",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "Alavés",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "Manchester United",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "Espanyol",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "VfB Stuttgart",
-              "min": 12,
-              "goles": 0
-            }
-          ]
-        }
-      ]
-    },
-    "1575521": {
-      "fixture_id": 1575521,
-      "kickoff": "2026-10-24T13:30:00-06:00",
-      "home": "GIL Vicente",
-      "away": "FC Porto",
-      "home_id": 762,
-      "away_id": 212,
-      "home_logo": "https://media.api-sports.io/football/teams/762.png",
-      "away_logo": "https://media.api-sports.io/football/teams/212.png",
-      "league": "Liga Portugal",
-      "tabla": {
-        "liga": "Primeira Liga",
-        "home": {
-          "rank": 6,
-          "pts": 14,
-          "pj": 8
-        },
-        "away": {
-          "rank": 1,
-          "pts": 24,
-          "pj": 8
-        }
-      },
-      "forma_home": [
-        {
-          "r": "P",
-          "rival": "Benfica",
-          "marcador": "1-3",
-          "fid": 1575493,
-          "local": false
-        },
-        {
-          "r": "E",
-          "rival": "Marítimo",
-          "marcador": "1-1",
-          "fid": 1575504,
-          "local": true
-        },
-        {
-          "r": "G",
-          "rival": "Moreirense",
-          "marcador": "1-0",
-          "fid": 1575516,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "União Santarém",
-          "marcador": "3-2",
-          "fid": 1641824,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "SC Braga",
-          "marcador": "2-1",
-          "fid": 1575458,
-          "local": false
-        }
-      ],
-      "forma_away": [
-        {
-          "r": "G",
-          "rival": "Benfica",
-          "marcador": "3-1",
-          "fid": 1575503,
-          "local": true
-        },
-        {
-          "r": "G",
-          "rival": "Deportivo La Coruna",
-          "marcador": "3-1",
-          "fid": 1643495,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Marítimo",
-          "marcador": "2-1",
-          "fid": 1575515,
-          "local": false
-        },
-        {
-          "r": "P",
-          "rival": "Real Betis",
-          "marcador": "2-3",
-          "fid": 1635635,
-          "local": false
-        },
-        {
-          "r": "P",
-          "rival": "PSV Eindhoven",
-          "marcador": "0-1",
-          "fid": 1635655,
-          "local": true
-        }
-      ],
-      "historial": [
-        {
-          "fecha": "2026-07-22",
-          "home": "GIL Vicente",
-          "away": "FC Porto",
-          "home_id": 762,
-          "marcador": "1-0",
-          "ganador": 762
-        },
-        {
-          "fecha": "2026-01-26",
-          "home": "FC Porto",
-          "away": "GIL Vicente",
-          "home_id": 212,
-          "marcador": "3-0",
-          "ganador": 212
-        },
-        {
-          "fecha": "2025-08-18",
-          "home": "GIL Vicente",
-          "away": "FC Porto",
-          "home_id": 762,
-          "marcador": "0-2",
-          "ganador": 212
-        },
-        {
-          "fecha": "2025-01-19",
-          "home": "GIL Vicente",
-          "away": "FC Porto",
-          "home_id": 762,
-          "marcador": "3-1",
-          "ganador": 762
-        },
-        {
-          "fecha": "2024-08-10",
-          "home": "FC Porto",
-          "away": "GIL Vicente",
-          "home_id": 212,
-          "marcador": "3-0",
-          "ganador": 212
-        }
-      ],
-      "hecho": "2026-10-24T12:59:37.179206-06:00",
-      "v": 2,
-      "jugadores": [
-        {
-          "key": "gimenez",
-          "lado": "V",
-          "rachas": {},
-          "minutos": [
-            {
-              "rival": "Benfica",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "Deportivo La Coruna",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "Marítimo",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "Real Betis",
-              "min": 5,
-              "goles": 0
-            },
-            {
-              "rival": "PSV Eindhoven",
-              "min": 0,
-              "goles": 0
-            }
-          ]
-        }
-      ]
-    },
     "1551014": {
       "fixture_id": 1551014,
       "kickoff": "2026-10-24T20:00:00-06:00",
@@ -1490,11 +1138,185 @@
           ]
         }
       ]
+    },
+    "1551019": {
+      "fixture_id": 1551019,
+      "kickoff": "2026-10-25T21:10:00-06:00",
+      "home": "Club Tijuana",
+      "away": "Santos Laguna",
+      "home_id": 2280,
+      "away_id": 2285,
+      "home_logo": "https://media.api-sports.io/football/teams/2280.png",
+      "away_logo": "https://media.api-sports.io/football/teams/2285.png",
+      "league": "Liga MX",
+      "tabla": {
+        "liga": "Liga MX",
+        "home": {
+          "rank": 11,
+          "pts": 17,
+          "pj": 12
+        },
+        "away": {
+          "rank": 9,
+          "pts": 19,
+          "pj": 13
+        }
+      },
+      "forma_home": [
+        {
+          "r": "E",
+          "rival": "CF Pachuca",
+          "marcador": "2-2",
+          "fid": 1550972,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Atlas",
+          "marcador": "2-3",
+          "fid": 1550976,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "FC Juarez",
+          "marcador": "1-1",
+          "fid": 1550987,
+          "local": false
+        },
+        {
+          "r": "E",
+          "rival": "Puebla",
+          "marcador": "0-0",
+          "fid": 1550994,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "Toluca",
+          "marcador": "2-2",
+          "fid": 1551008,
+          "local": false
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "G",
+          "rival": "Toluca",
+          "marcador": "3-2",
+          "fid": 1550973,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "CF Pachuca",
+          "marcador": "1-0",
+          "fid": 1550978,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Atletico San Luis",
+          "marcador": "2-1",
+          "fid": 1550990,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Club Queretaro",
+          "marcador": "5-0",
+          "fid": 1550997,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "U.N.A.M. - Pumas",
+          "marcador": "2-0",
+          "fid": 1551010,
+          "local": true
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2026-03-08",
+          "home": "Club Tijuana",
+          "away": "Santos Laguna",
+          "home_id": 2280,
+          "marcador": "1-2",
+          "ganador": 2285
+        },
+        {
+          "fecha": "2025-09-24",
+          "home": "Santos Laguna",
+          "away": "Club Tijuana",
+          "home_id": 2285,
+          "marcador": "1-0",
+          "ganador": 2285
+        },
+        {
+          "fecha": "2025-04-20",
+          "home": "Santos Laguna",
+          "away": "Club Tijuana",
+          "home_id": 2285,
+          "marcador": "0-4",
+          "ganador": 2280
+        },
+        {
+          "fecha": "2024-08-18",
+          "home": "Club Tijuana",
+          "away": "Santos Laguna",
+          "home_id": 2280,
+          "marcador": "3-1",
+          "ganador": 2280
+        },
+        {
+          "fecha": "2024-03-15",
+          "home": "Club Tijuana",
+          "away": "Santos Laguna",
+          "home_id": 2280,
+          "marcador": "2-2",
+          "ganador": null
+        }
+      ],
+      "hecho": "2026-10-24T16:43:00.930180-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "mora",
+          "lado": "L",
+          "rachas": {},
+          "minutos": [
+            {
+              "rival": "CF Pachuca",
+              "min": 63,
+              "goles": 1
+            },
+            {
+              "rival": "Atlas",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "FC Juarez",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Puebla",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Toluca",
+              "min": 0,
+              "goles": 0
+            }
+          ]
+        }
+      ]
     }
   },
   "jugadores": {
-    "obed": 1570425,
-    "gimenez": 1575521,
     "fimbres": 1551014,
     "campillo": 1551014,
     "camberos": 1551014,
@@ -1503,6 +1325,7 @@
     "armando": 1593343,
     "vasquez": 1550160,
     "fidalgo": 1570427,
-    "chavez": 1552206
+    "chavez": 1552206,
+    "mora": 1551019
   }
 }
