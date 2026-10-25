@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T07:18:33.696700-06:00",
+  "updated_at": "2026-10-25T13:10:56.137534-06:00",
   "desde": "2026-10-23",
   "hasta": "2026-11-01",
   "partidos": [
@@ -190,9 +190,9 @@
       "away_logo": "https://media.api-sports.io/football/teams/5046.png",
       "league": "Superliga de Grecia",
       "league_logo": "https://media.api-sports.io/football/leagues/197.png",
-      "status": "NS",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "FT",
+      "home_goals": 5,
+      "away_goals": 0,
       "penales": null,
       "jugadores": [
         {
@@ -213,9 +213,9 @@
       "away_logo": "https://media.api-sports.io/football/teams/517.png",
       "league": "Serie A",
       "league_logo": "https://media.api-sports.io/football/leagues/135.png",
-      "status": "NS",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "FT",
+      "home_goals": 1,
+      "away_goals": 0,
       "penales": null,
       "jugadores": [
         {
@@ -236,9 +236,9 @@
       "away_logo": "https://media.api-sports.io/football/teams/543.png",
       "league": "La Liga",
       "league_logo": "https://media.api-sports.io/football/leagues/140.png",
-      "status": "NS",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "FT",
+      "home_goals": 0,
+      "away_goals": 0,
       "penales": null,
       "jugadores": [
         {
@@ -259,9 +259,9 @@
       "away_logo": "https://media.api-sports.io/football/teams/415.png",
       "league": "Eredivisie",
       "league_logo": "https://media.api-sports.io/football/leagues/88.png",
-      "status": "NS",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "1H",
+      "home_goals": 0,
+      "away_goals": 0,
       "penales": null,
       "jugadores": [
         {
