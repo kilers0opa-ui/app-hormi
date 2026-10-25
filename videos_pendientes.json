@@ -9,23 +9,6 @@
   ],
   "finales": [
     {
-      "fixture_id": 1561423,
-      "home": "FC Rostov",
-      "away": "Lokomotiv Moscú",
-      "league": "Liga Premier de Rusia",
-      "score": "FC Rostov 2-0 Lokomotiv Moscú",
-      "final_seen_at": "2026-10-25T12:40:56.045309+00:00",
-      "jugadores": [
-        {
-          "player_key": "montes",
-          "team_key": "lokomotiv",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        }
-      ]
-    },
-    {
       "fixture_id": 1593343,
       "home": "Olympiakos",
       "away": "Kalamata",
@@ -71,6 +54,23 @@
           "player_key": "fidalgo",
           "team_key": "betis",
           "minutes": 15,
+          "goals": 0,
+          "assists": 0
+        }
+      ]
+    },
+    {
+      "fixture_id": 1552206,
+      "home": "AZ Alkmaar",
+      "away": "Twente",
+      "league": "Eredivisie",
+      "score": "AZ Alkmaar 0-2 Twente",
+      "final_seen_at": "2026-10-25T20:52:52.567862+00:00",
+      "jugadores": [
+        {
+          "player_key": "chavez",
+          "team_key": "az_alkmaar",
+          "minutes": 87,
           "goals": 0,
           "assists": 0
         }
