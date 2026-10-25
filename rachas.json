@@ -1,27 +1,43 @@
 {
-  "updated_at": "2026-10-25T05:32:29.260276-06:00",
+  "updated_at": "2026-10-25T10:22:46.457052-06:00",
   "players": {
     "armando": {
       "rachas": [
         {
           "id": "gol",
           "titulo": "Partidos seguidos con gol",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
-            true,
-            false,
-            false,
-            false,
             false,
             true,
             false,
+            false,
+            false,
+            false,
+            true,
             false
           ]
         },
         {
           "id": "ga",
           "titulo": "Partidos seguidos con gol o asistencia",
+          "actual": 0,
+          "en_racha": false,
+          "puntos": [
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
           "actual": 1,
           "en_racha": false,
           "puntos": [
@@ -30,41 +46,25 @@
             false,
             false,
             false,
-            true,
-            false,
-            false
-          ]
-        },
-        {
-          "id": "titular",
-          "titulo": "Partidos seguidos de titular",
-          "actual": 0,
-          "en_racha": false,
-          "puntos": [
-            false,
-            false,
-            false,
-            false,
             false,
             true,
-            true,
-            false
+            true
           ]
         },
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 3,
+          "actual": 4,
           "en_racha": false,
           "puntos": [
+            true,
             true,
             true,
             true,
             false,
             true,
             true,
-            true,
-            false
+            true
           ]
         }
       ],
@@ -80,10 +80,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 96,
+          "valor": 97,
           "meta": 100,
           "previo": 75,
-          "texto": "A 4 partidos de 100"
+          "texto": "A 3 partidos de 100"
         },
         {
           "id": "goles_sel",
@@ -450,10 +450,10 @@
         {
           "id": "cero",
           "titulo": "Partidos seguidos sin recibir gol",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
-            false,
+            true,
             false,
             false,
             false,
@@ -473,24 +473,24 @@
             false,
             false,
             false,
-            true,
-            true,
             false,
+            true,
+            true,
             false
           ]
         },
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 2,
+          "actual": 3,
           "en_racha": false,
           "puntos": [
             true,
             true,
-            false,
-            false,
-            false,
             true,
+            false,
+            false,
+            false,
             true,
             true
           ]
@@ -498,14 +498,14 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 2,
+          "actual": 3,
           "en_racha": false,
           "puntos": [
             true,
             true,
-            false,
-            false,
             true,
+            false,
+            false,
             true,
             true,
             true
@@ -524,10 +524,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 293,
+          "valor": 294,
           "meta": 300,
           "previo": 250,
-          "texto": "A 7 partidos de 300"
+          "texto": "A 6 partidos de 300"
         },
         {
           "id": "goles_sel",
@@ -998,7 +998,7 @@
         "partidos_sel:10"
       ],
       "club": "Real Betis",
-      "partidos_revisados": 19
+      "partidos_revisados": 18
     },
     "huescas": {
       "rachas": [
@@ -1121,8 +1121,8 @@
           "puntos": [
             false,
             false,
-            true,
             false,
+            true,
             false,
             false,
             false,
@@ -1137,8 +1137,8 @@
           "puntos": [
             false,
             false,
-            true,
             false,
+            true,
             false,
             false,
             false,
@@ -1148,33 +1148,33 @@
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
-            true,
             false,
             true,
             false,
+            true,
             false,
             false,
             false,
-            true
+            false
           ]
         },
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
-            true,
             false,
             true,
             false,
+            true,
             false,
             false,
             false,
-            true
+            false
           ]
         }
       ],
@@ -1220,7 +1220,7 @@
         "partidos_sel:50"
       ],
       "club": "Lokomotiv Moscú",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "luis_chavez": {
       "rachas": [
