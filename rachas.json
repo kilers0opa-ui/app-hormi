@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T10:22:46.457052-06:00",
+  "updated_at": "2026-10-25T13:38:37.649866-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -942,17 +942,17 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
+            true,
             false,
             true,
             false,
             false,
             false,
             true,
-            false,
-            true
+            false
           ]
         }
       ],
@@ -968,10 +968,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 385,
+          "valor": 386,
           "meta": 400,
           "previo": 350,
-          "texto": "A 15 partidos de 400"
+          "texto": "A 14 partidos de 400"
         },
         {
           "id": "goles_sel",
@@ -998,7 +998,7 @@
         "partidos_sel:10"
       ],
       "club": "Real Betis",
-      "partidos_revisados": 18
+      "partidos_revisados": 19
     },
     "huescas": {
       "rachas": [
