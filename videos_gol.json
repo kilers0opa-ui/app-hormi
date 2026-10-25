@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T16:50:31.241601-06:00",
+  "updated_at": "2026-10-25T16:55:33.452603-06:00",
   "cuota": {
     "fecha": "2026-10-25",
     "busquedas": 10,
@@ -451,13 +451,21 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "resuelto",
       "intentos": 2,
       "fallos": 0,
       "ultimo_intento": "2026-10-25T21:55:21.870798+00:00",
-      "video": null,
-      "noticias_pasadas": 2,
-      "ultima_noticia": "2026-10-25T21:55:21.870798+00:00",
+      "video": {
+        "id": "IU3FYx5Z1ZQ",
+        "title": "AZ Alkmaar 0-2 Twente | MATEO CHÁVEZ y DE KAASBOEREN CONCEDEN al TOP-4 de la Eredivisie | Resumen",
+        "channel": "ESPN MX",
+        "published_at": "2026-10-25T22:53:23Z",
+        "thumbnail": "https://i.ytimg.com/vi/IU3FYx5Z1ZQ/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=IU3FYx5Z1ZQ",
+        "embeddable": true
+      },
+      "noticias_pasadas": 3,
+      "ultima_noticia": "2026-10-25T22:55:17.616631+00:00",
       "noticias": {
         "chavez": [
           {
