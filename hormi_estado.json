@@ -24,6 +24,7 @@
         "armando:olympiacos:1593336:segundo",
         "armando:olympiacos:1593336:subst:394:291713",
         "armando:olympiacos:1593343:alineacion",
+        "armando:olympiacos:1593343:final",
         "armando:olympiacos:1593343:inicio",
         "armando:olympiacos:1593343:medio",
         "armando:olympiacos:1593343:segundo",
@@ -470,7 +471,23 @@
     "1551019:2026-10-25",
     "1561423:2026-10-25"
   ],
-  "calif_pend": {},
+  "calif_pend": {
+    "1593343:armando": {
+      "fid": 1593343,
+      "player": "armando",
+      "pid": 291713,
+      "team_key": "olympiacos",
+      "team_id": 553,
+      "kind": "club",
+      "desde": "2026-10-25T09:49:36.357180-06:00",
+      "rival": "Kalamata",
+      "match": "Olympiakos vs Kalamata",
+      "minutes": 60,
+      "goals": 0,
+      "assists": 0,
+      "intento": "2026-10-25T09:49:37.971612-06:00"
+    }
+  },
   "calif_hechas": [
     "1550148:vasquez",
     "1550996:campillo",
