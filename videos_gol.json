@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-25T16:05:24.538218-06:00",
+  "updated_at": "2026-10-25T16:10:27.077322-06:00",
   "cuota": {
     "fecha": "2026-10-25",
-    "busquedas": 9,
-    "busquedas_resumen": 9
+    "busquedas": 10,
+    "busquedas_resumen": 10
   },
   "goles": {},
   "partidos": {
@@ -402,10 +402,10 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
-      "intentos": 4,
+      "status": "omitido",
+      "intentos": 5,
       "fallos": 0,
-      "ultimo_intento": "2026-10-25T20:55:20.095839+00:00",
+      "ultimo_intento": "2026-10-25T22:10:21.472274+00:00",
       "video": null,
       "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-25T19:10:22.993131+00:00",
@@ -433,7 +433,8 @@
             "edicion": "mx"
           }
         ]
-      }
+      },
+      "motivo": "sin resumen tras los intentos"
     },
     "1552206": {
       "fixture_id": 1552206,
