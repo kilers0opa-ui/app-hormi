@@ -1,35 +1,11 @@
 {
-  "updated_at": "2026-10-25T12:10:39.427810-06:00",
+  "updated_at": "2026-10-25T12:35:25.514955-06:00",
   "cuota": {
     "fecha": "2026-10-25",
     "busquedas": 5,
     "busquedas_resumen": 5
   },
-  "goles": {
-    "quinones:al_qadsiah:1603068:goal:35532:1:gol": {
-      "player_key": "quinones",
-      "team_key": "al_qadsiah",
-      "goal_seen_at": "2026-10-23T18:32:10.256281+00:00",
-      "status": "resuelto",
-      "intentos": 2,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-23T20:35:19.356497+00:00",
-      "video": {
-        "id": "6zJDGtXWEnU",
-        "title": "Gol de Julián Quiñones en la #SaudíProLeague para el empate ante el Al Hilal",
-        "channel": "Goolazos",
-        "published_at": "2026-10-23T18:50:56Z",
-        "thumbnail": "https://i.ytimg.com/vi/6zJDGtXWEnU/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=6zJDGtXWEnU",
-        "embeddable": true
-      },
-      "verificado": "2026-10-23T22:45:21.869345+00:00",
-      "descartados": [
-        "OsvPxGSHCRY"
-      ],
-      "silencioso": true
-    }
-  },
+  "goles": {},
   "partidos": {
     "1603068": {
       "fixture_id": 1603068,
