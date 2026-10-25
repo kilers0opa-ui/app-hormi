@@ -479,23 +479,7 @@
     "1551019:2026-10-25",
     "1561423:2026-10-25"
   ],
-  "calif_pend": {
-    "1593343:armando": {
-      "fid": 1593343,
-      "player": "armando",
-      "pid": 291713,
-      "team_key": "olympiacos",
-      "team_id": 553,
-      "kind": "club",
-      "desde": "2026-10-25T09:49:36.357180-06:00",
-      "rival": "Kalamata",
-      "match": "Olympiakos vs Kalamata",
-      "minutes": 60,
-      "goals": 0,
-      "assists": 0,
-      "intento": "2026-10-25T13:41:56.817969-06:00"
-    }
-  },
+  "calif_pend": {},
   "calif_hechas": [
     "1550148:vasquez",
     "1550160:vasquez",
@@ -513,6 +497,7 @@
     "1570427:fidalgo",
     "1575521:gimenez",
     "1593336:armando",
+    "1593343:armando",
     "1603061:quinones",
     "1603068:quinones",
     "1635738:obed",
