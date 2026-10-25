@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T10:55:23.442563-06:00",
+  "updated_at": "2026-10-25T11:10:19.816204-06:00",
   "cuota": {
     "fecha": "2026-10-25",
     "busquedas": 3,
@@ -459,6 +459,30 @@
           }
         ]
       }
+    },
+    "1570427": {
+      "fixture_id": 1570427,
+      "home": "Celta Vigo",
+      "away": "Real Betis",
+      "league": "La Liga",
+      "score": "Celta Vigo 0-0 Real Betis",
+      "final_seen_at": "2026-10-25T17:07:36.397056+00:00",
+      "jugadores": {
+        "fidalgo": {
+          "team_key": "betis",
+          "minutes": 15,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
