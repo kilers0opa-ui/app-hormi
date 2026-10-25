@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T07:35:08.016654-06:00",
+  "updated_at": "2026-10-25T08:52:39.974639-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -11841,6 +11841,13 @@
             "mio": false
           },
           {
+            "min": "90+8'",
+            "tipo": "anulado",
+            "nombre": "Diego Rossi",
+            "lado": "L",
+            "mio": false
+          },
+          {
             "min": "90+9'",
             "tipo": "roja",
             "nombre": "Matías Jesús Almeyda",
@@ -11929,7 +11936,8 @@
                 "num": 9,
                 "pos": "F",
                 "g": "5:2",
-                "amarilla": "88'"
+                "amarilla": "88'",
+                "anulado": 1
               },
               {
                 "id": 27104,
@@ -12196,7 +12204,7 @@
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/campillo_partido.jpg?v=b408bed6",
           "hasta": "2026-10-25T21:00:00-06:00",
-          "firma": "a2e1751523"
+          "firma": "df08acc132"
         },
         "stats": {
           "rating": 6.3,
@@ -12857,6 +12865,13 @@
             "mio": false
           },
           {
+            "min": "90+8'",
+            "tipo": "anulado",
+            "nombre": "Diego Rossi",
+            "lado": "L",
+            "mio": false
+          },
+          {
             "min": "90+9'",
             "tipo": "roja",
             "nombre": "Matías Jesús Almeyda",
@@ -12945,7 +12960,8 @@
                 "num": 9,
                 "pos": "F",
                 "g": "5:2",
-                "amarilla": "88'"
+                "amarilla": "88'",
+                "anulado": 1
               },
               {
                 "id": 27104,
@@ -13212,7 +13228,7 @@
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/sandoval_partido.jpg?v=ac551129",
           "hasta": "2026-10-25T21:00:00-06:00",
-          "firma": "d7ad56bce7"
+          "firma": "613f953fcf"
         },
         "stats": {
           "rating": 6.6,
