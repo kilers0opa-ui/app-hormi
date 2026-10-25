@@ -581,6 +581,37 @@ def _goles_anulados(data):
     return fuera
 
 
+def _var_texto(detail):
+    """Decisión del VAR en español para Detalles: "Roja anulada", "Penal confirmado", "Gol anulado por fuera de lugar"…"""
+    d = (detail or "").lower()
+    motivo = (" por fuera de lugar" if "offside" in d else " por mano" if "handball" in d
+              else " por falta" if "foul" in d else "")
+    if "goal" in d and any(w in d for w in ("cancel", "disallow")):
+        return "Gol anulado" + motivo
+    if "goal" in d and "confirm" in d:
+        return "Gol confirmado"
+    if "penalty" in d and "confirm" in d:
+        return "Penal confirmado"
+    if "penalty" in d and any(w in d for w in ("cancel", "disallow", "overturn")):
+        return "Penal anulado"
+    if "card" in d and "upgrade" in d:
+        return "Amarilla cambia a roja"
+    if "red" in d and "cancel" in d:
+        return "Roja anulada"
+    if "card" in d and "cancel" in d:
+        return "Tarjeta anulada"
+    if "card" in d and "confirm" in d:
+        return "Tarjeta confirmada"
+    return "Revisión del VAR"
+
+
+def _rojas_anuladas(data):
+    """(player_id, minuto) de rojas que el VAR quitó: esa roja ya no se muestra en Detalles ni en la alineación."""
+    return [((e.get("player") or {}).get("id"), (e.get("time") or {}).get("elapsed") or 0)
+            for e in data.get("events") or [] if (e.get("type") or "").lower() == "var"
+            and _var_texto(e.get("detail")) in ("Roja anulada", "Tarjeta anulada")]
+
+
 def _es_var_anula_gol(detail):
     d = (detail or "").lower()
     return "goal" in d and any(w in d for w in ("cancel", "disallow", "anulad"))
@@ -671,6 +702,8 @@ def _alineacion(data, player_id):
             marca(sale, "sale", minuto)
             marca(entra, "entra", minuto)
             entraron.add(entra)
+    for pid_, _m in _rojas_anuladas(data):
+        (ev.get(pid_) or {}).pop("roja", None)   # el VAR le quitó la roja
     equipos = []
     for l in sorted(lineups, key=lambda l: 0 if (l.get("team") or {}).get("id") == home_id else 1):
         tm = l.get("team") or {}
@@ -701,6 +734,7 @@ def _eventos(data, player_id):
     entro = False
     out = []
     anulados = {id(e) for i, e in enumerate(data.get("events") or []) if i in _goles_anulados(data)}
+    rojas_fuera = _rojas_anuladas(data)
     tanda = _tanda(data)
     for e in sorted(data.get("events") or [], key=lambda e: (e["time"]["elapsed"] or 0, e["time"].get("extra") or 0)):
         etype, detail = (e.get("type") or "").lower(), e.get("detail") or ""
@@ -715,6 +749,15 @@ def _eventos(data, player_id):
             tipo = "anulado"   # la app lo muestra "🚫 Gol anulado" (con el nombre si la API lo trae)
         elif etype == "var" and _es_var_anula_gol(detail) and not _var_con_gol(e, data, anulados):
             tipo = "anulado"   # la API solo dejó el evento del VAR (sin el gol en la lista): igual se muestra
+        elif etype == "var" and _es_var_anula_gol(detail):
+            continue           # ya sale como "Gol anulado" con su gol
+        elif etype == "var":
+            # Otras decisiones del VAR (roja anulada, penal confirmado/anulado, amarilla que pasa a roja…)
+            tipo = "var"
+            nombre = _var_texto(detail) + (f" · {nombre}" if nombre else "")
+        elif etype == "card" and any(pid == p_ and abs((e["time"]["elapsed"] or 0) - m_) <= 5 for p_, m_ in rojas_fuera) \
+                and ("red" in detail.lower() or "second yellow" in detail.lower()):
+            continue           # roja que el VAR quitó
         elif etype == "goal" and detail == "Missed Penalty":
             tipo = "pen_fallado"   # penal fallado durante el partido
         elif etype == "goal" and detail != "Missed Penalty":
@@ -875,6 +918,8 @@ def analyze(data, player, target):
                 evidencia = True
                 add_evento(t, f"goal:{pid}:{aid}:{assists}:ast", f"🎯 ¡Asistencia de {nombre}! {m}",
                     f"{label} · Gol de {e['player']['name']} · {score()}", 4)
+        elif etype == "var" and pid == player_id and _var_texto(detail) in ("Roja anulada", "Tarjeta anulada"):
+            add_evento(t, k, f"📺 El VAR le quita la roja a {nombre} {m}", f"{label} · {score()}", 4)
         elif etype == "var" and "goal" in detail.lower() and player_id in (pid, aid):
             add_evento(t, k, f"🚫 VAR anula jugada de gol de {nombre} {m}", f"{label} · {detail}")
         elif etype == "card" and pid == player_id and "red" in detail.lower():
