@@ -1,77 +1,8 @@
 {
-  "updated_at": "2026-10-24T23:05:41.796897-06:00",
-  "desde": "2026-10-22",
-  "hasta": "2026-10-31",
+  "updated_at": "2026-10-25T07:18:33.696700-06:00",
+  "desde": "2026-10-23",
+  "hasta": "2026-11-01",
   "partidos": [
-    {
-      "fixture_id": 1636215,
-      "kickoff": "2026-10-22T10:45:00-06:00",
-      "home": "Ararat-Armenia",
-      "away": "AZ Alkmaar",
-      "home_id": 3683,
-      "away_id": 201,
-      "home_logo": "https://media.api-sports.io/football/teams/3683.png",
-      "away_logo": "https://media.api-sports.io/football/teams/201.png",
-      "league": "Europa League",
-      "league_logo": "https://media.api-sports.io/football/leagues/3.png",
-      "status": "FT",
-      "home_goals": 0,
-      "away_goals": 4,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "chavez",
-          "team_key": "az_alkmaar",
-          "lado": "V"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1636397,
-      "kickoff": "2026-10-22T10:45:00-06:00",
-      "home": "FK Crvena Zvezda",
-      "away": "FC Copenhague",
-      "home_id": 598,
-      "away_id": 400,
-      "home_logo": "https://media.api-sports.io/football/teams/598.png",
-      "away_logo": "https://media.api-sports.io/football/teams/400.png",
-      "league": "Conference League",
-      "league_logo": "https://media.api-sports.io/football/leagues/848.png",
-      "status": "FT",
-      "home_goals": 2,
-      "away_goals": 2,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "huescas",
-          "team_key": "copenhague",
-          "lado": "V"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1636308,
-      "kickoff": "2026-10-22T13:00:00-06:00",
-      "home": "Olympiakos",
-      "away": "Sparta Praha",
-      "home_id": 553,
-      "away_id": 628,
-      "home_logo": "https://media.api-sports.io/football/teams/553.png",
-      "away_logo": "https://media.api-sports.io/football/teams/628.png",
-      "league": "Europa League",
-      "league_logo": "https://media.api-sports.io/football/leagues/3.png",
-      "status": "FT",
-      "home_goals": 1,
-      "away_goals": 0,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "armando",
-          "team_key": "olympiacos",
-          "lado": "L"
-        }
-      ]
-    },
     {
       "fixture_id": 1603068,
       "kickoff": "2026-10-23T12:00:00-06:00",
@@ -236,9 +167,9 @@
       "away_logo": "https://media.api-sports.io/football/teams/597.png",
       "league": "Liga Premier de Rusia",
       "league_logo": "https://media.api-sports.io/football/leagues/235.png",
-      "status": "NS",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "FT",
+      "home_goals": 2,
+      "away_goals": 0,
       "penales": null,
       "jugadores": [
         {
@@ -835,6 +766,52 @@
           "key": "sandoval",
           "team_key": "chivas",
           "lado": "L"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1561431,
+      "kickoff": "2026-11-01T10:45:00-06:00",
+      "home": "Lokomotiv Moscú",
+      "away": "Spartak Moscú",
+      "home_id": 597,
+      "away_id": 558,
+      "home_logo": "https://media.api-sports.io/football/teams/597.png",
+      "away_logo": "https://media.api-sports.io/football/teams/558.png",
+      "league": "Liga Premier de Rusia",
+      "league_logo": "https://media.api-sports.io/football/leagues/235.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "montes",
+          "team_key": "lokomotiv",
+          "lado": "L"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1550184,
+      "kickoff": "2026-11-01T11:00:00-06:00",
+      "home": "Lecce",
+      "away": "Genoa",
+      "home_id": 867,
+      "away_id": 495,
+      "home_logo": "https://media.api-sports.io/football/teams/867.png",
+      "away_logo": "https://media.api-sports.io/football/teams/495.png",
+      "league": "Serie A",
+      "league_logo": "https://media.api-sports.io/football/leagues/135.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "vasquez",
+          "team_key": "genoa",
+          "lado": "V"
         }
       ]
     }
