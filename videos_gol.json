@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T09:50:22.723424-06:00",
+  "updated_at": "2026-10-25T09:55:17.465227-06:00",
   "cuota": {
     "fecha": "2026-10-25",
     "busquedas": 0,
@@ -359,6 +359,30 @@
         "armando": {
           "team_key": "olympiacos",
           "minutes": 60,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
+    },
+    "1550160": {
+      "fixture_id": 1550160,
+      "home": "Genoa",
+      "away": "Venezia",
+      "league": "Serie A",
+      "score": "Genoa 1-0 Venezia",
+      "final_seen_at": "2026-10-25T15:54:36.361696+00:00",
+      "jugadores": {
+        "vasquez": {
+          "team_key": "genoa",
+          "minutes": 90,
           "goals": 0,
           "assists": 0
         }
