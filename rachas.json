@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T19:14:16.902409-06:00",
+  "updated_at": "2026-10-25T00:09:18.216020-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -1386,17 +1386,17 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
-            true,
             false,
             true,
             false,
-            false,
             true,
             false,
-            true
+            false,
+            true,
+            false
           ]
         }
       ],
@@ -1448,16 +1448,16 @@
         {
           "id": "cero",
           "titulo": "Partidos seguidos sin recibir gol",
-          "actual": 1,
-          "en_racha": false,
+          "actual": 2,
+          "en_racha": true,
           "puntos": [
             true,
-            false,
-            false,
-            false,
-            false,
-            false,
             true,
+            false,
+            false,
+            false,
+            false,
+            false,
             true
           ]
         },
@@ -1480,14 +1480,14 @@
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 3,
+          "actual": 4,
           "en_racha": false,
           "puntos": [
             true,
             true,
             true,
-            false,
             true,
+            false,
             true,
             true,
             true
@@ -1496,14 +1496,14 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 3,
+          "actual": 4,
           "en_racha": false,
           "puntos": [
             true,
             true,
             true,
-            false,
             true,
+            false,
             true,
             true,
             true
@@ -1522,10 +1522,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 196,
+          "valor": 197,
           "meta": 200,
           "previo": 150,
-          "texto": "A 4 partidos de 200"
+          "texto": "A 3 partidos de 200"
         },
         {
           "id": "goles_sel",
@@ -1597,23 +1597,23 @@
             false,
             false,
             false,
-            true,
             false,
             true,
+            false,
             true
           ]
         },
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
-            true,
             false,
             true,
             false,
             true,
+            false,
             true,
             true,
             true
@@ -1678,37 +1678,37 @@
             false,
             false,
             false,
-            true,
-            false
+            false,
+            true
           ]
         },
         {
           "id": "ga",
           "titulo": "Partidos seguidos con gol o asistencia",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
-            false,
-            false,
-            false,
-            false,
-            false,
-            false,
             true,
-            false
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true
           ]
         },
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
+            true,
             false,
             true,
             false,
             false,
-            true,
             true,
             true,
             true
@@ -1717,14 +1717,14 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 3,
+          "actual": 4,
           "en_racha": false,
           "puntos": [
             true,
             true,
             true,
-            false,
             true,
+            false,
             true,
             true,
             true
@@ -1743,10 +1743,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 45,
+          "valor": 46,
           "meta": 50,
           "previo": 25,
-          "texto": "A 5 partidos de 50"
+          "texto": "A 4 partidos de 50"
         },
         {
           "id": "goles_sel",
