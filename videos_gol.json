@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-24T22:10:21.880516-06:00",
+  "updated_at": "2026-10-25T06:45:21.086748-06:00",
   "cuota": {
-    "fecha": "2026-10-24",
-    "busquedas": 1,
-    "busquedas_resumen": 1
+    "fecha": "2026-10-25",
+    "busquedas": 0,
+    "busquedas_resumen": 0
   },
   "goles": {
     "quinones:al_qadsiah:1603068:goal:35532:1:gol": {
@@ -225,7 +225,7 @@
         "url": "https://www.youtube.com/watch?v=4VRV9burpSE",
         "embeddable": true
       },
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-25T04:10:20.534258+00:00",
       "noticias": {
         "campillo": [
@@ -298,6 +298,30 @@
           }
         ]
       }
+    },
+    "1561423": {
+      "fixture_id": 1561423,
+      "home": "FC Rostov",
+      "away": "Lokomotiv Moscú",
+      "league": "Liga Premier de Rusia",
+      "score": "FC Rostov 2-0 Lokomotiv Moscú",
+      "final_seen_at": "2026-10-25T12:40:56.045309+00:00",
+      "jugadores": {
+        "montes": {
+          "team_key": "lokomotiv",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
