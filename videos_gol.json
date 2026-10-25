@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T21:10:22.380433-06:00",
+  "updated_at": "2026-10-24T21:30:37.645652-06:00",
   "cuota": {
     "fecha": "2026-10-24",
     "busquedas": 1,
@@ -212,11 +212,19 @@
           "assists": 1
         }
       },
-      "status": "pendiente",
+      "status": "resuelto",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
-      "video": null,
+      "video": {
+        "id": "4VRV9burpSE",
+        "title": "RESUMEN - Monterrey vs Chivas | Liga MX - Jornada 14 Apertura 2026 | TUDN",
+        "channel": "TUDN México",
+        "published_at": "2026-10-25T03:28:42Z",
+        "thumbnail": "https://i.ytimg.com/vi/4VRV9burpSE/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=4VRV9burpSE",
+        "embeddable": true
+      },
       "noticias_pasadas": 0,
       "ultima_noticia": null,
       "noticias": {}
