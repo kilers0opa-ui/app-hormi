@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T13:38:37.649866-06:00",
+  "updated_at": "2026-10-25T16:34:39.917642-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -680,8 +680,8 @@
             false,
             false,
             false,
-            true,
             false,
+            true,
             false,
             false
           ]
@@ -705,13 +705,13 @@
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
-            false,
             true,
             false,
             true,
+            false,
             true,
             true,
             true,
@@ -721,11 +721,11 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
-            false,
             true,
+            false,
             true,
             true,
             true,
@@ -747,10 +747,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 129,
+          "valor": 130,
           "meta": 150,
           "previo": 100,
-          "texto": "A 21 partidos de 150"
+          "texto": "A 20 partidos de 150"
         },
         {
           "id": "goles_sel",
@@ -777,7 +777,7 @@
         "partidos_sel:10"
       ],
       "club": "AZ Alkmaar",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "obed": {
       "rachas": [
