@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T16:30:24.072381-06:00",
+  "updated_at": "2026-10-24T21:10:22.380433-06:00",
   "cuota": {
     "fecha": "2026-10-24",
     "busquedas": 1,
@@ -100,7 +100,7 @@
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-24T22:00:27.315112+00:00",
       "noticias": {
         "obed": [
@@ -157,7 +157,7 @@
         "url": "https://www.youtube.com/watch?v=JSEyXKuZgKs",
         "embeddable": true
       },
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-24T22:30:23.466805+00:00",
       "noticias": {
         "gimenez": [
@@ -184,6 +184,42 @@
           }
         ]
       }
+    },
+    "1551014": {
+      "fixture_id": 1551014,
+      "home": "Monterrey",
+      "away": "Chivas",
+      "league": "Liga MX",
+      "score": "Monterrey 0-1 Chivas",
+      "final_seen_at": "2026-10-25T03:07:26.017757+00:00",
+      "jugadores": {
+        "campillo": {
+          "team_key": "chivas",
+          "minutes": 90,
+          "goals": 0,
+          "assists": 0
+        },
+        "camberos": {
+          "team_key": "chivas",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        },
+        "sandoval": {
+          "team_key": "chivas",
+          "minutes": 90,
+          "goals": 0,
+          "assists": 1
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
