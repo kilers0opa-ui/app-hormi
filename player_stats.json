@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T09:49:36.553143-06:00",
+  "updated_at": "2026-10-25T09:54:38.214989-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -2678,10 +2678,10 @@
             "team_id": 495,
             "team_name": "Genoa",
             "team_logo": "https://media.api-sports.io/football/teams/495.png",
-            "played": 6,
+            "played": 7,
             "goals": 1,
             "assists": 0,
-            "minutes": 521
+            "minutes": 611
           }
         ],
         "2017": [
@@ -2718,282 +2718,47 @@
         ],
         "genoa": [
           1550140,
-          1550148
+          1550148,
+          1550160
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1550148,
-        "kickoff": "2026-10-17T12:45:00-06:00",
-        "home": "AS Roma",
-        "away": "Genoa",
-        "home_logo": "https://media.api-sports.io/football/teams/497.png",
-        "away_logo": "https://media.api-sports.io/football/teams/495.png",
-        "home_goals": 2,
+        "fixture_id": 1550160,
+        "kickoff": "2026-10-25T08:00:00-06:00",
+        "home": "Genoa",
+        "away": "Venezia",
+        "home_logo": "https://media.api-sports.io/football/teams/495.png",
+        "away_logo": "https://media.api-sports.io/football/teams/517.png",
+        "home_goals": 1,
         "away_goals": 0,
+        "penales": null,
         "league": "Serie A",
         "league_logo": "https://media.api-sports.io/football/leagues/135.png",
         "league_tipo": "liga",
         "eventos": [
           {
-            "min": "43'",
-            "tipo": "amarilla",
-            "nombre": "Matías Soulé",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "50'",
+            "min": "25'",
             "tipo": "gol",
-            "nombre": "S. Castro",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "51'",
-            "tipo": "amarilla",
-            "nombre": "Johan Vásquez",
-            "lado": "V",
-            "mio": true
-          },
-          {
-            "min": "65'",
-            "tipo": "amarilla",
-            "nombre": "Leo Østigård",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "68'",
-            "tipo": "gol",
-            "nombre": "E. Lulli",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "76'",
-            "tipo": "amarilla",
-            "nombre": "Niccolò Pisilli",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "81'",
-            "tipo": "amarilla",
             "nombre": "Mikael Ellertsson",
-            "lado": "V",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "55'",
+            "tipo": "amarilla",
+            "nombre": "Sebastian Otoa",
+            "lado": "L",
             "mio": false
           }
         ],
         "eventos_v": 6,
-        "team_key": "genoa",
-        "team_label": "Genoa",
-        "emoji": "🦅",
-        "crest_url": "https://media.api-sports.io/football/teams/495.png",
-        "minutes": 90,
-        "goals": 0,
-        "assists": 0,
-        "stats": {
-          "rating": 6.2,
-          "tiros": 1,
-          "tiros_puerta": 0,
-          "pases_pct": 76,
-          "duelos": 11,
-          "duelos_ganados": 6
-        },
-        "penales": null,
         "alineacion": {
           "local": {
-            "nombre": "AS Roma",
-            "logo": "https://media.api-sports.io/football/teams/497.png",
-            "formacion": "3-4-2-1",
-            "color": "990000",
-            "color_num": "f0a400",
-            "titulares": [
-              {
-                "id": 30418,
-                "n": "P. Gollini",
-                "num": 95,
-                "pos": "G",
-                "g": "1:1"
-              },
-              {
-                "id": 6,
-                "n": "L. Balerdi",
-                "num": 26,
-                "pos": "D",
-                "g": "2:3"
-              },
-              {
-                "id": 1807,
-                "n": "E. Ndicka",
-                "num": 5,
-                "pos": "D",
-                "g": "2:2"
-              },
-              {
-                "id": 162409,
-                "n": "K. Koulierakis",
-                "num": 3,
-                "pos": "D",
-                "g": "2:1",
-                "sale": "63'"
-              },
-              {
-                "id": 598615,
-                "n": "E. Lulli",
-                "num": 77,
-                "pos": "M",
-                "g": "3:4",
-                "goles": 1,
-                "sale": "78'"
-              },
-              {
-                "id": 30432,
-                "n": "M. De Roon",
-                "num": 15,
-                "pos": "M",
-                "g": "3:3"
-              },
-              {
-                "id": 356888,
-                "n": "N. Pisilli",
-                "num": 61,
-                "pos": "M",
-                "g": "3:2",
-                "amarilla": "76'",
-                "sale": "88'"
-              },
-              {
-                "id": 162452,
-                "n": "D. Rensch",
-                "num": 2,
-                "pos": "M",
-                "g": "3:1",
-                "sale": "88'"
-              },
-              {
-                "id": 323936,
-                "n": "M. Soule",
-                "num": 18,
-                "pos": "F",
-                "g": "4:2",
-                "amarilla": "43'"
-              },
-              {
-                "id": 404097,
-                "n": "R. Mora",
-                "num": 86,
-                "pos": "F",
-                "g": "4:1",
-                "sale": "63'"
-              },
-              {
-                "id": 311067,
-                "n": "S. Castro",
-                "num": 9,
-                "pos": "F",
-                "g": "5:1",
-                "goles": 1
-              }
-            ],
-            "suplentes": [
-              {
-                "id": 81012,
-                "n": "D. S. Vasquez Llach",
-                "num": 32,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 483676,
-                "n": "G. De Marzi",
-                "num": 70,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 2669,
-                "n": "M. Hermoso",
-                "num": 22,
-                "pos": "D",
-                "g": null,
-                "entra": "63'"
-              },
-              {
-                "id": 6503,
-                "n": "N. Molina",
-                "num": 20,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 30425,
-                "n": "G. Mancini",
-                "num": 23,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 342019,
-                "n": "D. Ghilardi",
-                "num": 87,
-                "pos": "D",
-                "g": null,
-                "entra": "88'"
-              },
-              {
-                "id": 349001,
-                "n": "Wesley Franca",
-                "num": 43,
-                "pos": "D",
-                "g": null,
-                "entra": "78'"
-              },
-              {
-                "id": 604053,
-                "n": "A. Di Nunzio",
-                "num": 63,
-                "pos": "M",
-                "g": null,
-                "entra": "88'"
-              },
-              {
-                "id": 782,
-                "n": "L. Pellegrini",
-                "num": 7,
-                "pos": "M",
-                "g": null,
-                "entra": "63'"
-              },
-              {
-                "id": 484027,
-                "n": "A. Arena",
-                "num": 68,
-                "pos": "F",
-                "g": null
-              },
-              {
-                "id": 585470,
-                "n": "L. Paratici",
-                "num": 72,
-                "pos": "F",
-                "g": null
-              },
-              {
-                "id": 675841,
-                "n": "M. Camara",
-                "num": 78,
-                "pos": "F",
-                "g": null
-              }
-            ]
-          },
-          "visita": {
             "nombre": "Genoa",
             "logo": "https://media.api-sports.io/football/teams/495.png",
             "formacion": "3-4-2-1",
-            "color": "7b242f",
-            "color_num": "ecf23e",
+            "color": null,
+            "color_num": null,
             "titulares": [
               {
                 "id": 37137,
@@ -3003,78 +2768,80 @@
                 "g": "1:1"
               },
               {
-                "id": 281826,
-                "n": "A. Marcandalli",
-                "num": 27,
+                "id": 387128,
+                "n": "S. Otoa",
+                "num": 34,
                 "pos": "D",
-                "g": "2:3"
+                "g": "2:3",
+                "amarilla": "55'",
+                "sale": "70'"
               },
               {
                 "id": 18967,
-                "n": "L. Ostigard",
+                "n": "L. Østigård",
                 "num": 5,
                 "pos": "D",
-                "g": "2:2",
-                "amarilla": "65'"
+                "g": "2:2"
               },
               {
                 "id": 35544,
-                "n": "J. Vasquez",
+                "n": "J. Vásquez",
                 "num": 22,
                 "pos": "D",
                 "g": "2:1",
-                "amarilla": "51'",
                 "mio": true
               },
               {
                 "id": 89520,
-                "n": "M. E. Ellertsson",
+                "n": "M. Ellertsson",
                 "num": 77,
                 "pos": "M",
                 "g": "3:4",
-                "amarilla": "81'"
+                "goles": 1
+              },
+              {
+                "id": 31057,
+                "n": "H. Traorè",
+                "num": 25,
+                "pos": "M",
+                "g": "3:3"
               },
               {
                 "id": 611384,
                 "n": "S. Wiafe",
                 "num": 71,
                 "pos": "M",
-                "g": "3:3"
-              },
-              {
-                "id": 15881,
-                "n": "M. Frendrup",
-                "num": 32,
-                "pos": "M",
                 "g": "3:2",
-                "sale": "83'"
+                "sale": "81'"
               },
               {
-                "id": 362813,
-                "n": "D. Puczka",
-                "num": 31,
+                "id": 270613,
+                "n": "M. Mitaj",
+                "num": 2,
                 "pos": "M",
-                "g": "3:1"
+                "g": "3:1",
+                "sale": "81'"
               },
               {
                 "id": 56396,
                 "n": "Junior Messias",
                 "num": 10,
-                "pos": "F",
+                "pos": "M",
                 "g": "4:2",
-                "sale": "83'"
+                "sale": "62'"
               },
               {
                 "id": 791,
                 "n": "S. El Shaarawy",
                 "num": 92,
-                "pos": "F",
+                "pos": "M",
                 "g": "4:1",
-                "sale": "65'"
+                "asist": 1,
+                "sale": "62'"
               },
               {
                 "id": 66761,
-                "n": "M. Osmajic",
+                "n": "M. Osmajić",
                 "num": 18,
                 "pos": "F",
                 "g": "5:1"
@@ -3082,16 +2849,24 @@
             ],
             "suplentes": [
               {
-                "id": 31445,
-                "n": "D. Sommariva",
-                "num": 39,
-                "pos": "G",
-                "g": null
+                "id": 281826,
+                "n": "A. Marcandalli",
+                "num": 27,
+                "pos": "D",
+                "g": null,
+                "entra": "70'"
               },
               {
                 "id": 7228,
                 "n": "F. Stolz",
                 "num": 99,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 31445,
+                "n": "D. Sommariva",
+                "num": 39,
                 "pos": "G",
                 "g": null
               },
@@ -3103,44 +2878,25 @@
                 "g": null
               },
               {
-                "id": 626523,
-                "n": "M. Vaz",
-                "num": 85,
-                "pos": "D",
-                "g": null
+                "id": 15881,
+                "n": "M. Frendrup",
+                "num": 32,
+                "pos": "M",
+                "g": null,
+                "entra": "62'"
               },
               {
-                "id": 616219,
-                "n": "L. Klisys",
-                "num": 14,
-                "pos": "D",
-                "g": null
+                "id": 405239,
+                "n": "Alexsandro Amorim",
+                "num": 4,
+                "pos": "M",
+                "g": null,
+                "entra": "81'"
               },
               {
-                "id": 31137,
-                "n": "S. Sabelli",
-                "num": 20,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 270613,
-                "n": "M. Mitaj",
-                "num": 2,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 387128,
-                "n": "S. Otoa",
-                "num": 34,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 31057,
-                "n": "H. J. Traore",
-                "num": 25,
+                "id": 475672,
+                "n": "E. Meichtry",
+                "num": 11,
                 "pos": "M",
                 "g": null
               },
@@ -3152,33 +2908,282 @@
                 "g": null
               },
               {
-                "id": 405239,
-                "n": "Amorim",
-                "num": 4,
-                "pos": "M",
-                "g": null,
-                "entra": "83'"
+                "id": 31137,
+                "n": "S. Sabelli",
+                "num": 20,
+                "pos": "D",
+                "g": null
               },
               {
                 "id": 197500,
-                "n": "J. Robinho",
+                "n": "Nikita Solodchenko",
                 "num": 21,
                 "pos": "F",
-                "g": null,
-                "entra": "83'"
+                "g": null
               },
               {
                 "id": 281408,
-                "n": "Vitinha",
+                "n": "Vítinha",
                 "num": 9,
                 "pos": "F",
+                "g": null
+              },
+              {
+                "id": 263481,
+                "n": "L. Colombo",
+                "num": 29,
+                "pos": "F",
                 "g": null,
-                "entra": "65'"
+                "entra": "62'"
+              },
+              {
+                "id": 362813,
+                "n": "D. Puczka",
+                "num": 31,
+                "pos": "D",
+                "g": null,
+                "entra": "81'"
+              },
+              {
+                "id": null,
+                "n": "Lukas Klišys",
+                "num": 14,
+                "pos": "D",
+                "g": null
+              }
+            ]
+          },
+          "visita": {
+            "nombre": "Venezia",
+            "logo": "https://media.api-sports.io/football/teams/517.png",
+            "formacion": "3-5-2",
+            "color": null,
+            "color_num": null,
+            "titulares": [
+              {
+                "id": 162445,
+                "n": "F. Stanković",
+                "num": 1,
+                "pos": "G",
+                "g": "1:1"
+              },
+              {
+                "id": 326183,
+                "n": "R. Halhal",
+                "num": 25,
+                "pos": "D",
+                "g": "2:3"
+              },
+              {
+                "id": 421807,
+                "n": "M. Moreno",
+                "num": 2,
+                "pos": "D",
+                "g": "2:2"
+              },
+              {
+                "id": 774,
+                "n": "Juan Jesus",
+                "num": 15,
+                "pos": "D",
+                "g": "2:1"
+              },
+              {
+                "id": 275394,
+                "n": "A. Hainaut",
+                "num": 18,
+                "pos": "M",
+                "g": "3:5",
+                "sale": "79'"
+              },
+              {
+                "id": 107153,
+                "n": "Kike Pérez",
+                "num": 71,
+                "pos": "M",
+                "g": "3:4"
+              },
+              {
+                "id": 1014,
+                "n": "S. Sohm",
+                "num": 19,
+                "pos": "M",
+                "g": "3:3",
+                "sale": "87'"
+              },
+              {
+                "id": 1266,
+                "n": "T. Bašić",
+                "num": 26,
+                "pos": "M",
+                "g": "3:2",
+                "sale": "71'"
+              },
+              {
+                "id": 37144,
+                "n": "R. Haps",
+                "num": 5,
+                "pos": "M",
+                "g": "3:1",
+                "sale": "71'"
+              },
+              {
+                "id": 25414,
+                "n": "J. Yeboah",
+                "num": 10,
+                "pos": "F",
+                "g": "4:2"
+              },
+              {
+                "id": 57446,
+                "n": "A. Adams",
+                "num": 45,
+                "pos": "F",
+                "g": "4:1"
+              }
+            ],
+            "suplentes": [
+              {
+                "id": 25061,
+                "n": "A. Bella-Kotchap",
+                "num": 17,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 30611,
+                "n": "L. Montipò",
+                "num": 96,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 373825,
+                "n": "J. Schingtienne",
+                "num": 3,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 445973,
+                "n": "Toni Fernández",
+                "num": 77,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 415517,
+                "n": "Lamine Dabo",
+                "num": 8,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 342025,
+                "n": "M. Dagasso",
+                "num": 30,
+                "pos": "M",
+                "g": null,
+                "entra": "71'"
+              },
+              {
+                "id": 425255,
+                "n": "K. Lisman",
+                "num": 56,
+                "pos": "F",
+                "g": null
+              },
+              {
+                "id": 375321,
+                "n": "R. Sagrado",
+                "num": 20,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 28744,
+                "n": "Þ. Helgason",
+                "num": 21,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 31390,
+                "n": "P. Mazzocchi",
+                "num": 70,
+                "pos": "D",
+                "g": null,
+                "entra": "71'"
+              },
+              {
+                "id": 51266,
+                "n": "G. Busio",
+                "num": 6,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 30532,
+                "n": "A. Duncan",
+                "num": 32,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 318546,
+                "n": "A. Rrahmani",
+                "num": 7,
+                "pos": "F",
+                "g": null,
+                "entra": "79'"
+              },
+              {
+                "id": 26438,
+                "n": "L. Lauberbach",
+                "num": 29,
+                "pos": "F",
+                "g": null,
+                "entra": "87'"
+              },
+              {
+                "id": 610145,
+                "n": "A. Gomes",
+                "num": 95,
+                "pos": "D",
+                "g": null
               }
             ]
           }
+        },
+        "team_key": "genoa",
+        "team_label": "Genoa",
+        "emoji": "🦅",
+        "crest_url": "https://media.api-sports.io/football/teams/495.png",
+        "minutes": 90,
+        "goals": 0,
+        "assists": 0,
+        "tarjeta": {
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/vasquez_partido.jpg?v=4c3b09db",
+          "hasta": "2026-10-26T10:00:00-06:00",
+          "firma": "1c160cc0cc"
+        },
+        "stats": {
+          "rating": 7.4,
+          "tiros": 0,
+          "tiros_puerta": 0,
+          "pases_pct": 95,
+          "duelos": 5,
+          "duelos_ganados": 2
         }
-      }
+      },
+      "deltas_vivos": [
+        {
+          "fid": 1550160,
+          "season": "2026",
+          "league_id": 135,
+          "ts": "2026-10-25T09:54:36.543780-06:00"
+        }
+      ]
     },
     "quinones": {
       "seasons": {
