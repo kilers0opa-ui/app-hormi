@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T23:23:27.462981-06:00",
+  "updated_at": "2026-10-25T07:35:08.016654-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -157,16 +157,16 @@
             "minutes": 381
           },
           {
-            "league_id": 197,
-            "league_name": "Super League 1",
-            "league_logo": "https://media.api-sports.io/football/leagues/197.png",
+            "league_id": 3,
+            "league_name": "UEFA Europa League",
+            "league_logo": "https://media.api-sports.io/football/leagues/3.png",
             "team_id": 553,
             "team_name": "Olympiakos Piraeus",
             "team_logo": "https://media.api-sports.io/football/teams/553.png",
-            "played": 5,
-            "goals": 0,
+            "played": 3,
+            "goals": 2,
             "assists": 0,
-            "minutes": 158
+            "minutes": 113
           },
           {
             "league_id": 262,
@@ -181,16 +181,16 @@
             "minutes": 195
           },
           {
-            "league_id": 3,
-            "league_name": "UEFA Europa League",
-            "league_logo": "https://media.api-sports.io/football/leagues/3.png",
+            "league_id": 197,
+            "league_name": "Super League 1",
+            "league_logo": "https://media.api-sports.io/football/leagues/197.png",
             "team_id": 553,
             "team_name": "Olympiakos Piraeus",
             "team_logo": "https://media.api-sports.io/football/teams/553.png",
-            "played": 3,
-            "goals": 2,
+            "played": 5,
+            "goals": 0,
             "assists": 0,
-            "minutes": 113
+            "minutes": 158
           },
           {
             "league_id": 199,
@@ -4571,18 +4571,6 @@
             "minutes": 172
           },
           {
-            "league_id": 94,
-            "league_name": "Primeira Liga",
-            "league_logo": "https://media.api-sports.io/football/leagues/94.png",
-            "team_id": 212,
-            "team_name": "FC Porto",
-            "team_logo": "https://media.api-sports.io/football/teams/212.png",
-            "played": 3,
-            "goals": 1,
-            "assists": 0,
-            "minutes": 61
-          },
-          {
             "league_id": 2,
             "league_name": "UEFA Champions League",
             "league_logo": "https://media.api-sports.io/football/leagues/2.png",
@@ -4593,6 +4581,18 @@
             "goals": 0,
             "assists": 0,
             "minutes": 22
+          },
+          {
+            "league_id": 94,
+            "league_name": "Primeira Liga",
+            "league_logo": "https://media.api-sports.io/football/leagues/94.png",
+            "team_id": 212,
+            "team_name": "FC Porto",
+            "team_logo": "https://media.api-sports.io/football/teams/212.png",
+            "played": 3,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 61
           }
         ],
         "2017": [
