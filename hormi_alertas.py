@@ -761,6 +761,15 @@ def analyze(data, player, target):
     def add(key, title, message, priority=3):
         alerts.append((f"{prefix}:{fid}:{key}", title, message, priority))
 
+    # Minuto actual del partido (con reposición): un evento que la API registra más de AVISO_TARDE_MIN
+    # minutos después de que pasó ya no se notifica (llegaría tarde); se anota en silencio.
+    st_ = fx["status"]
+    ahora_min = (st_.get("elapsed") or 0) + (st_.get("extra") or 0)
+
+    def add_evento(t, key, title, message, priority=3):
+        tarde_ev = status in LIVE | FINISHED and ahora_min - ((t.get("elapsed") or 0) + (t.get("extra") or 0)) > AVISO_TARDE_MIN
+        add(key, title, message, -1 if tarde_ev else priority)
+
     if status in CANCELLED:
         add("cancelado", f"⚠️ {label} ({nombre}): partido suspendido/pospuesto",
             f"{match} · {fx['status']['long']}")
@@ -787,12 +796,12 @@ def analyze(data, player, target):
     if (role is None and target.get("kind") == "seleccion" and data.get("lineups")
             and _convocado_oficial(player["key"], fx.get("timestamp"))):
         banca_pendiente = True
-    # Aviso de alineación TARDÍO (la API publicó la banca con el partido ya avanzado, p. ej. al min 32 en
-    # México-Chile): "banca" / "no convocado" ya no sirve de nada y además puede ser incorrecto. Pasados
-    # 10 min de juego (o con el partido terminado) solo se manda el de titular; el estado en la app sí se actualiza.
+    # Aviso de alineación TARDÍO (la API publicó la alineación con el partido ya avanzado: min 32 en México-Chile,
+    # min ~26 en Monterrey-Chivas 24-oct): pasados 10 min de juego (o con el partido terminado) ya no se manda
+    # NINGÚN aviso de alineación (ni el de titular); el estado en la app sí se actualiza.
     elapsed = (fx["status"].get("elapsed") or 0)
     tarde = status in FINISHED or (status in LIVE and elapsed > 10)
-    if data.get("lineups") and not banca_pendiente and not (tarde and role != "titular"):
+    if data.get("lineups") and not banca_pendiente and not tarde:
         if role == "titular":
             add("alineacion", f"⭐ ¡{nombre} titular con {label}!", f"{match} · {league}", 4)
         elif role == "banca":
@@ -803,17 +812,23 @@ def analyze(data, player, target):
                 f"{match} · {league}", 2)
 
     es_club = target.get("kind") != "seleccion"
-    # Con el club NO se avisa "Arrancó" si el jugador no está en la alineación (ni "convocado" ni "no
-    # convocado": simplemente no es partido suyo) ni mientras la API no publica alineación (amistosos):
-    # sin saberlo, un aviso de "arrancó el partido" de un equipo donde quizá ni juega es ruido.
-    if status in LIVE | FINISHED and (role or not es_club):
-        add("inicio", f"Arrancó: {label} ({nombre})", match + "\nSigue el marcador en tiempo real desde la app.", 2)
+    # Con el club NO se avisa "Arrancó" si el jugador no está en la alineación publicada (no es partido suyo).
+    # Si la API todavía no publica alineación, sí se avisa que arrancó el partido de su equipo, pero diciendo
+    # que no hay alineación confirmada (sin afirmar que tu jugador está en la cancha). Pasados 10 min de juego
+    # ya no se manda (llegaría tarde: p. ej. la alineación apareció hasta el min 26 en Monterrey-Chivas).
+    sin_alin = not data.get("lineups")
+    cuenta = role or not es_club or sin_alin
+    if status in LIVE and elapsed <= 10 and cuenta:
+        if sin_alin:
+            add("inicio", f"Arrancó: {label}", match + "\nNo hay alineación confirmada.", 2)
+        else:
+            add("inicio", f"Arrancó: {label} ({nombre})", match + "\nSigue el marcador en tiempo real desde la app.", 2)
     # Medio tiempo: marcador y goles de AMBOS equipos (mismas reglas que "Arrancó").
-    if status == "HT" and (role or not es_club):
+    if status == "HT" and cuenta:
         add("medio", f"⏸️ Medio tiempo: {score()}", _goles_texto(data), 3)
     # Arranca el segundo tiempo (mismo tipo que medio tiempo: un solo interruptor en la app). Si se detecta
     # ya avanzado (reinicio, falla de GitHub), pasado el minuto 50 no se manda: llegaría tarde.
-    if status == "2H" and (fx["status"].get("elapsed") or 0) <= 50 and (role or not es_club):
+    if status == "2H" and (fx["status"].get("elapsed") or 0) <= 50 and cuenta:
         add("segundo", f"Arranca el segundo tiempo: {score()}", "Sigue el marcador en tiempo real desde la app.", 3)
 
     entered = False
@@ -834,17 +849,17 @@ def analyze(data, player, target):
                 goals += 1
                 evidencia = True
                 tipo = " de penal" if detail == "Penalty" else ""
-                add(f"goal:{pid}:{goals}:gol", f"🔥 ¡GOL DE {apodo.upper()}{tipo.upper()}! {m}",
+                add_evento(t, f"goal:{pid}:{goals}:gol", f"🔥 ¡GOL DE {apodo.upper()}{tipo.upper()}! {m}",
                     f"{label} · {score()}", 5)
             elif aid == player_id:
                 assists += 1
                 evidencia = True
-                add(f"goal:{pid}:{aid}:{assists}:ast", f"🎯 ¡Asistencia de {nombre}! {m}",
+                add_evento(t, f"goal:{pid}:{aid}:{assists}:ast", f"🎯 ¡Asistencia de {nombre}! {m}",
                     f"{label} · Gol de {e['player']['name']} · {score()}", 4)
         elif etype == "var" and "goal" in detail.lower() and player_id in (pid, aid):
-            add(k, f"🚫 VAR anula jugada de gol de {nombre} {m}", f"{label} · {detail}")
+            add_evento(t, k, f"🚫 VAR anula jugada de gol de {nombre} {m}", f"{label} · {detail}")
         elif etype == "card" and pid == player_id and "red" in detail.lower():
-            add(f"red:{pid}", f"🟥 ¡Expulsan a {nombre}! {m}", f"{label} · {score()}", 5)
+            add_evento(t, f"red:{pid}", f"🟥 ¡Expulsan a {nombre}! {m}", f"{label} · {score()}", 5)
         elif etype == "subst" and player_id in (pid, aid):
             # La llave NO lleva el minuto: la API a veces corrige el minuto de un cambio (66' → 67')
             # y con él cambiaba la llave, lo que mandaba el aviso dos veces.
@@ -853,10 +868,10 @@ def analyze(data, player, target):
             sin_alin_entra = role is None and (not data.get("lineups") or banca_pendiente) and aid == player_id
             if (role == "banca" or sin_alin_entra) and not entered:
                 entered, in_minute = True, t["elapsed"]
-                add(k, f"🔄 ¡Entra {nombre}! {m}", f"{label} · {score()}", 4)
+                add_evento(t, k, f"🔄 ¡Entra {nombre}! {m}", f"{label} · {score()}", 4)
             else:
                 out_minute = t["elapsed"]
-                add(k, f"↩️ Sale {nombre} {m}", f"{label} · {score()}", 2)
+                add_evento(t, k, f"↩️ Sale {nombre} {m}", f"{label} · {score()}", 2)
 
     summary = None
     if status in FINISHED:
@@ -1209,6 +1224,14 @@ def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None,
     new = 0
     for key, title, message, priority in alerts:
         if key not in sent:
+            if priority is not None and priority < 0:
+                # Evento registrado tarde por la API: sin notificación (la app lo muestra igual en la tarjeta,
+                # Detalles y estadísticas). El video del gol sí se busca.
+                sent.add(key)
+                new += 1
+                if register_video and not getattr(notifier, "console_only", False) and key.endswith(":gol"):
+                    register_goal_for_video(key, player_key, team_key)
+                continue
             if grupo is not None and alert_type(key) in ("start", "final", "lineup", "halftime"):
                 grupo.append((key, title, message))
             else:
@@ -1266,6 +1289,7 @@ def _payload_grupo(g, jug, title, body):
 # aparte: solo lo reciben las versiones de la app que saben mostrarlo (las viejas lo pintarían como aviso
 # normal, con sonido, cada 2 minutos).
 LIVE_TOPIC = "hormi_live_v1"
+AVISO_TARDE_MIN = 5   # minutos de juego: un gol/cambio/roja que la API registra más tarde que esto ya no se notifica
 _VIVO = {}          # fixture_id -> datos de esta pasada (se junta a todos los jugadores del partido)
 _VIVO_ENVIADO = {}  # fixture_id -> (marcador, periodo, minuto, time) del último push
 
@@ -1287,7 +1311,9 @@ def _ultimo_gol(snap):
 
 def anotar_vivo(player, snap, info):
     estado = info.get("status")
-    if estado not in ("titular", "banca", "en_cancha", "entro"):
+    # "sin_alineacion": partido de su equipo en curso sin alineación publicada → marcador en vivo y burbuja con el
+    # marcador del equipo (la app no afirma que tu jugador está jugando).
+    if estado not in ("titular", "banca", "en_cancha", "entro", "sin_alineacion"):
         return
     st = snap["fixture"]["status"]
     short = st.get("short")
@@ -1530,7 +1556,9 @@ def enviar_grupos(notifier, fcm):
             continue
         if tipo == "start":
             title = f"Arrancó: {g['label']}"
-            body = f"{g['match']} · {g['league']}\nSigue el marcador en tiempo real desde la app."
+            sin_alin = all(j["status"] == "sin_alineacion" for j in jug)
+            body = f"{g['match']} · {g['league']}\n" + (
+                "No hay alineación confirmada." if sin_alin else "Sigue el marcador en tiempo real desde la app.")
         elif tipo == "halftime":   # medio tiempo o arranque del segundo tiempo: el texto no depende del jugador
             title, body = jug[0]["title"], jug[0]["body"]
         else:
