@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-25T15:20:25.210261-06:00",
+  "updated_at": "2026-10-25T15:25:32.877502-06:00",
   "cuota": {
     "fecha": "2026-10-25",
-    "busquedas": 7,
-    "busquedas_resumen": 7
+    "busquedas": 8,
+    "busquedas_resumen": 8
   },
   "goles": {},
   "partidos": {
@@ -451,13 +451,37 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-25T21:25:17.036941+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-25T21:25:17.036941+00:00",
+      "noticias": {
+        "chavez": [
+          {
+            "title": "Mateo Chávez crece en la Eredivisie pese al tropiezo del AZ Alkmaar",
+            "source": "Excélsior",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOdHBMSXE4NFV2Q1ZnWFJyUnNjZFFhdUp3LUg0el9nYUJTRlZzSzU4OWlaQm1saDdzVVBMcXpCQXdoNnJDaFEtSkc5cjVXY0xsYVg0QjlqMmUyNlFfbTJNTWtQWXljXzNFUVdDQkF6Smx4UFEyS20zNmZUVnhZX21aYks2Ml9NdDF1QjhobVJZYktmWnhraFRv0gGcAUFVX3lxTE4xSlBRSUw3ZjZxUDE2Y2RZX1I1NndtbkV2VkZBaUM0T3JtMTNWYXVVaWg0VV9kcTJkTnN1Z2k5VExPUmNrcWU0VUp5QnBSOTN5LVRNQi11OG9WMlMxZGs3MEx3SUpYM3paZkNsdnJ2cmNQbFJpS1lVZ3FFdnVlRVV5eHRWaFAtUmgzbFZsWDBSUGVMR1BuUFpHYUE3Ng?oc=5",
+            "published_at": "2026-10-25T21:01:29Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "AZ Alkmaar visita a Twente con Mateo Chávez titular",
+            "source": "ESPN Argentina",
+            "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQNmVVc0NkVk16TjRCSnRuaU83WDNXdU94czZZMjV6V1hTREU0SlVzTC1CVEZMWGFFU0tSMEhFYlJuTTBTQVpWWV9lSmRUUFBxVnlLbG9CU21FSkFrekc2T1FVMU5odERDYktXUUQ4eFpVaTlGcWFuVnB3MjNtdU5uLWpmaU16YVhKZ2ZmdXZWUHk5WnlYRHY2NUFzTEFWb2RXTnc?oc=5",
+            "published_at": "2026-10-25T19:32:54Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "AZ Alkmaar golea sin Mateo Chávez",
+            "source": "El Vigía",
+            "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPRVNCcGNzUGZFclNRYzN3d3NFd1dDbDZZbGV3ZXB5bHpfWDhFcWF2N2k1M3RPM2dZVFRsTnBPMUxLamh0RmgtcWQ2R19ocEp1TEcyNTR3V0VNZVlzMERaaWJ2cnpYUEJvT1FMWjNId1VFb0ZiWDFLRldfeHRHanRia2E4bnNfOVFQb3ZtY1hyTm5uUWc?oc=5",
+            "published_at": "2026-10-23T07:00:00Z",
+            "edicion": "mx"
+          }
+        ]
+      }
     }
   }
 }
