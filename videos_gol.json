@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-25T10:35:31.110016-06:00",
+  "updated_at": "2026-10-25T10:50:29.785291-06:00",
   "cuota": {
     "fecha": "2026-10-25",
-    "busquedas": 2,
-    "busquedas_resumen": 2
+    "busquedas": 3,
+    "busquedas_resumen": 3
   },
   "goles": {
     "quinones:al_qadsiah:1603068:goal:35532:1:gol": {
@@ -363,34 +363,42 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
-      "intentos": 1,
+      "status": "resuelto",
+      "intentos": 2,
       "fallos": 0,
-      "ultimo_intento": "2026-10-25T16:20:20.195444+00:00",
-      "video": null,
-      "noticias_pasadas": 1,
-      "ultima_noticia": "2026-10-25T16:20:20.195444+00:00",
+      "ultimo_intento": "2026-10-25T16:50:18.873237+00:00",
+      "video": {
+        "id": "w42oa333kw4",
+        "title": "Resumen y goles | Olympiacos (5-0) Kalamata | Superliga de Grecia 26/27 | Jornada 8",
+        "channel": "Claro Sports",
+        "published_at": "2026-10-25T16:50:06Z",
+        "thumbnail": "https://i.ytimg.com/vi/w42oa333kw4/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=w42oa333kw4",
+        "embeddable": true
+      },
+      "noticias_pasadas": 2,
+      "ultima_noticia": "2026-10-25T16:50:18.873237+00:00",
       "noticias": {
         "armando": [
           {
-            "title": "Hormiga González se roba el show con Olympiacos tras un increíble engaño",
-            "source": "Juanfutbol",
-            "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNYmEzOVhlR3o3RXVOM1JuMElNS0wwNjRTZGF5YllkZTdPMWNvcko5aTY4NkdoQ1I1VndWeHN2WkUwbUdITW94eC1DQlVPb1FuZXdnb1Q5N2tkQVRJeTFCOWpmZ0EwUmNOcFZUdmkyRUczMHlIRjcxUm9RVi1ESjR1TnFoelpFeDA5eWNId3BaYXhyQ0dSZ2gyOUdnZWp1NGdBUFVMNkd5VHg3cUdNak0xNzZ0S215eTVCbF9JeEVyNFZ5VVR6WE9tbDlmQ2JzWHcydzlnb0ZwVHZHMnBpUzlUVHVwUHNTZw?oc=5",
-            "published_at": "2026-10-25T16:08:43Z",
+            "title": "‘Hormiga’ González regresa a la titularidad en goleada del Olympiacos ante el Kalamata",
+            "source": "Récord",
+            "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOM29fY2VoUEd4cXhjZkpIRTFFQWlCTXROeUs5d2ZMMm1pTjh3RUxzS2diOXVYa3Z4eXUtcTBaTEgzeFk1cWtKMnA5OTB1cmFkRS1tbkktUHFnQnp0MkdLTHo1MFJuR1JpRzZlamhmQk43QjRqVlRhZzNlaURfbXJPQ0g5V0FCcDY0bFliM2dwb25NZHBldjk2RE5QTV9RM1NHTnN2ZXgyS3l2QlpsNDFyQUg5RVRTMElGOUZjODlXUHBpc1JBanBfbklMbzFSYmluUlFGb1Vn?oc=5",
+            "published_at": "2026-10-25T16:36:00Z",
             "edicion": "mx"
           },
           {
-            "title": "Hormiga González vuelve a la titularidad, pero es eclipsado por el hat-trick de Jota Silva: Resumen Olympiacos vs Kalamata FC",
-            "source": "MARCA",
-            "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPNjN4UF9yUHdvNi1oU1V4djhEUk91Skt0Y2dIaEVhQmVnNVdOTURvdE9vMjZsUXg3MHl0cnNySnFLVUNoek9JYnBzdm1LdUkzdDVoVHRyM2J4SWwxMkpTcGZtQUZuVm1IVnczcmQ2ck01SWVheTY0MUMyNFVibG8tU2JYM1VDYy1KNnV2TElQU0Z2eHJJY1NJMGxVX1hySjh5UkdBVXJ3UU1IZGs5XzZnX1hNNi1PVENzcG1IanJBTmR5cTR1akdnVVE3WVJQcWRhQnNzbUxGR2xnYldpZTFENXhCN01mY01hYVQ2bkJadG4wUm9aV1hUNi1UTHkybF9tZWfSAYICQVVfeXFMTmJPYzY0bks5dGJJNUtEYm1aOHNRcGlZX01tUkZCSjZvQm16N3cxczdXdnlSdWRZdWlxWVhiZ2VvLUNVbzNfekhkeFJEY0QzQnpJRmFITjh2WlQyalBNUVZ2Rkh1QVNJVWpWdzFuSEl1Qnk0VmlGSGppcTFUV21KRDFrX0VkZ21oMlZsM3JwWENzeGVxeXBkVUsyQ1I2REpHSWdOSjNwU2VPOXRPMzJQUllmd3JaV09DZ3dNaDJuLTBqSjdDX0Z3bFM4VVFSOUVDcVFLTG5JNzhWRWV2WWRGRzRacG54b1dXaUNHX1lxUlFrUWZfR1JvanMyWWIzNXFpZkVn?oc=5",
-            "published_at": "2026-10-25T15:47:22Z",
+            "title": "Armando Hormiga González vuelve a ser titular con el Olympiacos pero no mete gol contra Kalamata - esto",
+            "source": "El Sol de México",
+            "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPUjJJb3JhelZwc3BtS0hTUnNHTmg3eHU5cTYtTVY0NVhwdExpN0kyTW5DYVJjVGRzcHRVei1fV0NmM0VHNkNpRk5ETV9LcDNXd1VfdGdBMzdpZmF5TGVXd3VfeXM3aTE2SDlyYkNydTNlR3Q3aG8tNzk2MzZub3FmaXQzc2xfcGdmTVRPMVJySklxbWJnNUF6b1hlMUk5THNUOUhiZEphbHhWS0V2XzhrZUtoV3YycUJpZ1Y2WHlHLXh4MjB5X2FzTDhHLVZtUmo3YmlUOGI2MVlBLXhXekFteU9wbWo?oc=5",
+            "published_at": "2026-10-25T16:30:00Z",
             "edicion": "mx"
           },
           {
-            "title": "Olympiacos vs Kalamata FC EN VIVO. Juego EN DIRECTO La Hormiga González HOY en la Liga de Grecia 2026",
-            "source": "Mediotiempo",
-            "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPaUJWTHJrdXk1aVFCNUl3cDRkVGxPcWpaNG9ULVV2bGZhN0sxQ3pTQU5JRGw1N1dJZi11eW96dFc5NllzTFB3ZGNWd2djZGhnb3hFYXpudjlLNjg4WjI5NGJidjU1Vk81X01ObmcwUGxwTXNzazJ4b1NKX3QyMXotVENZZzZvbGtKRUVqY0JQTEh0dTJPenJTMHRSaXBuVXI4VFhLaXBOOG5LTEcxY054T0dsUXk0dnk1Z1RZNXRYbUJYOWo5MGhv0gHHAUFVX3lxTE96R1NWcjhySEtvODRIMVpiZEQ5S0FJSzN2aFJZWmdkN1BqOGlfZ1VDSHZuSEM3bkdKTWk5X2ktRDhvbDdINjdtb1hVSnN6S0xRcXZkcGgyMUxNcS1vS3o5T1RuX1VvTUdmWEFNWlhOVHI1ajU3ZE4tNVBZaHkwQ2FjMVNQcWM3M1BFUTdfMWFIS2xzbjdUYjNqeEhVMWJoTHpvQUZBNGlLbWl1UUp0LUwybUc5OElVMUpfVzNxVUt3NU1aQjVYczQ?oc=5",
-            "published_at": "2026-10-25T15:14:53Z",
+            "title": "¡Manita del Olympiacos! Con Hormiga González de titular, venció de forma contundente al Kalamata",
+            "source": "Fox Sports",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPeGFPaGpfY21MbEY3Vzl0ZDh6eGJZaEN0cnVpSm42UmRtNnEtVG9MUS10TmJRVV9wazRXLVlYM0JKWE5neWdWRXk1QnNlMTQ2Uk9uZERrbXB4YzBZUmhKQ2N2b1VpMzRZZlpyMVBiNDVHcFhVWDJodENHZDQwY24ySFMycUxKeGJLX1ZoQ19wYWdXWnpPYV9raURlaTl0TTk3LTNUaWlZWFBDVDdkVUZZNkxHREp6WER6VFRYS2NubnlhVUEwbFhCRDdmWTcxVnM?oc=5",
+            "published_at": "2026-10-25T16:16:21Z",
             "edicion": "mx"
           }
         ]
