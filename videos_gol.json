@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-25T14:05:27.203853-06:00",
+  "updated_at": "2026-10-25T14:55:34.013930-06:00",
   "cuota": {
     "fecha": "2026-10-25",
-    "busquedas": 6,
-    "busquedas_resumen": 6
+    "busquedas": 7,
+    "busquedas_resumen": 7
   },
   "goles": {},
   "partidos": {
@@ -403,11 +403,11 @@
         }
       },
       "status": "pendiente",
-      "intentos": 3,
+      "intentos": 4,
       "fallos": 0,
-      "ultimo_intento": "2026-10-25T19:10:22.993131+00:00",
+      "ultimo_intento": "2026-10-25T20:55:20.095839+00:00",
       "video": null,
-      "noticias_pasadas": 3,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-25T19:10:22.993131+00:00",
       "noticias": {
         "fidalgo": [
@@ -434,6 +434,30 @@
           }
         ]
       }
+    },
+    "1552206": {
+      "fixture_id": 1552206,
+      "home": "AZ Alkmaar",
+      "away": "Twente",
+      "league": "Eredivisie",
+      "score": "AZ Alkmaar 0-2 Twente",
+      "final_seen_at": "2026-10-25T20:52:52.567862+00:00",
+      "jugadores": {
+        "chavez": {
+          "team_key": "az_alkmaar",
+          "minutes": 87,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
