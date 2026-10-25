@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T07:45:21.026761-06:00",
+  "updated_at": "2026-10-25T09:50:22.723424-06:00",
   "cuota": {
     "fecha": "2026-10-25",
     "busquedas": 0,
@@ -319,7 +319,7 @@
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-25T13:45:20.399784+00:00",
       "noticias": {
         "montes": [
@@ -347,6 +347,30 @@
         ]
       },
       "motivo": "ningún jugador tuvo minutos"
+    },
+    "1593343": {
+      "fixture_id": 1593343,
+      "home": "Olympiakos",
+      "away": "Kalamata",
+      "league": "Superliga de Grecia",
+      "score": "Olympiakos 5-0 Kalamata",
+      "final_seen_at": "2026-10-25T15:49:36.357249+00:00",
+      "jugadores": {
+        "armando": {
+          "team_key": "olympiacos",
+          "minutes": 60,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
