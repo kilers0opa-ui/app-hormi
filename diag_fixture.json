@@ -1,0 +1,26 @@
+{
+  "status": {
+    "long": "First Half",
+    "short": "1H",
+    "elapsed": 11,
+    "extra": null
+  },
+  "goals": {
+    "home": 0,
+    "away": 1
+  },
+  "lineups": [],
+  "events": [
+    {
+      "min": 9,
+      "type": "Goal",
+      "detail": "Normal Goal",
+      "team": "Guadalajara Chivas",
+      "player": null,
+      "pid": null,
+      "assist": null
+    }
+  ],
+  "lineups_endpoint": [],
+  "players_endpoint": []
+}
