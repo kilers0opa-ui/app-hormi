@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T11:07:37.696479-06:00",
+  "updated_at": "2026-10-25T13:19:20.947563-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -270,16 +270,16 @@
           },
           {
             "min": "37'",
-            "tipo": "amarilla",
-            "nombre": "Marcelino Carreazo",
-            "lado": "V",
+            "tipo": "gol",
+            "nombre": "Jota Silva",
+            "lado": "L",
             "mio": false
           },
           {
             "min": "37'",
-            "tipo": "gol",
-            "nombre": "Jota Silva",
-            "lado": "L",
+            "tipo": "amarilla",
+            "nombre": "Marcelino Carreazo",
+            "lado": "V",
             "mio": false
           },
           {
@@ -728,7 +728,7 @@
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/armando_partido.jpg?v=abe4d48c",
           "hasta": "2026-10-26T10:00:00-06:00",
-          "firma": "bc8db052e2"
+          "firma": "10e188a95a"
         }
       },
       "deltas_vivos": [
