@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-25T15:50:25.555034-06:00",
+  "updated_at": "2026-10-25T15:55:29.923678-06:00",
   "cuota": {
     "fecha": "2026-10-25",
-    "busquedas": 8,
-    "busquedas_resumen": 8
+    "busquedas": 9,
+    "busquedas_resumen": 9
   },
   "goles": {},
   "partidos": {
@@ -451,14 +451,21 @@
         }
       },
       "status": "pendiente",
-      "intentos": 1,
+      "intentos": 2,
       "fallos": 0,
-      "ultimo_intento": "2026-10-25T21:25:17.036941+00:00",
+      "ultimo_intento": "2026-10-25T21:55:21.870798+00:00",
       "video": null,
-      "noticias_pasadas": 1,
-      "ultima_noticia": "2026-10-25T21:25:17.036941+00:00",
+      "noticias_pasadas": 2,
+      "ultima_noticia": "2026-10-25T21:55:21.870798+00:00",
       "noticias": {
         "chavez": [
+          {
+            "title": "¡Desastroso! Mateo Chávez y AZ Alkmaar perdieron en casa ante un Twente con diez hombres",
+            "source": "Fox Sports",
+            "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNMjMyaWt5QW43b1NxR3RjTUdqNVNPQzRvZzhldkRtQVd4Yi1wMUFCYW84bUdJWVJzZFJDcDBUWTlwMnZyQU5PaFYyTkVBZVlCbGZWanlCWHBEamNHaHRsTlRUZzJSMHE0ak11R1lOLWNxTGVyR2xZem0xUVVPbk4zQ3dXTW5DdE14c0t4WnE0d084eG9LeUxPN2t3UDZRdXQyUF9CSUxwY2tRUVE0UTdabVlCWXAyVWxYejM0c0l2Y0ZRZEhsTVE?oc=5",
+            "published_at": "2026-10-25T21:31:44Z",
+            "edicion": "mx"
+          },
           {
             "title": "Mateo Chávez crece en la Eredivisie pese al tropiezo del AZ Alkmaar",
             "source": "Excélsior",
@@ -471,13 +478,6 @@
             "source": "ESPN Argentina",
             "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQNmVVc0NkVk16TjRCSnRuaU83WDNXdU94czZZMjV6V1hTREU0SlVzTC1CVEZMWGFFU0tSMEhFYlJuTTBTQVpWWV9lSmRUUFBxVnlLbG9CU21FSkFrekc2T1FVMU5odERDYktXUUQ4eFpVaTlGcWFuVnB3MjNtdU5uLWpmaU16YVhKZ2ZmdXZWUHk5WnlYRHY2NUFzTEFWb2RXTnc?oc=5",
             "published_at": "2026-10-25T19:32:54Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "AZ Alkmaar golea sin Mateo Chávez",
-            "source": "El Vigía",
-            "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPRVNCcGNzUGZFclNRYzN3d3NFd1dDbDZZbGV3ZXB5bHpfWDhFcWF2N2k1M3RPM2dZVFRsTnBPMUxLamh0RmgtcWQ2R19ocEp1TEcyNTR3V0VNZVlzMERaaWJ2cnpYUEJvT1FMWjNId1VFb0ZiWDFLRldfeHRHanRia2E4bnNfOVFQb3ZtY1hyTm5uUWc?oc=5",
-            "published_at": "2026-10-23T07:00:00Z",
             "edicion": "mx"
           }
         ]
