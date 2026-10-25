@@ -581,6 +581,19 @@ def _goles_anulados(data):
     return fuera
 
 
+def _es_var_anula_gol(detail):
+    d = (detail or "").lower()
+    return "goal" in d and any(w in d for w in ("cancel", "disallow", "anulad"))
+
+
+def _var_con_gol(var_ev, data, anul_ids):
+    """True si ese VAR ya tiene su gol anulado en la lista (mismo equipo, ±3 min): así no sale dos veces."""
+    tid = (var_ev.get("team") or {}).get("id")
+    m = (var_ev.get("time") or {}).get("elapsed") or 0
+    return any(id(e) in anul_ids and (e.get("team") or {}).get("id") == tid
+               and abs(((e.get("time") or {}).get("elapsed") or 0) - m) <= 3 for e in data.get("events") or [])
+
+
 def _penales(data):
     """Marcador de la tanda de penales ("1-3") o None si no hubo tanda."""
     pen = ((data.get("score") or {}).get("penalty")) or {}
@@ -630,7 +643,7 @@ def _alineacion(data, player_id):
         if pid:
             ev.setdefault(pid, {})[k] = v
     tanda = _tanda(data)
-    anulados = _goles_anulados(data)
+    anul_ids = {id(e) for i, e in enumerate(data.get("events") or []) if i in _goles_anulados(data)}
     entraron = set()
     for i, e in enumerate(sorted(data.get("events") or [], key=lambda e: ((e.get("time") or {}).get("elapsed") or 0,
                                                                           (e.get("time") or {}).get("extra") or 0))):
@@ -639,7 +652,11 @@ def _alineacion(data, player_id):
         pid = (e.get("player") or {}).get("id")
         aid = (e.get("assist") or {}).get("id")
         minuto = minute_txt(e["time"])
-        if t == "goal" and det != "Missed Penalty" and id(e) not in tanda:
+        if id(e) in anul_ids:
+            marca(pid, "anulado", ev.get(pid, {}).get("anulado", 0) + 1)   # gol anulado (VAR): no cuenta como gol
+        elif t == "var" and _es_var_anula_gol(det) and not _var_con_gol(e, data, anul_ids):
+            marca(pid, "anulado", ev.get(pid, {}).get("anulado", 0) + 1)
+        elif t == "goal" and det != "Missed Penalty" and id(e) not in tanda:
             if det == "Own Goal":
                 marca(pid, "autogol", ev.get(pid, {}).get("autogol", 0) + 1)
             else:
@@ -696,6 +713,8 @@ def _eventos(data, player_id):
             tipo = "tanda_fallo" if detail == "Missed Penalty" else "tanda_gol"
         elif id(e) in anulados:
             tipo = "anulado"   # la app lo muestra "🚫 Gol anulado" (con el nombre si la API lo trae)
+        elif etype == "var" and _es_var_anula_gol(detail) and not _var_con_gol(e, data, anulados):
+            tipo = "anulado"   # la API solo dejó el evento del VAR (sin el gol en la lista): igual se muestra
         elif etype == "goal" and detail == "Missed Penalty":
             tipo = "pen_fallado"   # penal fallado durante el partido
         elif etype == "goal" and detail != "Missed Penalty":
