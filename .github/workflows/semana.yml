@@ -1,9 +1,14 @@
 name: Resumen semanal - App Hormi
 
-# Cada lunes 8:45 a.m. hora de México (14:45 UTC): "Jornada de la Legión" de la semana lunes-domingo que terminó.
+# "Jornada de la Legión" de la semana lunes-domingo que terminó: cada lunes a las 9:00 a.m. hora de México.
+# El cron de GitHub se retrasa (10-60 min) y a veces se salta corridas: por eso arranca 8:20 (espera hasta las
+# 9:00 si llega antes) y hay corridas de respaldo 9:20, 10:20 y 12:20 que no hacen nada si ya salió el de la semana.
 on:
   schedule:
-    - cron: "45 14 * * 1"
+    - cron: "20 14 * * 1"
+    - cron: "20 15 * * 1"
+    - cron: "20 16 * * 1"
+    - cron: "20 18 * * 1"
   workflow_dispatch:
     inputs:
       hasta:
@@ -16,7 +21,7 @@ on:
         default: true
 
 concurrency:
-  group: hormi-chequeo
+  group: hormi-semana   # propio: compartir grupo con historial/tabla/convocatoria hacía que GitHub descartara la corrida del lunes
   cancel-in-progress: false
 
 permissions:
@@ -38,6 +43,15 @@ jobs:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
           FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
         run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            # ¿Ya salió el resumen de la semana pasada? (lo deja semana.json → "hasta" = domingo de ayer)
+            DOMINGO=$(TZ=America/Mexico_City date -d "yesterday" +%F)
+            HECHO=$(python -c "import json;print(json.load(open('semana.json')).get('hasta',''))" 2>/dev/null || true)
+            if [ "$HECHO" = "$DOMINGO" ]; then echo "El resumen de esta semana ya salió."; exit 0; fi
+            # Si el cron llegó antes de las 9:00 (hora de México), espera para que el aviso llegue a las 9.
+            AHORA=$(date -u +%s); NUEVE=$(TZ=America/Mexico_City date -d "today 09:00" +%s)
+            if [ "$AHORA" -lt "$NUEVE" ]; then echo "Esperando a las 9:00…"; sleep $((NUEVE - AHORA)); fi
+          fi
           ARGS=""
           if [ -n "${{ inputs.hasta }}" ]; then ARGS="$ARGS --hasta ${{ inputs.hasta }}"; fi
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.aviso }}" != "true" ]; then ARGS="$ARGS --sin-aviso"; fi
