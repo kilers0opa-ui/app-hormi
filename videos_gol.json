@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T14:15:20.866835-06:00",
+  "updated_at": "2026-10-26T14:25:23.204605-06:00",
   "cuota": {
     "fecha": "2026-10-26",
     "busquedas": 1,
@@ -518,14 +518,39 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-26T20:25:22.718577+00:00",
+      "noticias": {
+        "huescas": [
+          {
+            "title": "Rodrigo Huescas regresa a la banca en la Superliga de Dinamarca: Resumen Copenhague vs Odense BK",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNa081ei01bHlITExsY1RkN2J0RU5tOGV6NVFhLVdyMVVvRGxVMUU4aDlWZ2pzNnhwMlhLcUtESkNPSkRoTl9ha01LX1gxRmtFT0R4TEE2X1BWd25HX0pDejlMN2tKVEN2ZGJXUVI0czBHM0RDQWRnTDVKaTlnTUxoMGhUazktNUJQXzV4OEM5R1U3d3NiYVZUQW1OSmQySEg2S2NMOENGZW83LVRtdm92M21TdU9penFVai00d3VpeFd1RG1acXZjTjVkMU1FNEFTbzBUSTZvVDUxYzJ3QmfSAd4BQVVfeXFMUFk0b0NYYzlFQkNObWk2V1h2Sld4UDBjQWduSW9zcVB6LTcyRDMxWHYtOGVmWXd2dU1hQTNJLVVsLTFnS0htRTRCOGVoTTNGczZ0NHNJSWx0WU15YTdDMGtmd0ZMWHhWSWVwcU1HVzNOWF9CVEhfUjA1Z05nWHNwQnZsQkc2dDE2cGtBeVp6blpmdnpteW9UVV9BblJ4QWhjTW43WXNRN21ISlY5STZkQnRpVFNUREhZUjYtRDBlbDVfMDIxN2NfT1VYNTlwOERwVHUyQzRPdzlQQW9OZEZn?oc=5",
+            "published_at": "2026-10-26T19:53:53Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Rodrigo Huescas recupera minutos con Copenhague en la Conference League",
+            "source": "El Sol de México",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPclN5N1FadlZuR3NoY3ZLa2pTWG9qQ1ZlVnRJQnVNMlN5R0R5eWQtLWlmYzZieEhWTFhPaDU0bm13YURpWmllMk9SYzc1dDVEXzJzMUREeUM0bGFOWmZYZTJrR29TcjAxa0E0NzFpU1dWM1lVZjkzRXVfY000NjFuakhSUUFFaDk5N0tWaEM1dXFYRDVzUmVlXzBMWm90RTFKeVBBOXMwbXA4NGsxNFB5dXlsV3dIaW1WS0xfa0hBOA?oc=5",
+            "published_at": "2026-10-22T22:01:36Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Después de 55 semanas, Rodrigo Huescas jugó como titular",
+            "source": "FOX Deportes",
+            "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQTWZiRm9VVTl0VmFEbFpfQi12bXppSVFkaktoRDRaa042MnRmY2dXQ1p1dGxjUFpfT193XzRHUERxX0M2aHN5cnhQRVhNMldWRTdzVmNiYWYxSGpIX2lVc1MxcHd6enNYaGhnZXBrSUJtYWc1azZwNE1nQ0dWejV3S05iTGN6MzdtclF6YVBvcjlIcHJfYXc1Mk1OT1Vza2FJdE9tRE5tM1NGV0JT?oc=5",
+            "published_at": "2026-10-22T21:14:57Z",
+            "edicion": "mx"
+          }
+        ]
+      },
+      "motivo": "ningún jugador tuvo minutos"
     },
     "1629947": {
       "fixture_id": 1629947,
