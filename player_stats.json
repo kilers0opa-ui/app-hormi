@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T09:53:08.496183-06:00",
+  "updated_at": "2026-10-26T14:10:38.972456-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -3624,10 +3624,10 @@
             "team_id": 2933,
             "team_name": "Al-Qadisiyah FC",
             "team_logo": "https://media.api-sports.io/football/teams/2933.png",
-            "played": 2,
-            "goals": 1,
+            "played": 3,
+            "goals": 2,
             "assists": 0,
-            "minutes": 174
+            "minutes": 264
           },
           {
             "league_id": 307,
@@ -3674,76 +3674,77 @@
           1603041,
           1629927,
           1603061,
-          1603068
+          1603068,
+          1629947
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1603068,
-        "kickoff": "2026-10-23T12:00:00-06:00",
+        "fixture_id": 1629947,
+        "kickoff": "2026-10-26T12:15:00-06:00",
         "home": "Al-Qadsiah",
-        "away": "Al-Hilal Saudi FC",
+        "away": "Al Sadd",
         "home_logo": "https://media.api-sports.io/football/teams/2933.png",
-        "away_logo": "https://media.api-sports.io/football/teams/2932.png",
-        "home_goals": 2,
-        "away_goals": 3,
+        "away_logo": "https://media.api-sports.io/football/teams/2895.png",
+        "home_goals": 1,
+        "away_goals": 1,
         "penales": null,
-        "league": "Liga Profesional Saudí",
-        "league_logo": "https://media.api-sports.io/football/leagues/307.png",
-        "league_tipo": "liga",
+        "league": "Liga de Campeones de Asia",
+        "league_logo": "https://media.api-sports.io/football/leagues/17.png",
+        "league_tipo": "copa",
         "eventos": [
           {
-            "min": "21'",
-            "tipo": "gol",
-            "nombre": "G. Martinelli",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "31'",
-            "tipo": "gol",
-            "nombre": "J. Quinones",
-            "lado": "L",
-            "mio": true
-          },
-          {
-            "min": "36'",
+            "min": "43'",
             "tipo": "amarilla",
-            "nombre": "Hassan Tambakti",
+            "nombre": "Mohamed Camara",
             "lado": "V",
             "mio": false
           },
           {
-            "min": "76'",
+            "min": "45+4'",
+            "tipo": "amarilla",
+            "nombre": "Paulo Otávio",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "59'",
             "tipo": "amarilla",
             "nombre": "Mohammed Abu Al-Shamat",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "77'",
+            "min": "74'",
             "tipo": "gol",
-            "nombre": "R. Neves",
+            "nombre": "Akram Afif",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "84'",
+            "tipo": "amarilla",
+            "nombre": "Mostafa Mashaal",
             "lado": "V",
             "mio": false
           },
           {
             "min": "84'",
             "tipo": "gol",
-            "nombre": "S. Milinkovic-Savic",
-            "lado": "V",
-            "mio": false
+            "nombre": "Julián Quiñones",
+            "lado": "L",
+            "mio": true
           },
           {
-            "min": "86'",
+            "min": "90'",
             "tipo": "amarilla",
-            "nombre": "Rúben Neves",
-            "lado": "V",
+            "nombre": "Gastón Álvarez",
+            "lado": "L",
             "mio": false
           },
           {
-            "min": "87'",
-            "tipo": "gol",
-            "nombre": "M. Retegui",
+            "min": "90+3'",
+            "tipo": "amarilla",
+            "nombre": "Musab Al-Juwayr",
             "lado": "L",
             "mio": false
           }
@@ -3754,8 +3755,8 @@
             "nombre": "Al-Qadsiah",
             "logo": "https://media.api-sports.io/football/teams/2933.png",
             "formacion": "3-5-2",
-            "color": "f72d39",
-            "color_num": "ffffff",
+            "color": null,
+            "color_num": null,
             "titulares": [
               {
                 "id": 2918,
@@ -3765,44 +3766,44 @@
                 "g": "1:1"
               },
               {
-                "id": 304467,
-                "n": "J. Thakri",
-                "num": 4,
+                "id": 636444,
+                "n": "A. Al Siyahi",
+                "num": 35,
                 "pos": "D",
-                "g": "2:3"
+                "g": "2:3",
+                "sale": "67'"
               },
               {
                 "id": 51449,
-                "n": "G. Alvarez",
+                "n": "G. Álvarez",
                 "num": 17,
                 "pos": "D",
-                "g": "2:2"
+                "g": "2:2",
+                "amarilla": "90'"
               },
               {
-                "id": 2614,
-                "n": "N. Nandez",
-                "num": 8,
+                "id": 44331,
+                "n": "Yasir Al Shahrani",
+                "num": 12,
                 "pos": "D",
-                "g": "2:1",
-                "sale": "18'"
+                "g": "2:1"
               },
               {
                 "id": 403087,
-                "n": "M. Abu Al Shamat",
+                "n": "Mohammed Abu Al Shamat",
                 "num": 2,
                 "pos": "M",
                 "g": "3:5",
-                "amarilla": "76'",
-                "sale": "90+2'"
+                "amarilla": "59'",
+                "sale": "68'"
               },
               {
-                "id": 306380,
-                "n": "M. Al Juwayr",
-                "num": 10,
+                "id": 328403,
+                "n": "Mohammed Al Qahtani",
+                "num": 15,
                 "pos": "M",
                 "g": "3:4",
-                "asist": 1,
-                "sale": "83'"
+                "sale": "55'"
               },
               {
                 "id": 19,
@@ -3812,90 +3813,76 @@
                 "g": "3:3"
               },
               {
-                "id": 36902,
-                "n": "T. Reijnders",
-                "num": 14,
+                "id": 371025,
+                "n": "S. Suleiman",
+                "num": 70,
                 "pos": "M",
                 "g": "3:2",
-                "asist": 1
+                "sale": "55'"
               },
               {
-                "id": 411800,
-                "n": "C. Bonsu Baah",
-                "num": 22,
+                "id": 306380,
+                "n": "Musab Al Juwayr",
+                "num": 10,
                 "pos": "M",
-                "g": "3:1"
+                "g": "3:1",
+                "amarilla": "90+3'"
+              },
+              {
+                "id": 35532,
+                "n": "J. Quiñones",
+                "num": 33,
+                "pos": "F",
+                "g": "4:2",
+                "goles": 1,
+                "mio": true
               },
               {
                 "id": 6420,
                 "n": "M. Retegui",
                 "num": 32,
                 "pos": "F",
-                "g": "4:2",
-                "goles": 1
-              },
-              {
-                "id": 35532,
-                "n": "J. Quinones",
-                "num": 33,
-                "pos": "F",
-                "g": "4:1",
-                "goles": 1,
-                "mio": true
+                "g": "4:1"
               }
             ],
             "suplentes": [
               {
+                "id": 44374,
+                "n": "Turki Al Ammar",
+                "num": 7,
+                "pos": "M",
+                "g": null,
+                "entra": "68'"
+              },
+              {
+                "id": 635839,
+                "n": "Abdulmalik Al-Jaber",
+                "num": 18,
+                "pos": "M",
+                "g": null
+              },
+              {
                 "id": 44449,
-                "n": "A. Al Kassar",
+                "n": "Ahmed Al Kassar",
                 "num": 28,
                 "pos": "G",
                 "g": null
               },
               {
-                "id": 44331,
-                "n": "Y. Al Shahrani",
-                "num": 12,
-                "pos": "D",
-                "g": null,
-                "entra": "18'"
-              },
-              {
-                "id": 636444,
-                "n": "A. Al Siyahi",
-                "num": 35,
-                "pos": "M",
+                "id": 44322,
+                "n": "Abdullah Al Salem",
+                "num": 9,
+                "pos": "F",
                 "g": null
               },
               {
-                "id": 688086,
-                "n": "A. Al Qarawi",
-                "num": 42,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 44374,
-                "n": "T. Al Ammar",
-                "num": 7,
-                "pos": "M",
-                "g": null,
-                "entra": "90+2'"
-              },
-              {
-                "id": 328403,
-                "n": "M. Al Qahtani",
-                "num": 15,
+                "id": 411800,
+                "n": "C. Bonsu Baah",
+                "num": 22,
                 "pos": "F",
                 "g": null,
-                "entra": "83'"
-              },
-              {
-                "id": 635839,
-                "n": "A. Al Jaber",
-                "num": 18,
-                "pos": "M",
-                "g": null
+                "entra": "55'",
+                "asist": 1
               },
               {
                 "id": 531443,
@@ -3905,179 +3892,218 @@
                 "g": null
               },
               {
-                "id": 44322,
-                "n": "A. Al Salem",
-                "num": 9,
+                "id": 36902,
+                "n": "T. Reijnders",
+                "num": 14,
+                "pos": "M",
+                "g": null,
+                "entra": "55'"
+              },
+              {
+                "id": 557381,
+                "n": "M. Sangare",
+                "num": 30,
                 "pos": "F",
+                "g": null
+              },
+              {
+                "id": 44528,
+                "n": "Meshari Sunyur",
+                "num": 50,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 304467,
+                "n": "Jehad Abdullatif Ahm",
+                "num": 4,
+                "pos": "D",
+                "g": null,
+                "entra": "67'"
+              },
+              {
+                "id": null,
+                "n": "Elyas Abu Bakr Shaikh",
+                "num": 86,
+                "pos": "M",
                 "g": null
               }
             ]
           },
           "visita": {
-            "nombre": "Al-Hilal Saudi FC",
-            "logo": "https://media.api-sports.io/football/teams/2932.png",
-            "formacion": "4-3-3",
-            "color": "0855b3",
-            "color_num": "ffffff",
+            "nombre": "Al Sadd",
+            "logo": "https://media.api-sports.io/football/teams/2895.png",
+            "formacion": "4-2-3-1",
+            "color": null,
+            "color_num": null,
             "titulares": [
               {
-                "id": 2701,
-                "n": "Bono",
-                "num": 37,
+                "id": 42021,
+                "n": "Meshaal Barsham",
+                "num": 22,
                 "pos": "G",
                 "g": "1:1"
               },
               {
-                "id": 326984,
-                "n": "M. Mahzari",
+                "id": 2530,
+                "n": "Pedro Miguel",
                 "num": 2,
                 "pos": "D",
                 "g": "2:4"
               },
               {
-                "id": 44362,
-                "n": "H. Tambakti",
-                "num": 87,
+                "id": 2541,
+                "n": "Tarek Salman",
+                "num": 5,
                 "pos": "D",
-                "g": "2:3",
-                "amarilla": "36'",
-                "sale": "74'"
+                "g": "2:3"
               },
               {
-                "id": 318,
-                "n": "K. Koulibaly",
-                "num": 3,
+                "id": 2532,
+                "n": "Boualem Khoukhi",
+                "num": 16,
                 "pos": "D",
                 "g": "2:2"
               },
               {
-                "id": 47300,
-                "n": "T. Hernandez",
-                "num": 19,
+                "id": 25208,
+                "n": "Paulo Otávio",
+                "num": 6,
                 "pos": "D",
                 "g": "2:1",
-                "sale": "88'"
+                "amarilla": "45+4'",
+                "sale": "75'"
               },
               {
-                "id": 1856,
-                "n": "S. Milinkovic-Savic",
-                "num": 22,
-                "pos": "M",
-                "g": "3:3",
-                "asist": 1,
-                "goles": 1
-              },
-              {
-                "id": 2676,
-                "n": "R. Neves",
-                "num": 8,
+                "id": 7754,
+                "n": "M. Camara",
+                "num": 4,
                 "pos": "M",
                 "g": "3:2",
-                "goles": 1,
-                "amarilla": "86'"
-              },
-              {
-                "id": 44339,
-                "n": "N. Al Dawsari",
-                "num": 6,
-                "pos": "M",
-                "g": "3:1",
-                "sale": "88'"
-              },
-              {
-                "id": 127769,
-                "n": "G. Martinelli",
-                "num": 7,
-                "pos": "F",
-                "g": "4:3",
-                "goles": 1,
-                "sale": "49'"
-              },
-              {
-                "id": 19366,
-                "n": "O. Watkins",
-                "num": 11,
-                "pos": "F",
-                "g": "4:2",
+                "amarilla": "43'",
                 "asist": 1
               },
               {
-                "id": 37724,
-                "n": "C. Summerville",
-                "num": 38,
-                "pos": "F",
+                "id": 9475,
+                "n": "Claudinho",
+                "num": 33,
+                "pos": "M",
+                "g": "3:1"
+              },
+              {
+                "id": 42224,
+                "n": "Hashim Ali",
+                "num": 23,
+                "pos": "M",
+                "g": "4:3",
+                "sale": "45'"
+              },
+              {
+                "id": 302,
+                "n": "Roberto Firmino",
+                "num": 9,
+                "pos": "M",
+                "g": "4:2",
+                "sale": "79'"
+              },
+              {
+                "id": 2544,
+                "n": "Akram Afif",
+                "num": 30,
+                "pos": "M",
                 "g": "4:1",
-                "sale": "88'"
+                "goles": 1
+              },
+              {
+                "id": 542541,
+                "n": "Y. Abdurisag",
+                "num": 12,
+                "pos": "F",
+                "g": "5:1",
+                "sale": "61'"
               }
             ],
             "suplentes": [
               {
-                "id": 44411,
-                "n": "M. Al Owais",
-                "num": 33,
+                "id": 42180,
+                "n": "Mohammed Waad",
+                "num": 7,
+                "pos": "M",
+                "g": null,
+                "entra": "75'"
+              },
+              {
+                "id": 42043,
+                "n": "Mostafa Meshaal",
+                "num": 14,
+                "pos": "M",
+                "g": null,
+                "entra": "79'",
+                "amarilla": "84'"
+              },
+              {
+                "id": 283174,
+                "n": "Mohamed Al Manai",
+                "num": 17,
+                "pos": "M",
+                "g": null,
+                "entra": "61'"
+              },
+              {
+                "id": 1607,
+                "n": "Guilherme",
+                "num": 8,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 278336,
+                "n": "Giovani",
+                "num": 11,
+                "pos": "F",
+                "g": null,
+                "entra": "45'"
+              },
+              {
+                "id": 336655,
+                "n": "Y. El Hannach",
+                "num": 3,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 383171,
+                "n": "A. Bounacer",
+                "num": 21,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 3165,
+                "n": "Y. Atal",
+                "num": 20,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 2525,
+                "n": "Saad Al Sheeb",
+                "num": 1,
                 "pos": "G",
                 "g": null
               },
               {
-                "id": 44507,
-                "n": "A. Lajami",
-                "num": 78,
-                "pos": "D",
-                "g": null,
-                "entra": "74'"
-              },
-              {
-                "id": 202381,
-                "n": "M. Al Harbi",
-                "num": 24,
-                "pos": "D",
-                "g": null,
-                "entra": "88'"
-              },
-              {
-                "id": 44340,
-                "n": "S. Al Dawsari",
-                "num": 29,
-                "pos": "M",
-                "g": null,
-                "entra": "88'"
-              },
-              {
-                "id": 44349,
-                "n": "M. Kanno",
-                "num": 28,
-                "pos": "M",
-                "g": null,
-                "entra": "88'"
-              },
-              {
-                "id": 44370,
-                "n": "N. Al Habashi",
-                "num": 77,
-                "pos": "M",
+                "id": 2545,
+                "n": "Hassan Al Haydos",
+                "num": 10,
+                "pos": "F",
                 "g": null
               },
               {
-                "id": 442343,
-                "n": "M. Al Hawsawi",
-                "num": 18,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 2639,
-                "n": "S. Mandash",
-                "num": 27,
-                "pos": "F",
-                "g": null,
-                "entra": "49'",
-                "asist": 1
-              },
-              {
-                "id": 606188,
-                "n": "S. Dahal",
-                "num": 72,
-                "pos": "F",
+                "id": 181143,
+                "n": "Yousef Abdulla Baliadeh",
+                "num": 31,
+                "pos": "G",
                 "g": null
               }
             ]
@@ -4091,19 +4117,20 @@
         "goals": 1,
         "assists": 0,
         "tarjeta": {
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/quinones_partido.jpg?v=c70b9aa0",
-          "hasta": "2026-10-24T14:00:00-06:00",
-          "firma": "c2ce2c7c8e"
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/quinones_partido.jpg?v=353be79f",
+          "hasta": "2026-10-27T14:15:00-06:00",
+          "firma": "bdf97682a8"
         },
         "stats": {
-          "rating": 7.9,
-          "tiros": 3,
-          "tiros_puerta": 2,
-          "pases_pct": 88,
-          "duelos": 12,
-          "duelos_ganados": 8,
-          "regates": 1,
-          "regates_ok": 1
+          "rating": 8.2,
+          "tiros": 4,
+          "tiros_puerta": 1,
+          "pases_pct": 86,
+          "duelos": 13,
+          "duelos_ganados": 5,
+          "regates": 3,
+          "regates_ok": 2,
+          "mejor_equipo": true
         }
       },
       "deltas_vivos": [
@@ -4112,6 +4139,12 @@
           "season": "2026",
           "league_id": 307,
           "ts": "2026-10-23T13:56:09.874345-06:00"
+        },
+        {
+          "fid": 1629947,
+          "season": "2026",
+          "league_id": 17,
+          "ts": "2026-10-26T14:10:38.107041-06:00"
         }
       ]
     },
