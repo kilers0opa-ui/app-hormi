@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-26T14:00:26.519324-06:00",
+  "updated_at": "2026-10-26T14:15:20.866835-06:00",
   "cuota": {
     "fecha": "2026-10-26",
-    "busquedas": 0,
+    "busquedas": 1,
     "busquedas_resumen": 0
   },
   "goles": {
@@ -11,9 +11,9 @@
       "team_key": "al_qadsiah",
       "goal_seen_at": "2026-10-26T19:59:58.452185+00:00",
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-26T20:15:20.440087+00:00",
       "video": null
     }
   },
@@ -515,6 +515,30 @@
           "team_key": "copenhague",
           "minutes": 0,
           "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
+    },
+    "1629947": {
+      "fixture_id": 1629947,
+      "home": "Al-Qadsiah",
+      "away": "Al Sadd",
+      "league": "Liga de Campeones de Asia",
+      "score": "Al-Qadsiah 1-1 Al Sadd",
+      "final_seen_at": "2026-10-26T20:10:38.061113+00:00",
+      "jugadores": {
+        "quinones": {
+          "team_key": "al_qadsiah",
+          "minutes": 90,
+          "goals": 1,
           "assists": 0
         }
       },
