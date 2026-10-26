@@ -625,6 +625,51 @@ def _var_con_gol(var_ev, data, anul_ids):
                and abs(((e.get("time") or {}).get("elapsed") or 0) - m) <= 3 for e in data.get("events") or [])
 
 
+# ── Marcador con sentido común. La API a veces quita un gol de la lista de eventos (VAR) pero lo deja en el marcador
+# (Olympiacos-Kalamata, 25-oct: 3-1 → 3-0 → otra vez 3-1 sin el gol en la lista). Si a un equipo YA se le quitó un gol en
+# este partido y su marcador dice más goles de los que hay en la lista, se usa la lista. Sin gol quitado no se toca nada
+# (es normal que el marcador se adelante unos segundos a los eventos).
+_GOLES_VISTOS = {}      # fixture_id -> {(team_id, minuto, extra, jugador)} goles vistos en pasadas anteriores
+_GOLES_QUITADOS = {}    # fixture_id -> {team_id: cuántos goles se le quitaron}
+_MARCADOR_REVISADO = set()   # fixture_id ya revisado en ESTA pasada (la foto se comparte entre jugadores)
+
+
+def _corregir_marcador(snap):
+    fid = snap["fixture"]["id"]
+    evs = snap.get("events") or []
+    anul = _goles_anulados(snap)
+    tanda = _tanda(snap)
+    validos, firmas = {}, set()
+    for i, e in enumerate(evs):
+        if (e.get("type") or "").lower() != "goal" or e.get("detail") == "Missed Penalty" or id(e) in tanda:
+            continue
+        tid = (e.get("team") or {}).get("id")
+        t = e.get("time") or {}
+        firma = (tid, t.get("elapsed"), t.get("extra"), (e.get("player") or {}).get("id"))
+        if i in anul:
+            _GOLES_QUITADOS.setdefault(fid, {})[tid] = max(_GOLES_QUITADOS.get(fid, {}).get(tid, 0), 1)
+            continue
+        firmas.add(firma)
+        validos[tid] = validos.get(tid, 0) + 1
+    antes = _GOLES_VISTOS.get(fid, set())
+    for firma in antes - firmas:
+        # Un gol que estaba en la lista ya no está (y no reapareció con otro minuto del mismo equipo).
+        if not any(f[0] == firma[0] and f[3] == firma[3] and f not in antes for f in firmas):
+            q = _GOLES_QUITADOS.setdefault(fid, {})
+            q[firma[0]] = q.get(firma[0], 0) + 1
+    _GOLES_VISTOS[fid] = antes | firmas if not (antes - firmas) else firmas
+    quitados = _GOLES_QUITADOS.get(fid) or {}
+    if not quitados:
+        return
+    g = snap.get("goals") or {}
+    for lado in ("home", "away"):
+        tid = (snap["teams"][lado] or {}).get("id")
+        if quitados.get(tid) and g.get(lado) is not None and g[lado] > validos.get(tid, 0):
+            log(f"🧮 marcador corregido ({fid}): {lado} {g[lado]} → {validos.get(tid, 0)} (la API quitó un gol de los eventos)")
+            g[lado] = validos.get(tid, 0)
+    snap["goals"] = g
+
+
 def _penales(data):
     """Marcador de la tanda de penales ("1-3") o None si no hubo tanda."""
     pen = ((data.get("score") or {}).get("penalty")) or {}
@@ -1830,7 +1875,10 @@ def _fixture_meta(fx):
 # Inglaterra = 6 am en CDMX) y el aviso llegaría tarde. NO dice nada de
 # convocatoria: eso solo se sabe ~1 h antes (alineación), y las listas de las
 # noticias suelen cambiar.
-REMINDER_HORA = 21
+REMINDER_HORA = 21   # hora LOCAL del celular a la que se muestra el aviso (la app lo programa: "mostrar_local")
+# El servidor lo manda antes (REMINDER_ENVIO, hora CDMX) para que en cualquier zona horaria (Texas, Tijuana, Europa…)
+# la app tenga el aviso a tiempo y lo muestre a las 21:00 de SU hora (si allá ya pasaron las 21:00, sale al recibirlo).
+REMINDER_ENVIO = 15
 _NEXT_CACHE = {}     # team_id -> próximo partido, válido durante UNA pasada
 
 
@@ -1876,7 +1924,10 @@ def send_reminders(config, notifier, fcm, schedule_out, reminders_sent):
     """Manda 'Juega mañana' (una vez por partido). reminders_sent es un set
     de ids 'fixture_id:fecha' que se va llenando. Devuelve cuántos mandó."""
     now = datetime.now(LOCAL_TZ)
-    if now.hour < REMINDER_HORA:
+    # hormi_config.json → "avisos_hora_local": true cuando las apps ya saben programar el aviso a su hora local
+    # (las versiones viejas lo mostrarían al recibirlo, a las 15:00).
+    hora_local = bool(config.get("avisos_hora_local"))
+    if now.hour < (REMINDER_ENVIO if hora_local else REMINDER_HORA):
         return 0
     tomorrow = (now + timedelta(days=1)).date()
     groups = {}
@@ -1944,7 +1995,7 @@ def send_reminders(config, notifier, fcm, schedule_out, reminders_sent):
     if fcm:
         g = {"emoji": "📅", "label": "Mañana", "match": None, "league": None, "score": None}
         fcm.send("reminder", title, body, None, None, player_keys=keys,
-                 extra={"grupo": _payload_grupo(g, items, title, body)})
+                 extra={"grupo": _payload_grupo(g, items, title, body), **({"mostrar_local": f"{REMINDER_HORA:02d}:00"} if hora_local else {})})
     if not getattr(notifier, "console_only", False):
         reminders_sent.update(groups.keys())
     return len(groups)
@@ -2142,6 +2193,12 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     snap = _SNAP_CACHE[fid]
     if not snap:
         return
+    if fid not in _MARCADOR_REVISADO:
+        _MARCADOR_REVISADO.add(fid)
+        try:
+            _corregir_marcador(snap)
+        except Exception as err:
+            log(f"⚠️  marcador con sentido común: {err}")
 
     # Convocado al Tri y su club juega en la ventana FIFA sin que aparezca en
     # la alineación: no es partido suyo (ni "En cancha" ni "Arrancó").
@@ -2330,6 +2387,7 @@ def calendario_seleccion(prev, config):
 
 def chequeo(args, notifier, config, fcm=None):
     _SNAP_CACHE.clear()
+    _MARCADOR_REVISADO.clear()
     _GRUPOS.clear()
     _NEXT_CACHE.clear()
     state = load_json(STATE_FILE, {})

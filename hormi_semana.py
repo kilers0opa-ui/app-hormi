@@ -198,7 +198,7 @@ def imagen(res, ini, fin):
     # 4 recuadros
     t = res["totales"]
     cajas = [(str(t["goles"]), "GOLES"), (str(t["asistencias"]), "ASISTENCIAS"),
-             (str(t["partidos"]), "PARTIDOS"), (_miles(t["minutos"]) + "'", "MINUTOS")]
+             (str(t.get("jugaron", t["partidos"])), "JUGARON"), (_miles(t["minutos"]) + "'", "MINUTOS")]
     bw, bh, gap, y0 = (W - 2 * x0 - 24) // 2, 150, 24, 230
     # Lo translúcido se pinta en una capa aparte (ImageDraw no mezcla transparencias sobre la imagen).
     capa = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -301,9 +301,10 @@ def main():
         fcm = ha.FcmSender(config.get("fcm_project_id"))
         title = f"📊 Jornada de la Legión: {t['goles']} gol" + ("es" if t["goles"] != 1 else "") + " en la semana"
         body = (f"MVP: {m['name']}" + (f" (⭐ {m['rating']})" if m.get("rating") else "") +
-                f" · {t['partidos']} partidos · {_miles(t['minutos'])} minutos")
+                f" · {t.get('jugaron', 0)} jugaron · {_miles(t['minutos'])} minutos")
         print(f"📲 {title} — {body}")
-        fcm.send("semana", title, body, None, None, None)
+        # La app lo muestra a las 9:00 de la hora LOCAL del celular (si allá ya pasaron las 9, al recibirlo).
+        fcm.send("semana", title, body, None, None, None, extra={"mostrar_local": "09:00"})
     return 0
 
 
