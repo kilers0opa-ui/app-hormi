@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T16:44:02.655775-06:00",
+  "updated_at": "2026-10-25T23:09:08.375715-06:00",
   "desde": "2026-10-23",
   "hasta": "2026-11-01",
   "partidos": [
@@ -282,9 +282,9 @@
       "away_logo": "https://media.api-sports.io/football/teams/2285.png",
       "league": "Liga MX",
       "league_logo": "https://media.api-sports.io/football/leagues/262.png",
-      "status": "NS",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "2H",
+      "home_goals": 4,
+      "away_goals": 1,
       "penales": null,
       "jugadores": [
         {
