@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-26T15:55:29.887846-06:00",
+  "updated_at": "2026-10-26T16:15:35.536429-06:00",
   "cuota": {
     "fecha": "2026-10-26",
-    "busquedas": 4,
-    "busquedas_resumen": 2
+    "busquedas": 5,
+    "busquedas_resumen": 3
   },
   "goles": {
     "quinones:al_qadsiah:1629947:goal:35532:1:gol": {
@@ -23,7 +23,7 @@
         "url": "https://www.youtube.com/watch?v=Fq6rxGw7HoU",
         "embeddable": true
       },
-      "verificado": "2026-10-26T21:45:20.658093+00:00"
+      "verificado": "2026-10-26T22:15:24.186481+00:00"
     }
   },
   "partidos": {
@@ -472,19 +472,26 @@
         }
       },
       "status": "pendiente",
-      "intentos": 2,
+      "intentos": 3,
       "fallos": 0,
-      "ultimo_intento": "2026-10-26T21:15:22.123461+00:00",
+      "ultimo_intento": "2026-10-26T22:15:24.186481+00:00",
       "video": null,
-      "noticias_pasadas": 2,
-      "ultima_noticia": "2026-10-26T21:15:22.123461+00:00",
+      "noticias_pasadas": 3,
+      "ultima_noticia": "2026-10-26T22:15:24.186481+00:00",
       "noticias": {
         "quinones": [
           {
-            "title": "¡De Balón de Oro! Julián Quiñones rescató empate del Al Qadisiya en la AFC Champions League (VIDEO)",
-            "source": "Fox Sports",
-            "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNd29xcHJHVkZoRHplN1JmeEs3UXhkaTBvdTFQN00wdE5ONFNPeFl0UDdHVUZfRkdlUU9SWllkaGV0OXFGSnp1TlhKRlhMbFF5bmlycFZDMElNa1NLYUVuT2xwYXVfZ3picEZzY3hZQ242YklmUVpFR3JDTXUxMVNPbDVkVm5kX2VfRGpSQWllU2NndVZUek9JeDR3VE9ITGNmVWR3V3hEMXBEOW1QMVNWc2NCX1J5NlY2Vk1pXzhhVFJYUXEtcnlBNE1TNmNtRm85Z3c?oc=5",
-            "published_at": "2026-10-26T20:25:11Z",
+            "title": "Julián Quiñones hace golazo en su histórico día de Balón de Oro",
+            "source": "TV Azteca",
+            "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZzlXRGRKTUw3VWRrM0hrRkExd3lmNnNIbFBXVG9LN082Q2FuejdBSzZOSEpRbVJsVEt5LXN3MkU0cEdtM0JPaElRTHVROUs0a1JIaXF0Y3RuUl9NY1VmdENFdkI0S2N1OENfengydGNEdE9NYlJnaUc2R05BUGFYdjF0ZWROMkIyX2EwcF9YMVZpbXE5WWxTdHFNU25OVXVOblNMcXdVTmJPQnBSUXhiZHdfWHpJb1RP0gHGAUFVX3lxTE5XQ0tjdHBWYWpaVnJlX2tsaVZ3N2tDQTJwdlNfa3NmM2lHajdtT3E3NHBuVDEzV0dWOG00R0kxLWlRMjVIQVRZRGhKcWNiTFpjMWV3MWdINGJvYTFJR1lnb2UwOFhjMkpReVl2b3k4YngtYVFxM0FiazhfelluUmttY2dkbUpIWVkxMDhoLXRsd2xzdXEyd0xRa3M3SFRrX29uNGxNbnl3TWltZTZidzR5anpaU2VESnNWSVdnQWpzN0psdXJOQQ?oc=5",
+            "published_at": "2026-10-26T21:13:23Z",
+            "edicion": "mx"
+          },
+          {
+            "title": "Video del gol de Julián Quiñones en Champions: marcó ante Al Sadd tras ser 28° en el Balón de Oro",
+            "source": "365Scores",
+            "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9xSDk4MjN1OF9oUk83UkpCZ2N2SlB0VXJsYTJkQ1hUWnNLaV9RdlhOMDBsSHhueTdxU01XWWpLLWZTb0VhMDJvSUV0dWd0SkJLM3JPc0c0empobGlkWjVVVHk1VkxiVDJzMlFRVzRqc0s5UHpueVJadDZaS2o?oc=5",
+            "published_at": "2026-10-26T20:23:38Z",
             "edicion": "mx"
           },
           {
@@ -492,13 +499,6 @@
             "source": "El Heraldo de México",
             "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNTlZfR2tWc3d2U0VMcGlKdzhzZVV1cVZqSEptTzJnT0tIQlJyM2FDSUJGRzZneThmcVdBWXRpcC0xTjIzR2s3QXhYV2oyZEl0YzBCa1lDMmlVbHU3a1ZkWlBoSXZrZ3J4ekE0aVotdm15enhKZ1IwMm5hTlhiMFMxM25YRXpIaUlpQ0RiaDZMaFZ5aWZFb3J0M09DR2NXeVBSei1jbHJiaDkxN2xVMVZWejN1am1yZWNJLVlhZlMzcDk4dnY4dkJwMklGbFZoRWlIVnZEck9lcTN5T3lLOXNaUmJHVVdqRmkwbjZz?oc=5",
             "published_at": "2026-10-26T20:17:00Z",
-            "edicion": "mx"
-          },
-          {
-            "title": "Julián Quiñones, Scarlett Camberos, los mexicanos nominados para el Balón de Oro 2026",
-            "source": "El Economista",
-            "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPNWdad0IzTWszeXgyaDBKd1dzb2ozaVFob1FhcW8wcTVOaGNXdlB0dXJteGtXOWp6YTJpdXV2QjVYQmtCTnZrTGhQLS1SZTBfRXNOcUxaYWdudlduZ2l1TWlRc2tGdjJ6d1M2M09UZEVjTnE3Vkl3VG1PWEM4S3E3ZEJZUk9QbGNmZk0xQW9HZDBoWEpHZDljUjNQN1hQS3hWTUNQay1QT2p1eDVsTFoySmRFZVh1Zno5RHR2YklJUURKam_SAcgBQVVfeXFMTmJmWU1oMkpaVjdxNG4wdm81bEh6aHlxT2R4a0J6V3BBRktPMDYxUll0ZF9ZdmFzU2xFd181RDZmRnVhYlp4dlVPcFdsNVFjQ0FhYnBFRy1Xc2tpbG1LTlFkaV9kaDY0X253Yk9peHp1THhmenltX2oxclJwMnpUaEJyYWh6bGVJcXEyTmpOUUVtSXlGNzJkU2Nnc1NPT2gyV1RrUDFQUHMzS1loX2FTYkppX3RzeXJpM0NTdTctdjhpUTBIZG5VbDY?oc=5",
-            "published_at": "2026-10-26T20:10:48Z",
             "edicion": "mx"
           }
         ]
