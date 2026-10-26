@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-25T16:55:33.452603-06:00",
+  "updated_at": "2026-10-26T13:55:37.493666-06:00",
   "cuota": {
-    "fecha": "2026-10-25",
-    "busquedas": 10,
-    "busquedas_resumen": 10
+    "fecha": "2026-10-26",
+    "busquedas": 0,
+    "busquedas_resumen": 0
   },
   "goles": {},
   "partidos": {
@@ -464,7 +464,7 @@
         "url": "https://www.youtube.com/watch?v=IU3FYx5Z1ZQ",
         "embeddable": true
       },
-      "noticias_pasadas": 3,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-25T22:55:17.616631+00:00",
       "noticias": {
         "chavez": [
@@ -491,6 +491,30 @@
           }
         ]
       }
+    },
+    "1549041": {
+      "fixture_id": 1549041,
+      "home": "FC Copenhague",
+      "away": "Odense",
+      "league": "Superliga de Dinamarca",
+      "score": "FC Copenhague 1-1 Odense",
+      "final_seen_at": "2026-10-26T19:53:18.344707+00:00",
+      "jugadores": {
+        "huescas": {
+          "team_key": "copenhague",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
