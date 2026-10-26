@@ -1,31 +1,8 @@
 {
-  "updated_at": "2026-10-25T23:09:08.375715-06:00",
-  "desde": "2026-10-23",
-  "hasta": "2026-11-01",
+  "updated_at": "2026-10-26T09:22:43.602575-06:00",
+  "desde": "2026-10-24",
+  "hasta": "2026-11-02",
   "partidos": [
-    {
-      "fixture_id": 1603068,
-      "kickoff": "2026-10-23T12:00:00-06:00",
-      "home": "Al-Qadsiah",
-      "away": "Al-Hilal Saudi FC",
-      "home_id": 2933,
-      "away_id": 2932,
-      "home_logo": "https://media.api-sports.io/football/teams/2933.png",
-      "away_logo": "https://media.api-sports.io/football/teams/2932.png",
-      "league": "Liga Profesional Saudí",
-      "league_logo": "https://media.api-sports.io/football/leagues/307.png",
-      "status": "FT",
-      "home_goals": 2,
-      "away_goals": 3,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "quinones",
-          "team_key": "al_qadsiah",
-          "lado": "L"
-        }
-      ]
-    },
     {
       "fixture_id": 1561420,
       "kickoff": "2026-10-24T03:45:00-06:00",
@@ -273,7 +250,7 @@
     },
     {
       "fixture_id": 1551019,
-      "kickoff": "2026-10-25T21:10:00-06:00",
+      "kickoff": "2026-10-25T21:00:00-06:00",
       "home": "Club Tijuana",
       "away": "Santos Laguna",
       "home_id": 2280,
@@ -282,7 +259,7 @@
       "away_logo": "https://media.api-sports.io/football/teams/2285.png",
       "league": "Liga MX",
       "league_logo": "https://media.api-sports.io/football/leagues/262.png",
-      "status": "2H",
+      "status": "FT",
       "home_goals": 4,
       "away_goals": 1,
       "penales": null,
@@ -811,6 +788,52 @@
         {
           "key": "vasquez",
           "team_key": "genoa",
+          "lado": "V"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1549050,
+      "kickoff": "2026-11-02T12:00:00-06:00",
+      "home": "Sonderjyske",
+      "away": "FC Copenhague",
+      "home_id": 396,
+      "away_id": 400,
+      "home_logo": "https://media.api-sports.io/football/teams/396.png",
+      "away_logo": "https://media.api-sports.io/football/teams/400.png",
+      "league": "Superliga de Dinamarca",
+      "league_logo": "https://media.api-sports.io/football/leagues/119.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "huescas",
+          "team_key": "copenhague",
+          "lado": "V"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1629963,
+      "kickoff": "2026-11-02T12:15:00-06:00",
+      "home": "Al-Gharafa",
+      "away": "Al-Qadsiah",
+      "home_id": 2903,
+      "away_id": 2933,
+      "home_logo": "https://media.api-sports.io/football/teams/2903.png",
+      "away_logo": "https://media.api-sports.io/football/teams/2933.png",
+      "league": "Liga de Campeones de Asia",
+      "league_logo": "https://media.api-sports.io/football/leagues/17.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "quinones",
+          "team_key": "al_qadsiah",
           "lado": "V"
         }
       ]
