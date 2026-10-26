@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T16:50:05.256621-06:00",
+  "updated_at": "2026-10-26T09:30:33.001673-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -313,21 +313,21 @@
           {
             "min": "60'",
             "tipo": "sale",
-            "nombre": "Armando González",
+            "nombre": "A. Gonzalez",
             "lado": "L",
             "mio": true
           },
           {
             "min": "74'",
             "tipo": "gol",
-            "nombre": "Marius Mouandilmadji",
+            "nombre": "M. Mouandilmadji",
             "lado": "L",
             "mio": false
           },
           {
             "min": "85'",
             "tipo": "gol",
-            "nombre": "Leon Bailey",
+            "nombre": "L. Bailey",
             "lado": "L",
             "mio": false
           },
@@ -364,7 +364,7 @@
               },
               {
                 "id": 413662,
-                "n": "Z. Smajlović",
+                "n": "Z. Smajlovic",
                 "num": 4,
                 "pos": "D",
                 "g": "2:3"
@@ -402,22 +402,22 @@
               },
               {
                 "id": 339105,
-                "n": "Joel Roca",
+                "n": "J. Roca",
                 "num": 73,
                 "pos": "M",
                 "g": "4:3",
                 "asist": 1,
-                "sale": "79'"
+                "sale": "78'"
               },
               {
                 "id": 379985,
-                "n": "Gustavo Sá",
+                "n": "G. Sa",
                 "num": 8,
                 "pos": "M",
                 "g": "4:2",
                 "amarilla": "17'",
                 "asist": 1,
-                "sale": "45'"
+                "sale": "46'"
               },
               {
                 "id": 141901,
@@ -430,7 +430,7 @@
               },
               {
                 "id": 291713,
-                "n": "A. González",
+                "n": "A. Gonzalez",
                 "num": 34,
                 "pos": "F",
                 "g": "5:1",
@@ -440,71 +440,8 @@
             ],
             "suplentes": [
               {
-                "id": 118,
-                "n": "Gelson Martins",
-                "num": 10,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 983,
-                "n": "L. Bailey",
-                "num": 17,
-                "pos": "F",
-                "g": null,
-                "entra": "75'",
-                "goles": 1
-              },
-              {
-                "id": 1609,
-                "n": "K. Fortounis",
-                "num": 7,
-                "pos": "M",
-                "g": null,
-                "entra": "79'"
-              },
-              {
-                "id": 195929,
-                "n": "S. Hezze",
-                "num": 32,
-                "pos": "M",
-                "g": null,
-                "entra": "60'"
-              },
-              {
-                "id": 41130,
-                "n": "Chiquinho",
-                "num": 22,
-                "pos": "M",
-                "g": null,
-                "entra": "45'"
-              },
-              {
-                "id": 41970,
-                "n": "David Carmo",
-                "num": 6,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 394,
-                "n": "M. Mouandilmadji",
-                "num": 99,
-                "pos": "F",
-                "g": null,
-                "entra": "60'",
-                "goles": 1
-              },
-              {
-                "id": 278196,
-                "n": "S. Onyemaechi",
-                "num": 70,
-                "pos": "D",
-                "g": null
-              },
-              {
                 "id": 66898,
-                "n": "B. Popović",
+                "n": "B. Popovic",
                 "num": 31,
                 "pos": "G",
                 "g": null
@@ -517,6 +454,20 @@
                 "g": null
               },
               {
+                "id": 41970,
+                "n": "D. Carmo",
+                "num": 6,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 278196,
+                "n": "B. Onyemaechi",
+                "num": 70,
+                "pos": "D",
+                "g": null
+              },
+              {
                 "id": 364513,
                 "n": "L. Scipioni",
                 "num": 16,
@@ -524,10 +475,59 @@
                 "g": null
               },
               {
+                "id": 1609,
+                "n": "K. Fortounis",
+                "num": 7,
+                "pos": "M",
+                "g": null,
+                "entra": "78'"
+              },
+              {
+                "id": 41130,
+                "n": "Chiquinho",
+                "num": 22,
+                "pos": "M",
+                "g": null,
+                "entra": "46'"
+              },
+              {
+                "id": 195929,
+                "n": "S. Hezze",
+                "num": 32,
+                "pos": "M",
+                "g": null,
+                "entra": "60'"
+              },
+              {
                 "id": 8493,
                 "n": "R. Yaremchuk",
                 "num": 11,
                 "pos": "F",
+                "g": null
+              },
+              {
+                "id": 983,
+                "n": "L. Bailey",
+                "num": 17,
+                "pos": "F",
+                "g": null,
+                "entra": "75'",
+                "goles": 1
+              },
+              {
+                "id": 394,
+                "n": "M. Mouandilmadji",
+                "num": 99,
+                "pos": "F",
+                "g": null,
+                "entra": "60'",
+                "goles": 1
+              },
+              {
+                "id": 118,
+                "n": "G. Martins",
+                "num": 10,
+                "pos": "M",
                 "g": null
               }
             ]
@@ -541,7 +541,7 @@
             "titulares": [
               {
                 "id": 2815,
-                "n": "N. Vasiljević",
+                "n": "N. Vasiljevic",
                 "num": 40,
                 "pos": "G",
                 "g": "1:1"
@@ -579,7 +579,7 @@
               },
               {
                 "id": 289477,
-                "n": "G. Piñeiro",
+                "n": "G. Pineiro",
                 "num": 23,
                 "pos": "M",
                 "g": "3:2",
@@ -603,7 +603,7 @@
               },
               {
                 "id": 840,
-                "n": "A. Sigurðsson",
+                "n": "A. Sigurdsson",
                 "num": 10,
                 "pos": "M",
                 "g": "4:2"
@@ -620,11 +620,24 @@
                 "n": "D. Kurminowski",
                 "num": 91,
                 "pos": "F",
-                "g": "5:1",
-                "sale": "61'"
+                "g": "5:1"
               }
             ],
             "suplentes": [
+              {
+                "id": 436188,
+                "n": "P. Ginis",
+                "num": 26,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 25570,
+                "n": "I. Gelios",
+                "num": 1,
+                "pos": "G",
+                "g": null
+              },
               {
                 "id": 162231,
                 "n": "P. Panagiotou",
@@ -633,28 +646,12 @@
                 "g": null
               },
               {
-                "id": 122469,
-                "n": "Josete Miranda",
-                "num": 11,
-                "pos": "F",
-                "g": null,
-                "entra": "75'",
-                "amarilla": "90+1'"
-              },
-              {
-                "id": 459041,
-                "n": "Aarón",
-                "num": 5,
-                "pos": "M",
-                "g": null,
-                "entra": "75'"
-              },
-              {
-                "id": 68475,
-                "n": "U. Ignjatović",
-                "num": 29,
+                "id": 647972,
+                "n": "J. Bakayoko",
+                "num": 19,
                 "pos": "D",
-                "g": null
+                "g": null,
+                "entra": "83'"
               },
               {
                 "id": 330456,
@@ -664,17 +661,17 @@
                 "g": null
               },
               {
-                "id": 585,
-                "n": "P. Ginis",
-                "num": 26,
-                "pos": "G",
+                "id": 68475,
+                "n": "U. Ignjatovic",
+                "num": 29,
+                "pos": "D",
                 "g": null
               },
               {
-                "id": 25570,
-                "n": "I. Gelios",
-                "num": 1,
-                "pos": "G",
+                "id": 585442,
+                "n": "A. Perez",
+                "num": 3,
+                "pos": null,
                 "g": null
               },
               {
@@ -686,6 +683,23 @@
                 "entra": "61'"
               },
               {
+                "id": 459041,
+                "n": "A. Martin",
+                "num": 5,
+                "pos": "M",
+                "g": null,
+                "entra": "75'"
+              },
+              {
+                "id": 122469,
+                "n": "J. Miranda",
+                "num": 11,
+                "pos": "F",
+                "g": null,
+                "entra": "75'",
+                "amarilla": "90+1'"
+              },
+              {
                 "id": 58778,
                 "n": "J. Bonetto",
                 "num": 32,
@@ -694,25 +708,9 @@
               },
               {
                 "id": 52683,
-                "n": "J. Bolívar",
+                "n": "J. Bolivar",
                 "num": 9,
                 "pos": "F",
-                "g": null,
-                "entra": "61'"
-              },
-              {
-                "id": 647972,
-                "n": "M. J. Bakayoko",
-                "num": 19,
-                "pos": "D",
-                "g": null,
-                "entra": "83'"
-              },
-              {
-                "id": null,
-                "n": "Álex Perez",
-                "num": 3,
-                "pos": "D",
                 "g": null
               }
             ]
@@ -728,7 +726,7 @@
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/armando_partido.jpg?v=abe4d48c",
           "hasta": "2026-10-26T10:00:00-06:00",
-          "firma": "bc8db052e2"
+          "firma": "123286061e"
         }
       },
       "deltas_vivos": [
@@ -2739,7 +2737,7 @@
           {
             "min": "25'",
             "tipo": "gol",
-            "nombre": "Mikael Ellertsson",
+            "nombre": "M. E. Ellertsson",
             "lado": "L",
             "mio": false
           },
@@ -2778,14 +2776,14 @@
               },
               {
                 "id": 18967,
-                "n": "L. Østigård",
+                "n": "L. Ostigard",
                 "num": 5,
                 "pos": "D",
                 "g": "2:2"
               },
               {
                 "id": 35544,
-                "n": "J. Vásquez",
+                "n": "J. Vasquez",
                 "num": 22,
                 "pos": "D",
                 "g": "2:1",
@@ -2793,7 +2791,7 @@
               },
               {
                 "id": 89520,
-                "n": "M. Ellertsson",
+                "n": "M. E. Ellertsson",
                 "num": 77,
                 "pos": "M",
                 "g": "3:4",
@@ -2801,7 +2799,7 @@
               },
               {
                 "id": 31057,
-                "n": "H. Traorè",
+                "n": "H. J. Traore",
                 "num": 25,
                 "pos": "M",
                 "g": "3:3"
@@ -2841,7 +2839,7 @@
               },
               {
                 "id": 66761,
-                "n": "M. Osmajić",
+                "n": "M. Osmajic",
                 "num": 18,
                 "pos": "F",
                 "g": "5:1"
@@ -2849,24 +2847,16 @@
             ],
             "suplentes": [
               {
-                "id": 281826,
-                "n": "A. Marcandalli",
-                "num": 27,
-                "pos": "D",
-                "g": null,
-                "entra": "70'"
+                "id": 31445,
+                "n": "D. Sommariva",
+                "num": 39,
+                "pos": "G",
+                "g": null
               },
               {
                 "id": 7228,
                 "n": "F. Stolz",
                 "num": 99,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 31445,
-                "n": "D. Sommariva",
-                "num": 39,
                 "pos": "G",
                 "g": null
               },
@@ -2878,33 +2868,18 @@
                 "g": null
               },
               {
-                "id": 15881,
-                "n": "M. Frendrup",
-                "num": 32,
-                "pos": "M",
+                "id": 281826,
+                "n": "A. Marcandalli",
+                "num": 27,
+                "pos": "D",
                 "g": null,
-                "entra": "62'"
+                "entra": "70'"
               },
               {
-                "id": 405239,
-                "n": "Alexsandro Amorim",
-                "num": 4,
-                "pos": "M",
-                "g": null,
-                "entra": "81'"
-              },
-              {
-                "id": 475672,
-                "n": "E. Meichtry",
-                "num": 11,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 288769,
-                "n": "T. Baldanzi",
-                "num": 8,
-                "pos": "M",
+                "id": 616219,
+                "n": "L. Klisys",
+                "num": 14,
+                "pos": null,
                 "g": null
               },
               {
@@ -2915,16 +2890,47 @@
                 "g": null
               },
               {
-                "id": 197500,
-                "n": "Nikita Solodchenko",
-                "num": 21,
-                "pos": "F",
+                "id": 362813,
+                "n": "D. Puczka",
+                "num": 31,
+                "pos": "D",
+                "g": null,
+                "entra": "81'"
+              },
+              {
+                "id": 475672,
+                "n": "F. Meichtry",
+                "num": 11,
+                "pos": "M",
                 "g": null
               },
               {
-                "id": 281408,
-                "n": "Vítinha",
-                "num": 9,
+                "id": 15881,
+                "n": "M. Frendrup",
+                "num": 32,
+                "pos": "M",
+                "g": null,
+                "entra": "62'"
+              },
+              {
+                "id": 288769,
+                "n": "T. Baldanzi",
+                "num": 8,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 405239,
+                "n": "Amorim",
+                "num": 4,
+                "pos": "M",
+                "g": null,
+                "entra": "81'"
+              },
+              {
+                "id": 197500,
+                "n": "J. Robinho",
+                "num": 21,
                 "pos": "F",
                 "g": null
               },
@@ -2937,18 +2943,10 @@
                 "entra": "62'"
               },
               {
-                "id": 362813,
-                "n": "D. Puczka",
-                "num": 31,
-                "pos": "D",
-                "g": null,
-                "entra": "81'"
-              },
-              {
-                "id": null,
-                "n": "Lukas Klišys",
-                "num": 14,
-                "pos": "D",
+                "id": 281408,
+                "n": "Vitinha",
+                "num": 9,
+                "pos": "F",
                 "g": null
               }
             ]
@@ -2962,7 +2960,7 @@
             "titulares": [
               {
                 "id": 162445,
-                "n": "F. Stanković",
+                "n": "F. Stankovic",
                 "num": 1,
                 "pos": "G",
                 "g": "1:1"
@@ -2998,7 +2996,7 @@
               },
               {
                 "id": 107153,
-                "n": "Kike Pérez",
+                "n": "K. Perez",
                 "num": 71,
                 "pos": "M",
                 "g": "3:4"
@@ -3013,7 +3011,7 @@
               },
               {
                 "id": 1266,
-                "n": "T. Bašić",
+                "n": "T. Basic",
                 "num": 26,
                 "pos": "M",
                 "g": "3:2",
@@ -3044,6 +3042,21 @@
             ],
             "suplentes": [
               {
+                "id": 30611,
+                "n": "L. Montipo",
+                "num": 96,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 31390,
+                "n": "P. Mazzocchi",
+                "num": 70,
+                "pos": "D",
+                "g": null,
+                "entra": "71'"
+              },
+              {
                 "id": 25061,
                 "n": "A. Bella-Kotchap",
                 "num": 17,
@@ -3051,10 +3064,10 @@
                 "g": null
               },
               {
-                "id": 30611,
-                "n": "L. Montipò",
-                "num": 96,
-                "pos": "G",
+                "id": 375321,
+                "n": "R. Sagrado",
+                "num": 20,
+                "pos": "D",
                 "g": null
               },
               {
@@ -3065,16 +3078,16 @@
                 "g": null
               },
               {
-                "id": 445973,
-                "n": "Toni Fernández",
-                "num": 77,
-                "pos": "M",
+                "id": 610145,
+                "n": "A. Gomes",
+                "num": 95,
+                "pos": "D",
                 "g": null
               },
               {
-                "id": 415517,
-                "n": "Lamine Dabo",
-                "num": 8,
+                "id": 28744,
+                "n": "T. J. Helgason",
+                "num": 21,
                 "pos": "M",
                 "g": null
               },
@@ -3087,33 +3100,11 @@
                 "entra": "71'"
               },
               {
-                "id": 425255,
-                "n": "K. Lisman",
-                "num": 56,
-                "pos": "F",
-                "g": null
-              },
-              {
-                "id": 375321,
-                "n": "R. Sagrado",
-                "num": 20,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 28744,
-                "n": "Þ. Helgason",
-                "num": 21,
+                "id": 30532,
+                "n": "A. Duncan",
+                "num": 32,
                 "pos": "M",
                 "g": null
-              },
-              {
-                "id": 31390,
-                "n": "P. Mazzocchi",
-                "num": 70,
-                "pos": "D",
-                "g": null,
-                "entra": "71'"
               },
               {
                 "id": 51266,
@@ -3123,19 +3114,11 @@
                 "g": null
               },
               {
-                "id": 30532,
-                "n": "A. Duncan",
-                "num": 32,
+                "id": 415517,
+                "n": "L. Fanne",
+                "num": 8,
                 "pos": "M",
                 "g": null
-              },
-              {
-                "id": 318546,
-                "n": "A. Rrahmani",
-                "num": 7,
-                "pos": "F",
-                "g": null,
-                "entra": "79'"
               },
               {
                 "id": 26438,
@@ -3146,11 +3129,26 @@
                 "entra": "87'"
               },
               {
-                "id": 610145,
-                "n": "A. Gomes",
-                "num": 95,
-                "pos": "D",
+                "id": 425255,
+                "n": "K. Lisman",
+                "num": 56,
+                "pos": "F",
                 "g": null
+              },
+              {
+                "id": 445973,
+                "n": "T. Fernandez",
+                "num": 77,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 318546,
+                "n": "A. Rrahmani",
+                "num": 7,
+                "pos": "F",
+                "g": null,
+                "entra": "79'"
               }
             ]
           }
@@ -3165,7 +3163,7 @@
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/vasquez_partido.jpg?v=4c3b09db",
           "hasta": "2026-10-26T10:00:00-06:00",
-          "firma": "1c160cc0cc"
+          "firma": "7f3b67b7f2"
         },
         "stats": {
           "rating": 7.4,
@@ -3695,21 +3693,21 @@
           {
             "min": "21'",
             "tipo": "gol",
-            "nombre": "Gabriel Martinelli",
+            "nombre": "G. Martinelli",
             "lado": "V",
             "mio": false
           },
           {
             "min": "31'",
             "tipo": "gol",
-            "nombre": "Julián Quiñones",
+            "nombre": "J. Quinones",
             "lado": "L",
             "mio": true
           },
           {
             "min": "36'",
             "tipo": "amarilla",
-            "nombre": "Hassan Al-Tambakti",
+            "nombre": "Hassan Tambakti",
             "lado": "V",
             "mio": false
           },
@@ -3723,14 +3721,14 @@
           {
             "min": "77'",
             "tipo": "gol",
-            "nombre": "Rúben Neves",
+            "nombre": "R. Neves",
             "lado": "V",
             "mio": false
           },
           {
             "min": "84'",
             "tipo": "gol",
-            "nombre": "Sergej Milinković-Savić",
+            "nombre": "S. Milinkovic-Savic",
             "lado": "V",
             "mio": false
           },
@@ -3744,7 +3742,7 @@
           {
             "min": "87'",
             "tipo": "gol",
-            "nombre": "Mateo Retegui",
+            "nombre": "M. Retegui",
             "lado": "L",
             "mio": false
           }
@@ -3755,8 +3753,8 @@
             "nombre": "Al-Qadsiah",
             "logo": "https://media.api-sports.io/football/teams/2933.png",
             "formacion": "3-5-2",
-            "color": null,
-            "color_num": null,
+            "color": "f72d39",
+            "color_num": "ffffff",
             "titulares": [
               {
                 "id": 2918,
@@ -3767,21 +3765,21 @@
               },
               {
                 "id": 304467,
-                "n": "Jehad Abdullatif Ahm",
+                "n": "J. Thakri",
                 "num": 4,
                 "pos": "D",
                 "g": "2:3"
               },
               {
                 "id": 51449,
-                "n": "G. Álvarez",
+                "n": "G. Alvarez",
                 "num": 17,
                 "pos": "D",
                 "g": "2:2"
               },
               {
                 "id": 2614,
-                "n": "N. Nández",
+                "n": "N. Nandez",
                 "num": 8,
                 "pos": "D",
                 "g": "2:1",
@@ -3789,7 +3787,7 @@
               },
               {
                 "id": 403087,
-                "n": "Mohammed Abu Al Shamat",
+                "n": "M. Abu Al Shamat",
                 "num": 2,
                 "pos": "M",
                 "g": "3:5",
@@ -3798,7 +3796,7 @@
               },
               {
                 "id": 306380,
-                "n": "Musab Al Juwayr",
+                "n": "M. Al Juwayr",
                 "num": 10,
                 "pos": "M",
                 "g": "3:4",
@@ -3837,7 +3835,7 @@
               },
               {
                 "id": 35532,
-                "n": "J. Quiñones",
+                "n": "J. Quinones",
                 "num": 33,
                 "pos": "F",
                 "g": "4:1",
@@ -3847,15 +3845,15 @@
             ],
             "suplentes": [
               {
-                "id": 44322,
-                "n": "Abdullah Al Salem",
-                "num": 9,
-                "pos": "F",
+                "id": 44449,
+                "n": "A. Al Kassar",
+                "num": 28,
+                "pos": "G",
                 "g": null
               },
               {
                 "id": 44331,
-                "n": "Yasir Al Shahrani",
+                "n": "Y. Al Shahrani",
                 "num": 12,
                 "pos": "D",
                 "g": null,
@@ -3869,6 +3867,36 @@
                 "g": null
               },
               {
+                "id": 688086,
+                "n": "A. Al Qarawi",
+                "num": 42,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 44374,
+                "n": "T. Al Ammar",
+                "num": 7,
+                "pos": "M",
+                "g": null,
+                "entra": "90+2'"
+              },
+              {
+                "id": 328403,
+                "n": "M. Al Qahtani",
+                "num": 15,
+                "pos": "F",
+                "g": null,
+                "entra": "83'"
+              },
+              {
+                "id": 635839,
+                "n": "A. Al Jaber",
+                "num": 18,
+                "pos": "M",
+                "g": null
+              },
+              {
                 "id": 531443,
                 "n": "E. Houssa",
                 "num": 27,
@@ -3876,41 +3904,11 @@
                 "g": null
               },
               {
-                "id": null,
-                "n": "Abdulaziz Tariq Al Qarawi",
-                "num": 42,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 328403,
-                "n": "Mohammed Al Qahtani",
-                "num": 15,
+                "id": 44322,
+                "n": "A. Al Salem",
+                "num": 9,
                 "pos": "F",
-                "g": null,
-                "entra": "83'"
-              },
-              {
-                "id": 44449,
-                "n": "Ahmed Al Kassar",
-                "num": 28,
-                "pos": "G",
                 "g": null
-              },
-              {
-                "id": 635839,
-                "n": "Abdulmalik Al-Jaber",
-                "num": 18,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 44374,
-                "n": "Turki Al Ammar",
-                "num": 7,
-                "pos": "M",
-                "g": null,
-                "entra": "90+2'"
               }
             ]
           },
@@ -3918,26 +3916,26 @@
             "nombre": "Al-Hilal Saudi FC",
             "logo": "https://media.api-sports.io/football/teams/2932.png",
             "formacion": "4-3-3",
-            "color": null,
-            "color_num": null,
+            "color": "0855b3",
+            "color_num": "ffffff",
             "titulares": [
               {
                 "id": 2701,
-                "n": "Y. Bounou",
+                "n": "Bono",
                 "num": 37,
                 "pos": "G",
                 "g": "1:1"
               },
               {
                 "id": 326984,
-                "n": "Mohammed Mater Mohsin Mahzari",
+                "n": "M. Mahzari",
                 "num": 2,
                 "pos": "D",
                 "g": "2:4"
               },
               {
                 "id": 44362,
-                "n": "Hassan Tambakti",
+                "n": "H. Tambakti",
                 "num": 87,
                 "pos": "D",
                 "g": "2:3",
@@ -3953,7 +3951,7 @@
               },
               {
                 "id": 47300,
-                "n": "T. Hernández",
+                "n": "T. Hernandez",
                 "num": 19,
                 "pos": "D",
                 "g": "2:1",
@@ -3961,7 +3959,7 @@
               },
               {
                 "id": 1856,
-                "n": "S. Milinković-Savić",
+                "n": "S. Milinkovic-Savic",
                 "num": 22,
                 "pos": "M",
                 "g": "3:3",
@@ -3969,25 +3967,25 @@
                 "goles": 1
               },
               {
-                "id": 44339,
-                "n": "Nasser Al Dawsari",
-                "num": 6,
-                "pos": "M",
-                "g": "3:2",
-                "sale": "88'"
-              },
-              {
                 "id": 2676,
-                "n": "Rúben Neves",
+                "n": "R. Neves",
                 "num": 8,
                 "pos": "M",
-                "g": "3:1",
+                "g": "3:2",
                 "goles": 1,
                 "amarilla": "86'"
               },
               {
+                "id": 44339,
+                "n": "N. Al Dawsari",
+                "num": 6,
+                "pos": "M",
+                "g": "3:1",
+                "sale": "88'"
+              },
+              {
                 "id": 127769,
-                "n": "Gabriel Martinelli",
+                "n": "G. Martinelli",
                 "num": 7,
                 "pos": "F",
                 "g": "4:3",
@@ -4013,44 +4011,31 @@
             ],
             "suplentes": [
               {
-                "id": 606188,
-                "n": "S. Dahal",
-                "num": 72,
-                "pos": "F",
-                "g": null
-              },
-              {
                 "id": 44411,
-                "n": "Mohammed Al Owais",
+                "n": "M. Al Owais",
                 "num": 33,
                 "pos": "G",
                 "g": null
               },
               {
-                "id": 442343,
-                "n": "Murad Al Hawsawi",
-                "num": 18,
-                "pos": "M",
-                "g": null
+                "id": 44507,
+                "n": "A. Lajami",
+                "num": 78,
+                "pos": "D",
+                "g": null,
+                "entra": "74'"
               },
               {
                 "id": 202381,
-                "n": "Moteb Al Harbi",
+                "n": "M. Al Harbi",
                 "num": 24,
                 "pos": "D",
                 "g": null,
                 "entra": "88'"
               },
               {
-                "id": 44370,
-                "n": "Nawaf Al Habashi",
-                "num": 77,
-                "pos": "M",
-                "g": null
-              },
-              {
                 "id": 44340,
-                "n": "Salem Al Dawsari",
+                "n": "S. Al Dawsari",
                 "num": 29,
                 "pos": "M",
                 "g": null,
@@ -4058,28 +4043,41 @@
               },
               {
                 "id": 44349,
-                "n": "Mohamed Kanno",
+                "n": "M. Kanno",
                 "num": 28,
                 "pos": "M",
                 "g": null,
                 "entra": "88'"
               },
               {
-                "id": 44507,
-                "n": "Ali Lajami",
-                "num": 78,
-                "pos": "D",
-                "g": null,
-                "entra": "74'"
+                "id": 44370,
+                "n": "N. Al Habashi",
+                "num": 77,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 442343,
+                "n": "M. Al Hawsawi",
+                "num": 18,
+                "pos": "M",
+                "g": null
               },
               {
                 "id": 2639,
-                "n": "Sultan Mandash",
+                "n": "S. Mandash",
                 "num": 27,
                 "pos": "F",
                 "g": null,
                 "entra": "49'",
                 "asist": 1
+              },
+              {
+                "id": 606188,
+                "n": "S. Dahal",
+                "num": 72,
+                "pos": "F",
+                "g": null
               }
             ]
           }
@@ -4686,16 +4684,16 @@
             "mio": false
           },
           {
-            "min": "63'",
+            "min": "64'",
             "tipo": "gol",
-            "nombre": "Borja Sainz",
+            "nombre": "B. Sainz",
             "lado": "V",
             "mio": false
           },
           {
-            "min": "72'",
+            "min": "73'",
             "tipo": "entra",
-            "nombre": "Santiago Giménez",
+            "nombre": "S. Gimenez",
             "lado": "V",
             "mio": true
           },
@@ -4713,26 +4711,26 @@
             "nombre": "GIL Vicente",
             "logo": "https://media.api-sports.io/football/teams/762.png",
             "formacion": "4-2-3-1",
-            "color": null,
-            "color_num": null,
+            "color": "0581fb",
+            "color_num": "ffffff",
             "titulares": [
               {
                 "id": 140450,
-                "n": "Lucão",
+                "n": "Lucao",
                 "num": 30,
                 "pos": "G",
                 "g": "1:1"
               },
               {
                 "id": 41099,
-                "n": "Ricardo Esgaio",
+                "n": "R. Esgaio",
                 "num": 47,
                 "pos": "D",
                 "g": "2:4"
               },
               {
                 "id": 284796,
-                "n": "M. Elimbi Gilbert",
+                "n": "M. Elimbi",
                 "num": 4,
                 "pos": "D",
                 "g": "2:3",
@@ -4740,14 +4738,14 @@
               },
               {
                 "id": 41174,
-                "n": "Jonathan Buatu",
+                "n": "J. Buatu",
                 "num": 39,
                 "pos": "D",
                 "g": "2:2"
               },
               {
                 "id": 411693,
-                "n": "David Moreira",
+                "n": "D. Moreira",
                 "num": 45,
                 "pos": "D",
                 "g": "2:1"
@@ -4758,26 +4756,26 @@
                 "num": 12,
                 "pos": "M",
                 "g": "3:2",
-                "sale": "60'"
+                "sale": "61'"
               },
               {
                 "id": 364811,
-                "n": "Diogo Ferreira Prioste",
+                "n": "D. Prioste",
                 "num": 86,
                 "pos": "M",
                 "g": "3:1",
-                "sale": "75'"
+                "sale": "76'"
               },
               {
                 "id": 41110,
-                "n": "Murilo",
+                "n": "Murilo de Souza",
                 "num": 77,
                 "pos": "M",
                 "g": "4:3"
               },
               {
                 "id": 184743,
-                "n": "Santi García",
+                "n": "S. Garcia",
                 "num": 10,
                 "pos": "M",
                 "g": "4:2",
@@ -4785,43 +4783,28 @@
               },
               {
                 "id": 264118,
-                "n": "Joelson Fernandes",
+                "n": "J. Fernandes",
                 "num": 11,
                 "pos": "M",
                 "g": "4:1",
-                "sale": "60'"
+                "sale": "61'"
               },
               {
                 "id": 631974,
-                "n": "Walace",
+                "n": "Walace Franca",
                 "num": 9,
                 "pos": "F",
                 "g": "5:1",
-                "sale": "60'"
+                "sale": "61'"
               }
             ],
             "suplentes": [
               {
-                "id": 458197,
-                "n": "José Silva",
-                "num": 2,
-                "pos": "D",
-                "g": null
-              },
-              {
                 "id": 80667,
-                "n": "Samuel",
+                "n": "Samuel Portugal",
                 "num": 94,
                 "pos": "G",
                 "g": null
-              },
-              {
-                "id": 400511,
-                "n": "Gil Pinto Martins",
-                "num": 20,
-                "pos": "M",
-                "g": null,
-                "entra": "60'"
               },
               {
                 "id": 312110,
@@ -4831,15 +4814,53 @@
                 "g": null
               },
               {
-                "id": 361337,
-                "n": "A. Moreira",
-                "num": 27,
-                "pos": "F",
+                "id": 336637,
+                "n": "A. Espigares",
+                "num": 3,
+                "pos": "D",
                 "g": null
               },
               {
+                "id": 458197,
+                "n": "J. Silva",
+                "num": 2,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 324844,
+                "n": "Ze Carlos",
+                "num": 6,
+                "pos": "M",
+                "g": null,
+                "entra": "61'"
+              },
+              {
+                "id": 400511,
+                "n": "G. Pinto Martins",
+                "num": 20,
+                "pos": "M",
+                "g": null,
+                "entra": "61'"
+              },
+              {
+                "id": 283336,
+                "n": "M. Fernandez",
+                "num": 32,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 454555,
+                "n": "Guilherme Gomes",
+                "num": 19,
+                "pos": "M",
+                "g": null,
+                "entra": "76'"
+              },
+              {
                 "id": 527187,
-                "n": "Gonçalo  Maia Pereira",
+                "n": "G. Maia",
                 "num": 82,
                 "pos": "M",
                 "g": null
@@ -4850,45 +4871,22 @@
                 "num": 99,
                 "pos": "F",
                 "g": null,
-                "entra": "60'"
+                "entra": "61'"
               },
               {
-                "id": 454555,
-                "n": "Guilherme",
-                "num": 19,
-                "pos": "M",
-                "g": null,
-                "entra": "76'"
-              },
-              {
-                "id": 283336,
-                "n": "M. Fernández",
-                "num": 32,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 336637,
-                "n": "Espigares",
-                "num": 3,
-                "pos": "D",
+                "id": 361337,
+                "n": "A. Moreira",
+                "num": 27,
+                "pos": "F",
                 "g": null
               },
               {
                 "id": 162208,
-                "n": "T. Touré",
+                "n": "T. Toure",
                 "num": 7,
                 "pos": "F",
                 "g": null,
-                "entra": "75'"
-              },
-              {
-                "id": 324844,
-                "n": "Zé Carlos",
-                "num": 6,
-                "pos": "M",
-                "g": null,
-                "entra": "60'"
+                "entra": "76'"
               }
             ]
           },
@@ -4896,19 +4894,19 @@
             "nombre": "FC Porto",
             "logo": "https://media.api-sports.io/football/teams/212.png",
             "formacion": "4-3-3",
-            "color": null,
-            "color_num": null,
+            "color": "ffffff",
+            "color_num": "013388",
             "titulares": [
               {
                 "id": 369,
-                "n": "Diogo Costa",
+                "n": "D. Costa",
                 "num": 99,
                 "pos": "G",
                 "g": "1:1"
               },
               {
                 "id": 330419,
-                "n": "Alberto Baio",
+                "n": "A. Costa",
                 "num": 20,
                 "pos": "D",
                 "g": "2:4"
@@ -4929,14 +4927,14 @@
               },
               {
                 "id": 126899,
-                "n": "Z. Sanusi",
+                "n": "Zaidu",
                 "num": 12,
                 "pos": "D",
                 "g": "2:1"
               },
               {
                 "id": 388872,
-                "n": "Victor Mow Froholdt",
+                "n": "V. Froholdt",
                 "num": 8,
                 "pos": "M",
                 "g": "3:3"
@@ -4948,26 +4946,26 @@
                 "pos": "M",
                 "g": "3:2",
                 "amarilla": "56'",
-                "sale": "72'"
+                "sale": "73'"
               },
               {
                 "id": 182504,
-                "n": "Gabri Veiga",
+                "n": "G. Veiga",
                 "num": 10,
                 "pos": "M",
                 "g": "3:1",
-                "sale": "45'"
+                "sale": "46'"
               },
               {
                 "id": 10500,
-                "n": "Pepê Aquino",
+                "n": "Pepê",
                 "num": 11,
                 "pos": "F",
                 "g": "4:3"
               },
               {
                 "id": 2063,
-                "n": "André Silva",
+                "n": "Andre Silva",
                 "num": 19,
                 "pos": "F",
                 "g": "4:2",
@@ -4975,34 +4973,54 @@
               },
               {
                 "id": 133453,
-                "n": "Borja Sainz",
+                "n": "B. Sainz",
                 "num": 17,
                 "pos": "F",
                 "g": "4:1",
                 "goles": 1,
-                "sale": "72'"
+                "sale": "73'"
               }
             ],
             "suplentes": [
               {
                 "id": 41432,
-                "n": "Cláudio Ramos",
+                "n": "Claudio Ramos",
                 "num": 14,
                 "pos": "G",
                 "g": null
               },
               {
-                "id": 278375,
-                "n": "A. Varela",
-                "num": 22,
-                "pos": "M",
-                "g": null,
-                "entra": "72'"
+                "id": 96476,
+                "n": "J. Costa",
+                "num": 24,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 892,
+                "n": "C. Smalling",
+                "num": 6,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 37,
+                "n": "N. Perez",
+                "num": 18,
+                "pos": "D",
+                "g": null
               },
               {
                 "id": 336596,
-                "n": "Martim Fernandes",
+                "n": "M. Fernandes",
                 "num": 52,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 41966,
+                "n": "F. Moura",
+                "num": 74,
                 "pos": "D",
                 "g": null
               },
@@ -5014,35 +5032,20 @@
                 "g": null
               },
               {
-                "id": 94562,
-                "n": "S. Giménez",
-                "num": 29,
-                "pos": "F",
-                "g": null,
-                "entra": "72'",
-                "mio": true
-              },
-              {
                 "id": 2901,
                 "n": "Hwang In-Beom",
                 "num": 16,
                 "pos": "M",
                 "g": null,
-                "entra": "45'"
+                "entra": "46'"
               },
               {
-                "id": 41966,
-                "n": "Francisco Moura",
-                "num": 74,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 37,
-                "n": "N. Pérez",
-                "num": 18,
-                "pos": "D",
-                "g": null
+                "id": 278375,
+                "n": "A. Varela",
+                "num": 22,
+                "pos": "M",
+                "g": null,
+                "entra": "73'"
               },
               {
                 "id": 358628,
@@ -5053,24 +5056,19 @@
                 "entra": "60'"
               },
               {
-                "id": 892,
-                "n": "C. Smalling",
-                "num": 6,
-                "pos": "D",
-                "g": null
+                "id": 94562,
+                "n": "S. Gimenez",
+                "num": 29,
+                "pos": "F",
+                "g": null,
+                "entra": "73'",
+                "mio": true
               },
               {
                 "id": 507527,
                 "n": "Gabriel Mec",
                 "num": 37,
                 "pos": "F",
-                "g": null
-              },
-              {
-                "id": 96476,
-                "n": "Andorinha",
-                "num": 24,
-                "pos": "G",
                 "g": null
               }
             ]
@@ -5431,8 +5429,8 @@
             "nombre": "AZ Alkmaar",
             "logo": "https://media.api-sports.io/football/teams/201.png",
             "formacion": "4-2-3-1",
-            "color": null,
-            "color_num": null,
+            "color": "d83638",
+            "color_num": "ffffff",
             "titulares": [
               {
                 "id": 8470,
@@ -5467,7 +5465,7 @@
               },
               {
                 "id": 390002,
-                "n": "M. Chávez",
+                "n": "M. Chavez Garcia",
                 "num": 5,
                 "pos": "D",
                 "g": "2:1",
@@ -5522,6 +5520,13 @@
             ],
             "suplentes": [
               {
+                "id": 340711,
+                "n": "R. Owusu-Oduro",
+                "num": 1,
+                "pos": "G",
+                "g": null
+              },
+              {
                 "id": 179839,
                 "n": "D. Kasius",
                 "num": 30,
@@ -5530,17 +5535,24 @@
                 "entra": "75'"
               },
               {
-                "id": null,
-                "n": "Jerolldino Bergraaf",
-                "num": 54,
-                "pos": "F",
+                "id": 199793,
+                "n": "S. Maikuma",
+                "num": 2,
+                "pos": "D",
                 "g": null
               },
               {
-                "id": null,
-                "n": "Wassim bouziane",
-                "num": 27,
-                "pos": "F",
+                "id": 422581,
+                "n": "R. Ichihara",
+                "num": 31,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 93064,
+                "n": "M. de Wit",
+                "num": 34,
+                "pos": "D",
                 "g": null
               },
               {
@@ -5552,25 +5564,10 @@
                 "entra": "63'"
               },
               {
-                "id": 422581,
-                "n": "R. Ichihara",
-                "num": 31,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 581945,
-                "n": "B. Kovacs",
-                "num": 18,
-                "pos": "F",
-                "g": null,
-                "entra": "87'"
-              },
-              {
-                "id": 199793,
-                "n": "S. Maikuma",
-                "num": 2,
-                "pos": "D",
+                "id": 496879,
+                "n": "H. de Wit",
+                "num": 75,
+                "pos": "M",
                 "g": null
               },
               {
@@ -5583,10 +5580,10 @@
                 "amarilla": "70'"
               },
               {
-                "id": 340711,
-                "n": "R. Owusu-Oduro",
-                "num": 1,
-                "pos": "G",
+                "id": 480305,
+                "n": "J. Bergraaf",
+                "num": 54,
+                "pos": "M",
                 "g": null
               },
               {
@@ -5598,18 +5595,19 @@
                 "entra": "75'"
               },
               {
-                "id": 93064,
-                "n": "M. de Wit",
-                "num": 34,
-                "pos": "D",
+                "id": 443587,
+                "n": "W. Bouziane",
+                "num": 27,
+                "pos": "F",
                 "g": null
               },
               {
-                "id": 496879,
-                "n": "H. de Wit",
-                "num": 75,
-                "pos": "M",
-                "g": null
+                "id": 581945,
+                "n": "B. Kovacs",
+                "num": 18,
+                "pos": "F",
+                "g": null,
+                "entra": "87'"
               }
             ]
           },
@@ -5617,8 +5615,8 @@
             "nombre": "Twente",
             "logo": "https://media.api-sports.io/football/teams/415.png",
             "formacion": "4-2-3-1",
-            "color": null,
-            "color_num": null,
+            "color": "050505",
+            "color_num": "ffffff",
             "titulares": [
               {
                 "id": 36828,
@@ -5638,7 +5636,7 @@
               },
               {
                 "id": 37254,
-                "n": "R. Pröpper",
+                "n": "R. Propper",
                 "num": 3,
                 "pos": "D",
                 "g": "2:3",
@@ -5693,7 +5691,7 @@
               },
               {
                 "id": 352730,
-                "n": "S. Ørjasæter",
+                "n": "S. Orjasaeter",
                 "num": 27,
                 "pos": "M",
                 "g": "4:1",
@@ -5711,32 +5709,10 @@
             ],
             "suplentes": [
               {
-                "id": 439829,
-                "n": "Jordy Bawuah",
-                "num": 18,
-                "pos": "M",
-                "g": null,
-                "entra": "90'"
-              },
-              {
                 "id": 518664,
-                "n": "Yannick Gerritsen",
+                "n": "Y. Gerritsen",
                 "num": 31,
                 "pos": "G",
-                "g": null
-              },
-              {
-                "id": 191879,
-                "n": "K. Hlynsson",
-                "num": 14,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 666828,
-                "n": "J. Meilink",
-                "num": 39,
-                "pos": "D",
                 "g": null
               },
               {
@@ -5747,12 +5723,18 @@
                 "g": null
               },
               {
-                "id": 30413,
-                "n": "M. Pjaca",
-                "num": 7,
-                "pos": "F",
-                "g": null,
-                "entra": "85'"
+                "id": 666828,
+                "n": "J. Meilink",
+                "num": 39,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 191879,
+                "n": "K. Hlynsson",
+                "num": 14,
+                "pos": "M",
+                "g": null
               },
               {
                 "id": 339175,
@@ -5763,21 +5745,37 @@
                 "entra": "73'"
               },
               {
-                "id": 455252,
-                "n": "Lucas Vennegoor of Hesselink",
-                "num": 25,
-                "pos": "F",
-                "g": null,
-                "entra": "73'",
-                "goles": 1
-              },
-              {
                 "id": 36934,
                 "n": "T. van den Belt",
                 "num": 20,
                 "pos": "M",
                 "g": null,
                 "entra": "85'"
+              },
+              {
+                "id": 439829,
+                "n": "J. Bawuah",
+                "num": 18,
+                "pos": "M",
+                "g": null,
+                "entra": "90'"
+              },
+              {
+                "id": 30413,
+                "n": "M. Pjaca",
+                "num": 7,
+                "pos": "F",
+                "g": null,
+                "entra": "85'"
+              },
+              {
+                "id": 455252,
+                "n": "L. Vennegoor of Hesselink",
+                "num": 25,
+                "pos": "F",
+                "g": null,
+                "entra": "73'",
+                "goles": 1
               }
             ]
           }
@@ -7063,14 +7061,14 @@
           {
             "min": "75'",
             "tipo": "entra",
-            "nombre": "Álvaro Fidalgo",
+            "nombre": "A. Fidalgo",
             "lado": "V",
             "mio": true
           },
           {
             "min": "80'",
             "tipo": "amarilla",
-            "nombre": "Sergio Carreira Vilarino",
+            "nombre": "Sergio Carreira",
             "lado": "L",
             "mio": false
           }
@@ -7081,8 +7079,8 @@
             "nombre": "Celta Vigo",
             "logo": "https://media.api-sports.io/football/teams/538.png",
             "formacion": "3-4-3",
-            "color": null,
-            "color_num": null,
+            "color": "b8d4f2",
+            "color_num": "050505",
             "titulares": [
               {
                 "id": 30765,
@@ -7093,59 +7091,59 @@
               },
               {
                 "id": 384135,
-                "n": "Javi Rodríguez",
+                "n": "J. Rodriguez",
                 "num": 20,
                 "pos": "D",
                 "g": "2:3"
               },
               {
                 "id": 329722,
-                "n": "Yoel Lago",
+                "n": "Y. Lago",
                 "num": 18,
                 "pos": "D",
                 "g": "2:2"
               },
               {
                 "id": 2278,
-                "n": "Marcos Alonso",
+                "n": "M. Alonso",
                 "num": 3,
                 "pos": "D",
                 "g": "2:1"
               },
               {
                 "id": 179955,
-                "n": "Javi Rueda",
+                "n": "J. Rueda",
                 "num": 17,
                 "pos": "M",
                 "g": "3:4",
                 "sale": "68'"
               },
               {
-                "id": 46711,
-                "n": "Aleix Febas",
-                "num": 14,
-                "pos": "M",
-                "g": "3:3",
-                "sale": "81'"
-              },
-              {
                 "id": 162123,
                 "n": "I. Moriba",
                 "num": 6,
                 "pos": "M",
-                "g": "3:2",
+                "g": "3:3",
                 "amarilla": "30'"
               },
               {
+                "id": 46711,
+                "n": "A. Febas",
+                "num": 14,
+                "pos": "M",
+                "g": "3:2",
+                "sale": "81'"
+              },
+              {
                 "id": 47566,
-                "n": "Javi Galán",
+                "n": "J. Galan",
                 "num": 22,
                 "pos": "M",
                 "g": "3:1"
               },
               {
                 "id": 161875,
-                "n": "Hugo González",
+                "n": "H. Gonzalez",
                 "num": 16,
                 "pos": "F",
                 "g": "4:3",
@@ -7153,7 +7151,7 @@
               },
               {
                 "id": 320517,
-                "n": "Pablo Durán",
+                "n": "P. Duran",
                 "num": 11,
                 "pos": "F",
                 "g": "4:2",
@@ -7161,28 +7159,43 @@
               },
               {
                 "id": 329720,
-                "n": "Hugo Álvarez",
+                "n": "H. Alvarez",
                 "num": 23,
                 "pos": "F",
                 "g": "4:1",
-                "sale": "57'"
+                "sale": "58'"
               }
             ],
             "suplentes": [
               {
                 "id": 47427,
-                "n": "Iván Villar",
+                "n": "I. Villar",
                 "num": 25,
                 "pos": "G",
                 "g": null
               },
               {
-                "id": 122734,
-                "n": "Ferran Jutglà",
-                "num": 9,
-                "pos": "F",
+                "id": 50132,
+                "n": "A. Bayindir",
+                "num": 1,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 51535,
+                "n": "S. Caceres",
+                "num": 21,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 157988,
+                "n": "S. Carreira",
+                "num": 5,
+                "pos": "D",
                 "g": null,
-                "entra": "57'"
+                "entra": "68'",
+                "amarilla": "80'"
               },
               {
                 "id": 437776,
@@ -7192,26 +7205,10 @@
                 "g": null
               },
               {
-                "id": 272543,
-                "n": "C. Driouech",
-                "num": 24,
-                "pos": "F",
-                "g": null
-              },
-              {
-                "id": 157988,
-                "n": "Sergio Carreira",
-                "num": 5,
-                "pos": "D",
-                "g": null,
-                "entra": "68'",
-                "amarilla": "80'"
-              },
-              {
-                "id": 51535,
-                "n": "S. Cáceres",
-                "num": 21,
-                "pos": "D",
+                "id": 481678,
+                "n": "A. Antanon",
+                "num": 28,
+                "pos": "M",
                 "g": null
               },
               {
@@ -7223,34 +7220,35 @@
                 "entra": "81'"
               },
               {
-                "id": 50132,
-                "n": "A. Bayındır",
-                "num": 1,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 47445,
-                "n": "Iago Aspas",
-                "num": 10,
-                "pos": "F",
-                "g": null,
-                "entra": "68'"
-              },
-              {
-                "id": 481678,
-                "n": "Andrés Antañón",
-                "num": 28,
-                "pos": "M",
-                "g": null
-              },
-              {
                 "id": 269163,
                 "n": "W. Swedberg",
                 "num": 19,
                 "pos": "F",
                 "g": null,
                 "entra": "58'"
+              },
+              {
+                "id": 47445,
+                "n": "I. Aspas",
+                "num": 10,
+                "pos": "F",
+                "g": null,
+                "entra": "68'"
+              },
+              {
+                "id": 122734,
+                "n": "F. Jutgla",
+                "num": 9,
+                "pos": "F",
+                "g": null,
+                "entra": "58'"
+              },
+              {
+                "id": 272543,
+                "n": "C. Driouech",
+                "num": 24,
+                "pos": "F",
+                "g": null
               }
             ]
           },
@@ -7258,31 +7256,31 @@
             "nombre": "Real Betis",
             "logo": "https://media.api-sports.io/football/teams/543.png",
             "formacion": "4-2-3-1",
-            "color": null,
-            "color_num": null,
+            "color": "1e4331",
+            "color_num": "cbb05d",
             "titulares": [
               {
                 "id": 46990,
-                "n": "Álvaro Vallés",
+                "n": "A. Valles",
                 "num": 1,
                 "pos": "G",
                 "g": "1:1"
               },
               {
                 "id": 334574,
-                "n": "Ángel Ortiz",
+                "n": "A. Ortiz",
                 "num": 12,
                 "pos": "D",
                 "g": "2:4"
               },
               {
                 "id": 47302,
-                "n": "Diego Llorente",
+                "n": "D. Llorente",
                 "num": 3,
                 "pos": "D",
                 "g": "2:3",
                 "amarilla": "43'",
-                "sale": "68'"
+                "sale": "69'"
               },
               {
                 "id": 195100,
@@ -7293,21 +7291,21 @@
               },
               {
                 "id": 355004,
-                "n": "V. Gómez",
+                "n": "V. Gomez",
                 "num": 16,
                 "pos": "D",
                 "g": "2:1"
               },
               {
                 "id": 47341,
-                "n": "Marc Roca",
+                "n": "M. Roca",
                 "num": 21,
                 "pos": "M",
                 "g": "3:2"
               },
               {
                 "id": 748,
-                "n": "Dani Ceballos",
+                "n": "D. Ceballos",
                 "num": 25,
                 "pos": "M",
                 "g": "3:1",
@@ -7327,7 +7325,7 @@
                 "num": 22,
                 "pos": "M",
                 "g": "4:2",
-                "sale": "68'"
+                "sale": "69'"
               },
               {
                 "id": 181421,
@@ -7342,35 +7340,49 @@
                 "num": 18,
                 "pos": "F",
                 "g": "5:1",
-                "sale": "61'"
+                "sale": "62'"
               }
             ],
             "suplentes": [
               {
-                "id": 1561,
-                "n": "Marc Bartra",
-                "num": 5,
-                "pos": "D",
-                "g": null,
-                "entra": "68'"
-              },
-              {
-                "id": 1439,
-                "n": "Héctor Bellerín",
-                "num": 2,
-                "pos": "D",
-                "g": null
-              },
-              {
                 "id": 122956,
-                "n": "Diego Conde",
+                "n": "D. Conde",
                 "num": 13,
                 "pos": "G",
                 "g": null
               },
               {
+                "id": 456619,
+                "n": "M. Gonzalez",
+                "num": 31,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 1561,
+                "n": "M. Bartra",
+                "num": 5,
+                "pos": "D",
+                "g": null,
+                "entra": "69'"
+              },
+              {
+                "id": 1439,
+                "n": "H. Bellerin",
+                "num": 2,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 736,
+                "n": "F. Garcia",
+                "num": 11,
+                "pos": "D",
+                "g": null
+              },
+              {
                 "id": 750,
-                "n": "Álvaro Fidalgo",
+                "n": "A. Fidalgo",
                 "num": 15,
                 "pos": "M",
                 "g": null,
@@ -7378,40 +7390,33 @@
                 "mio": true
               },
               {
+                "id": 1578,
+                "n": "G. Lo Celso",
+                "num": 20,
+                "pos": "M",
+                "g": null,
+                "entra": "69'"
+              },
+              {
                 "id": 1697,
-                "n": "Pablo Fornals",
+                "n": "P. Fornals",
                 "num": 8,
                 "pos": "M",
                 "g": null,
                 "entra": "61'"
               },
               {
-                "id": 736,
-                "n": "Fran García",
-                "num": 11,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 456619,
-                "n": "Manu González",
-                "num": 31,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 1578,
-                "n": "G. Lo Celso",
-                "num": 20,
-                "pos": "M",
-                "g": null,
-                "entra": "68'"
-              },
-              {
-                "id": 544644,
-                "n": "J. A. Morante",
-                "num": 27,
+                "id": 47119,
+                "n": "A. Ruibal",
+                "num": 24,
                 "pos": "F",
+                "g": null
+              },
+              {
+                "id": 136117,
+                "n": "R. Riquelme",
+                "num": 17,
+                "pos": "M",
                 "g": null
               },
               {
@@ -7420,19 +7425,12 @@
                 "num": 19,
                 "pos": "F",
                 "g": null,
-                "entra": "61'"
+                "entra": "62'"
               },
               {
-                "id": 136117,
-                "n": "Rodrigo Riquelme",
-                "num": 17,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 47119,
-                "n": "Aitor Ruibal",
-                "num": 24,
+                "id": 544644,
+                "n": "J. Morante",
+                "num": 27,
                 "pos": "F",
                 "g": null
               }
@@ -7449,7 +7447,7 @@
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/fidalgo_partido.jpg?v=ee2e8c36",
           "hasta": "2026-10-26T11:15:00-06:00",
-          "firma": "8ad710e1c5"
+          "firma": "337c3355d2"
         },
         "stats": {
           "rating": 6.6,
@@ -11751,7 +11749,7 @@
           {
             "min": "9'",
             "tipo": "gol",
-            "nombre": "Roberto Alvarado",
+            "nombre": "R. Alvarado",
             "lado": "V",
             "mio": false
           },
@@ -11816,14 +11814,14 @@
               },
               {
                 "id": 36471,
-                "n": "R. Chávez",
+                "n": "R. Chavez",
                 "num": 2,
                 "pos": "D",
                 "g": "2:4"
               },
               {
                 "id": 167014,
-                "n": "F. Ambríz",
+                "n": "F. Ambriz",
                 "num": 5,
                 "pos": "D",
                 "g": "2:3",
@@ -11831,7 +11829,7 @@
               },
               {
                 "id": 129943,
-                "n": "V. Guzmán",
+                "n": "V. Guzman",
                 "num": 4,
                 "pos": "D",
                 "g": "2:2"
@@ -11845,10 +11843,11 @@
               },
               {
                 "id": 445419,
-                "n": "Cesar Garza Cantu",
+                "n": "C. Garza",
                 "num": 18,
                 "pos": "M",
-                "g": "3:1"
+                "g": "3:1",
+                "sale": "71'"
               },
               {
                 "id": 1911,
@@ -11892,41 +11891,11 @@
             ],
             "suplentes": [
               {
-                "id": 385,
-                "n": "Óliver Torres",
-                "num": 8,
-                "pos": "M",
-                "g": null,
-                "entra": "56'"
-              },
-              {
-                "id": 2877,
-                "n": "C. Salcedo",
-                "num": 13,
-                "pos": "D",
+                "id": 35536,
+                "n": "L. Cardenas",
+                "num": 22,
+                "pos": "G",
                 "g": null
-              },
-              {
-                "id": null,
-                "n": "Paxon Levi Ruffin Tamez",
-                "num": 244,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 6369,
-                "n": "J. Rodríguez",
-                "num": 30,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 6063,
-                "n": "L. Orellano",
-                "num": 10,
-                "pos": "F",
-                "g": null,
-                "entra": "79'"
               },
               {
                 "id": 35539,
@@ -11936,15 +11905,15 @@
                 "g": null
               },
               {
-                "id": 35536,
-                "n": "L. Cárdenas",
-                "num": 22,
-                "pos": "G",
+                "id": 2877,
+                "n": "C. Salcedo",
+                "num": 13,
+                "pos": "D",
                 "g": null
               },
               {
                 "id": 35648,
-                "n": "É. Aguirre",
+                "n": "E. Aguirre",
                 "num": 14,
                 "pos": "M",
                 "g": null
@@ -11957,11 +11926,42 @@
                 "g": null
               },
               {
+                "id": 6369,
+                "n": "J. Rodriguez",
+                "num": 30,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 385,
+                "n": "O. Torres",
+                "num": 8,
+                "pos": "M",
+                "g": null,
+                "entra": "56'"
+              },
+              {
+                "id": 687725,
+                "n": "P. Ruffin",
+                "num": 244,
+                "pos": null,
+                "g": null,
+                "entra": "71'"
+              },
+              {
                 "id": 35669,
                 "n": "R. de la Rosa",
                 "num": 27,
                 "pos": "F",
                 "g": null
+              },
+              {
+                "id": 6063,
+                "n": "L. Orellano",
+                "num": 10,
+                "pos": "F",
+                "g": null,
+                "entra": "79'"
               }
             ]
           },
@@ -11974,7 +11974,7 @@
             "titulares": [
               {
                 "id": 270774,
-                "n": "J. Rangel",
+                "n": "R. Rangel",
                 "num": 1,
                 "pos": "G",
                 "g": "1:1"
@@ -11996,7 +11996,7 @@
               },
               {
                 "id": 141155,
-                "n": "D. Campillo",
+                "n": "D. Campillo Del Campo",
                 "num": 3,
                 "pos": "D",
                 "g": "2:1",
@@ -12012,7 +12012,7 @@
               },
               {
                 "id": 35623,
-                "n": "R. González",
+                "n": "F. Gonzalez",
                 "num": 28,
                 "pos": "M",
                 "g": "3:3"
@@ -12027,7 +12027,7 @@
               },
               {
                 "id": 237060,
-                "n": "B. González",
+                "n": "B. Gonzalez",
                 "num": 5,
                 "pos": "M",
                 "g": "3:1",
@@ -12043,7 +12043,7 @@
               },
               {
                 "id": 524762,
-                "n": "Santiago Sandoval",
+                "n": "S. Sandoval",
                 "num": 30,
                 "pos": "M",
                 "g": "4:1",
@@ -12051,7 +12051,7 @@
               },
               {
                 "id": 35641,
-                "n": "R. Marín",
+                "n": "R. Marin",
                 "num": 17,
                 "pos": "F",
                 "g": "5:1",
@@ -12060,18 +12060,49 @@
             ],
             "suplentes": [
               {
-                "id": 195704,
-                "n": "J. Carrillo",
-                "num": 33,
+                "id": 15575,
+                "n": "O. Whalley",
+                "num": 13,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 414156,
+                "n": "A. Chavez",
+                "num": 56,
+                "pos": "D",
+                "g": null,
+                "entra": "79'"
+              },
+              {
+                "id": 632056,
+                "n": "C. Hernandez",
+                "num": 46,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 35716,
+                "n": "K. Castaneda",
+                "num": 19,
+                "pos": "M",
+                "g": null,
+                "entra": "66'"
+              },
+              {
+                "id": 554827,
+                "n": "S. Inda",
+                "num": 59,
                 "pos": "M",
                 "g": null
               },
               {
-                "id": 453887,
-                "n": "H. Camberos",
-                "num": 14,
-                "pos": "M",
-                "g": null
+                "id": 51068,
+                "n": "E. Alvarez",
+                "num": 10,
+                "pos": "F",
+                "g": null,
+                "entra": "60'"
               },
               {
                 "id": 657237,
@@ -12082,57 +12113,26 @@
                 "entra": "79'"
               },
               {
-                "id": 35716,
-                "n": "K. Castañeda",
-                "num": 19,
+                "id": 195704,
+                "n": "J. Carrillo",
+                "num": 33,
                 "pos": "M",
-                "g": null,
-                "entra": "66'"
-              },
-              {
-                "id": 414156,
-                "n": "Á. Chávez",
-                "num": 56,
-                "pos": "D",
-                "g": null,
-                "entra": "79'"
+                "g": null
               },
               {
                 "id": 328826,
-                "n": "J. Hernández",
+                "n": "J. Hernandez",
                 "num": 57,
                 "pos": "F",
                 "g": null,
                 "entra": "66'"
               },
               {
-                "id": 632056,
-                "n": "C. Hernandez",
-                "num": 46,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 554827,
-                "n": "C. Inda",
-                "num": 59,
+                "id": 453887,
+                "n": "H. Camberos",
+                "num": 14,
                 "pos": "M",
                 "g": null
-              },
-              {
-                "id": 15575,
-                "n": "Óscar Whalley",
-                "num": 13,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 51068,
-                "n": "E. Álvarez",
-                "num": 10,
-                "pos": "F",
-                "g": null,
-                "entra": "60'"
               }
             ]
           }
@@ -12775,7 +12775,7 @@
           {
             "min": "9'",
             "tipo": "gol",
-            "nombre": "Roberto Alvarado",
+            "nombre": "R. Alvarado",
             "lado": "V",
             "mio": false
           },
@@ -12840,14 +12840,14 @@
               },
               {
                 "id": 36471,
-                "n": "R. Chávez",
+                "n": "R. Chavez",
                 "num": 2,
                 "pos": "D",
                 "g": "2:4"
               },
               {
                 "id": 167014,
-                "n": "F. Ambríz",
+                "n": "F. Ambriz",
                 "num": 5,
                 "pos": "D",
                 "g": "2:3",
@@ -12855,7 +12855,7 @@
               },
               {
                 "id": 129943,
-                "n": "V. Guzmán",
+                "n": "V. Guzman",
                 "num": 4,
                 "pos": "D",
                 "g": "2:2"
@@ -12869,10 +12869,11 @@
               },
               {
                 "id": 445419,
-                "n": "Cesar Garza Cantu",
+                "n": "C. Garza",
                 "num": 18,
                 "pos": "M",
-                "g": "3:1"
+                "g": "3:1",
+                "sale": "71'"
               },
               {
                 "id": 1911,
@@ -12916,41 +12917,11 @@
             ],
             "suplentes": [
               {
-                "id": 385,
-                "n": "Óliver Torres",
-                "num": 8,
-                "pos": "M",
-                "g": null,
-                "entra": "56'"
-              },
-              {
-                "id": 2877,
-                "n": "C. Salcedo",
-                "num": 13,
-                "pos": "D",
+                "id": 35536,
+                "n": "L. Cardenas",
+                "num": 22,
+                "pos": "G",
                 "g": null
-              },
-              {
-                "id": null,
-                "n": "Paxon Levi Ruffin Tamez",
-                "num": 244,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 6369,
-                "n": "J. Rodríguez",
-                "num": 30,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 6063,
-                "n": "L. Orellano",
-                "num": 10,
-                "pos": "F",
-                "g": null,
-                "entra": "79'"
               },
               {
                 "id": 35539,
@@ -12960,15 +12931,15 @@
                 "g": null
               },
               {
-                "id": 35536,
-                "n": "L. Cárdenas",
-                "num": 22,
-                "pos": "G",
+                "id": 2877,
+                "n": "C. Salcedo",
+                "num": 13,
+                "pos": "D",
                 "g": null
               },
               {
                 "id": 35648,
-                "n": "É. Aguirre",
+                "n": "E. Aguirre",
                 "num": 14,
                 "pos": "M",
                 "g": null
@@ -12981,11 +12952,42 @@
                 "g": null
               },
               {
+                "id": 6369,
+                "n": "J. Rodriguez",
+                "num": 30,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 385,
+                "n": "O. Torres",
+                "num": 8,
+                "pos": "M",
+                "g": null,
+                "entra": "56'"
+              },
+              {
+                "id": 687725,
+                "n": "P. Ruffin",
+                "num": 244,
+                "pos": null,
+                "g": null,
+                "entra": "71'"
+              },
+              {
                 "id": 35669,
                 "n": "R. de la Rosa",
                 "num": 27,
                 "pos": "F",
                 "g": null
+              },
+              {
+                "id": 6063,
+                "n": "L. Orellano",
+                "num": 10,
+                "pos": "F",
+                "g": null,
+                "entra": "79'"
               }
             ]
           },
@@ -12998,7 +13000,7 @@
             "titulares": [
               {
                 "id": 270774,
-                "n": "J. Rangel",
+                "n": "R. Rangel",
                 "num": 1,
                 "pos": "G",
                 "g": "1:1"
@@ -13020,7 +13022,7 @@
               },
               {
                 "id": 141155,
-                "n": "D. Campillo",
+                "n": "D. Campillo Del Campo",
                 "num": 3,
                 "pos": "D",
                 "g": "2:1"
@@ -13035,7 +13037,7 @@
               },
               {
                 "id": 35623,
-                "n": "R. González",
+                "n": "F. Gonzalez",
                 "num": 28,
                 "pos": "M",
                 "g": "3:3"
@@ -13050,7 +13052,7 @@
               },
               {
                 "id": 237060,
-                "n": "B. González",
+                "n": "B. Gonzalez",
                 "num": 5,
                 "pos": "M",
                 "g": "3:1",
@@ -13066,7 +13068,7 @@
               },
               {
                 "id": 524762,
-                "n": "Santiago Sandoval",
+                "n": "S. Sandoval",
                 "num": 30,
                 "pos": "M",
                 "g": "4:1",
@@ -13075,7 +13077,7 @@
               },
               {
                 "id": 35641,
-                "n": "R. Marín",
+                "n": "R. Marin",
                 "num": 17,
                 "pos": "F",
                 "g": "5:1",
@@ -13084,18 +13086,49 @@
             ],
             "suplentes": [
               {
-                "id": 195704,
-                "n": "J. Carrillo",
-                "num": 33,
+                "id": 15575,
+                "n": "O. Whalley",
+                "num": 13,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 414156,
+                "n": "A. Chavez",
+                "num": 56,
+                "pos": "D",
+                "g": null,
+                "entra": "79'"
+              },
+              {
+                "id": 632056,
+                "n": "C. Hernandez",
+                "num": 46,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 35716,
+                "n": "K. Castaneda",
+                "num": 19,
+                "pos": "M",
+                "g": null,
+                "entra": "66'"
+              },
+              {
+                "id": 554827,
+                "n": "S. Inda",
+                "num": 59,
                 "pos": "M",
                 "g": null
               },
               {
-                "id": 453887,
-                "n": "H. Camberos",
-                "num": 14,
-                "pos": "M",
-                "g": null
+                "id": 51068,
+                "n": "E. Alvarez",
+                "num": 10,
+                "pos": "F",
+                "g": null,
+                "entra": "60'"
               },
               {
                 "id": 657237,
@@ -13106,57 +13139,26 @@
                 "entra": "79'"
               },
               {
-                "id": 35716,
-                "n": "K. Castañeda",
-                "num": 19,
+                "id": 195704,
+                "n": "J. Carrillo",
+                "num": 33,
                 "pos": "M",
-                "g": null,
-                "entra": "66'"
-              },
-              {
-                "id": 414156,
-                "n": "Á. Chávez",
-                "num": 56,
-                "pos": "D",
-                "g": null,
-                "entra": "79'"
+                "g": null
               },
               {
                 "id": 328826,
-                "n": "J. Hernández",
+                "n": "J. Hernandez",
                 "num": 57,
                 "pos": "F",
                 "g": null,
                 "entra": "66'"
               },
               {
-                "id": 632056,
-                "n": "C. Hernandez",
-                "num": 46,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 554827,
-                "n": "C. Inda",
-                "num": 59,
+                "id": 453887,
+                "n": "H. Camberos",
+                "num": 14,
                 "pos": "M",
                 "g": null
-              },
-              {
-                "id": 15575,
-                "n": "Óscar Whalley",
-                "num": 13,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 51068,
-                "n": "E. Álvarez",
-                "num": 10,
-                "pos": "F",
-                "g": null,
-                "entra": "60'"
               }
             ]
           }
