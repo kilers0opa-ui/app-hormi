@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T13:20:57.205706-06:00",
+  "updated_at": "2026-10-26T17:54:37.281305-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -228,45 +228,45 @@
         {
           "id": "gol",
           "titulo": "Partidos seguidos con gol",
-          "actual": 1,
-          "en_racha": false,
+          "actual": 2,
+          "en_racha": true,
           "puntos": [
             true,
+            true,
             false,
             false,
             false,
             true,
             true,
-            true,
-            false
+            true
           ]
         },
         {
           "id": "ga",
           "titulo": "Partidos seguidos con gol o asistencia",
-          "actual": 1,
-          "en_racha": false,
+          "actual": 2,
+          "en_racha": true,
           "puntos": [
             true,
+            true,
             false,
             false,
             false,
             true,
             true,
-            true,
-            false
+            true
           ]
         },
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 2,
+          "actual": 3,
           "en_racha": false,
           "puntos": [
             true,
             true,
-            false,
             true,
+            false,
             true,
             true,
             true,
@@ -276,13 +276,13 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 2,
+          "actual": 3,
           "en_racha": false,
           "puntos": [
             true,
             true,
-            false,
             true,
+            false,
             true,
             true,
             true,
@@ -294,18 +294,18 @@
         {
           "id": "goles_club",
           "titulo": "Goles con clubes",
-          "valor": 157,
+          "valor": 158,
           "meta": 175,
           "previo": 150,
-          "texto": "A 18 goles de 175"
+          "texto": "A 17 goles de 175"
         },
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 335,
+          "valor": 336,
           "meta": 350,
           "previo": 300,
-          "texto": "A 15 partidos de 350"
+          "texto": "A 14 partidos de 350"
         },
         {
           "id": "goles_sel",
@@ -332,7 +332,7 @@
         "partidos_sel:25"
       ],
       "club": "Al-Qadsiah",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "mora": {
       "rachas": [
@@ -1037,11 +1037,11 @@
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
-            true,
             false,
+            true,
             false,
             false,
             false,
@@ -1053,13 +1053,13 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
-            true,
             false,
             true,
             false,
+            true,
             false,
             false,
             false,
@@ -1109,7 +1109,7 @@
         "partidos_sel:1"
       ],
       "club": "FC Copenhague",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "montes": {
       "rachas": [
