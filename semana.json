@@ -1,49 +1,86 @@
 {
- "desde": "2026-10-12",
- "hasta": "2026-10-18",
- "titulo": "12 – 18 oct 2026",
- "generado": "2026-10-20T11:15:52-06:00",
- "imagen": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/semana/semana_2026-10-12.jpg?v=767e607b",
+ "desde": "2026-10-19",
+ "hasta": "2026-10-25",
+ "titulo": "19 – 25 oct 2026",
+ "generado": "2026-10-26T09:19:07-06:00",
+ "imagen": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/semana/semana_2026-10-19.jpg?v=3da25ddf",
  "totales": {
-  "goles": 0,
-  "asistencias": 0,
-  "partidos": 13,
-  "minutos": 647,
-  "jugaron": 10
+  "goles": 2,
+  "asistencias": 1,
+  "partidos": 16,
+  "minutos": 921,
+  "jugaron": 12
  },
  "mvp": {
-  "key": "sandoval",
-  "name": "Santiago Sandoval",
-  "partidos": 1,
-  "min": 86,
-  "goles": 0,
+  "key": "quinones",
+  "name": "Julián Quiñones",
+  "partidos": 2,
+  "min": 186,
+  "goles": 1,
   "asist": 0,
-  "rating": 7.3
+  "rating": 7.5
  },
- "goleadores": [],
- "jugadores": [
+ "goleadores": [
   {
-   "key": "montes",
-   "name": "César Montes",
-   "partidos": 2,
-   "min": 136,
-   "goles": 0,
-   "asist": 0,
-   "rating": 6.1,
-   "equipos_gol": [
-    "Lokomotiv Moscú"
-   ]
+   "key": "armando",
+   "name": "Armando González",
+   "goles": 1,
+   "equipo": "Olympiacos"
   },
   {
    "key": "quinones",
    "name": "Julián Quiñones",
-   "partidos": 1,
-   "min": 90,
-   "goles": 0,
+   "goles": 1,
+   "equipo": "Al-Qadsiah"
+  }
+ ],
+ "jugadores": [
+  {
+   "key": "quinones",
+   "name": "Julián Quiñones",
+   "partidos": 2,
+   "min": 186,
+   "goles": 1,
    "asist": 0,
-   "rating": 6.2,
+   "rating": 7.5,
    "equipos_gol": [
     "Al-Qadsiah"
+   ]
+  },
+  {
+   "key": "sandoval",
+   "name": "Santiago Sandoval",
+   "partidos": 2,
+   "min": 135,
+   "goles": 0,
+   "asist": 1,
+   "rating": 6.7,
+   "equipos_gol": [
+    "Chivas"
+   ]
+  },
+  {
+   "key": "armando",
+   "name": "Armando González",
+   "partidos": 2,
+   "min": 88,
+   "goles": 1,
+   "asist": 0,
+   "rating": 7.4,
+   "equipos_gol": [
+    "Olympiacos"
+   ]
+  },
+  {
+   "key": "campillo",
+   "name": "Diego Campillo",
+   "partidos": 2,
+   "min": 151,
+   "goles": 0,
+   "asist": 0,
+   "rating": 7.0,
+   "equipos_gol": [
+    "Chivas"
    ]
   },
   {
@@ -53,40 +90,16 @@
    "min": 90,
    "goles": 0,
    "asist": 0,
-   "rating": 6.0,
+   "rating": 7.4,
    "equipos_gol": [
     "Genoa"
    ]
   },
   {
-   "key": "campillo",
-   "name": "Diego Campillo",
-   "partidos": 1,
-   "min": 90,
-   "goles": 0,
-   "asist": 0,
-   "rating": 6.6,
-   "equipos_gol": [
-    "Chivas"
-   ]
-  },
-  {
-   "key": "sandoval",
-   "name": "Santiago Sandoval",
-   "partidos": 1,
-   "min": 86,
-   "goles": 0,
-   "asist": 0,
-   "rating": 7.3,
-   "equipos_gol": [
-    "Chivas"
-   ]
-  },
-  {
    "key": "chavez",
    "name": "Mateo Chávez",
-   "partidos": 2,
-   "min": 77,
+   "partidos": 1,
+   "min": 87,
    "goles": 0,
    "asist": 0,
    "rating": 6.3,
@@ -95,112 +108,166 @@
    ]
   },
   {
-   "key": "armando",
-   "name": "Armando González",
-   "partidos": 2,
-   "min": 33,
-   "goles": 0,
-   "asist": 0,
-   "rating": 6.7,
-   "equipos_gol": [
-    "Olympiacos"
-   ]
-  },
-  {
-   "key": "fidalgo",
-   "name": "Álvaro Fidalgo",
-   "partidos": 1,
-   "min": 20,
-   "goles": 0,
-   "asist": 0,
-   "rating": 6.9,
-   "equipos_gol": [
-    "Real Betis"
-   ]
-  },
-  {
    "key": "huescas",
    "name": "Rodrigo Huescas",
    "partidos": 1,
-   "min": 20,
+   "min": 62,
    "goles": 0,
    "asist": 0,
-   "rating": 6.9,
+   "rating": 6.3,
    "equipos_gol": [
     "FC Copenhague"
+   ]
+  },
+  {
+   "key": "camberos",
+   "name": "Hugo Camberos",
+   "partidos": 1,
+   "min": 45,
+   "goles": 0,
+   "asist": 0,
+   "rating": 7.0,
+   "equipos_gol": [
+    "Chivas"
+   ]
+  },
+  {
+   "key": "fimbres",
+   "name": "Iker Fimbres",
+   "partidos": 1,
+   "min": 32,
+   "goles": 0,
+   "asist": 0,
+   "rating": 6.5,
+   "equipos_gol": [
+    "Monterrey"
    ]
   },
   {
    "key": "gimenez",
    "name": "Santiago Giménez",
    "partidos": 1,
-   "min": 5,
+   "min": 18,
    "goles": 0,
    "asist": 0,
-   "rating": 6.5,
+   "rating": 6.4,
    "equipos_gol": [
     "Porto"
+   ]
+  },
+  {
+   "key": "fidalgo",
+   "name": "Álvaro Fidalgo",
+   "partidos": 1,
+   "min": 15,
+   "goles": 0,
+   "asist": 0,
+   "rating": 6.6,
+   "equipos_gol": [
+    "Real Betis"
+   ]
+  },
+  {
+   "key": "obed",
+   "name": "Obed Vargas",
+   "partidos": 1,
+   "min": 12,
+   "goles": 0,
+   "asist": 0,
+   "rating": 6.2,
+   "equipos_gol": [
+    "Atlético Madrid"
    ]
   }
  ],
  "todos": [
   {
-   "key": "sandoval",
-   "name": "Santiago Sandoval",
+   "key": "quinones",
+   "name": "Julián Quiñones",
    "estado": "jugo",
-   "rating": 7.3,
-   "partidos": 1,
-   "min": 86,
-   "goles": 0,
-   "asist": 0
-  },
-  {
-   "key": "huescas",
-   "name": "Rodrigo Huescas",
-   "estado": "jugo",
-   "rating": 6.9,
-   "partidos": 1,
-   "min": 20,
-   "goles": 0,
-   "asist": 0
-  },
-  {
-   "key": "fidalgo",
-   "name": "Álvaro Fidalgo",
-   "estado": "jugo",
-   "rating": 6.9,
-   "partidos": 1,
-   "min": 20,
-   "goles": 0,
-   "asist": 0
-  },
-  {
-   "key": "armando",
-   "name": "Armando González",
-   "estado": "jugo",
-   "rating": 6.7,
+   "rating": 7.5,
    "partidos": 2,
-   "min": 33,
-   "goles": 0,
+   "min": 186,
+   "goles": 1,
    "asist": 0
   },
   {
-   "key": "campillo",
-   "name": "Diego Campillo",
+   "key": "vasquez",
+   "name": "Johan Vásquez",
    "estado": "jugo",
-   "rating": 6.6,
+   "rating": 7.4,
    "partidos": 1,
    "min": 90,
    "goles": 0,
    "asist": 0
   },
   {
-   "key": "gimenez",
-   "name": "Santiago Giménez",
+   "key": "armando",
+   "name": "Armando González",
+   "estado": "jugo",
+   "rating": 7.4,
+   "partidos": 2,
+   "min": 88,
+   "goles": 1,
+   "asist": 0
+  },
+  {
+   "key": "campillo",
+   "name": "Diego Campillo",
+   "estado": "jugo",
+   "rating": 7.0,
+   "partidos": 2,
+   "min": 151,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "camberos",
+   "name": "Hugo Camberos",
+   "estado": "jugo",
+   "rating": 7.0,
+   "partidos": 1,
+   "min": 45,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "sandoval",
+   "name": "Santiago Sandoval",
+   "estado": "jugo",
+   "rating": 6.7,
+   "partidos": 2,
+   "min": 135,
+   "goles": 0,
+   "asist": 1
+  },
+  {
+   "key": "fidalgo",
+   "name": "Álvaro Fidalgo",
+   "estado": "jugo",
+   "rating": 6.6,
+   "partidos": 1,
+   "min": 15,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "fimbres",
+   "name": "Iker Fimbres",
    "estado": "jugo",
    "rating": 6.5,
    "partidos": 1,
-   "min": 5,
+   "min": 32,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "gimenez",
+   "name": "Santiago Giménez",
+   "estado": "jugo",
+   "rating": 6.4,
+   "partidos": 1,
+   "min": 18,
    "goles": 0,
    "asist": 0
   },
@@ -209,54 +276,34 @@
    "name": "Mateo Chávez",
    "estado": "jugo",
    "rating": 6.3,
-   "partidos": 2,
-   "min": 77,
-   "goles": 0,
-   "asist": 0
-  },
-  {
-   "key": "quinones",
-   "name": "Julián Quiñones",
-   "estado": "jugo",
-   "rating": 6.2,
    "partidos": 1,
-   "min": 90,
+   "min": 87,
    "goles": 0,
    "asist": 0
   },
   {
-   "key": "montes",
-   "name": "César Montes",
+   "key": "huescas",
+   "name": "Rodrigo Huescas",
    "estado": "jugo",
-   "rating": 6.1,
-   "partidos": 2,
-   "min": 136,
-   "goles": 0,
-   "asist": 0
-  },
-  {
-   "key": "vasquez",
-   "name": "Johan Vásquez",
-   "estado": "jugo",
-   "rating": 6.0,
+   "rating": 6.3,
    "partidos": 1,
-   "min": 90,
-   "goles": 0,
-   "asist": 0
-  },
-  {
-   "key": "camberos",
-   "name": "Hugo Camberos",
-   "estado": "banca",
-   "rating": null,
-   "partidos": 0,
-   "min": 0,
+   "min": 62,
    "goles": 0,
    "asist": 0
   },
   {
    "key": "obed",
    "name": "Obed Vargas",
+   "estado": "jugo",
+   "rating": 6.2,
+   "partidos": 1,
+   "min": 12,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "montes",
+   "name": "César Montes",
    "estado": "banca",
    "rating": null,
    "partidos": 0,
@@ -267,16 +314,6 @@
   {
    "key": "mora",
    "name": "Gilberto Mora",
-   "estado": "no_convocado",
-   "rating": null,
-   "partidos": 0,
-   "min": 0,
-   "goles": 0,
-   "asist": 0
-  },
-  {
-   "key": "fimbres",
-   "name": "Iker Fimbres",
    "estado": "no_convocado",
    "rating": null,
    "partidos": 0,
