@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T13:34:18.335202-06:00",
+  "updated_at": "2026-10-26T13:34:58.475847-06:00",
   "app_name": "Legión MX",
   "players": {
     "armando": {
@@ -11,7 +11,7 @@
           "emoji": "🏛️",
           "crest_url": "https://media.api-sports.io/football/teams/553.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:17.883667-06:00",
+          "checked_at": "2026-10-26T13:34:57.883724-06:00",
           "match_reference": "próximo",
           "match": "Marko vs Olympiakos",
           "home": "Marko",
@@ -28,7 +28,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:17.883687-06:00"
+          "checked_at": "2026-10-26T13:34:57.883745-06:00"
         }
       }
     },
@@ -41,14 +41,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:17.884068-06:00"
+          "checked_at": "2026-10-26T13:34:57.884115-06:00"
         },
         "wolves": {
           "label": "Wolves",
           "emoji": "🐺",
           "crest_url": "https://media.api-sports.io/football/teams/39.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:17.884053-06:00",
+          "checked_at": "2026-10-26T13:34:57.884101-06:00",
           "match_reference": "próximo",
           "match": "Wolves vs Cardiff",
           "home": "Wolves",
@@ -71,13 +71,13 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.028958-06:00"
+          "checked_at": "2026-10-26T13:34:58.022632-06:00"
         },
         "al_qadsiah": {
           "label": "Al-Qadsiah",
           "emoji": "⚔️",
           "crest_url": "https://media.api-sports.io/football/teams/2933.png",
-          "checked_at": "2026-10-26T13:34:18.028796-06:00",
+          "checked_at": "2026-10-26T13:34:58.022464-06:00",
           "match_reference": "hoy",
           "status": "titular",
           "match": "Al-Qadsiah vs Al Sadd",
@@ -97,6 +97,13 @@
               "tipo": "amarilla",
               "nombre": "Paulo Otávio",
               "lado": "V",
+              "mio": false
+            },
+            {
+              "min": "59'",
+              "tipo": "amarilla",
+              "nombre": "Mohammed Abu Al-Shamat",
+              "lado": "L",
               "mio": false
             }
           ],
@@ -141,7 +148,8 @@
                   "n": "Mohammed Abu Al Shamat",
                   "num": 2,
                   "pos": "M",
-                  "g": "3:5"
+                  "g": "3:5",
+                  "amarilla": "59'"
                 },
                 {
                   "id": 328403,
@@ -465,14 +473,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.029318-06:00"
+          "checked_at": "2026-10-26T13:34:58.022995-06:00"
         },
         "tijuana": {
           "label": "Tijuana",
           "emoji": "🐕",
           "crest_url": "https://media.api-sports.io/football/teams/2280.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.029302-06:00",
+          "checked_at": "2026-10-26T13:34:58.022978-06:00",
           "match_reference": "próximo",
           "match": "Club America vs Club Tijuana",
           "home": "Club America",
@@ -495,7 +503,7 @@
           "emoji": "🦅",
           "crest_url": "https://media.api-sports.io/football/teams/495.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.029669-06:00",
+          "checked_at": "2026-10-26T13:34:58.023311-06:00",
           "match_reference": "próximo",
           "match": "Genoa vs Juventus",
           "home": "Genoa",
@@ -512,7 +520,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.029685-06:00"
+          "checked_at": "2026-10-26T13:34:58.023326-06:00"
         }
       }
     },
@@ -525,14 +533,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.030017-06:00"
+          "checked_at": "2026-10-26T13:34:58.023687-06:00"
         },
         "porto": {
           "label": "Porto",
           "emoji": "🐉",
           "crest_url": "https://media.api-sports.io/football/teams/212.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.030002-06:00",
+          "checked_at": "2026-10-26T13:34:58.023668-06:00",
           "match_reference": "próximo",
           "match": "FC Porto vs Academico Viseu",
           "home": "FC Porto",
@@ -555,14 +563,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.030345-06:00"
+          "checked_at": "2026-10-26T13:34:58.024020-06:00"
         },
         "az_alkmaar": {
           "label": "AZ Alkmaar",
           "emoji": "🧀",
           "crest_url": "https://media.api-sports.io/football/teams/201.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.030331-06:00",
+          "checked_at": "2026-10-26T13:34:58.024004-06:00",
           "match_reference": "próximo",
           "match": "Ajax vs AZ Alkmaar",
           "home": "Ajax",
@@ -585,14 +593,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.030730-06:00"
+          "checked_at": "2026-10-26T13:34:58.024338-06:00"
         },
         "atletico_madrid": {
           "label": "Atlético Madrid",
           "emoji": "🔴",
           "crest_url": "https://media.api-sports.io/football/teams/530.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.030714-06:00",
+          "checked_at": "2026-10-26T13:34:58.024325-06:00",
           "match_reference": "próximo",
           "match": "Levante vs Atlético de Madrid",
           "home": "Levante",
@@ -615,14 +623,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.031070-06:00"
+          "checked_at": "2026-10-26T13:34:58.024686-06:00"
         },
         "betis": {
           "label": "Real Betis",
           "emoji": "🌴",
           "crest_url": "https://media.api-sports.io/football/teams/543.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.031055-06:00",
+          "checked_at": "2026-10-26T13:34:58.024671-06:00",
           "match_reference": "próximo",
           "match": "Navalcarnero vs Real Betis",
           "home": "Navalcarnero",
@@ -645,13 +653,13 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.329425-06:00"
+          "checked_at": "2026-10-26T13:34:58.331368-06:00"
         },
         "copenhague": {
           "label": "FC Copenhague",
           "emoji": "🦁",
           "crest_url": "https://media.api-sports.io/football/teams/400.png",
-          "checked_at": "2026-10-26T13:34:18.329280-06:00",
+          "checked_at": "2026-10-26T13:34:58.331216-06:00",
           "match_reference": "hoy",
           "status": "banca",
           "match": "FC Copenhague vs Odense",
@@ -1020,7 +1028,7 @@
           "emoji": "🚂",
           "crest_url": "https://media.api-sports.io/football/teams/597.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.329794-06:00",
+          "checked_at": "2026-10-26T13:34:58.331757-06:00",
           "match_reference": "próximo",
           "match": "CSKA Moscú vs Lokomotiv Moscú",
           "home": "CSKA Moscú",
@@ -1037,7 +1045,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.329810-06:00"
+          "checked_at": "2026-10-26T13:34:58.331774-06:00"
         }
       }
     },
@@ -1050,7 +1058,7 @@
           "emoji": "⚡",
           "crest_url": "https://media.api-sports.io/football/teams/1088.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.330129-06:00",
+          "checked_at": "2026-10-26T13:34:58.332100-06:00",
           "match_reference": "próximo",
           "match": "FC Krasnodar vs Dinamo Moscú",
           "home": "FC Krasnodar",
@@ -1067,7 +1075,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.330144-06:00"
+          "checked_at": "2026-10-26T13:34:58.332115-06:00"
         }
       }
     },
@@ -1080,7 +1088,7 @@
           "emoji": "⛰️",
           "crest_url": "https://media.api-sports.io/football/teams/2282.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.330448-06:00",
+          "checked_at": "2026-10-26T13:34:58.332427-06:00",
           "match_reference": "próximo",
           "match": "Monterrey vs Club Tijuana",
           "home": "Monterrey",
@@ -1097,7 +1105,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.330463-06:00"
+          "checked_at": "2026-10-26T13:34:58.332442-06:00"
         }
       }
     },
@@ -1110,7 +1118,7 @@
           "emoji": "🐐",
           "crest_url": "https://media.api-sports.io/football/teams/2278.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.330812-06:00",
+          "checked_at": "2026-10-26T13:34:58.332794-06:00",
           "match_reference": "próximo",
           "match": "Chivas vs Atlante FC",
           "home": "Chivas",
@@ -1127,7 +1135,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.330827-06:00"
+          "checked_at": "2026-10-26T13:34:58.332809-06:00"
         }
       }
     },
@@ -1140,7 +1148,7 @@
           "emoji": "🐐",
           "crest_url": "https://media.api-sports.io/football/teams/2278.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.331126-06:00",
+          "checked_at": "2026-10-26T13:34:58.333123-06:00",
           "match_reference": "próximo",
           "match": "Chivas vs Atlante FC",
           "home": "Chivas",
@@ -1157,7 +1165,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.331140-06:00"
+          "checked_at": "2026-10-26T13:34:58.333137-06:00"
         }
       }
     },
@@ -1170,7 +1178,7 @@
           "emoji": "🐐",
           "crest_url": "https://media.api-sports.io/football/teams/2278.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.331435-06:00",
+          "checked_at": "2026-10-26T13:34:58.333445-06:00",
           "match_reference": "próximo",
           "match": "Chivas vs Atlante FC",
           "home": "Chivas",
@@ -1187,7 +1195,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-26T13:34:18.331449-06:00"
+          "checked_at": "2026-10-26T13:34:58.333459-06:00"
         }
       }
     }
