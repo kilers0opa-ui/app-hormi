@@ -2,8 +2,8 @@
  "desde": "2026-10-19",
  "hasta": "2026-10-25",
  "titulo": "19 – 25 oct 2026",
- "generado": "2026-10-26T09:31:37-06:00",
- "imagen": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/semana/semana_2026-10-19.jpg?v=b76eedb5",
+ "generado": "2026-10-27T11:40:31-06:00",
+ "imagen": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/semana/semana_2026-10-19.jpg?v=e196184d",
  "totales": {
   "goles": 2,
   "asistencias": 1,
@@ -102,7 +102,7 @@
    "min": 87,
    "goles": 0,
    "asist": 0,
-   "rating": 6.3,
+   "rating": 6.6,
    "equipos_gol": [
     "AZ Alkmaar"
    ]
@@ -138,7 +138,7 @@
    "min": 32,
    "goles": 0,
    "asist": 0,
-   "rating": 6.5,
+   "rating": 6.6,
    "equipos_gol": [
     "Monterrey"
    ]
@@ -242,6 +242,26 @@
    "asist": 1
   },
   {
+   "key": "chavez",
+   "name": "Mateo Chávez",
+   "estado": "jugo",
+   "rating": 6.6,
+   "partidos": 1,
+   "min": 87,
+   "goles": 0,
+   "asist": 0
+  },
+  {
+   "key": "fimbres",
+   "name": "Iker Fimbres",
+   "estado": "jugo",
+   "rating": 6.6,
+   "partidos": 1,
+   "min": 32,
+   "goles": 0,
+   "asist": 0
+  },
+  {
    "key": "fidalgo",
    "name": "Álvaro Fidalgo",
    "estado": "jugo",
@@ -252,32 +272,12 @@
    "asist": 0
   },
   {
-   "key": "fimbres",
-   "name": "Iker Fimbres",
-   "estado": "jugo",
-   "rating": 6.5,
-   "partidos": 1,
-   "min": 32,
-   "goles": 0,
-   "asist": 0
-  },
-  {
    "key": "gimenez",
    "name": "Santiago Giménez",
    "estado": "jugo",
    "rating": 6.4,
    "partidos": 1,
    "min": 18,
-   "goles": 0,
-   "asist": 0
-  },
-  {
-   "key": "chavez",
-   "name": "Mateo Chávez",
-   "estado": "jugo",
-   "rating": 6.3,
-   "partidos": 1,
-   "min": 87,
    "goles": 0,
    "asist": 0
   },
