@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T08:57:14.703058-06:00",
+  "updated_at": "2026-10-27T09:09:18.621218-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -169,18 +169,6 @@
             "minutes": 113
           },
           {
-            "league_id": 262,
-            "league_name": "Liga MX",
-            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
-            "team_id": 2278,
-            "team_name": "Guadalajara Chivas",
-            "team_logo": "https://media.api-sports.io/football/teams/2278.png",
-            "played": 3,
-            "goals": 0,
-            "assists": 0,
-            "minutes": 195
-          },
-          {
             "league_id": 197,
             "league_name": "Super League 1",
             "league_logo": "https://media.api-sports.io/football/leagues/197.png",
@@ -191,6 +179,18 @@
             "goals": 0,
             "assists": 0,
             "minutes": 218
+          },
+          {
+            "league_id": 262,
+            "league_name": "Liga MX",
+            "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+            "team_id": 2278,
+            "team_name": "Guadalajara Chivas",
+            "team_logo": "https://media.api-sports.io/football/teams/2278.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 195
           },
           {
             "league_id": 199,
@@ -3630,18 +3630,6 @@
             "minutes": 202
           },
           {
-            "league_id": 17,
-            "league_name": "AFC Champions League Elite",
-            "league_logo": "https://media.api-sports.io/football/leagues/17.png",
-            "team_id": 2933,
-            "team_name": "Al-Qadisiyah FC",
-            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
-            "played": 3,
-            "goals": 2,
-            "assists": 0,
-            "minutes": 264
-          },
-          {
             "league_id": 307,
             "league_name": "Pro League",
             "league_logo": "https://media.api-sports.io/football/leagues/307.png",
@@ -3652,6 +3640,18 @@
             "goals": 5,
             "assists": 3,
             "minutes": 900
+          },
+          {
+            "league_id": 17,
+            "league_name": "AFC Champions League Elite",
+            "league_logo": "https://media.api-sports.io/football/leagues/17.png",
+            "team_id": 2933,
+            "team_name": "Al-Qadisiyah FC",
+            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
+            "played": 3,
+            "goals": 2,
+            "assists": 0,
+            "minutes": 264
           },
           {
             "league_id": 826,
