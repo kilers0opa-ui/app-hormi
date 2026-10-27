@@ -10,20 +10,15 @@
       "player_key": "quinones",
       "team_key": "al_qadsiah",
       "goal_seen_at": "2026-10-26T19:59:58.452185+00:00",
-      "status": "resuelto",
+      "status": "omitido",
       "intentos": 2,
       "fallos": 0,
       "ultimo_intento": "2026-10-26T20:30:28.756068+00:00",
-      "video": {
-        "id": "Fq6rxGw7HoU",
-        "title": "¡Quiñones, 28 del Balón de Oro! Superó a Mané y Saliba 🇲🇽🔥",
-        "channel": "Mangefut",
-        "published_at": "2026-10-26T20:21:20Z",
-        "thumbnail": "https://i.ytimg.com/vi/Fq6rxGw7HoU/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=Fq6rxGw7HoU",
-        "embeddable": true
-      },
-      "verificado": "2026-10-26T22:50:24.588708+00:00"
+      "verificado": "2026-10-26T22:50:24.588708+00:00",
+      "descartados": [
+        "Fq6rxGw7HoU"
+      ],
+      "motivo": "el video no era del gol (título sin relación)"
     }
   },
   "partidos": {

@@ -610,6 +610,34 @@ def strip_private(entries):
 # ------------------------------------------------------------- Modo gol --
 
 GOAL_WORDS = ("gol", "goal", "golazo", "anota", "marca")
+# Palabra completa (no "goleador"/"goleo"): el título tiene que hablar de UN gol.
+GOAL_RE = re.compile(r"\b(gol|goles|golazo|golaco|golao|goal|goals|anota|anoto|marca|marco|scores?|scored)\b")
+# Títulos de listas/noticias que mencionan al jugador pero no son el gol (p. ej. "Quiñones, 28 del Balón de Oro").
+NO_GOL_RE = re.compile(r"balon de oro|ballon d|ranking|top \d|tabla de goleo|goleador|pichichi|record|fichaje|rumor|entrevista|lesion")
+
+
+def es_clip_del_gol(entry, rival_pref=None):
+    """El título debe decir que es un gol (o nombrar al rival del partido) y no ser una lista/noticia."""
+    title = normalize(entry.get("title") or "")
+    if NO_GOL_RE.search(title):
+        return False
+    return bool(GOAL_RE.search(title)) or bool(rival_pref and mentions_team(title, rival_pref))
+
+
+def rival_del_gol(key, player_key):
+    """Prefijos del rival del partido del gol (llave 'jugador:equipo:fixture:goal:...'), desde player_stats.json."""
+    try:
+        fid = int(key.split(":")[2])
+        stats = json.loads(Path("player_stats.json").read_text(encoding="utf-8"))
+        u = ((stats.get("players") or {}).get(player_key) or {}).get("ultimo_partido") or {}
+        if u.get("fixture_id") != fid:
+            return None
+        nombres = {u.get("home") or "", u.get("away") or ""}
+        club = normalize(u.get("team_label") or "")
+        rival = [n for n in nombres if n and not mentions_team(normalize(n), team_prefixes(club))] if club else []
+        return team_prefixes(rival[0]) if len(rival) == 1 else None
+    except Exception:
+        return None
 
 
 def send_video_push(config, player, video, team_key):
@@ -1091,6 +1119,11 @@ def _goals_step(out, config, settings, sources, notify, now):
                       and (e.get("published_at") or "") >= since_iso
                       and e["id"] not in used
                       and e["id"] not in set(st.get("descartados") or []) | set(settings.get("videos_descartados") or [])]
+        rival_pref = rival_del_gol(key, st["player_key"])
+        sin_gol = [e for e in candidates if not es_clip_del_gol(e, rival_pref)]
+        for e in sin_gol:
+            log(f"     ✗ no es el gol: {e.get('title')!r}")
+        candidates = [e for e in candidates if es_clip_del_gol(e, rival_pref)]
         candidates = filter_visibles(candidates, settings.get("region_visible"))
         log(f"     {len(found)} resultados · {len(candidates)} válidos y visibles en {settings.get('region_visible')}")
         if candidates:
