@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T23:34:47.400336-06:00",
+  "updated_at": "2026-10-27T06:39:31.368461-06:00",
   "partidos": {
     "1563671": {
       "fixture_id": 1563671,
@@ -176,9 +176,135 @@
           ]
         }
       ]
+    },
+    "1635507": {
+      "fixture_id": 1635507,
+      "kickoff": "2026-10-28T07:00:00-06:00",
+      "home": "Marko",
+      "away": "Olympiakos",
+      "home_id": 12403,
+      "away_id": 553,
+      "home_logo": "https://media.api-sports.io/football/teams/12403.png",
+      "away_logo": "https://media.api-sports.io/football/teams/553.png",
+      "league": "Copa de Grecia",
+      "tabla": null,
+      "forma_home": [
+        {
+          "r": "G",
+          "rival": "Panthrakikos",
+          "marcador": "2-1",
+          "fid": 1636929,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Nestos Chrisoupolis",
+          "marcador": "2-1",
+          "fid": 1636934,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Larisa",
+          "marcador": "1-0",
+          "fid": 1636945,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "Ellas Syros",
+          "marcador": "0-0",
+          "fid": 1636952,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Panionios",
+          "marcador": "4-0",
+          "fid": 1636961,
+          "local": false
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "G",
+          "rival": "Panathinaikos",
+          "marcador": "1-0",
+          "fid": 1593329,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Marseille",
+          "marcador": "1-0",
+          "fid": 1636295,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Panetolikos",
+          "marcador": "2-0",
+          "fid": 1593336,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Sparta Praha",
+          "marcador": "1-0",
+          "fid": 1636308,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Kalamata",
+          "marcador": "5-0",
+          "fid": 1593343,
+          "local": true
+        }
+      ],
+      "historial": [],
+      "hecho": "2026-10-27T06:39:31.368461-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "armando",
+          "lado": "V",
+          "rachas": {
+            "jugando": 4
+          },
+          "minutos": [
+            {
+              "rival": "Panathinaikos",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Marseille",
+              "min": 23,
+              "goles": 0
+            },
+            {
+              "rival": "Panetolikos",
+              "min": 10,
+              "goles": 0
+            },
+            {
+              "rival": "Sparta Praha",
+              "min": 28,
+              "goles": 1
+            },
+            {
+              "rival": "Kalamata",
+              "min": 60,
+              "goles": 0
+            }
+          ]
+        }
+      ]
     }
   },
   "jugadores": {
-    "luis_chavez": 1563671
+    "luis_chavez": 1563671,
+    "armando": 1635507
   }
 }
