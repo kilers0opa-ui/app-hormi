@@ -525,7 +525,7 @@ def liga_es(name, country=None):
 def nombre_es(name):
     return NOMBRES_ES.get(name, name)
 
-LIGA_V = 2   # sube si cambia cómo se clasifica la liga: los horarios guardados se refrescan una vez
+LIGA_V = 3   # sube si cambia cómo se clasifica la liga: los horarios guardados se refrescan una vez
 _COPA_PALABRAS = ("cup", "copa", "coupe", "pokal", "coppa", "taça", "taca", "beker", "champions", "europa",
                   "conference", "nations", "gold cup", "libertadores", "super cup", "supercup", "supercopa",
                   "supercoppa", "shield", "trophy", "playoff")
