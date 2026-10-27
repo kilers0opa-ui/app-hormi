@@ -1,138 +1,8 @@
 {
-  "updated_at": "2026-10-26T23:23:37.542968-06:00",
-  "desde": "2026-10-24",
-  "hasta": "2026-11-02",
+  "updated_at": "2026-10-27T08:48:53.622388-06:00",
+  "desde": "2026-10-25",
+  "hasta": "2026-11-03",
   "partidos": [
-    {
-      "fixture_id": 1561420,
-      "kickoff": "2026-10-24T03:45:00-06:00",
-      "home": "Akron",
-      "away": "Dinamo Moscú",
-      "home_id": 6786,
-      "away_id": 1088,
-      "home_logo": "https://media.api-sports.io/football/teams/6786.png",
-      "away_logo": "https://media.api-sports.io/football/teams/1088.png",
-      "league": "Liga Premier de Rusia",
-      "league_logo": "https://media.api-sports.io/football/leagues/235.png",
-      "status": "FT",
-      "home_goals": 3,
-      "away_goals": 1,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "luis_chavez",
-          "team_key": "dinamo",
-          "lado": "V"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1563226,
-      "kickoff": "2026-10-24T08:00:00-06:00",
-      "home": "Wolves",
-      "away": "Watford",
-      "home_id": 39,
-      "away_id": 38,
-      "home_logo": "https://media.api-sports.io/football/teams/39.png",
-      "away_logo": "https://media.api-sports.io/football/teams/38.png",
-      "league": "Championship",
-      "league_logo": "https://media.api-sports.io/football/leagues/40.png",
-      "status": "FT",
-      "home_goals": 1,
-      "away_goals": 0,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "raul",
-          "team_key": "wolves",
-          "lado": "L"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1570425,
-      "kickoff": "2026-10-24T13:00:00-06:00",
-      "home": "Atlético de Madrid",
-      "away": "Deportivo La Coruna",
-      "home_id": 530,
-      "away_id": 544,
-      "home_logo": "https://media.api-sports.io/football/teams/530.png",
-      "away_logo": "https://media.api-sports.io/football/teams/544.png",
-      "league": "La Liga",
-      "league_logo": "https://media.api-sports.io/football/leagues/140.png",
-      "status": "FT",
-      "home_goals": 1,
-      "away_goals": 0,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "obed",
-          "team_key": "atletico_madrid",
-          "lado": "L"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1575521,
-      "kickoff": "2026-10-24T13:30:00-06:00",
-      "home": "GIL Vicente",
-      "away": "FC Porto",
-      "home_id": 762,
-      "away_id": 212,
-      "home_logo": "https://media.api-sports.io/football/teams/762.png",
-      "away_logo": "https://media.api-sports.io/football/teams/212.png",
-      "league": "Liga Portugal",
-      "league_logo": "https://media.api-sports.io/football/leagues/94.png",
-      "status": "FT",
-      "home_goals": 0,
-      "away_goals": 1,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "gimenez",
-          "team_key": "porto",
-          "lado": "V"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1551014,
-      "kickoff": "2026-10-24T19:00:00-06:00",
-      "home": "Monterrey",
-      "away": "Chivas",
-      "home_id": 2282,
-      "away_id": 2278,
-      "home_logo": "https://media.api-sports.io/football/teams/2282.png",
-      "away_logo": "https://media.api-sports.io/football/teams/2278.png",
-      "league": "Liga MX",
-      "league_logo": "https://media.api-sports.io/football/leagues/262.png",
-      "status": "FT",
-      "home_goals": 0,
-      "away_goals": 1,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "fimbres",
-          "team_key": "monterrey",
-          "lado": "L"
-        },
-        {
-          "key": "campillo",
-          "team_key": "chivas",
-          "lado": "V"
-        },
-        {
-          "key": "camberos",
-          "team_key": "chivas",
-          "lado": "V"
-        },
-        {
-          "key": "sandoval",
-          "team_key": "chivas",
-          "lado": "V"
-        }
-      ]
-    },
     {
       "fixture_id": 1561423,
       "kickoff": "2026-10-25T04:45:00-06:00",
@@ -835,6 +705,29 @@
           "key": "quinones",
           "team_key": "al_qadsiah",
           "lado": "V"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1635622,
+      "kickoff": "2026-11-03T14:00:00-06:00",
+      "home": "Atlético de Madrid",
+      "away": "Bayern München",
+      "home_id": 530,
+      "away_id": 157,
+      "home_logo": "https://media.api-sports.io/football/teams/530.png",
+      "away_logo": "https://media.api-sports.io/football/teams/157.png",
+      "league": "Champions League",
+      "league_logo": "https://media.api-sports.io/football/leagues/2.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "obed",
+          "team_key": "atletico_madrid",
+          "lado": "L"
         }
       ]
     }
