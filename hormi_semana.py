@@ -180,92 +180,136 @@ def _miles(n):
     return f"{n:,}"
 
 
-def imagen(res, ini, fin):
+def _avatar(key, size):
+    """Foto redonda del jugador (tarjetas_assets/avatar_<key>.jpg) con borde dorado opcional."""
+    for path in (os.path.join(HERE, "tarjetas_assets", f"avatar_{key}.jpg"),
+                 os.path.join(HERE, "fondos_fuente", key, "avatar.jpg")):
+        if os.path.exists(path):
+            av = Image.open(path).convert("RGB")
+            lado = min(av.size)
+            av = av.crop(((av.width - lado) // 2, 0, (av.width - lado) // 2 + lado, lado)).resize((size, size), Image.LANCZOS)
+            mask = Image.new("L", (size * 4, size * 4), 0)
+            ImageDraw.Draw(mask).ellipse([0, 0, size * 4 - 1, size * 4 - 1], fill=255)
+            return av, mask.resize((size, size), Image.LANCZOS)
+    return None, None
+
+
+def _club(config, key):
+    p = next((p for p in config["players"] if p["key"] == key), None) or {}
+    t = next((t for t in p.get("targets") or [] if t.get("kind") == "club"), None) or {}
+    return ha.nombre_es(t.get("label") or "") if t else ""
+
+
+def _plural(n, uno, varios):
+    return f"{n} {uno if n == 1 else varios}"
+
+
+def imagen(res, ini, fin, config=None):
+    """Imagen para compartir (1080x1350): MVP con SUS números y por qué lo es; luego los totales de TODA la Legión,
+    con etiquetas claras (para que no parezca que el MVP jugó 16 partidos); y los 5 mejor calificados."""
+    config = config or ha.load_config()
+    archivados = set(config.get("archivados") or [])
+    total_jug = len([p for p in config["players"] if p["key"] not in archivados])
+    BLANCO, GRIS, GRIS2 = (255, 255, 255), (207, 214, 222), (154, 164, 174)
     a = np.linspace(0, 1, H)[:, None, None]
-    top, mid, bot = np.array((10, 61, 42)), np.array((11, 15, 20)), np.array((58, 13, 20))
-    arr = np.where(a < 0.55, top * (1 - a / 0.55) + mid * (a / 0.55), mid * (1 - (a - 0.55) / 0.45) + bot * ((a - 0.55) / 0.45))
+    top, mid, bot = np.array((15, 61, 38)), np.array((16, 24, 32)), np.array((58, 15, 21))
+    arr = np.where(a < 0.45, top * (1 - a / 0.45) + mid * (a / 0.45), mid * (1 - (a - 0.45) / 0.55) + bot * ((a - 0.45) / 0.55))
     img = Image.fromarray((arr * np.ones((H, W, 3))).astype("uint8")).convert("RGBA")
     ov = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     od = ImageDraw.Draw(ov)
-    for i in range(-H, W, 150):
-        od.line([(i, H), (i + H, 0)], fill=(255, 255, 255, 8), width=46)
+    for i in range(-H, W, 120):
+        od.line([(i, H), (i + H, 0)], fill=(255, 255, 255, 7), width=40)
     img = Image.alpha_composite(img, ov)
-    d = ImageDraw.Draw(img)
-    x0 = 72
-    d.text((x0, 70), "JORNADA DE LA LEGIÓN", font=_font(FB, 30), fill=DORADO)
-    rango_txt = titulo_rango(ini, fin).upper()
-    d.text((x0, 112), rango_txt, font=_font(FB, 74), fill=(255, 255, 255))
-    # 4 recuadros
-    t = res["totales"]
-    cajas = [(str(t["goles"]), "GOLES"), (str(t["asistencias"]), "ASISTENCIAS"),
-             (str(t.get("jugaron", t["partidos"])), "JUGARON"), (_miles(t["minutos"]) + "'", "MINUTOS")]
-    bw, bh, gap, y0 = (W - 2 * x0 - 24) // 2, 150, 24, 230
-    # Lo translúcido se pinta en una capa aparte (ImageDraw no mezcla transparencias sobre la imagen).
+    x0 = 64
+    t, m = res["totales"], res["mvp"]
+    jug = [j for j in res.get("todos") or [] if j.get("estado") == "jugo"]
+    con_nota = [j for j in jug if j.get("rating")]
+    prom = (sum(j["rating"] for j in con_nota) / len(con_nota)) if con_nota else None
+
+    # Capa translúcida: tarjeta del MVP y recuadros de totales
     capa = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     cd = ImageDraw.Draw(capa)
+    y_mvp, h_mvp = 218, 254
+    cd.rounded_rectangle([x0, y_mvp, W - x0, y_mvp + h_mvp], 28, fill=(242, 169, 59, 26), outline=(242, 169, 59, 235), width=3)
+    y_tot = y_mvp + h_mvp + 74
+    bw, bh, gap = (W - 2 * x0 - 3 * 16) // 4, 152, 16
     for i in range(4):
-        x, y = x0 + (i % 2) * (bw + gap), y0 + (i // 2) * (bh + gap)
-        cd.rounded_rectangle([x, y, x + bw, y + bh], 22, fill=(255, 255, 255, 20))
-    ym = y0 + 2 * (bh + gap) + 6
-    cd.rounded_rectangle([x0, ym, W - x0, ym + 170], 26, fill=(242, 169, 59, 38), outline=(242, 169, 59, 150), width=3)
+        x = x0 + i * (bw + gap)
+        cd.rounded_rectangle([x, y_tot, x + bw, y_tot + bh], 22, fill=(255, 255, 255, 16), outline=(255, 255, 255, 22), width=1)
     img = Image.alpha_composite(img, capa)
     d = ImageDraw.Draw(img)
-    for i, (v, lbl) in enumerate(cajas):
-        x, y = x0 + (i % 2) * (bw + gap), y0 + (i // 2) * (bh + gap)
-        d.text((x + bw // 2, y + 62), v, font=_font(FB, 64), fill=(255, 255, 255), anchor="mm")
-        d.text((x + bw // 2, y + 118), lbl, font=_font(FM, 24), fill=(207, 214, 222), anchor="mm")
+
+    # Encabezado
+    d.text((x0, 56), "JORNADA DE LA LEGIÓN", font=_font(FB, 24), fill=DORADO)
+    d.text((x0, 88), titulo_rango(ini, fin).upper(), font=_font(FB, 70), fill=BLANCO)
+
     # MVP
-    m = res["mvp"]
-    y = ym
-    av_path = os.path.join(HERE, "fondos_fuente", m["key"], "avatar.jpg")
-    if os.path.exists(av_path):
-        av = Image.open(av_path).convert("RGB").resize((124, 124), Image.LANCZOS)
-        mask = Image.new("L", (124, 124), 0)
-        ImageDraw.Draw(mask).ellipse([0, 0, 123, 123], fill=255)
-        img.paste(av, (x0 + 24, y + 23), mask)
-    tx = x0 + 172
-    d.text((tx, y + 26), "MVP DE LA SEMANA", font=_font(FB, 24), fill=DORADO)
-    d.text((tx, y + 56), m["name"], font=_font(FB, 44), fill=(255, 255, 255))
-    linea = [f"{m['partidos']} PJ", f"{_miles(m['min'])}'", f"{m['goles']} gol" + ("es" if m["goles"] != 1 else ""),
-             f"{m['asist']} asist."]
-    txt = "  ·  ".join(linea) + ("  ·  " if m.get("rating") else "")
-    d.text((tx, y + 116), txt, font=_font(FM, 26), fill=(225, 230, 236))
+    av, mask = _avatar(m["key"], 150)
+    if av:
+        d.ellipse([x0 + 26, y_mvp + 48, x0 + 26 + 156, y_mvp + 48 + 156], fill=DORADO)
+        img.paste(av, (x0 + 29, y_mvp + 51), mask)
+    tx = x0 + 214
+    d.text((tx, y_mvp + 30), "MVP DE LA SEMANA", font=_font(FB, 22), fill=DORADO)
+    d.text((tx, y_mvp + 58), m["name"], font=_font(FB, 46 if len(m["name"]) < 20 else 38), fill=BLANCO)
+    club = _club(config, m["key"])
+    if club:
+        d.text((tx, y_mvp + 116), club, font=_font(FM, 22), fill=GRIS)
+    x = tx
+    yv = y_mvp + 150
+    for v, lbl in ((str(m["partidos"]), " PJ"), (f"{_miles(m['min'])}'", ""), (str(m["goles"]), " gol" if m["goles"] == 1 else " goles"),
+                   (str(m["asist"]), " asist.")):
+        d.text((x, yv), v, font=_font(FB, 36), fill=BLANCO)
+        x += d.textlength(v, font=_font(FB, 36))
+        if lbl:
+            d.text((x, yv + 10), lbl, font=_font(FM, 24), fill=GRIS)
+            x += d.textlength(lbl, font=_font(FM, 24))
+        x += 24
     if m.get("rating"):
-        sx = tx + d.textlength(txt, font=_font(FM, 26))
-        _estrella(d, sx + 13, y + 133, 13, DORADO)
-        d.text((sx + 32, y + 116), str(m["rating"]), font=_font(FB, 26), fill=DORADO)
-    # Goleadores
-    y += 210
-    gol = res["goleadores"]
-    if gol:
-        d.text((x0, y), "GOLEADORES", font=_font(FB, 24), fill=(170, 179, 189))
-        y += 44
-        for gj in gol[:6]:
-            veces = f" ×{gj['goles']}" if gj["goles"] > 1 else ""
-            d.ellipse([x0 + 6, y + 14, x0 + 26, y + 34], fill=DORADO)
-            d.text((x0 + 48, y), gj["name"] + veces, font=_font(FB, 32), fill=(255, 255, 255))
-            w = d.textlength(gj["name"] + veces, font=_font(FB, 32))
-            d.text((x0 + 48 + w, y + 4), f"  ·  {gj['equipo']}", font=_font(FM, 27), fill=(170, 179, 189))
-            y += 52
-        if len(gol) > 6:
-            d.text((x0 + 48, y), f"y {len(gol) - 6} más", font=_font(FM, 26), fill=(170, 179, 189))
-        y += 40
-    else:
-        d.text((x0, y), "Sin goles esta semana", font=_font(FM, 30), fill=(170, 179, 189))
-        y += 84
-    asis = sorted([j for j in res["jugadores"] if j["asist"]], key=lambda j: (-j["asist"], j["name"]))
-    if asis and y < H - 190:
-        d.text((x0, y), "ASISTENCIAS", font=_font(FB, 24), fill=(170, 179, 189))
-        y += 44
-        for aj in asis:
-            if y > H - 140:
-                break
-            veces = f" ×{aj['asist']}" if aj["asist"] > 1 else ""
-            d.ellipse([x0 + 6, y + 14, x0 + 26, y + 34], outline=DORADO, width=4)
-            d.text((x0 + 48, y), aj["name"] + veces, font=_font(FB, 32), fill=(255, 255, 255))
-            y += 52
-    d.text((x0, H - 78), "Legión MX", font=_font(FB, 28), fill=(225, 230, 236))
-    d.text((W - x0, H - 78), "Mexicanos por el mundo", font=_font(FM, 26), fill=(170, 179, 189), anchor="ra")
+        _estrella(d, x + 16, yv + 22, 17, DORADO)
+        d.text((x + 40, yv), f"{m['rating']:.1f}", font=_font(FB, 36), fill=DORADO)
+    por_que = "Mejor calificación de la semana" + (f"  ·  promedio de la Legión: {prom:.1f}" if prom else "")
+    d.text((tx, y_mvp + 206), por_que, font=_font(FM, 19), fill=GRIS2)
+
+    # Totales de toda la Legión
+    d.text((x0, y_tot - 44), "TODA LA LEGIÓN ESTA SEMANA", font=_font(FB, 21), fill=GRIS)
+    cajas = [(str(t.get("jugaron", len(jug))), "JUGARON", f"de {total_jug} mexicanos"), (str(t["goles"]), "GOLES", ""),
+             (str(t["asistencias"]), "ASISTENCIAS", ""), (_miles(t["minutos"]) + "'", "MINUTOS", "entre todos")]
+    for i, (v, lbl, sub) in enumerate(cajas):
+        cx = x0 + i * (bw + gap) + bw // 2
+        d.text((cx, y_tot + 52), v, font=_font(FB, 58), fill=BLANCO, anchor="mm")
+        d.text((cx, y_tot + 104), lbl, font=_font(FM, 21), fill=GRIS, anchor="mm")
+        if sub:
+            d.text((cx, y_tot + 132), sub, font=_font(FM, 16), fill=GRIS2, anchor="mm")
+
+    # Los 5 mejor calificados (sin calificación: por goles+asistencias y minutos)
+    y = y_tot + bh + 46
+    d.text((x0, y), "LOS MEJORES CALIFICADOS" if con_nota else "LOS QUE MÁS JUGARON", font=_font(FB, 21), fill=GRIS)
+    y += 38
+    orden = sorted(jug, key=lambda j: (-(j.get("rating") or 0), -(j["goles"] + j["asist"]), -j["min"]))[:5]
+    fila_h = (H - 110 - y) // max(5, len(orden))
+    fila_h = min(fila_h, 112)
+    for n, j in enumerate(orden):
+        yy = y + n * fila_h
+        d.line([(x0, yy), (W - x0, yy)], fill=(62, 58, 66), width=1)
+        d.text((x0 + 4, yy + fila_h // 2), str(n + 1), font=_font(FB, 30), fill=DORADO if n == 0 else GRIS2, anchor="lm")
+        av2, mask2 = _avatar(j["key"], 62)
+        if av2:
+            img.paste(av2, (x0 + 46, yy + (fila_h - 62) // 2), mask2)
+        nx = x0 + 128
+        d.text((nx, yy + 16), j["name"], font=_font(FB, 30), fill=BLANCO)
+        partes = [p for p in (_club(config, j["key"]), f"{j['partidos']} PJ", f"{j['min']}'",
+                              _plural(j["goles"], "gol", "goles") if j["goles"] else "",
+                              _plural(j["asist"], "asist.", "asist.") if j["asist"] else "") if p]
+        d.text((nx, yy + 54), "  ·  ".join(partes), font=_font(FM, 20), fill=GRIS2)
+        if j.get("rating"):
+            ancho = W - x0 - 110 - nx
+            frac = max(0.06, min(1.0, (j["rating"] - 5.5) / 3))
+            d.rounded_rectangle([nx, yy + 86, nx + ancho, yy + 93], 4, fill=(58, 56, 64))
+            d.rounded_rectangle([nx, yy + 86, nx + int(ancho * frac), yy + 93], 4, fill=DORADO)
+            d.text((W - x0, yy + fila_h // 2), f"{j['rating']:.1f}", font=_font(FB, 34), fill=DORADO, anchor="rm")
+
+    d.text((x0, H - 74), "Legión MX", font=_font(FB, 26), fill=(225, 230, 236))
+    d.text((W - x0, H - 74), "Mexicanos por el mundo", font=_font(FM, 24), fill=GRIS2, anchor="ra")
     return img.convert("RGB")
 
 
@@ -283,7 +327,7 @@ def main():
         return 0
     os.makedirs(OUT_DIR, exist_ok=True)
     nombre = f"semana_{ini.isoformat()}.jpg"
-    img = imagen(res, ini, fin)
+    img = imagen(res, ini, fin, config)
     img.save(os.path.join(OUT_DIR, nombre), "JPEG", quality=90, optimize=True)
     with open(os.path.join(OUT_DIR, nombre), "rb") as fh:
         ver = hashlib.sha1(fh.read()).hexdigest()[:8]
@@ -303,8 +347,12 @@ def main():
         body = (f"MVP: {m['name']}" + (f" (⭐ {m['rating']})" if m.get("rating") else "") +
                 f" · {t.get('jugaron', 0)} jugaron · {_miles(t['minutos'])} minutos")
         print(f"📲 {title} — {body}")
-        # La app lo muestra a las 9:00 de la hora LOCAL del celular (si allá ya pasaron las 9, al recibirlo).
-        fcm.send("semana", title, body, None, None, None, extra={"mostrar_local": "09:00"})
+        # Con avisos_hora_local: solo a las apps nuevas (tema hormi_local_v1), que lo muestran a las 9:00 de SU hora
+        # (si allá ya pasaron las 9, al recibirlo). Sin el flag: a todas, al momento (el workflow espera a las 9:00 CDMX).
+        if config.get("avisos_hora_local"):
+            fcm.send("semana", title, body, None, None, None, extra={"mostrar_local": "09:00"}, topic=ha.LOCAL_TOPIC)
+        else:
+            fcm.send("semana", title, body, None, None, None)
     return 0
 
 

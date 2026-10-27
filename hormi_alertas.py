@@ -1398,6 +1398,9 @@ def _payload_grupo(g, jug, title, body):
 # aparte: solo lo reciben las versiones de la app que saben mostrarlo (las viejas lo pintarían como aviso
 # normal, con sonido, cada 2 minutos).
 LIVE_TOPIC = "hormi_live_v1"
+# Avisos que la app muestra a SU hora local ("Juega mañana", resumen semanal): solo los reciben las versiones de la
+# app que saben programarlos (se suscriben a este tema). Las versiones viejas no reciben esos avisos.
+LOCAL_TOPIC = "hormi_local_v1"
 AVISO_TARDE_MIN = 5   # minutos de juego: un gol/cambio/roja que la API registra más tarde que esto ya no se notifica
 _VIVO = {}          # fixture_id -> datos de esta pasada (se junta a todos los jugadores del partido)
 _VIVO_ENVIADO = {}  # fixture_id -> (marcador, periodo, minuto, time) del último push
@@ -1995,7 +1998,8 @@ def send_reminders(config, notifier, fcm, schedule_out, reminders_sent):
     if fcm:
         g = {"emoji": "📅", "label": "Mañana", "match": None, "league": None, "score": None}
         fcm.send("reminder", title, body, None, None, player_keys=keys,
-                 extra={"grupo": _payload_grupo(g, items, title, body), **({"mostrar_local": f"{REMINDER_HORA:02d}:00"} if hora_local else {})})
+                 extra={"grupo": _payload_grupo(g, items, title, body), **({"mostrar_local": f"{REMINDER_HORA:02d}:00"} if hora_local else {})},
+                 topic=LOCAL_TOPIC if hora_local else None)
     if not getattr(notifier, "console_only", False):
         reminders_sent.update(groups.keys())
     return len(groups)
