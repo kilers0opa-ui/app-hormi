@@ -489,7 +489,7 @@ LIGAS_ES = {
     "FIFA Intercontinental Cup": "Copa Intercontinental", "Pan American Games": "Juegos Panamericanos",
     "CAC Games": "Juegos Centroamericanos", "Tournoi Maurice Revello": "Torneo Maurice Revello",
     "CONMEBOL Libertadores U20": "Libertadores Sub-20", "CONMEBOL U20": "Sudamericano Sub-20",
-    "AFC Champions League Elite": "Liga de Campeones de Asia", "Premier League - Summer Series": "Premier League Summer Series",
+    "AFC Champions League Elite": "AFC Champions League", "Premier League - Summer Series": "Premier League Summer Series",
     "International Champions Cup": "Copa Internacional de Campeones", "King's Cup": "Copa del Rey de Arabia",
     "Eerste Divisie": "Eerste Divisie", "Championship": "Championship", "Eredivisie": "Eredivisie",
 }
@@ -668,6 +668,59 @@ def _corregir_marcador(snap):
             log(f"🧮 marcador corregido ({fid}): {lado} {g[lado]} → {validos.get(tid, 0)} (la API quitó un gol de los eventos)")
             g[lado] = validos.get(tid, 0)
     snap["goals"] = g
+
+
+_GOLES_VISTOS = {}   # fixture_id -> {team_id: set de goles vistos (minuto, jugador)}
+_GOL_QUITADO = {}    # fixture_id -> set de team_id a los que la API les quitó un gol (lo borró o lo anuló el VAR)
+
+
+def _goles_validos(data):
+    """{team_id: [(minuto, jugador)]} de los goles que cuentan según la lista de eventos (sin anulados, sin
+    penales fallados ni tanda). El gol en propia puerta va al equipo que se beneficia (así lo marca la API)."""
+    anul = _goles_anulados(data)
+    tanda = _tanda(data)
+    out = {}
+    for i, e in enumerate(data.get("events") or []):
+        if ((e.get("type") or "").lower() != "goal" or e.get("detail") == "Missed Penalty"
+                or i in anul or id(e) in tanda):
+            continue
+        out.setdefault((e.get("team") or {}).get("id"), []).append(
+            ((e.get("time") or {}).get("elapsed"), (e.get("player") or {}).get("id")))
+    return out
+
+
+def _marcador_coherente(data):
+    """La API a veces quita un gol de la lista de eventos (anulado por el VAR) pero su marcador lo sigue contando
+    (Olympiacos-Kalamata 25-oct: 3-1 → 3-0 → 3-1 sin el gol en la lista). Si a un equipo ya se le quitó un gol en este
+    partido y el marcador le da MÁS goles de los que hay en la lista, se usa la lista. Si nunca se le quitó nada,
+    no se toca: lo normal es que el marcador suba unos segundos antes que el evento."""
+    fid = (data.get("fixture") or {}).get("id")
+    teams = data.get("teams") or {}
+    goles = data.get("goals") or {}
+    validos = _goles_validos(data)
+    vistos = _GOLES_VISTOS.setdefault(fid, {})
+    quitados = _GOL_QUITADO.setdefault(fid, set())
+    anul = _goles_anulados(data)
+    for i, e in enumerate(data.get("events") or []):
+        if i in anul and (e.get("type") or "").lower() == "goal":
+            quitados.add((e.get("team") or {}).get("id"))
+    for e in data.get("events") or []:
+        if (e.get("type") or "").lower() == "var" and _es_var_anula_gol(e.get("detail")):
+            quitados.add((e.get("team") or {}).get("id"))
+    for tid, lst in validos.items():
+        antes = vistos.get(tid, set())
+        ahora = set(lst)
+        if antes - ahora:
+            quitados.add(tid)        # un gol que estaba en la lista desapareció
+        vistos[tid] = antes | ahora if not (antes - ahora) else ahora
+    for lado in ("home", "away"):
+        tid = (teams.get(lado) or {}).get("id")
+        if tid not in quitados and tid not in vistos:
+            continue
+        n_lista = len(validos.get(tid, []))
+        if tid in quitados and goles.get(lado) is not None and goles[lado] > n_lista:
+            log(f"⚖️  marcador de la API ({goles[lado]}) > goles en la lista ({n_lista}) tras un gol quitado: se usa la lista")
+            goles[lado] = n_lista
 
 
 def _penales(data):
@@ -2189,6 +2242,11 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         else:
             res = api("/fixtures", {"id": fid})
             _SNAP_CACHE[fid] = res[0] if res else None
+            if _SNAP_CACHE[fid]:
+                try:
+                    _marcador_coherente(_SNAP_CACHE[fid])
+                except Exception as err:
+                    log(f"⚠️  marcador coherente: {err}")
             _PRE_SNAP[fid] = (time.time(), _SNAP_CACHE[fid])
     snap = _SNAP_CACHE[fid]
     if not snap:
