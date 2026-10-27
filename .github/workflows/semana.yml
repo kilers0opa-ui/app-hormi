@@ -48,6 +48,11 @@ jobs:
             DOMINGO=$(TZ=America/Mexico_City date -d "yesterday" +%F)
             HECHO=$(python -c "import json;print(json.load(open('semana.json')).get('hasta',''))" 2>/dev/null || true)
             if [ "$HECHO" = "$DOMINGO" ]; then echo "El resumen de esta semana ya salió."; exit 0; fi
+            # Mientras haya apps sin la versión que programa el aviso a su hora local (hormi_config.json →
+            # "avisos_hora_local"), se espera a las 9:00 de México para no despertar a nadie a las 5 de la mañana.
+            LOCAL=$(python -c "import json;print(bool(json.load(open('hormi_config.json')).get('avisos_hora_local')))")
+            AHORA=$(date -u +%s); NUEVE=$(TZ=America/Mexico_City date -d "today 09:00" +%s)
+            if [ "$LOCAL" != "True" ] && [ "$AHORA" -lt "$NUEVE" ]; then echo "Esperando a las 9:00…"; sleep $((NUEVE - AHORA)); fi
           fi
           ARGS=""
           if [ -n "${{ inputs.hasta }}" ]; then ARGS="$ARGS --hasta ${{ inputs.hasta }}"; fi
