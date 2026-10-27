@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:04:33.933319-06:00",
+  "updated_at": "2026-10-27T11:14:23.092123-06:00",
   "teams": {
     "genoa": {
       "label": "Genoa",
@@ -1626,6 +1626,21 @@
             },
             {
               "rank": 14,
+              "team_id": 2930,
+              "team_name": "Al-Faisaly FC",
+              "team_logo": "https://media.api-sports.io/football/teams/2930.png",
+              "played": 11,
+              "win": 2,
+              "draw": 4,
+              "lose": 5,
+              "goals_for": 12,
+              "goals_against": 20,
+              "goals_diff": -8,
+              "points": 10,
+              "form": "WLDWL"
+            },
+            {
+              "rank": 15,
               "team_id": 2944,
               "team_name": "Al-Fayha",
               "team_logo": "https://media.api-sports.io/football/teams/2944.png",
@@ -1638,21 +1653,6 @@
               "goals_diff": -7,
               "points": 8,
               "form": "DLLDD"
-            },
-            {
-              "rank": 15,
-              "team_id": 2930,
-              "team_name": "Al-Faisaly FC",
-              "team_logo": "https://media.api-sports.io/football/teams/2930.png",
-              "played": 10,
-              "win": 1,
-              "draw": 4,
-              "lose": 5,
-              "goals_for": 11,
-              "goals_against": 20,
-              "goals_diff": -9,
-              "points": 7,
-              "form": "LDWLD"
             },
             {
               "rank": 16,
@@ -1689,15 +1689,15 @@
               "team_id": 2951,
               "team_name": "Abha",
               "team_logo": "https://media.api-sports.io/football/teams/2951.png",
-              "played": 9,
+              "played": 10,
               "win": 0,
               "draw": 2,
-              "lose": 7,
+              "lose": 8,
               "goals_for": 6,
-              "goals_against": 17,
-              "goals_diff": -11,
+              "goals_against": 18,
+              "goals_diff": -12,
               "points": 2,
-              "form": "LLDLL"
+              "form": "LLLDL"
             }
           ],
           "season": 2026,
@@ -1725,18 +1725,33 @@
               "team_id": 2865,
               "team_name": "Al Ain",
               "team_logo": "https://media.api-sports.io/football/teams/2865.png",
-              "played": 2,
-              "win": 2,
+              "played": 3,
+              "win": 3,
               "draw": 0,
               "lose": 0,
-              "goals_for": 8,
-              "goals_against": 1,
-              "goals_diff": 7,
-              "points": 6,
-              "form": "WW"
+              "goals_for": 10,
+              "goals_against": 2,
+              "goals_diff": 8,
+              "points": 9,
+              "form": "WWW"
             },
             {
               "rank": 2,
+              "team_id": 2929,
+              "team_name": "Al-Ahli Jeddah",
+              "team_logo": "https://media.api-sports.io/football/teams/2929.png",
+              "played": 3,
+              "win": 2,
+              "draw": 1,
+              "lose": 0,
+              "goals_for": 6,
+              "goals_against": 3,
+              "goals_diff": 3,
+              "points": 7,
+              "form": "WWD"
+            },
+            {
+              "rank": 3,
               "team_id": 2733,
               "team_name": "Esteghlal FC",
               "team_logo": "https://media.api-sports.io/football/teams/2733.png",
@@ -1751,7 +1766,7 @@
               "form": "WW"
             },
             {
-              "rank": 3,
+              "rank": 4,
               "team_id": 2932,
               "team_name": "Al-Hilal Saudi FC",
               "team_logo": "https://media.api-sports.io/football/teams/2932.png",
@@ -1766,7 +1781,7 @@
               "form": "WW"
             },
             {
-              "rank": 4,
+              "rank": 5,
               "team_id": 2870,
               "team_name": "Shabab Al Ahli Dubai",
               "team_logo": "https://media.api-sports.io/football/teams/2870.png",
@@ -1781,34 +1796,19 @@
               "form": "WW"
             },
             {
-              "rank": 5,
-              "team_id": 2929,
-              "team_name": "Al-Ahli Jeddah",
-              "team_logo": "https://media.api-sports.io/football/teams/2929.png",
-              "played": 2,
-              "win": 1,
-              "draw": 1,
-              "lose": 0,
-              "goals_for": 4,
-              "goals_against": 2,
-              "goals_diff": 2,
-              "points": 4,
-              "form": "WD"
-            },
-            {
               "rank": 6,
               "team_id": 2933,
               "team_name": "Al-Qadisiyah FC",
               "team_logo": "https://media.api-sports.io/football/teams/2933.png",
-              "played": 2,
+              "played": 3,
               "win": 1,
-              "draw": 1,
+              "draw": 2,
               "lose": 0,
-              "goals_for": 3,
-              "goals_against": 2,
+              "goals_for": 4,
+              "goals_against": 3,
               "goals_diff": 1,
-              "points": 4,
-              "form": "DW"
+              "points": 5,
+              "form": "DDW"
             },
             {
               "rank": 7,
@@ -1857,18 +1857,18 @@
             },
             {
               "rank": 10,
-              "team_id": 4220,
-              "team_name": "Pakhtakor",
-              "team_logo": "https://media.api-sports.io/football/teams/4220.png",
-              "played": 2,
-              "win": 0,
-              "draw": 2,
-              "lose": 0,
+              "team_id": 8009,
+              "team_name": "Al Quwa Al Jawiya",
+              "team_logo": "https://media.api-sports.io/football/teams/8009.png",
+              "played": 3,
+              "win": 1,
+              "draw": 0,
+              "lose": 2,
               "goals_for": 2,
-              "goals_against": 2,
-              "goals_diff": 0,
-              "points": 2,
-              "form": "DDW"
+              "goals_against": 5,
+              "goals_diff": -3,
+              "points": 3,
+              "form": "WLL"
             },
             {
               "rank": 11,
@@ -1887,36 +1887,66 @@
             },
             {
               "rank": 12,
-              "team_id": 2737,
-              "team_name": "Tractor Sazi",
-              "team_logo": "https://media.api-sports.io/football/teams/2737.png",
-              "played": 2,
+              "team_id": 4220,
+              "team_name": "Pakhtakor",
+              "team_logo": "https://media.api-sports.io/football/teams/4220.png",
+              "played": 3,
               "win": 0,
-              "draw": 1,
+              "draw": 2,
               "lose": 1,
-              "goals_for": 0,
-              "goals_against": 1,
+              "goals_for": 2,
+              "goals_against": 3,
               "goals_diff": -1,
-              "points": 1,
-              "form": "DL"
+              "points": 2,
+              "form": "LDDW"
             },
             {
               "rank": 13,
-              "team_id": 2903,
-              "team_name": "Al-Gharafa",
-              "team_logo": "https://media.api-sports.io/football/teams/2903.png",
-              "played": 2,
+              "team_id": 2737,
+              "team_name": "Tractor Sazi",
+              "team_logo": "https://media.api-sports.io/football/teams/2737.png",
+              "played": 3,
               "win": 0,
-              "draw": 0,
+              "draw": 1,
               "lose": 2,
-              "goals_for": 2,
-              "goals_against": 4,
+              "goals_for": 1,
+              "goals_against": 3,
               "goals_diff": -2,
-              "points": 0,
-              "form": "LL"
+              "points": 1,
+              "form": "LDL"
             },
             {
               "rank": 14,
+              "team_id": 2895,
+              "team_name": "Al Sadd",
+              "team_logo": "https://media.api-sports.io/football/teams/2895.png",
+              "played": 3,
+              "win": 0,
+              "draw": 1,
+              "lose": 2,
+              "goals_for": 1,
+              "goals_against": 6,
+              "goals_diff": -5,
+              "points": 1,
+              "form": "DLL"
+            },
+            {
+              "rank": 15,
+              "team_id": 2903,
+              "team_name": "Al-Gharafa",
+              "team_logo": "https://media.api-sports.io/football/teams/2903.png",
+              "played": 3,
+              "win": 0,
+              "draw": 0,
+              "lose": 3,
+              "goals_for": 3,
+              "goals_against": 6,
+              "goals_diff": -3,
+              "points": 0,
+              "form": "LLL"
+            },
+            {
+              "rank": 16,
               "team_id": 2872,
               "team_name": "Al-Wasl FC",
               "team_logo": "https://media.api-sports.io/football/teams/2872.png",
@@ -1929,50 +1959,20 @@
               "goals_diff": -3,
               "points": 0,
               "form": "LL"
-            },
-            {
-              "rank": 15,
-              "team_id": 8009,
-              "team_name": "Al Quwa Al Jawiya",
-              "team_logo": "https://media.api-sports.io/football/teams/8009.png",
-              "played": 2,
-              "win": 0,
-              "draw": 0,
-              "lose": 2,
-              "goals_for": 1,
-              "goals_against": 5,
-              "goals_diff": -4,
-              "points": 0,
-              "form": "LL"
-            },
-            {
-              "rank": 16,
-              "team_id": 2895,
-              "team_name": "Al Sadd",
-              "team_logo": "https://media.api-sports.io/football/teams/2895.png",
-              "played": 2,
-              "win": 0,
-              "draw": 0,
-              "lose": 2,
-              "goals_for": 0,
-              "goals_against": 5,
-              "goals_diff": -5,
-              "points": 0,
-              "form": "LL"
             }
           ],
           "season": 2026,
           "group": "West Region",
           "rank": 6,
-          "points": 4,
-          "played": 2,
+          "points": 5,
+          "played": 3,
           "win": 1,
-          "draw": 1,
+          "draw": 2,
           "lose": 0,
-          "goals_for": 3,
-          "goals_against": 2,
+          "goals_for": 4,
+          "goals_against": 3,
           "goals_diff": 1,
-          "form": "DW",
+          "form": "DDW",
           "status": "same",
           "description": null,
           "total_teams": 32,
@@ -2007,15 +2007,15 @@
               "team_id": 211,
               "team_name": "Benfica",
               "team_logo": "https://media.api-sports.io/football/teams/211.png",
-              "played": 8,
-              "win": 6,
+              "played": 9,
+              "win": 7,
               "draw": 1,
               "lose": 1,
-              "goals_for": 24,
-              "goals_against": 7,
-              "goals_diff": 17,
-              "points": 19,
-              "form": "WLWWW"
+              "goals_for": 26,
+              "goals_against": 8,
+              "goals_diff": 18,
+              "points": 22,
+              "form": "WWLWW"
             },
             {
               "rank": 3,
@@ -2037,15 +2037,15 @@
               "team_id": 227,
               "team_name": "Santa Clara",
               "team_logo": "https://media.api-sports.io/football/teams/227.png",
-              "played": 8,
+              "played": 9,
               "win": 5,
               "draw": 3,
-              "lose": 0,
-              "goals_for": 12,
-              "goals_against": 4,
-              "goals_diff": 8,
+              "lose": 1,
+              "goals_for": 13,
+              "goals_against": 6,
+              "goals_diff": 7,
               "points": 18,
-              "form": "WDWWD"
+              "form": "LWDWW"
             },
             {
               "rank": 5,
@@ -2565,21 +2565,6 @@
             },
             {
               "rank": 20,
-              "team_id": 33,
-              "team_name": "Manchester United",
-              "team_logo": "https://media.api-sports.io/football/teams/33.png",
-              "played": 3,
-              "win": 1,
-              "draw": 0,
-              "lose": 2,
-              "goals_for": 5,
-              "goals_against": 6,
-              "goals_diff": -1,
-              "points": 3,
-              "form": "LLW"
-            },
-            {
-              "rank": 21,
               "team_id": 505,
               "team_name": "Inter",
               "team_logo": "https://media.api-sports.io/football/teams/505.png",
@@ -2592,6 +2577,21 @@
               "goals_diff": -1,
               "points": 3,
               "form": "WLL"
+            },
+            {
+              "rank": 21,
+              "team_id": 33,
+              "team_name": "Manchester United",
+              "team_logo": "https://media.api-sports.io/football/teams/33.png",
+              "played": 3,
+              "win": 1,
+              "draw": 0,
+              "lose": 2,
+              "goals_for": 5,
+              "goals_against": 6,
+              "goals_diff": -1,
+              "points": 3,
+              "form": "LLW"
             },
             {
               "rank": 22,
@@ -2636,13 +2636,13 @@
               "goals_against": 9,
               "goals_diff": -3,
               "points": 3,
-              "form": "WLL"
+              "form": "WLLWL"
             },
             {
               "rank": 25,
-              "team_id": null,
-              "team_name": "Sabah FC",
-              "team_logo": null,
+              "team_id": 13976,
+              "team_name": "Sabah FA",
+              "team_logo": "https://media.api-sports.io/football/teams/13976.png",
               "played": 3,
               "win": 1,
               "draw": 0,
@@ -2651,7 +2651,7 @@
               "goals_against": 6,
               "goals_diff": -3,
               "points": 3,
-              "form": "LWL"
+              "form": "LWLWL"
             },
             {
               "rank": 26,
@@ -2696,7 +2696,7 @@
               "goals_against": 9,
               "goals_diff": -5,
               "points": 3,
-              "form": "LWL"
+              "form": "LWLWW"
             },
             {
               "rank": 29,
@@ -2711,7 +2711,7 @@
               "goals_against": 8,
               "goals_diff": -5,
               "points": 3,
-              "form": "LLW"
+              "form": "LLWWD"
             },
             {
               "rank": 30,
@@ -2741,7 +2741,7 @@
               "goals_against": 9,
               "goals_diff": -6,
               "points": 2,
-              "form": "DLD"
+              "form": "DLDWD"
             },
             {
               "rank": 32,
@@ -2771,7 +2771,7 @@
               "goals_against": 9,
               "goals_diff": -4,
               "points": 1,
-              "form": "LDL"
+              "form": "LDLWD"
             },
             {
               "rank": 34,
@@ -2816,11 +2816,11 @@
               "goals_against": 13,
               "goals_diff": -12,
               "points": 0,
-              "form": "LLL"
+              "form": "LLLWD"
             }
           ],
           "season": 2026,
-          "group": "UEFA Champions League",
+          "group": "League Phase",
           "rank": 34,
           "points": 0,
           "played": 3,
@@ -3783,15 +3783,15 @@
               "team_id": 536,
               "team_name": "Sevilla",
               "team_logo": "https://media.api-sports.io/football/teams/536.png",
-              "played": 9,
-              "win": 4,
+              "played": 10,
+              "win": 5,
               "draw": 2,
               "lose": 3,
-              "goals_for": 14,
+              "goals_for": 16,
               "goals_against": 16,
-              "goals_diff": -2,
-              "points": 14,
-              "form": "LDLWW"
+              "goals_diff": 0,
+              "points": 17,
+              "form": "WLDLW"
             },
             {
               "rank": 7,
@@ -3873,15 +3873,15 @@
               "team_id": 727,
               "team_name": "Osasuna",
               "team_logo": "https://media.api-sports.io/football/teams/727.png",
-              "played": 9,
+              "played": 10,
               "win": 3,
               "draw": 2,
-              "lose": 4,
+              "lose": 5,
               "goals_for": 10,
-              "goals_against": 18,
-              "goals_diff": -8,
+              "goals_against": 20,
+              "goals_diff": -10,
               "points": 11,
-              "form": "WLDLL"
+              "form": "LWLDL"
             },
             {
               "rank": 13,
@@ -4311,21 +4311,6 @@
             },
             {
               "rank": 20,
-              "team_id": 33,
-              "team_name": "Manchester United",
-              "team_logo": "https://media.api-sports.io/football/teams/33.png",
-              "played": 3,
-              "win": 1,
-              "draw": 0,
-              "lose": 2,
-              "goals_for": 5,
-              "goals_against": 6,
-              "goals_diff": -1,
-              "points": 3,
-              "form": "LLW"
-            },
-            {
-              "rank": 21,
               "team_id": 505,
               "team_name": "Inter",
               "team_logo": "https://media.api-sports.io/football/teams/505.png",
@@ -4338,6 +4323,21 @@
               "goals_diff": -1,
               "points": 3,
               "form": "WLL"
+            },
+            {
+              "rank": 21,
+              "team_id": 33,
+              "team_name": "Manchester United",
+              "team_logo": "https://media.api-sports.io/football/teams/33.png",
+              "played": 3,
+              "win": 1,
+              "draw": 0,
+              "lose": 2,
+              "goals_for": 5,
+              "goals_against": 6,
+              "goals_diff": -1,
+              "points": 3,
+              "form": "LLW"
             },
             {
               "rank": 22,
@@ -4382,13 +4382,13 @@
               "goals_against": 9,
               "goals_diff": -3,
               "points": 3,
-              "form": "WLL"
+              "form": "WLLWL"
             },
             {
               "rank": 25,
-              "team_id": null,
-              "team_name": "Sabah FC",
-              "team_logo": null,
+              "team_id": 13976,
+              "team_name": "Sabah FA",
+              "team_logo": "https://media.api-sports.io/football/teams/13976.png",
               "played": 3,
               "win": 1,
               "draw": 0,
@@ -4397,7 +4397,7 @@
               "goals_against": 6,
               "goals_diff": -3,
               "points": 3,
-              "form": "LWL"
+              "form": "LWLWL"
             },
             {
               "rank": 26,
@@ -4442,7 +4442,7 @@
               "goals_against": 9,
               "goals_diff": -5,
               "points": 3,
-              "form": "LWL"
+              "form": "LWLWW"
             },
             {
               "rank": 29,
@@ -4457,7 +4457,7 @@
               "goals_against": 8,
               "goals_diff": -5,
               "points": 3,
-              "form": "LLW"
+              "form": "LLWWD"
             },
             {
               "rank": 30,
@@ -4487,7 +4487,7 @@
               "goals_against": 9,
               "goals_diff": -6,
               "points": 2,
-              "form": "DLD"
+              "form": "DLDWD"
             },
             {
               "rank": 32,
@@ -4517,7 +4517,7 @@
               "goals_against": 9,
               "goals_diff": -4,
               "points": 1,
-              "form": "LDL"
+              "form": "LDLWD"
             },
             {
               "rank": 34,
@@ -4562,11 +4562,11 @@
               "goals_against": 13,
               "goals_diff": -12,
               "points": 0,
-              "form": "LLL"
+              "form": "LLLWD"
             }
           ],
           "season": 2026,
-          "group": "UEFA Champions League",
+          "group": "League Phase",
           "rank": 16,
           "points": 4,
           "played": 3,
@@ -4578,7 +4578,7 @@
           "goals_diff": 1,
           "form": "DWL",
           "status": "same",
-          "description": "Promotion - Champions League (Play Offs: 1/16-finals)",
+          "description": "Play Offs",
           "total_teams": 36,
           "league_id": 2,
           "league_name": "UEFA Champions League"
@@ -4671,15 +4671,15 @@
               "team_id": 536,
               "team_name": "Sevilla",
               "team_logo": "https://media.api-sports.io/football/teams/536.png",
-              "played": 9,
-              "win": 4,
+              "played": 10,
+              "win": 5,
               "draw": 2,
               "lose": 3,
-              "goals_for": 14,
+              "goals_for": 16,
               "goals_against": 16,
-              "goals_diff": -2,
-              "points": 14,
-              "form": "LDLWW"
+              "goals_diff": 0,
+              "points": 17,
+              "form": "WLDLW"
             },
             {
               "rank": 7,
@@ -4761,15 +4761,15 @@
               "team_id": 727,
               "team_name": "Osasuna",
               "team_logo": "https://media.api-sports.io/football/teams/727.png",
-              "played": 9,
+              "played": 10,
               "win": 3,
               "draw": 2,
-              "lose": 4,
+              "lose": 5,
               "goals_for": 10,
-              "goals_against": 18,
-              "goals_diff": -8,
+              "goals_against": 20,
+              "goals_diff": -10,
               "points": 11,
-              "form": "WLDLL"
+              "form": "LWLDL"
             },
             {
               "rank": 13,
@@ -5199,21 +5199,6 @@
             },
             {
               "rank": 20,
-              "team_id": 33,
-              "team_name": "Manchester United",
-              "team_logo": "https://media.api-sports.io/football/teams/33.png",
-              "played": 3,
-              "win": 1,
-              "draw": 0,
-              "lose": 2,
-              "goals_for": 5,
-              "goals_against": 6,
-              "goals_diff": -1,
-              "points": 3,
-              "form": "LLW"
-            },
-            {
-              "rank": 21,
               "team_id": 505,
               "team_name": "Inter",
               "team_logo": "https://media.api-sports.io/football/teams/505.png",
@@ -5226,6 +5211,21 @@
               "goals_diff": -1,
               "points": 3,
               "form": "WLL"
+            },
+            {
+              "rank": 21,
+              "team_id": 33,
+              "team_name": "Manchester United",
+              "team_logo": "https://media.api-sports.io/football/teams/33.png",
+              "played": 3,
+              "win": 1,
+              "draw": 0,
+              "lose": 2,
+              "goals_for": 5,
+              "goals_against": 6,
+              "goals_diff": -1,
+              "points": 3,
+              "form": "LLW"
             },
             {
               "rank": 22,
@@ -5270,13 +5270,13 @@
               "goals_against": 9,
               "goals_diff": -3,
               "points": 3,
-              "form": "WLL"
+              "form": "WLLWL"
             },
             {
               "rank": 25,
-              "team_id": null,
-              "team_name": "Sabah FC",
-              "team_logo": null,
+              "team_id": 13976,
+              "team_name": "Sabah FA",
+              "team_logo": "https://media.api-sports.io/football/teams/13976.png",
               "played": 3,
               "win": 1,
               "draw": 0,
@@ -5285,7 +5285,7 @@
               "goals_against": 6,
               "goals_diff": -3,
               "points": 3,
-              "form": "LWL"
+              "form": "LWLWL"
             },
             {
               "rank": 26,
@@ -5330,7 +5330,7 @@
               "goals_against": 9,
               "goals_diff": -5,
               "points": 3,
-              "form": "LWL"
+              "form": "LWLWW"
             },
             {
               "rank": 29,
@@ -5345,7 +5345,7 @@
               "goals_against": 8,
               "goals_diff": -5,
               "points": 3,
-              "form": "LLW"
+              "form": "LLWWD"
             },
             {
               "rank": 30,
@@ -5375,7 +5375,7 @@
               "goals_against": 9,
               "goals_diff": -6,
               "points": 2,
-              "form": "DLD"
+              "form": "DLDWD"
             },
             {
               "rank": 32,
@@ -5405,7 +5405,7 @@
               "goals_against": 9,
               "goals_diff": -4,
               "points": 1,
-              "form": "LDL"
+              "form": "LDLWD"
             },
             {
               "rank": 34,
@@ -5450,11 +5450,11 @@
               "goals_against": 13,
               "goals_diff": -12,
               "points": 0,
-              "form": "LLL"
+              "form": "LLLWD"
             }
           ],
           "season": 2026,
-          "group": "UEFA Champions League",
+          "group": "League Phase",
           "rank": 5,
           "points": 9,
           "played": 3,
@@ -5466,7 +5466,7 @@
           "goals_diff": 3,
           "form": "WWW",
           "status": "same",
-          "description": "Promotion - Champions League (Play Offs: 1/8-finals)",
+          "description": null,
           "total_teams": 36,
           "league_id": 2,
           "league_name": "UEFA Champions League"
@@ -5499,15 +5499,15 @@
               "team_id": 400,
               "team_name": "FC Copenhagen",
               "team_logo": "https://media.api-sports.io/football/teams/400.png",
-              "played": 11,
+              "played": 12,
               "win": 8,
-              "draw": 1,
+              "draw": 2,
               "lose": 2,
-              "goals_for": 25,
-              "goals_against": 11,
+              "goals_for": 26,
+              "goals_against": 12,
               "goals_diff": 14,
-              "points": 25,
-              "form": "DLWWW"
+              "points": 26,
+              "form": "DDLWW"
             },
             {
               "rank": 3,
@@ -5574,15 +5574,15 @@
               "team_id": 405,
               "team_name": "Odense",
               "team_logo": "https://media.api-sports.io/football/teams/405.png",
-              "played": 11,
+              "played": 12,
               "win": 3,
-              "draw": 4,
+              "draw": 5,
               "lose": 4,
-              "goals_for": 10,
-              "goals_against": 15,
+              "goals_for": 11,
+              "goals_against": 16,
               "goals_diff": -5,
-              "points": 13,
-              "form": "WDDWL"
+              "points": 14,
+              "form": "DWDDW"
             },
             {
               "rank": 8,
@@ -5663,15 +5663,15 @@
           "season": 2026,
           "group": "Superliga",
           "rank": 2,
-          "points": 25,
-          "played": 11,
+          "points": 26,
+          "played": 12,
           "win": 8,
-          "draw": 1,
+          "draw": 2,
           "lose": 2,
-          "goals_for": 25,
-          "goals_against": 11,
+          "goals_for": 26,
+          "goals_against": 12,
           "goals_diff": 14,
-          "form": "DLWWW",
+          "form": "DDLWW",
           "status": "same",
           "description": "Play-offs",
           "total_teams": 12,
