@@ -207,6 +207,50 @@ def build_team_standings(target):
     return result or None
 
 
+# ── Escudos de las tablas ──────────────────────────────────────────────────────────────────────────────────
+# La app pedía los ~20 escudos de una tabla al servidor de imágenes de la API al mismo tiempo y ese servidor
+# limita por segundo: varios no cargaban (tabla de la Serie A). Se guarda una copia de cada escudo en el repo
+# (escudos/<team_id>.png, se baja una sola vez) y la tabla apunta a esa copia.
+ESCUDOS_DIR = Path("escudos")
+RAW_ESCUDOS = "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/"
+# A veces la API manda una fila de la tabla sin equipo (id nulo): se completa por nombre.
+IDS_POR_NOMBRE = {"club leon": 2289, "leon": 2289}
+
+
+def _escudo_local(team_id, url):
+    if not team_id:
+        return url
+    f = ESCUDOS_DIR / f"{team_id}.png"
+    if not f.exists() or f.stat().st_size == 0:
+        try:
+            req = urllib.request.Request(url or f"https://media.api-sports.io/football/teams/{team_id}.png",
+                                         headers={"User-Agent": "Mozilla/5.0"})
+            data = urllib.request.urlopen(req, timeout=15).read()
+            if not data.startswith(b"\x89PNG"):
+                return url
+            ESCUDOS_DIR.mkdir(exist_ok=True)
+            f.write_bytes(data)
+            time.sleep(0.25)   # sin prisa: el servidor de imágenes limita por segundo
+        except Exception as err:
+            log(f"   ⚠️  escudo {team_id}: {err}")
+            return url
+    return RAW_ESCUDOS + f"{team_id}.png"
+
+
+def escudos_en_tablas(standings):
+    n = 0
+    for team in (standings.get("teams") or {}).values():
+        for comp in team.get("standings") or []:
+            for r in comp.get("table") or []:
+                if not r.get("team_id"):
+                    r["team_id"] = IDS_POR_NOMBRE.get((r.get("team_name") or "").strip().lower())
+                local = _escudo_local(r.get("team_id"), r.get("team_logo"))
+                if local and local != r.get("team_logo"):
+                    r["team_logo"] = local
+                    n += 1
+    log(f"🛡️  escudos de las tablas: {n} apuntan a la copia del repo")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Fase 4 · Tabla de posiciones")
     parser.add_argument("--jugador", help="Limita a un jugador por su 'key'")
@@ -240,6 +284,7 @@ def main():
             "standings": rows,
         }
 
+    escudos_en_tablas(standings)
     standings["updated_at"] = datetime.now(LOCAL_TZ).isoformat()
     save_json(STANDINGS_FILE, standings)
     log(f"✅ listo · {STANDINGS_FILE} actualizado")
