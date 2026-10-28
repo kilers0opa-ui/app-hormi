@@ -684,13 +684,15 @@ FUENTES_BLOQUEADAS = {"facebook", "instagram", "x", "twitter", "tiktok", "youtub
 DOMINIOS_BLOQUEADOS = ("facebook.com", "fb.com", "fb.watch", "instagram.com", "x.com", "twitter.com", "tiktok.com",
                        "youtube.com", "youtu.be", "threads.net", "reddit.com", "pinterest.", "linkedin.com")
 # Medios de España (la edición "España" de Google trae muchos medios mexicanos: esos NO son prensa extranjera).
-MEDIOS_ES = {"marca.com", "as.com", "mundodeportivo.com", "sport.es", "relevo.com", "elmundo.es", "elpais.com",
+# marca.com NO va: Google da el mismo dominio para MARCA España y MARCA México (marca.com/mx), y casi todas sus
+# notas de mexicanos son de MARCA México.
+MEDIOS_ES = {"as.com", "mundodeportivo.com", "sport.es", "relevo.com", "elmundo.es", "elpais.com",
              "eldesmarque.com", "estadiodeportivo.com", "abc.es", "lavanguardia.com", "20minutos.es", "europapress.es",
              "cadenaser.com", "cope.es", "superdeporte.es", "defensacentral.com", "elconfidencial.com", "besoccer.com",
              "diariodesevilla.es", "elcorreoweb.es", "eldiario.es", "larazon.es", "elespanol.com", "okdiario.com",
              "elperiodico.com", "lasprovincias.es", "elcomercio.es", "diariovasco.com", "football-espana.net",
              "fichajes.net", "diarioas.com", "rtve.es", "antena3.com", "telecinco.es", "lasexta.com", "goal.com"}
-NOMBRES_ES = {"marca", "as", "mundo deportivo", "sport", "relevo", "el mundo", "el país", "el pais", "eldesmarque",
+NOMBRES_ES = {"as", "mundo deportivo", "sport", "relevo", "el mundo", "el país", "el pais", "eldesmarque",
               "estadio deportivo", "abc", "la vanguardia", "20minutos", "europa press", "cadena ser", "cope",
               "superdeporte", "defensa central", "el confidencial", "besoccer", "diario de sevilla", "rtve"}
 
@@ -704,9 +706,15 @@ def fuente_bloqueada(n):
     return _fuente(n) in FUENTES_BLOQUEADAS or any(b in dom for b in DOMINIOS_BLOQUEADOS)
 
 
+# Ediciones de América de medios españoles (mexico.as.com, us.marca...): no son prensa de España.
+_SUBDOMINIO_AMERICA = ("mexico.", "mx.", "us.", "usa.", "colombia.", "argentina.", "chile.", "peru.", "latam.", "america.")
+
+
 def es_medio_de_espana(n):
     dom = n.get("dominio") or ""
     if dom:
+        if dom.startswith(_SUBDOMINIO_AMERICA):
+            return False
         return dom.endswith(".es") or any(dom == m or dom.endswith("." + m) for m in MEDIOS_ES)
     return _fuente(n) in NOMBRES_ES   # notas guardadas antes de que se anotara el dominio
 
