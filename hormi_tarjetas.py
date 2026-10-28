@@ -379,8 +379,10 @@ def tarjeta_partido(player, u, apodo, posicion=None):
     d.text((282, y1 + (40 if chico else 70)), grande, font=_fit2(d, grande, PB, maxw, 66, 34), fill=WHITE)
     if chico:
         d.text((284, y1 + 122), chico, font=_fit2(d, chico, PM, maxw, 32), fill=(200, 206, 216))
-    if st.get("mejor_equipo"):
-        _pill(d, 282, y1 + 168, "★ Mejor de su equipo", _f(FB, 24), (14, 17, 22), GOLD, (16, 8))
+    lugar = st.get("lugar_equipo") or (1 if st.get("mejor_equipo") else None)
+    if lugar and lugar <= 3:
+        txt = "★ Mejor de su equipo" if lugar == 1 else f"★ {lugar}° mejor de su equipo"
+        _pill(d, 282, y1 + (168 if chico else 150), txt, _f(FB, 24), (14, 17, 22), GOLD, (16, 8))
 
     # Estadísticas: todas las que trae la API, en una cuadrícula de 3 columnas
     cajas = [(f"{u.get('minutes', 0)}'", "MINUTOS", None),

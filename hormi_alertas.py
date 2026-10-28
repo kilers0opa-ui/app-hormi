@@ -1548,6 +1548,10 @@ def stats_jugador(res, pid, team_id):
         out["atajadas"] = go["saves"]
     if ratings_equipo and r >= max(ratings_equipo) and len(ratings_equipo) > 3:
         out["mejor_equipo"] = True
+    if len(ratings_equipo) > 3:
+        # Lugar de su calificación en su equipo (1 = el mejor). Empates cuentan a su favor.
+        out["lugar_equipo"] = 1 + sum(1 for x in ratings_equipo if x > r)
+        out["de_equipo"] = len(ratings_equipo)
     return out
 
 
@@ -1594,7 +1598,7 @@ def procesar_calificaciones(pend, hechas, config, fcm, notifier=None):
                 continue
             listos.append((k, it, st))
             up = (stats_file.get("players", {}).get(it["player"]) or {}).get("ultimo_partido")
-            if up and up.get("fixture_id") == fid:
+            if up and up.get("fixture_id") == fid and not (up.get("stats") or {}).get("calif_fija"):
                 up["stats"], up["stats_v"] = st, 2
                 stats_sucio = True
                 pl = next((p for p in config["players"] if p["key"] == it["player"]), None)

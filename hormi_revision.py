@@ -147,16 +147,25 @@ def main():
         if not reciente or p["key"] in archivados:
             continue
         antes_t = dict(u.get("tarjeta") or {})
-        # Estadísticas guardadas con la versión anterior (sin pases clave/recuperaciones/atajadas): se vuelven a leer
-        # una vez (1 petición por partido) para que la tarjeta salga completa.
-        if u.get("stats") and u.get("stats_v") != 2:
+        # Calificación DEFINITIVA: la fuente publica una provisional al final y la recalcula en las horas siguientes.
+        # Desde 3 h después del final (~5 h después del inicio) se lee UNA vez más y queda fija para siempre
+        # (Inicio, Estadísticas y la tarjeta). 1 petición por partido.
+        try:
+            ya_asento = datetime.now(ha.LOCAL_TZ) >= datetime.fromisoformat(u["kickoff"]) + timedelta(hours=5)
+        except Exception:
+            ya_asento = False
+        if u.get("stats") and not u["stats"].get("calif_fija") and (ya_asento or u.get("stats_v") != 2):
             tid = next((t.get("team_id") for t in p.get("targets") or [] if t.get("key") == u.get("team_key")), None)
             res = ha.api("/fixtures/players", {"fixture": u["fixture_id"]})
             st = ha.stats_jugador(res, p.get("player_id"), tid) if res else None
             if st:
+                if ya_asento:
+                    st["calif_fija"] = True
+                antes = (u.get("stats") or {}).get("rating")
                 u["stats"], u["stats_v"] = st, 2
                 cambios += 1
-                ha.log(f"📊 {p['key']}: estadísticas completas del partido · {st}")
+                ha.log(f"📊 {p['key']}: estadísticas del partido{' (calificación fija)' if ya_asento else ''} · "
+                       f"calif. {antes} → {st.get('rating')}")
         try:
             ha.tarjeta_partido_para(p, u, dict(u))
         except Exception as err:

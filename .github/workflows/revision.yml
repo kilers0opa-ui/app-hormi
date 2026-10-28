@@ -4,7 +4,7 @@ on:
   schedule:
     # Cada 4 h (:50): vuelve a leer el último partido de cada jugador si fue en los últimos 3 días
     # (1 petición por corrida) por si la API corrigió un gol, asistencia o marcador.
-    - cron: "50 */4 * * *"
+    - cron: "50 * * * *"   # cada hora: así la calificación queda fija entre 5 y 6 h después del inicio
   workflow_dispatch:
 
 concurrency:
