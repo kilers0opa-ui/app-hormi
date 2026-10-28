@@ -500,7 +500,8 @@ def fetch_news(query, limit=15, edicion=None):
     """Titulares desde el RSS de Google Noticias. Solo se guarda título, medio,
     fecha y enlace — nunca el cuerpo de la nota."""
     ed = edicion or EDICIONES["mx"]
-    params = {"q": query, "hl": ed["hl"], "gl": ed["gl"], "ceid": ed["ceid"]}
+    # "when:14d": solo notas recientes (sin esto Google devuelve por relevancia y salen notas viejas).
+    params = {"q": f"{query} when:14d", "hl": ed["hl"], "gl": ed["gl"], "ceid": ed["ceid"]}
     url = f"{NEWS_RSS}?{urllib.parse.urlencode(params)}"
     try:
         root = ET.fromstring(http_get(url))
@@ -515,6 +516,8 @@ def fetch_news(query, limit=15, edicion=None):
             continue
         source_node = node.find("source")
         source = (source_node.text or "").strip() if source_node is not None else None
+        dominio = urllib.parse.urlparse(source_node.get("url") or "").netloc.lower().removeprefix("www.") \
+            if source_node is not None else ""
         # Google Noticias termina el título con " - Nombre del medio": se quita para no repetirlo
         if source and title.endswith(f" - {source}"):
             title = title[: -len(f" - {source}")].rstrip()
@@ -525,7 +528,7 @@ def fetch_news(query, limit=15, edicion=None):
                 published = parsedate_to_datetime(pub).astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
             except Exception:
                 published = None
-        items.append({"title": title, "source": source, "url": link, "published_at": published})
+        items.append({"title": title, "source": source, "url": link, "published_at": published, "dominio": dominio})
         if len(items) >= limit:
             break
     return items
@@ -662,7 +665,7 @@ def build_for_player(player, overrides):
         q_local = overrides.get("query_local") or " ".join(x for x in (full_name(player), club_label(player)) if x)
         log(f"   📰 noticias {local['pais']} (se traducen) · {q_local!r}")
         items = fetch_news(q_local, edicion=local) or []
-        items = [n for n in items[:10]]
+        items = sorted(items, key=lambda n: n.get("published_at") or "", reverse=True)[:10]
         tr = traducir([n["title"] for n in items], local["idioma"]) or {}
         out["local"] = [dict(n, title=tr[n["title"]], title_original=n["title"], edicion="local",
                              pais=local["pais"], traducida=True) for n in items if n["title"] in tr]
@@ -674,9 +677,72 @@ def build_for_player(player, overrides):
 RELATO_RE = re.compile(r"(disparo por|tiro atajado|se estrella en el poste|anota para|^cerca\b|^gol\b.*anota|tarjeta amarilla para|sustitucion|cambio en )")
 
 
-def curate_por_edicion(news, player, cap):
-    """Una noticia por edición (México, España, prensa local), la más reciente que de verdad hable del
-    jugador; si una edición no trae nada, se completa con otra de las demás. Sin titulares repetidos."""
+# ── Calidad y país de las fuentes ───────────────────────────────────────────────────────────────────────────
+# Redes sociales y videos NO son fuentes de noticias.
+FUENTES_BLOQUEADAS = {"facebook", "instagram", "x", "twitter", "tiktok", "youtube", "threads", "reddit", "pinterest",
+                      "linkedin", "whatsapp", "telegram", "kwai"}
+DOMINIOS_BLOQUEADOS = ("facebook.com", "fb.com", "fb.watch", "instagram.com", "x.com", "twitter.com", "tiktok.com",
+                       "youtube.com", "youtu.be", "threads.net", "reddit.com", "pinterest.", "linkedin.com")
+# Medios de España (la edición "España" de Google trae muchos medios mexicanos: esos NO son prensa extranjera).
+MEDIOS_ES = {"marca.com", "as.com", "mundodeportivo.com", "sport.es", "relevo.com", "elmundo.es", "elpais.com",
+             "eldesmarque.com", "estadiodeportivo.com", "abc.es", "lavanguardia.com", "20minutos.es", "europapress.es",
+             "cadenaser.com", "cope.es", "superdeporte.es", "defensacentral.com", "elconfidencial.com", "besoccer.com",
+             "diariodesevilla.es", "elcorreoweb.es", "eldiario.es", "larazon.es", "elespanol.com", "okdiario.com",
+             "elperiodico.com", "lasprovincias.es", "elcomercio.es", "diariovasco.com", "football-espana.net",
+             "fichajes.net", "diarioas.com", "rtve.es", "antena3.com", "telecinco.es", "lasexta.com", "goal.com"}
+NOMBRES_ES = {"marca", "as", "mundo deportivo", "sport", "relevo", "el mundo", "el país", "el pais", "eldesmarque",
+              "estadio deportivo", "abc", "la vanguardia", "20minutos", "europa press", "cadena ser", "cope",
+              "superdeporte", "defensa central", "el confidencial", "besoccer", "diario de sevilla", "rtve"}
+
+
+def _fuente(n):
+    return normalize(n.get("source") or "").strip()
+
+
+def fuente_bloqueada(n):
+    dom = n.get("dominio") or ""
+    return _fuente(n) in FUENTES_BLOQUEADAS or any(b in dom for b in DOMINIOS_BLOQUEADOS)
+
+
+def es_medio_de_espana(n):
+    dom = n.get("dominio") or ""
+    if dom:
+        return dom.endswith(".es") or any(dom == m or dom.endswith("." + m) for m in MEDIOS_ES)
+    return _fuente(n) in NOMBRES_ES   # notas guardadas antes de que se anotara el dominio
+
+
+def edicion_real(n):
+    """La edición con la que se muestra: "España" solo si el medio de verdad es de España; un medio mexicano (o de
+    América) que llegó por la edición de España se muestra como de México."""
+    ed = n.get("edicion") or "mx"
+    if ed == "es" and not es_medio_de_espana(n):
+        return "mx"
+    if ed == "mx" and es_medio_de_espana(n):
+        return "es"
+    return ed
+
+
+def _palabras_historia(title, player):
+    nombre = set(name_tokens(full_name(player))) | set(name_tokens(player.get("apodo") or ""))
+    return {w for w in re.findall(r"[a-z0-9]{4,}", normalize(title)) if w not in nombre}
+
+
+def misma_historia(a, b, player):
+    """Dos titulares de la misma nota (el mismo medio la publica dos veces, o con mayúsculas/otro arranque)."""
+    wa, wb = _palabras_historia(a.get("title") or "", player), _palabras_historia(b.get("title") or "", player)
+    if not wa or not wb:
+        return False
+    return len(wa & wb) / min(len(wa), len(wb)) >= 0.6
+
+
+def curate_por_edicion(news, player, cap, dias=14):
+    """Una noticia por edición (México, España, prensa local), la más reciente que de verdad hable del jugador.
+    Sin redes sociales, sin notas de más de `dias` días y sin la misma historia dos veces. "España" solo con medios
+    de España. Si no hay prensa extranjera, queda solo la de México."""
+    limite = (datetime.now(timezone.utc) - timedelta(days=dias)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    news = [dict(n, edicion=edicion_real(n)) for n in news
+            if not fuente_bloqueada(n) and (n.get("published_at") or "") >= limite]
+
     def valida(n):
         t = n.get("title") or ""
         # Fuera: "titulares" que solo son el nombre, y los automáticos de sitios de minuto a minuto.
@@ -686,20 +752,15 @@ def curate_por_edicion(news, player, cap):
             return mentions_surname(n.get("title") or "", player) or title_mentions_player(n.get("title_original") or "", player)
         return title_mentions_player(n.get("title") or "", player)
     ordered = sorted([n for n in news if valida(n)], key=lambda n: n.get("published_at") or "", reverse=True)
-    seen, elegidas = set(), []
-    def clave(n):
-        return re.sub(r"[^a-z0-9 ]+", "", normalize(n.get("title") or ""))
+    elegidas = []
+
+    def repetida(n):
+        return any(misma_historia(n, e, player) for e in elegidas)
     for ed in ("mx", "es", "local"):
-        n = next((x for x in ordered if (x.get("edicion") or "mx") == ed and clave(x) not in seen), None)
+        n = next((x for x in ordered if (x.get("edicion") or "mx") == ed and not repetida(x)), None)
         if n:
-            seen.add(clave(n))
             elegidas.append(n)
-    for n in ordered:
-        if len(elegidas) >= cap:
-            break
-        if clave(n) not in seen:
-            seen.add(clave(n))
-            elegidas.append(n)
+    # Sin prensa extranjera se queda solo la de México (no se rellena con más notas mexicanas).
     return elegidas[:cap]
 
 
