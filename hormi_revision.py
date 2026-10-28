@@ -147,6 +147,16 @@ def main():
         if not reciente or p["key"] in archivados:
             continue
         antes_t = dict(u.get("tarjeta") or {})
+        # Estadísticas guardadas con la versión anterior (sin pases clave/recuperaciones/atajadas): se vuelven a leer
+        # una vez (1 petición por partido) para que la tarjeta salga completa.
+        if u.get("stats") and u.get("stats_v") != 2:
+            tid = next((t.get("team_id") for t in p.get("targets") or [] if t.get("key") == u.get("team_key")), None)
+            res = ha.api("/fixtures/players", {"fixture": u["fixture_id"]})
+            st = ha.stats_jugador(res, p.get("player_id"), tid) if res else None
+            if st:
+                u["stats"], u["stats_v"] = st, 2
+                cambios += 1
+                ha.log(f"📊 {p['key']}: estadísticas completas del partido · {st}")
         try:
             ha.tarjeta_partido_para(p, u, dict(u))
         except Exception as err:

@@ -404,23 +404,31 @@ def tarjeta_partido(player, u, apodo, posicion=None):
     cajas = cajas[:9]
     y2 = y1 + 232
     cw, ch, gap = (W - 112 - 2 * 20) / 3, 152, 20
+    # Con pocas estadísticas (1-2 filas) las cajas crecen y el bloque se centra: no queda un hueco abajo.
+    filas_n = (len(cajas) + 2) // 3
+    libre = (H - 120) - y2 - 60
+    if filas_n < 3:
+        ch = min(200, (libre - (filas_n - 1) * 28) / filas_n)
+        gap_v = 28
+        y2 += max(0, (libre - (filas_n * ch + (filas_n - 1) * gap_v)) / 2)
+    else:
+        gap_v = gap
     for i, (v, l, extra) in enumerate(cajas):
         en_fila = min(3, len(cajas) - (i // 3) * 3)   # la última fila incompleta va centrada
         x_ini = 56 + (3 - en_fila) * (cw + gap) / 2
         cx = x_ini + (i % 3) * (cw + gap)
-        cy = y2 + (i // 3) * (ch + gap)
+        cy = y2 + (i // 3) * (ch + gap_v)
         d.rounded_rectangle([cx, cy, cx + cw, cy + ch], radius=26, fill=(255, 255, 255, 18), outline=(255, 255, 255, 30), width=2)
         dorado = extra is True
-        d.text((cx + cw / 2, cy + 58), v, font=_f(PB, 58), fill=GOLD if dorado else WHITE, anchor="mm")
-        d.text((cx + cw / 2, cy + 108), l, font=_fit2(d, l, PB, cw - 30, 21, 16), fill=(185, 192, 207), anchor="mm")
+        d.text((cx + cw / 2, cy + ch * .38), v, font=_f(PB, 58 if ch < 170 else 68), fill=GOLD if dorado else WHITE, anchor="mm")
+        d.text((cx + cw / 2, cy + ch * .71), l, font=_fit2(d, l, PB, cw - 30, 21, 16), fill=(185, 192, 207), anchor="mm")
         if isinstance(extra, tuple):
             frac = max(0.0, min(1.0, extra[1]))
-            bx0, bx1, by = cx + 30, cx + cw - 30, cy + 130
+            bx0, bx1, by = cx + 30, cx + cw - 30, cy + ch * .855
             d.rounded_rectangle([bx0, by, bx1, by + 8], radius=4, fill=(255, 255, 255, 40))
             if frac > 0:
                 d.rounded_rectangle([bx0, by, bx0 + max(8, (bx1 - bx0) * frac), by + 8], radius=4, fill=GOLD)
-    filas = (len(cajas) + 2) // 3
-    y3 = y2 + filas * (ch + gap) + 6
+    y3 = y2 + filas_n * ch + (filas_n - 1) * gap_v + 26
 
     # Sus momentos del partido
     hechos = []

@@ -1595,7 +1595,7 @@ def procesar_calificaciones(pend, hechas, config, fcm, notifier=None):
             listos.append((k, it, st))
             up = (stats_file.get("players", {}).get(it["player"]) or {}).get("ultimo_partido")
             if up and up.get("fixture_id") == fid:
-                up["stats"] = st
+                up["stats"], up["stats_v"] = st, 2
                 stats_sucio = True
                 pl = next((p for p in config["players"] if p["key"] == it["player"]), None)
                 if pl:
