@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T15:44:59.605635-06:00",
+  "updated_at": "2026-10-28T16:28:02.499463-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -1882,12 +1882,27 @@
         "league_logo": "https://media.api-sports.io/football/leagues/48.png",
         "league_tipo": "copa",
         "stats": {
-          "rating": 6.0,
+          "rating": 6.4,
+          "rating_api": 6.0,
           "tiros": 1,
           "tiros_puerta": 0,
           "pases_pct": 45,
           "duelos": 4,
-          "duelos_ganados": 2
+          "duelos_ganados": 2,
+          "recuperaciones": 1,
+          "lugar_equipo": 13,
+          "de_equipo": 16,
+          "pesos": [
+            {
+              "txt": "1 entrada",
+              "pts": 0.05
+            },
+            {
+              "txt": "1 falta recibida",
+              "pts": 0.05
+            }
+          ],
+          "calif_fija": true
         },
         "eventos_v": 6,
         "penales": null,
@@ -2216,7 +2231,8 @@
               }
             ]
           }
-        }
+        },
+        "stats_v": 2
       }
     },
     "vasquez": {
@@ -3171,18 +3187,35 @@
         "goals": 0,
         "assists": 0,
         "tarjeta": {
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/vasquez_partido.jpg?v=40f18d1e",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/vasquez_partido.jpg?v=3405bd5e",
           "hasta": "2026-10-29T15:45:00-06:00",
-          "firma": "1318e2c43e"
+          "firma": "aab6b91e34"
         },
         "stats": {
-          "rating": 7.4,
+          "rating": 7.8,
+          "rating_api": 7.4,
           "tiros": 1,
           "tiros_puerta": 0,
           "pases_pct": 86,
           "duelos": 7,
           "duelos_ganados": 7,
-          "recuperaciones": 5
+          "recuperaciones": 5,
+          "lugar_equipo": 2,
+          "de_equipo": 14,
+          "pesos": [
+            {
+              "txt": "7 de 7 duelos ganados",
+              "pts": 0.49
+            },
+            {
+              "txt": "Portería en cero",
+              "pts": 0.4
+            },
+            {
+              "txt": "3 entradas",
+              "pts": 0.3
+            }
+          ]
         },
         "stats_v": 2
       },
@@ -4139,16 +4172,36 @@
           "firma": "bdf97682a8"
         },
         "stats": {
-          "rating": 8.2,
-          "tiros": 4,
-          "tiros_puerta": 1,
+          "rating": 8.1,
+          "rating_api": 8.2,
+          "tiros": 5,
+          "tiros_puerta": 2,
           "pases_pct": 86,
           "duelos": 13,
-          "duelos_ganados": 5,
+          "duelos_ganados": 6,
           "regates": 3,
           "regates_ok": 2,
-          "mejor_equipo": true
-        }
+          "pases_clave": 3,
+          "lugar_equipo": 1,
+          "de_equipo": 15,
+          "mejor_equipo": true,
+          "pesos": [
+            {
+              "txt": "1 gol",
+              "pts": 1.35
+            },
+            {
+              "txt": "3 pases clave",
+              "pts": 0.51
+            },
+            {
+              "txt": "86% de pases buenos (37)",
+              "pts": 0.34
+            }
+          ],
+          "calif_fija": true
+        },
+        "stats_v": 2
       },
       "deltas_vivos": [
         {
@@ -5139,12 +5192,23 @@
         },
         "stats": {
           "rating": 6.4,
+          "rating_api": 6.4,
           "tiros": 0,
           "tiros_puerta": 0,
-          "pases_pct": 33,
+          "pases_pct": 50,
           "duelos": 5,
-          "duelos_ganados": 2
-        }
+          "duelos_ganados": 2,
+          "lugar_equipo": 10,
+          "de_equipo": 15,
+          "pesos": [
+            {
+              "txt": "2 faltas recibidas",
+              "pts": 0.1
+            }
+          ],
+          "calif_fija": true
+        },
+        "stats_v": 2
       },
       "deltas_vivos": [
         {
@@ -5844,15 +5908,36 @@
           "firma": "2b2594a92f"
         },
         "stats": {
-          "rating": 6.6,
+          "rating": 7.0,
+          "rating_api": 6.6,
           "tiros": 0,
           "tiros_puerta": 0,
           "pases_pct": 85,
           "duelos": 6,
           "duelos_ganados": 2,
           "regates": 1,
-          "regates_ok": 1
-        }
+          "regates_ok": 1,
+          "pases_clave": 2,
+          "recuperaciones": 1,
+          "lugar_equipo": 6,
+          "de_equipo": 15,
+          "pesos": [
+            {
+              "txt": "2 pases clave",
+              "pts": 0.32
+            },
+            {
+              "txt": "Portería en cero",
+              "pts": 0.3
+            },
+            {
+              "txt": "85% de pases buenos (33)",
+              "pts": 0.21
+            }
+          ],
+          "calif_fija": true
+        },
+        "stats_v": 2
       },
       "deltas_vivos": [
         {
@@ -6241,10 +6326,22 @@
         "goals": 0,
         "assists": 0,
         "stats": {
-          "rating": 6.2,
+          "rating": 6.3,
+          "rating_api": 6.2,
           "tiros": 0,
           "tiros_puerta": 0,
-          "pases_pct": 100
+          "pases_pct": 67,
+          "duelos": 1,
+          "duelos_ganados": 1,
+          "lugar_equipo": 12,
+          "de_equipo": 15,
+          "pesos": [
+            {
+              "txt": "1 de 1 duelos ganados",
+              "pts": 0.05
+            }
+          ],
+          "calif_fija": true
         },
         "alineacion": {
           "local": {
@@ -6609,7 +6706,8 @@
               }
             ]
           }
-        }
+        },
+        "stats_v": 2
       }
     },
     "fidalgo": {
@@ -7501,13 +7599,31 @@
           "firma": "337c3355d2"
         },
         "stats": {
-          "rating": 6.6,
-          "tiros": 0,
-          "tiros_puerta": 0,
-          "pases_pct": 82,
+          "rating": 6.4,
+          "rating_api": 6.6,
+          "pases_pct": 83,
           "duelos": 1,
-          "duelos_ganados": 1
-        }
+          "duelos_ganados": 1,
+          "recuperaciones": 1,
+          "lugar_equipo": 16,
+          "de_equipo": 16,
+          "pesos": [
+            {
+              "txt": "1 entrada",
+              "pts": 0.09
+            },
+            {
+              "txt": "83% de pases buenos (12)",
+              "pts": 0.08
+            },
+            {
+              "txt": "1 de 1 duelos ganados",
+              "pts": 0.05
+            }
+          ],
+          "calif_fija": true
+        },
+        "stats_v": 2
       },
       "deltas_vivos": [
         {
@@ -8226,15 +8342,35 @@
         "assists": 0,
         "stats": {
           "rating": 6.3,
+          "rating_api": 6.3,
           "pases_pct": 76,
           "duelos": 3,
-          "duelos_ganados": 1
+          "duelos_ganados": 1,
+          "recuperaciones": 1,
+          "lugar_equipo": 12,
+          "de_equipo": 16,
+          "pesos": [
+            {
+              "txt": "Su equipo recibió 2 goles",
+              "pts": -0.14
+            },
+            {
+              "txt": "1 intercepción",
+              "pts": 0.1
+            },
+            {
+              "txt": "1 tiro bloqueado",
+              "pts": 0.09
+            }
+          ],
+          "calif_fija": true
         },
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/huescas_partido.jpg?v=b2e2cbd9",
           "hasta": "2026-10-23T12:45:00-06:00",
           "firma": "4dd0fb2b3a"
-        }
+        },
+        "stats_v": 2
       },
       "deltas_vivos": [
         {
@@ -8446,7 +8582,8 @@
         "league_logo": "https://media.api-sports.io/football/leagues/10.png",
         "league_tipo": "amistoso",
         "stats": {
-          "rating": 8.2,
+          "rating": 8.5,
+          "rating_api": 8.2,
           "tiros": 1,
           "tiros_puerta": 1,
           "pases_pct": 94,
@@ -8454,7 +8591,26 @@
           "duelos_ganados": 8,
           "regates": 3,
           "regates_ok": 2,
-          "mejor_equipo": true
+          "pases_clave": 1,
+          "recuperaciones": 3,
+          "lugar_equipo": 1,
+          "de_equipo": 18,
+          "mejor_equipo": true,
+          "pesos": [
+            {
+              "txt": "1 gol",
+              "pts": 1.35
+            },
+            {
+              "txt": "94% de pases buenos (34)",
+              "pts": 0.5
+            },
+            {
+              "txt": "2 de 3 regates",
+              "pts": 0.18
+            }
+          ],
+          "calif_fija": true
         },
         "eventos_v": 6,
         "penales": null,
@@ -8866,7 +9022,8 @@
               }
             ]
           }
-        }
+        },
+        "stats_v": 2
       }
     },
     "montes": {
@@ -9644,14 +9801,34 @@
         "goals": 0,
         "assists": 0,
         "stats": {
-          "rating": 6.1,
+          "rating": 6.2,
+          "rating_api": 7.6,
           "tiros": 2,
           "tiros_puerta": 1,
           "pases_pct": 48,
           "duelos": 18,
           "duelos_ganados": 12,
           "regates": 2,
-          "regates_ok": 1
+          "regates_ok": 1,
+          "pases_clave": 1,
+          "recuperaciones": 4,
+          "lugar_equipo": 12,
+          "de_equipo": 14,
+          "pesos": [
+            {
+              "txt": "48% de pases buenos (27)",
+              "pts": -0.53
+            },
+            {
+              "txt": "Su equipo recibió 3 goles",
+              "pts": -0.45
+            },
+            {
+              "txt": "12 de 18 duelos ganados",
+              "pts": 0.42
+            }
+          ],
+          "calif_fija": true
         },
         "penales": null,
         "alineacion": {
@@ -9994,7 +10171,8 @@
               }
             ]
           }
-        }
+        },
+        "stats_v": 2
       }
     },
     "luis_chavez": {
@@ -10551,10 +10729,29 @@
           }
         ],
         "stats": {
-          "rating": 6.7,
+          "rating": 6.2,
+          "rating_api": 6.7,
           "pases_pct": 69,
           "duelos": 4,
-          "duelos_ganados": 3
+          "duelos_ganados": 3,
+          "recuperaciones": 1,
+          "lugar_equipo": 8,
+          "de_equipo": 16,
+          "pesos": [
+            {
+              "txt": "Derrota",
+              "pts": -0.15
+            },
+            {
+              "txt": "3 de 4 duelos ganados",
+              "pts": 0.11
+            },
+            {
+              "txt": "69% de pases buenos (16)",
+              "pts": -0.1
+            }
+          ],
+          "calif_fija": true
         },
         "eventos_v": 6,
         "penales": null,
@@ -10970,7 +11167,8 @@
               }
             ]
           }
-        }
+        },
+        "stats_v": 2
       }
     },
     "fimbres": {
@@ -11549,20 +11747,39 @@
         "goals": 0,
         "assists": 0,
         "stats": {
-          "rating": 6.5,
-          "tiros": 1,
-          "tiros_puerta": 0,
-          "pases_pct": 91,
-          "duelos": 6,
-          "duelos_ganados": 3,
+          "rating": 6.7,
+          "rating_api": 6.6,
+          "pases_pct": 88,
+          "duelos": 7,
+          "duelos_ganados": 4,
           "regates": 1,
-          "regates_ok": 0
+          "regates_ok": 0,
+          "pases_clave": 1,
+          "recuperaciones": 2,
+          "lugar_equipo": 14,
+          "de_equipo": 16,
+          "pesos": [
+            {
+              "txt": "88% de pases buenos (17)",
+              "pts": 0.19
+            },
+            {
+              "txt": "1 pase clave",
+              "pts": 0.18
+            },
+            {
+              "txt": "2 entradas",
+              "pts": 0.14
+            }
+          ],
+          "calif_fija": true
         },
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/fimbres_partido.jpg?v=07fe18db",
           "hasta": "2026-10-22T21:00:00-06:00",
           "firma": "e60f7458de"
-        }
+        },
+        "stats_v": 2
       }
     },
     "campillo": {
@@ -12199,13 +12416,33 @@
           "firma": "df08acc132"
         },
         "stats": {
-          "rating": 6.3,
+          "rating": 7.1,
+          "rating_api": 6.3,
           "tiros": 1,
           "tiros_puerta": 0,
-          "pases_pct": 82,
-          "duelos": 7,
-          "duelos_ganados": 4
-        }
+          "pases_pct": 79,
+          "duelos": 6,
+          "duelos_ganados": 4,
+          "recuperaciones": 3,
+          "lugar_equipo": 5,
+          "de_equipo": 16,
+          "pesos": [
+            {
+              "txt": "Portería en cero",
+              "pts": 0.4
+            },
+            {
+              "txt": "2 intercepciones",
+              "pts": 0.24
+            },
+            {
+              "txt": "4 de 6 duelos ganados",
+              "pts": 0.14
+            }
+          ],
+          "calif_fija": true
+        },
+        "stats_v": 2
       },
       "deltas_vivos": [
         {
@@ -12397,12 +12634,31 @@
         "goals": 0,
         "assists": 0,
         "stats": {
-          "rating": 7.0,
+          "rating": 6.4,
+          "rating_api": 7.0,
           "tiros": 1,
           "tiros_puerta": 1,
-          "pases_pct": 73,
-          "duelos": 6,
-          "duelos_ganados": 3
+          "pases_pct": 79,
+          "duelos": 7,
+          "duelos_ganados": 3,
+          "recuperaciones": 2,
+          "lugar_equipo": 12,
+          "de_equipo": 16,
+          "pesos": [
+            {
+              "txt": "1 de 1 tiros a puerta",
+              "pts": 0.13
+            },
+            {
+              "txt": "2 entradas",
+              "pts": 0.12
+            },
+            {
+              "txt": "79% de pases buenos (14)",
+              "pts": 0.07
+            }
+          ],
+          "calif_fija": true
         },
         "alineacion": {
           "local": {
@@ -12742,7 +12998,8 @@
               }
             ]
           }
-        }
+        },
+        "stats_v": 2
       }
     },
     "sandoval": {
@@ -13223,15 +13480,36 @@
           "firma": "613f953fcf"
         },
         "stats": {
-          "rating": 6.6,
+          "rating": 7.8,
+          "rating_api": 6.6,
           "tiros": 2,
           "tiros_puerta": 2,
-          "pases_pct": 65,
-          "duelos": 11,
-          "duelos_ganados": 7,
+          "pases_pct": 67,
+          "duelos": 14,
+          "duelos_ganados": 9,
           "regates": 1,
-          "regates_ok": 1
-        }
+          "regates_ok": 1,
+          "pases_clave": 1,
+          "recuperaciones": 2,
+          "lugar_equipo": 2,
+          "de_equipo": 16,
+          "pesos": [
+            {
+              "txt": "1 asistencia",
+              "pts": 0.9
+            },
+            {
+              "txt": "6 faltas recibidas",
+              "pts": 0.3
+            },
+            {
+              "txt": "2 de 2 tiros a puerta",
+              "pts": 0.26
+            }
+          ],
+          "calif_fija": true
+        },
+        "stats_v": 2
       },
       "deltas_vivos": [
         {
