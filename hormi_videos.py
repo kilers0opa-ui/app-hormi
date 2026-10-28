@@ -57,6 +57,7 @@ en --eventos (las noticias no necesitan llave).
 """
 
 import argparse
+import html
 import json
 import os
 import re
@@ -222,7 +223,7 @@ def thumb_of(snippet):
 def video_entry(video_id, snippet, embeddable):
     return {
         "id": video_id,
-        "title": snippet.get("title"),
+        "title": html.unescape(snippet.get("title") or ""),   # YouTube manda "&amp;", "&#39;"...
         "channel": snippet.get("channelTitle"),
         "published_at": snippet.get("publishedAt"),
         "thumbnail": thumb_of(snippet),
