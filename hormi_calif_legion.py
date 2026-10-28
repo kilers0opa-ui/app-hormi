@@ -61,6 +61,12 @@ _T = {
     "pase_ref":   (70,    86,    80,    85,    80,    76,    70),
     "pase_peso":  (1.0,   2.5,   2.0,   3.5,   2.5,   2.0,   1.0),
     "pase_vol":   (0.002, 0.004, 0.004, 0.008, 0.006, 0.004, 0.003),
+    # Efectividad (no solo cantidad): % de duelos ganados contra lo normal en su posición, y % de regates.
+    # (porcentaje - referencia) × peso × volumen (duelos: completo con 6; regates: con 4).
+    "duelo_ref":  (50,    60,    55,    52,    45,    45,    45),
+    "duelo_ef":   (0.0,   1.2,   1.0,   0.8,   0.5,   0.5,   0.6),
+    "regate_ref": (50,    50,    50,    50,    50,    50,    50),
+    "regate_ef":  (0.0,   0.3,   0.5,   0.4,   0.6,   0.8,   0.5),
 }
 PESOS = {r: {k: v[i] for k, v in _T.items()} for i, r in enumerate(ROLES)}
 
@@ -132,6 +138,10 @@ def desglose(s, rol, ctx=None):
     du, du_g = _g(s, "duels", "total"), _g(s, "duels", "won")
     add("duelos ganados", du_g, w["duelo_gan"])
     add("duelos perdidos", max(0, du - du_g), w["duelo_per"])
+    if du and w["duelo_ef"]:
+        out.append(("efectividad en duelos", (du_g / du * 100 - w["duelo_ref"]) / 100 * w["duelo_ef"] * min(1.0, du / 6)))
+    if rg_i and w["regate_ef"]:
+        out.append(("efectividad en regates", (rg_ok / rg_i * 100 - w["regate_ref"]) / 100 * w["regate_ef"] * min(1.0, rg_i / 4)))
     add("entradas", _g(s, "tackles", "total"), w["entrada"])
     add("intercepciones", _g(s, "tackles", "interceptions"), w["intercep"])
     add("bloqueos", _g(s, "tackles", "blocks"), w["bloqueo"])
@@ -232,8 +242,8 @@ def explicar(s, rol, ctx=None, cuantos=3):
         tot = sum(partes.pop(k, 0) for k in viejos)
         if tot:
             partes[nuevo] = tot
-    junta("duelos", "duelos ganados", "duelos perdidos")
-    junta("regates", "regates", "regates perdidos")
+    junta("duelos", "duelos ganados", "duelos perdidos", "efectividad en duelos")
+    junta("regates", "regates", "regates perdidos", "efectividad en regates")
     junta("pases", "precisión de pases", "volumen de pases")
     junta("tiros", "tiros a puerta", "tiros fuera")
     du, dug = _g(s, "duels", "total"), _g(s, "duels", "won")
