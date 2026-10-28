@@ -210,7 +210,7 @@ def _circulo(img, sz, ring=None, rw=9):
 MESES = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"]
 
 
-def tarjeta_partido(player, u, apodo, posicion=None):
+def _tarjeta_partido_v1(player, u, apodo, posicion=None):
     """u = ultimo_partido de player_stats.json (home/away, goles, logos, eventos, stats...)."""
     W = H = 1080
     B = Image.new("RGB", (W, H), (14, 17, 22))
@@ -287,3 +287,166 @@ def tarjeta_partido(player, u, apodo, posicion=None):
         d.text((W / 2, 968), linea, font=_fit(d, linea, 900, 30), fill=WHITE, anchor="mm")
     d.text((W / 2, 1035), "LEGIÓN MX", font=_f(FB, 30), fill=(110, 120, 135), anchor="mm")
     return _guardar(B, f"{player['key']}_partido.jpg")
+
+
+# ───────────────────────────────────────────────────────────── tarjeta del partido v2 (4:5)
+PB = "fondos_assets/Poppins-Bold.ttf"
+PM = "fondos_assets/Poppins-Medium.ttf"
+VERDE_OK = (61, 220, 132)
+AMBAR = (245, 166, 35)
+ROJO = (235, 87, 87)
+
+
+def _norm(t):
+    import unicodedata
+    return "".join(c for c in unicodedata.normalize("NFD", (t or "").lower()) if unicodedata.category(c) != "Mn")
+
+
+def _nombres(player, apodo):
+    """(grande, chico): con apodo de verdad ("La Hormiga", "El Chaquito") → apodo grande y nombre chico; si el
+    "apodo" es solo su nombre o apellido (Fimbres, Vásquez, Raúl) → solo el nombre completo, una vez."""
+    import re
+    nombre = re.sub(r'\s*"[^"]*"\s*', " ", player.get("name") or "").strip()
+    if apodo and _norm(apodo) not in _norm(nombre) and not all(w in _norm(nombre).split() for w in _norm(apodo).split()):
+        return apodo, nombre
+    return nombre, None
+
+
+def _color_calif(r):
+    return VERDE_OK if r >= 7 else AMBAR if r >= 6 else ROJO
+
+
+def tarjeta_partido(player, u, apodo, posicion=None):
+    """Tarjeta del partido para compartir (1080×1350): marcador, su foto y nombre, calificación y TODO lo que trae la
+    API de su partido (minutos, goles, asistencias, tiros, pases, duelos, regates...), con el color de su equipo y el
+    logo de Legión MX. u = ultimo_partido de player_stats.json."""
+    W, H = 1080, 1350
+    color = COLORES.get(u.get("team_key") or "", (40, 60, 110))
+    B = Image.new("RGB", (W, H), (12, 15, 21))
+    d = ImageDraw.Draw(B, "RGBA")
+    # Degradado del color del club arriba → oscuro abajo, con franjas diagonales suaves.
+    for y in range(H):
+        t = min(1, y / (H * .62))
+        c = tuple(int(color[k] * (1 - t) * .95 + 12 * t) for k in range(3))
+        d.line([(0, y), (W, y)], fill=c)
+    for i in range(-H, W, 120):
+        d.polygon([(i, 0), (i + 46, 0), (i + 46 + H * .5, H), (i + H * .5, H)], fill=(255, 255, 255, 12))
+
+    # Encabezado: logo de Legión MX + competencia y fecha
+    logo_p = ASSETS / "logo_legion.png"
+    if logo_p.exists():
+        # Ícono de la app (MX oscuro) con un filo claro para que se distinga sobre el color del club.
+        d.rounded_rectangle([50, 38, 158, 146], radius=28, fill=(255, 255, 255, 70))
+        lg = Image.open(logo_p).convert("RGBA").resize((100, 100), Image.LANCZOS)
+        B.paste(lg, (54, 42), lg)
+    d.text((166, 70), "LEGIÓN MX", font=_f(PB, 34), fill=WHITE)
+    try:
+        ko = datetime.fromisoformat(u["kickoff"])
+        fecha = f"{ko.day} {MESES[ko.month - 1]}"
+    except Exception:
+        fecha = ""
+    cab = " · ".join(x for x in (comp_corta(u.get("league")), fecha) if x)
+    d.text((166, 112), cab, font=_fit2(d, cab, PM, 700, 28), fill=(225, 230, 238))
+
+    # Marcador
+    y0 = 180
+    d.rounded_rectangle([56, y0, W - 56, y0 + 240], radius=36, fill=(0, 0, 0, 90))
+    _paste(B, _logo(u.get("home_logo"), 130, u.get("home") or ""), (110, y0 + 30))
+    _paste(B, _logo(u.get("away_logo"), 130, u.get("away") or ""), (W - 240, y0 + 30))
+    marcador = f"{u.get('home_goals')} - {u.get('away_goals')}"
+    d.text((W / 2, y0 + 100), marcador, font=_f(PB, 120), fill=WHITE, anchor="mm")
+    for x, nombre in ((175, u.get("home") or ""), (W - 175, u.get("away") or "")):
+        d.text((x, y0 + 200), nombre, font=_fit2(d, nombre, PM, 260, 30), fill=WHITE, anchor="mm")
+    if u.get("penales"):
+        d.text((W / 2, y0 + 200), f"Penales {u['penales']}", font=_f(PB, 26), fill=GOLD, anchor="mm")
+
+    # Jugador: foto, nombre (sin repetir) y calificación grande
+    y1 = y0 + 270
+    av = ASSETS / f"avatar_{player['key']}.jpg"
+    if av.exists():
+        _paste(B, _circulo(Image.open(av).convert("RGB"), 190, GOLD, 8), (64, y1))
+    grande, chico = _nombres(player, apodo)
+    st = u.get("stats") or {}
+    xr = W - 64
+    if st.get("rating"):
+        r = float(st["rating"])
+        cc = _color_calif(r)
+        d.rounded_rectangle([xr - 190, y1 + 20, xr, y1 + 170], radius=30, fill=cc)
+        d.text((xr - 95, y1 + 82), f"{r:.1f}", font=_f(PB, 76), fill=(14, 17, 22), anchor="mm")
+        d.text((xr - 95, y1 + 142), "CALIFICACIÓN", font=_f(PB, 20), fill=(14, 17, 22), anchor="mm")
+        xr -= 220
+    maxw = xr - 290
+    d.text((282, y1 + (40 if chico else 70)), grande, font=_fit2(d, grande, PB, maxw, 66, 34), fill=WHITE)
+    if chico:
+        d.text((284, y1 + 122), chico, font=_fit2(d, chico, PM, maxw, 32), fill=(200, 206, 216))
+    if st.get("mejor_equipo"):
+        _pill(d, 282, y1 + 168, "★ Mejor de su equipo", _f(FB, 24), (14, 17, 22), GOLD, (16, 8))
+
+    # Estadísticas: todas las que trae la API, en una cuadrícula de 3 columnas
+    cajas = [(f"{u.get('minutes', 0)}'", "MINUTOS", None),
+             (str(u.get("goals", 0)), "GOLES", (u.get("goals") or 0) > 0),
+             (str(u.get("assists", 0)), "ASISTENCIAS", (u.get("assists") or 0) > 0)]
+    if st.get("tiros") is not None:
+        cajas.append((f"{st.get('tiros_puerta', 0)}/{st['tiros']}", "TIROS A PUERTA", None))
+    if st.get("pases_pct") is not None:
+        cajas.append((f"{st['pases_pct']}%", "PASES BUENOS", ("barra", st["pases_pct"] / 100)))
+    if st.get("pases_clave"):
+        cajas.append((str(st["pases_clave"]), "PASES CLAVE", None))
+    if st.get("duelos"):
+        cajas.append((f"{st.get('duelos_ganados', 0)}/{st['duelos']}", "DUELOS GANADOS",
+                      ("barra", (st.get("duelos_ganados") or 0) / st["duelos"])))
+    if st.get("regates"):
+        cajas.append((f"{st.get('regates_ok', 0)}/{st['regates']}", "REGATES", ("barra", (st.get("regates_ok") or 0) / st["regates"])))
+    if st.get("recuperaciones"):
+        cajas.append((str(st["recuperaciones"]), "RECUPERACIONES", None))
+    if st.get("atajadas"):
+        cajas.append((str(st["atajadas"]), "ATAJADAS", None))
+    cajas = cajas[:9]
+    y2 = y1 + 232
+    cw, ch, gap = (W - 112 - 2 * 20) / 3, 152, 20
+    for i, (v, l, extra) in enumerate(cajas):
+        en_fila = min(3, len(cajas) - (i // 3) * 3)   # la última fila incompleta va centrada
+        x_ini = 56 + (3 - en_fila) * (cw + gap) / 2
+        cx = x_ini + (i % 3) * (cw + gap)
+        cy = y2 + (i // 3) * (ch + gap)
+        d.rounded_rectangle([cx, cy, cx + cw, cy + ch], radius=26, fill=(255, 255, 255, 18), outline=(255, 255, 255, 30), width=2)
+        dorado = extra is True
+        d.text((cx + cw / 2, cy + 58), v, font=_f(PB, 58), fill=GOLD if dorado else WHITE, anchor="mm")
+        d.text((cx + cw / 2, cy + 108), l, font=_fit2(d, l, PB, cw - 30, 21, 16), fill=(185, 192, 207), anchor="mm")
+        if isinstance(extra, tuple):
+            frac = max(0.0, min(1.0, extra[1]))
+            bx0, bx1, by = cx + 30, cx + cw - 30, cy + 130
+            d.rounded_rectangle([bx0, by, bx1, by + 8], radius=4, fill=(255, 255, 255, 40))
+            if frac > 0:
+                d.rounded_rectangle([bx0, by, bx0 + max(8, (bx1 - bx0) * frac), by + 8], radius=4, fill=GOLD)
+    filas = (len(cajas) + 2) // 3
+    y3 = y2 + filas * (ch + gap) + 6
+
+    # Sus momentos del partido
+    hechos = []
+    for e in u.get("eventos") or []:
+        if not e.get("mio"):
+            continue
+        t = e.get("tipo")
+        if t in ("gol", "pen"):
+            hechos.append(f"⚽ Gol {e.get('min')}" + (" (pen.)" if t == "pen" else ""))
+        elif t == "entra":
+            hechos.append(f"Entró al {e.get('min')}")
+        elif t == "sale":
+            hechos.append(f"Salió al {e.get('min')}")
+        elif t == "amarilla":
+            hechos.append(f"Amarilla {e.get('min')}")
+        elif t == "roja":
+            hechos.append(f"Roja {e.get('min')}")
+    linea = "   ·   ".join(h.replace("⚽ ", "") for h in hechos[:4])
+    if linea and y3 < H - 100:
+        d.text((W / 2, y3 + 22), linea, font=_fit2(d, linea, PM, W - 140, 32), fill=WHITE, anchor="mm")
+    d.text((W / 2, H - 40), "Sigue a la Legión en la app  ·  LEGIÓN MX", font=_f(PM, 24), fill=(150, 158, 172), anchor="mm")
+    return _guardar(B, f"{player['key']}_partido.jpg")
+
+
+def _fit2(d, txt, path, maxw, start, minimo=18):
+    s = start
+    while s > minimo and d.textlength(txt, font=_f(path, s)) > maxw:
+        s -= 2
+    return _f(path, s)
