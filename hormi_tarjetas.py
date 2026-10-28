@@ -335,9 +335,10 @@ def tarjeta_partido(player, u, apodo, posicion=None):
     # Encabezado: logo de Legión MX + competencia y fecha
     logo_p = ASSETS / "logo_legion.png"
     if logo_p.exists():
-        d.rounded_rectangle([52, 40, 156, 144], radius=26, fill=(255, 255, 255))
-        lg = Image.open(logo_p).convert("RGBA").resize((96, 96), Image.LANCZOS)
-        B.paste(lg, (56, 44), lg)
+        # Ícono de la app (MX oscuro) con un filo claro para que se distinga sobre el color del club.
+        d.rounded_rectangle([50, 38, 158, 146], radius=28, fill=(255, 255, 255, 70))
+        lg = Image.open(logo_p).convert("RGBA").resize((100, 100), Image.LANCZOS)
+        B.paste(lg, (54, 42), lg)
     d.text((166, 70), "LEGIÓN MX", font=_f(PB, 34), fill=WHITE)
     try:
         ko = datetime.fromisoformat(u["kickoff"])
