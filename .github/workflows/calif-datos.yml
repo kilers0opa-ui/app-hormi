@@ -34,12 +34,14 @@ jobs:
       - name: Juntar estadísticas
         env:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
-        run: python hormi_calif_datos.py --ultimos "${{ inputs.ultimos || '15' }}"
+        run: |
+          python hormi_calif_datos.py --ultimos "${{ inputs.ultimos || '15' }}"
+          python hormi_calif_legion.py --calibrar   # re-ajusta la escala por posición con los datos nuevos
       - name: Subir resultado
         if: ${{ !cancelled() }}
         run: |
           git config user.name "app-hormi-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add calif_datos.json 2>/dev/null || true
+          git add calif_datos.json calif_calibracion.json 2>/dev/null || true
           git commit -m "chore: datos para la calificación Legión MX [skip ci]" || exit 0
           for i in 1 2 3 4; do git pull --rebase origin main && git push && break; sleep 5; done
