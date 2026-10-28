@@ -108,7 +108,9 @@ DEFAULTS = {
                            "azteca deportes", "azteca 7", "televisa", "tyc sports", "dsports", "directv sports",
                            "sky sports", "dazn", "tnt sports", "cbs sports", "canal 13", "tvn", "chilevision",
                            "sport tv", "movistar", "fifa", "conmebol", "concacaf", "uefa", "mediotiempo",
-                           "record", "marca", "superdeporte", "futbol total"],
+                           "record", "marca", "superdeporte", "futbol total",
+                           # Estados Unidos (alternativas cuando el de México está bloqueado allá)
+                           "telemundo", "univision", "bein sports", "nbc sports", "paramount", "golazo"],
     "canales_bloqueados": ["spectaglobeworld"],
     "titulos_descartados": ["gameplay", "efootball", "fifa 2", "fc 26", "fc26", "simulacion", "simulation",
                             "reaccion", "reacciona", " en vivo ", " en directo ", " live ", "prediccion", " previa ",
@@ -130,7 +132,14 @@ DEFAULTS = {
     "canales_resumen_desde_min": 20,   # desde cuántos minutos después del final se revisan esos canales
     # País donde tiene que poderse ver el video (goles y resúmenes): se descartan los bloqueados ahí por
     # el canal (p. ej. Fox Deportes bloquea muchos clips en México), los no incrustables y los +18.
-    "region_visible": "MX",            # manda "Ya está disponible el resumen del partido de {jugador}" cuando el resumen aparece (False = apagado)
+    "region_visible": "MX",
+    # Países extra (afición fuera de México): si el video elegido está bloqueado en alguno, se busca una alternativa
+    # que SÍ se vea ahí y la app la muestra a quien esté en ese país. Las alternativas pueden ser de canales no
+    # oficiales, pero con filtro estricto: título detallado (gol: nombre + "gol" + rival; resumen: los dos equipos +
+    # "resumen/highlights"), duración razonable y sin títulos basura. Máximo 1 búsqueda extra por gol/partido.
+    "regiones_extra": ["US"],
+    "alt_gol_duracion_seg": [10, 360],
+    "alt_resumen_duracion_seg": [60, 1500],
 }
 
 QUOTA_SEARCH = 100
@@ -235,8 +244,9 @@ def mentions_player(entry, tokens):
     return all(re.search(rf"\b{re.escape(t)}\b", haystack) for t in tokens)
 
 
-def search_videos(query, days=None, published_after=None, max_results=25):
-    """published_after (datetime UTC) tiene prioridad sobre days."""
+def search_videos(query, days=None, published_after=None, max_results=25, region="MX"):
+    """published_after (datetime UTC) tiene prioridad sobre days. region: país para el que YouTube filtra (solo
+    devuelve lo que se puede ver ahí)."""
     if published_after is None:
         published_after = datetime.now(timezone.utc) - timedelta(days=days)
     data = yt_api("search", {
@@ -246,7 +256,7 @@ def search_videos(query, days=None, published_after=None, max_results=25):
         "order": "date",
         "maxResults": max_results,
         "videoEmbeddable": "true",   # la clave: solo clips que sí se pueden reproducir dentro de la app
-        "regionCode": "MX",
+        "regionCode": region,
         "relevanceLanguage": "es",
         "publishedAfter": published_after.strftime("%Y-%m-%dT%H:%M:%SZ"),
     }, QUOTA_SEARCH)
@@ -290,10 +300,24 @@ def channel_uploads(channel_id, max_items=15):
     return found
 
 
-def filter_visibles(entries, region):
+def _iso_dur(d):
+    """'PT1M35S' → 95 segundos (None si no se puede leer)."""
+    m = re.fullmatch(r"P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", d or "")
+    if not m or not d:
+        return None
+    dd, h, mi, se = (int(x or 0) for x in m.groups())
+    return ((dd * 24 + h) * 60 + mi) * 60 + se
+
+
+def _bloqueado(rr, region):
+    return region in (rr.get("blocked") or []) or ("allowed" in rr and region not in (rr.get("allowed") or []))
+
+
+def filter_visibles(entries, region, extra=()):
     """Quita los videos que NO se pueden ver en `region` (bloqueo por país del canal), los que no se
     pueden incrustar y los de restricción de edad. Una llamada a videos.list (1 unidad por hasta 50 ids).
-    Si la consulta falla, no se descarta nada (mejor un video posible que ninguno)."""
+    Si la consulta falla, no se descarta nada (mejor un video posible que ninguno).
+    A cada video que queda le anota "bloqueado_en" (de los países de `extra` donde NO se ve) y "_dur" (segundos)."""
     if not entries or not region:
         return entries
     data = yt_api("videos", {
@@ -310,7 +334,7 @@ def filter_visibles(entries, region):
             log(f"     🚫 {e.get('title')!r}: ya no existe o es privado")
             continue
         rr = (it.get("contentDetails") or {}).get("regionRestriction") or {}
-        bloqueado = region in (rr.get("blocked") or []) or ("allowed" in rr and region not in (rr.get("allowed") or []))
+        bloqueado = _bloqueado(rr, region)
         stt = it.get("status") or {}
         no_embed = stt.get("embeddable") is False
         # Reclamo de derechos (UEFA, LaLiga...), borrado o ya no público: YouTube lo bloquea en todos lados.
@@ -321,8 +345,83 @@ def filter_visibles(entries, region):
                       else "restricción de edad" if edad else f"bloqueado ({stt.get('rejectionReason') or stt.get('uploadStatus') or stt.get('privacyStatus')})")
             log(f"     🚫 {e.get('title')!r} ({e.get('channel')}): {motivo}")
             continue
+        e["bloqueado_en"] = [r for r in extra if r != region and _bloqueado(rr, r)]
+        e["_dur"] = _iso_dur((it.get("contentDetails") or {}).get("duration"))
         ok.append(e)
     return ok
+
+
+# ------------------------------------------------- Alternativas por país --
+
+def _dur_ok(e, rango):
+    d = e.get("_dur")
+    return d is None or rango[0] <= d <= rango[1]
+
+
+def alt_gol_ok(e, tokens, rival_pref, settings, oficial):
+    """Alternativa del video del gol para otro país. De canal oficial: basta con los filtros normales. De otro
+    canal: el TÍTULO debe traer el nombre completo, decir gol y (si se conoce) nombrar al rival, p. ej.
+    "Gol de Armando González vs AEK"; duración de clip y sin títulos basura."""
+    title = normalize(e.get("title") or "")
+    if resumen_descartado(e, settings) or NO_GOL_RE.search(title):
+        return False
+    if oficial:
+        return True
+    return (all(re.search(rf"\b{re.escape(t)}\b", title) for t in tokens)
+            and bool(GOAL_RE.search(title))
+            and (not rival_pref or mentions_team(title, rival_pref))
+            and _dur_ok(e, settings["alt_gol_duracion_seg"]))
+
+
+def alt_resumen_ok(e, home_pref, away_pref, settings):
+    """Alternativa del resumen para otro país. De canal confiable u oficial de un equipo: filtros normales. De otro
+    canal: el TÍTULO debe nombrar a los dos equipos y decir resumen/highlights ("Resumen Olympiacos vs AEK"),
+    con duración de resumen y sin títulos basura."""
+    if resumen_descartado(e, settings):
+        return False
+    if resumen_confiable(e, home_pref, away_pref, settings):
+        return True
+    title = normalize(e.get("title") or "")
+    return (mentions_team(title, home_pref) and mentions_team(title, away_pref)
+            and any(w in title for w in RESUMEN_WORDS)
+            and _dur_ok(e, settings["alt_resumen_duracion_seg"]))
+
+
+def poner_alternativas(st, pool, es_valido, query, since, settings, cuota, usados=()):
+    """Si el video elegido (st["video"]) está bloqueado en algún país de regiones_extra, busca una alternativa
+    visible ahí: primero entre los mismos candidatos (sin gastar cuota) y, si no hay, con UNA búsqueda en ese
+    país (solo una vez por gol/partido y si hay cuota). Guarda st["alternativos"][país]. Devuelve True si cambió."""
+    v = st.get("video") or {}
+    alts = st.setdefault("alternativos", {})
+    cambio = False
+    for r in v.get("bloqueado_en") or []:
+        if r in alts:
+            continue
+        evitar = {v.get("id")} | set(usados) | set(st.get("descartados") or []) | set(settings.get("videos_descartados") or [])
+        cands = [e for e in pool if e["id"] not in evitar and r not in (e.get("bloqueado_en") or []) and es_valido(e)]
+        if not cands and not st.get(f"alt_buscado_{r}") and not _youtube_disabled \
+                and cuota.get("busquedas", 0) < settings["gol_max_busquedas_dia"]:
+            st[f"alt_buscado_{r}"] = True
+            cambio = True
+            log(f"     🌎 video bloqueado en {r}: búsqueda de alternativa · {query!r}")
+            found = search_videos(query, published_after=since, max_results=50, region=r)
+            if found is not None:
+                cuota["busquedas"] = cuota.get("busquedas", 0) + 1
+                since_iso = since.strftime("%Y-%m-%dT%H:%M:%SZ")
+                found = [e for e in found if e["id"] not in evitar and (e.get("published_at") or "") >= since_iso]
+                cands = [e for e in filter_visibles(found, r) if es_valido(e)]
+        if cands:
+            alt = strip_private([sorted(cands, key=lambda e: e.get("published_at") or "")[0]])[0]
+            alt.pop("bloqueado_en", None)
+            alt["embeddable"] = True
+            alts[r] = alt
+            cambio = True
+            log(f"     🌎 alternativa para {r}: {alt['title']!r} ({alt['channel']})")
+        else:
+            log(f"     🌎 sin alternativa visible en {r} todavía")
+    if not alts:
+        st.pop("alternativos", None)
+    return cambio
 
 
 def fill_embeddable(entries):
@@ -635,7 +734,7 @@ def rival_del_gol(key, player_key):
         nombres = {u.get("home") or "", u.get("away") or ""}
         club = normalize(u.get("team_label") or "")
         rival = [n for n in nombres if n and not mentions_team(normalize(n), team_prefixes(club))] if club else []
-        return team_prefixes(rival[0]) if len(rival) == 1 else None
+        return team_prefixes(rival[0], siglas=True) if len(rival) == 1 else None
     except Exception:
         return None
 
@@ -712,15 +811,18 @@ RESUMEN_WORDS = ("resumen", "highlights", "goles", "goals", "compacto", "melhore
                  "samenvatting", "hoogtepunten")
 
 
-def team_prefixes(name, aliases=()):
+def team_prefixes(name, aliases=(), siglas=False):
     """Prefijos (5 letras) de las palabras distintivas de un equipo, para
-    aguantar variantes: 'Olympiakos Piraeus' / 'Olympiacos' -> 'olymp'."""
+    aguantar variantes: 'Olympiakos Piraeus' / 'Olympiacos' -> 'olymp'.
+    siglas=True agrega también las palabras de 3 letras ('AEK Athens' -> 'aek', 'PSV Eindhoven' -> 'psv'),
+    que es como suelen escribirlas en los títulos."""
     def words(text):
         return [w for w in re.findall(r"[a-z0-9]+", normalize(text)) if w not in TEAM_STOP]
     base = [w for w in words(name) if len(w) >= 4]
     strong = [w for w in base if w not in TEAM_GENERIC] or base or [w for w in words(name) if len(w) >= 2]
     extra = [w for a in aliases for w in words(a) if len(w) >= 4]
-    return {w[:5] for w in strong + extra}
+    cortas = [w for t in (name, *aliases) for w in words(t) if len(w) == 3 and w.isalpha()] if siglas else []
+    return {w[:5] for w in strong + extra + cortas}
 
 
 def mentions_team(text_norm, prefixes):
@@ -920,7 +1022,7 @@ def _finales_step(out, config, settings, sources, notify, now):
                      if (is_match_summary(e, home_pref, away_pref) or resumen_de_canal_oficial(e, home_pref, away_pref))
                      and (e.get("published_at") or "") >= since_iso
                      and e["id"] not in used and not resumen_descartado(e, settings)]
-            vis = filter_visibles(cands, settings.get("region_visible")) if cands else []
+            vis = filter_visibles(cands, settings.get("region_visible"), settings.get("regiones_extra") or ()) if cands else []
             if vis:
                 best = sorted(vis, key=lambda e: e.get("published_at") or "")[0]
                 video = strip_private([best])[0]
@@ -929,6 +1031,11 @@ def _finales_step(out, config, settings, sources, notify, now):
                 st.pop("motivo", None)
                 changed = True
                 log(f"✅ resumen {match} en subidas de {video['channel']}: {video['title']!r}")
+                base_since = base - timedelta(minutes=settings["resumen_margen_min"])
+                hp_s = team_prefixes(st.get("home") or "", aliases.get(st.get("home")) or [], siglas=True)
+                ap_s = team_prefixes(st.get("away") or "", aliases.get(st.get("away")) or [], siglas=True)
+                poner_alternativas(st, vis, lambda e, hp=hp_s, ap=ap_s: alt_resumen_ok(e, hp, ap, settings),
+                                   f"{st.get('home')} vs {st.get('away')}", base_since, settings, cuota, used)
                 if notify and settings.get("resumen_notificar") and not st.get("silencioso"):
                     send_summary_push(config, players, video, st)
                 continue
@@ -988,14 +1095,18 @@ def _finales_step(out, config, settings, sources, notify, now):
                       and not resumen_descartado(e, settings)]
         # Solo canales confiables (el primero en publicar). Si hay válidos pero de canales desconocidos,
         # no se acepta ninguno: se espera al siguiente intento (los oficiales tardan más en subirlo).
-        confiables = filter_visibles([e for e in candidates if resumen_confiable(e, home_pref, away_pref, settings)],
-                                     settings.get("region_visible"))
+        visibles = filter_visibles(candidates, settings.get("region_visible"), settings.get("regiones_extra") or ())
+        confiables = [e for e in visibles if resumen_confiable(e, home_pref, away_pref, settings)]
         log(f"     {len(found)} resultados · {len(candidates)} válidos · {len(confiables)} de canal confiable")
         if confiables:
             best = sorted(confiables, key=lambda e: e.get("published_at") or "")[0]
             video = strip_private([best])[0]
             st["status"], st["video"] = "resuelto", video
             log(f"     ✅ {video['title']!r} ({video['channel']})")
+            hp_s = team_prefixes(h or "", aliases.get(h) or [], siglas=True)
+            ap_s = team_prefixes(a or "", aliases.get(a) or [], siglas=True)
+            poner_alternativas(st, visibles, lambda e, hp=hp_s, ap=ap_s: alt_resumen_ok(e, hp, ap, settings),
+                               f"{h} vs {a}", since, settings, cuota, used)
             if notify and settings.get("resumen_notificar") and not st.get("silencioso"):
                 send_summary_push(config, players, video, st)
         elif when == "final":
@@ -1022,10 +1133,25 @@ def _reverificar_goles(state, settings, now):
             revisar.append((key, st, False))
     if not revisar:
         return False
-    a_checar = [st["video"] for _, st, forzado in revisar if not forzado]
-    vivos = {e["id"] for e in filter_visibles(a_checar, settings.get("region_visible"))} if a_checar else set()
+    a_checar = [dict(st["video"]) for _, st, forzado in revisar if not forzado]
+    vis = filter_visibles(a_checar, settings.get("region_visible"), settings.get("regiones_extra") or ()) if a_checar else []
+    vivos = {e["id"] for e in vis}
     if a_checar and not vivos and _youtube_disabled:
         return False   # sin acceso a YouTube: no se quita nada a ciegas
+    # Si el canal cambió en qué países se ve, se actualiza (la app decide con eso si muestra la alternativa).
+    bloq = {e["id"]: e.get("bloqueado_en") or [] for e in vis}
+    for _, st, _f in revisar:
+        if st["video"]["id"] in bloq:
+            st["video"]["bloqueado_en"] = bloq[st["video"]["id"]]
+    # Las alternativas por país también se revisan (una llamada por país); la que se cayó se quita.
+    for r in settings.get("regiones_extra") or ():
+        alts = [(st, st["alternativos"][r]) for _, st, _f in revisar if r in (st.get("alternativos") or {})]
+        if alts and not _youtube_disabled:
+            ok = {e["id"] for e in filter_visibles([dict(a) for _, a in alts], r)}
+            for st, a in alts:
+                if a["id"] not in ok and not _youtube_disabled:
+                    log(f"🧹 alternativa {r} ya no disponible: {a.get('title')!r} — se quita")
+                    st["alternativos"].pop(r, None)
     for key, st, forzado in revisar:
         v = st["video"]
         st["verificado"] = now.isoformat()
@@ -1035,6 +1161,9 @@ def _reverificar_goles(state, settings, now):
         st.setdefault("descartados", []).append(v["id"])
         st["video"] = None
         st["status"] = "pendiente"
+        st.pop("alternativos", None)   # eran alternativas del video que se cayó
+        for r in settings.get("regiones_extra") or ():
+            st.pop(f"alt_buscado_{r}", None)
         # Una búsqueda más (la última): next_attempt la da por "final".
         st["intentos"] = max(0, len(settings["gol_intentos_min"]) - 1)
         st["ultimo_intento"] = None
@@ -1124,13 +1253,20 @@ def _goals_step(out, config, settings, sources, notify, now):
         for e in sin_gol:
             log(f"     ✗ no es el gol: {e.get('title')!r}")
         candidates = [e for e in candidates if es_clip_del_gol(e, rival_pref)]
-        candidates = filter_visibles(candidates, settings.get("region_visible"))
+        candidates = filter_visibles(candidates, settings.get("region_visible"), settings.get("regiones_extra") or ())
         log(f"     {len(found)} resultados · {len(candidates)} válidos y visibles en {settings.get('region_visible')}")
         if candidates:
             tgt = next((t for t in player.get("targets") or [] if t.get("key") == st.get("team_key")), {})
-            video = strip_private([pick_goal_video(candidates, settings, team_prefixes(tgt.get("label") or ""))])[0]
+            club_pref = team_prefixes(tgt.get("label") or "")
+            video = strip_private([pick_goal_video(candidates, settings, club_pref)])[0]
             st["status"], st["video"] = "resuelto", video
             log(f"     ✅ {video['title']!r} ({video['channel']})")
+            def _oficial(e, cp=club_pref):
+                ch = normalize(e.get("channel") or "") + " "
+                return any(t in ch for t in settings.get("canales_confiables") or []) or bool(cp and canal_del_equipo(ch, cp))
+            poner_alternativas(st, candidates,
+                               lambda e, tk=tokens, rp=rival_pref: mentions_player(e, tk) and alt_gol_ok(e, tk, rp, settings, _oficial(e)),
+                               f"{full} gol", since, settings, cuota, used)
             if notify and not st.get("silencioso"):
                 send_video_push(config, player, video, st.get("team_key"))
         elif when == "final":
