@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T16:28:02.499463-06:00",
+  "updated_at": "2026-10-28T16:28:46.188353-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -740,7 +740,35 @@
           "hasta": "2026-10-26T10:00:00-06:00",
           "firma": "123286061e"
         },
-        "sin_stats": true
+        "sin_stats": true,
+        "calif_reintento": true,
+        "stats": {
+          "rating": 7.0,
+          "tiros": 4,
+          "tiros_puerta": 0,
+          "pases_pct": 100,
+          "duelos": 7,
+          "duelos_ganados": 5,
+          "pases_clave": 3,
+          "lugar_equipo": 12,
+          "de_equipo": 16,
+          "pesos": [
+            {
+              "txt": "3 pases clave",
+              "pts": 0.42
+            },
+            {
+              "txt": "5 de 7 duelos ganados",
+              "pts": 0.19
+            },
+            {
+              "txt": "100% de pases buenos (9)",
+              "pts": 0.09
+            }
+          ],
+          "calif_fija": true
+        },
+        "stats_v": 2
       },
       "deltas_vivos": [
         {
