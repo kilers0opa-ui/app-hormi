@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-28T16:10:33.591295-06:00",
+  "updated_at": "2026-10-28T16:15:28.923952-06:00",
   "cuota": {
     "fecha": "2026-10-28",
-    "busquedas": 1,
+    "busquedas": 2,
     "busquedas_resumen": 1
   },
   "goles": {},
@@ -22,11 +22,22 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "resuelto",
       "intentos": 1,
       "fallos": 0,
       "ultimo_intento": "2026-10-28T22:10:29.181924+00:00",
-      "video": null,
+      "video": {
+        "id": "MLkOpdpgeOM",
+        "title": "Genoa 2-0 Juventus | Johan VÁSQUEZ y GENOA se hacen FUERTES de LOCAL y TRUENAN a la Juve | Resumen",
+        "channel": "ESPN MX",
+        "published_at": "2026-10-28T22:11:31Z",
+        "thumbnail": "https://i.ytimg.com/vi/MLkOpdpgeOM/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=MLkOpdpgeOM",
+        "embeddable": true,
+        "bloqueado_en": [
+          "US"
+        ]
+      },
       "noticias_pasadas": 1,
       "ultima_noticia": "2026-10-28T22:10:29.181924+00:00",
       "noticias": {
@@ -56,7 +67,19 @@
             "edicion": "mx"
           }
         ]
-      }
+      },
+      "alternativos": {
+        "US": {
+          "id": "QvN79KR7yOQ",
+          "title": "Juventus vs Genoa 0-2 All Goals &amp; Extended Highlights 2026",
+          "channel": "উদ্যোক্তা কথা",
+          "published_at": "2026-10-28T21:35:55Z",
+          "thumbnail": "https://i.ytimg.com/vi/QvN79KR7yOQ/hqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=QvN79KR7yOQ",
+          "embeddable": true
+        }
+      },
+      "alt_buscado_US": true
     }
   }
 }
