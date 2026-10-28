@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T15:40:02.202427-06:00",
+  "updated_at": "2026-10-28T15:44:59.605635-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -3171,18 +3171,20 @@
         "goals": 0,
         "assists": 0,
         "tarjeta": {
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/vasquez_partido.jpg?v=5185a857",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/vasquez_partido.jpg?v=40f18d1e",
           "hasta": "2026-10-29T15:45:00-06:00",
-          "firma": "7ad39db29d"
+          "firma": "1318e2c43e"
         },
         "stats": {
-          "rating": 8.0,
+          "rating": 7.4,
           "tiros": 1,
           "tiros_puerta": 0,
           "pases_pct": 86,
           "duelos": 7,
-          "duelos_ganados": 7
-        }
+          "duelos_ganados": 7,
+          "recuperaciones": 5
+        },
+        "stats_v": 2
       },
       "deltas_vivos": [
         {
