@@ -6,6 +6,11 @@ on:
     # (1 petición por corrida) por si la API corrigió un gol, asistencia o marcador.
     - cron: "50 * * * *"   # cada hora (correcciones de goles y tarjeta del partido al día)
   workflow_dispatch:
+    inputs:
+      recalcular:
+        description: "Recalcular la calificación del último partido de estos jugadores (coma), aunque ya esté fija"
+        type: string
+        default: ""
 
 concurrency:
   group: hormi-revision
@@ -30,7 +35,7 @@ jobs:
         env:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
           FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
-        run: python hormi_revision.py
+        run: python hormi_revision.py ${{ inputs.recalcular && format('--recalcular {0}', inputs.recalcular) || '' }}
       - name: Subir resultado
         if: ${{ !cancelled() }}
         run: |

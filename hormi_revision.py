@@ -66,6 +66,8 @@ def correcciones(nombre, viejos, nuevos):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sin-avisos", action="store_true")
+    ap.add_argument("--recalcular", default="", help="jugador(es) separados por coma: recalcula su calificación del "
+                    "último partido con la fórmula actual aunque ya esté fija (solo a mano)")
     args = ap.parse_args()
     config = ha.load_config()
     archivados = set(config.get("archivados") or [])
@@ -149,7 +151,7 @@ def main():
         migrar = bool(u.get("fixture_id")) and (
             (bool(u.get("stats")) and "rating_api" not in u["stats"])
             or (not u.get("stats") and (u.get("minutes") or 0) > 0 and not u.get("calif_reintento")))
-        if (not reciente and not migrar) or p["key"] in archivados:
+        if (not reciente and not migrar and p["key"] not in (args.recalcular or "")) or p["key"] in archivados:
             continue
         antes_t = dict(u.get("tarjeta") or {})
         # La calificación se fija con la PRIMERA que se calcula al terminar el partido (ya no se espera a que la fuente
@@ -157,7 +159,8 @@ def main():
         ya_asento = False
         if migrar and not u.get("stats"):
             u["calif_reintento"] = True
-        if migrar or (u.get("stats") and not u["stats"].get("calif_fija") and u.get("stats_v") != 2):
+        forzar = p["key"] in {x.strip() for x in (args.recalcular or "").split(",") if x.strip()}
+        if forzar or migrar or (u.get("stats") and not u["stats"].get("calif_fija") and u.get("stats_v") != 2):
             tid = next((t.get("team_id") for t in p.get("targets") or [] if t.get("key") == u.get("team_key")), None)
             res = ha.api("/fixtures/players", {"fixture": u["fixture_id"]})
             st = ha.stats_jugador(res, p.get("player_id"), tid, p["key"]) if res else None
