@@ -1,146 +1,8 @@
 {
-  "updated_at": "2026-10-27T14:50:46.556023-06:00",
-  "desde": "2026-10-25",
-  "hasta": "2026-11-03",
+  "updated_at": "2026-10-28T00:02:22.160223-06:00",
+  "desde": "2026-10-26",
+  "hasta": "2026-11-04",
   "partidos": [
-    {
-      "fixture_id": 1561423,
-      "kickoff": "2026-10-25T04:45:00-06:00",
-      "home": "FC Rostov",
-      "away": "Lokomotiv Moscú",
-      "home_id": 779,
-      "away_id": 597,
-      "home_logo": "https://media.api-sports.io/football/teams/779.png",
-      "away_logo": "https://media.api-sports.io/football/teams/597.png",
-      "league": "Liga Premier de Rusia",
-      "league_logo": "https://media.api-sports.io/football/leagues/235.png",
-      "status": "FT",
-      "home_goals": 2,
-      "away_goals": 0,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "montes",
-          "team_key": "lokomotiv",
-          "lado": "V"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1593343,
-      "kickoff": "2026-10-25T08:00:00-06:00",
-      "home": "Olympiakos",
-      "away": "Kalamata",
-      "home_id": 553,
-      "away_id": 5046,
-      "home_logo": "https://media.api-sports.io/football/teams/553.png",
-      "away_logo": "https://media.api-sports.io/football/teams/5046.png",
-      "league": "Superliga de Grecia",
-      "league_logo": "https://media.api-sports.io/football/leagues/197.png",
-      "status": "FT",
-      "home_goals": 5,
-      "away_goals": 0,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "armando",
-          "team_key": "olympiacos",
-          "lado": "L"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1550160,
-      "kickoff": "2026-10-25T08:00:00-06:00",
-      "home": "Genoa",
-      "away": "Venezia",
-      "home_id": 495,
-      "away_id": 517,
-      "home_logo": "https://media.api-sports.io/football/teams/495.png",
-      "away_logo": "https://media.api-sports.io/football/teams/517.png",
-      "league": "Serie A",
-      "league_logo": "https://media.api-sports.io/football/leagues/135.png",
-      "status": "FT",
-      "home_goals": 1,
-      "away_goals": 0,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "vasquez",
-          "team_key": "genoa",
-          "lado": "L"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1570427,
-      "kickoff": "2026-10-25T09:15:00-06:00",
-      "home": "Celta Vigo",
-      "away": "Real Betis",
-      "home_id": 538,
-      "away_id": 543,
-      "home_logo": "https://media.api-sports.io/football/teams/538.png",
-      "away_logo": "https://media.api-sports.io/football/teams/543.png",
-      "league": "La Liga",
-      "league_logo": "https://media.api-sports.io/football/leagues/140.png",
-      "status": "FT",
-      "home_goals": 0,
-      "away_goals": 0,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "fidalgo",
-          "team_key": "betis",
-          "lado": "V"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1552206,
-      "kickoff": "2026-10-25T13:00:00-06:00",
-      "home": "AZ Alkmaar",
-      "away": "Twente",
-      "home_id": 201,
-      "away_id": 415,
-      "home_logo": "https://media.api-sports.io/football/teams/201.png",
-      "away_logo": "https://media.api-sports.io/football/teams/415.png",
-      "league": "Eredivisie",
-      "league_logo": "https://media.api-sports.io/football/leagues/88.png",
-      "status": "FT",
-      "home_goals": 0,
-      "away_goals": 2,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "chavez",
-          "team_key": "az_alkmaar",
-          "lado": "L"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1551019,
-      "kickoff": "2026-10-25T21:00:00-06:00",
-      "home": "Club Tijuana",
-      "away": "Santos Laguna",
-      "home_id": 2280,
-      "away_id": 2285,
-      "home_logo": "https://media.api-sports.io/football/teams/2280.png",
-      "away_logo": "https://media.api-sports.io/football/teams/2285.png",
-      "league": "Liga MX",
-      "league_logo": "https://media.api-sports.io/football/leagues/262.png",
-      "status": "FT",
-      "home_goals": 4,
-      "away_goals": 1,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "mora",
-          "team_key": "tijuana",
-          "lado": "L"
-        }
-      ]
-    },
     {
       "fixture_id": 1549041,
       "kickoff": "2026-10-26T12:00:00-06:00",
@@ -728,6 +590,75 @@
           "key": "obed",
           "team_key": "atletico_madrid",
           "lado": "L"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1563247,
+      "kickoff": "2026-11-04T14:00:00-06:00",
+      "home": "Bristol City",
+      "away": "Wolves",
+      "home_id": 56,
+      "away_id": 39,
+      "home_logo": "https://media.api-sports.io/football/teams/56.png",
+      "away_logo": "https://media.api-sports.io/football/teams/39.png",
+      "league": "Championship",
+      "league_logo": "https://media.api-sports.io/football/leagues/40.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "raul",
+          "team_key": "wolves",
+          "lado": "V"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1635656,
+      "kickoff": "2026-11-04T14:00:00-06:00",
+      "home": "FC Porto",
+      "away": "Napoli",
+      "home_id": 212,
+      "away_id": 492,
+      "home_logo": "https://media.api-sports.io/football/teams/212.png",
+      "away_logo": "https://media.api-sports.io/football/teams/492.png",
+      "league": "Champions League",
+      "league_logo": "https://media.api-sports.io/football/leagues/2.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "gimenez",
+          "team_key": "porto",
+          "lado": "L"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1635651,
+      "kickoff": "2026-11-04T14:00:00-06:00",
+      "home": "Borussia Dortmund",
+      "away": "Real Betis",
+      "home_id": 165,
+      "away_id": 543,
+      "home_logo": "https://media.api-sports.io/football/teams/165.png",
+      "away_logo": "https://media.api-sports.io/football/teams/543.png",
+      "league": "Champions League",
+      "league_logo": "https://media.api-sports.io/football/leagues/2.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "fidalgo",
+          "team_key": "betis",
+          "lado": "V"
         }
       ]
     }
