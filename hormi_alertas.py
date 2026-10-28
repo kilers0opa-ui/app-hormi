@@ -2313,6 +2313,10 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
                 status_out[key][campo] = vivo[campo]
         gl = snap.get("goals") or {}
         status_out[key]["home_goals"], status_out[key]["away_goals"] = gl.get("home"), gl.get("away")
+        # Detalles del partido (goles, tarjetas, VAR): no dependen de la alineación, así que se muestran igual.
+        status_out[key]["eventos"] = info.get("eventos") or []
+        status_out[key]["fixture_id"] = fid
+        status_out[key]["sin_alineacion"] = True
 
     # Partido cerrado (final o cancelado ya avisado): dejar de pedirlo a la API
     # el resto de la ventana. Antes se seguía pidiendo hasta kickoff + 3 h.
