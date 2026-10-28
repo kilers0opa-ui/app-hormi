@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-28T16:05:34.903268-06:00",
+  "updated_at": "2026-10-28T16:10:33.591295-06:00",
   "cuota": {
     "fecha": "2026-10-28",
-    "busquedas": 0,
-    "busquedas_resumen": 0
+    "busquedas": 1,
+    "busquedas_resumen": 1
   },
   "goles": {},
   "partidos": {
@@ -23,13 +23,40 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-28T22:10:29.181924+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-28T22:10:29.181924+00:00",
+      "noticias": {
+        "vasquez": [
+          {
+            "title": "Dónde ver Genoa vs Juventus: Horario y canal TV para Johan Vásquez en la Serie A",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPM1RwX3NSZDh2UkZXSVNPQi1iX1VhRjAyOUdpa3h4eDJ4OWZEUDYyNE1Oa3VUQ0xPSlRvZERfVEl2UFRzcmg4YlJHaVZUVnQ0dTc5X2FndnpfWkFHbE83ZThUbGZBQUVIOTRGb0RuZzQwOFFkUk1GQlR1N3JuRnI3RGhPME5KRzVrNUFQdmpwNlFGekcyNDZrUm5fX0ZzRm94dExHN2F3QmJfMC1sTEhlR3NiSkc4NS11RFlUUnRqONIBvwFBVV95cUxNSHBpa0NtaFF4TFU4ZXBSVzBneTlENWtXQTdrT2tDc1Z0OTRma00wS3VjbEhEbW9HaVF1bTRVMW56bGJzOGJwWVI5RHh6NTFQZkctUC1lRVhPRFI1ZlMwdVdJeVdOOGN5NjBRZTVvRUtyOE5UOS1Pb3RrZF9PUGtSUVlUVVVFYll1R1VMU1BHN19WY01qMmx6ZjdzeUFvSWxvNUNuVDZkNGN5LWpBaTROTF9fNHJXeEQ0ZGhuZjh5TQ?oc=5",
+            "published_at": "2026-10-28T14:23:43Z",
+            "dominio": "marca.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "Johan Vásquez y Genoa acarician la salvación en la Serie A",
+            "source": "TUDN",
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPdUFPcGc2bTZ5VXlUN3Z2Sk5ackVnQUp4cFpHSDA5VXVZNmFnVm1Nb2djWEx0UVV3V0R5UnltSW5jYkRmWS1XOVNFRzhjWUc5b1hlY2E3Zzc4Qi1iZGs5OWtiODZXNy1WX29IZWt1enJQNzFyRVhsYWNHRE05bEpST0t6cENGbjNSRTVoc3FQUlJUS2RfMlRj?oc=5",
+            "published_at": "2026-10-27T03:26:00Z",
+            "dominio": "tudn.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "Johan Vásquez lidera triunfo del Genoa en jornada de mexicanos en Europa",
+            "source": "24-horas",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbE9Cd0pHWE1nanNxYjN5MGhLZnFLNWFSYlR5OUJjanBxVnFheVhxQ3R5VjN2UzBObjltSnprMG03azB4NExQRWdKMHhOYklVZkxjZF9Ca25McHBzZ3hVZHBaLVhUY2Z4QmJPeWlPdms2clV0cFgxdVNlQUk4VFJ3NTZ1dlZVM2tTcmtTcUhOTGZVWDBydmIwTExrd2dDdw?oc=5",
+            "published_at": "2026-10-25T22:59:14Z",
+            "dominio": "24-horas.mx",
+            "edicion": "mx"
+          }
+        ]
+      }
     }
   }
 }
