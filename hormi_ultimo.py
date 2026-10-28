@@ -92,7 +92,7 @@ def actualizar(config, solo=None):
             try:
                 tid = next((t.get("team_id") for t in player["targets"] if t["key"] == mejor.get("team_key")), None)
                 res = ha.api("/fixtures/players", {"fixture": mejor["fixture_id"]})
-                st = ha.stats_jugador(res, player.get("player_id"), tid) if res else None
+                st = ha.stats_jugador(res, player.get("player_id"), tid, player["key"]) if res else None
                 mejor = dict(mejor, stats=st) if st else dict(mejor, sin_stats=True)
             except Exception as err:
                 hh.log(f"⚠️  {player['name']}: no se pudo leer la calificación del último partido — {err}")

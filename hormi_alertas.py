@@ -1507,8 +1507,9 @@ def _num(v):
         return None
 
 
-def stats_jugador(res, pid, team_id):
-    """Números de UN jugador en /fixtures/players: {"rating": 7.8, "tiros": 4, ...} (solo lo que trae la API)."""
+def stats_jugador(res, pid, team_id, clave=None):
+    """Números de UN jugador en /fixtures/players: {"rating": 7.8, "tiros": 4, ...} (solo lo que trae la API), más
+    "calif_legion": nuestra propia calificación por posición (hormi_calif_legion.py)."""
     mios, ratings_equipo = None, []
     for t in res or []:
         for pl in t.get("players") or []:
@@ -1548,6 +1549,14 @@ def stats_jugador(res, pid, team_id):
         out["atajadas"] = go["saves"]
     if ratings_equipo and r >= max(ratings_equipo) and len(ratings_equipo) > 3:
         out["mejor_equipo"] = True
+    try:
+        import hormi_calif_legion as CL
+        rol = CL.ROL_JUGADOR.get(clave) or CL.rol_de_api((mios.get("games") or {}).get("position"))
+        cl = CL.para_jugador(res, pid, team_id, rol)
+        if cl is not None:
+            out["calif_legion"] = cl
+    except Exception as err:
+        log(f"⚠️  calificación Legión: {err}")
     if len(ratings_equipo) > 3:
         # Lugar de su calificación en su equipo (1 = el mejor). Empates cuentan a su favor.
         out["lugar_equipo"] = 1 + sum(1 for x in ratings_equipo if x > r)
@@ -1592,7 +1601,7 @@ def procesar_calificaciones(pend, hechas, config, fcm, notifier=None):
         res = api("/fixtures/players", {"fixture": fid})
         listos = []
         for k, it in items:
-            st = stats_jugador(res, it["pid"], it["team_id"]) if res else None
+            st = stats_jugador(res, it["pid"], it["team_id"], it.get("player")) if res else None
             if not st:
                 it["intento"] = now_iso()
                 continue

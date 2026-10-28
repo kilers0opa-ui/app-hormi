@@ -29,6 +29,8 @@ def plano(st):
             for k, v in vals.items():
                 if v is not None and not isinstance(v, (dict, list)):
                     out[f"{grupo}_{k}"] = v
+        elif vals is not None and not isinstance(vals, list):
+            out[grupo] = vals   # p. ej. "offsides"
     return out
 
 

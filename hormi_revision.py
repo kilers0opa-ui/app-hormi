@@ -157,7 +157,7 @@ def main():
         if u.get("stats") and not u["stats"].get("calif_fija") and (ya_asento or u.get("stats_v") != 2):
             tid = next((t.get("team_id") for t in p.get("targets") or [] if t.get("key") == u.get("team_key")), None)
             res = ha.api("/fixtures/players", {"fixture": u["fixture_id"]})
-            st = ha.stats_jugador(res, p.get("player_id"), tid) if res else None
+            st = ha.stats_jugador(res, p.get("player_id"), tid, p["key"]) if res else None
             if st:
                 if ya_asento:
                     st["calif_fija"] = True
