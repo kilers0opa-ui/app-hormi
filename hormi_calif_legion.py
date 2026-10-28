@@ -178,17 +178,21 @@ def calcular(s, rol, ctx=None):
 
 
 def _marcador(res, team_id):
-    """(goles a favor, goles en contra) de team_id según los goles recibidos por cada portero en /fixtures/players."""
-    favor = contra = 0
+    """(goles a favor, goles en contra) de team_id con /fixtures/players. La fuente a veces NO llena los goles
+    recibidos del portero (Genoa 2-0 Juventus: el de la Juve venía en 0 y salía "empate"), así que se toma el mayor
+    entre lo que recibió cada portero y la suma de los goles de los jugadores de cada equipo."""
+    rec = {}
+    marc = {}
     for t in res or []:
-        propio = (t.get("team") or {}).get("id") == team_id
+        tid = (t.get("team") or {}).get("id")
         for pl in t.get("players") or []:
             st = (pl.get("statistics") or [{}])[0]
             if ((st.get("games") or {}).get("position") or "") == "G":
-                if propio:
-                    contra += _g(st, "goals", "conceded")
-                else:
-                    favor += _g(st, "goals", "conceded")
+                rec[tid] = rec.get(tid, 0) + _g(st, "goals", "conceded")
+            marc[tid] = marc.get(tid, 0) + _g(st, "goals", "total")
+    rival = next((t for t in set(rec) | set(marc) if t != team_id), None)
+    favor = max(rec.get(rival, 0), marc.get(team_id, 0))
+    contra = max(rec.get(team_id, 0), marc.get(rival, 0))
     return favor, contra
 
 
