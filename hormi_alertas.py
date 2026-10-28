@@ -1508,24 +1508,32 @@ def _num(v):
 
 
 def stats_jugador(res, pid, team_id, clave=None):
-    """Números de UN jugador en /fixtures/players: {"rating": 7.8, "tiros": 4, ...} (solo lo que trae la API), más
-    "calif_legion": nuestra propia calificación por posición (hormi_calif_legion.py)."""
-    mios, ratings_equipo = None, []
+    """Números de UN jugador en /fixtures/players: {"rating": 7.8, "tiros": 4, ...}.
+    "rating" es la CALIFICACIÓN LEGIÓN MX (fórmula propia por posición, hormi_calif_legion.py); la de la API queda
+    en "rating_api" solo para comparar. El lugar en su equipo y "mejor_equipo" también son con la nuestra.
+    "pesos": lo que más pesó en su calificación (para Detalles)."""
+    import hormi_calif_legion as CL
+    mios = None
     for t in res or []:
         for pl in t.get("players") or []:
-            st = (pl.get("statistics") or [{}])[0]
-            r = _num((st.get("games") or {}).get("rating"))
-            if t.get("team", {}).get("id") == team_id and r and (st.get("games") or {}).get("minutes"):
-                ratings_equipo.append(r)
             if pl["player"]["id"] == pid:
-                mios = st
+                mios = (pl.get("statistics") or [{}])[0]
     if not mios:
         return None
-    r = _num((mios.get("games") or {}).get("rating"))
+    r_api = _num((mios.get("games") or {}).get("rating"))
+    rol = CL.ROL_JUGADOR.get(clave) or CL.rol_de_api((mios.get("games") or {}).get("position"))
+    try:
+        todas = CL.todas(res, {pid: rol})
+    except Exception as err:
+        log(f"⚠️  calificación Legión: {err}")
+        todas = {}
+    r = (todas.get(pid) or (None, None))[1] or (round(r_api, 1) if r_api else None)
     if not r:
         return None
     sh, pa, du, dr, ta, go = (mios.get(x) or {} for x in ("shots", "passes", "duels", "dribbles", "tackles", "goals"))
-    out = {"rating": round(r, 1)}
+    out = {"rating": r}
+    if r_api:
+        out["rating_api"] = round(r_api, 1)
     if sh.get("total") is not None:
         out["tiros"] = sh["total"]
         if sh.get("on") is not None:
@@ -1547,20 +1555,18 @@ def stats_jugador(res, pid, team_id, clave=None):
         out["recuperaciones"] = rec
     if go.get("saves"):
         out["atajadas"] = go["saves"]
-    if ratings_equipo and r >= max(ratings_equipo) and len(ratings_equipo) > 3:
-        out["mejor_equipo"] = True
+    # Lugar en su equipo con NUESTRA calificación (empates a su favor).
+    equipo = [v for (tid, v) in todas.values() if tid == team_id]
+    if len(equipo) > 3 and pid in todas:
+        out["lugar_equipo"] = 1 + sum(1 for x in equipo if x > r)
+        out["de_equipo"] = len(equipo)
+        if out["lugar_equipo"] == 1:
+            out["mejor_equipo"] = True
     try:
-        import hormi_calif_legion as CL
-        rol = CL.ROL_JUGADOR.get(clave) or CL.rol_de_api((mios.get("games") or {}).get("position"))
-        cl = CL.para_jugador(res, pid, team_id, rol)
-        if cl is not None:
-            out["calif_legion"] = cl
+        f, c = CL._marcador(res, team_id)
+        out["pesos"] = CL.explicar(mios, rol, {"goles_favor": f, "goles_contra": c})
     except Exception as err:
-        log(f"⚠️  calificación Legión: {err}")
-    if len(ratings_equipo) > 3:
-        # Lugar de su calificación en su equipo (1 = el mejor). Empates cuentan a su favor.
-        out["lugar_equipo"] = 1 + sum(1 for x in ratings_equipo if x > r)
-        out["de_equipo"] = len(ratings_equipo)
+        log(f"⚠️  explicación de la calificación: {err}")
     return out
 
 

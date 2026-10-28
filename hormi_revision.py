@@ -144,7 +144,9 @@ def main():
             reciente = u.get("fixture_id") and datetime.fromisoformat(u["kickoff"]) >= datetime.now(ha.LOCAL_TZ) - timedelta(hours=30)
         except Exception:
             reciente = False
-        if not reciente or p["key"] in archivados:
+        # Una sola vez: los partidos guardados antes de la Calificación Legión MX se recalculan con la nuestra.
+        migrar = bool(u.get("stats")) and "rating_api" not in u["stats"] and bool(u.get("fixture_id"))
+        if (not reciente and not migrar) or p["key"] in archivados:
             continue
         antes_t = dict(u.get("tarjeta") or {})
         # Calificación DEFINITIVA: la fuente publica una provisional al final y la recalcula en las horas siguientes.
@@ -154,18 +156,23 @@ def main():
             ya_asento = datetime.now(ha.LOCAL_TZ) >= datetime.fromisoformat(u["kickoff"]) + timedelta(hours=5)
         except Exception:
             ya_asento = False
-        if u.get("stats") and not u["stats"].get("calif_fija") and (ya_asento or u.get("stats_v") != 2):
+        if migrar or (u.get("stats") and not u["stats"].get("calif_fija") and (ya_asento or u.get("stats_v") != 2)):
             tid = next((t.get("team_id") for t in p.get("targets") or [] if t.get("key") == u.get("team_key")), None)
             res = ha.api("/fixtures/players", {"fixture": u["fixture_id"]})
             st = ha.stats_jugador(res, p.get("player_id"), tid, p["key"]) if res else None
             if st:
-                if ya_asento:
+                if ya_asento or u["stats"].get("calif_fija"):
                     st["calif_fija"] = True
                 antes = (u.get("stats") or {}).get("rating")
                 u["stats"], u["stats_v"] = st, 2
                 cambios += 1
                 ha.log(f"📊 {p['key']}: estadísticas del partido{' (calificación fija)' if ya_asento else ''} · "
                        f"calif. {antes} → {st.get('rating')}")
+            elif migrar:
+                u["stats"]["rating_api"] = None   # liga sin números por jugador: no se vuelve a intentar
+                cambios += 1
+        if not reciente:
+            continue
         try:
             ha.tarjeta_partido_para(p, u, dict(u))
         except Exception as err:

@@ -97,7 +97,14 @@ def recolectar(config, ini, fin):
                     g = (linea.get("goals") or {}).get("total") or 0
                     a = (linea.get("goals") or {}).get("assists") or 0
                     mins = linea["games"]["minutes"]
-                    rating = ha._num((linea.get("games") or {}).get("rating"))
+                    # Calificación Legión MX (la nuestra); si no se puede calcular, la de la API.
+                    try:
+                        import hormi_calif_legion as CL
+                        rating = CL.para_pid(res, pid, CL.ROL_JUGADOR.get(p["key"]) or CL.rol_de_api(
+                            (linea.get("games") or {}).get("position")))
+                    except Exception:
+                        rating = None
+                    rating = rating or ha._num((linea.get("games") or {}).get("rating"))
                 else:
                     inv = hh._fixture_involvement(pid, fx)   # liga sin números por jugador: eventos + alineación
                     if not inv:

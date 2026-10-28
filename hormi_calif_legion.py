@@ -177,6 +177,101 @@ def calcular(s, rol, ctx=None):
     return round(max(3.0, min(10.0, MEDIA + (bruta - m) * DISPERSION / (sd or DISPERSION))), 1)
 
 
+def _marcador(res, team_id):
+    """(goles a favor, goles en contra) de team_id según los goles recibidos por cada portero en /fixtures/players."""
+    favor = contra = 0
+    for t in res or []:
+        propio = (t.get("team") or {}).get("id") == team_id
+        for pl in t.get("players") or []:
+            st = (pl.get("statistics") or [{}])[0]
+            if ((st.get("games") or {}).get("position") or "") == "G":
+                if propio:
+                    contra += _g(st, "goals", "conceded")
+                else:
+                    favor += _g(st, "goals", "conceded")
+    return favor, contra
+
+
+def todas(res, roles=None):
+    """{player_id: (team_id, calificación)} de TODOS los que jugaron en el partido. roles: {player_id: rol} para
+    los nuestros (los demás, por su posición en la API)."""
+    roles = roles or {}
+    out = {}
+    marc = {}
+    for t in res or []:
+        tid = (t.get("team") or {}).get("id")
+        if tid not in marc:
+            marc[tid] = _marcador(res, tid)
+        f, c = marc[tid]
+        for pl in t.get("players") or []:
+            pid = (pl.get("player") or {}).get("id")
+            st = (pl.get("statistics") or [{}])[0]
+            rol = roles.get(pid) or rol_de_api((st.get("games") or {}).get("position"))
+            v = calcular(st, rol, {"goles_favor": f, "goles_contra": c})
+            if v is not None:
+                out[pid] = (tid, v)
+    return out
+
+
+def _plural(n, uno, varios):
+    n = int(n)
+    return f"{n} {uno if n == 1 else varios}"
+
+
+def explicar(s, rol, ctx=None, cuantos=3):
+    """Lo que más pesó en su calificación: [{"txt": "7 de 7 duelos ganados", "pts": 0.49}, ...] (de mayor a menor
+    efecto, a favor o en contra). Junta duelos ganados/perdidos, regates y pases en una sola línea cada uno."""
+    partes = dict()
+    for k, v in desglose(s, rol, ctx):
+        partes[k] = partes.get(k, 0) + v
+    def junta(nuevo, *viejos):
+        tot = sum(partes.pop(k, 0) for k in viejos)
+        if tot:
+            partes[nuevo] = tot
+    junta("duelos", "duelos ganados", "duelos perdidos")
+    junta("regates", "regates", "regates perdidos")
+    junta("pases", "precisión de pases", "volumen de pases")
+    junta("tiros", "tiros a puerta", "tiros fuera")
+    du, dug = _g(s, "duels", "total"), _g(s, "duels", "won")
+    rg, rgo = _g(s, "dribbles", "attempts"), _g(s, "dribbles", "success")
+    pt, pa = _g(s, "passes", "total"), _g(s, "passes", "accuracy")
+    pct = int(round(pa / pt * 100 if pa <= pt else pa)) if pt else 0
+    tiros, puerta = _g(s, "shots", "total"), _g(s, "shots", "on")
+    f, c = (ctx or {}).get("goles_favor"), (ctx or {}).get("goles_contra")
+    textos = {
+        "goles": _plural(_g(s, "goals", "total"), "gol", "goles"),
+        "asistencias": _plural(_g(s, "goals", "assists"), "asistencia", "asistencias"),
+        "pases clave": _plural(_g(s, "passes", "key"), "pase clave", "pases clave"),
+        "tiros": f"{int(puerta)} de {int(tiros)} tiros a puerta",
+        "regates": f"{int(rgo)} de {int(rg)} regates",
+        "duelos": f"{int(dug)} de {int(du)} duelos ganados",
+        "entradas": _plural(_g(s, "tackles", "total"), "entrada", "entradas"),
+        "intercepciones": _plural(_g(s, "tackles", "interceptions"), "intercepción", "intercepciones"),
+        "bloqueos": _plural(_g(s, "tackles", "blocks"), "tiro bloqueado", "tiros bloqueados"),
+        "lo regatearon": f"Lo regatearon {_plural(_g(s, 'dribbles', 'past'), 'vez', 'veces')}",
+        "faltas recibidas": _plural(_g(s, "fouls", "drawn"), "falta recibida", "faltas recibidas"),
+        "faltas cometidas": _plural(_g(s, "fouls", "committed"), "falta cometida", "faltas cometidas"),
+        "fueras de lugar": _plural(_g(s, "offsides"), "fuera de lugar", "fueras de lugar"),
+        "amarilla": "Tarjeta amarilla", "roja": "Tarjeta roja",
+        "penal ganado": "Penal provocado", "penal cometido": "Penal cometido", "penal fallado": "Penal fallado",
+        "atajadas": _plural(_g(s, "goals", "saves"), "atajada", "atajadas"), "penal atajado": "Penal atajado",
+        "pases": f"{pct}% de pases buenos ({int(pt)})",
+        "resultado": "Victoria" if (f or 0) > (c or 0) else "Derrota",
+        "goles recibidos": f"Su equipo recibió {_plural(c or 0, 'gol', 'goles')}",
+        "portería en cero": "Portería en cero",
+    }
+    orden = sorted(partes.items(), key=lambda kv: -abs(kv[1]))
+    return [{"txt": textos.get(k, k), "pts": round(v, 2)} for k, v in orden if abs(v) >= 0.05][:cuantos]
+
+
+def para_pid(res, pid, rol):
+    """Como para_jugador, pero encuentra solo su equipo."""
+    for t in res or []:
+        if any((pl.get("player") or {}).get("id") == pid for pl in t.get("players") or []):
+            return para_jugador(res, pid, (t.get("team") or {}).get("id"), rol)
+    return None
+
+
 def para_jugador(res, pid, team_id, rol):
     """Desde la respuesta completa de /fixtures/players: la calificación de un jugador. El marcador se saca de los
     goles recibidos por cada portero (el del rival = goles a favor)."""

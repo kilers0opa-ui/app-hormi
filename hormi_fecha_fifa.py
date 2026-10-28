@@ -93,10 +93,16 @@ def main():
                         s = (pl.get("statistics") or [{}])[0]
                         gm = s.get("games") or {}
                         gl = s.get("goals") or {}
+                        try:   # Calificación Legión MX (la nuestra); si no se puede, la de la API.
+                            import hormi_calif_legion as CL
+                            nuestra = CL.calcular(s, CL.ROL_JUGADOR.get(key) or CL.rol_de_api(gm.get("position")),
+                                                  {"goles_favor": item["goles_mx"], "goles_contra": item["goles_rival"]})
+                        except Exception:
+                            nuestra = None
                         item["jugadores"][key] = {
                             "min": gm.get("minutes") or 0, "titular": gm.get("substitute") is False,
                             "goles": gl.get("total") or 0, "asist": gl.get("assists") or 0,
-                            "rating": gm.get("rating"),
+                            "rating": nuestra or gm.get("rating"),
                         }
             partidos.append(item)
         out["partidos"] = partidos
