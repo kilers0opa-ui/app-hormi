@@ -739,7 +739,14 @@ def rival_del_gol(key, player_key):
         return None
 
 
-def send_video_push(config, player, video, team_key):
+def sin_video_en(video, st):
+    """Países donde NO hay forma de ver este video (bloqueado y sin alternativa): la app de quien esté ahí no
+    muestra el aviso "Ya está el video..." (las versiones viejas de la app lo ignoran y lo muestran)."""
+    alts = (st or {}).get("alternativos") or {}
+    return ",".join(r for r in (video.get("bloqueado_en") or []) if r not in alts)
+
+
+def send_video_push(config, player, video, team_key, st=None):
     """Segunda notificación: 'Ya está el video del gol de X'. Va por ntfy y por
     FCM (como tipo 'info', así la app NO vuelve a abrir la pantalla de
     ¡GOOOOL!). Cualquier fallo aquí se registra y se ignora."""
@@ -756,7 +763,7 @@ def send_video_push(config, player, video, team_key):
         if config.get("ntfy_topic"):
             ha.Notifier(config["ntfy_topic"]).send(title, message, 3)
         fcm = ha.FcmSender(config.get("fcm_project_id"))
-        fcm.send("video", title, message, player["key"], team_key)
+        fcm.send("video", title, message, player["key"], team_key, extra={"sin_video_en": sin_video_en(video, st)})
     except Exception as err:
         log(f"     ⚠️  fallo enviando la notificación del video: {err}")
 
@@ -909,7 +916,7 @@ def send_summary_push(config, players, video, st):
         try:
             if notifier:
                 notifier.send(title, message, 3)
-            fcm.send("video", title, message, pk, j.get("team_key"))
+            fcm.send("video", title, message, pk, j.get("team_key"), extra={"sin_video_en": sin_video_en(video, st)})
         except Exception as err:
             log(f"     ⚠️  fallo enviando la notificación del resumen ({pk}): {err}")
     if seleccion:
@@ -922,7 +929,8 @@ def send_summary_push(config, players, video, st):
             if notifier:
                 notifier.send(title_all, message, 3)
             fcm.send("video", title_all, message, None, "seleccion", [x["key"] for x in seleccion],
-                     extra={"grupo": ha._payload_grupo(g, seleccion, title_all, message)})
+                     extra={"grupo": ha._payload_grupo(g, seleccion, title_all, message),
+                            "sin_video_en": sin_video_en(video, st)})
         except Exception as err:
             log(f"     ⚠️  fallo enviando la notificación unificada del resumen: {err}")
 
@@ -1268,7 +1276,7 @@ def _goals_step(out, config, settings, sources, notify, now):
                                lambda e, tk=tokens, rp=rival_pref: mentions_player(e, tk) and alt_gol_ok(e, tk, rp, settings, _oficial(e)),
                                f"{full} gol", since, settings, cuota, used)
             if notify and not st.get("silencioso"):
-                send_video_push(config, player, video, st.get("team_key"))
+                send_video_push(config, player, video, st.get("team_key"), st)
         elif when == "final":
             st["status"], st["motivo"] = "omitido", "sin video tras los intentos"
             log("     ⏭️  sin video tras el último intento — se omite")
