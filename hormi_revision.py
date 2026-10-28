@@ -145,7 +145,10 @@ def main():
         except Exception:
             reciente = False
         # Una sola vez: los partidos guardados antes de la Calificación Legión MX se recalculan con la nuestra.
-        migrar = bool(u.get("stats")) and "rating_api" not in u["stats"] and bool(u.get("fixture_id"))
+        # (También los que no tenían calificación porque la API no la publicó: la nuestra sí se puede calcular.)
+        migrar = bool(u.get("fixture_id")) and (
+            (bool(u.get("stats")) and "rating_api" not in u["stats"])
+            or (not u.get("stats") and (u.get("minutes") or 0) > 0 and not u.get("calif_reintento")))
         if (not reciente and not migrar) or p["key"] in archivados:
             continue
         antes_t = dict(u.get("tarjeta") or {})
@@ -156,12 +159,14 @@ def main():
             ya_asento = datetime.now(ha.LOCAL_TZ) >= datetime.fromisoformat(u["kickoff"]) + timedelta(hours=5)
         except Exception:
             ya_asento = False
+        if migrar and not u.get("stats"):
+            u["calif_reintento"] = True
         if migrar or (u.get("stats") and not u["stats"].get("calif_fija") and (ya_asento or u.get("stats_v") != 2)):
             tid = next((t.get("team_id") for t in p.get("targets") or [] if t.get("key") == u.get("team_key")), None)
             res = ha.api("/fixtures/players", {"fixture": u["fixture_id"]})
             st = ha.stats_jugador(res, p.get("player_id"), tid, p["key"]) if res else None
             if st:
-                if ya_asento or u["stats"].get("calif_fija"):
+                if ya_asento or (u.get("stats") or {}).get("calif_fija"):
                     st["calif_fija"] = True
                 antes = (u.get("stats") or {}).get("rating")
                 u["stats"], u["stats_v"] = st, 2
@@ -169,7 +174,8 @@ def main():
                 ha.log(f"📊 {p['key']}: estadísticas del partido{' (calificación fija)' if ya_asento else ''} · "
                        f"calif. {antes} → {st.get('rating')}")
             elif migrar:
-                u["stats"]["rating_api"] = None   # liga sin números por jugador: no se vuelve a intentar
+                if u.get("stats"):
+                    u["stats"]["rating_api"] = None   # liga sin números por jugador: no se vuelve a intentar
                 cambios += 1
         if not reciente:
             continue
