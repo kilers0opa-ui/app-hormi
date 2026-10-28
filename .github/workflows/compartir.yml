@@ -1,0 +1,44 @@
+name: Imagenes para compartir estadisticas - App Hormi
+
+# hormi_compartir.py: tarjetas/<jugador>_temporada.jpg y _carrera.jpg + compartir.json (botón "Compartir" en
+# Estadísticas). No gasta API: usa player_stats.json y team_standings.json. Solo rehace la imagen del jugador
+# cuyos datos cambiaron.
+on:
+  schedule:
+    - cron: "25 */2 * * *"   # cada 2 h (al :25)
+  workflow_dispatch:
+    inputs:
+      forzar:
+        description: "Rehacer todas aunque no hayan cambiado"
+        type: boolean
+        default: false
+
+concurrency:
+  group: hormi-compartir
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  compartir:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6.1.0
+        with:
+          ref: main
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6.3.0
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Generar imágenes
+        run: python hormi_compartir.py ${{ inputs.forzar && '--forzar' || '' }}
+      - name: Subir resultado
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name "app-hormi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add compartir.json tarjetas/*_temporada.jpg tarjetas/*_carrera.jpg 2>/dev/null || true
+          git commit -m "chore: imágenes para compartir [skip ci]" || exit 0
+          for i in 1 2 3 4; do git pull --rebase origin main && git push && break; sleep 5; done
