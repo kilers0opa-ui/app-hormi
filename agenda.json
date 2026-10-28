@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T00:02:22.160223-06:00",
+  "updated_at": "2026-10-28T09:20:14.952938-06:00",
   "desde": "2026-10-26",
   "hasta": "2026-11-04",
   "partidos": [
@@ -83,9 +83,9 @@
       "away_logo": "https://media.api-sports.io/football/teams/553.png",
       "league": "Copa de Grecia",
       "league_logo": "https://media.api-sports.io/football/leagues/199.png",
-      "status": "NS",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "FT",
+      "home_goals": 0,
+      "away_goals": 2,
       "penales": null,
       "jugadores": [
         {
@@ -115,29 +115,6 @@
           "key": "vasquez",
           "team_key": "genoa",
           "lado": "L"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1644363,
-      "kickoff": "2026-10-28T14:00:00-06:00",
-      "home": "Navalcarnero",
-      "away": "Real Betis",
-      "home_id": 5271,
-      "away_id": 543,
-      "home_logo": "https://media.api-sports.io/football/teams/5271.png",
-      "away_logo": "https://media.api-sports.io/football/teams/543.png",
-      "league": "Copa del Rey",
-      "league_logo": "https://media.api-sports.io/football/leagues/143.png",
-      "status": "NS",
-      "home_goals": null,
-      "away_goals": null,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "fidalgo",
-          "team_key": "betis",
-          "lado": "V"
         }
       ]
     },
