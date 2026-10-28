@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T02:35:28.309448-06:00",
+  "updated_at": "2026-10-28T10:05:34.227769-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -10,13 +10,13 @@
           "en_racha": false,
           "puntos": [
             false,
-            true,
-            false,
-            false,
-            false,
             false,
             true,
-            false
+            false,
+            false,
+            false,
+            false,
+            true
           ]
         },
         {
@@ -26,43 +26,43 @@
           "en_racha": false,
           "puntos": [
             false,
-            true,
-            false,
-            false,
-            false,
             false,
             true,
-            false
+            false,
+            false,
+            false,
+            false,
+            true
           ]
         },
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
-            true,
-            false,
-            false,
-            false,
-            false,
             false,
             true,
+            false,
+            false,
+            false,
+            false,
+            false,
             true
           ]
         },
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 4,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
+            false,
             true,
             true,
             true,
             true,
             false,
-            true,
             true,
             true
           ]
