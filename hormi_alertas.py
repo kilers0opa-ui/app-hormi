@@ -2303,6 +2303,12 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     # Partido del club en curso pero SIN alineación publicada (amistosos): no se sabe si el jugador
     # participa. La tarjeta de Inicio sigue mostrando el partido (como próximo/de hoy) en lugar de
     # desaparecer con "Sin partido programado", sin afirmar que está jugando.
+    # Terminó sin alineación publicada y sin ningún evento del jugador (gol, asistencia, cambio): no se sabe si
+    # estuvo, así que no se muestra como su partido (ni "Último partido"); la tarjeta pasa a su próximo partido.
+    if (snap["fixture"]["status"]["short"] in FINISHED and not snap.get("lineups")
+            and not info.get("summary") and not info.get("goals") and not info.get("assists")
+            and not any(e.get("mio") for e in info.get("eventos") or [])):
+        status_out[key] = _next_match_status(target, entry, player["key"])
     if info.get("status") == "sin_alineacion":
         vivo = status_out.get(key) or {}
         status_out[key] = _next_match_status(target, entry, player["key"], en_curso=True)
