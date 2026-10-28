@@ -656,7 +656,8 @@ def build_for_player(player, overrides):
     out = {}
     for ed_key, ed in EDICIONES.items():
         log(f"   📰 noticias {ed['pais']} · {query!r}")
-        items = fetch_news(query, edicion=ed)
+        # España: más resultados, porque esa edición trae muchos medios mexicanos y solo cuentan los de España.
+        items = fetch_news(query, limit=40 if ed_key == "es" else 15, edicion=ed)
         if items is not None:
             out[ed_key] = [dict(n, edicion=ed_key) for n in items]
     local = overrides.get("edicion_local") or EDICION_LOCAL.get(club_key(player) or "")
@@ -691,7 +692,7 @@ MEDIOS_ES = {"as.com", "mundodeportivo.com", "sport.es", "relevo.com", "elmundo.
              "cadenaser.com", "cope.es", "superdeporte.es", "defensacentral.com", "elconfidencial.com", "besoccer.com",
              "diariodesevilla.es", "elcorreoweb.es", "eldiario.es", "larazon.es", "elespanol.com", "okdiario.com",
              "elperiodico.com", "lasprovincias.es", "elcomercio.es", "diariovasco.com", "football-espana.net",
-             "fichajes.net", "diarioas.com", "rtve.es", "antena3.com", "telecinco.es", "lasexta.com", "goal.com"}
+             "fichajes.net", "diarioas.com", "rtve.es", "antena3.com", "telecinco.es", "lasexta.com"}
 NOMBRES_ES = {"as", "mundo deportivo", "sport", "relevo", "el mundo", "el país", "el pais", "eldesmarque",
               "estadio deportivo", "abc", "la vanguardia", "20minutos", "europa press", "cadena ser", "cope",
               "superdeporte", "defensa central", "el confidencial", "besoccer", "diario de sevilla", "rtve"}
