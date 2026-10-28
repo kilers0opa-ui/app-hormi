@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T09:30:12.159008-06:00",
+  "updated_at": "2026-10-28T09:45:23.366614-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -1787,18 +1787,6 @@
             "minutes": 320
           },
           {
-            "league_id": 48,
-            "league_name": "League Cup",
-            "league_logo": "https://media.api-sports.io/football/leagues/48.png",
-            "team_id": 39,
-            "team_name": "Wolves",
-            "team_logo": "https://media.api-sports.io/football/teams/39.png",
-            "played": 3,
-            "goals": 0,
-            "assists": 0,
-            "minutes": 85
-          },
-          {
             "league_id": 10,
             "league_name": "Friendlies",
             "league_logo": "https://media.api-sports.io/football/leagues/10.png",
@@ -1821,6 +1809,18 @@
             "goals": 3,
             "assists": 1,
             "minutes": 350
+          },
+          {
+            "league_id": 48,
+            "league_name": "League Cup",
+            "league_logo": "https://media.api-sports.io/football/leagues/48.png",
+            "team_id": 39,
+            "team_name": "Wolves",
+            "team_logo": "https://media.api-sports.io/football/teams/39.png",
+            "played": 3,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 85
           }
         ]
       },
@@ -3630,18 +3630,6 @@
             "minutes": 202
           },
           {
-            "league_id": 307,
-            "league_name": "Pro League",
-            "league_logo": "https://media.api-sports.io/football/leagues/307.png",
-            "team_id": 2933,
-            "team_name": "Al-Qadisiyah FC",
-            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
-            "played": 10,
-            "goals": 5,
-            "assists": 3,
-            "minutes": 900
-          },
-          {
             "league_id": 17,
             "league_name": "AFC Champions League Elite",
             "league_logo": "https://media.api-sports.io/football/leagues/17.png",
@@ -3652,6 +3640,18 @@
             "goals": 2,
             "assists": 0,
             "minutes": 264
+          },
+          {
+            "league_id": 307,
+            "league_name": "Pro League",
+            "league_logo": "https://media.api-sports.io/football/leagues/307.png",
+            "team_id": 2933,
+            "team_name": "Al-Qadisiyah FC",
+            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
+            "played": 10,
+            "goals": 5,
+            "assists": 3,
+            "minutes": 906
           },
           {
             "league_id": 826,
