@@ -152,16 +152,12 @@ def main():
         if (not reciente and not migrar) or p["key"] in archivados:
             continue
         antes_t = dict(u.get("tarjeta") or {})
-        # Calificación DEFINITIVA: la fuente publica una provisional al final y la recalcula en las horas siguientes.
-        # Desde 3 h después del final (~5 h después del inicio) se lee UNA vez más y queda fija para siempre
-        # (Inicio, Estadísticas y la tarjeta). 1 petición por partido.
-        try:
-            ya_asento = datetime.now(ha.LOCAL_TZ) >= datetime.fromisoformat(u["kickoff"]) + timedelta(hours=5)
-        except Exception:
-            ya_asento = False
+        # La calificación se fija con la PRIMERA que se calcula al terminar el partido (ya no se espera a que la fuente
+        # corrija). Solo se vuelven a leer los partidos guardados con la versión anterior (una vez).
+        ya_asento = False
         if migrar and not u.get("stats"):
             u["calif_reintento"] = True
-        if migrar or (u.get("stats") and not u["stats"].get("calif_fija") and (ya_asento or u.get("stats_v") != 2)):
+        if migrar or (u.get("stats") and not u["stats"].get("calif_fija") and u.get("stats_v") != 2):
             tid = next((t.get("team_id") for t in p.get("targets") or [] if t.get("key") == u.get("team_key")), None)
             res = ha.api("/fixtures/players", {"fixture": u["fixture_id"]})
             st = ha.stats_jugador(res, p.get("player_id"), tid, p["key"]) if res else None

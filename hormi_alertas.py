@@ -1531,7 +1531,9 @@ def stats_jugador(res, pid, team_id, clave=None):
     if not r:
         return None
     sh, pa, du, dr, ta, go = (mios.get(x) or {} for x in ("shots", "passes", "duels", "dribbles", "tackles", "goals"))
-    out = {"rating": r}
+    # La primera calificación que se calcula al terminar el partido es la definitiva: no se vuelve a mover (así la
+    # tarjeta que alguien compartió temprano y la que se ve después dicen lo mismo).
+    out = {"rating": r, "calif_fija": True}
     if r_api:
         out["rating_api"] = round(r_api, 1)
     if sh.get("total") is not None:
