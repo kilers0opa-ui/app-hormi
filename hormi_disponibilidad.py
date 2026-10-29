@@ -338,6 +338,17 @@ def main():
         for key, a in antes.items():
             if key not in out["players"] and key not in archivados and a.get("estado") in ("lesion", "suspension"):
                 p = next((x for x in config["players"] if x["key"] == key), None)
+                # Si ya salió en una alineación (titular o banca) después de la baja, el aviso de alineación ya
+                # dijo que regresó: "ya está disponible" después del partido no tiene sentido.
+                # Referencia: cuándo se puso la baja (a mano) o el partido que se iba a perder (de la API).
+                desde_b = a.get("desde") or a.get("kickoff") or ""
+                u = ((stats.get("players") or {}).get(key) or {}).get("ultimo_partido") or {}
+                ya_volvio = bool(desde_b) and (((u.get("minutes") or 0) > 0 and (u.get("kickoff") or "") >= desde_b) or any(
+                    t.get("status") in ("titular", "banca", "en_cancha") and (t.get("kickoff") or "") >= desde_b
+                    for t in ((status.get(key) or {}).get("targets") or {}).values()))
+                if p and ya_volvio:
+                    ha.log(f"{key}: ya volvió a una alineación — sin aviso de 'ya está disponible'")
+                    continue
                 if p:
                     avisos.append((key, a.get("team_key"), f"✅ {ha.display_name(p)} ya está disponible",
                                    "Ya no aparece en la lista de bajas de su próximo partido"))

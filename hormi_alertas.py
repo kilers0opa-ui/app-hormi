@@ -878,6 +878,14 @@ def analyze(data, player, target):
         add(key, title, message, -1 if tarde_ev else priority)
 
     if status in CANCELLED:
+        # La API a veces marca "pospuesto" un partido que SÍ se juega (Porto–Académico Viseu, 28 oct: "PST" a la
+        # hora del inicio y se jugó normal). No se le cree a la primera: hasta 45 min después de la hora de inicio
+        # no se avisa ni se quita la tarjeta (se sigue revisando); si después de eso sigue igual, se avisa.
+        ts = fx.get("timestamp")
+        if ts and time.time() < ts + CANCELADO_CONFIRMA_MIN * 60:
+            log(f"   ⏳ {match}: la API dice {status} — se confirma más tarde (puede ser un error de la API)")
+            return alerts, {"status": "sin_partido", "match": match, "league": league,
+                            "score": score(), "goals": 0, "assists": 0, "summary": None}
         add("cancelado", f"⚠️ {label} ({nombre}): partido suspendido/pospuesto",
             f"{match} · {fx['status']['long']}")
         return alerts, {"status": "cancelado", "match": match, "league": league,
@@ -909,11 +917,17 @@ def analyze(data, player, target):
     elapsed = (fx["status"].get("elapsed") or 0)
     tarde = status in FINISHED or (status in LIVE and elapsed > 10)
     if data.get("lineups") and not banca_pendiente and not tarde:
+        # Si tenía baja (lesión/suspensión), el aviso de alineación es el momento de decir que ya regresó (antes
+        # el "ya está disponible" llegaba hasta que terminaba el partido; ahora ya no se manda aparte).
+        regreso = ""
+        baja = ((load_json(Path("disponibilidad.json"), {}) or {}).get("players") or {}).get(player["key"]) or {}
+        if role in ("titular", "banca") and baja.get("estado") in ("lesion", "suspension"):
+            regreso = "\n✅ Regresa tras su " + ("lesión" if baja["estado"] == "lesion" else "suspensión")
         if role == "titular":
-            add("alineacion", f"⭐ ¡{nombre} titular con {label}!", f"{match} · {league}", 4)
+            add("alineacion", f"⭐ ¡{nombre} titular con {label}!", f"{match} · {league}{regreso}", 4)
         elif role == "banca":
             add("alineacion", f"🪑 {nombre} arranca en la banca ({label})",
-                f"{match} · {league}")
+                f"{match} · {league}{regreso}")
         else:
             add("alineacion", f"❌ {nombre} no convocado ({label})",
                 f"{match} · {league}", 2)
@@ -1401,6 +1415,8 @@ LIVE_TOPIC = "hormi_live_v1"
 # Avisos que la app muestra a SU hora local ("Juega mañana", resumen semanal): solo los reciben las versiones de la
 # app que saben programarlos (se suscriben a este tema). Las versiones viejas no reciben esos avisos.
 LOCAL_TOPIC = "hormi_local_v1"
+CANCELADO_CONFIRMA_MIN = 45   # "pospuesto/suspendido" cerca del inicio: se espera esto antes de creerlo y avisar
+CANCELADO_SUELTA_H = 6        # ... y se sigue vigilando hasta estas horas después del inicio
 AVISO_TARDE_MIN = 5   # minutos de juego: un gol/cambio/roja que la API registra más tarde que esto ya no se notifica
 _VIVO = {}          # fixture_id -> datos de esta pasada (se junta a todos los jugadores del partido)
 _VIVO_ENVIADO = {}  # fixture_id -> (marcador, periodo, minuto, time) del último push
@@ -2358,7 +2374,10 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     closing_key = f"{player['key']}:{key}:{fid}:" + ("cancelado" if st in CANCELLED else "final")
     # "SUSP" (suspendido) puede reanudarse: ese no se da por cerrado.
     sin_final = st in FINISHED and not any(a[0].endswith(":final") for a in alerts)   # no era partido suyo: nada que avisar
-    if (st in FINISHED or st in CANCELLED - {"SUSP"}) and (closing_key in sent or sin_final):
+    # Pospuesto/suspendido: NO se suelta hasta 6 h después de la hora de inicio (por si siempre sí se juega).
+    ts = (snap.get("fixture") or {}).get("timestamp") or 0
+    cancel_cerrado = st in CANCELLED - {"SUSP"} and time.time() > ts + CANCELADO_SUELTA_H * 3600
+    if (st in FINISHED or cancel_cerrado) and (closing_key in sent or sin_final):
         entry["done"] = True
     if st in FINISHED or st in CANCELLED - {"SUSP"}:
         revisar_bajas_tras(fid)

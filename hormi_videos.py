@@ -863,7 +863,7 @@ def _due(n, base, last_iso, offsets, settings, now, caducidad_h=None):
 def next_attempt(st, settings, now):
     """Para un gol: ver _due."""
     return _due(st["intentos"], parse_ts(st.get("goal_seen_at")), st.get("ultimo_intento"),
-                settings["gol_intentos_min"], settings, now)
+                settings["gol_intentos_min"], settings, now, 10 ** 6 if st.get("sin_caducidad") else None)
 
 
 def pick_goal_video(candidates, settings=None, team_pref=None):
@@ -1071,7 +1071,8 @@ def _finales_step(out, config, settings, sources, notify, now):
 
         # 3) noticia principal de cada jugador (no gasta cuota)
         if st["noticias_pasadas"] < len(offsets):
-            when = _due(st["noticias_pasadas"], base, st.get("ultima_noticia"), offsets, settings, now)
+            when = _due(st["noticias_pasadas"], base, st.get("ultima_noticia"), offsets, settings, now,
+                        10 ** 6 if st.get("sin_caducidad") else None)
             if when in ("agotado", "caducado"):
                 st["noticias_pasadas"] = len(offsets)
                 changed = True
@@ -1091,7 +1092,7 @@ def _finales_step(out, config, settings, sources, notify, now):
         # 4a) resumen en las subidas de los canales confiables (barato y sin el retraso del buscador)
         if (st["status"] == "pendiente" and base is not None
                 and now >= base + timedelta(minutes=settings.get("canales_resumen_desde_min", 20))
-                and now - base <= timedelta(hours=settings.get("resumen_caducidad_horas") or settings["gol_caducidad_horas"])
+                and (st.get("sin_caducidad") or now - base <= timedelta(hours=settings.get("resumen_caducidad_horas") or settings["gol_caducidad_horas"]))
                 and any((j.get("minutes") or 0) > 0 for j in st["jugadores"].values())):
             home_pref = team_prefixes(st.get("home") or "", aliases.get(st.get("home")) or [])
             away_pref = team_prefixes(st.get("away") or "", aliases.get(st.get("away")) or [])
@@ -1123,7 +1124,7 @@ def _finales_step(out, config, settings, sources, notify, now):
         if st["status"] != "pendiente":
             continue
         when = _due(st["intentos"], base, st.get("ultimo_intento"), offsets, settings, now,
-                    settings.get("resumen_caducidad_horas"))
+                    10 ** 6 if st.get("sin_caducidad") else settings.get("resumen_caducidad_horas"))
         if when is None:
             continue
         if when in ("agotado", "caducado"):
@@ -1380,12 +1381,60 @@ def process_events(config, settings, sources, notify=True):
         log("Nada que atender.")
 
 
+def recuperar(config, settings, sources, jugador, fid):
+    """Partido que el motor NO siguió (p. ej. la API lo marcó "pospuesto" por error): arma a mano los eventos de
+    sus goles y del final, en SILENCIO (sin notificaciones) y sin caducidad, y los atiende como siempre: video de
+    cada gol y resumen del partido."""
+    import hormi_alertas as ha
+    player = next(p for p in config["players"] if p["key"] == jugador)
+    fx = (ha.api("/fixtures", {"id": fid}) or [None])[0]
+    if not fx:
+        sys.exit(f"No encontré el partido {fid}")
+    pid = player.get("player_id")
+    ids = {fx["teams"]["home"]["id"], fx["teams"]["away"]["id"]}
+    tgt = next((t for t in player["targets"] if t.get("team_id") in ids), {})
+    ko = datetime.fromtimestamp(fx["fixture"]["timestamp"], timezone.utc)
+    out = load_json(GOLES_FILE, {"updated_at": None, "cuota": {}, "goles": {}, "partidos": {}})
+    goles = 0
+    asist = 0
+    for e in fx.get("events") or []:
+        if (e.get("type") or "").lower() != "goal" or e.get("detail") in ("Missed Penalty", "Own Goal"):
+            continue
+        t = e.get("time") or {}
+        if (e.get("assist") or {}).get("id") == pid:
+            asist += 1
+        if (e.get("player") or {}).get("id") != pid:
+            continue
+        goles += 1
+        el = t.get("elapsed") or 0
+        cuando = ko + timedelta(minutes=el + (t.get("extra") or 0) + (15 if el > 45 else 0))
+        key = f"{jugador}:{tgt.get('key')}:{fid}:goal:{el}:gol"
+        out["goles"][key] = {"player_key": jugador, "team_key": tgt.get("key"), "goal_seen_at": cuando.isoformat(),
+                             "status": "pendiente", "intentos": 0, "fallos": 0, "ultimo_intento": None, "video": None,
+                             "silencioso": True, "sin_caducidad": True}
+        log(f"⚽ gol de {jugador} al {el}' → se busca su video (en silencio)")
+    g = fx.get("goals") or {}
+    h, a = fx["teams"]["home"]["name"], fx["teams"]["away"]["name"]
+    u = (load_json(Path("player_stats.json"), {}).get("players", {}).get(jugador) or {}).get("ultimo_partido") or {}
+    mins = u.get("minutes") if u.get("fixture_id") == fid else 1
+    out["partidos"][str(fid)] = {
+        "fixture_id": fid, "home": h, "away": a, "league": ha.liga_es(fx["league"]),
+        "score": f"{ha.nombre_es(h)} {g.get('home')}-{g.get('away')} {ha.nombre_es(a)}",
+        "final_seen_at": (ko + timedelta(minutes=115)).isoformat(),
+        "jugadores": {jugador: {"team_key": tgt.get("key"), "minutes": mins or 1, "goals": goles, "assists": asist}},
+        "status": "pendiente", "intentos": 0, "fallos": 0, "ultimo_intento": None, "video": None,
+        "noticias_pasadas": 0, "ultima_noticia": None, "noticias": {}, "silencioso": True, "sin_caducidad": True}
+    save_json(GOLES_FILE, out)
+    process_events(config, settings, sources, notify=False)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Fase 6 · Videos y noticias")
     parser.add_argument("--jugador", help="Limita a un jugador por su 'key'")
     parser.add_argument("--eventos", "--gol", dest="eventos", action="store_true",
                         help="Atiende goles y finales de partido pendientes (videos_pendientes.json) y escribe videos_gol.json")
     parser.add_argument("--sin-notificar", action="store_true", help="Con --eventos: no manda notificaciones")
+    parser.add_argument("--recuperar", help="jugador:fixture_id — partido que el motor no siguió; en silencio")
     args = parser.parse_args()
 
     config = load_json(CONFIG_FILE, None)
@@ -1395,6 +1444,10 @@ def main():
     settings = {**DEFAULTS, **(sources.get("config") or {})}
     per_player = sources.get("jugadores") or {}
 
+    if args.recuperar:
+        j, f = args.recuperar.split(":")
+        recuperar(config, settings, sources, j, int(f))
+        return
     if args.eventos:
         process_events(config, settings, sources, notify=not args.sin_notificar)
         return

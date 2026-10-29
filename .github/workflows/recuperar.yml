@@ -1,0 +1,65 @@
+name: Recuperar partido no seguido - App Hormi
+
+# Manual. Para un partido que el motor NO siguió (p. ej. la API lo marcó "pospuesto" por error): rehace en
+# SILENCIO (sin ninguna notificación) su historial y su "Último partido" (Detalles, calificación, tarjeta) y
+# busca el video de sus goles y el resumen.
+on:
+  workflow_dispatch:
+    inputs:
+      jugador:
+        description: "Clave del jugador (p. ej. gimenez)"
+        type: string
+        required: true
+      fixture:
+        description: "fixture_id del partido"
+        type: string
+        required: true
+
+concurrency:
+  group: hormi-video-gol   # mismo grupo que video-gol.yml: los dos escriben videos_gol.json
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  recuperar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6.1.0
+        with:
+          ref: main
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6.3.0
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Git
+        run: |
+          git config user.name "app-hormi-bot"
+          git config user.email "actions@users.noreply.github.com"
+      - name: Historial y último partido (sin avisos)
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: |
+          python hormi_historial.py --jugador "${{ inputs.jugador }}"
+          git add player_stats.json historial_pj_cache.json 2>/dev/null || true
+          git commit -m "chore: recupera historial de ${{ inputs.jugador }} [skip ci]" || true
+          for i in 1 2 3 4; do git pull --rebase origin main && git push && break; sleep 5; done
+      - name: Tarjeta del partido y calificación (sin avisos)
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: |
+          python hormi_revision.py --sin-avisos
+          git add player_stats.json revision.json tarjetas 2>/dev/null || true
+          git commit -m "chore: recupera tarjeta de ${{ inputs.jugador }} [skip ci]" || true
+          for i in 1 2 3 4; do git pull --rebase origin main && git push && break; sleep 5; done
+      - name: Video del gol y resumen (en silencio)
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          python hormi_videos.py --recuperar "${{ inputs.jugador }}:${{ inputs.fixture }}"
+          git add videos_gol.json 2>/dev/null || true
+          git commit -m "chore: recupera videos de ${{ inputs.jugador }} [skip ci]" || true
+          for i in 1 2 3 4; do git pull --rebase origin main && git push && break; sleep 5; done
