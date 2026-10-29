@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T09:54:30.148481-06:00",
+  "updated_at": "2026-10-29T13:57:00.385336-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -246,15 +246,15 @@
         {
           "id": "gol",
           "titulo": "Partidos seguidos con gol",
-          "actual": 2,
+          "actual": 3,
           "en_racha": true,
           "puntos": [
             true,
             true,
-            false,
-            false,
-            false,
             true,
+            false,
+            false,
+            false,
             true,
             true
           ]
@@ -262,15 +262,15 @@
         {
           "id": "ga",
           "titulo": "Partidos seguidos con gol o asistencia",
-          "actual": 2,
+          "actual": 3,
           "en_racha": true,
           "puntos": [
             true,
             true,
-            false,
-            false,
-            false,
             true,
+            false,
+            false,
+            false,
             true,
             true
           ]
@@ -278,14 +278,14 @@
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 3,
+          "actual": 4,
           "en_racha": false,
           "puntos": [
             true,
             true,
             true,
-            false,
             true,
+            false,
             true,
             true,
             true
@@ -294,14 +294,14 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 3,
+          "actual": 4,
           "en_racha": false,
           "puntos": [
             true,
             true,
             true,
-            false,
             true,
+            false,
             true,
             true,
             true
@@ -312,26 +312,26 @@
         {
           "id": "goles_total",
           "titulo": "Goles en su carrera",
-          "valor": 163,
+          "valor": 164,
           "meta": 175,
           "previo": 150,
-          "texto": "A 12 goles de 175"
+          "texto": "A 11 goles de 175"
         },
         {
           "id": "goles_club",
           "titulo": "Goles con clubes",
-          "valor": 158,
+          "valor": 159,
           "meta": 175,
           "previo": 150,
-          "texto": "A 17 goles de 175"
+          "texto": "A 16 goles de 175"
         },
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 335,
+          "valor": 336,
           "meta": 350,
           "previo": 300,
-          "texto": "A 15 partidos de 350"
+          "texto": "A 14 partidos de 350"
         },
         {
           "id": "goles_sel",
@@ -1217,8 +1217,8 @@
             false,
             false,
             false,
-            true,
             false,
+            true,
             false,
             false,
             false
@@ -1233,8 +1233,8 @@
             false,
             false,
             false,
-            true,
             false,
+            true,
             false,
             false,
             false
@@ -1247,10 +1247,10 @@
           "en_racha": false,
           "puntos": [
             false,
-            true,
             false,
             true,
             false,
+            true,
             false,
             false,
             false
@@ -1263,10 +1263,10 @@
           "en_racha": false,
           "puntos": [
             false,
-            true,
             false,
             true,
             false,
+            true,
             false,
             false,
             false
