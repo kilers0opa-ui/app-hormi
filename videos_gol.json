@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T13:50:27.287354-06:00",
+  "updated_at": "2026-10-29T13:55:29.684585-06:00",
   "cuota": {
     "fecha": "2026-10-29",
     "busquedas": 4,
@@ -294,6 +294,30 @@
       },
       "silencioso": true,
       "sin_caducidad": true
+    },
+    "1603077": {
+      "fixture_id": 1603077,
+      "home": "Al Riyadh",
+      "away": "Al-Qadsiah",
+      "league": "Liga Profesional Saudí",
+      "score": "Al Riyadh 0-6 Al-Qadsiah",
+      "final_seen_at": "2026-10-29T19:52:44.167915+00:00",
+      "jugadores": {
+        "quinones": {
+          "team_key": "al_qadsiah",
+          "minutes": 90,
+          "goals": 1,
+          "assists": 2
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
