@@ -1,4 +1,10 @@
 [gemini] top: ['candidates', 'usageMetadata', 'modelVersion', 'responseId'] · parts: [['text', 'thoughtSignature']]
-[gemini] modelo gemini-3.8-flash · uso: {'promptTokenCount': 1118, 'candidatesTokenCount': 56, 'totalTokenCount': 2689, 'cachedContentTokenCount': 661, 'promptTokensDetails': [{'modality': 'TEXT', 'tokenCount': 1118}], 'cacheTokensDetails': [{'modality': 'TEXT', 'tokenCount': 661}], 'thoughtsTokenCount': 1515, 'serviceTier': 'standard'} · claves: ['content', 'finishReason', 'index'] · metadata: {}
-[gemini] mvp Rodrigo Huescas (Aarhus Fremad vs FC Copenhague 29/10/2026): {'partido_encontrado': True, 'mvp': True, 'sitio': 'RÉCORD', 'cita': 'fue reconocido como el mejor jugador del partido en la victoria de 3-0 sobre el Aarhus Fremad'} · 0 fuente(s)
-null
+[gemini] modelo gemini-3.8-flash · uso: {'promptTokenCount': 652, 'candidatesTokenCount': 94, 'totalTokenCount': 1925, 'promptTokensDetails': [{'modality': 'TEXT', 'tokenCount': 652}], 'thoughtsTokenCount': 1179, 'serviceTier': 'standard'} · claves: ['content', 'finishReason', 'index'] · metadata: {}
+[gemini] alineación Gilberto Mora (Club America vs Club Tijuana 28/10/2026): {'alineacion_oficial_publicada': True, 'banca_publicada': True, 'estado': 'banca', 'motivo': None, 'sitio': '365Scores', 'cita': 'Sebastián “Loco” Abreu reservó al futbolista en el banquillo y le dio entrada en el segundo tiempo.'} · 0 fuente(s)
+{
+  "estado": "banca",
+  "motivo": null,
+  "sitio": "365Scores",
+  "cita": "Sebastián “Loco” Abreu reservó al futbolista en el banquillo y le dio entrada en el segundo tiempo.",
+  "fuentes": []
+}
