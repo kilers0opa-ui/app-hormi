@@ -361,26 +361,7 @@ def revisar_partido(config, stats, aud, p_ag, fx_cache):
                     hecho(f"calif_marcador:{clave}", f"{nombre}: {partido} — su calificación se había calculado con el "
                                                      f"marcador equivocado: {st.get('rating')} → {completa['rating']}")
                 estado["marcador_ok"] = True
-            # MVP / jugador del partido (solo si una página lo nombra). Se pregunta ~3 h después (cuando ya está
-            # publicado), dentro de las primeras 48 h.
-            estado["mvp_pendiente"] = False
-            if G.disponible() and not estado.get("mvp_revisado") and u.get("stats"):
-                desde_ko = ahora() - datetime.fromisoformat(ko)
-                if desde_ko > timedelta(hours=48):
-                    estado["mvp_revisado"] = True
-                elif desde_ko < timedelta(hours=3):
-                    estado["mvp_pendiente"] = True
-                else:
-                    g = (estado.get("gemini") or {}).get("r") or {}
-                    if g:
-                        m = {"sitio": g.get("mvp_sitio")} if g.get("mvp") and g.get("mvp_sitio") else None
-                    else:
-                        local, visita, fecha, liga = _datos_partido(fx)
-                        m = G.mvp(p["name"], t["label"], local, visita, fecha, liga)
-                    estado["mvp_revisado"] = True
-                    if m:
-                        u["stats"]["mvp"], u["stats"]["mvp_sitio"] = True, m.get("sitio")
-                        hecho(f"mvp:{clave}", f"🏅 {nombre}: MVP / jugador del partido en {partido} (según {m.get('sitio')})")
+            estado["mvp_pendiente"] = False   # (MVP quitado el 29-oct: no se pregunta)
             # Tarjeta para compartir (24 h)
             try:
                 if datetime.fromisoformat(u["kickoff"]) >= ahora() - timedelta(hours=30):
