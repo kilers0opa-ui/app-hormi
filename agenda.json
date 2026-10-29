@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T23:50:16.312315-06:00",
+  "updated_at": "2026-10-29T06:31:24.442187-06:00",
   "desde": "2026-10-26",
   "hasta": "2026-11-04",
   "partidos": [
@@ -198,9 +198,9 @@
       "away_logo": "https://media.api-sports.io/football/teams/400.png",
       "league": "Copa de Dinamarca",
       "league_logo": "https://media.api-sports.io/football/leagues/121.png",
-      "status": "NS",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "1H",
+      "home_goals": 0,
+      "away_goals": 0,
       "penales": null,
       "jugadores": [
         {
