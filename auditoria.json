@@ -1,0 +1,65 @@
+{
+  "partidos": {
+    "huescas:1549041": {
+      "ok": true,
+      "jugo": false,
+      "revisado": "2026-10-29T09:12:22.886978-06:00"
+    },
+    "quinones:1629947": {
+      "marcador_ok": true,
+      "parcial": false,
+      "ok": true,
+      "jugo": true,
+      "revisado": "2026-10-29T09:12:23.175201-06:00"
+    },
+    "luis_chavez:1563671": {
+      "ok": true,
+      "jugo": false,
+      "revisado": "2026-10-29T09:12:24.709797-06:00"
+    },
+    "vasquez:1550171": {
+      "marcador_ok": true,
+      "parcial": false,
+      "ok": true,
+      "jugo": true,
+      "revisado": "2026-10-29T09:12:25.269467-06:00"
+    },
+    "gimenez:1589437": {
+      "historial": true,
+      "parcial": false,
+      "video": true,
+      "ok": true,
+      "jugo": true,
+      "revisado": "2026-10-29T09:12:31.714482-06:00"
+    },
+    "mora:1550952": {
+      "marcador_ok": true,
+      "parcial": false,
+      "ok": true,
+      "jugo": true,
+      "revisado": "2026-10-29T09:12:31.990460-06:00"
+    },
+    "huescas:1640475": {
+      "historial": true,
+      "parcial": false,
+      "ok": true,
+      "jugo": true,
+      "revisado": "2026-10-29T09:12:41.020406-06:00"
+    }
+  },
+  "bitacora": [
+    {
+      "fecha": "2026-10-29T09:12:41.035145-06:00",
+      "txt": "Santiago Giménez: FC Porto 1-0 Academico Viseu no estaba sumado a su temporada — historial rehecho"
+    },
+    {
+      "fecha": "2026-10-29T09:12:41.035148-06:00",
+      "txt": "Rodrigo Huescas: Aarhus Fremad 0-3 FC Copenhague no estaba sumado a su temporada — historial rehecho"
+    }
+  ],
+  "avisados": [
+    "temporada:gimenez:1589437",
+    "temporada:huescas:1640475"
+  ],
+  "updated_at": "2026-10-29T09:12:41.035160-06:00"
+}
