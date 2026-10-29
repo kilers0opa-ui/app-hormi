@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T08:45:25.623978-06:00",
+  "updated_at": "2026-10-29T08:50:25.020037-06:00",
   "cuota": {
     "fecha": "2026-10-29",
     "busquedas": 0,
@@ -26,7 +26,7 @@
       },
       "silencioso": true,
       "sin_caducidad": true,
-      "verificado": "2026-10-29T14:20:23.088154+00:00"
+      "verificado": "2026-10-29T14:50:24.485802+00:00"
     }
   },
   "partidos": {
@@ -247,14 +247,42 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-29T14:50:24.485802+00:00",
+      "noticias": {
+        "huescas": [
+          {
+            "title": "Rodrigo Huescas regresa a la banca en la Superliga de Dinamarca: Resumen Copenhague vs Odense BK",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNa081ei01bHlITExsY1RkN2J0RU5tOGV6NVFhLVdyMVVvRGxVMUU4aDlWZ2pzNnhwMlhLcUtESkNPSkRoTl9ha01LX1gxRmtFT0R4TEE2X1BWd25HX0pDejlMN2tKVEN2ZGJXUVI0czBHM0RDQWRnTDVKaTlnTUxoMGhUazktNUJQXzV4OEM5R1U3d3NiYVZUQW1OSmQySEg2S2NMOENGZW83LVRtdm92M21TdU9penFVai00d3VpeFd1RG1acXZjTjVkMU1FNEFTbzBUSTZvVDUxYzJ3QmfSAd4BQVVfeXFMUFk0b0NYYzlFQkNObWk2V1h2Sld4UDBjQWduSW9zcVB6LTcyRDMxWHYtOGVmWXd2dU1hQTNJLVVsLTFnS0htRTRCOGVoTTNGczZ0NHNJSWx0WU15YTdDMGtmd0ZMWHhWSWVwcU1HVzNOWF9CVEhfUjA1Z05nWHNwQnZsQkc2dDE2cGtBeVp6blpmdnpteW9UVV9BblJ4QWhjTW43WXNRN21ISlY5STZkQnRpVFNUREhZUjYtRDBlbDVfMDIxN2NfT1VYNTlwOERwVHUyQzRPdzlQQW9OZEZn?oc=5",
+            "published_at": "2026-10-26T19:53:53Z",
+            "dominio": "marca.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "El mexicano Rodrigo Huescas vuelve a iniciar de titular con Copenhague tras lesión",
+            "source": "Vox Populi",
+            "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQmxhVDRVRjdKZ2FwaU16R1RIY3NBX0RhMWdySERGdGlyT3BodnpvN19FNXNEc094X1hybG92OHVGNlA3Nmd4dTdoaEtKZFZjUnNNYlQ3c2Q3ZTUxZVp5Q2NpQndlVEZqTDczekI0LVRSMXkyQXYtN2F5dFVNTjdiVDhMVXd1ZGd0TUE0VHBybGFFRjhMRVFsTw?oc=5",
+            "published_at": "2026-10-22T22:05:19Z",
+            "dominio": "voxpopulinoticias.com.mx",
+            "edicion": "mx"
+          },
+          {
+            "title": "Rodrigo Huescas recupera minutos con Copenhague en la Conference League",
+            "source": "El Sol de México",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPclN5N1FadlZuR3NoY3ZLa2pTWG9qQ1ZlVnRJQnVNMlN5R0R5eWQtLWlmYzZieEhWTFhPaDU0bm13YURpWmllMk9SYzc1dDVEXzJzMUREeUM0bGFOWmZYZTJrR29TcjAxa0E0NzFpU1dWM1lVZjkzRXVfY000NjFuakhSUUFFaDk5N0tWaEM1dXFYRDVzUmVlXzBMWm90RTFKeVBBOXMwbXA4NGsxNFB5dXlsV3dIaW1WS0xfa0hBOA?oc=5",
+            "published_at": "2026-10-22T22:01:36Z",
+            "dominio": "oem.com.mx",
+            "edicion": "mx"
+          }
+        ]
+      },
+      "motivo": "ningún jugador tuvo minutos"
     }
   }
 }
