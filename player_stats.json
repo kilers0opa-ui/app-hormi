@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T23:05:03.244619-06:00",
+  "updated_at": "2026-10-28T23:06:16.188663-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -4809,448 +4809,65 @@
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1575521,
-        "kickoff": "2026-10-24T13:30:00-06:00",
-        "home": "GIL Vicente",
-        "away": "FC Porto",
-        "home_logo": "https://media.api-sports.io/football/teams/762.png",
-        "away_logo": "https://media.api-sports.io/football/teams/212.png",
-        "home_goals": 0,
-        "away_goals": 1,
-        "penales": null,
-        "league": "Liga Portugal",
-        "league_logo": "https://media.api-sports.io/football/leagues/94.png",
-        "league_tipo": "liga",
-        "eventos": [
-          {
-            "min": "56'",
-            "tipo": "amarilla",
-            "nombre": "Pablo Rosario",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "63'",
-            "tipo": "gol",
-            "nombre": "Borja Sainz",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "72'",
-            "tipo": "entra",
-            "nombre": "Santiago Giménez",
-            "lado": "V",
-            "mio": true
-          },
-          {
-            "min": "84'",
-            "tipo": "roja",
-            "nombre": "Marvin Elimbi Gilbert",
-            "lado": "L",
-            "mio": false
-          }
-        ],
-        "eventos_v": 6,
-        "alineacion": {
-          "local": {
-            "nombre": "GIL Vicente",
-            "logo": "https://media.api-sports.io/football/teams/762.png",
-            "formacion": "4-2-3-1",
-            "color": "0581fb",
-            "color_num": "ffffff",
-            "titulares": [
-              {
-                "id": 140450,
-                "n": "Lucao",
-                "num": 30,
-                "pos": "G",
-                "g": "1:1"
-              },
-              {
-                "id": 41099,
-                "n": "R. Esgaio",
-                "num": 47,
-                "pos": "D",
-                "g": "2:4"
-              },
-              {
-                "id": 284796,
-                "n": "M. Elimbi",
-                "num": 4,
-                "pos": "D",
-                "g": "2:3",
-                "roja": "84'"
-              },
-              {
-                "id": 41174,
-                "n": "J. Buatu",
-                "num": 39,
-                "pos": "D",
-                "g": "2:2"
-              },
-              {
-                "id": 411693,
-                "n": "D. Moreira",
-                "num": 45,
-                "pos": "D",
-                "g": "2:1"
-              },
-              {
-                "id": 282467,
-                "n": "A. Lausen",
-                "num": 12,
-                "pos": "M",
-                "g": "3:2",
-                "sale": "60'"
-              },
-              {
-                "id": 364811,
-                "n": "D. Prioste",
-                "num": 86,
-                "pos": "M",
-                "g": "3:1",
-                "sale": "76'"
-              },
-              {
-                "id": 41110,
-                "n": "Murilo de Souza",
-                "num": 77,
-                "pos": "M",
-                "g": "4:3"
-              },
-              {
-                "id": 184743,
-                "n": "S. Garcia",
-                "num": 10,
-                "pos": "M",
-                "g": "4:2",
-                "sale": "75'"
-              },
-              {
-                "id": 264118,
-                "n": "J. Fernandes",
-                "num": 11,
-                "pos": "M",
-                "g": "4:1",
-                "sale": "60'"
-              },
-              {
-                "id": 631974,
-                "n": "Walace Franca",
-                "num": 9,
-                "pos": "F",
-                "g": "5:1",
-                "sale": "60'"
-              }
-            ],
-            "suplentes": [
-              {
-                "id": 80667,
-                "n": "Samuel Portugal",
-                "num": 94,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 312110,
-                "n": "A. Picornell",
-                "num": 1,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 336637,
-                "n": "A. Espigares",
-                "num": 3,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 458197,
-                "n": "J. Silva",
-                "num": 2,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 324844,
-                "n": "Ze Carlos",
-                "num": 6,
-                "pos": "M",
-                "g": null,
-                "entra": "60'"
-              },
-              {
-                "id": 400511,
-                "n": "G. Pinto Martins",
-                "num": 20,
-                "pos": "M",
-                "g": null,
-                "entra": "60'"
-              },
-              {
-                "id": 283336,
-                "n": "M. Fernandez",
-                "num": 32,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 454555,
-                "n": "Guilherme Gomes",
-                "num": 19,
-                "pos": "M",
-                "g": null,
-                "entra": "75'"
-              },
-              {
-                "id": 527187,
-                "n": "G. Maia",
-                "num": 82,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 577979,
-                "n": "M. Kaba",
-                "num": 99,
-                "pos": "F",
-                "g": null,
-                "entra": "60'"
-              },
-              {
-                "id": 361337,
-                "n": "A. Moreira",
-                "num": 27,
-                "pos": "F",
-                "g": null
-              },
-              {
-                "id": 162208,
-                "n": "T. Toure",
-                "num": 7,
-                "pos": "F",
-                "g": null,
-                "entra": "76'"
-              }
-            ]
-          },
-          "visita": {
-            "nombre": "FC Porto",
-            "logo": "https://media.api-sports.io/football/teams/212.png",
-            "formacion": "4-3-3",
-            "color": "ffffff",
-            "color_num": "013388",
-            "titulares": [
-              {
-                "id": 369,
-                "n": "D. Costa",
-                "num": 99,
-                "pos": "G",
-                "g": "1:1"
-              },
-              {
-                "id": 330419,
-                "n": "A. Costa",
-                "num": 20,
-                "pos": "D",
-                "g": "2:4"
-              },
-              {
-                "id": 2999,
-                "n": "J. Bednarek",
-                "num": 5,
-                "pos": "D",
-                "g": "2:3"
-              },
-              {
-                "id": 61431,
-                "n": "J. Kiwior",
-                "num": 4,
-                "pos": "D",
-                "g": "2:2"
-              },
-              {
-                "id": 126899,
-                "n": "Zaidu",
-                "num": 12,
-                "pos": "D",
-                "g": "2:1"
-              },
-              {
-                "id": 388872,
-                "n": "V. Froholdt",
-                "num": 8,
-                "pos": "M",
-                "g": "3:3"
-              },
-              {
-                "id": 240,
-                "n": "P. Rosario",
-                "num": 13,
-                "pos": "M",
-                "g": "3:2",
-                "amarilla": "56'",
-                "sale": "72'"
-              },
-              {
-                "id": 182504,
-                "n": "G. Veiga",
-                "num": 10,
-                "pos": "M",
-                "g": "3:1",
-                "sale": "45'"
-              },
-              {
-                "id": 10500,
-                "n": "Pepê",
-                "num": 11,
-                "pos": "F",
-                "g": "4:3"
-              },
-              {
-                "id": 2063,
-                "n": "Andre Silva",
-                "num": 19,
-                "pos": "F",
-                "g": "4:2",
-                "sale": "59'"
-              },
-              {
-                "id": 133453,
-                "n": "B. Sainz",
-                "num": 17,
-                "pos": "F",
-                "g": "4:1",
-                "goles": 1,
-                "sale": "72'"
-              }
-            ],
-            "suplentes": [
-              {
-                "id": 41432,
-                "n": "Claudio Ramos",
-                "num": 14,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 96476,
-                "n": "J. Costa",
-                "num": 24,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 892,
-                "n": "C. Smalling",
-                "num": 6,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 37,
-                "n": "N. Perez",
-                "num": 18,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 336596,
-                "n": "M. Fernandes",
-                "num": 52,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 41966,
-                "n": "F. Moura",
-                "num": 74,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 30807,
-                "n": "S. Fofana",
-                "num": 42,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 2901,
-                "n": "Hwang In-Beom",
-                "num": 16,
-                "pos": "M",
-                "g": null,
-                "entra": "45'"
-              },
-              {
-                "id": 278375,
-                "n": "A. Varela",
-                "num": 22,
-                "pos": "M",
-                "g": null,
-                "entra": "72'"
-              },
-              {
-                "id": 358628,
-                "n": "Samu",
-                "num": 9,
-                "pos": "F",
-                "g": null,
-                "entra": "59'"
-              },
-              {
-                "id": 94562,
-                "n": "S. Gimenez",
-                "num": 29,
-                "pos": "F",
-                "g": null,
-                "entra": "72'",
-                "mio": true
-              },
-              {
-                "id": 507527,
-                "n": "Gabriel Mec",
-                "num": 37,
-                "pos": "F",
-                "g": null
-              }
-            ]
-          }
-        },
+        "fixture_id": 1589437,
+        "kickoff": "2026-10-28T14:30:00-06:00",
+        "home": "FC Porto",
+        "away": "Academico Viseu",
+        "home_logo": "https://media.api-sports.io/football/teams/212.png",
+        "away_logo": "https://media.api-sports.io/football/teams/238.png",
+        "home_goals": 1,
+        "away_goals": 0,
+        "league": "Copa de la Liga de Portugal",
+        "league_logo": "https://media.api-sports.io/football/leagues/97.png",
+        "league_tipo": "copa",
         "team_key": "porto",
         "team_label": "Porto",
         "emoji": "🐉",
         "crest_url": "https://media.api-sports.io/football/teams/212.png",
-        "minutes": 18,
-        "goals": 0,
+        "minutes": 90,
+        "goals": 1,
         "assists": 0,
-        "tarjeta": {
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/gimenez_partido.jpg?v=2c248447",
-          "hasta": "2026-10-25T15:30:00-06:00",
-          "firma": "40383729ab"
-        },
-        "stats": {
-          "rating": 6.4,
-          "rating_api": 6.4,
-          "tiros": 0,
-          "tiros_puerta": 0,
-          "pases_pct": 50,
-          "duelos": 5,
-          "duelos_ganados": 2,
-          "lugar_equipo": 10,
-          "de_equipo": 15,
-          "pesos": [
-            {
-              "txt": "2 faltas recibidas",
-              "pts": 0.1
-            }
-          ],
-          "calif_fija": true
-        },
-        "stats_v": 2
+        "eventos": [
+          {
+            "min": "15'",
+            "tipo": "amarilla",
+            "nombre": "C. Smalling",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "39'",
+            "tipo": "amarilla",
+            "nombre": "Gu Costa",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "45'",
+            "tipo": "pen",
+            "nombre": "S. Gimenez",
+            "lado": "L",
+            "mio": true
+          },
+          {
+            "min": "63'",
+            "tipo": "amarilla",
+            "nombre": "S. Messeguem",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "90+5'",
+            "tipo": "amarilla",
+            "nombre": "Joao Guilherme",
+            "lado": "V",
+            "mio": false
+          }
+        ],
+        "eventos_v": 6,
+        "penales": null,
+        "alineacion": null,
+        "sin_stats": true
       },
       "deltas_vivos": [
         {
