@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T09:12:40.461152-06:00",
+  "updated_at": "2026-10-29T09:53:46.398293-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -3701,18 +3701,6 @@
             "minutes": 202
           },
           {
-            "league_id": 17,
-            "league_name": "AFC Champions League Elite",
-            "league_logo": "https://media.api-sports.io/football/leagues/17.png",
-            "team_id": 2933,
-            "team_name": "Al-Qadisiyah FC",
-            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
-            "played": 3,
-            "goals": 2,
-            "assists": 0,
-            "minutes": 264
-          },
-          {
             "league_id": 307,
             "league_name": "Pro League",
             "league_logo": "https://media.api-sports.io/football/leagues/307.png",
@@ -3723,6 +3711,18 @@
             "goals": 5,
             "assists": 3,
             "minutes": 906
+          },
+          {
+            "league_id": 17,
+            "league_name": "AFC Champions League Elite",
+            "league_logo": "https://media.api-sports.io/football/leagues/17.png",
+            "team_id": 2933,
+            "team_name": "Al-Qadisiyah FC",
+            "team_logo": "https://media.api-sports.io/football/teams/2933.png",
+            "played": 3,
+            "goals": 2,
+            "assists": 0,
+            "minutes": 264
           },
           {
             "league_id": 826,
