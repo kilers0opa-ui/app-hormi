@@ -1,182 +1,6 @@
 {
-  "updated_at": "2026-10-28T16:50:41.827539-06:00",
+  "updated_at": "2026-10-29T00:26:33.792841-06:00",
   "partidos": {
-    "1550952": {
-      "fixture_id": 1550952,
-      "kickoff": "2026-10-28T21:00:00-06:00",
-      "home": "Club America",
-      "away": "Club Tijuana",
-      "home_id": 2287,
-      "away_id": 2280,
-      "home_logo": "https://media.api-sports.io/football/teams/2287.png",
-      "away_logo": "https://media.api-sports.io/football/teams/2280.png",
-      "league": "Liga MX",
-      "tabla": {
-        "liga": "Liga MX",
-        "home": {
-          "rank": 1,
-          "pts": 27,
-          "pj": 13
-        },
-        "away": {
-          "rank": 8,
-          "pts": 20,
-          "pj": 13
-        }
-      },
-      "forma_home": [
-        {
-          "r": "P",
-          "rival": "Chivas",
-          "marcador": "0-2",
-          "fid": 1643232,
-          "local": false
-        },
-        {
-          "r": "E",
-          "rival": "Monterrey",
-          "marcador": "1-1",
-          "fid": 1550989,
-          "local": true
-        },
-        {
-          "r": "G",
-          "rival": "Leon",
-          "marcador": "5-3",
-          "fid": 1550998,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Atlas",
-          "marcador": "5-2",
-          "fid": 1551006,
-          "local": false
-        },
-        {
-          "r": "P",
-          "rival": "CF Pachuca",
-          "marcador": "1-2",
-          "fid": 1551017,
-          "local": true
-        }
-      ],
-      "forma_away": [
-        {
-          "r": "P",
-          "rival": "Atlas",
-          "marcador": "2-3",
-          "fid": 1550976,
-          "local": true
-        },
-        {
-          "r": "E",
-          "rival": "FC Juarez",
-          "marcador": "1-1",
-          "fid": 1550987,
-          "local": false
-        },
-        {
-          "r": "E",
-          "rival": "Puebla",
-          "marcador": "0-0",
-          "fid": 1550994,
-          "local": true
-        },
-        {
-          "r": "E",
-          "rival": "Toluca",
-          "marcador": "2-2",
-          "fid": 1551008,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Santos Laguna",
-          "marcador": "4-1",
-          "fid": 1551019,
-          "local": true
-        }
-      ],
-      "historial": [
-        {
-          "fecha": "2026-01-09",
-          "home": "Club Tijuana",
-          "away": "Club America",
-          "home_id": 2280,
-          "marcador": "0-0",
-          "ganador": null
-        },
-        {
-          "fecha": "2025-07-16",
-          "home": "Club America",
-          "away": "Club Tijuana",
-          "home_id": 2287,
-          "marcador": "3-1",
-          "ganador": 2287
-        },
-        {
-          "fecha": "2025-01-16",
-          "home": "Club America",
-          "away": "Club Tijuana",
-          "home_id": 2287,
-          "marcador": "1-1",
-          "ganador": null
-        },
-        {
-          "fecha": "2024-11-21",
-          "home": "Club Tijuana",
-          "away": "Club America",
-          "home_id": 2280,
-          "marcador": "2-2",
-          "ganador": 2287
-        },
-        {
-          "fecha": "2024-10-23",
-          "home": "Club Tijuana",
-          "away": "Club America",
-          "home_id": 2280,
-          "marcador": "2-2",
-          "ganador": null
-        }
-      ],
-      "hecho": "2026-10-28T10:51:05.975585-06:00",
-      "v": 2,
-      "jugadores": [
-        {
-          "key": "mora",
-          "lado": "V",
-          "rachas": {},
-          "minutos": [
-            {
-              "rival": "Atlas",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "FC Juarez",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "Puebla",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "Toluca",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "Santos Laguna",
-              "min": 0,
-              "goles": 0
-            }
-          ]
-        }
-      ]
-    },
     "1640475": {
       "fixture_id": 1640475,
       "kickoff": "2026-10-29T06:30:00-06:00",
@@ -439,7 +263,7 @@
           "ganador": 555
         }
       ],
-      "hecho": "2026-10-28T10:51:05.975585-06:00",
+      "hecho": "2026-10-29T00:26:33.792841-06:00",
       "v": 2,
       "jugadores": [
         {
@@ -615,7 +439,7 @@
           "ganador": 2933
         }
       ],
-      "hecho": "2026-10-28T10:51:05.975585-06:00",
+      "hecho": "2026-10-29T00:26:33.792841-06:00",
       "v": 2,
       "jugadores": [
         {
@@ -659,7 +483,6 @@
     }
   },
   "jugadores": {
-    "mora": 1550952,
     "huescas": 1640475,
     "montes": 1563668,
     "quinones": 1603077
