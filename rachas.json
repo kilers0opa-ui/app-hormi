@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T15:06:58.529275-06:00",
+  "updated_at": "2026-10-28T18:59:08.404877-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -450,11 +450,11 @@
         {
           "id": "cero",
           "titulo": "Partidos seguidos sin recibir gol",
-          "actual": 1,
-          "en_racha": false,
+          "actual": 2,
+          "en_racha": true,
           "puntos": [
             true,
-            false,
+            true,
             false,
             false,
             false,
@@ -474,39 +474,39 @@
             false,
             false,
             false,
-            true,
-            true,
-            false
-          ]
-        },
-        {
-          "id": "titular",
-          "titulo": "Partidos seguidos de titular",
-          "actual": 3,
-          "en_racha": false,
-          "puntos": [
-            true,
-            true,
-            true,
-            false,
-            false,
             false,
             true,
             true
           ]
         },
         {
-          "id": "jugando",
-          "titulo": "Partidos seguidos jugando",
-          "actual": 3,
+          "id": "titular",
+          "titulo": "Partidos seguidos de titular",
+          "actual": 4,
           "en_racha": false,
           "puntos": [
             true,
             true,
             true,
-            false,
-            false,
             true,
+            false,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "id": "jugando",
+          "titulo": "Partidos seguidos jugando",
+          "actual": 4,
+          "en_racha": false,
+          "puntos": [
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
             true,
             true
           ]
@@ -524,10 +524,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 294,
+          "valor": 295,
           "meta": 300,
           "previo": 250,
-          "texto": "A 6 partidos de 300"
+          "texto": "A 5 partidos de 300"
         },
         {
           "id": "goles_sel",
@@ -555,7 +555,7 @@
         "partidos_sel:50"
       ],
       "club": "Genoa",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "gimenez": {
       "rachas": [
@@ -571,8 +571,8 @@
             false,
             false,
             false,
-            true,
-            false
+            false,
+            true
           ]
         },
         {
@@ -587,8 +587,8 @@
             false,
             false,
             false,
-            true,
-            false
+            false,
+            true
           ]
         },
         {
@@ -610,16 +610,16 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
-            true,
             false,
             true,
             false,
-            false,
-            false,
             true,
+            false,
+            false,
+            false,
             true
           ]
         }
@@ -666,7 +666,7 @@
         "partidos_sel:25"
       ],
       "club": "Porto",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "chavez": {
       "rachas": [
