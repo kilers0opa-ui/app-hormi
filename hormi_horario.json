@@ -342,21 +342,20 @@
   },
   "montes": {
     "lokomotiv": {
-      "fixture_id": 1563668,
-      "kickoff": "2026-10-29T10:30:00-06:00",
-      "why": "hoy",
-      "refreshed_at": "2026-10-29T12:31:06.248932-06:00",
-      "home": "CSKA Moscú",
-      "away": "Lokomotiv Moscú",
-      "home_logo": "https://media.api-sports.io/football/teams/555.png",
-      "away_logo": "https://media.api-sports.io/football/teams/597.png",
-      "league": "Copa de Rusia",
-      "league_logo": "https://media.api-sports.io/football/leagues/237.png",
-      "league_tipo": "copa",
+      "fixture_id": 1561431,
+      "kickoff": "2026-11-01T10:45:00-06:00",
+      "why": "próximo (lejos)",
+      "refreshed_at": "2026-10-29T13:30:06.152126-06:00",
+      "home": "Lokomotiv Moscú",
+      "away": "Spartak Moscú",
+      "home_logo": "https://media.api-sports.io/football/teams/597.png",
+      "away_logo": "https://media.api-sports.io/football/teams/558.png",
+      "league": "Liga Premier de Rusia",
+      "league_logo": "https://media.api-sports.io/football/leagues/235.png",
+      "league_tipo": "liga",
       "liga_v": 3,
       "season": 2026,
-      "fx_status": "FT",
-      "done": true
+      "fx_status": "NS"
     },
     "seleccion": {
       "fixture_id": 1644691,
