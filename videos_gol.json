@@ -1,11 +1,33 @@
 {
-  "updated_at": "2026-10-28T23:00:32.457708-06:00",
+  "updated_at": "2026-10-28T23:05:21.957678-06:00",
   "cuota": {
     "fecha": "2026-10-28",
-    "busquedas": 2,
-    "busquedas_resumen": 1
+    "busquedas": 4,
+    "busquedas_resumen": 2
   },
-  "goles": {},
+  "goles": {
+    "gimenez:porto:1589437:goal:45:gol": {
+      "player_key": "gimenez",
+      "team_key": "porto",
+      "goal_seen_at": "2026-10-28T21:15:00+00:00",
+      "status": "resuelto",
+      "intentos": 1,
+      "fallos": 0,
+      "ultimo_intento": "2026-10-29T05:05:05.083644+00:00",
+      "video": {
+        "id": "j0IajP95GFI",
+        "title": "Gol de Santiago Giménez con el FC Porto ✝️♥️🇲🇽 Vamos Bebo #futbolmexicano #santiagogimenez #fcporto",
+        "channel": "Fan de Santiagol",
+        "published_at": "2026-10-28T21:53:51Z",
+        "thumbnail": "https://i.ytimg.com/vi/j0IajP95GFI/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=j0IajP95GFI",
+        "embeddable": true,
+        "bloqueado_en": []
+      },
+      "silencioso": true,
+      "sin_caducidad": true
+    }
+  },
   "partidos": {
     "1550171": {
       "fixture_id": 1550171,
@@ -104,6 +126,60 @@
       "noticias_pasadas": 0,
       "ultima_noticia": null,
       "noticias": {}
+    },
+    "1589437": {
+      "fixture_id": 1589437,
+      "home": "FC Porto",
+      "away": "Academico Viseu",
+      "league": "Copa de la Liga de Portugal",
+      "score": "FC Porto 1-0 Academico Viseu",
+      "final_seen_at": "2026-10-28T22:25:00+00:00",
+      "jugadores": {
+        "gimenez": {
+          "team_key": "porto",
+          "minutes": 1,
+          "goals": 1,
+          "assists": 0
+        }
+      },
+      "status": "omitido",
+      "intentos": 1,
+      "fallos": 0,
+      "ultimo_intento": "2026-10-29T05:05:05.083644+00:00",
+      "video": null,
+      "noticias_pasadas": 5,
+      "ultima_noticia": "2026-10-29T05:05:05.083644+00:00",
+      "noticias": {
+        "gimenez": [
+          {
+            "title": "Santiago Giménez, primera titularidad y gol con el Porto",
+            "source": "FOX Deportes",
+            "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQaFd2U3VkZzFweWFvNzUzRHFIMS1IenVIQXhBWjZmNlloZy1heF81YlhqSG5IN19kbWQ2ME9tQ1lNalRENzZ1dkI5bWRSVzVfV29uZkdMb1pWbmJBb19HNWxhNElSUEJraW04Y3U1QzRnRFRQNFFVVmdrR3hqRFp6NUMwZTNrdzY2N0RVSi0xalhOWXVRVlo1WTVXTXFBbThDeVFxSlktTHJoeVFk?oc=5",
+            "published_at": "2026-10-29T03:21:27Z",
+            "dominio": "foxdeportes.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "Santiago Giménez marca gol del triunfo y mete al Porto a semifinales de Copa de la Liga",
+            "source": "La Jornada",
+            "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPVENGTVJ0YWNNOUVab2x3eUFqcFhqMU9MRDdsMUg2UDlCWlNZZ2Y0WHh1enVoY1lCcUhMakVXVFFGd0lKQXZJQmFBb2JIR2NWMEJRWmtGVThnUzlCcjd0bldsczRzb3NRZko1NFBxT2xobHZKRXdjTHJrVVJ6QjRwVGpGR1BUcVdpUmVxcDRHakZ6emJxNXBHVnUxREF3TTVCejdxWTRxQi00UjlWbmotVnU5S3g0Zl9VblZfeGE5ZHFjYlA0Y1EzVExLZmlGOVlBQmRfMG1pZmRMQQ?oc=5",
+            "published_at": "2026-10-29T03:06:00Z",
+            "dominio": "jornada.com.mx",
+            "edicion": "mx"
+          },
+          {
+            "title": "Triunfa Porto en la Copa con gol de Santiago Giménez",
+            "source": "Reforma",
+            "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQSlJjb2loazJodF9pVDR1SDk2c0tjYjhmdkotLVJpN3dmRVFNRXBrazRneTNfRWpLQXNWS2dGWEJpWmxLVExpN2VfVkNaNDhGb0VVNmhOZGZrUG94ckNCNEpSVElXTlpWU2dBZEZscXA1SGZOeTZkMldQc1FKVksyTEtQX2NzYWtWQy1nZzdTcw?oc=5",
+            "published_at": "2026-10-28T23:50:45Z",
+            "dominio": "reforma.com",
+            "edicion": "mx"
+          }
+        ]
+      },
+      "silencioso": true,
+      "sin_caducidad": true,
+      "motivo": "sin resumen tras los intentos"
     }
   }
 }
