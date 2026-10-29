@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T08:52:01.750311-06:00",
+  "updated_at": "2026-10-29T08:52:05.130059-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -7664,7 +7664,13 @@
         "eventos_v": 6,
         "penales": null,
         "alineacion": null,
-        "sin_stats": true
+        "sin_stats": true,
+        "calif_reintento": true,
+        "tarjeta": {
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/huescas_partido.jpg?v=8e93c6bc",
+          "hasta": "2026-10-30T08:30:00-06:00",
+          "firma": "815a2baeb9"
+        }
       },
       "deltas_vivos": [
         {
