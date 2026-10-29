@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-28T23:15:23.445554-06:00",
+  "updated_at": "2026-10-28T23:20:37.877099-06:00",
   "cuota": {
     "fecha": "2026-10-28",
-    "busquedas": 4,
+    "busquedas": 5,
     "busquedas_resumen": 2
   },
   "goles": {
@@ -119,14 +119,37 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "resuelto",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
-      "video": null,
+      "video": {
+        "id": "5ZfgXJMwmQc",
+        "title": "MINI RESUMEN: América 1-1 Tijuana | Mora está de regreso #shorts",
+        "channel": "TUDN México",
+        "published_at": "2026-10-29T05:09:02Z",
+        "thumbnail": "https://i.ytimg.com/vi/5ZfgXJMwmQc/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=5ZfgXJMwmQc",
+        "embeddable": true,
+        "bloqueado_en": [
+          "US"
+        ]
+      },
       "noticias_pasadas": 0,
       "ultima_noticia": null,
-      "noticias": {}
+      "noticias": {},
+      "alternativos": {
+        "US": {
+          "id": "9w9Dgju9zGg",
+          "title": "Resumen completo: América 1 vs. 1 Tijuana | J7, AP26 | GOLAZO de Miguel Borja",
+          "channel": "Club América",
+          "published_at": "2026-10-29T05:07:28Z",
+          "thumbnail": "https://i.ytimg.com/vi/9w9Dgju9zGg/hqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=9w9Dgju9zGg",
+          "embeddable": true
+        }
+      },
+      "alt_buscado_US": true
     },
     "1589437": {
       "fixture_id": 1589437,
