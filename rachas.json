@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T18:59:08.404877-06:00",
+  "updated_at": "2026-10-28T23:17:18.508368-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -302,10 +302,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 336,
+          "valor": 335,
           "meta": 350,
           "previo": 300,
-          "texto": "A 14 partidos de 350"
+          "texto": "A 15 partidos de 350"
         },
         {
           "id": "goles_sel",
@@ -347,9 +347,9 @@
             false,
             false,
             false,
-            true,
             false,
-            true
+            true,
+            false
           ]
         },
         {
@@ -363,9 +363,9 @@
             false,
             false,
             false,
-            true,
             false,
-            true
+            true,
+            false
           ]
         },
         {
@@ -379,7 +379,7 @@
             false,
             false,
             false,
-            true,
+            false,
             true,
             true
           ]
@@ -387,15 +387,15 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 0,
+          "actual": 1,
           "en_racha": false,
           "puntos": [
-            false,
-            false,
-            false,
-            false,
-            false,
             true,
+            false,
+            false,
+            false,
+            false,
+            false,
             true,
             true
           ]
@@ -413,10 +413,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 61,
+          "valor": 62,
           "meta": 75,
           "previo": 50,
-          "texto": "A 14 partidos de 75"
+          "texto": "A 13 partidos de 75"
         },
         {
           "id": "goles_sel",
@@ -516,18 +516,18 @@
         {
           "id": "goles_club",
           "titulo": "Goles con clubes",
-          "valor": 14,
+          "valor": 13,
           "meta": 15,
           "previo": 10,
-          "texto": "A 1 gol de 15"
+          "texto": "A 2 goles de 15"
         },
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 295,
+          "valor": 290,
           "meta": 300,
           "previo": 250,
-          "texto": "A 5 partidos de 300"
+          "texto": "A 10 partidos de 300"
         },
         {
           "id": "goles_sel",
@@ -628,10 +628,10 @@
         {
           "id": "goles_club",
           "titulo": "Goles con clubes",
-          "valor": 95,
+          "valor": 96,
           "meta": 100,
           "previo": 75,
-          "texto": "A 5 goles de 100"
+          "texto": "A 4 goles de 100"
         },
         {
           "id": "partidos_club",
@@ -968,10 +968,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 386,
+          "valor": 384,
           "meta": 400,
           "previo": 350,
-          "texto": "A 14 partidos de 400"
+          "texto": "A 16 partidos de 400"
         },
         {
           "id": "goles_sel",
@@ -1190,10 +1190,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 364,
+          "valor": 363,
           "meta": 400,
           "previo": 350,
-          "texto": "A 36 partidos de 400"
+          "texto": "A 37 partidos de 400"
         },
         {
           "id": "goles_sel",
@@ -1301,10 +1301,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 318,
+          "valor": 317,
           "meta": 350,
           "previo": 300,
-          "texto": "A 32 partidos de 350"
+          "texto": "A 33 partidos de 350"
         },
         {
           "id": "goles_sel",
@@ -1522,10 +1522,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 197,
+          "valor": 196,
           "meta": 200,
           "previo": 150,
-          "texto": "A 3 partidos de 200"
+          "texto": "A 4 partidos de 200"
         },
         {
           "id": "goles_sel",
