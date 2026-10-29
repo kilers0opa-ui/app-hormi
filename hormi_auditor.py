@@ -223,7 +223,10 @@ def revisar_partido(config, stats, aud, p_ag, fx_cache):
                 stats.update(ha.load_json(ha.STATS_FILE, {}))
                 entry = stats["players"][key]
                 estado["historial"] = True
-                hecho(f"temporada:{clave}", f"{nombre}: {partido} no estaba sumado a su temporada — historial rehecho")
+                # Queda anotado como contado (el motor no lo vuelve a sumar si lo ve después).
+                entry.setdefault("applied_fixtures", {}).setdefault(tkey, []).append(fid)
+                hecho(f"temporada:{clave}", f"{nombre}: {partido} no estaba confirmado en su temporada — "
+                                            f"temporada recalculada con la fuente")
             else:
                 problema(f"temporada:{clave}", f"{nombre}: no se pudo rehacer su historial tras {partido}")
             u = entry.get("ultimo_partido") or {}
