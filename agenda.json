@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T08:19:44.407557-06:00",
+  "updated_at": "2026-10-29T10:33:51.464767-06:00",
   "desde": "2026-10-26",
   "hasta": "2026-11-04",
   "partidos": [
@@ -221,9 +221,9 @@
       "away_logo": "https://media.api-sports.io/football/teams/597.png",
       "league": "Copa de Rusia",
       "league_logo": "https://media.api-sports.io/football/leagues/237.png",
-      "status": "NS",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "1H",
+      "home_goals": 0,
+      "away_goals": 0,
       "penales": null,
       "jugadores": [
         {
