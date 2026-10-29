@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T11:59:31.484097-06:00",
+  "updated_at": "2026-10-29T12:01:32.139169-06:00",
   "desde": "2026-10-26",
   "hasta": "2026-11-04",
   "partidos": [
@@ -244,9 +244,9 @@
       "away_logo": "https://media.api-sports.io/football/teams/2933.png",
       "league": "Liga Profesional Saudí",
       "league_logo": "https://media.api-sports.io/football/leagues/307.png",
-      "status": "NS",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "1H",
+      "home_goals": 0,
+      "away_goals": 0,
       "penales": null,
       "jugadores": [
         {
