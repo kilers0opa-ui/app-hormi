@@ -836,6 +836,55 @@ def _goles_texto(data):
 
 
 # ═══════════════════════════════════════════════════════ detector
+GEMINI_ALIN_FILE = Path("gemini_alineaciones.json")
+
+
+def _alineacion_gemini(player, target, data):
+    """Alineación del jugador según Gemini (solo oficial), o None. Hasta 3 intentos: a los −10 min, y cada 6 min."""
+    import hormi_gemini as G
+    if not G.disponible():
+        return None
+    fx = data["fixture"]
+    ts, st = fx.get("timestamp") or 0, fx["status"]["short"]
+    if st in ("NS", "TBD") and ts - time.time() > 600:
+        return None
+    reg = load_json(GEMINI_ALIN_FILE, {}) or {}
+    k = f"{fx['id']}:{player['key']}"
+    e = reg.get(k) or {}
+    if e.get("r"):
+        return e["r"]
+    if e.get("intentos", 0) >= 3 or (e.get("ultimo") and time.time() - e["ultimo"] < 360):
+        return None
+    ko = datetime.fromtimestamp(ts, LOCAL_TZ)
+    r = G.alineacion(player["name"], target["label"], nombre_es(data["teams"]["home"]["name"]),
+                     nombre_es(data["teams"]["away"]["name"]), ko.strftime("%d/%m/%Y"), liga_es(data["league"]))
+    reg[k] = {"intentos": e.get("intentos", 0) + 1, "ultimo": time.time(), "r": r}
+    # Solo se guardan los últimos 7 días.
+    reg = {a: b for a, b in reg.items() if time.time() - (b.get("ultimo") or 0) < 7 * 86400}
+    save_json(GEMINI_ALIN_FILE, reg)
+    if r:
+        log(f"🤖 Gemini: {player['name']} {r['estado']} (según {r.get('sitio')})")
+    return r
+
+
+def _comparar_gemini(player, data, role):
+    """Ya salió la alineación en la API: si el aviso fue con Gemini y no coincide, correo a soporte (una vez)."""
+    reg = load_json(GEMINI_ALIN_FILE, {}) or {}
+    k = f"{data['fixture']['id']}:{player['key']}"
+    e = reg.get(k) or {}
+    if not e.get("r") or e.get("comparado"):
+        return
+    api_estado = role or "no_convocado"
+    e["comparado"] = True
+    save_json(GEMINI_ALIN_FILE, {**reg, k: e})
+    if api_estado != e["r"]["estado"]:
+        import hormi_auditor as AU
+        AU.enviar_correo(f"⚠️ Legión MX: alineación de {display_name(player)} no coincide",
+                         f"{nombre_es(data['teams']['home']['name'])} vs {nombre_es(data['teams']['away']['name'])}\n\n"
+                         f"Se avisó con Gemini: {e['r']['estado']} (según {e['r'].get('sitio')}: {e['r'].get('cita')})\n"
+                         f"La fuente de datos dice ahora: {api_estado}\n\nRevísalo y avísale a Claude si hay que corregir.")
+
+
 def analyze(data, player, target):
     """Recibe una 'foto' del partido (formato de /fixtures?id=...) para UN
     jugador y UN objetivo (club o selección) y devuelve TODAS las alertas
@@ -934,6 +983,29 @@ def analyze(data, player, target):
         else:
             add("alineacion", f"❌ {nombre} no convocado ({label})",
                 f"{match} · {league}", 2)
+
+    # Respaldo con Gemini: faltan ≤10 min (o van ≤10 de juego) y la API NO tiene la alineación de su equipo (o
+    # solo los 11 sin la banca y él no está). Si Gemini encuentra la alineación OFICIAL, se avisa igual que con la
+    # API (misma llave: si la API la publica después, no se repite). Ver hormi_gemini.py.
+    if (not team_lu or banca_pendiente) and not tarde:
+        try:
+            gem = _alineacion_gemini(player, target, data)
+        except Exception as err:
+            log(f"⚠️  gemini alineación: {err}")
+            gem = None
+        if gem and not (gem["estado"] == "no_convocado" and target.get("kind") == "seleccion"):
+            motivo = {"lesion": " · Lesionado", "suspension": " · Suspendido"}.get(gem.get("motivo") or "", "")
+            if gem["estado"] == "titular":
+                add("alineacion", f"⭐ ¡{nombre} titular con {label}!", f"{match} · {league}", 4)
+            elif gem["estado"] == "banca":
+                add("alineacion", f"🪑 {nombre} arranca en la banca ({label})", f"{match} · {league}")
+            else:
+                add("alineacion", f"❌ {nombre} no convocado ({label})", f"{match} · {league}{motivo}", 2)
+    elif team_lu and not banca_pendiente:
+        try:
+            _comparar_gemini(player, data, role)
+        except Exception as err:
+            log(f"⚠️  gemini comparar: {err}")
 
     es_club = target.get("kind") != "seleccion"
     # Con el club NO se avisa "Arrancó" si el jugador no está en la alineación publicada (no es partido suyo).
@@ -2667,7 +2739,8 @@ MAX_FALLOS_SEGUIDOS = 5
 
 TARJETAS_STATE = Path("tarjetas_estado.json")   # tarjeta de gol vigente por jugador (10 min)
 TARJETAS_DIR = Path("tarjetas")
-STATE_OWNED_FILES = (STATUS_FILE, STATE_FILE, SCHEDULE_FILE, PENDING_VIDEOS_FILE, TARJETAS_STATE, TARJETAS_DIR)
+STATE_OWNED_FILES = (STATUS_FILE, STATE_FILE, SCHEDULE_FILE, PENDING_VIDEOS_FILE, TARJETAS_STATE, TARJETAS_DIR,
+                     Path("gemini_alineaciones.json"))
 
 
 def active_soon(config):
