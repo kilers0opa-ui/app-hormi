@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-29T13:55:29.684585-06:00",
+  "updated_at": "2026-10-29T14:00:43.352365-06:00",
   "cuota": {
     "fecha": "2026-10-29",
-    "busquedas": 4,
-    "busquedas_resumen": 4
+    "busquedas": 5,
+    "busquedas_resumen": 5
   },
   "goles": {
     "gimenez:porto:1589437:goal:45:gol": {
@@ -257,13 +257,13 @@
           "assists": 1
         }
       },
-      "status": "pendiente",
-      "intentos": 4,
+      "status": "omitido",
+      "intentos": 5,
       "fallos": 0,
-      "ultimo_intento": "2026-10-29T19:50:21.813341+00:00",
+      "ultimo_intento": "2026-10-29T20:00:29.455686+00:00",
       "video": null,
-      "noticias_pasadas": 4,
-      "ultima_noticia": "2026-10-29T19:50:21.813341+00:00",
+      "noticias_pasadas": 5,
+      "ultima_noticia": "2026-10-29T20:00:29.455686+00:00",
       "noticias": {
         "huescas": [
           {
@@ -293,7 +293,8 @@
         ]
       },
       "silencioso": true,
-      "sin_caducidad": true
+      "sin_caducidad": true,
+      "motivo": "sin resumen tras los intentos"
     },
     "1603077": {
       "fixture_id": 1603077,
