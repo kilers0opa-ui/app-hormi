@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T16:40:26.492160-06:00",
+  "updated_at": "2026-10-28T23:00:32.457708-06:00",
   "cuota": {
     "fecha": "2026-10-28",
     "busquedas": 2,
@@ -38,7 +38,7 @@
           "US"
         ]
       },
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-28T22:40:26.053224+00:00",
       "noticias": {
         "vasquez": [
@@ -80,6 +80,30 @@
         }
       },
       "alt_buscado_US": true
+    },
+    "1550952": {
+      "fixture_id": 1550952,
+      "home": "Club America",
+      "away": "Club Tijuana",
+      "league": "Liga MX",
+      "score": "Club America 1-1 Club Tijuana",
+      "final_seen_at": "2026-10-29T04:57:46.212894+00:00",
+      "jugadores": {
+        "mora": {
+          "team_key": "tijuana",
+          "minutes": 33,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
