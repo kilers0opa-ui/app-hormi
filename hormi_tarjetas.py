@@ -380,7 +380,9 @@ def tarjeta_partido(player, u, apodo, posicion=None):
     if chico:
         d.text((284, y1 + 122), chico, font=_fit2(d, chico, PM, maxw, 32), fill=(200, 206, 216))
     lugar = st.get("lugar_equipo") or (1 if st.get("mejor_equipo") else None)
-    if lugar and lugar <= 3:
+    if st.get("mvp"):   # MVP Legión MX: la calificación más alta de todo el partido (nuestra fórmula)
+        _pill(d, 282, y1 + (168 if chico else 150), "MVP LEGIÓN MX", _f(FB, 24), (26, 18, 0), GOLD, (16, 8))
+    elif lugar and lugar <= 3:
         txt = "★ Mejor de su equipo" if lugar == 1 else f"★ {lugar}° mejor de su equipo"
         _pill(d, 282, y1 + (168 if chico else 150), txt, _f(FB, 24), (14, 17, 22), GOLD, (16, 8))
 

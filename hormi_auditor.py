@@ -10,8 +10,8 @@ Qué revisa, por cada partido terminado de los últimos 3 días (agenda.json) y 
   1. ¿Jugó? (estadísticas por jugador → alineación → eventos suyos: gol, asistencia, cambio, tarjeta).
   2. Si jugó y es su partido más reciente → debe ser su "Último partido" (si no: se rehace).
   3. Debe estar sumado a su temporada (si no: se rehace su historial).
-  4. Debe tener calificación. Sin estadísticas por jugador en la fuente → calificación PARCIAL con lo que sí hay
-     (minutos, goles, asistencias, tarjetas, resultado). Si después la fuente las publica (≤ 48 h), se recalcula 1 vez.
+  4. Debe tener calificación (una sola, fija). Sin estadísticas por jugador en la fuente → se buscan con Gemini
+     (hormi_gemini.py, verificadas contra la fuente); si tampoco, con minutos, goles, asistencias, tarjetas y resultado.
   5. La calificación debe cuadrar con el marcador (victoria/derrota/portería en cero). Si se calculó con el marcador
      equivocado, se recalcula.
   6. Si metió gol: que se haya buscado el video (si no: se busca en silencio).
@@ -142,7 +142,7 @@ def calif_parcial(part, rol, favor, contra):
     r = CL.calcular(s, rol, ctx)
     if r is None:
         return None
-    return {"rating": r, "calif_fija": True, "parcial": True, "rating_api": None, "pesos": CL.explicar(s, rol, ctx)}
+    return {"rating": r, "calif_fija": True, "rating_api": None, "pesos": CL.explicar(s, rol, ctx)}
 
 
 def ctx_viejo(fx, tid):
@@ -254,7 +254,7 @@ def revisar_partido(config, stats, aud, p_ag, fx_cache):
             continue
         clave = f"{key}:{fid}"
         estado = aud["partidos"].get(clave) or {}
-        if estado.get("ok") and not estado.get("parcial") and not estado.get("mvp_pendiente"):
+        if estado.get("ok") and not estado.get("pendiente"):
             continue
         t = next((x for x in p["targets"] if x["key"] == tkey), None)
         if not t or not t.get("team_id"):
@@ -335,41 +335,40 @@ def revisar_partido(config, stats, aud, p_ag, fx_cache):
             completa = None
             if fx.get("players"):
                 completa = ha.stats_jugador(fx["players"], p.get("player_id"), tid, key)
-            if not completa and (not st.get("rating") or st.get("parcial")) and not st.get("manual"):
-                # La fuente no trae sus estadísticas: se buscan con Gemini (verificadas) para la fórmula completa.
+            # La calificación es UNA y fija desde que se pone (no hay "parcial" que luego cambie). Si la fuente no trae
+            # sus estadísticas se buscan con Gemini; mientras Gemini todavía puede encontrarlas (3 intentos, hasta 12 h
+            # después del partido) se espera. Si no aparecen, se califica con lo que hay (minutos, goles, resultado...).
+            esperar = False
+            if not completa and not st.get("rating") and not st.get("manual"):
                 r = gemini_partido(p, t, fx, part, estado, clave, nombre, partido)
                 if r and r.get("jugo"):
                     completa = stats_desde_gemini(r, rol, favor, contra, part["minutes"])
-            if not st.get("rating"):
+                elif G.disponible() and (estado.get("gemini") or {}).get("intentos", 0) < 3 and \
+                        ahora() - datetime.fromisoformat(ko) < timedelta(hours=12):
+                    esperar = True
+            if not st.get("rating") and not esperar:
                 nueva = completa or calif_parcial(part, rol, favor, contra)
                 if nueva:
                     u["stats"], u["stats_v"] = nueva, 2
                     u.pop("sin_stats", None)
                     u.pop("calif_reintento", None)
-                    hecho(f"calif:{clave}", f"{nombre}: {partido} no tenía calificación — "
-                                            f"{nueva['rating']}{' (parcial: la fuente no trae sus estadísticas)' if nueva.get('parcial') else ''}")
+                    hecho(f"calif:{clave}", f"{nombre}: {partido} no tenía calificación — {nueva['rating']}")
                 else:
                     problema(f"calif:{clave}", f"{nombre}: {partido} sin calificación y no se pudo calcular")
-            elif st.get("parcial") and completa:
-                u["stats"] = completa
-                hecho(f"calif_completa:{clave}", f"{nombre}: {partido} — ya hay estadísticas completas, calificación "
-                                                 f"{st['rating']} → {completa['rating']}")
-            elif completa and not st.get("manual") and not st.get("parcial") and fx.get("players") \
+            elif st.get("rating") and completa and not st.get("manual") and fx.get("players") \
                     and not estado.get("marcador_ok"):
                 if ctx_viejo(fx, tid) != (favor, contra) and completa["rating"] != st.get("rating"):
                     u["stats"] = completa
                     hecho(f"calif_marcador:{clave}", f"{nombre}: {partido} — su calificación se había calculado con el "
                                                      f"marcador equivocado: {st.get('rating')} → {completa['rating']}")
                 estado["marcador_ok"] = True
-            estado["mvp_pendiente"] = False   # (MVP quitado el 29-oct: no se pregunta)
             # Tarjeta para compartir (24 h)
             try:
                 if datetime.fromisoformat(u["kickoff"]) >= ahora() - timedelta(hours=30):
                     ha.tarjeta_partido_para(p, u, dict(u))
             except Exception as err:
                 ha.log(f"⚠️  tarjeta de {key}: {err}")
-            estado["parcial"] = bool((u.get("stats") or {}).get("parcial")) and \
-                ahora() - datetime.fromisoformat(ko) < timedelta(hours=48)
+            estado["pendiente"] = esperar
 
         # 6. Video de sus goles
         if part["goals"] and ahora() - datetime.fromisoformat(ko) < timedelta(hours=24) and not estado.get("video"):
