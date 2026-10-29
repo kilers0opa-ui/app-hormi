@@ -886,8 +886,11 @@ def analyze(data, player, target):
             log(f"   ⏳ {match}: la API dice {status} — se confirma más tarde (puede ser un error de la API)")
             return alerts, {"status": "sin_partido", "match": match, "league": league,
                             "score": score(), "goals": 0, "assists": 0, "summary": None}
-        add("cancelado", f"⚠️ {label} ({nombre}): partido suspendido/pospuesto",
-            f"{match} · {fx['status']['long']}")
+        que = {"PST": "partido pospuesto", "SUSP": "partido suspendido", "ABD": "partido suspendido (no se terminará hoy)",
+               "CANC": "partido cancelado", "AWD": "partido decidido en la mesa", "WO": "partido ganado por no presentación"
+               }.get(status, "partido suspendido/pospuesto")
+        add("cancelado", f"⚠️ {label} ({nombre}): {que}",
+            f"{match} · Lo seguimos revisando por si cambia")
         return alerts, {"status": "cancelado", "match": match, "league": league,
                         "score": score(), "goals": 0, "assists": 0, "summary": None}
 
@@ -1842,6 +1845,13 @@ CONVOCATORIA_FILE = Path("hormi_convocatoria.json")   # convocatoria de la Selec
 REFRESH_HORAS = 6                      # cada cuánto se revisa si hay partido nuevo
 VENTANA_ANTES = timedelta(minutes=75)  # desde cuándo antes del kickoff se vigila en vivo (la API publica la alineación ~60 min antes)
 VENTANA_DESPUES = timedelta(hours=3)   # hasta cuándo después se sigue vigilando
+# Si la API dice "pospuesto/suspendido/detenido", o el partido sigue EN JUEGO al acercarse ese límite (empezó tarde),
+# la vigilancia se alarga hasta 6 h después de la hora original: así no se pierde un partido que siempre sí se juega.
+VENTANA_LARGA = timedelta(hours=6)
+
+
+def _ventana_despues(entry):
+    return VENTANA_LARGA if (entry or {}).get("ventana_larga") else VENTANA_DESPUES
 
 
 def now_iso():
@@ -1858,7 +1868,7 @@ def schedule_stale(entry):
         return True
     now = datetime.now(LOCAL_TZ)
     ko = _parse(entry.get("kickoff"))
-    if ko and not entry.get("done") and ko - VENTANA_ANTES - ARRANQUE_EXTRA <= now <= ko + VENTANA_DESPUES:
+    if ko and not entry.get("done") and ko - VENTANA_ANTES - ARRANQUE_EXTRA <= now <= ko + _ventana_despues(entry):
         # Partido en curso o por empezar: el horario NO se toca. Refrescarlo ahora
         # podría sustituir el partido por el siguiente (la búsqueda "próximo" ya no
         # devuelve el que está en juego) y se perderían las alertas a media partido.
@@ -1884,7 +1894,7 @@ def in_live_window(entry):
     if not kickoff or entry.get("done"):
         return False
     now = datetime.now(LOCAL_TZ)
-    return kickoff - VENTANA_ANTES <= now <= kickoff + VENTANA_DESPUES
+    return kickoff - VENTANA_ANTES <= now <= kickoff + _ventana_despues(entry)
 
 
 def refresh_schedule(target, known_season=None):
@@ -2014,7 +2024,7 @@ def send_reminders(config, notifier, fcm, schedule_out, reminders_sent):
             sched = schedule_out.setdefault(pkey, {})
             entry = sched.get(target["key"]) or {}
             ko0 = _parse(entry.get("kickoff"))
-            if (ko0 and ko0 <= now <= ko0 + VENTANA_DESPUES and not entry.get("done")):
+            if (ko0 and ko0 <= now <= ko0 + _ventana_despues(entry) and not entry.get("done")):
                 continue   # partido en curso o recién terminado: nunca se le cambia el horario
             try:
                 if not _entry_future(entry, now):
@@ -2400,6 +2410,9 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
     closing_key = f"{player['key']}:{key}:{fid}:" + ("cancelado" if st in CANCELLED else "final")
     # "SUSP" (suspendido) puede reanudarse: ese no se da por cerrado.
     sin_final = st in FINISHED and not any(a[0].endswith(":final") for a in alerts)   # no era partido suyo: nada que avisar
+    # Pospuesto/suspendido/detenido o en juego: la vigilancia se alarga a 6 h (ver VENTANA_LARGA).
+    if st in CANCELLED or st in LIVE or st == "INT":
+        entry["ventana_larga"] = True
     # Pospuesto/suspendido: NO se suelta hasta 6 h después de la hora de inicio (por si siempre sí se juega).
     ts = (snap.get("fixture") or {}).get("timestamp") or 0
     cancel_cerrado = st in CANCELLED - {"SUSP"} and time.time() > ts + CANCELADO_SUELTA_H * 3600
