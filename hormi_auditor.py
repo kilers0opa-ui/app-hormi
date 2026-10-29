@@ -34,6 +34,7 @@ from pathlib import Path
 
 import hormi_alertas as ha
 import hormi_calif_legion as CL
+import hormi_gemini as G
 
 OUT = Path("auditoria.json")
 CORREO = "legionmx.soporte@gmail.com"
@@ -163,6 +164,86 @@ def ctx_viejo(fx, tid):
 
 # ───────────────────────────── revisión por partido ─────────────────────────────
 
+# ───────────────────────────── Gemini (respaldo) ─────────────────────────────
+
+def _datos_partido(fx):
+    ko = datetime.fromtimestamp(fx["fixture"]["timestamp"], ha.LOCAL_TZ)
+    return (ha.nombre_es(fx["teams"]["home"]["name"]), ha.nombre_es(fx["teams"]["away"]["name"]),
+            ko.strftime("%d/%m/%Y"), ha.liga_es(fx["league"]))
+
+
+def gemini_partido(p, t, fx, part, estado, clave, nombre, partido):
+    """Lo que encontró Gemini del jugador en ese partido, YA verificado contra la fuente (marcador y goles), o None.
+    Máximo 3 intentos, separados por 4 h (a veces las páginas publican las estadísticas más tarde)."""
+    g = estado.get("gemini") or {}
+    if g.get("ok"):
+        return g["r"]
+    if not G.disponible() or g.get("intentos", 0) >= 3 or \
+            (g.get("ultimo") and ahora() - datetime.fromisoformat(g["ultimo"]) < timedelta(hours=4)):
+        return None
+    local, visita, fecha, liga = _datos_partido(fx)
+    r = G.partido_jugador(p["name"], t["label"], local, visita, fecha, liga)
+    g = {"intentos": g.get("intentos", 0) + 1, "ultimo": ahora().isoformat()}
+    if r:
+        gl = fx.get("goals") or {}
+        if (r.get("marcador_local"), r.get("marcador_visita")) != (gl.get("home"), gl.get("away")):
+            problema(f"gemini_marcador:{clave}", f"{nombre}: Gemini dio otro marcador para {partido} "
+                                                 f"({r.get('marcador_local')}-{r.get('marcador_visita')}, según {r.get('sitio')}) — se descartó")
+        elif part and r.get("jugo") and ((r.get("goles") is not None and r["goles"] != part["goals"]) or
+                                         (r.get("asistencias") is not None and r["asistencias"] != part["assists"])):
+            problema(f"gemini_goles:{clave}", f"{nombre}: Gemini dice {r.get('goles')} gol(es) y {r.get('asistencias')} "
+                                              f"asistencia(s) en {partido} (según {r.get('sitio')}), la fuente dice "
+                                              f"{part['goals']} y {part['assists']} — se descartó")
+        else:
+            g.update(ok=True, r=r)
+    estado["gemini"] = g
+    return r if g.get("ok") else None
+
+
+def stats_desde_gemini(r, rol, favor, contra, minutos):
+    """Calificación Legión MX (nuestra fórmula) y los números para Detalles, con lo que encontró Gemini."""
+    s = G.a_formato_api(r)
+    if not s["games"]["minutes"]:
+        s["games"]["minutes"] = minutos
+    ctx = {"goles_favor": favor, "goles_contra": contra}
+    rating = CL.calcular(s, rol, ctx)
+    if rating is None:
+        return None
+    out = {"rating": rating, "calif_fija": True, "rating_api": None, "pesos": CL.explicar(s, rol, ctx)}
+    sh, pa, du, dr, ta = s["shots"], s["passes"], s["duels"], s["dribbles"], s["tackles"]
+    if sh["total"] is not None:
+        out["tiros"] = sh["total"]
+        if sh["on"] is not None:
+            out["tiros_puerta"] = sh["on"]
+    if pa["total"] and pa["accuracy"] is not None:
+        ok = pa["accuracy"]
+        out["pases_pct"] = int(round(ok / pa["total"] * 100)) if ok <= pa["total"] else int(round(ok))
+    if du["total"]:
+        out["duelos"], out["duelos_ganados"] = du["total"], du["won"] or 0
+    if dr["attempts"]:
+        out["regates"], out["regates_ok"] = dr["attempts"], dr["success"] or 0
+    if pa["key"]:
+        out["pases_clave"] = pa["key"]
+    rec = (ta["total"] or 0) + (ta["interceptions"] or 0)
+    if rec:
+        out["recuperaciones"] = rec
+    if s["goals"]["saves"]:
+        out["atajadas"] = s["goals"]["saves"]
+    return out
+
+
+def registrar_desde_gemini(p, t, fx, part, stats):
+    """Partido que la fuente no supo que jugó (sin alineación ni eventos suyos): se registra como lo haría el motor
+    (Último partido + temporada) con lo que encontró Gemini."""
+    ha.save_json(ha.STATS_FILE, stats)
+    info = {"summary": {"minutes": part["minutes"], "goals": part["goals"], "assists": part["assists"]},
+            "eventos": ha._eventos(fx, p.get("player_id")), "alineacion": ha._alineacion(fx, p.get("player_id"))}
+    ha.registrar_ultimo(p, t, fx, info)
+    ha.apply_live_delta(p, t, fx, info)
+    stats.clear()
+    stats.update(ha.load_json(ha.STATS_FILE, {}))
+
+
 def revisar_partido(config, stats, aud, p_ag, fx_cache):
     fid = p_ag["fixture_id"]
     jugadores = {p["key"]: p for p in config["players"]}
@@ -173,7 +254,7 @@ def revisar_partido(config, stats, aud, p_ag, fx_cache):
             continue
         clave = f"{key}:{fid}"
         estado = aud["partidos"].get(clave) or {}
-        if estado.get("ok") and not estado.get("parcial"):
+        if estado.get("ok") and not estado.get("parcial") and not estado.get("mvp_pendiente"):
             continue
         t = next((x for x in p["targets"] if x["key"] == tkey), None)
         if not t or not t.get("team_id"):
@@ -191,12 +272,27 @@ def revisar_partido(config, stats, aud, p_ag, fx_cache):
         partido = f"{ha.nombre_es(fx['teams']['home']['name'])} {fx['goals']['home']}-{fx['goals']['away']} " \
                   f"{ha.nombre_es(fx['teams']['away']['name'])}"
         part = participacion(fx, p.get("player_id"), tid)
+        nuevo_por_gemini = False
         if not part:
             # Solo se da por revisado si la fuente ya publicó alineación o estadísticas; si no, se vuelve a ver
             # en la siguiente corrida (hasta 3 días): a veces las publica horas después.
             if fx.get("lineups") or fx.get("players"):
                 aud["partidos"][clave] = {"ok": True, "jugo": False, "revisado": ahora().isoformat()}
-            continue
+                continue
+            # La fuente no sabe NADA de quién jugó: se le pregunta a Gemini.
+            r = gemini_partido(p, t, fx, None, estado, clave, nombre, partido)
+            aud["partidos"][clave] = estado
+            if not r:
+                continue
+            if not r.get("jugo") or not r.get("minutos"):
+                estado.update(ok=True, jugo=False, revisado=ahora().isoformat())
+                continue
+            part = {"minutes": r["minutos"], "goals": r.get("goles") or 0, "assists": r.get("asistencias") or 0,
+                    "yellow": r.get("amarillas") or 0, "red": r.get("rojas") or 0, "fuente": "gemini"}
+            registrar_desde_gemini(p, t, fx, part, stats)
+            nuevo_por_gemini = True
+            hecho(f"gemini_jugo:{clave}", f"{nombre}: la fuente no publicó quién jugó {partido}; según "
+                                          f"{r.get('sitio')} jugó {part['minutes']}' — registrado")
         entry = stats["players"].setdefault(key, {"seasons": {}, "applied_fixtures": {}})
         ko = datetime.fromtimestamp(fx["fixture"]["timestamp"], ha.LOCAL_TZ).isoformat()
 
@@ -239,6 +335,11 @@ def revisar_partido(config, stats, aud, p_ag, fx_cache):
             completa = None
             if fx.get("players"):
                 completa = ha.stats_jugador(fx["players"], p.get("player_id"), tid, key)
+            if not completa and (not st.get("rating") or st.get("parcial")) and not st.get("manual"):
+                # La fuente no trae sus estadísticas: se buscan con Gemini (verificadas) para la fórmula completa.
+                r = gemini_partido(p, t, fx, part, estado, clave, nombre, partido)
+                if r and r.get("jugo"):
+                    completa = stats_desde_gemini(r, rol, favor, contra, part["minutes"])
             if not st.get("rating"):
                 nueva = completa or calif_parcial(part, rol, favor, contra)
                 if nueva:
@@ -260,6 +361,26 @@ def revisar_partido(config, stats, aud, p_ag, fx_cache):
                     hecho(f"calif_marcador:{clave}", f"{nombre}: {partido} — su calificación se había calculado con el "
                                                      f"marcador equivocado: {st.get('rating')} → {completa['rating']}")
                 estado["marcador_ok"] = True
+            # MVP / jugador del partido (solo si una página lo nombra). Se pregunta ~3 h después (cuando ya está
+            # publicado), dentro de las primeras 48 h.
+            estado["mvp_pendiente"] = False
+            if G.disponible() and not estado.get("mvp_revisado") and u.get("stats"):
+                desde_ko = ahora() - datetime.fromisoformat(ko)
+                if desde_ko > timedelta(hours=48):
+                    estado["mvp_revisado"] = True
+                elif desde_ko < timedelta(hours=3):
+                    estado["mvp_pendiente"] = True
+                else:
+                    g = (estado.get("gemini") or {}).get("r") or {}
+                    if g:
+                        m = {"sitio": g.get("mvp_sitio")} if g.get("mvp") and g.get("mvp_sitio") else None
+                    else:
+                        local, visita, fecha, liga = _datos_partido(fx)
+                        m = G.mvp(p["name"], t["label"], local, visita, fecha, liga)
+                    estado["mvp_revisado"] = True
+                    if m:
+                        u["stats"]["mvp"], u["stats"]["mvp_sitio"] = True, m.get("sitio")
+                        hecho(f"mvp:{clave}", f"🏅 {nombre}: MVP / jugador del partido en {partido} (según {m.get('sitio')})")
             # Tarjeta para compartir (24 h)
             try:
                 if datetime.fromisoformat(u["kickoff"]) >= ahora() - timedelta(hours=30):

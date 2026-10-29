@@ -60,6 +60,9 @@ jobs:
           # En modo vigilar el script sube el estado a git él mismo en cada pasada con novedades.
           HORMI_GIT_PUSH: "1"
           GITHUB_TOKEN: ${{ github.token }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}          # alineación de respaldo (hormi_gemini.py)
+          SOPORTE_SMTP_USER: ${{ secrets.SOPORTE_SMTP_USER }}    # correo a soporte si la alineación no coincide
+          SOPORTE_SMTP_PASS: ${{ secrets.SOPORTE_SMTP_PASS }}
         run: python hormi_alertas.py "${{ inputs.modo || 'vigilar' }}"
 
       - name: Guardar estado (status.json, hormi_estado.json, hormi_horario.json, player_stats.json)
@@ -67,7 +70,7 @@ jobs:
         if: ${{ !cancelled() && (inputs.modo || 'vigilar') != 'prueba' }}
         run: |
           git add status.json hormi_estado.json hormi_horario.json player_stats.json
-          git add tarjetas tarjetas_estado.json 2>/dev/null || true
+          git add tarjetas tarjetas_estado.json gemini_alineaciones.json 2>/dev/null || true
           # Solo existe después del primer gol alertado. Protegido con '|| true' para que,
           # pase lo que pase con este archivo, el guardado del estado de las alertas nunca falle por él.
           [ -f videos_pendientes.json ] && git add videos_pendientes.json || true
