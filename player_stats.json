@@ -4867,13 +4867,36 @@
         "eventos_v": 6,
         "penales": null,
         "alineacion": null,
-        "sin_stats": true,
-        "calif_reintento": true,
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/gimenez_partido.jpg?v=3fe3280c",
           "hasta": "2026-10-29T16:30:00-06:00",
           "firma": "3942a0f15c"
-        }
+        },
+        "stats": {
+          "rating": 7.8,
+          "calif_fija": true,
+          "rating_api": null,
+          "manual": true,
+          "tiros": 3,
+          "tiros_puerta": 1,
+          "faltas": 0,
+          "fueras_lugar": 1,
+          "pesos": [
+            {
+              "txt": "1 gol",
+              "pts": 1.35
+            },
+            {
+              "txt": "Victoria",
+              "pts": 0.3
+            },
+            {
+              "txt": "1 de 3 tiros a puerta",
+              "pts": 0.19
+            }
+          ]
+        },
+        "stats_v": 2
       },
       "deltas_vivos": [
         {
