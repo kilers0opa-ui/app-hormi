@@ -34,7 +34,10 @@ def _participacion(player, target, fx):
             mins = (st.get("games") or {}).get("minutes") or 0
             if mins > 0:
                 return (mins, (st.get("goals") or {}).get("total") or 0, (st.get("goals") or {}).get("assists") or 0)
-    if not res:
+    esta = any(p["player"]["id"] == player["player_id"] for team in res for p in team.get("players") or [])
+    if not res or not esta:
+        # (También si la lista de su equipo vino incompleta y él no aparece: Aarhus Fremad 0-3 Copenhague,
+        # Huescas titular con asistencia.)
         # Competencias sin estadísticas por jugador en la API (Copa de la Liga de Portugal, Copa de Grecia...):
         # se calcula con los eventos y la alineación del partido. Antes ese partido no contaba como "Último".
         inv = hh._fixture_involvement(player["player_id"], fx)

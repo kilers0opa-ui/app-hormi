@@ -1007,6 +1007,14 @@ def analyze(data, player, target):
             detalle = "Sin datos de minutos para este partido"
             if goals or assists:
                 detalle += f" · {goals} gol(es) · {assists} asistencia(s)"
+            # Pero si tuvo un evento suyo (gol, asistencia, cambio), SÍ jugó: el partido cuenta (Último partido,
+            # estadísticas, calificación). Minutos por los cambios; sin cambio se toma el partido completo.
+            if goals or assists or entered or out_minute:
+                if entered:
+                    played = max(1, (out_minute or 90) - (in_minute or 0))
+                else:
+                    played = out_minute or 90
+                summary = {"minutes": played, "goals": goals, "assists": assists, "minutos_estimados": True}
         else:
             if role == "titular":
                 played = out_minute or 90
