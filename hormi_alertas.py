@@ -2361,6 +2361,8 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         if _fase and _clave not in sent:   # "sent" se guarda entre corridas: una vez por cambio
             sent.add(_clave)
             lanzar_workflow("agenda.yml", {"modo": "rapida"}, clave=_clave)
+            if _fase == "fin":   # el auditor revisa todo lo del partido 15 min después (hormi_auditor.py)
+                lanzar_workflow("auditor.yml", {"esperar": "900"}, clave=f"auditor:{fid}")
     except Exception as err:
         log(f"⚠️  agenda: {err}")
     status_out[key] = {

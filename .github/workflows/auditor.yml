@@ -1,0 +1,64 @@
+name: Auditor - App Hormi
+
+# Revisa (y corrige en silencio) lo que la app muestra de cada jugador después de sus partidos: último partido,
+# temporada, calificación, video del gol, agenda, bajas e hitos. Lo que no puede corregir llega por correo a
+# soporte. Ver hormi_auditor.py.
+on:
+  schedule:
+    - cron: "41 */3 * * *"   # respaldo; normalmente lo lanza el motor 15 min después de cada final
+  workflow_dispatch:
+    inputs:
+      esperar:
+        description: "Segundos a esperar antes de empezar"
+        type: string
+        default: "0"
+      correo_prueba:
+        description: "true = solo manda un correo de prueba"
+        type: string
+        default: "false"
+
+concurrency:
+  group: hormi-auditor
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write   # respaldo del correo mientras no esté configurado
+
+jobs:
+  auditor:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Esperar
+        run: sleep "${{ inputs.esperar || '0' }}"
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6.1.0
+        with:
+          ref: main
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6.3.0
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Auditar y subir
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          SOPORTE_SMTP_USER: ${{ secrets.SOPORTE_SMTP_USER }}
+          SOPORTE_SMTP_PASS: ${{ secrets.SOPORTE_SMTP_PASS }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ inputs.correo_prueba }}" = "true" ]; then python hormi_auditor.py --correo-prueba; exit $?; fi
+          git config user.name "app-hormi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          # Si otro proceso subió los mismos archivos mientras tanto, se vuelve a auditar sobre lo más nuevo.
+          for intento in 1 2 3; do
+            python hormi_auditor.py
+            git add auditoria.json player_stats.json agenda.json disponibilidad.json bajas_manual.json \
+                    rachas.json rachas_cache.json videos_gol.json historial_pj_cache.json tarjetas 2>/dev/null || true
+            git commit -m "chore: auditor [skip ci]" || exit 0
+            if git pull --rebase origin main && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            git fetch origin main && git reset --hard origin/main
+            sleep 10
+          done
+          exit 1
