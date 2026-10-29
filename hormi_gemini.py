@@ -57,7 +57,10 @@ def preguntar(prompt, timeout=60, buscar=True):
             continue
         cand = (data.get("candidates") or [{}])[0]
         texto = "".join(p.get("text") or "" for p in ((cand.get("content") or {}).get("parts") or []))
-        chunks = ((cand.get("groundingMetadata") or {}).get("groundingChunks")) or []
+        gm = cand.get("groundingMetadata") or {}
+        if os.environ.get("GEMINI_DEBUG"):
+            _log(f"claves: {list(cand.keys())} · metadata: {json.dumps(gm, ensure_ascii=False)[:1500]}")
+        chunks = gm.get("groundingChunks") or []
         fuentes = [{"titulo": (c.get("web") or {}).get("title"), "url": (c.get("web") or {}).get("uri")}
                    for c in chunks if c.get("web")]
         m = re.search(r"\{.*\}", texto, re.S)

@@ -43,6 +43,7 @@ jobs:
       - name: Consultar
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_DEBUG: "1"
         run: |
           python hormi_gemini.py "${{ inputs.modo }}" "${{ inputs.jugador }}" "${{ inputs.equipo }}" \
             "${{ inputs.local }}" "${{ inputs.visita }}" "${{ inputs.fecha }}" "${{ inputs.liga }}" 2>&1 | tee resultado.txt
