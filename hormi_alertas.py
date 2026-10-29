@@ -2342,6 +2342,19 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         log(f"⚠️  {player['name']} · {label}: no se pudo actualizar el histórico — {err}")
 
     prev_status = dict(status_out.get(key) or {})   # estado anterior (para el reloj del partido)
+    # Agenda: el cron de GitHub cada 15 min no es confiable (a veces corre 2-3 veces al día), así que el motor
+    # la refresca él mismo cuando el partido empieza, cambia el marcador, termina o se pospone/suspende.
+    try:
+        _sh = snap["fixture"]["status"]["short"]
+        _fase = ("fin" if _sh in FINISHED else "cancel" if _sh in CANCELLED else
+                 "vivo" if (_sh in LIVE or _sh == "INT") else None)
+        _marca = str(info.get("score"))
+        _clave = f"agenda:{fid}:{_fase}:{_marca if _fase == 'vivo' else ''}"
+        if _fase and _clave not in sent:   # "sent" se guarda entre corridas: una vez por cambio
+            sent.add(_clave)
+            lanzar_workflow("agenda.yml", {"modo": "rapida"}, clave=_clave)
+    except Exception as err:
+        log(f"⚠️  agenda: {err}")
     status_out[key] = {
         "label": label, "emoji": emoji, "crest_url": crest_url, "checked_at": now_iso(),
         "match_reference": why, **info, "kickoff": entry["kickoff"],

@@ -6,6 +6,11 @@ on:
     # (~14 peticiones, 1 por equipo). Sin partidos en juego no gasta nada.
     - cron: "5,20,35,50 * * * *"
   workflow_dispatch:
+    inputs:
+      modo:
+        description: "rapida | completa | auto"
+        required: false
+        default: "auto"
 
 concurrency:
   group: hormi-agenda
@@ -29,7 +34,7 @@ jobs:
       - name: Armar la agenda
         env:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
-        run: python hormi_agenda.py
+        run: python hormi_agenda.py --${{ inputs.modo || 'auto' }}
       - name: Subir resultado
         if: ${{ !cancelled() }}
         run: |

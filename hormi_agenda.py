@@ -24,7 +24,8 @@ FINAL = {"FT", "AET", "PEN", "CANC", "ABD", "PST", "AWD", "WO"}
 
 
 def rapido(prev):
-    """Refresca estado y marcador de los partidos en juego / que ya debieron empezar. True si cambió algo."""
+    """Refresca estado y marcador de los partidos en juego / que ya debieron empezar. True si cambió algo.
+    Los pospuestos/suspendidos se siguen revisando hasta 8 h (la API a veces los marca así por error)."""
     ahora = datetime.now(ha.LOCAL_TZ)
     ids = []
     for p in prev.get("partidos") or []:
@@ -32,7 +33,7 @@ def rapido(prev):
             ko = datetime.fromisoformat(p["kickoff"])
         except Exception:
             continue
-        if p.get("status") not in FINAL and ko <= ahora + timedelta(minutes=5) and ahora - ko <= timedelta(hours=8):
+        if p.get("status") not in {"FT", "AET", "PEN", "AWD", "WO"} and ko <= ahora + timedelta(minutes=5) and ahora - ko <= timedelta(hours=8):
             ids.append(p["fixture_id"])
     if not ids:
         ha.log("agenda: nada en juego")
