@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T01:17:58.073607-06:00",
+  "updated_at": "2026-10-29T01:27:46.897705-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -1910,7 +1910,8 @@
         "league_logo": "https://media.api-sports.io/football/leagues/48.png",
         "league_tipo": "copa",
         "stats": {
-          "rating": 6.4,
+          "rating": 6.3,
+          "calif_fija": true,
           "rating_api": 6.0,
           "tiros": 1,
           "tiros_puerta": 0,
@@ -1918,19 +1919,22 @@
           "duelos": 4,
           "duelos_ganados": 2,
           "recuperaciones": 1,
-          "lugar_equipo": 13,
+          "lugar_equipo": 11,
           "de_equipo": 16,
           "pesos": [
             {
-              "txt": "1 entrada",
-              "pts": 0.05
+              "txt": "Derrota",
+              "pts": -0.13
             },
             {
-              "txt": "1 falta recibida",
+              "txt": "2 de 4 duelos ganados",
+              "pts": 0.06
+            },
+            {
+              "txt": "1 entrada",
               "pts": 0.05
             }
-          ],
-          "calif_fija": true
+          ]
         },
         "eventos_v": 6,
         "penales": null,
@@ -5596,7 +5600,8 @@
           "firma": "2b2594a92f"
         },
         "stats": {
-          "rating": 7.0,
+          "rating": 6.3,
+          "calif_fija": true,
           "rating_api": 6.6,
           "tiros": 0,
           "tiros_puerta": 0,
@@ -5607,7 +5612,7 @@
           "regates_ok": 1,
           "pases_clave": 2,
           "recuperaciones": 1,
-          "lugar_equipo": 6,
+          "lugar_equipo": 8,
           "de_equipo": 15,
           "pesos": [
             {
@@ -5615,15 +5620,14 @@
               "pts": 0.32
             },
             {
-              "txt": "Portería en cero",
-              "pts": 0.3
+              "txt": "2 de 6 duelos ganados",
+              "pts": -0.3
             },
             {
-              "txt": "85% de pases buenos (33)",
-              "pts": 0.21
+              "txt": "Derrota",
+              "pts": -0.29
             }
-          ],
-          "calif_fija": true
+          ]
         },
         "stats_v": 2
       },
