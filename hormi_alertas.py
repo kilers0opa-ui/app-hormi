@@ -840,7 +840,7 @@ GEMINI_ALIN_FILE = Path("gemini_alineaciones.json")
 
 
 def _alineacion_gemini(player, target, data):
-    """Alineación del jugador según Gemini (solo oficial), o None. Hasta 3 intentos: a los −10 min, y cada 6 min."""
+    """Alineación del jugador según Gemini (solo oficial), o None. Hasta 2 intentos: a los −10 min y 6 min después."""
     import hormi_gemini as G
     if not G.disponible():
         return None
@@ -853,7 +853,7 @@ def _alineacion_gemini(player, target, data):
     e = reg.get(k) or {}
     if e.get("r"):
         return e["r"]
-    if e.get("intentos", 0) >= 3 or (e.get("ultimo") and time.time() - e["ultimo"] < 360):
+    if e.get("intentos", 0) >= 2 or (e.get("ultimo") and time.time() - e["ultimo"] < 360):
         return None
     ko = datetime.fromtimestamp(ts, LOCAL_TZ)
     r = G.alineacion(player["name"], target["label"], nombre_es(data["teams"]["home"]["name"]),
