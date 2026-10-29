@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-29T14:20:38.829853-06:00",
+  "updated_at": "2026-10-29T14:25:29.478931-06:00",
   "cuota": {
     "fecha": "2026-10-29",
-    "busquedas": 7,
-    "busquedas_resumen": 5
+    "busquedas": 8,
+    "busquedas_resumen": 6
   },
   "goles": {
     "gimenez:porto:1589437:goal:45:gol": {
@@ -313,13 +313,40 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-10-29T20:25:19.561038+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-29T20:25:19.561038+00:00",
+      "noticias": {
+        "quinones": [
+          {
+            "title": "Marca Julián Quiñones con Al Qadsiah",
+            "source": "El Porvenir - Portada",
+            "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOOGV3R3NjOXJYOEZFVXVoNXN4T3dBT3lBc3Z4M0F1T0tnSWllbWVNU3p0em1td2RuTENNR2NYY0VJSFBEMXlQbklYdkU2N2JqQ0RCT0NzTTdTVGM2RHFPTmtfX256a1JESTRPR1l5U0g4R19sUy0yM3BWaWJpY0VzbA?oc=5",
+            "published_at": "2026-10-27T06:40:00Z",
+            "dominio": "elporvenir.mx",
+            "edicion": "mx"
+          },
+          {
+            "title": "El delantero mexicano Julián Quiñones le da el empate al Al Qadsiah",
+            "source": "88.9 Noticias | Noticias en Vivo | Información Que Sirve",
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNOUlsRk8xa0ZzZ2VvX0k3Z1J3NFZFUmhXalhKa1NiZ0VRc1NjN0hhdUN3My1qVFpsZnZEamczOE5EWUlRQjh6YldHRENHRnBaX1c0X0VMZldub1o3TTJjTWREQ0pBbVBFT3dCYW5LUVBwTjJreFpNVUNxTFhDcXdJamlXOHpUNmRZYzZEZVQ3UktqaHQzSVp2OXF1NHczUVJob01fdTZSOER3T2g0X3c?oc=5",
+            "published_at": "2026-10-27T01:18:16Z",
+            "dominio": "889noticias.mx",
+            "edicion": "mx"
+          },
+          {
+            "title": "Julián Quiñones está para la Premier League, asegura su entrenador",
+            "source": "FOX Deportes",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNcDllZHZRVTJRX1VPUmFPUTVqNzlydF9XWEFKZDROb2xDdVV0bURCcWMxbUplSl9JMWRISDNCWk9BTHF4bWU0SkR0VkV6TGN6TTJrd2xudkkyRWRwRl94R2wzNkxnRmt2S2QwcFFUOFNxZVUxS0VPTXJIQk1SM3M1TnlaUks4eW5WR3dfS2V4azgwOV9LcDlrZGFvRHNDVkZrLW5HbkZhRGJBVTFOa29YMWFHOVFKbV8tN2dSV3Jn?oc=5",
+            "published_at": "2026-10-25T03:53:26Z",
+            "dominio": "foxdeportes.com",
+            "edicion": "mx"
+          }
+        ]
+      }
     }
   }
 }
