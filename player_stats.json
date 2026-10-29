@@ -7664,13 +7664,34 @@
         "eventos_v": 6,
         "penales": null,
         "alineacion": null,
-        "sin_stats": true,
-        "calif_reintento": true,
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/huescas_partido.jpg?v=8e93c6bc",
           "hasta": "2026-10-30T08:30:00-06:00",
-          "firma": "815a2baeb9"
-        }
+          "firma": "rehacer"
+        },
+        "stats": {
+          "rating": 7.6,
+          "calif_fija": true,
+          "rating_api": null,
+          "manual": true,
+          "tiros": 0,
+          "tiros_puerta": 0,
+          "pesos": [
+            {
+              "txt": "1 asistencia",
+              "pts": 0.95
+            },
+            {
+              "txt": "Victoria",
+              "pts": 0.3
+            },
+            {
+              "txt": "Portería en cero",
+              "pts": 0.3
+            }
+          ]
+        },
+        "stats_v": 2
       },
       "deltas_vivos": [
         {
