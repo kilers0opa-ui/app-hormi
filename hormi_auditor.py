@@ -174,12 +174,12 @@ def _datos_partido(fx):
 
 def gemini_partido(p, t, fx, part, estado, clave, nombre, partido):
     """Lo que encontró Gemini del jugador en ese partido, YA verificado contra la fuente (marcador y goles), o None.
-    Máximo 2 intentos, separados por 4 h (a veces las páginas publican las estadísticas más tarde)."""
+    Máximo 2 intentos: ~15 min después del final y 1 h después del primero (por si las páginas las publican tarde)."""
     g = estado.get("gemini") or {}
     if g.get("ok"):
         return g["r"]
     if not G.disponible() or g.get("intentos", 0) >= 2 or \
-            (g.get("ultimo") and ahora() - datetime.fromisoformat(g["ultimo"]) < timedelta(hours=4)):
+            (g.get("ultimo") and ahora() - datetime.fromisoformat(g["ultimo"]) < timedelta(minutes=55)):
         return None
     local, visita, fecha, liga = _datos_partido(fx)
     r = G.partido_jugador(p["name"], t["label"], local, visita, fecha, liga)
@@ -336,7 +336,7 @@ def revisar_partido(config, stats, aud, p_ag, fx_cache):
             if fx.get("players"):
                 completa = ha.stats_jugador(fx["players"], p.get("player_id"), tid, key)
             # La calificación es UNA y fija desde que se pone (no hay "parcial" que luego cambie). Si la fuente no trae
-            # sus estadísticas se buscan con Gemini; mientras Gemini todavía puede encontrarlas (2 intentos, hasta 12 h
+            # sus estadísticas se buscan con Gemini; mientras Gemini todavía puede encontrarlas (2 intentos, el 2° una hora después
             # después del partido) se espera. Si no aparecen, se califica con lo que hay (minutos, goles, resultado...).
             esperar = False
             if not completa and not st.get("rating") and not st.get("manual"):
@@ -346,6 +346,11 @@ def revisar_partido(config, stats, aud, p_ag, fx_cache):
                 elif G.disponible() and (estado.get("gemini") or {}).get("intentos", 0) < 2 and \
                         ahora() - datetime.fromisoformat(ko) < timedelta(hours=12):
                     esperar = True
+                    # El 2° intento: el auditor se vuelve a lanzar solo en 1 h (no espera al cron de cada 3 h). La espera
+                    # corre en auditor-luego.yml para no ocupar al auditor durante esa hora.
+                    if not estado.get("relanzado"):
+                        estado["relanzado"] = True
+                        ha.lanzar_workflow("auditor-luego.yml", {"esperar": "3600"}, clave=f"auditor2:{fid}")
             if not st.get("rating") and not esperar:
                 nueva = completa or calif_parcial(part, rol, favor, contra)
                 if nueva:

@@ -1,0 +1,30 @@
+name: Auditor (en 1 h) - App Hormi
+
+# Lo lanza el auditor cuando Gemini no encontró las estadísticas de un partido al primer intento: espera y vuelve a
+# lanzar el auditor (2° intento). Va aparte para no ocupar al auditor mientras espera.
+on:
+  workflow_dispatch:
+    inputs:
+      esperar:
+        description: "Segundos a esperar"
+        type: string
+        default: "3600"
+
+concurrency:
+  group: hormi-auditor-luego
+  cancel-in-progress: false
+
+permissions:
+  actions: write
+
+jobs:
+  luego:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    steps:
+      - name: Esperar
+        run: sleep "${{ inputs.esperar || '3600' }}"
+      - name: Lanzar auditor
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/actions/workflows/auditor.yml/dispatches" -f ref=main
