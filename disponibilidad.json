@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T16:51:11.935057-06:00",
+  "updated_at": "2026-10-28T22:58:06.122699-06:00",
   "players": {
     "raul": {
       "estado": "lesion",
@@ -9,18 +9,9 @@
       "fixture_id": 1563238,
       "kickoff": "2026-10-31T09:00:00-06:00",
       "team_key": "wolves"
-    },
-    "mora": {
-      "estado": "lesion",
-      "motivo": "tobillo",
-      "manual": true,
-      "hasta": "",
-      "desde": "2026-10-22T20:08:50.541929-06:00",
-      "partido": "Club America vs Club Tijuana",
-      "fixture_id": 1550952,
-      "team_key": "tijuana",
-      "kickoff": "2026-10-28T21:00:00-06:00"
     }
   },
-  "manual_cerradas": {}
+  "manual_cerradas": {
+    "mora": "{\"estado\": \"lesion\", \"hasta\": \"\", \"motivo\": \"tobillo\"}"
+  }
 }
