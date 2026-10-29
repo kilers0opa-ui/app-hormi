@@ -1689,6 +1689,12 @@ def stats_jugador(res, pid, team_id, clave=None):
         out["de_equipo"] = len(equipo)
         if out["lugar_equipo"] == 1:
             out["mejor_equipo"] = True
+    # MVP Legión MX: la calificación más alta de TODO el partido (los dos equipos), con nuestra fórmula. Solo si la
+    # fuente trae a los dos equipos completos (si no, no se puede comparar).
+    equipos = {tid for (tid, _) in todas.values()}
+    if pid in todas and len(equipos) == 2 and all(sum(1 for (t, _) in todas.values() if t == e) > 7 for e in equipos):
+        if r >= max(v for (_, v) in todas.values()):
+            out["mvp"] = True
     try:
         f, c = CL._marcador(res, team_id)
         out["pesos"] = CL.explicar(mios, rol, {"goles_favor": f, "goles_contra": c})
