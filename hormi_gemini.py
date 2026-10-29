@@ -42,8 +42,8 @@ def preguntar(prompt, timeout=60, buscar=True):
     body = json.dumps({
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         **({"tools": [{"google_search": {}}]} if buscar else {}),
-        # Preguntas concretas: poco razonamiento (el razonamiento se cobra como salida y era ~60 % del costo).
-        "generationConfig": {"temperature": 0, "thinkingConfig": {"thinkingLevel": "low"}},
+        # Razonamiento normal: con "low" (29-oct) el modelo NO buscó en Google y respondió "no encontrado".
+        "generationConfig": {"temperature": 0},
     }).encode()
     for modelo in MODELOS:
         try:
