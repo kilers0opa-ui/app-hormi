@@ -1,0 +1,55 @@
+name: Prueba Gemini - App Hormi
+
+# Manual: prueba una consulta de respaldo a Gemini (no guarda nada ni manda avisos).
+on:
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: "partido | alineacion | mvp"
+        type: string
+        default: "partido"
+      jugador:
+        type: string
+        default: "Rodrigo Huescas"
+      equipo:
+        type: string
+        default: "FC Copenhague"
+      local:
+        type: string
+        default: "Aarhus Fremad"
+      visita:
+        type: string
+        default: "FC Copenhague"
+      fecha:
+        description: "dd/mm/aaaa"
+        type: string
+        default: "29/10/2026"
+      liga:
+        type: string
+        default: "Copa de Dinamarca"
+
+permissions:
+  contents: write
+
+jobs:
+  prueba:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6.1.0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6.3.0
+        with:
+          python-version: "3.11"
+      - name: Consultar
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python hormi_gemini.py "${{ inputs.modo }}" "${{ inputs.jugador }}" "${{ inputs.equipo }}" \
+            "${{ inputs.local }}" "${{ inputs.visita }}" "${{ inputs.fecha }}" "${{ inputs.liga }}" 2>&1 | tee resultado.txt
+      - name: Guardar resultado en el repo (gemini_prueba.txt)
+        run: |
+          mv resultado.txt gemini_prueba.txt
+          git config user.name "app-hormi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add gemini_prueba.txt && git commit -m "chore: prueba gemini [skip ci]" || exit 0
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done
