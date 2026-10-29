@@ -21,7 +21,7 @@ import sys
 import urllib.error
 import urllib.request
 
-MODELOS = [m.strip() for m in (os.environ.get("GEMINI_MODELS") or "gemini-2.5-flash,gemini-flash-latest").split(",") if m.strip()]
+MODELOS = [m.strip() for m in (os.environ.get("GEMINI_MODELS") or "gemini-3.8-flash,gemini-flash-latest,gemini-flash-lite-latest").split(",") if m.strip()]
 URL = "https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent"
 
 
@@ -50,7 +50,7 @@ def preguntar(prompt, timeout=60):
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 data = json.loads(r.read().decode())
         except urllib.error.HTTPError as err:
-            _log(f"{modelo}: HTTP {err.code} {err.read()[:200]!r}")
+            _log(f"{modelo}: HTTP {err.code} {err.read()[:600]!r}")
             continue
         except Exception as err:
             _log(f"{modelo}: {err}")
