@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T00:00:31.130103-06:00",
+  "updated_at": "2026-10-29T08:20:23.205416-06:00",
   "cuota": {
     "fecha": "2026-10-29",
     "busquedas": 0,
@@ -26,7 +26,7 @@
       },
       "silencioso": true,
       "sin_caducidad": true,
-      "verificado": "2026-10-29T05:40:21.096748+00:00"
+      "verificado": "2026-10-29T14:20:23.088154+00:00"
     }
   },
   "partidos": {
@@ -135,7 +135,7 @@
           "US"
         ]
       },
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 5,
       "ultima_noticia": "2026-10-29T06:00:30.644456+00:00",
       "noticias": {
         "mora": [
@@ -231,6 +231,30 @@
       "silencioso": true,
       "sin_caducidad": true,
       "motivo": "sin resumen tras los intentos"
+    },
+    "1640475": {
+      "fixture_id": 1640475,
+      "home": "Aarhus Fremad",
+      "away": "FC Copenhague",
+      "league": "Copa de Dinamarca",
+      "score": "Aarhus Fremad 0-3 FC Copenhague",
+      "final_seen_at": "2026-10-29T14:19:30.746283+00:00",
+      "jugadores": {
+        "huescas": {
+          "team_key": "copenhague",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
