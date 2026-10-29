@@ -52,7 +52,47 @@
       "jugo": false,
       "revisado": "2026-10-29T12:42:15.587745-06:00"
     },
-    "armando:1635507": {},
+    "armando:1635507": {
+      "gemini": {
+        "intentos": 1,
+        "ultimo": "2026-10-29T14:08:44.607595-06:00",
+        "ok": true,
+        "r": {
+          "partido_encontrado": true,
+          "marcador_local": 0,
+          "marcador_visita": 2,
+          "jugo": false,
+          "titular": false,
+          "minutos": null,
+          "goles": null,
+          "asistencias": null,
+          "tiros": null,
+          "tiros_puerta": null,
+          "amarillas": null,
+          "rojas": null,
+          "pases": null,
+          "pases_precisos": null,
+          "pases_clave": null,
+          "duelos": null,
+          "duelos_ganados": null,
+          "regates": null,
+          "regates_exitosos": null,
+          "entradas": null,
+          "intercepciones": null,
+          "faltas_cometidas": null,
+          "faltas_recibidas": null,
+          "fueras_de_lugar": null,
+          "atajadas": null,
+          "mvp": false,
+          "mvp_sitio": null,
+          "sitio": "Mediotiempo",
+          "fuentes": []
+        }
+      },
+      "ok": true,
+      "jugo": false,
+      "revisado": "2026-10-29T14:08:44.607621-06:00"
+    },
     "quinones:1603077": {
       "marcador_ok": true,
       "mvp_pendiente": false,
@@ -78,5 +118,5 @@
     "temporada:gimenez:1589437",
     "temporada:huescas:1640475"
   ],
-  "updated_at": "2026-10-29T14:08:04.505267-06:00"
+  "updated_at": "2026-10-29T14:08:44.608976-06:00"
 }
