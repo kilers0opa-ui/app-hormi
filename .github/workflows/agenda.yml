@@ -2,8 +2,9 @@ name: Agenda de la semana - App Hormi
 
 on:
   schedule:
-    # Cada 4 h (:35): ~14 peticiones por corrida (1 por equipo).
-    - cron: "35 */4 * * *"
+    # Cada 15 min: si hay partidos en juego refresca solo esos (1 petición); cada 4 h hace la corrida completa
+    # (~14 peticiones, 1 por equipo). Sin partidos en juego no gasta nada.
+    - cron: "5,20,35,50 * * * *"
   workflow_dispatch:
 
 concurrency:
