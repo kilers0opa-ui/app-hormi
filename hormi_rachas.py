@@ -121,11 +121,29 @@ JUVENIL_SEL_RE = re.compile(r"^(mexico|méxico|colombia|united states|usa|spain|
                             r"netherlands|italy|germany|france|england)\s+u\d{2}$", re.I)
 
 
+_TORNEOS_JUVENILES = ("pan american games", "olympics", "cac games", "maurice revello", "toulon", "u20", "u23", "u17")
+
+
+def cuenta_en_carrera(r):
+    """Misma regla que la app (Estadísticas → General) y la imagen de "Carrera": no cuentan los partidos de
+    exhibición (MLS All-Star vs Liga MX All-Stars) ni los de selecciones juveniles (México Sub-20, Sub-23, Juegos
+    Panamericanos que la API trae sin equipo...)."""
+    tn = (r.get("team_name") or "").strip()
+    liga = (r.get("league_name") or "").lower()
+    if "all-star" in liga or "all star" in liga or "all-stars" in tn.lower():
+        return False
+    if JUVENIL_SEL_RE.match(tn):
+        return False
+    if (r.get("team_id") is None or tn in ("", "?")) and any(t in liga for t in _TORNEOS_JUVENILES):
+        return False
+    return True
+
+
 def hitos(seasons):
     tot = {"goles_club": 0, "partidos_club": 0, "goles_sel": 0, "partidos_sel": 0}
     for rows in (seasons or {}).values():
         for r in rows:
-            if JUVENIL_SEL_RE.match((r.get("team_name") or "").strip()):
+            if not cuenta_en_carrera(r):
                 continue
             sel = r.get("team_id") in SELECCION_IDS or (r.get("team_name") or "").lower() in ("mexico", "méxico")
             tot["goles_sel" if sel else "goles_club"] += r.get("goals") or 0

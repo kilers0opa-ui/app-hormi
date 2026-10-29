@@ -22,7 +22,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 import hormi_alertas as ha
-from hormi_rachas import JUVENIL_SEL_RE, SELECCION_IDS
+from hormi_rachas import JUVENIL_SEL_RE, SELECCION_IDS, cuenta_en_carrera
 
 OUT_JSON = Path("compartir.json")
 TARJETAS = Path("tarjetas")
@@ -192,7 +192,7 @@ def datos_carrera(p, stats):
     equipos = {}
     for filas in (stats.get("seasons") or {}).values():
         for r in filas:
-            if es_juvenil(r):
+            if not cuenta_en_carrera(r):   # misma regla que la app y los hitos
                 continue
             tgt = sel if es_seleccion(r) else club
             for k in tgt:

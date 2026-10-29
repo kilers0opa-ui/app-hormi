@@ -21,6 +21,7 @@ concurrency:
 
 permissions:
   contents: write
+  actions: write   # al final lanza rachas.yml (hitos al día)
 
 jobs:
   recuperar:
@@ -63,3 +64,8 @@ jobs:
           git add videos_gol.json 2>/dev/null || true
           git commit -m "chore: recupera videos de ${{ inputs.jugador }} [skip ci]" || true
           for i in 1 2 3 4; do git pull --rebase origin main && git push && break; sleep 5; done
+      - name: Rachas e hitos al día
+        if: ${{ !cancelled() }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run rachas.yml --ref main || true

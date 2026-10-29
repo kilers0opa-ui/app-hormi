@@ -42,6 +42,7 @@ concurrency:
 
 permissions:
   contents: write   # necesario para que el workflow pueda hacer commit/push de player_stats.json
+  actions: write    # al final lanza rachas.yml (hitos al día)
 
 jobs:
   historial:
@@ -94,3 +95,8 @@ jobs:
           else
             echo "Sin cambios que subir."
           fi
+      - name: Rachas e hitos al día
+        if: ${{ !cancelled() }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run rachas.yml --ref main || true

@@ -1049,6 +1049,29 @@ def analyze(data, player, target):
 _bajas_revisadas = set()
 
 
+_LANZADOS = set()
+
+
+def lanzar_workflow(nombre, inputs=None, clave=None):
+    """Lanza otro workflow del repo (una vez por clave en esta corrida). Necesita GITHUB_TOKEN con actions: write."""
+    clave = clave or nombre
+    if clave in _LANZADOS:
+        return
+    token, repo = os.environ.get("GITHUB_TOKEN"), os.environ.get("GITHUB_REPOSITORY")
+    if not token or not repo:
+        return
+    _LANZADOS.add(clave)
+    try:
+        req = urllib.request.Request(
+            f"https://api.github.com/repos/{repo}/actions/workflows/{nombre}/dispatches",
+            data=json.dumps({"ref": "main", **({"inputs": inputs} if inputs else {})}).encode(), method="POST",
+            headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"})
+        urllib.request.urlopen(req, timeout=15).close()
+        log(f"▶️  lanzado {nombre} ({clave})")
+    except Exception as err:
+        log(f"⚠️  no se pudo lanzar {nombre}: {err}")
+
+
 def revisar_bajas_tras(fid):
     """Si terminó un partido que algún jugador se perdía por baja, corre ya la revisión de disponibilidad
     (disponibilidad.yml) para que la etiqueta pase al siguiente rival sin esperar las 3 h. Una vez por partido."""
@@ -1165,6 +1188,9 @@ def registrar_ultimo(player, target, snap, info):
         log(f"⚠️  tarjeta del partido de {player['name']}: {err}")
     stats["updated_at"] = now_iso()
     save_json(STATS_FILE, stats)
+    # Rachas e hitos al día en cuanto termina el partido (el cron de cada hora de GitHub se salta corridas):
+    # espera 4 min para que este historial ya esté subido al repo.
+    lanzar_workflow("rachas.yml", {"esperar": "240"}, clave=f"rachas:{fx['id']}")
 
 
 def apply_live_delta(player, target, snap, info):

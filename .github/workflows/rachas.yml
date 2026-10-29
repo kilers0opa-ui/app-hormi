@@ -5,7 +5,12 @@ on:
     # Cada hora: ~13 peticiones (1 por equipo) + 1 por partido terminado nuevo. Los avisos de racha/hito
     # llegan a más tardar ~1 h después del final.
     - cron: "20 * * * *"
-  workflow_dispatch:
+  workflow_dispatch:   # también lo lanza el motor al terminar un partido (con "esperar" para que ya esté subido el historial)
+    inputs:
+      esperar:
+        description: "Segundos a esperar antes de leer el repo"
+        type: string
+        default: "0"
 
 concurrency:
   group: hormi-rachas
@@ -19,6 +24,8 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
+      - name: Esperar
+        run: sleep "${{ inputs.esperar || '0' }}"
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6.1.0
         with:
           ref: main
