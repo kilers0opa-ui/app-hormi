@@ -148,7 +148,9 @@ def hitos(seasons):
             sel = r.get("team_id") in SELECCION_IDS or (r.get("team_name") or "").lower() in ("mexico", "méxico")
             tot["goles_sel" if sel else "goles_club"] += r.get("goals") or 0
             tot["partidos_sel" if sel else "partidos_club"] += r.get("played") or 0
-    defs = [("goles_club", "Goles con clubes", METAS_GOLES, "gol", "goles"),
+    tot["goles_total"] = tot["goles_club"] + tot["goles_sel"]
+    defs = [("goles_total", "Goles en su carrera", METAS_GOLES, "gol", "goles"),
+            ("goles_club", "Goles con clubes", METAS_GOLES, "gol", "goles"),
             ("partidos_club", "Partidos con clubes", METAS_PARTIDOS, "partido", "partidos"),
             ("goles_sel", "Goles con la Selección", METAS_GOLES, "gol", "goles"),
             ("partidos_sel", "Partidos con la Selección", METAS_PARTIDOS, "partido", "partidos")]
@@ -271,7 +273,8 @@ def main():
                         ha.log(f"  {key}: {h['id']} {antes_v} → {h['valor']} es corrección de datos, sin aviso")
                         continue
                     unidad = "goles" if h["id"].startswith("goles") else "partidos"
-                    donde = "con la Selección" if h["id"].endswith("_sel") else "con clubes"
+                    donde = ("en su carrera" if h["id"].endswith("_total")
+                             else "con la Selección" if h["id"].endswith("_sel") else "con clubes")
                     txt = f"{h['previo']} {unidad} {donde}" if h["previo"] > 1 else f"su primer {'gol' if unidad == 'goles' else 'partido'} {donde}"
                     avisos.append((key, t, f"🏅 {nombre} llegó a {txt}", "Nuevo hito en su carrera", h["id"]))
                     entry["logros"].insert(0, {"texto": txt[0].upper() + txt[1:], "fecha": datetime.now(ha.LOCAL_TZ).date().isoformat()})
