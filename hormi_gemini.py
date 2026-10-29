@@ -9,7 +9,8 @@ información; nunca para avisos en vivo (goles, cambios).
 
 Reglas (para que no invente):
   - Siempre con la fecha dd/mm/aaaa del partido y los dos equipos.
-  - Solo vale si la respuesta trae fuentes (páginas que Google encontró) y el modelo dice de dónde lo sacó.
+  - Solo vale si el modelo dice de qué sitio lo sacó (y para alineación y MVP, la frase que lo confirma). Gemini 3.8
+    a veces no devuelve la lista de páginas aunque sí buscó (29-oct: encontró el MVP de Huescas en Récord, que es real).
   - Quien lo usa compara con lo que ya sabemos (marcador, goles) y lo descarta si no cuadra.
 
 Necesita GEMINI_API_KEY (Google AI Studio, nivel gratuito). Sin llave, todo devuelve None.
@@ -102,7 +103,7 @@ JSON:
   "cita": "frase corta de esa página que lo confirma"}}"""
     r, fuentes = preguntar(prompt)
     _log(f"alineación {jugador} ({local} vs {visita} {fecha}): {r} · {len(fuentes)} fuente(s)")
-    if not r or not fuentes or not r.get("alineacion_oficial_publicada") or not r.get("sitio"):
+    if not r or not r.get("alineacion_oficial_publicada") or not r.get("sitio") or not r.get("cita"):
         return None
     est = r.get("estado")
     if est not in ("titular", "banca", "no_convocado"):
@@ -134,7 +135,7 @@ JSON:
   "sitio": "sitio principal de donde tomaste las estadísticas"}}"""
     r, fuentes = preguntar(prompt)
     _log(f"partido {jugador} ({local} vs {visita} {fecha}): {r} · {len(fuentes)} fuente(s)")
-    if not r or not fuentes or not r.get("partido_encontrado") or not r.get("sitio"):
+    if not r or not r.get("partido_encontrado") or not r.get("sitio"):
         return None
     r["fuentes"] = fuentes[:5]
     return r
@@ -153,7 +154,7 @@ JSON:
   "cita": "frase corta de esa página o null"}}"""
     r, fuentes = preguntar(prompt)
     _log(f"mvp {jugador} ({local} vs {visita} {fecha}): {r} · {len(fuentes)} fuente(s)")
-    if r and fuentes and r.get("partido_encontrado") and r.get("mvp") and r.get("sitio"):
+    if r and r.get("partido_encontrado") and r.get("mvp") and r.get("sitio") and r.get("cita"):
         return {"sitio": r["sitio"], "cita": r.get("cita"), "fuentes": fuentes[:5]}
     return None
 
