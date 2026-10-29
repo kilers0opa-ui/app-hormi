@@ -33,14 +33,14 @@ def disponible():
     return bool(os.environ.get("GEMINI_API_KEY"))
 
 
-def preguntar(prompt, timeout=60):
+def preguntar(prompt, timeout=60, buscar=True):
     """(dict de la respuesta JSON, [fuentes]) o (None, []) si falla. Fuentes = páginas que usó la búsqueda."""
     key = os.environ.get("GEMINI_API_KEY")
     if not key:
         return None, []
     body = json.dumps({
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-        "tools": [{"google_search": {}}],
+        **({"tools": [{"google_search": {}}]} if buscar else {}),
         "generationConfig": {"temperature": 0},
     }).encode()
     for modelo in MODELOS:
@@ -174,5 +174,8 @@ def a_formato_api(r):
 if __name__ == "__main__":
     # Prueba: python hormi_gemini.py partido "Rodrigo Huescas" "FC Copenhague" "Aarhus Fremad" "FC Copenhague" 29/10/2026 "Copa de Dinamarca"
     modo, *a = sys.argv[1:]
+    if modo == "ping":   # sin búsqueda: ¿la llave y el modelo funcionan?
+        print(preguntar('Responde solo con {"ok": true}', buscar=False))
+        sys.exit(0)
     fn = {"partido": partido_jugador, "alineacion": alineacion, "mvp": mvp}[modo]
     print(json.dumps(fn(*a), ensure_ascii=False, indent=2))
