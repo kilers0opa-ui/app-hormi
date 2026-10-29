@@ -59,7 +59,7 @@ def preguntar(prompt, timeout=60, buscar=True):
         texto = "".join(p.get("text") or "" for p in ((cand.get("content") or {}).get("parts") or []))
         gm = cand.get("groundingMetadata") or {}
         if os.environ.get("GEMINI_DEBUG"):
-            _log(f"claves: {list(cand.keys())} · metadata: {json.dumps(gm, ensure_ascii=False)[:1500]}")
+            _log(f"modelo {modelo} · uso: {data.get('usageMetadata')} · claves: {list(cand.keys())} · metadata: {json.dumps(gm, ensure_ascii=False)[:1500]}")
         chunks = gm.get("groundingChunks") or []
         fuentes = [{"titulo": (c.get("web") or {}).get("title"), "url": (c.get("web") or {}).get("uri")}
                    for c in chunks if c.get("web")]
@@ -76,7 +76,7 @@ def preguntar(prompt, timeout=60, buscar=True):
 
 
 REGLAS = (
-    "Busca en internet. Responde SOLO con datos que encuentres en páginas publicadas sobre ESTE partido exacto "
+    "Usa SIEMPRE la búsqueda de Google antes de responder (no respondas de memoria). Responde SOLO con datos que encuentres en páginas publicadas sobre ESTE partido exacto "
     "(misma fecha y mismos equipos); si no lo encuentras, dilo — no supongas ni uses otros partidos. "
     "Responde ÚNICAMENTE con un objeto JSON válido, sin texto antes ni después."
 )
