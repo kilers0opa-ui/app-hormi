@@ -9,6 +9,11 @@ on:
     paths:
       - "bajas_manual.json"
   workflow_dispatch:
+    inputs:
+      sin_avisos:
+        description: "true = corrige sin mandar notificaciones"
+        required: false
+        default: "false"
 
 concurrency:
   group: hormi-disponibilidad
@@ -33,7 +38,7 @@ jobs:
         env:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
           FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
-        run: python hormi_disponibilidad.py
+        run: python hormi_disponibilidad.py ${{ inputs.sin_avisos == 'true' && '--sin-avisos' || '' }}
       - name: Subir resultado
         if: ${{ !cancelled() }}
         run: |

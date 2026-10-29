@@ -121,8 +121,10 @@ def suspension_amarillas(p, t, fx_next, cache):
     return None
 
 
-def noticia_baja(p):
-    """La nota más reciente (≤ 48 h) que diga que el jugador está lesionado/suspendido. None si no hay."""
+def noticia_baja(p, jugo_en=None):
+    """La nota más reciente (≤ 48 h) que diga que el jugador está lesionado/suspendido. None si no hay.
+    jugo_en: inicio del último partido que SÍ jugó (o en el que estuvo en la lista). Una nota publicada antes de que
+    terminara ese partido ya es vieja (p. ej. "¿Por qué Mora no juega hoy?" y luego entró de cambio): se ignora."""
     import hormi_videos as hv
     nombre = (p.get("name") or "").replace(f'"{p.get("apodo")}" ', "")
     apellido = _norm(p.get("search_last_name") or nombre.split()[-1])
@@ -130,6 +132,11 @@ def noticia_baja(p):
          f'OR "no juega" OR "se pierde" OR duda) when:2d')
     notas = hv.fetch_news(q, limit=15) or []
     limite = datetime.now(timezone.utc) - timedelta(hours=48)
+    if jugo_en:
+        try:
+            limite = max(limite, datetime.fromisoformat(jugo_en).astimezone(timezone.utc) + timedelta(hours=2, minutes=30))
+        except ValueError:
+            pass
     buenas = []
     for n in notas:
         t = n.get("title") or ""
@@ -226,7 +233,13 @@ def main():
         if am:
             out["players"][p["key"]] = {**base, "estado": "suspension", "motivo": am}
             continue
-        nota = noticia_baja(p)
+        # Último partido en el que jugó o estuvo en la lista (titular/banca): las notas anteriores a eso ya no valen.
+        jugo_en = u.get("kickoff") if (u.get("minutes") or 0) > 0 else None
+        for tt in ((((ha.load_json(ha.Path("status.json"), {}) or {}).get("players") or {}).get(p["key"]) or {})
+                   .get("targets") or {}).values():
+            if tt.get("status") in ("titular", "banca", "en_cancha") and (tt.get("kickoff") or "") > (jugo_en or ""):
+                jugo_en = tt["kickoff"]
+        nota = noticia_baja(p, jugo_en)
         if nota:
             t = nota["title"]
             estado = "lesion" if LESION_RE.search(t) else "suspension" if SUSP_RE.search(t) else "duda"
