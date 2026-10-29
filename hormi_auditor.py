@@ -16,7 +16,7 @@ Qué revisa, por cada partido terminado de los últimos 3 días (agenda.json) y 
      equivocado, se recalcula.
   6. Si metió gol: que se haya buscado el video (si no: se busca en silencio).
 Además: Agenda sin partidos "atorados" (horario o "en vivo" de un partido ya terminado), bajas/dudas viejas de
-un jugador que ya volvió a jugar, e hitos/rachas al día.
+un jugador que ya volvió a jugar, hitos/rachas al día, y que Inicio muestre el PRÓXIMO partido (no uno terminado).
 
 Costo: 1 petición por partido terminado nuevo (/fixtures?id trae alineación, eventos y estadísticas). Un partido ya
 revisado y en orden no se vuelve a pedir.
@@ -321,6 +321,34 @@ def revisar_agenda(ag):
     return cambio
 
 
+def revisar_inicio(config, aud):
+    """En Inicio debe estar el PRÓXIMO partido: un partido terminado se queda máximo ~20 min después del final.
+    Si sigue ahí >40 min: se lanza el motor (él es el dueño de status.json). Si a las 2 h sigue: aviso a soporte."""
+    st = (ha.load_json(Path("status.json"), {}) or {}).get("players") or {}
+    nombres = {p["key"]: ha.display_name(p) for p in config["players"]}
+    for key, v in st.items():
+        for tkey, t in (v.get("targets") or {}).items():
+            if t.get("status") != "finalizado":
+                continue
+            fin = ha._parse(t.get("fin_visto"))
+            if not fin:
+                ko = ha._parse(t.get("kickoff"))
+                fin = ko + timedelta(hours=2, minutes=15) if ko else None
+            if not fin:
+                continue
+            atraso = ahora() - fin
+            clave = f"inicio:{key}:{tkey}:{t.get('kickoff')}"
+            if atraso > timedelta(hours=2):
+                problema(clave, f"{nombres.get(key, key)}: en Inicio sigue '{t.get('match')}' (terminado) en lugar de su "
+                                f"próximo partido, {int(atraso.total_seconds() // 60)} min después del final")
+            elif atraso > timedelta(minutes=40) and clave not in (aud.get("motor_lanzado") or []):
+                aud.setdefault("motor_lanzado", []).append(clave)
+                aud["motor_lanzado"] = aud["motor_lanzado"][-100:]
+                ha.lanzar_workflow("motor-alertas.yml", clave=clave)
+                hecho(clave, f"{nombres.get(key, key)}: en Inicio seguía '{t.get('match')}' ya terminado — se pidió al "
+                             f"motor que pase al próximo partido")
+
+
 def revisar_bajas(config, stats):
     disp = ha.load_json(Path("disponibilidad.json"), {}) or {}
     viejas = []
@@ -450,7 +478,8 @@ def main():
         except Exception as err:
             problema(f"err:{p_ag['fixture_id']}", f"Error revisando {p_ag['home']} vs {p_ag['away']}: {err}")
 
-    for fn, nombre in ((lambda: revisar_bajas(config, stats), "bajas"), (lambda: revisar_hitos(stats), "hitos")):
+    for fn, nombre in ((lambda: revisar_bajas(config, stats), "bajas"), (lambda: revisar_hitos(stats), "hitos"),
+                       (lambda: revisar_inicio(config, aud), "inicio")):
         try:
             fn()
         except Exception as err:

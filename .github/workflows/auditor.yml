@@ -24,6 +24,7 @@ concurrency:
 permissions:
   contents: write
   issues: write   # respaldo del correo mientras no esté configurado
+  actions: write  # puede lanzar el motor si Inicio se quedó con un partido terminado
 
 jobs:
   auditor:

@@ -2257,10 +2257,12 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         # para que "Último partido" no desaparezca al instante.
         cur = status_out.get(key)
         ko = _parse((cur or {}).get("kickoff"))
+        # El partido terminado se queda en Inicio solo 20 min después del silbatazo final ("fin_visto": cuando el
+        # motor vio el final; si no está, ~2 h 15 después del inicio). Luego ya se muestra el PRÓXIMO partido
+        # (antes se quedaba 48 h con "Sin partido programado"). "Último partido" sale de player_stats.json.
+        fin = _parse((cur or {}).get("fin_visto")) or (ko + timedelta(hours=2, minutes=15) if ko else None)
         keep_last = bool(cur and cur.get("status") == "finalizado" and not cur.get("api_error")
-                         and ko and datetime.now(LOCAL_TZ) - ko < timedelta(hours=3))
-        # (Antes 48 h: el resultado se quedaba arriba en Inicio y "Próximo partido" decía "Sin partido programado"
-        # todo un día. "Último partido" ya sale de player_stats.json, así que ~1 h después del final basta.)
+                         and fin and datetime.now(LOCAL_TZ) - fin < timedelta(minutes=20))
         # Un "finalizado" de club sin minutos (sin alineación) de un convocado al Tri
         # dentro de su ventana no es partido suyo: no se conserva como "Último partido".
         if (keep_last and target.get("kind") == "club" and _en_concentracion(player["key"], cur)
@@ -2373,6 +2375,9 @@ def check_once(player, target, config, notifier, sent_by_target, status_out, sch
         "home": nombre_es(snap["teams"]["home"]["name"]), "away": nombre_es(snap["teams"]["away"]["name"]),
         "home_logo": snap["teams"]["home"].get("logo"), "away_logo": snap["teams"]["away"].get("logo"),
     }
+    if snap["fixture"]["status"]["short"] in FINISHED:   # cuándo se vio el final (para bajar la tarjeta a los 20 min)
+        status_out[key]["fin_visto"] = (prev_status.get("fin_visto") if prev_status.get("kickoff") == entry["kickoff"]
+                                        else None) or now_iso()
     # Reloj del partido para la app: periodo (1H/HT/2H/ET/BT/P...) y "clock_ref", el instante en que
     # el reloj marcaba 0:00 (la app cuenta mm:ss desde ahí, sin pedir nada cada segundo). Solo se
     # reescribe si cambia el periodo o se desvía >90 s, para no generar un commit por minuto.
