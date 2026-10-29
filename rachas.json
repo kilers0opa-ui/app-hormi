@@ -706,10 +706,16 @@
           "texto": "A 1 partido de 50"
         }
       ],
-      "logros": [],
+      "logros": [
+        {
+          "texto": "100 goles en su carrera",
+          "fecha": "2026-10-28"
+        }
+      ],
       "avisados": [
         "goles_club:75",
         "goles_sel:1",
+        "goles_total:100",
         "partidos_club:250",
         "partidos_sel:25"
       ],
