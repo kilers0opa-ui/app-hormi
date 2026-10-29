@@ -312,8 +312,12 @@ def revisar_agenda(ag):
             p.update(status=st, home_goals=g.get("home"), away_goals=g.get("away"), penales=ha._penales(fx),
                      kickoff=datetime.fromtimestamp(fx["fixture"]["timestamp"], ha.LOCAL_TZ).isoformat())
             cambio = True
-        elif st in ("PST", "SUSP", "ABD") and datetime.fromisoformat(p["kickoff"]) < ahora() - timedelta(hours=8):
-            pass   # pospuesto de verdad: la agenda lo muestra así hasta que la fuente publique la nueva fecha
+        elif st in ("NS", "TBD") and datetime.fromisoformat(p["kickoff"]) < ahora() - timedelta(hours=6):
+            nombres = ", ".join(j["key"] for j in p.get("jugadores") or [])
+            problema(f"agenda_ns:{p['fixture_id']}",
+                     f"Agenda: {p['home']} vs {p['away']} ({p['kickoff'][:16].replace('T', ' ')}, {nombres}) — la fuente "
+                     f"lo sigue marcando 'sin empezar' horas después. ¿Se jugó, se pospuso o cambió de fecha?")
+        # PST/SUSP/ABD: pospuesto de verdad; la agenda lo muestra así hasta que la fuente publique la nueva fecha.
     return cambio
 
 
