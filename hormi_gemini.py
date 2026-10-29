@@ -59,6 +59,7 @@ def preguntar(prompt, timeout=60, buscar=True):
         texto = "".join(p.get("text") or "" for p in ((cand.get("content") or {}).get("parts") or []))
         gm = cand.get("groundingMetadata") or {}
         if os.environ.get("GEMINI_DEBUG"):
+            _log(f"top: {list(data.keys())} · parts: {[list(p.keys()) for p in ((cand.get('content') or {}).get('parts') or [])]}")
             _log(f"modelo {modelo} · uso: {data.get('usageMetadata')} · claves: {list(cand.keys())} · metadata: {json.dumps(gm, ensure_ascii=False)[:1500]}")
         chunks = gm.get("groundingChunks") or []
         fuentes = [{"titulo": (c.get("web") or {}).get("title"), "url": (c.get("web") or {}).get("uri")}
