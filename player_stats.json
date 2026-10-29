@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T22:57:49.353163-06:00",
+  "updated_at": "2026-10-28T23:04:59.885545-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -4767,6 +4767,19 @@
             "goals": 1,
             "assists": 0,
             "minutes": 61
+          },
+          {
+            "league_id": 97,
+            "league_name": "Taça da Liga",
+            "league_logo": "https://media.api-sports.io/football/leagues/97.png",
+            "team_id": 212,
+            "team_name": "FC Porto",
+            "team_logo": "https://media.api-sports.io/football/teams/212.png",
+            "played": 1,
+            "goals": 1,
+            "assists": 0,
+            "minutes": 90,
+            "estimated": true
           }
         ],
         "2017": [
