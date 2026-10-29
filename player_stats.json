@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T19:57:36.131941-06:00",
+  "updated_at": "2026-10-28T22:57:49.353163-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -8532,528 +8532,498 @@
             "team_id": 2280,
             "team_name": "Club Tijuana",
             "team_logo": "https://media.api-sports.io/football/teams/2280.png",
-            "played": 7,
+            "played": 8,
             "goals": 5,
             "assists": 1,
-            "minutes": 420
+            "minutes": 453
           }
         ]
       },
-      "applied_fixtures": {},
+      "applied_fixtures": {
+        "tijuana": [
+          1550952
+        ]
+      },
       "ultimo_partido": {
-        "fixture_id": 1628996,
-        "kickoff": "2026-09-26T19:00:00-06:00",
-        "home": "México",
-        "away": "Colombia",
-        "home_logo": "https://media.api-sports.io/football/teams/16.png",
-        "away_logo": "https://media.api-sports.io/football/teams/8.png",
+        "fixture_id": 1550952,
+        "kickoff": "2026-10-28T21:00:00-06:00",
+        "home": "Club America",
+        "away": "Club Tijuana",
+        "home_logo": "https://media.api-sports.io/football/teams/2287.png",
+        "away_logo": "https://media.api-sports.io/football/teams/2280.png",
         "home_goals": 1,
         "away_goals": 1,
-        "league": "Amistoso",
-        "team_key": "seleccion",
-        "team_label": "Selección Mexicana",
-        "emoji": "🇲🇽",
-        "crest_url": "https://media.api-sports.io/football/teams/16.png",
-        "minutes": 64,
-        "goals": 1,
-        "assists": 0,
+        "penales": null,
+        "league": "Liga MX",
+        "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+        "league_tipo": "liga",
         "eventos": [
           {
-            "min": "9'",
+            "min": "12'",
             "tipo": "gol",
-            "nombre": "L. Suarez",
+            "nombre": "Elias Manoel",
             "lado": "V",
             "mio": false
           },
           {
-            "min": "23'",
-            "tipo": "amarilla",
-            "nombre": "Luis Javier Suárez",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "37'",
-            "tipo": "amarilla",
-            "nombre": "Álvaro Angulo",
-            "lado": "V",
-            "mio": false
-          },
-          {
-            "min": "43'",
-            "tipo": "amarilla",
-            "nombre": "Hirving Lozano",
+            "min": "19'",
+            "tipo": "gol",
+            "nombre": "Miguel Borja",
             "lado": "L",
             "mio": false
+          },
+          {
+            "min": "26'",
+            "tipo": "amarilla",
+            "nombre": "Jesus Gomez",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "45'",
+            "tipo": "amarilla",
+            "nombre": "Angel Zapata",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "57'",
+            "tipo": "entra",
+            "nombre": "Gilberto Mora",
+            "lado": "V",
+            "mio": true
           },
           {
             "min": "59'",
             "tipo": "amarilla",
-            "nombre": "Jorge Sánchez",
+            "nombre": "Derek Jimenez",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "62'",
-            "tipo": "gol",
-            "nombre": "G. Mora",
-            "lado": "L",
-            "mio": true
+            "min": "64'",
+            "tipo": "amarilla",
+            "nombre": "Adonis Preciado",
+            "lado": "V",
+            "mio": false
           },
           {
-            "min": "64'",
-            "tipo": "sale",
-            "nombre": "G. Mora",
+            "min": "89'",
+            "tipo": "amarilla",
+            "nombre": "José Rivero",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "90+2'",
+            "tipo": "var",
+            "nombre": "Roja anulada · Jesus Gomez",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "90+7'",
+            "tipo": "amarilla",
+            "nombre": "Kevin Alvarez",
             "lado": "L",
-            "mio": true
+            "mio": false
           }
         ],
-        "league_logo": "https://media.api-sports.io/football/leagues/10.png",
-        "league_tipo": "amistoso",
-        "stats": {
-          "rating": 8.5,
-          "rating_api": 8.2,
-          "tiros": 1,
-          "tiros_puerta": 1,
-          "pases_pct": 94,
-          "duelos": 13,
-          "duelos_ganados": 8,
-          "regates": 3,
-          "regates_ok": 2,
-          "pases_clave": 1,
-          "recuperaciones": 3,
-          "lugar_equipo": 1,
-          "de_equipo": 18,
-          "mejor_equipo": true,
-          "pesos": [
-            {
-              "txt": "1 gol",
-              "pts": 1.35
-            },
-            {
-              "txt": "94% de pases buenos (34)",
-              "pts": 0.5
-            },
-            {
-              "txt": "2 de 3 regates",
-              "pts": 0.18
-            }
-          ],
-          "calif_fija": true
-        },
         "eventos_v": 6,
-        "penales": null,
         "alineacion": {
           "local": {
-            "nombre": "México",
-            "logo": "https://media.api-sports.io/football/teams/16.png",
-            "formacion": "4-3-3",
-            "color": "298b77",
-            "color_num": "ffffff",
+            "nombre": "Club America",
+            "logo": "https://media.api-sports.io/football/teams/2287.png",
+            "formacion": "4-2-3-1",
+            "color": null,
+            "color_num": null,
             "titulares": [
               {
-                "id": 270774,
-                "n": "R. Rangel",
-                "num": 1,
+                "id": 35473,
+                "n": "R. Cota",
+                "num": 30,
                 "pos": "G",
                 "g": "1:1"
               },
               {
-                "id": 2878,
-                "n": "J. Sanchez",
-                "num": 2,
+                "id": 421130,
+                "n": "D. Espinoza",
+                "num": 34,
                 "pos": "D",
                 "g": "2:4",
-                "amarilla": "59'",
-                "sale": "74'"
+                "sale": "62'"
               },
               {
-                "id": 127227,
-                "n": "I. Reyes",
-                "num": 15,
+                "id": 180734,
+                "n": "R. Juárez",
+                "num": 29,
                 "pos": "D",
                 "g": "2:3"
               },
               {
-                "id": 35544,
-                "n": "J. Vasquez",
-                "num": 5,
+                "id": 394262,
+                "n": "M. Vázquez",
+                "num": 32,
                 "pos": "D",
                 "g": "2:2"
               },
               {
-                "id": 2881,
-                "n": "J. Gallardo",
-                "num": 23,
+                "id": 1476,
+                "n": "C. Borja",
+                "num": 26,
                 "pos": "D",
-                "g": "2:1",
+                "g": "2:1"
+              },
+              {
+                "id": 51132,
+                "n": "E. Cerrillo",
+                "num": 6,
+                "pos": "M",
+                "g": "3:2",
+                "sale": "78'"
+              },
+              {
+                "id": 35878,
+                "n": "A. Cervantes",
+                "num": 13,
+                "pos": "M",
+                "g": "3:1"
+              },
+              {
+                "id": 286663,
+                "n": "I. Violante",
+                "num": 12,
+                "pos": "M",
+                "g": "4:3",
                 "asist": 1,
-                "sale": "64'"
+                "sale": "55'"
+              },
+              {
+                "id": 35573,
+                "n": "A. Gutiérrez",
+                "num": 20,
+                "pos": "M",
+                "g": "4:2",
+                "sale": "55'"
+              },
+              {
+                "id": null,
+                "n": "Derek Jimenez",
+                "num": 206,
+                "pos": "M",
+                "g": "4:1"
+              },
+              {
+                "id": 9933,
+                "n": "M. Borja",
+                "num": 93,
+                "pos": "F",
+                "g": "5:1",
+                "goles": 1
+              }
+            ],
+            "suplentes": [
+              {
+                "id": 129931,
+                "n": "E. Lara",
+                "num": 2,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 35603,
+                "n": "H. Martín",
+                "num": 9,
+                "pos": "F",
+                "g": null
+              },
+              {
+                "id": 356520,
+                "n": "Ó. Perea",
+                "num": 22,
+                "pos": "F",
+                "g": null,
+                "entra": "55'"
+              },
+              {
+                "id": 127227,
+                "n": "I. Reyes",
+                "num": 3,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 51618,
+                "n": "B. Rodríguez",
+                "num": 7,
+                "pos": "F",
+                "g": null,
+                "entra": "55'"
+              },
+              {
+                "id": 36093,
+                "n": "É. Sánchez",
+                "num": 28,
+                "pos": "M",
+                "g": null,
+                "entra": "78'"
+              },
+              {
+                "id": 199401,
+                "n": "F. Tapia",
+                "num": 21,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 607856,
+                "n": "Icaro",
+                "num": 217,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 126751,
+                "n": "K. Álvarez",
+                "num": 5,
+                "pos": "D",
+                "g": null,
+                "entra": "62'",
+                "amarilla": "90+7'"
+              },
+              {
+                "id": 182770,
+                "n": "Carlos Álvarez",
+                "num": 8,
+                "pos": "M",
+                "g": null
+              }
+            ]
+          },
+          "visita": {
+            "nombre": "Club Tijuana",
+            "logo": "https://media.api-sports.io/football/teams/2280.png",
+            "formacion": "5-4-1",
+            "color": null,
+            "color_num": null,
+            "titulares": [
+              {
+                "id": 35797,
+                "n": "A. Rodríguez",
+                "num": 2,
+                "pos": "G",
+                "g": "1:1"
+              },
+              {
+                "id": 129941,
+                "n": "R. Fernández",
+                "num": 3,
+                "pos": "D",
+                "g": "2:5",
+                "sale": "57'"
+              },
+              {
+                "id": 2575,
+                "n": "J. Porozo",
+                "num": 12,
+                "pos": "D",
+                "g": "2:4"
+              },
+              {
+                "id": 36034,
+                "n": "Unai Bilbao",
+                "num": 4,
+                "pos": "D",
+                "g": "2:3"
+              },
+              {
+                "id": 35830,
+                "n": "A. Gómez",
+                "num": 6,
+                "pos": "D",
+                "g": "2:2",
+                "asist": 1,
+                "amarilla": "26'"
+              },
+              {
+                "id": 425583,
+                "n": "P. Ortíz",
+                "num": 33,
+                "pos": "D",
+                "g": "2:1"
+              },
+              {
+                "id": 414207,
+                "n": "Y. Padilla",
+                "num": 31,
+                "pos": "M",
+                "g": "3:4",
+                "sale": "71'"
+              },
+              {
+                "id": 8578,
+                "n": "F. Boya",
+                "num": 34,
+                "pos": "M",
+                "g": "3:3",
+                "sale": "45'"
+              },
+              {
+                "id": 268386,
+                "n": "Á. Zapata",
+                "num": 20,
+                "pos": "M",
+                "g": "3:2",
+                "amarilla": "45'",
+                "sale": "57'"
+              },
+              {
+                "id": 513755,
+                "n": "J. González",
+                "num": 202,
+                "pos": "M",
+                "g": "3:1",
+                "sale": "54'"
+              },
+              {
+                "id": 278350,
+                "n": "Elias Manoel",
+                "num": 13,
+                "pos": "F",
+                "g": "4:1",
+                "goles": 1
+              }
+            ],
+            "suplentes": [
+              {
+                "id": 413060,
+                "n": "R. Árciga",
+                "num": 17,
+                "pos": "F",
+                "g": null,
+                "entra": "57'"
+              },
+              {
+                "id": 299896,
+                "n": "J. Vega",
+                "num": 16,
+                "pos": "D",
+                "g": null,
+                "entra": "71'"
+              },
+              {
+                "id": 35694,
+                "n": "I. Rivero",
+                "num": 15,
+                "pos": "M",
+                "g": null,
+                "entra": "45'",
+                "amarilla": "89'"
+              },
+              {
+                "id": 16688,
+                "n": "Adonis Preciado",
+                "num": 7,
+                "pos": "F",
+                "g": null,
+                "entra": "54'",
+                "amarilla": "64'"
               },
               {
                 "id": 482605,
                 "n": "G. Mora",
                 "num": 10,
                 "pos": "M",
-                "g": "3:3",
-                "goles": 1,
-                "sale": "64'",
+                "g": null,
+                "entra": "57'",
                 "mio": true
               },
               {
-                "id": 266345,
-                "n": "E. Lira",
-                "num": 6,
-                "pos": "M",
-                "g": "3:2",
-                "sale": "88'"
+                "id": 277168,
+                "n": "A. Mejía",
+                "num": 18,
+                "pos": "D",
+                "g": null
               },
               {
-                "id": 35690,
-                "n": "L. Chavez",
-                "num": 24,
-                "pos": "M",
-                "g": "3:1",
-                "sale": "64'"
-              },
-              {
-                "id": 2879,
-                "n": "R. Alvarado",
-                "num": 25,
-                "pos": "F",
-                "g": "4:3",
-                "sale": "74'"
-              },
-              {
-                "id": 291713,
-                "n": "A. Gonzalez",
-                "num": 14,
-                "pos": "F",
-                "g": "4:2",
-                "sale": "74'"
-              },
-              {
-                "id": 248,
-                "n": "H. Lozano",
-                "num": 22,
-                "pos": "F",
-                "g": "4:1",
-                "amarilla": "43'",
-                "sale": "64'"
-              }
-            ],
-            "suplentes": [
-              {
-                "id": 312468,
-                "n": "A. Padilla",
+                "id": 36317,
+                "n": "S. Hernández",
                 "num": 29,
                 "pos": "G",
                 "g": null
               },
               {
-                "id": 355147,
-                "n": "O. Garcia",
-                "num": 12,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 390002,
-                "n": "M. Chavez Garcia",
-                "num": 20,
-                "pos": "D",
-                "g": null,
-                "entra": "64'"
-              },
-              {
-                "id": 129943,
-                "n": "V. Guzman",
-                "num": 4,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 362815,
-                "n": "E. del Villar",
-                "num": 27,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 313383,
-                "n": "O. Vargas",
-                "num": 18,
-                "pos": "M",
-                "g": null,
-                "entra": "64'"
-              },
-              {
-                "id": 35850,
-                "n": "J. Marquez",
-                "num": 16,
-                "pos": "M",
-                "g": null,
-                "entra": "74'"
-              },
-              {
-                "id": 35576,
-                "n": "O. Pineda",
-                "num": 17,
-                "pos": "M",
-                "g": null,
-                "entra": "64'"
-              },
-              {
-                "id": 750,
-                "n": "A. Fidalgo",
-                "num": 8,
-                "pos": "M",
-                "g": null,
-                "entra": "64'"
-              },
-              {
-                "id": 359835,
-                "n": "D. Garcia",
-                "num": 19,
-                "pos": "M",
-                "g": null,
-                "entra": "88'"
-              },
-              {
-                "id": 6485,
-                "n": "G. Berterame",
-                "num": 9,
-                "pos": "F",
-                "g": null,
-                "entra": "74'"
-              },
-              {
-                "id": 94562,
-                "n": "S. Gimenez",
+                "id": 6359,
+                "n": "F. González",
                 "num": 11,
                 "pos": "F",
                 "g": null
               },
               {
-                "id": 286663,
-                "n": "I. Violante",
-                "num": 26,
-                "pos": "F",
-                "g": null,
-                "entra": "74'"
-              }
-            ]
-          },
-          "visita": {
-            "nombre": "Colombia",
-            "logo": "https://media.api-sports.io/football/teams/8.png",
-            "formacion": "4-3-3",
-            "color": "f0e975",
-            "color_num": "003399",
-            "titulares": [
-              {
-                "id": 2481,
-                "n": "A. Montero",
-                "num": 24,
-                "pos": "G",
-                "g": "1:1"
-              },
-              {
-                "id": 13736,
-                "n": "D. Munoz",
-                "num": 2,
-                "pos": "D",
-                "g": "2:4"
-              },
-              {
-                "id": 168,
-                "n": "D. Sanchez",
-                "num": 23,
-                "pos": "D",
-                "g": "2:3"
-              },
-              {
-                "id": 1929,
-                "n": "J. Lucumi",
-                "num": 3,
-                "pos": "D",
-                "g": "2:2"
-              },
-              {
-                "id": 13729,
-                "n": "A. Angulo",
-                "num": 4,
-                "pos": "D",
-                "g": "2:1",
-                "amarilla": "37'",
-                "sale": "66'"
-              },
-              {
-                "id": 195104,
-                "n": "R. Rios",
-                "num": 6,
-                "pos": "M",
-                "g": "3:3",
-                "asist": 1,
-                "sale": "71'"
-              },
-              {
-                "id": 289592,
-                "n": "K. Castano",
-                "num": 5,
-                "pos": "M",
-                "g": "3:2",
-                "sale": "71'"
-              },
-              {
-                "id": 324034,
-                "n": "G. Puerta",
-                "num": 8,
-                "pos": "M",
-                "g": "3:1"
-              },
-              {
-                "id": 13708,
-                "n": "J. Arias",
-                "num": 10,
-                "pos": "F",
-                "g": "4:3"
-              },
-              {
-                "id": 47237,
-                "n": "L. Suarez",
+                "id": 119223,
+                "n": "Mourad",
                 "num": 9,
                 "pos": "F",
-                "g": "4:2",
-                "goles": 1,
-                "amarilla": "23'",
-                "sale": "66'"
-              },
-              {
-                "id": 345748,
-                "n": "A. Gomez",
-                "num": 26,
-                "pos": "F",
-                "g": "4:1",
-                "sale": "66'"
-              }
-            ],
-            "suplentes": [
-              {
-                "id": 13235,
-                "n": "A. Quintana",
-                "num": 12,
-                "pos": "G",
                 "g": null
               },
               {
-                "id": 13278,
-                "n": "K. Mier",
-                "num": 1,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 369284,
-                "n": "E. Ocampo",
-                "num": 18,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 356518,
-                "n": "S. Velasquez",
-                "num": 17,
-                "pos": "M",
-                "g": null,
-                "entra": "66'"
-              },
-              {
-                "id": 499913,
-                "n": "R. Caicedo",
-                "num": 15,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 13166,
-                "n": "K. Andrade",
-                "num": 25,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 306727,
-                "n": "J. E. Solis Romero",
-                "num": 14,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 314199,
-                "n": "D. Arcila",
-                "num": 13,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 373770,
-                "n": "J. Rengifo",
+                "id": 316520,
+                "n": "D. Abreu",
                 "num": 19,
-                "pos": "F",
-                "g": null
-              },
-              {
-                "id": 528054,
-                "n": "M. Orozco",
-                "num": 16,
-                "pos": "M",
-                "g": null,
-                "entra": "71'"
-              },
-              {
-                "id": 454968,
-                "n": "C. Duran",
-                "num": 11,
-                "pos": "F",
-                "g": null
-              },
-              {
-                "id": 13376,
-                "n": "J. Campaz",
-                "num": 21,
-                "pos": "M",
-                "g": null,
-                "entra": "66'"
-              },
-              {
-                "id": 13198,
-                "n": "K. Viveros",
-                "num": 20,
-                "pos": "F",
-                "g": null,
-                "entra": "66'"
-              },
-              {
-                "id": 281795,
-                "n": "Y. Asprilla",
-                "num": 22,
-                "pos": "M",
-                "g": null,
-                "entra": "71'"
-              },
-              {
-                "id": 356520,
-                "n": "O. Perea",
-                "num": 7,
                 "pos": "F",
                 "g": null
               }
             ]
           }
         },
+        "team_key": "tijuana",
+        "team_label": "Tijuana",
+        "emoji": "🐕",
+        "crest_url": "https://media.api-sports.io/football/teams/2280.png",
+        "minutes": 33,
+        "goals": 0,
+        "assists": 0,
+        "tarjeta": {
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/mora_partido.jpg?v=b79fa73e",
+          "hasta": "2026-10-29T23:00:00-06:00",
+          "firma": "869b460c5d"
+        },
+        "stats": {
+          "rating": 6.6,
+          "calif_fija": true,
+          "rating_api": 6.4,
+          "tiros": 1,
+          "tiros_puerta": 0,
+          "pases_pct": 92,
+          "duelos": 3,
+          "duelos_ganados": 3,
+          "lugar_equipo": 5,
+          "de_equipo": 16,
+          "pesos": [
+            {
+              "txt": "3 de 3 duelos ganados",
+              "pts": 0.26
+            },
+            {
+              "txt": "92% de pases buenos (12)",
+              "pts": 0.16
+            },
+            {
+              "txt": "2 faltas recibidas",
+              "pts": 0.1
+            }
+          ]
+        },
         "stats_v": 2
-      }
+      },
+      "deltas_vivos": [
+        {
+          "fid": 1550952,
+          "season": "2026",
+          "league_id": 262,
+          "ts": "2026-10-28T22:57:46.481095-06:00"
+        }
+      ]
     },
     "montes": {
       "seasons": {
