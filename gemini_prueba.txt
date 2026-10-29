@@ -1,10 +1,4 @@
 [gemini] top: ['candidates', 'usageMetadata', 'modelVersion', 'responseId'] · parts: [['text', 'thoughtSignature']]
-[gemini] modelo gemini-3.8-flash · uso: {'promptTokenCount': 652, 'candidatesTokenCount': 94, 'totalTokenCount': 1925, 'promptTokensDetails': [{'modality': 'TEXT', 'tokenCount': 652}], 'thoughtsTokenCount': 1179, 'serviceTier': 'standard'} · claves: ['content', 'finishReason', 'index'] · metadata: {}
-[gemini] alineación Gilberto Mora (Club America vs Club Tijuana 28/10/2026): {'alineacion_oficial_publicada': True, 'banca_publicada': True, 'estado': 'banca', 'motivo': None, 'sitio': '365Scores', 'cita': 'Sebastián “Loco” Abreu reservó al futbolista en el banquillo y le dio entrada en el segundo tiempo.'} · 0 fuente(s)
-{
-  "estado": "banca",
-  "motivo": null,
-  "sitio": "365Scores",
-  "cita": "Sebastián “Loco” Abreu reservó al futbolista en el banquillo y le dio entrada en el segundo tiempo.",
-  "fuentes": []
-}
+[gemini] modelo gemini-3.8-flash · uso: {'promptTokenCount': 523, 'candidatesTokenCount': 275, 'totalTokenCount': 798, 'promptTokensDetails': [{'modality': 'TEXT', 'tokenCount': 523}], 'serviceTier': 'standard'} · claves: ['content', 'finishReason', 'index'] · metadata: {}
+[gemini] partido Rodrigo Huescas (Aarhus Fremad vs FC Copenhague 29/10/2026): {'partido_encontrado': False, 'marcador_local': None, 'marcador_visita': None, 'jugo': False, 'titular': None, 'minutos': None, 'goles': None, 'asistencias': None, 'tiros': None, 'tiros_puerta': None, 'amarillas': None, 'rojas': None, 'pases': None, 'pases_precisos': None, 'pases_clave': None, 'duelos': None, 'duelos_ganados': None, 'regates': None, 'regates_exitosos': None, 'entradas': None, 'intercepciones': None, 'faltas_cometidas': None, 'faltas_recibidas': None, 'fueras_de_lugar': None, 'atajadas': None, 'mvp': False, 'mvp_sitio': None, 'sitio': None} · 0 fuente(s)
+null
