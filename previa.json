@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T07:31:00.138791-06:00",
+  "updated_at": "2026-10-30T13:41:07.423270-06:00",
   "partidos": {
     "1570439": {
       "fixture_id": 1570439,
@@ -872,6 +872,771 @@
           ]
         }
       ]
+    },
+    "1552210": {
+      "fixture_id": 1552210,
+      "kickoff": "2026-10-31T14:00:00-06:00",
+      "home": "Ajax",
+      "away": "AZ Alkmaar",
+      "home_id": 194,
+      "away_id": 201,
+      "home_logo": "https://media.api-sports.io/football/teams/194.png",
+      "away_logo": "https://media.api-sports.io/football/teams/201.png",
+      "league": "Eredivisie",
+      "tabla": {
+        "liga": "Eredivisie",
+        "home": {
+          "rank": 2,
+          "pts": 21,
+          "pj": 10
+        },
+        "away": {
+          "rank": 5,
+          "pts": 20,
+          "pj": 10
+        }
+      },
+      "forma_home": [
+        {
+          "r": "E",
+          "rival": "NEC Nijmegen",
+          "marcador": "1-1",
+          "fid": 1552183,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "HNK Hajduk Split",
+          "marcador": "1-2",
+          "fid": 1636419,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Groningen",
+          "marcador": "5-2",
+          "fid": 1552197,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Atalanta",
+          "marcador": "2-0",
+          "fid": 1636379,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Sparta Rotterdam",
+          "marcador": "2-1",
+          "fid": 1552205,
+          "local": false
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "P",
+          "rival": "Feyenoord",
+          "marcador": "0-2",
+          "fid": 1552181,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Hapoel Beer Sheva",
+          "marcador": "2-1",
+          "fid": 1636222,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "Cambuur",
+          "marcador": "2-2",
+          "fid": 1552195,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Ararat-Armenia",
+          "marcador": "4-0",
+          "fid": 1636215,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Twente",
+          "marcador": "0-2",
+          "fid": 1552206,
+          "local": true
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2026-02-08",
+          "home": "AZ Alkmaar",
+          "away": "Ajax",
+          "home_id": 201,
+          "marcador": "1-1",
+          "ganador": null
+        },
+        {
+          "fecha": "2026-01-14",
+          "home": "AZ Alkmaar",
+          "away": "Ajax",
+          "home_id": 201,
+          "marcador": "6-0",
+          "ganador": 201
+        },
+        {
+          "fecha": "2025-10-18",
+          "home": "Ajax",
+          "away": "AZ Alkmaar",
+          "home_id": 194,
+          "marcador": "0-2",
+          "ganador": 201
+        },
+        {
+          "fecha": "2025-03-16",
+          "home": "Ajax",
+          "away": "AZ Alkmaar",
+          "home_id": 194,
+          "marcador": "2-2",
+          "ganador": null
+        },
+        {
+          "fecha": "2025-01-14",
+          "home": "AZ Alkmaar",
+          "away": "Ajax",
+          "home_id": 201,
+          "marcador": "2-0",
+          "ganador": 201
+        }
+      ],
+      "hecho": "2026-10-30T13:41:07.423270-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "chavez",
+          "lado": "V",
+          "rachas": {},
+          "minutos": [
+            {
+              "rival": "Feyenoord",
+              "min": 90,
+              "goles": 0
+            },
+            {
+              "rival": "Hapoel Beer Sheva",
+              "min": 14,
+              "goles": 0
+            },
+            {
+              "rival": "Cambuur",
+              "min": 63,
+              "goles": 0
+            },
+            {
+              "rival": "Ararat-Armenia",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Twente",
+              "min": 87,
+              "goles": 0
+            }
+          ]
+        }
+      ]
+    },
+    "1575532": {
+      "fixture_id": 1575532,
+      "kickoff": "2026-10-31T14:30:00-06:00",
+      "home": "FC Porto",
+      "away": "Estoril",
+      "home_id": 212,
+      "away_id": 230,
+      "home_logo": "https://media.api-sports.io/football/teams/212.png",
+      "away_logo": "https://media.api-sports.io/football/teams/230.png",
+      "league": "Liga Portugal",
+      "tabla": {
+        "liga": "Primeira Liga",
+        "home": {
+          "rank": 1,
+          "pts": 27,
+          "pj": 9
+        },
+        "away": {
+          "rank": 18,
+          "pts": 2,
+          "pj": 9
+        }
+      },
+      "forma_home": [
+        {
+          "r": "G",
+          "rival": "Marítimo",
+          "marcador": "2-1",
+          "fid": 1575515,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Real Betis",
+          "marcador": "2-3",
+          "fid": 1635635,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "PSV Eindhoven",
+          "marcador": "0-1",
+          "fid": 1635655,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "GIL Vicente",
+          "marcador": "1-0",
+          "fid": 1575521,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Academico Viseu",
+          "marcador": "1-0",
+          "fid": 1589437,
+          "local": true
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "P",
+          "rival": "SC Braga",
+          "marcador": "0-1",
+          "fid": 1575494,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Casa Pia",
+          "marcador": "1-2",
+          "fid": 1575501,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Academico Viseu",
+          "marcador": "1-2",
+          "fid": 1575509,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Salgueiros",
+          "marcador": "1-1",
+          "fid": 1641822,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Moreirense",
+          "marcador": "1-3",
+          "fid": 1575519,
+          "local": true
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2026-04-12",
+          "home": "Estoril",
+          "away": "FC Porto",
+          "home_id": 230,
+          "marcador": "1-3",
+          "ganador": 212
+        },
+        {
+          "fecha": "2025-11-30",
+          "home": "FC Porto",
+          "away": "Estoril",
+          "home_id": 212,
+          "marcador": "1-0",
+          "ganador": 212
+        },
+        {
+          "fecha": "2025-03-30",
+          "home": "Estoril",
+          "away": "FC Porto",
+          "home_id": 230,
+          "marcador": "1-2",
+          "ganador": 212
+        },
+        {
+          "fecha": "2024-11-03",
+          "home": "FC Porto",
+          "away": "Estoril",
+          "home_id": 212,
+          "marcador": "4-0",
+          "ganador": 212
+        },
+        {
+          "fecha": "2024-03-30",
+          "home": "Estoril",
+          "away": "FC Porto",
+          "home_id": 230,
+          "marcador": "1-0",
+          "ganador": 230
+        }
+      ],
+      "hecho": "2026-10-30T13:41:07.423270-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "gimenez",
+          "lado": "L",
+          "rachas": {},
+          "minutos": [
+            {
+              "rival": "Marítimo",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Real Betis",
+              "min": 5,
+              "goles": 0
+            },
+            {
+              "rival": "PSV Eindhoven",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "GIL Vicente",
+              "min": 18,
+              "goles": 0
+            },
+            {
+              "rival": "Academico Viseu",
+              "min": 0,
+              "goles": 0
+            }
+          ]
+        }
+      ]
+    },
+    "1551025": {
+      "fixture_id": 1551025,
+      "kickoff": "2026-10-31T19:05:00-06:00",
+      "home": "Monterrey",
+      "away": "Club Tijuana",
+      "home_id": 2282,
+      "away_id": 2280,
+      "home_logo": "https://media.api-sports.io/football/teams/2282.png",
+      "away_logo": "https://media.api-sports.io/football/teams/2280.png",
+      "league": "Liga MX",
+      "tabla": {
+        "liga": "Liga MX",
+        "home": {
+          "rank": 8,
+          "pts": 20,
+          "pj": 13
+        },
+        "away": {
+          "rank": 7,
+          "pts": 21,
+          "pj": 14
+        }
+      },
+      "forma_home": [
+        {
+          "r": "G",
+          "rival": "Toluca",
+          "marcador": "2-1",
+          "fid": 1643510,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "Club America",
+          "marcador": "1-1",
+          "fid": 1550989,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "CF Pachuca",
+          "marcador": "2-1",
+          "fid": 1551001,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Puebla",
+          "marcador": "4-1",
+          "fid": 1551007,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Chivas",
+          "marcador": "0-1",
+          "fid": 1551014,
+          "local": true
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "E",
+          "rival": "FC Juarez",
+          "marcador": "1-1",
+          "fid": 1550987,
+          "local": false
+        },
+        {
+          "r": "E",
+          "rival": "Puebla",
+          "marcador": "0-0",
+          "fid": 1550994,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "Toluca",
+          "marcador": "2-2",
+          "fid": 1551008,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Santos Laguna",
+          "marcador": "4-1",
+          "fid": 1551019,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "Club America",
+          "marcador": "1-1",
+          "fid": 1550952,
+          "local": false
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2026-01-31",
+          "home": "Monterrey",
+          "away": "Club Tijuana",
+          "home_id": 2282,
+          "marcador": "2-2",
+          "ganador": null
+        },
+        {
+          "fecha": "2025-10-05",
+          "home": "Club Tijuana",
+          "away": "Monterrey",
+          "home_id": 2280,
+          "marcador": "2-2",
+          "ganador": null
+        },
+        {
+          "fecha": "2025-03-29",
+          "home": "Monterrey",
+          "away": "Club Tijuana",
+          "home_id": 2282,
+          "marcador": "1-2",
+          "ganador": 2280
+        },
+        {
+          "fecha": "2024-08-23",
+          "home": "Club Tijuana",
+          "away": "Monterrey",
+          "home_id": 2280,
+          "marcador": "2-2",
+          "ganador": null
+        },
+        {
+          "fecha": "2024-02-28",
+          "home": "Club Tijuana",
+          "away": "Monterrey",
+          "home_id": 2280,
+          "marcador": "1-1",
+          "ganador": null
+        }
+      ],
+      "hecho": "2026-10-30T13:41:07.423270-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "mora",
+          "lado": "V",
+          "rachas": {},
+          "minutos": [
+            {
+              "rival": "FC Juarez",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Puebla",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Toluca",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Santos Laguna",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Club America",
+              "min": 33,
+              "goles": 0
+            }
+          ]
+        },
+        {
+          "key": "fimbres",
+          "lado": "L",
+          "rachas": {},
+          "minutos": [
+            {
+              "rival": "Toluca",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Club America",
+              "min": 2,
+              "goles": 0
+            },
+            {
+              "rival": "CF Pachuca",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Puebla",
+              "min": 32,
+              "goles": 0
+            },
+            {
+              "rival": "Chivas",
+              "min": 0,
+              "goles": 0
+            }
+          ]
+        }
+      ]
+    },
+    "1551024": {
+      "fixture_id": 1551024,
+      "kickoff": "2026-10-31T19:07:00-06:00",
+      "home": "Chivas",
+      "away": "Atlante FC",
+      "home_id": 2278,
+      "away_id": 2312,
+      "home_logo": "https://media.api-sports.io/football/teams/2278.png",
+      "away_logo": "https://media.api-sports.io/football/teams/2312.png",
+      "league": "Liga MX",
+      "tabla": {
+        "liga": "Liga MX",
+        "home": {
+          "rank": 3,
+          "pts": 26,
+          "pj": 14
+        },
+        "away": {
+          "rank": 16,
+          "pts": 14,
+          "pj": 14
+        }
+      },
+      "forma_home": [
+        {
+          "r": "G",
+          "rival": "Club America",
+          "marcador": "2-0",
+          "fid": 1643232,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "Atlas",
+          "marcador": "1-1",
+          "fid": 1550988,
+          "local": false
+        },
+        {
+          "r": "E",
+          "rival": "Tigres UANL",
+          "marcador": "1-1",
+          "fid": 1550996,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Necaxa",
+          "marcador": "1-0",
+          "fid": 1551004,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Monterrey",
+          "marcador": "1-0",
+          "fid": 1551014,
+          "local": false
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "G",
+          "rival": "Monterrey",
+          "marcador": "4-2",
+          "fid": 1550975,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Club Queretaro",
+          "marcador": "0-2",
+          "fid": 1550985,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "U.N.A.M. - Pumas",
+          "marcador": "1-2",
+          "fid": 1550995,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "FC Juarez",
+          "marcador": "1-0",
+          "fid": 1551003,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Atletico San Luis",
+          "marcador": "0-1",
+          "fid": 1551012,
+          "local": true
+        }
+      ],
+      "historial": [],
+      "hecho": "2026-10-30T13:41:07.423270-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "campillo",
+          "lado": "L",
+          "rachas": {
+            "cero": 2,
+            "titular": 4,
+            "jugando": 4
+          },
+          "minutos": [
+            {
+              "rival": "Club America",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Atlas",
+              "min": 45,
+              "goles": 0
+            },
+            {
+              "rival": "Tigres UANL",
+              "min": 90,
+              "goles": 0
+            },
+            {
+              "rival": "Necaxa",
+              "min": 61,
+              "goles": 0
+            },
+            {
+              "rival": "Monterrey",
+              "min": 90,
+              "goles": 0
+            }
+          ]
+        },
+        {
+          "key": "camberos",
+          "lado": "L",
+          "rachas": {},
+          "minutos": [
+            {
+              "rival": "Club America",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Atlas",
+              "min": 24,
+              "goles": 0
+            },
+            {
+              "rival": "Tigres UANL",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Necaxa",
+              "min": 45,
+              "goles": 0
+            },
+            {
+              "rival": "Monterrey",
+              "min": 0,
+              "goles": 0
+            }
+          ]
+        },
+        {
+          "key": "sandoval",
+          "lado": "L",
+          "rachas": {
+            "jugando": 4
+          },
+          "minutos": [
+            {
+              "rival": "Club America",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Atlas",
+              "min": 24,
+              "goles": 0
+            },
+            {
+              "rival": "Tigres UANL",
+              "min": 86,
+              "goles": 0
+            },
+            {
+              "rival": "Necaxa",
+              "min": 45,
+              "goles": 0
+            },
+            {
+              "rival": "Monterrey",
+              "min": 90,
+              "goles": 0
+            }
+          ]
+        }
+      ]
     }
   },
   "jugadores": {
@@ -879,6 +1644,13 @@
     "luis_chavez": 1561429,
     "raul": 1563238,
     "armando": 1593347,
-    "fidalgo": 1570435
+    "fidalgo": 1570435,
+    "chavez": 1552210,
+    "gimenez": 1575532,
+    "mora": 1551025,
+    "fimbres": 1551025,
+    "campillo": 1551024,
+    "camberos": 1551024,
+    "sandoval": 1551024
   }
 }
