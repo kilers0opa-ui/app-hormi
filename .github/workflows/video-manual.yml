@@ -1,0 +1,49 @@
+name: Resumen a mano - App Hormi
+
+# Manual: pone un video elegido a mano como resumen de un partido (y, si se pide, manda su notificación).
+on:
+  workflow_dispatch:
+    inputs:
+      fixture:
+        type: string
+        required: true
+      video:
+        description: "id de YouTube (lo que va después de youtu.be/)"
+        type: string
+        required: true
+      notificar:
+        description: "true = manda la notificación del resumen"
+        type: string
+        default: "false"
+
+concurrency:
+  group: hormi-video-gol   # mismo grupo que video-gol.yml: escriben videos_gol.json
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  manual:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6.1.0
+        with:
+          ref: main
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6.3.0
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Poner resumen
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
+        run: python hormi_videos.py --poner-resumen "${{ inputs.fixture }}:${{ inputs.video }}${{ inputs.notificar == 'true' && ':notificar' || '' }}" | tee resumen_manual.txt
+      - name: Subir
+        run: |
+          git config user.name "app-hormi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add videos_gol.json resumen_manual.txt && git commit -m "chore: resumen a mano [skip ci]" || exit 0
+          for i in 1 2 3 4; do git pull --rebase origin main && git push && break; sleep 5; done

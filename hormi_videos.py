@@ -1428,6 +1428,32 @@ def recuperar(config, settings, sources, jugador, fid):
     process_events(config, settings, sources, notify=False)
 
 
+def poner_resumen(config, settings, fid, video_id, notificar):
+    """Resumen elegido a mano (Aldo): lo pone como el resumen del partido, revisa en qué países se ve y, si se pide,
+    manda su notificación (con "sin_video_en" para que no le llegue a quien no lo puede ver)."""
+    out = load_json(GOLES_FILE, {"updated_at": None, "cuota": {}, "goles": {}, "partidos": {}})
+    st = out["partidos"].get(str(fid))
+    if not st:
+        sys.exit(f"No hay resumen registrado del partido {fid}")
+    data = yt_api("videos", {"part": "snippet,contentDetails,status", "id": video_id}, QUOTA_LIST)
+    it = ((data or {}).get("items") or [None])[0]
+    if not it:
+        sys.exit(f"No encontré el video {video_id} (privado, borrado o sin acceso a YouTube)")
+    stt = it.get("status") or {}
+    video = video_entry(video_id, it.get("snippet") or {}, stt.get("embeddable") is not False)
+    rr = (it.get("contentDetails") or {}).get("regionRestriction") or {}
+    regiones = [settings.get("region_visible") or "MX", *(settings.get("regiones_extra") or [])]
+    video["bloqueado_en"] = [r for r in regiones if _bloqueado(rr, r)]
+    log(f"🎬 {video['title']!r} ({video['channel']}) · se puede incrustar: {video['embeddable']} · "
+        f"bloqueado en: {video['bloqueado_en'] or 'ninguno'}")
+    st.update(status="resuelto", video=video, manual=True)
+    st.pop("motivo", None)
+    save_json(GOLES_FILE, out)
+    if notificar:
+        send_summary_push(config, {p["key"]: p for p in config["players"]}, video, st)
+        log("📣 notificación del resumen enviada")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Fase 6 · Videos y noticias")
     parser.add_argument("--jugador", help="Limita a un jugador por su 'key'")
@@ -1435,6 +1461,7 @@ def main():
                         help="Atiende goles y finales de partido pendientes (videos_pendientes.json) y escribe videos_gol.json")
     parser.add_argument("--sin-notificar", action="store_true", help="Con --eventos: no manda notificaciones")
     parser.add_argument("--recuperar", help="jugador:fixture_id — partido que el motor no siguió; en silencio")
+    parser.add_argument("--poner-resumen", help="fixture_id:video_id[:notificar] — resumen elegido a mano")
     args = parser.parse_args()
 
     config = load_json(CONFIG_FILE, None)
@@ -1444,6 +1471,10 @@ def main():
     settings = {**DEFAULTS, **(sources.get("config") or {})}
     per_player = sources.get("jugadores") or {}
 
+    if args.poner_resumen:
+        f, v, *n = args.poner_resumen.split(":")
+        poner_resumen(config, settings, int(f), v, bool(n and n[0] == "notificar"))
+        return
     if args.recuperar:
         j, f = args.recuperar.split(":")
         recuperar(config, settings, sources, j, int(f))
