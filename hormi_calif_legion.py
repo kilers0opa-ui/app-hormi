@@ -33,10 +33,10 @@ ROL_JUGADOR = {
 #               POR    DFC    LAT    MC     MCO    EXT    DEL
 _T = {
     "gol":        (2.5,   1.6,   1.5,   1.4,   1.35,  1.35,  1.35),
-    "asistencia": (1.2,   1.0,   0.95,  0.9,   0.9,   0.9,   0.85),
+    "asistencia": (1.2,   1.0,   0.95,  0.9,   0.675, 0.675, 0.675),   # atacantes: 2 asistencias = 1 gol
     "pase_clave": (0.10,  0.12,  0.16,  0.17,  0.18,  0.17,  0.14),
-    "tiro_puerta": (0.0,  0.10,  0.10,  0.12,  0.13,  0.13,  0.15),
-    "tiro_fuera": (0.0,   0.00,  0.00,  0.01,  0.02,  0.02,  0.02),
+    "tiro_puerta": (0.0,  0.10,  0.10,  0.12,  0.10,  0.10,  0.10),
+    "tiro_fuera": (0.0,   0.00,  0.00, -0.05, -0.10, -0.10, -0.10),   # atacante: tiro fuera = ocasión perdida
     "regate_ok":  (0.0,   0.06,  0.09,  0.08,  0.10,  0.10,  0.08),
     "regate_mal": (0.0,  -0.05, -0.03, -0.03, -0.02, -0.02, -0.02),
     "duelo_gan":  (0.03,  0.07,  0.06,  0.05,  0.04,  0.04,  0.05),
@@ -78,6 +78,7 @@ MIN_MINUTOS = 10
 # actuaciones reales (calif_datos.json) y se guarda en calif_calibracion.json: python hormi_calif_legion.py --calibrar
 CALIBRACION_FILE = "calif_calibracion.json"
 MEDIA, DISPERSION = 6.8, 0.72
+FRENO_DESDE, FRENO, HAT_TRICK = 8.0, 0.8, 0.3   # 29-oct-2026, acordado con Aldo
 
 
 def rol_de_api(pos, grid=None, formacion=None):
@@ -184,7 +185,14 @@ def calcular(s, rol, ctx=None):
         return None
     bruta = BASE + sum(p for _, p in desglose(s, rol, ctx))
     m, sd = _calibracion().get(rol, (BASE, DISPERSION))
-    return round(max(3.0, min(10.0, MEDIA + (bruta - m) * DISPERSION / (sd or DISPERSION))), 1)
+    r = MEDIA + (bruta - m) * DISPERSION / (sd or DISPERSION)
+    # Freno arriba de 8 (no es tope): cada punto por encima vale 80 %. El 9.5–10 queda para algo histórico; un
+    # hat-trick (3+ goles) suma 0.3 extra para que sí llegue.
+    if r > FRENO_DESDE:
+        r = FRENO_DESDE + (r - FRENO_DESDE) * FRENO
+    if _g(s, "goals", "total") >= 3:
+        r += HAT_TRICK
+    return round(max(3.0, min(10.0, r)), 1)
 
 
 def _marcador(res, team_id):
