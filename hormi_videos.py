@@ -97,7 +97,7 @@ DEFAULTS = {
     # Videos quitados a mano (id de YouTube): nunca se usan y, si ya estaban puestos, se quitan y se busca otro.
     "videos_descartados": [],        # cuánto se conserva un gol/partido en videos_gol.json
     # --- modo --eventos: final de partido (resumen + noticia principal)
-    "resumen_intentos_min": [30, 60, 120, 180, 300],   # minutos después del final en que se busca el resumen (5 intentos; los canales oficiales a veces lo suben 2-3 h después) y se refresca la noticia
+    "resumen_intentos_min": [30, 60, 120, 180],   # minutos después del final en que se busca el resumen (4 intentos: más tarde ya no sirve, la gente ya lo buscó) y se refresca la noticia
     "resumen_caducidad_horas": 6,         # un resumen pendiente más viejo que esto se omite (los goles usan gol_caducidad_horas)
     "resumen_margen_min": 10,             # el resumen puede haberse publicado hasta N min antes de que se detectara el final
     "resumen_max_busquedas_dia": 50,      # de las 90 búsquedas del día, máximo 35 pueden ser de resúmenes: los goles siempre conservan cuota
