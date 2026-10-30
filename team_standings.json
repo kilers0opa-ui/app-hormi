@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T11:53:55.898331-06:00",
+  "updated_at": "2026-10-30T11:36:39.413936-06:00",
   "teams": {
     "genoa": {
       "label": "Genoa",
@@ -84,6 +84,21 @@
             },
             {
               "rank": 6,
+              "team_id": 512,
+              "team_name": "Frosinone",
+              "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/512.png",
+              "played": 9,
+              "win": 5,
+              "draw": 2,
+              "lose": 2,
+              "goals_for": 22,
+              "goals_against": 14,
+              "goals_diff": 8,
+              "points": 17,
+              "form": "WDWLW"
+            },
+            {
+              "rank": 7,
               "team_id": 492,
               "team_name": "Napoli",
               "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/492.png",
@@ -96,21 +111,6 @@
               "goals_diff": 6,
               "points": 14,
               "form": "WDLWD"
-            },
-            {
-              "rank": 7,
-              "team_id": 512,
-              "team_name": "Frosinone",
-              "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/512.png",
-              "played": 8,
-              "win": 4,
-              "draw": 2,
-              "lose": 2,
-              "goals_for": 17,
-              "goals_against": 13,
-              "goals_diff": 4,
-              "points": 14,
-              "form": "DWLWD"
             },
             {
               "rank": 8,
@@ -177,15 +177,15 @@
               "team_id": 499,
               "team_name": "Atalanta",
               "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/499.png",
-              "played": 8,
+              "played": 9,
               "win": 3,
-              "draw": 1,
+              "draw": 2,
               "lose": 4,
-              "goals_for": 14,
-              "goals_against": 15,
+              "goals_for": 16,
+              "goals_against": 17,
               "goals_diff": -1,
-              "points": 10,
-              "form": "DLWLL"
+              "points": 11,
+              "form": "DDLWL"
             },
             {
               "rank": 13,
@@ -207,15 +207,15 @@
               "team_id": 867,
               "team_name": "Lecce",
               "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/867.png",
-              "played": 8,
+              "played": 9,
               "win": 3,
               "draw": 0,
-              "lose": 5,
-              "goals_for": 9,
-              "goals_against": 14,
-              "goals_diff": -5,
+              "lose": 6,
+              "goals_for": 10,
+              "goals_against": 19,
+              "goals_diff": -9,
               "points": 9,
-              "form": "LWLLW"
+              "form": "LLWLL"
             },
             {
               "rank": 15,
@@ -264,6 +264,21 @@
             },
             {
               "rank": 18,
+              "team_id": 502,
+              "team_name": "Fiorentina",
+              "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/502.png",
+              "played": 9,
+              "win": 1,
+              "draw": 2,
+              "lose": 6,
+              "goals_for": 11,
+              "goals_against": 21,
+              "goals_diff": -10,
+              "points": 5,
+              "form": "DLLLD"
+            },
+            {
+              "rank": 19,
               "team_id": 523,
               "team_name": "Parma",
               "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/523.png",
@@ -276,21 +291,6 @@
               "goals_diff": -10,
               "points": 5,
               "form": "DLLLW"
-            },
-            {
-              "rank": 19,
-              "team_id": 502,
-              "team_name": "Fiorentina",
-              "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/502.png",
-              "played": 8,
-              "win": 1,
-              "draw": 1,
-              "lose": 6,
-              "goals_for": 9,
-              "goals_against": 19,
-              "goals_diff": -10,
-              "points": 4,
-              "form": "LLLDW"
             },
             {
               "rank": 20,
@@ -1431,6 +1431,36 @@
           "table": [
             {
               "rank": 1,
+              "team_id": 2933,
+              "team_name": "Al-Qadisiyah FC",
+              "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/2933.png",
+              "played": 12,
+              "win": 9,
+              "draw": 1,
+              "lose": 2,
+              "goals_for": 32,
+              "goals_against": 12,
+              "goals_diff": 20,
+              "points": 28,
+              "form": "WLWWW"
+            },
+            {
+              "rank": 2,
+              "team_id": 2939,
+              "team_name": "Al-Nassr",
+              "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/2939.png",
+              "played": 11,
+              "win": 9,
+              "draw": 1,
+              "lose": 1,
+              "goals_for": 28,
+              "goals_against": 11,
+              "goals_diff": 17,
+              "points": 28,
+              "form": "WWWWD"
+            },
+            {
+              "rank": 3,
               "team_id": 2932,
               "team_name": "Al-Hilal Saudi FC",
               "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/2932.png",
@@ -1445,49 +1475,19 @@
               "form": "WWWWL"
             },
             {
-              "rank": 2,
-              "team_id": 2939,
-              "team_name": "Al-Nassr",
-              "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/2939.png",
-              "played": 10,
-              "win": 8,
-              "draw": 1,
-              "lose": 1,
-              "goals_for": 23,
-              "goals_against": 8,
-              "goals_diff": 15,
-              "points": 25,
-              "form": "WWWDW"
-            },
-            {
-              "rank": 3,
-              "team_id": 2933,
-              "team_name": "Al-Qadisiyah FC",
-              "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/2933.png",
-              "played": 11,
-              "win": 8,
-              "draw": 1,
-              "lose": 2,
-              "goals_for": 26,
-              "goals_against": 12,
-              "goals_diff": 14,
-              "points": 25,
-              "form": "LWWWD"
-            },
-            {
               "rank": 4,
               "team_id": 2938,
               "team_name": "Al-Ittihad FC",
               "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/2938.png",
-              "played": 10,
+              "played": 11,
               "win": 7,
-              "draw": 2,
+              "draw": 3,
               "lose": 1,
-              "goals_for": 20,
-              "goals_against": 10,
+              "goals_for": 21,
+              "goals_against": 11,
               "goals_diff": 10,
-              "points": 23,
-              "form": "WWLWW"
+              "points": 24,
+              "form": "DWWLW"
             },
             {
               "rank": 5,
@@ -1569,30 +1569,30 @@
               "team_id": 10509,
               "team_name": "Al Kholood",
               "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/10509.png",
-              "played": 10,
+              "played": 11,
               "win": 3,
               "draw": 3,
-              "lose": 4,
-              "goals_for": 14,
-              "goals_against": 21,
-              "goals_diff": -7,
+              "lose": 5,
+              "goals_for": 17,
+              "goals_against": 26,
+              "goals_diff": -9,
               "points": 12,
-              "form": "LLLLW"
+              "form": "LLLLL"
             },
             {
               "rank": 11,
               "team_id": 10511,
               "team_name": "Al Riyadh",
               "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/10511.png",
-              "played": 10,
+              "played": 11,
               "win": 3,
               "draw": 3,
-              "lose": 4,
+              "lose": 5,
               "goals_for": 11,
-              "goals_against": 19,
-              "goals_diff": -8,
+              "goals_against": 25,
+              "goals_diff": -14,
               "points": 12,
-              "form": "WLDWD"
+              "form": "LWLDW"
             },
             {
               "rank": 12,
@@ -1689,29 +1689,29 @@
               "team_id": 2951,
               "team_name": "Abha",
               "team_logo": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/escudos/2951.png",
-              "played": 10,
+              "played": 11,
               "win": 0,
-              "draw": 2,
+              "draw": 3,
               "lose": 8,
-              "goals_for": 6,
-              "goals_against": 18,
+              "goals_for": 7,
+              "goals_against": 19,
               "goals_diff": -12,
-              "points": 2,
-              "form": "LLLDL"
+              "points": 3,
+              "form": "DLLLD"
             }
           ],
           "season": 2026,
           "group": "Saudi Professional League",
-          "rank": 3,
-          "points": 25,
-          "played": 11,
-          "win": 8,
+          "rank": 1,
+          "points": 28,
+          "played": 12,
+          "win": 9,
           "draw": 1,
           "lose": 2,
-          "goals_for": 26,
+          "goals_for": 32,
           "goals_against": 12,
-          "goals_diff": 14,
-          "form": "LWWWD",
+          "goals_diff": 20,
+          "form": "WLWWW",
           "status": "same",
           "description": "Promotion - AFC Champions League (League phase)",
           "total_teams": 18,
@@ -3821,7 +3821,7 @@
               "goals_against": 9,
               "goals_diff": 3,
               "points": 12,
-              "form": "WLDD"
+              "form": "WLDDD"
             },
             {
               "rank": 9,
@@ -3941,7 +3941,7 @@
               "goals_against": 20,
               "goals_diff": -8,
               "points": 9,
-              "form": "LDDW"
+              "form": "LDDWL"
             },
             {
               "rank": 17,
@@ -4709,7 +4709,7 @@
               "goals_against": 9,
               "goals_diff": 3,
               "points": 12,
-              "form": "WLDD"
+              "form": "WLDDD"
             },
             {
               "rank": 9,
@@ -4829,7 +4829,7 @@
               "goals_against": 20,
               "goals_diff": -8,
               "points": 9,
-              "form": "LDDW"
+              "form": "LDDWL"
             },
             {
               "rank": 17,
