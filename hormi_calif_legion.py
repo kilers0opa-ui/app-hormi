@@ -180,6 +180,13 @@ def desglose(s, rol, ctx=None):
     return out
 
 
+def redondear(r):
+    """A un decimal con la regla de Legión MX (29-oct-2026): se mira el segundo decimal; de 0 a 6 se queda abajo,
+    de 7 a 9 sube. 7.43 → 7.4 · 7.46 → 7.4 · 7.47 → 7.5 · 7.48 → 7.5."""
+    c = int(round(r * 100, 6))   # centésimas (el round evita errores como 7.4699999)
+    return (c // 10 + (1 if c % 10 >= 7 else 0)) / 10
+
+
 def calcular(s, rol, ctx=None):
     if _g(s, "games", "minutes") < MIN_MINUTOS or rol not in PESOS:
         return None
@@ -192,7 +199,7 @@ def calcular(s, rol, ctx=None):
         r = FRENO_DESDE + (r - FRENO_DESDE) * FRENO
     if _g(s, "goals", "total") >= 3:
         r += HAT_TRICK
-    return round(max(3.0, min(10.0, r)), 1)
+    return redondear(max(3.0, min(10.0, r)))
 
 
 def _marcador(res, team_id):
