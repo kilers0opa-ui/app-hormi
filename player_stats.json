@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T19:26:47.759412-06:00",
+  "updated_at": "2026-10-29T19:40:46.130365-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -4188,12 +4188,12 @@
         "goals": 1,
         "assists": 2,
         "tarjeta": {
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/quinones_partido.jpg?v=7f229ec0",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/quinones_partido.jpg?v=c3fe9157",
           "hasta": "2026-10-30T14:00:00-06:00",
-          "firma": "471f6884d0"
+          "firma": "8cc2728264"
         },
         "stats": {
-          "rating": 8.9,
+          "rating": 8.8,
           "calif_fija": true,
           "rating_api": 9.8,
           "tiros": 7,
@@ -4205,7 +4205,7 @@
           "regates_ok": 1,
           "pases_clave": 5,
           "recuperaciones": 2,
-          "lugar_equipo": 3,
+          "lugar_equipo": 2,
           "de_equipo": 15,
           "pesos": [
             {
@@ -4217,8 +4217,8 @@
               "pts": 1.35
             },
             {
-              "txt": "5 pases clave",
-              "pts": 0.85
+              "txt": "3 pases clave",
+              "pts": 0.51
             }
           ]
         },
