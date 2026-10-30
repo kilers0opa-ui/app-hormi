@@ -312,11 +312,20 @@
           "assists": 2
         }
       },
-      "status": "pendiente",
+      "status": "resuelto",
       "intentos": 3,
       "fallos": 0,
       "ultimo_intento": "2026-10-29T21:55:20.099087+00:00",
-      "video": null,
+      "video": {
+        "id": "WXXddb3nVJY",
+        "title": "ᴀꜱɪ́ ᴊᴜɢᴏ́ ᴊᴜʟɪᴀ́ɴ ǫᴜɪɴ̃ᴏɴᴇꜱ ʜᴏʏ ᴠꜱ. ᴀʟ-ʀɪʏᴀᴅʜ (ɢᴏʟ ʏ ᴅᴏʙʟᴇ ᴀꜱɪꜱᴛᴇɴᴄɪᴀ)",
+        "channel": "México Comps 2",
+        "published_at": "2026-10-29T22:17:43Z",
+        "thumbnail": "https://i.ytimg.com/vi/WXXddb3nVJY/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=WXXddb3nVJY",
+        "embeddable": false,
+        "bloqueado_en": []
+      },
       "noticias_pasadas": 3,
       "ultima_noticia": "2026-10-29T21:55:20.099087+00:00",
       "noticias": {
@@ -346,7 +355,8 @@
             "edicion": "mx"
           }
         ]
-      }
+      },
+      "manual": true
     }
   }
 }
