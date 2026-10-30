@@ -1,0 +1,31 @@
+name: Desglose de calificación - App Hormi
+
+# Manual: desglose de la Calificación Legión MX de los mejores del partido (escribe calif_partido.txt).
+on:
+  workflow_dispatch:
+    inputs:
+      fixture:
+        type: string
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  desglose:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6.1.0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6.3.0
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: python hormi_calif_partido.py "${{ inputs.fixture }}"
+      - run: |
+          git config user.name "app-hormi-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add calif_partido.txt && git commit -m "chore: desglose de calificación [skip ci]" || exit 0
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done
