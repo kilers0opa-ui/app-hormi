@@ -33,8 +33,8 @@ ROL_JUGADOR = {
 #               POR    DFC    LAT    MC     MCO    EXT    DEL
 _T = {
     "gol":        (2.5,   1.6,   1.5,   1.4,   1.35,  1.35,  1.35),
-    "asistencia": (1.2,   1.0,   0.95,  0.9,   0.675, 0.675, 0.675),   # atacantes: 2 asistencias = 1 gol
-    "pase_clave": (0.10,  0.12,  0.16,  0.17,  0.18,  0.17,  0.14),
+    "asistencia": (1.2,   1.0,   0.95,  0.675, 0.675, 0.675, 0.675),   # medios y atacantes: 2 asistencias = 1 gol
+    "pase_clave": (0.10,  0.12,  0.16,  0.12,  0.18,  0.17,  0.14),   # (sin contar los que fueron asistencia)
     "tiro_puerta": (0.0,  0.10,  0.10,  0.12,  0.10,  0.10,  0.10),
     "tiro_fuera": (0.0,   0.00,  0.00, -0.05, -0.10, -0.10, -0.10),   # atacante: tiro fuera = ocasión perdida
     "regate_ok":  (0.0,   0.06,  0.09,  0.08,  0.10,  0.10,  0.08),
@@ -60,7 +60,7 @@ _T = {
     # Pases: (precisión - referencia) × peso × volumen (hasta 1 con 40 pases); y un poco por volumen.
     "pase_ref":   (70,    86,    80,    85,    80,    76,    70),
     "pase_peso":  (1.0,   2.5,   2.0,   3.5,   2.5,   2.0,   1.0),
-    "pase_vol":   (0.002, 0.004, 0.004, 0.008, 0.006, 0.004, 0.003),
+    "pase_vol":   (0.002, 0.004, 0.004, 0.003, 0.006, 0.004, 0.003),
     # Efectividad (no solo cantidad): % de duelos ganados contra lo normal en su posición, y % de regates.
     # (porcentaje - referencia) × peso × volumen (duelos: completo con 6; regates: con 4).
     "duelo_ref":  (50,    60,    55,    52,    45,    45,    45),
@@ -129,7 +129,8 @@ def desglose(s, rol, ctx=None):
             out.append((nombre, cant * peso))
     add("goles", _g(s, "goals", "total"), w["gol"])
     add("asistencias", _g(s, "goals", "assists"), w["asistencia"])
-    add("pases clave", _g(s, "passes", "key"), w["pase_clave"])
+    # La fuente cuenta cada asistencia también como pase clave: se descuentan para no sumarla dos veces.
+    add("pases clave", max(0.0, _g(s, "passes", "key") - _g(s, "goals", "assists")), w["pase_clave"])
     tiros, puerta = _g(s, "shots", "total"), _g(s, "shots", "on")
     add("tiros a puerta", puerta, w["tiro_puerta"])
     add("tiros fuera", max(0, tiros - puerta), w["tiro_fuera"])
@@ -270,7 +271,7 @@ def explicar(s, rol, ctx=None, cuantos=3):
     textos = {
         "goles": _plural(_g(s, "goals", "total"), "gol", "goles"),
         "asistencias": _plural(_g(s, "goals", "assists"), "asistencia", "asistencias"),
-        "pases clave": _plural(_g(s, "passes", "key"), "pase clave", "pases clave"),
+        "pases clave": _plural(max(0, _g(s, "passes", "key") - _g(s, "goals", "assists")), "pase clave", "pases clave"),
         "tiros": f"{int(puerta)} de {int(tiros)} tiros a puerta",
         "regates": f"{int(rgo)} de {int(rg)} regates",
         "duelos": f"{int(dug)} de {int(du)} duelos ganados",
