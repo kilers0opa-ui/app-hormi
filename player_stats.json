@@ -4190,10 +4190,10 @@
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/quinones_partido.jpg?v=c3fe9157",
           "hasta": "2026-10-30T14:00:00-06:00",
-          "firma": "8cc2728264"
+          "firma": "rehacer"
         },
         "stats": {
-          "rating": 8.8,
+          "rating": 8.9,
           "calif_fija": true,
           "rating_api": 9.8,
           "tiros": 7,
@@ -4220,7 +4220,8 @@
               "txt": "3 pases clave",
               "pts": 0.51
             }
-          ]
+          ],
+          "manual": true
         },
         "stats_v": 2
       },
