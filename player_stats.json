@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T19:22:18.509952-06:00",
+  "updated_at": "2026-10-29T19:24:58.949865-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -743,7 +743,7 @@
         "sin_stats": true,
         "calif_reintento": true,
         "stats": {
-          "rating": 7.3,
+          "rating": 7.0,
           "calif_fija": true,
           "tiros": 4,
           "tiros_puerta": 0,
@@ -759,12 +759,12 @@
               "pts": 0.42
             },
             {
-              "txt": "5 de 7 duelos ganados",
-              "pts": 0.35
+              "txt": "0 de 4 tiros a puerta",
+              "pts": -0.4
             },
             {
-              "txt": "Victoria",
-              "pts": 0.2
+              "txt": "5 de 7 duelos ganados",
+              "pts": 0.35
             }
           ]
         },
@@ -4188,12 +4188,12 @@
         "goals": 1,
         "assists": 2,
         "tarjeta": {
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/quinones_partido.jpg?v=a0fad7ef",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/quinones_partido.jpg?v=7f229ec0",
           "hasta": "2026-10-30T14:00:00-06:00",
-          "firma": "33c53a53ec"
+          "firma": "471f6884d0"
         },
         "stats": {
-          "rating": 9.7,
+          "rating": 8.9,
           "calif_fija": true,
           "rating_api": 9.8,
           "tiros": 7,
@@ -4205,15 +4205,15 @@
           "regates_ok": 1,
           "pases_clave": 5,
           "recuperaciones": 2,
-          "lugar_equipo": 2,
+          "lugar_equipo": 3,
           "de_equipo": 15,
           "pesos": [
             {
-              "txt": "2 asistencias",
-              "pts": 1.8
+              "txt": "1 gol",
+              "pts": 1.35
             },
             {
-              "txt": "1 gol",
+              "txt": "2 asistencias",
               "pts": 1.35
             },
             {
