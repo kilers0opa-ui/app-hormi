@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T01:44:54.643273-06:00",
+  "updated_at": "2026-10-30T08:34:51.770348-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -4865,7 +4865,378 @@
         ],
         "eventos_v": 6,
         "penales": null,
-        "alineacion": null,
+        "alineacion": {
+          "local": {
+            "nombre": "FC Porto",
+            "logo": "https://media.api-sports.io/football/teams/212.png",
+            "formacion": null,
+            "color": null,
+            "color_num": null,
+            "titulares": [
+              {
+                "id": 41432,
+                "n": "Claudio Ramos",
+                "num": 14,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 37,
+                "n": "N. Perez",
+                "num": 18,
+                "pos": null,
+                "g": null,
+                "sale": "78'"
+              },
+              {
+                "id": 892,
+                "n": "C. Smalling",
+                "num": 6,
+                "pos": null,
+                "g": null,
+                "amarilla": "15'",
+                "sale": "54'"
+              },
+              {
+                "id": 340572,
+                "n": "D. Prpic",
+                "num": 21,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 336596,
+                "n": "M. Fernandes",
+                "num": 52,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 2901,
+                "n": "Hwang In-Beom",
+                "num": 16,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 278375,
+                "n": "A. Varela",
+                "num": 22,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 414455,
+                "n": "Souza",
+                "num": 33,
+                "pos": null,
+                "g": null,
+                "sale": "73'"
+              },
+              {
+                "id": 30807,
+                "n": "S. Fofana",
+                "num": 42,
+                "pos": null,
+                "g": null,
+                "sale": "78'"
+              },
+              {
+                "id": 94562,
+                "n": "S. Gimenez",
+                "num": 29,
+                "pos": null,
+                "g": null,
+                "goles": 1,
+                "mio": true
+              },
+              {
+                "id": 507527,
+                "n": "Gabriel Mec",
+                "num": 37,
+                "pos": null,
+                "g": null,
+                "sale": "73'"
+              }
+            ],
+            "suplentes": [
+              {
+                "id": 96476,
+                "n": "J. Costa",
+                "num": 24,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 61431,
+                "n": "J. Kiwior",
+                "num": 4,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 2999,
+                "n": "J. Bednarek",
+                "num": 5,
+                "pos": null,
+                "g": null,
+                "entra": "78'"
+              },
+              {
+                "id": 126899,
+                "n": "Zaidu",
+                "num": 12,
+                "pos": null,
+                "g": null,
+                "entra": "73'"
+              },
+              {
+                "id": 330419,
+                "n": "A. Costa",
+                "num": 20,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 586011,
+                "n": "M. Mide",
+                "num": 89,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 240,
+                "n": "P. Rosario",
+                "num": 13,
+                "pos": null,
+                "g": null,
+                "entra": "54'"
+              },
+              {
+                "id": 182504,
+                "n": "G. Veiga",
+                "num": 10,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 388872,
+                "n": "V. Froholdt",
+                "num": 8,
+                "pos": null,
+                "g": null,
+                "entra": "78'"
+              },
+              {
+                "id": 2063,
+                "n": "Andre Silva",
+                "num": 19,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 10500,
+                "n": "Pepê",
+                "num": 11,
+                "pos": null,
+                "g": null,
+                "entra": "73'"
+              },
+              {
+                "id": 133453,
+                "n": "B. Sainz",
+                "num": 17,
+                "pos": null,
+                "g": null
+              }
+            ]
+          },
+          "visita": {
+            "nombre": "Academico Viseu",
+            "logo": "https://media.api-sports.io/football/teams/238.png",
+            "formacion": null,
+            "color": null,
+            "color_num": null,
+            "titulares": [
+              {
+                "id": 2036,
+                "n": "J. Soriano",
+                "num": 12,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 277196,
+                "n": "T. Domingos",
+                "num": 21,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 190946,
+                "n": "H. Gambor",
+                "num": 82,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 215976,
+                "n": "N. Michelis",
+                "num": 2,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 546509,
+                "n": "Gu Costa",
+                "num": 57,
+                "pos": null,
+                "g": null,
+                "amarilla": "39'"
+              },
+              {
+                "id": 41743,
+                "n": "A. Ceitil",
+                "num": 6,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 5998,
+                "n": "C. Ferreira",
+                "num": 18,
+                "pos": null,
+                "g": null,
+                "sale": "70'"
+              },
+              {
+                "id": 467893,
+                "n": "L. Gohi",
+                "num": 47,
+                "pos": null,
+                "g": null,
+                "sale": "61'"
+              },
+              {
+                "id": 199938,
+                "n": "S. Messeguem",
+                "num": 14,
+                "pos": null,
+                "g": null,
+                "amarilla": "63'",
+                "sale": "70'"
+              },
+              {
+                "id": 47514,
+                "n": "Valery",
+                "num": 17,
+                "pos": null,
+                "g": null,
+                "sale": "61'"
+              },
+              {
+                "id": 96324,
+                "n": "M. Bouldini",
+                "num": 9,
+                "pos": null,
+                "g": null,
+                "sale": "61'"
+              }
+            ],
+            "suplentes": [
+              {
+                "id": 47186,
+                "n": "M. Lavin",
+                "num": 1,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 41744,
+                "n": "A. Correia",
+                "num": 41,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 546510,
+                "n": "Robinho",
+                "num": 75,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 142576,
+                "n": "Pedro Barcelos",
+                "num": 5,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 291147,
+                "n": "M. Brau",
+                "num": 3,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 41753,
+                "n": "L. Silva",
+                "num": 7,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 90693,
+                "n": "C. Kahraman",
+                "num": 8,
+                "pos": null,
+                "g": null,
+                "entra": "70'"
+              },
+              {
+                "id": 410269,
+                "n": "A. Mestanza",
+                "num": 45,
+                "pos": null,
+                "g": null,
+                "entra": "70'"
+              },
+              {
+                "id": 392100,
+                "n": "A. Babic",
+                "num": 29,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 161927,
+                "n": "N. Mortimer",
+                "num": 22,
+                "pos": null,
+                "g": null,
+                "entra": "61'"
+              },
+              {
+                "id": 41761,
+                "n": "Andre Clovis",
+                "num": 33,
+                "pos": null,
+                "g": null,
+                "entra": "61'"
+              },
+              {
+                "id": 291578,
+                "n": "Joao Guilherme",
+                "num": 31,
+                "pos": null,
+                "g": null,
+                "entra": "61'",
+                "amarilla": "90+5'"
+              }
+            ]
+          }
+        },
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/gimenez_partido.jpg?v=d38241d4",
           "hasta": "2026-10-29T16:30:00-06:00",
@@ -7658,7 +8029,341 @@
         ],
         "eventos_v": 6,
         "penales": null,
-        "alineacion": null,
+        "alineacion": {
+          "local": {
+            "nombre": "Aarhus Fremad",
+            "logo": "https://media.api-sports.io/football/teams/6004.png",
+            "formacion": null,
+            "color": null,
+            "color_num": null,
+            "titulares": [
+              {
+                "id": 644479,
+                "n": "V. de Paoli",
+                "num": 13,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 547517,
+                "n": "M. Kirchheiner",
+                "num": 10,
+                "pos": null,
+                "g": null,
+                "amarilla": "90+1'"
+              },
+              {
+                "id": 15850,
+                "n": "A. Ludwig",
+                "num": 33,
+                "pos": null,
+                "g": null,
+                "autogol": 1
+              },
+              {
+                "id": 524732,
+                "n": "O. Hjaltason",
+                "num": 20,
+                "pos": null,
+                "g": null,
+                "sale": "78'"
+              },
+              {
+                "id": 328547,
+                "n": "M. de Claville",
+                "num": 21,
+                "pos": null,
+                "g": null,
+                "sale": "46'"
+              },
+              {
+                "id": 290673,
+                "n": "E. Egerton",
+                "num": 28,
+                "pos": null,
+                "g": null,
+                "sale": "71'"
+              },
+              {
+                "id": 528433,
+                "n": "M. Ryberg",
+                "num": 12,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 489293,
+                "n": "C. Nygaard",
+                "num": 15,
+                "pos": null,
+                "g": null,
+                "sale": "61'"
+              },
+              {
+                "id": 15590,
+                "n": "K. Lunding",
+                "num": 11,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 15596,
+                "n": "M. Kaastrup",
+                "num": 7,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 360147,
+                "n": "J. Beluli",
+                "num": 70,
+                "pos": null,
+                "g": null,
+                "sale": "61'"
+              }
+            ],
+            "suplentes": [
+              {
+                "id": 378625,
+                "n": "V. Hojbjerg",
+                "num": 1,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 378614,
+                "n": "A. Pisani",
+                "num": 4,
+                "pos": null,
+                "g": null,
+                "entra": "78'"
+              },
+              {
+                "id": 470415,
+                "n": "M. Kjolby",
+                "num": 2,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 15826,
+                "n": "S. Baekgard",
+                "num": 8,
+                "pos": null,
+                "g": null,
+                "entra": "61'"
+              },
+              {
+                "id": 291844,
+                "n": "M. Kirchheiner",
+                "num": 27,
+                "pos": null,
+                "g": null,
+                "entra": "71'"
+              },
+              {
+                "id": 326425,
+                "n": "F. Grube",
+                "num": 6,
+                "pos": null,
+                "g": null,
+                "entra": "46'",
+                "amarilla": "66'"
+              },
+              {
+                "id": 89791,
+                "n": "S. Andreasen",
+                "num": 9,
+                "pos": null,
+                "g": null,
+                "entra": "61'"
+              },
+              {
+                "id": 304431,
+                "n": "L. Ronnberg",
+                "num": 14,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 653813,
+                "n": "Y. Abdullahi",
+                "num": 18,
+                "pos": null,
+                "g": null
+              }
+            ]
+          },
+          "visita": {
+            "nombre": "FC Copenhague",
+            "logo": "https://media.api-sports.io/football/teams/400.png",
+            "formacion": null,
+            "color": null,
+            "color_num": null,
+            "titulares": [
+              {
+                "id": 24894,
+                "n": "D. Ramaj",
+                "num": 1,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 351014,
+                "n": "J. Suzuki",
+                "num": 20,
+                "pos": null,
+                "g": null,
+                "amarilla": "58'"
+              },
+              {
+                "id": 25312,
+                "n": "F. Beijmo",
+                "num": 2,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 443849,
+                "n": "A. Markgraf",
+                "num": 6,
+                "pos": null,
+                "g": null,
+                "amarilla": "13'"
+              },
+              {
+                "id": 310199,
+                "n": "R. Huescas",
+                "num": 13,
+                "pos": null,
+                "g": null,
+                "asist": 1,
+                "mio": true
+              },
+              {
+                "id": 15,
+                "n": "T. Delaney",
+                "num": 27,
+                "pos": null,
+                "g": null,
+                "sale": "65'"
+              },
+              {
+                "id": 349212,
+                "n": "W. Clem",
+                "num": 36,
+                "pos": null,
+                "g": null,
+                "goles": 1,
+                "sale": "76'"
+              },
+              {
+                "id": 1173,
+                "n": "B. Meling",
+                "num": 24,
+                "pos": null,
+                "g": null,
+                "amarilla": "35'",
+                "sale": "65'"
+              },
+              {
+                "id": 449247,
+                "n": "M. Carrizo",
+                "num": 7,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 18946,
+                "n": "M. Elyounoussi",
+                "num": 10,
+                "pos": null,
+                "g": null,
+                "goles": 1,
+                "sale": "76'"
+              },
+              {
+                "id": 426288,
+                "n": "V. Dadason",
+                "num": 39,
+                "pos": null,
+                "g": null,
+                "sale": "65'"
+              }
+            ],
+            "suplentes": [
+              {
+                "id": 2784,
+                "n": "R. A. Runarsson",
+                "num": 31,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 24985,
+                "n": "A. Sorensen",
+                "num": 4,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 2431,
+                "n": "M. Lopez",
+                "num": 15,
+                "pos": null,
+                "g": null,
+                "entra": "65'"
+              },
+              {
+                "id": 1234,
+                "n": "A. Kral",
+                "num": 33,
+                "pos": null,
+                "g": null,
+                "entra": "76'"
+              },
+              {
+                "id": 419587,
+                "n": "H. Nemeth",
+                "num": 28,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 15934,
+                "n": "M. Madsen",
+                "num": 21,
+                "pos": null,
+                "g": null,
+                "entra": "65'"
+              },
+              {
+                "id": 567955,
+                "n": "G. Olsen",
+                "num": 45,
+                "pos": null,
+                "g": null,
+                "entra": "76'",
+                "amarilla": "85'"
+              },
+              {
+                "id": 1274,
+                "n": "A. Cornelius",
+                "num": 14,
+                "pos": null,
+                "g": null
+              },
+              {
+                "id": 633096,
+                "n": "G. Vianney Ndjee",
+                "num": 44,
+                "pos": null,
+                "g": null,
+                "entra": "65'"
+              }
+            ]
+          }
+        },
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/huescas_partido.jpg?v=54637e9f",
           "hasta": "2026-10-30T08:30:00-06:00",
