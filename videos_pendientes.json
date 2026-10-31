@@ -9,23 +9,6 @@
   ],
   "finales": [
     {
-      "fixture_id": 1570439,
-      "home": "Levante",
-      "away": "Atlético de Madrid",
-      "league": "La Liga",
-      "score": "Levante 0-2 Atlético de Madrid",
-      "final_seen_at": "2026-10-31T14:52:56.400311+00:00",
-      "jugadores": [
-        {
-          "player_key": "obed",
-          "team_key": "atletico_madrid",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        }
-      ]
-    },
-    {
       "fixture_id": 1593347,
       "home": "Kifisia",
       "away": "Olympiakos",
@@ -54,6 +37,23 @@
           "player_key": "fidalgo",
           "team_key": "betis",
           "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      ]
+    },
+    {
+      "fixture_id": 1552210,
+      "home": "Ajax",
+      "away": "AZ Alkmaar",
+      "league": "Eredivisie",
+      "score": "Ajax 1-0 AZ Alkmaar",
+      "final_seen_at": "2026-10-31T21:56:32.231357+00:00",
+      "jugadores": [
+        {
+          "player_key": "chavez",
+          "team_key": "az_alkmaar",
+          "minutes": 12,
           "goals": 0,
           "assists": 0
         }
