@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T16:55:18.412516-06:00",
+  "updated_at": "2026-10-31T17:00:31.058408-06:00",
   "cuota": {
     "fecha": "2026-10-31",
     "busquedas": 1,
@@ -192,10 +192,18 @@
         "embeddable": true,
         "bloqueado_en": []
       },
-      "noticias_pasadas": 1,
-      "ultima_noticia": "2026-10-31T22:30:23.515336+00:00",
+      "noticias_pasadas": 2,
+      "ultima_noticia": "2026-10-31T23:00:29.992736+00:00",
       "noticias": {
         "chavez": [
+          {
+            "title": "Mateo Chávez jugó pocos minutos en la derrota del AZ Alkmaar ante el Ajax en la Eredivisie",
+            "source": "Fox Sports",
+            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNN3RMVTduUWtSUE1ObGRiUDhlM0hNeXZKZWg1NW1RbDFGdHdlV04zOEZpcGNLM3JFNXBNaTlQTDZram1LQTJnZUZJNkVoZkp2UDR0VGlHX1dPdG5KR1UxcDJzSHJwRFd6MHpjT0E3ZHhiV3U0TTh5UVpZd2E3dDNpNkxHWVotbDY0WlE4bURxMW5tLWdvbzBTU3JuT1c0ZlZDTTl3aElUY2x3dGRzOE45OER3Mks4TVVsd0ZlSTZER0dBVjJUZDZxQTFFcw?oc=5",
+            "published_at": "2026-10-31T22:15:13Z",
+            "dominio": "foxsports.com.mx",
+            "edicion": "mx"
+          },
           {
             "title": "Mateo Chávez revela la difícil realidad que encontró al llegar a Europa",
             "source": "TUDN",
@@ -210,14 +218,6 @@
             "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNM2szYWNsZnVNTmFibjg3Qm5lM2Eyc19EVlk1a25rMUNjMVppaVl5MGx5d1Q1SlhlV1ZJMjYzb2dpTlhCdS10Z0lyMUpXd2ZsODJjNWdfSHlQelpXNVplUGtpZWJJQl9PNDhUS0RKZjNjU0JkZWpScjVOWkZpZWdKVERMTmJJZDBiWS1BVUxaN1oxV1hmWE1PYzNXS3VITjROVEZlX1htaFFmVFJLcXc?oc=5",
             "published_at": "2026-10-26T00:13:00Z",
             "dominio": "tudn.com",
-            "edicion": "mx"
-          },
-          {
-            "title": "Mateo Chávez y AZ Alkmaar sufren dolorosa derrota ante Twente con un hombre menos",
-            "source": "Récord",
-            "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQb1RSa0pXZ1ZvbjVuZ3FsVWdoTnIwUnVGMTdieVlpNlVaNVlXVmFhZkxVYVBWeGJ6eFdJUENjTDlKOV9DM2c1clFQclJKQ3FMeTJvck5BWkhPakpqcHJtdldtWEVxVXA2VENzMmQ3dUpuWkp5eHVuUlRXQXpPakJVUDF0OTJjWHdCQUtfNElnd0FxTzdVY2owbWNZVmxTQWtIYTdCRlRGVUFRejZ1aUtnYTdYQXFBdjRIS25kOGk4N0xjTmR6UjFIN3V1MnNoVXN5d3c?oc=5",
-            "published_at": "2026-10-26T00:13:00Z",
-            "dominio": "record.com.mx",
             "edicion": "mx"
           }
         ]
@@ -238,14 +238,42 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-31T23:00:29.992736+00:00",
+      "noticias": {
+        "gimenez": [
+          {
+            "title": "Santiago Giménez quiere más goles con el Porto",
+            "source": "88.9 Noticias | Noticias en Vivo | Información Que Sirve",
+            "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQeFVPVEtVc3phSDN0OVRwSGZoY3FfcG56dmNGLTktQXBGVklsUjU1QmNPMmI5TFNlM3BnR3ZzN1dHSXYwS2Z4bFFBWlRCQURHY3V5anBVUXA4NGpSRjNjbmZQMlBzUk1FeXlFZ25LTjBveFBwMEFYcUdvNDZheUZJRF90a3dDcWhlTEY0c3ZIVVE1UQ?oc=5",
+            "published_at": "2026-10-31T04:17:41Z",
+            "dominio": "889noticias.mx",
+            "edicion": "mx"
+          },
+          {
+            "title": "Santiago Gimenez se siente COMO EN CASA tras anotar de nuevo con Porto: ‘La CONFIANZA CRECE’",
+            "source": "Fox Sports",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPWlFOenNnVl9TcjltdGdVQmlZS0l6MDZWaFlzWHdELVF5MnJBeDVYU2NIYmxocXgzLWJyWUJ1Y01kenIzRGJpQ3YtVFhDRjNtTVp1M0lJYldXS18tb2NmMkM4a2hxbU03RHpkRW9YVld5TkpyekJ6MTJXak43S1NfOW1wS2xNOXpZel94WUMtMDJhakxuWUlOeGZiSmViZ0FELW43czVFUzUzYlQxUXpOaXVxdlQyUGg5X2htdVBB?oc=5",
+            "published_at": "2026-10-29T15:46:11Z",
+            "dominio": "foxsports.com.mx",
+            "edicion": "mx"
+          },
+          {
+            "title": "“La confianza crece en Porto”: Santiago Giménez se mostró entusiasmado tras reencontrarse con el gol",
+            "source": "Récord",
+            "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNSFFYMmxuVFZMcjNYS09kSUlFWW5jR1VwMGlXUTFMUWdkamdXZnBHZksyeFBLdDJyYjRBZkVvS3hnbU1aSDJnQld1cFNsSVAyQi00SThkaGpLNGtPUjJzM3JTNDZGVFpQMFhWd2ZCbktCeHpHM1FwX3c4anNmcjVpcE5LaXY0Yll6LXN4bjQ0eGNBcERBUTN6N0FlYk1mN090TXNTRHpTNVdDckkzVFpCdjBn?oc=5",
+            "published_at": "2026-10-29T13:41:00Z",
+            "dominio": "record.com.mx",
+            "edicion": "mx"
+          }
+        ]
+      },
+      "motivo": "ningún jugador tuvo minutos"
     }
   }
 }
