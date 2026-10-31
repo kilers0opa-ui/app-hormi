@@ -1,182 +1,6 @@
 {
-  "updated_at": "2026-10-31T00:16:13.170483-06:00",
+  "updated_at": "2026-10-31T07:02:36.735715-06:00",
   "partidos": {
-    "1570439": {
-      "fixture_id": 1570439,
-      "kickoff": "2026-10-31T07:00:00-06:00",
-      "home": "Levante",
-      "away": "Atlético de Madrid",
-      "home_id": 539,
-      "away_id": 530,
-      "home_logo": "https://media.api-sports.io/football/teams/539.png",
-      "away_logo": "https://media.api-sports.io/football/teams/530.png",
-      "league": "La Liga",
-      "tabla": {
-        "liga": "La Liga",
-        "home": {
-          "rank": 14,
-          "pts": 10,
-          "pj": 10
-        },
-        "away": {
-          "rank": 2,
-          "pts": 25,
-          "pj": 10
-        }
-      },
-      "forma_home": [
-        {
-          "r": "P",
-          "rival": "Villarreal",
-          "marcador": "1-3",
-          "fid": 1570402,
-          "local": false
-        },
-        {
-          "r": "E",
-          "rival": "Sevilla",
-          "marcador": "3-3",
-          "fid": 1570407,
-          "local": true
-        },
-        {
-          "r": "E",
-          "rival": "Deportivo La Coruna",
-          "marcador": "1-1",
-          "fid": 1570415,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Athletic Club",
-          "marcador": "3-1",
-          "fid": 1570389,
-          "local": true
-        },
-        {
-          "r": "P",
-          "rival": "Real Sociedad",
-          "marcador": "1-2",
-          "fid": 1570430,
-          "local": false
-        }
-      ],
-      "forma_away": [
-        {
-          "r": "G",
-          "rival": "Alavés",
-          "marcador": "2-1",
-          "fid": 1570403,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Manchester United",
-          "marcador": "2-0",
-          "fid": 1635623,
-          "local": true
-        },
-        {
-          "r": "G",
-          "rival": "Espanyol",
-          "marcador": "1-0",
-          "fid": 1570416,
-          "local": false
-        },
-        {
-          "r": "E",
-          "rival": "VfB Stuttgart",
-          "marcador": "1-1",
-          "fid": 1635738,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Deportivo La Coruna",
-          "marcador": "1-0",
-          "fid": 1570425,
-          "local": true
-        }
-      ],
-      "historial": [
-        {
-          "fecha": "2026-01-31",
-          "home": "Levante",
-          "away": "Atlético de Madrid",
-          "home_id": 539,
-          "marcador": "0-0",
-          "ganador": null
-        },
-        {
-          "fecha": "2025-11-08",
-          "home": "Atlético de Madrid",
-          "away": "Levante",
-          "home_id": 530,
-          "marcador": "3-1",
-          "ganador": 530
-        },
-        {
-          "fecha": "2023-01-18",
-          "home": "Levante",
-          "away": "Atlético de Madrid",
-          "home_id": 539,
-          "marcador": "0-2",
-          "ganador": 530
-        },
-        {
-          "fecha": "2022-02-16",
-          "home": "Atlético de Madrid",
-          "away": "Levante",
-          "home_id": 530,
-          "marcador": "0-1",
-          "ganador": 539
-        },
-        {
-          "fecha": "2021-10-28",
-          "home": "Levante",
-          "away": "Atlético de Madrid",
-          "home_id": 539,
-          "marcador": "2-2",
-          "ganador": null
-        }
-      ],
-      "hecho": "2026-10-31T00:16:13.170483-06:00",
-      "v": 2,
-      "jugadores": [
-        {
-          "key": "obed",
-          "lado": "V",
-          "rachas": {},
-          "minutos": [
-            {
-              "rival": "Alavés",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "Manchester United",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "Espanyol",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "VfB Stuttgart",
-              "min": 12,
-              "goles": 0
-            },
-            {
-              "rival": "Deportivo La Coruna",
-              "min": 0,
-              "goles": 0
-            }
-          ]
-        }
-      ]
-    },
     "1561429": {
       "fixture_id": 1561429,
       "kickoff": "2026-10-31T08:30:00-06:00",
@@ -1012,7 +836,7 @@
           "ganador": 201
         }
       ],
-      "hecho": "2026-10-30T13:41:07.423270-06:00",
+      "hecho": "2026-10-31T07:02:36.735715-06:00",
       "v": 2,
       "jugadores": [
         {
@@ -1188,7 +1012,7 @@
           "ganador": 230
         }
       ],
-      "hecho": "2026-10-30T13:41:07.423270-06:00",
+      "hecho": "2026-10-31T07:02:36.735715-06:00",
       "v": 2,
       "jugadores": [
         {
@@ -1364,7 +1188,7 @@
           "ganador": null
         }
       ],
-      "hecho": "2026-10-30T13:41:07.423270-06:00",
+      "hecho": "2026-10-31T07:02:36.735715-06:00",
       "v": 2,
       "jugadores": [
         {
@@ -1531,7 +1355,7 @@
         }
       ],
       "historial": [],
-      "hecho": "2026-10-30T13:41:07.423270-06:00",
+      "hecho": "2026-10-31T07:02:36.735715-06:00",
       "v": 2,
       "jugadores": [
         {
@@ -1637,10 +1461,365 @@
           ]
         }
       ]
+    },
+    "1561431": {
+      "fixture_id": 1561431,
+      "kickoff": "2026-11-01T10:45:00-06:00",
+      "home": "Lokomotiv Moscú",
+      "away": "Spartak Moscú",
+      "home_id": 597,
+      "away_id": 558,
+      "home_logo": "https://media.api-sports.io/football/teams/597.png",
+      "away_logo": "https://media.api-sports.io/football/teams/558.png",
+      "league": "Liga Premier de Rusia",
+      "tabla": {
+        "liga": "Liga Premier de Rusia",
+        "home": {
+          "rank": 13,
+          "pts": 11,
+          "pj": 12
+        },
+        "away": {
+          "rank": 5,
+          "pts": 23,
+          "pj": 12
+        }
+      },
+      "forma_home": [
+        {
+          "r": "G",
+          "rival": "Fakel",
+          "marcador": "5-0",
+          "fid": 1561405,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Akron",
+          "marcador": "1-1",
+          "fid": 1563664,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "FC Krasnodar",
+          "marcador": "3-3",
+          "fid": 1561415,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "FC Rostov",
+          "marcador": "0-2",
+          "fid": 1561423,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "CSKA Moscú",
+          "marcador": "1-3",
+          "fid": 1563668,
+          "local": false
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "E",
+          "rival": "Krylia Sovetov",
+          "marcador": "1-1",
+          "fid": 1561408,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Rodina Moskva",
+          "marcador": "4-2",
+          "fid": 1563665,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Rubin",
+          "marcador": "4-0",
+          "fid": 1561417,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "CSKA Moscú",
+          "marcador": "0-2",
+          "fid": 1561421,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Rubin",
+          "marcador": "1-0",
+          "fid": 1563674,
+          "local": true
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2026-07-11",
+          "home": "Lokomotiv Moscú",
+          "away": "Spartak Moscú",
+          "home_id": 597,
+          "marcador": "2-0",
+          "ganador": 597
+        },
+        {
+          "fecha": "2026-04-05",
+          "home": "Spartak Moscú",
+          "away": "Lokomotiv Moscú",
+          "home_id": 558,
+          "marcador": "2-1",
+          "ganador": 558
+        },
+        {
+          "fecha": "2025-11-26",
+          "home": "Lokomotiv Moscú",
+          "away": "Spartak Moscú",
+          "home_id": 597,
+          "marcador": "2-3",
+          "ganador": 558
+        },
+        {
+          "fecha": "2025-11-06",
+          "home": "Spartak Moscú",
+          "away": "Lokomotiv Moscú",
+          "home_id": 558,
+          "marcador": "3-1",
+          "ganador": 558
+        },
+        {
+          "fecha": "2025-08-09",
+          "home": "Lokomotiv Moscú",
+          "away": "Spartak Moscú",
+          "home_id": 597,
+          "marcador": "4-2",
+          "ganador": 597
+        }
+      ],
+      "hecho": "2026-10-31T07:02:36.735715-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "montes",
+          "lado": "L",
+          "rachas": {},
+          "minutos": [
+            {
+              "rival": "Fakel",
+              "min": 90,
+              "goles": 1
+            },
+            {
+              "rival": "Akron",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "FC Krasnodar",
+              "min": 90,
+              "goles": 0
+            },
+            {
+              "rival": "FC Rostov",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "CSKA Moscú",
+              "min": 0,
+              "goles": 0
+            }
+          ]
+        }
+      ]
+    },
+    "1550184": {
+      "fixture_id": 1550184,
+      "kickoff": "2026-11-01T11:00:00-06:00",
+      "home": "Lecce",
+      "away": "Genoa",
+      "home_id": 867,
+      "away_id": 495,
+      "home_logo": "https://media.api-sports.io/football/teams/867.png",
+      "away_logo": "https://media.api-sports.io/football/teams/495.png",
+      "league": "Serie A",
+      "tabla": {
+        "liga": "Serie A",
+        "home": {
+          "rank": 14,
+          "pts": 9,
+          "pj": 9
+        },
+        "away": {
+          "rank": 13,
+          "pts": 10,
+          "pj": 9
+        }
+      },
+      "forma_home": [
+        {
+          "r": "P",
+          "rival": "AC Milan",
+          "marcador": "0-3",
+          "fid": 1550127,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Bologna",
+          "marcador": "1-2",
+          "fid": 1550143,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Udinese",
+          "marcador": "3-0",
+          "fid": 1550155,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Juventus",
+          "marcador": "0-2",
+          "fid": 1550163,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Frosinone",
+          "marcador": "1-5",
+          "fid": 1550170,
+          "local": false
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "P",
+          "rival": "Rapid",
+          "marcador": "0-2",
+          "fid": 1642927,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Fiorentina",
+          "marcador": "2-1",
+          "fid": 1550140,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "AS Roma",
+          "marcador": "0-2",
+          "fid": 1550148,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Venezia",
+          "marcador": "1-0",
+          "fid": 1550160,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Juventus",
+          "marcador": "2-0",
+          "fid": 1550171,
+          "local": true
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2026-05-24",
+          "home": "Lecce",
+          "away": "Genoa",
+          "home_id": 867,
+          "marcador": "1-0",
+          "ganador": 867
+        },
+        {
+          "fecha": "2025-08-23",
+          "home": "Genoa",
+          "away": "Lecce",
+          "home_id": 495,
+          "marcador": "0-0",
+          "ganador": null
+        },
+        {
+          "fecha": "2025-03-14",
+          "home": "Genoa",
+          "away": "Lecce",
+          "home_id": 495,
+          "marcador": "2-1",
+          "ganador": 495
+        },
+        {
+          "fecha": "2025-01-05",
+          "home": "Lecce",
+          "away": "Genoa",
+          "home_id": 867,
+          "marcador": "0-0",
+          "ganador": null
+        },
+        {
+          "fecha": "2024-01-28",
+          "home": "Genoa",
+          "away": "Lecce",
+          "home_id": 495,
+          "marcador": "2-1",
+          "ganador": 495
+        }
+      ],
+      "hecho": "2026-10-31T07:02:36.735715-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "vasquez",
+          "lado": "V",
+          "rachas": {
+            "cero": 2,
+            "titular": 4,
+            "jugando": 4
+          },
+          "minutos": [
+            {
+              "rival": "Rapid",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Fiorentina",
+              "min": 90,
+              "goles": 0
+            },
+            {
+              "rival": "AS Roma",
+              "min": 90,
+              "goles": 0
+            },
+            {
+              "rival": "Venezia",
+              "min": 90,
+              "goles": 0
+            },
+            {
+              "rival": "Juventus",
+              "min": 90,
+              "goles": 0
+            }
+          ]
+        }
+      ]
     }
   },
   "jugadores": {
-    "obed": 1570439,
     "luis_chavez": 1561429,
     "raul": 1563238,
     "armando": 1593347,
@@ -1651,6 +1830,8 @@
     "fimbres": 1551025,
     "campillo": 1551024,
     "camberos": 1551024,
-    "sandoval": 1551024
+    "sandoval": 1551024,
+    "montes": 1561431,
+    "vasquez": 1550184
   }
 }
