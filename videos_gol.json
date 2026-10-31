@@ -1,33 +1,11 @@
 {
-  "updated_at": "2026-10-29T15:55:28.761751-06:00",
+  "updated_at": "2026-10-31T08:55:17.769616-06:00",
   "cuota": {
-    "fecha": "2026-10-29",
-    "busquedas": 10,
-    "busquedas_resumen": 8
+    "fecha": "2026-10-31",
+    "busquedas": 0,
+    "busquedas_resumen": 0
   },
   "goles": {
-    "gimenez:porto:1589437:goal:45:gol": {
-      "player_key": "gimenez",
-      "team_key": "porto",
-      "goal_seen_at": "2026-10-28T21:15:00+00:00",
-      "status": "resuelto",
-      "intentos": 1,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-29T05:05:05.083644+00:00",
-      "video": {
-        "id": "j0IajP95GFI",
-        "title": "Gol de Santiago Giménez con el FC Porto ✝️♥️🇲🇽 Vamos Bebo #futbolmexicano #santiagogimenez #fcporto",
-        "channel": "Fan de Santiagol",
-        "published_at": "2026-10-28T21:53:51Z",
-        "thumbnail": "https://i.ytimg.com/vi/j0IajP95GFI/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=j0IajP95GFI",
-        "embeddable": true,
-        "bloqueado_en": []
-      },
-      "silencioso": true,
-      "sin_caducidad": true,
-      "verificado": "2026-10-29T20:50:27.897951+00:00"
-    },
     "quinones:al_qadsiah:1603077:goal:35532:1:gol": {
       "player_key": "quinones",
       "team_key": "al_qadsiah",
@@ -41,262 +19,6 @@
     }
   },
   "partidos": {
-    "1550171": {
-      "fixture_id": 1550171,
-      "home": "Genoa",
-      "away": "Juventus",
-      "league": "Serie A",
-      "score": "Genoa 2-0 Juventus",
-      "final_seen_at": "2026-10-28T21:40:00.681673+00:00",
-      "jugadores": {
-        "vasquez": {
-          "team_key": "genoa",
-          "minutes": 90,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "resuelto",
-      "intentos": 1,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-28T22:10:29.181924+00:00",
-      "video": {
-        "id": "MLkOpdpgeOM",
-        "title": "Genoa 2-0 Juventus | Johan VÁSQUEZ y GENOA se hacen FUERTES de LOCAL y TRUENAN a la Juve | Resumen",
-        "channel": "ESPN MX",
-        "published_at": "2026-10-28T22:11:31Z",
-        "thumbnail": "https://i.ytimg.com/vi/MLkOpdpgeOM/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=MLkOpdpgeOM",
-        "embeddable": true,
-        "bloqueado_en": [
-          "US"
-        ]
-      },
-      "noticias_pasadas": 5,
-      "ultima_noticia": "2026-10-28T22:40:26.053224+00:00",
-      "noticias": {
-        "vasquez": [
-          {
-            "title": "¡Oxígeno ante un GIGANTE! Johan Vásquez juega LOS 90′ en victoria del Genoa sobre la Juventus",
-            "source": "Fox Sports",
-            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQMjctRU90ckYtX1cwbVI0QmJac3dDR0hwSWlyOEZ0aWlDT3pQRjFFZWxkcDMzMzhfbEFpb05wdFZNNm1NMmF4Tl9iZmkweElWWk5XbmNDdGE3Qmo0WV9zNTRxQUducmhVOWdyckttdTFicUQzRDhLSUpOVjNJTU9uVl9pQ0t4QzJxUlU5dENqa3ZxRjBEMzZhYXhpS04zTHJYaEd3YVZHR3lTSnhWczBvSER0WkctLUJwYlN3YUFIMlh1eU1uLVBRTlZLYw?oc=5",
-            "published_at": "2026-10-28T22:23:05Z",
-            "dominio": "foxsports.com.mx",
-            "edicion": "mx"
-          },
-          {
-            "title": "Johan Vásquez brilla como capitán en victoria del Genoa sobre Juventus",
-            "source": "ESPN México",
-            "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPNlJST3lJRkdCd1ZZTldhQXlGSjRhbU40RXo0a1VhTTY2R2FOWkp0QXBGTl9OMlBzQnJqdE5HSC1Ic3k0aHJ4ZXRSQUE1VFA4SGVtQ2o1VkNMdkE3UmNIR1VhT2VwSkdXY2hwcVFqQjA4aEd0bGd1ZTJRNS1McUw1TFB2SU5ZYWk5Z3cxeld2UWMwaDY5UHEtcjFieThlUTZMUGdCTFh2bVVDZw?oc=5",
-            "published_at": "2026-10-28T22:03:00Z",
-            "dominio": "espn.com.mx",
-            "edicion": "mx"
-          },
-          {
-            "title": "Dónde ver Genoa vs Juventus: Horario y canal TV para Johan Vásquez en la Serie A",
-            "source": "MARCA",
-            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPM1RwX3NSZDh2UkZXSVNPQi1iX1VhRjAyOUdpa3h4eDJ4OWZEUDYyNE1Oa3VUQ0xPSlRvZERfVEl2UFRzcmg4YlJHaVZUVnQ0dTc5X2FndnpfWkFHbE83ZThUbGZBQUVIOTRGb0RuZzQwOFFkUk1GQlR1N3JuRnI3RGhPME5KRzVrNUFQdmpwNlFGekcyNDZrUm5fX0ZzRm94dExHN2F3QmJfMC1sTEhlR3NiSkc4NS11RFlUUnRqONIBvwFBVV95cUxNSHBpa0NtaFF4TFU4ZXBSVzBneTlENWtXQTdrT2tDc1Z0OTRma00wS3VjbEhEbW9HaVF1bTRVMW56bGJzOGJwWVI5RHh6NTFQZkctUC1lRVhPRFI1ZlMwdVdJeVdOOGN5NjBRZTVvRUtyOE5UOS1Pb3RrZF9PUGtSUVlUVVVFYll1R1VMU1BHN19WY01qMmx6ZjdzeUFvSWxvNUNuVDZkNGN5LWpBaTROTF9fNHJXeEQ0ZGhuZjh5TQ?oc=5",
-            "published_at": "2026-10-28T14:23:43Z",
-            "dominio": "marca.com",
-            "edicion": "mx"
-          }
-        ]
-      },
-      "alternativos": {
-        "US": {
-          "id": "QvN79KR7yOQ",
-          "title": "Juventus vs Genoa 0-2 All Goals & Extended Highlights 2026",
-          "channel": "উদ্যোক্তা কথা",
-          "published_at": "2026-10-28T21:35:55Z",
-          "thumbnail": "https://i.ytimg.com/vi/QvN79KR7yOQ/hqdefault.jpg",
-          "url": "https://www.youtube.com/watch?v=QvN79KR7yOQ",
-          "embeddable": true
-        }
-      },
-      "alt_buscado_US": true
-    },
-    "1550952": {
-      "fixture_id": 1550952,
-      "home": "Club America",
-      "away": "Club Tijuana",
-      "league": "Liga MX",
-      "score": "Club America 1-1 Club Tijuana",
-      "final_seen_at": "2026-10-29T04:57:46.212894+00:00",
-      "jugadores": {
-        "mora": {
-          "team_key": "tijuana",
-          "minutes": 33,
-          "goals": 0,
-          "assists": 0
-        }
-      },
-      "status": "resuelto",
-      "intentos": 0,
-      "fallos": 0,
-      "ultimo_intento": null,
-      "video": {
-        "id": "5ZfgXJMwmQc",
-        "title": "MINI RESUMEN: América 1-1 Tijuana | Mora está de regreso #shorts",
-        "channel": "TUDN México",
-        "published_at": "2026-10-29T05:09:02Z",
-        "thumbnail": "https://i.ytimg.com/vi/5ZfgXJMwmQc/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=5ZfgXJMwmQc",
-        "embeddable": true,
-        "bloqueado_en": [
-          "US"
-        ]
-      },
-      "noticias_pasadas": 5,
-      "ultima_noticia": "2026-10-29T06:00:30.644456+00:00",
-      "noticias": {
-        "mora": [
-          {
-            "title": "¿Por qué Gilberto Mora no juega HOY en América vs. Tijuana? Esto le pasa a la joya mexicana",
-            "source": "Reporte Indigo",
-            "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOcVZGRURUZi1rcVZKVjFsWDJpYk1Rd0k0UHVFUGV4a0ZzQ3ppOTlHT3ota041eXNTcUNfVU12bzVSemZndjg0VnJWRG9PZVpvWjNHMFU5YWFFMzJxOHdVLTNkOVZSbFduQ0c0S2tiOFlmRm5XVjBpaE9VYk5JZk5YUEVpdTZOUkwzVnNIRy03el9jS3RLSXJNcExMSDRZNlFNc0dIZ0xRVmN4MHhEbERvZA?oc=5",
-            "published_at": "2026-10-29T02:22:04Z",
-            "dominio": "reporteindigo.com",
-            "edicion": "mx"
-          },
-          {
-            "title": "¿Por qué no juega Gilberto Mora en América vs. Xolos por el postergado del Apertura 2026?",
-            "source": "Bolavip México",
-            "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbnhIaktFZjlMWFY1SzZodGgwWXR4N2ctRGtZRVRqcWZyOWl1clRVZDZIWkdoS2ZrZkEtZ2ExbmJ1OWRXVjcwWUxwbWpNVDZmQXFTQUNpeHJycFhBVV85dTNCcEdGVlJZY0VUMTBIUFFBMkNoOUh6YUJfMjI5NjZHelVlUVZ4MzgxNi1CV0Nxa3JnbXBpbnBseldQT3FJeFBmZEdVOXV6eXpoU1E3a05jeDRTX0ZiMEXSAbwBQVVfeXFMTzB5XzlPOUg2MGFGdGFSa0FBb001cVROdlQxdzVNN3lJRkZldHRTZmtjTmpwNkp5QmZSYXhYWUlWcm5Td2hhNl90dTJDdVFoMFRUaW15R0R0Tl9KUmd4Qk5yd2l3RVlKZW9USm1yYnkzS0NWdTZJOVBCTlF4cWtxOGF2SmtLTER3Sk9wVmh1U3ZjYkxHU3o5SmN0RkxIUzAtdDMybTNVWHJ5YzhxZTFSOWxwUF9wdFExZXFqSGU?oc=5",
-            "published_at": "2026-10-28T22:09:33Z",
-            "dominio": "bolavip.com",
-            "edicion": "mx"
-          },
-          {
-            "title": "¿Gilberto Mora regresará en América vs. Tijuana? Esto se sabe",
-            "source": "TUDN",
-            "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPamhHY1hMajRIUm94cFRHd0VxUjBqQzA1dVpNUkNjU0NWdHpHS05qQXNfN3FtZDAzVjJjT2VBc2JnLUxCajB5SU8wRzBpbGdGS3liV3pxTzRjUEpGT0pncE9JeXZSQ0wwQ3VKaWRXRlM2dl9iMmw4bkpMZ1dvMUxOU25GdUVVLUhlajhpNVhIek45RC1BZ0lBbg?oc=5",
-            "published_at": "2026-10-28T04:00:42Z",
-            "dominio": "tudn.com",
-            "edicion": "mx"
-          }
-        ]
-      },
-      "alternativos": {
-        "US": {
-          "id": "9w9Dgju9zGg",
-          "title": "Resumen completo: América 1 vs. 1 Tijuana | J7, AP26 | GOLAZO de Miguel Borja",
-          "channel": "Club América",
-          "published_at": "2026-10-29T05:07:28Z",
-          "thumbnail": "https://i.ytimg.com/vi/9w9Dgju9zGg/hqdefault.jpg",
-          "url": "https://www.youtube.com/watch?v=9w9Dgju9zGg",
-          "embeddable": true
-        }
-      },
-      "alt_buscado_US": true
-    },
-    "1589437": {
-      "fixture_id": 1589437,
-      "home": "FC Porto",
-      "away": "Academico Viseu",
-      "league": "Copa de la Liga de Portugal",
-      "score": "FC Porto 1-0 Academico Viseu",
-      "final_seen_at": "2026-10-28T22:25:00+00:00",
-      "jugadores": {
-        "gimenez": {
-          "team_key": "porto",
-          "minutes": 1,
-          "goals": 1,
-          "assists": 0
-        }
-      },
-      "status": "omitido",
-      "intentos": 1,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-29T05:05:05.083644+00:00",
-      "video": null,
-      "noticias_pasadas": 5,
-      "ultima_noticia": "2026-10-29T05:05:05.083644+00:00",
-      "noticias": {
-        "gimenez": [
-          {
-            "title": "Santiago Giménez, primera titularidad y gol con el Porto",
-            "source": "FOX Deportes",
-            "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQaFd2U3VkZzFweWFvNzUzRHFIMS1IenVIQXhBWjZmNlloZy1heF81YlhqSG5IN19kbWQ2ME9tQ1lNalRENzZ1dkI5bWRSVzVfV29uZkdMb1pWbmJBb19HNWxhNElSUEJraW04Y3U1QzRnRFRQNFFVVmdrR3hqRFp6NUMwZTNrdzY2N0RVSi0xalhOWXVRVlo1WTVXTXFBbThDeVFxSlktTHJoeVFk?oc=5",
-            "published_at": "2026-10-29T03:21:27Z",
-            "dominio": "foxdeportes.com",
-            "edicion": "mx"
-          },
-          {
-            "title": "Santiago Giménez marca gol del triunfo y mete al Porto a semifinales de Copa de la Liga",
-            "source": "La Jornada",
-            "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPVENGTVJ0YWNNOUVab2x3eUFqcFhqMU9MRDdsMUg2UDlCWlNZZ2Y0WHh1enVoY1lCcUhMakVXVFFGd0lKQXZJQmFBb2JIR2NWMEJRWmtGVThnUzlCcjd0bldsczRzb3NRZko1NFBxT2xobHZKRXdjTHJrVVJ6QjRwVGpGR1BUcVdpUmVxcDRHakZ6emJxNXBHVnUxREF3TTVCejdxWTRxQi00UjlWbmotVnU5S3g0Zl9VblZfeGE5ZHFjYlA0Y1EzVExLZmlGOVlBQmRfMG1pZmRMQQ?oc=5",
-            "published_at": "2026-10-29T03:06:00Z",
-            "dominio": "jornada.com.mx",
-            "edicion": "mx"
-          },
-          {
-            "title": "Triunfa Porto en la Copa con gol de Santiago Giménez",
-            "source": "Reforma",
-            "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQSlJjb2loazJodF9pVDR1SDk2c0tjYjhmdkotLVJpN3dmRVFNRXBrazRneTNfRWpLQXNWS2dGWEJpWmxLVExpN2VfVkNaNDhGb0VVNmhOZGZrUG94ckNCNEpSVElXTlpWU2dBZEZscXA1SGZOeTZkMldQc1FKVksyTEtQX2NzYWtWQy1nZzdTcw?oc=5",
-            "published_at": "2026-10-28T23:50:45Z",
-            "dominio": "reforma.com",
-            "edicion": "mx"
-          }
-        ]
-      },
-      "silencioso": true,
-      "sin_caducidad": true,
-      "motivo": "sin resumen tras los intentos"
-    },
-    "1640475": {
-      "fixture_id": 1640475,
-      "home": "Aarhus Fremad",
-      "away": "FC Copenhagen",
-      "league": "Copa de Dinamarca",
-      "score": "Aarhus Fremad 0-3 FC Copenhague",
-      "final_seen_at": "2026-10-29T14:25:00+00:00",
-      "jugadores": {
-        "huescas": {
-          "team_key": "copenhague",
-          "minutes": 90,
-          "goals": 0,
-          "assists": 1
-        }
-      },
-      "status": "omitido",
-      "intentos": 5,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-29T20:00:29.455686+00:00",
-      "video": null,
-      "noticias_pasadas": 5,
-      "ultima_noticia": "2026-10-29T20:00:29.455686+00:00",
-      "noticias": {
-        "huescas": [
-          {
-            "title": "Rodrigo Huescas: Asistencia y MVP con el Copenhague tras superar su lesión",
-            "source": "W Radio México",
-            "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORG1waXVDSHlXU0c1ZEtzV1YyZy1EUzA4dDBIMmtORUVzOGFHUVViU3o4SlpkemVlRXptZWU2Wk9mMTJ6aFc2T3RQOWxLUVVta1NHbTRSNUhoMHhqSm1nVVRiRXMwSndKbUhwX1FndlhfN084Sk12bWZiOUVPNG1CWDgyclI1LVdsZFFSX09TNmVSNjhyUmQtbmdrYkZlajFZbTBzazEwMGVWNmc?oc=5",
-            "published_at": "2026-10-29T16:46:03Z",
-            "dominio": "wradio.com.mx",
-            "edicion": "mx"
-          },
-          {
-            "title": "Rodrigo Huescas brilla en su regreso a la titularidad con el Copenhague: asistencia y MVP",
-            "source": "Récord",
-            "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPOTcxeGw5d3VmTGtpWlV0RVptMW1BTlVFWmpuYWp3UUhYaXYwZVBxSjdPb2pKdnQxWVFVYmZSQ3hKTktnWVppVTNsOVlNX0ZHLUwydWpEWVVKbUNFTlcwYUw1WXhDZ1NyUHVQZzBZQnJoanUzV1Y3OEhSLVJGdFVaX2ktTmxJbkZ1bFdnMmlQTmhGeG1SNTFhR2VGdW50QmU1T2RHTjZWMFg3VzBHeVU1b3B3?oc=5",
-            "published_at": "2026-10-29T15:49:00Z",
-            "dominio": "record.com.mx",
-            "edicion": "mx"
-          },
-          {
-            "title": "Rodrigo Huescas regresa a la banca en la Superliga de Dinamarca: Resumen Copenhague vs Odense BK",
-            "source": "MARCA",
-            "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNa081ei01bHlITExsY1RkN2J0RU5tOGV6NVFhLVdyMVVvRGxVMUU4aDlWZ2pzNnhwMlhLcUtESkNPSkRoTl9ha01LX1gxRmtFT0R4TEE2X1BWd25HX0pDejlMN2tKVEN2ZGJXUVI0czBHM0RDQWRnTDVKaTlnTUxoMGhUazktNUJQXzV4OEM5R1U3d3NiYVZUQW1OSmQySEg2S2NMOENGZW83LVRtdm92M21TdU9penFVai00d3VpeFd1RG1acXZjTjVkMU1FNEFTbzBUSTZvVDUxYzJ3QmfSAd4BQVVfeXFMUFk0b0NYYzlFQkNObWk2V1h2Sld4UDBjQWduSW9zcVB6LTcyRDMxWHYtOGVmWXd2dU1hQTNJLVVsLTFnS0htRTRCOGVoTTNGczZ0NHNJSWx0WU15YTdDMGtmd0ZMWHhWSWVwcU1HVzNOWF9CVEhfUjA1Z05nWHNwQnZsQkc2dDE2cGtBeVp6blpmdnpteW9UVV9BblJ4QWhjTW43WXNRN21ISlY5STZkQnRpVFNUREhZUjYtRDBlbDVfMDIxN2NfT1VYNTlwOERwVHUyQzRPdzlQQW9OZEZn?oc=5",
-            "published_at": "2026-10-26T19:53:53Z",
-            "dominio": "marca.com",
-            "edicion": "mx"
-          }
-        ]
-      },
-      "silencioso": true,
-      "sin_caducidad": true,
-      "motivo": "sin resumen tras los intentos"
-    },
     "1603077": {
       "fixture_id": 1603077,
       "home": "Al Riyadh",
@@ -326,7 +48,7 @@
         "embeddable": false,
         "bloqueado_en": []
       },
-      "noticias_pasadas": 3,
+      "noticias_pasadas": 4,
       "ultima_noticia": "2026-10-29T21:55:20.099087+00:00",
       "noticias": {
         "quinones": [
@@ -357,6 +79,30 @@
         ]
       },
       "manual": true
+    },
+    "1570439": {
+      "fixture_id": 1570439,
+      "home": "Levante",
+      "away": "Atlético de Madrid",
+      "league": "La Liga",
+      "score": "Levante 0-2 Atlético de Madrid",
+      "final_seen_at": "2026-10-31T14:52:56.400311+00:00",
+      "jugadores": {
+        "obed": {
+          "team_key": "atletico_madrid",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
