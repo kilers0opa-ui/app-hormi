@@ -133,20 +133,30 @@
       "ok": true,
       "jugo": true,
       "revisado": "2026-10-31T16:11:51.646910-06:00"
+    },
+    "gimenez:1575532": {
+      "ok": true,
+      "jugo": false,
+      "revisado": "2026-10-31T16:42:09.912063-06:00"
     }
   },
   "bitacora": [
     {
       "fecha": "2026-10-31T16:11:51.664517-06:00",
       "txt": "Mateo Chávez: Ajax 1-0 AZ Alkmaar — su calificación se había calculado con el marcador equivocado: 6.5 → 6.7"
+    },
+    {
+      "fecha": "2026-10-31T16:42:16.330559-06:00",
+      "txt": "Hitos y rachas no se habían actualizado tras el último partido — actualizados"
     }
   ],
   "avisados": [
     "agenda_ns:1644363",
     "calif_marcador:chavez:1552210",
+    "hitos:2026-10-31T14:00:00-06:00",
     "temporada:gimenez:1589437",
     "temporada:huescas:1640475"
   ],
-  "updated_at": "2026-10-31T16:11:51.664531-06:00",
+  "updated_at": "2026-10-31T16:42:16.330576-06:00",
   "resumen_dia": "2026-10-30"
 }
