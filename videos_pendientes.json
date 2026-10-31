@@ -9,36 +9,19 @@
   ],
   "finales": [
     {
-      "fixture_id": 1640475,
-      "home": "Aarhus Fremad",
-      "away": "FC Copenhague",
-      "league": "Copa de Dinamarca",
-      "score": "Aarhus Fremad 0-3 FC Copenhague",
-      "final_seen_at": "2026-10-29T14:19:30.746283+00:00",
+      "fixture_id": 1570439,
+      "home": "Levante",
+      "away": "Atlético de Madrid",
+      "league": "La Liga",
+      "score": "Levante 0-2 Atlético de Madrid",
+      "final_seen_at": "2026-10-31T14:52:56.400311+00:00",
       "jugadores": [
         {
-          "player_key": "huescas",
-          "team_key": "copenhague",
+          "player_key": "obed",
+          "team_key": "atletico_madrid",
           "minutes": 0,
           "goals": 0,
           "assists": 0
-        }
-      ]
-    },
-    {
-      "fixture_id": 1603077,
-      "home": "Al Riyadh",
-      "away": "Al-Qadsiah",
-      "league": "Liga Profesional Saudí",
-      "score": "Al Riyadh 0-6 Al-Qadsiah",
-      "final_seen_at": "2026-10-29T19:52:44.167915+00:00",
-      "jugadores": [
-        {
-          "player_key": "quinones",
-          "team_key": "al_qadsiah",
-          "minutes": 90,
-          "goals": 1,
-          "assists": 2
         }
       ]
     }
