@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T13:00:31.601343-06:00",
+  "updated_at": "2026-10-31T13:30:26.185879-06:00",
   "cuota": {
     "fecha": "2026-10-31",
     "busquedas": 0,
@@ -142,6 +142,58 @@
       "jugadores": {
         "armando": {
           "team_key": "olympiacos",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "omitido",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-31T19:30:25.587032+00:00",
+      "noticias": {
+        "armando": [
+          {
+            "title": "Armando González no es convocado y así reacciona",
+            "source": "TUDN",
+            "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNaklHZEJDTVJIMVVWejlLNkxaODlxYS1FY01yQ09sWDZ6Wkg4ZmFrNTJ5eWFERUVGXzUyRFpjSG9zMHlwbnJEYkViZnVUYXdXQ0x2NmZBX2RpNEI5U0stZlE0aWJ2Y3pVbEdFX0tQOXhqVVZseWNUUm95U3ZVVEtkaEdrVUxxYUcxejZjd2tvNWw0X0J4elFDeGNUVDRXM0xpXzRzMWpuek1KZHpUZmVHRlU1TjFENEhFSGIxS25OcFhMRXl1cXFOVk8xTkJ3UTV6UUdZ?oc=5",
+            "published_at": "2026-10-28T20:48:00Z",
+            "dominio": "tudn.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "¿Por qué no jugó La Hormiga González en el triunfo de Olympiacos en la Copa?",
+            "source": "Mediotiempo",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUkw3Y0ZQWVVoeGRBckZSZDBxY3VkQjN3YnlTc0FEekJhQkxkLVVDSVdtV0dZUU1aMVpKVnZZMDhIN0JKNXFzYnZFMy1HSXNXbzZudjlPa2o1cDNBa20tT05WNDlmSEZmVXJPeXFiTzJEd3k2Sl9NVzd2aGZNZjd3S0Y3NVF5OFnSAYcBQVVfeXFMUHBJVm1YdnlDZVpUM3k5OVRoaHRWenVCNURZWFlwa2R0WlFCanhwTUhSajRHbXptSzRTX05xcUd5TXJnMkRGUWR5U0cyS3NnYU5jR011LWVMQmhHdVJ6Sm5DRGQ0RmJrOG9GVlZtdmpXXzhJUlZPVGg2ZHc0bTBrcHJ6MGhvUll3?oc=5",
+            "published_at": "2026-10-28T18:29:00Z",
+            "dominio": "mediotiempo.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "Inesperada ausencia: Armando González vive su primer gran revés como jugador del Olympiacos",
+            "source": "Récord",
+            "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNOTJ2ZV9RQnB1UGRmX0FlMlRyT2FhTnd6UlVuaU5HZ3QzNlFQdkR5N3RBVVJLSk9zY2FYQ05ya0RtaU45N2hDQ3N6YzVyak8wMVowNmdpNHgyVDVWbzFrTHh5T3NSUjR6dlIyaWxvSmt1dDg3ZEVRcVVobmVPQ2FHTEJnMnByY21UdEtUSWIybnJ2UUF1WnppdFh6a3VVem5CMElNLXRKMGFnY3pHS21uaG0xUjdUYTBzTVBlUjFlM0cyM2RyOHFvNmw3S0l6cENsVzhvSjJMLUx4cW9v?oc=5",
+            "published_at": "2026-10-28T14:57:00Z",
+            "dominio": "record.com.mx",
+            "edicion": "mx"
+          }
+        ]
+      },
+      "motivo": "ningún jugador tuvo minutos"
+    },
+    "1570435": {
+      "fixture_id": 1570435,
+      "home": "Real Betis",
+      "away": "Malaga",
+      "league": "La Liga",
+      "score": "Real Betis 2-1 Malaga",
+      "final_seen_at": "2026-10-31T19:28:51.905948+00:00",
+      "jugadores": {
+        "fidalgo": {
+          "team_key": "betis",
           "minutes": 0,
           "goals": 0,
           "assists": 0
