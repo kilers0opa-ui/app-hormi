@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T14:00:17.961988-06:00",
+  "updated_at": "2026-10-31T14:01:32.645799-06:00",
   "app_name": "Legión MX",
   "players": {
     "armando": {
@@ -11,7 +11,7 @@
           "emoji": "🏛️",
           "crest_url": "https://media.api-sports.io/football/teams/553.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:14.676305-06:00",
+          "checked_at": "2026-10-31T14:01:31.695582-06:00",
           "match_reference": "próximo",
           "match": "Rennes vs Olympiakos",
           "home": "Rennes",
@@ -28,7 +28,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:14.676325-06:00"
+          "checked_at": "2026-10-31T14:01:31.695596-06:00"
         }
       }
     },
@@ -41,14 +41,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:14.676574-06:00"
+          "checked_at": "2026-10-31T14:01:31.695821-06:00"
         },
         "wolves": {
           "label": "Wolves",
           "emoji": "🐺",
           "crest_url": "https://media.api-sports.io/football/teams/39.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:14.676563-06:00",
+          "checked_at": "2026-10-31T14:01:31.695812-06:00",
           "match_reference": "próximo",
           "match": "Bristol City vs Wolves",
           "home": "Bristol City",
@@ -71,14 +71,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:14.676759-06:00"
+          "checked_at": "2026-10-31T14:01:31.696013-06:00"
         },
         "al_qadsiah": {
           "label": "Al-Qadsiah",
           "emoji": "⚔️",
           "crest_url": "https://media.api-sports.io/football/teams/2933.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:14.676750-06:00",
+          "checked_at": "2026-10-31T14:01:31.696005-06:00",
           "match_reference": "próximo",
           "match": "Al-Gharafa vs Al-Qadsiah",
           "home": "Al-Gharafa",
@@ -101,14 +101,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:14.676937-06:00"
+          "checked_at": "2026-10-31T14:01:31.696184-06:00"
         },
         "tijuana": {
           "label": "Tijuana",
           "emoji": "🐕",
           "crest_url": "https://media.api-sports.io/football/teams/2280.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:14.676927-06:00",
+          "checked_at": "2026-10-31T14:01:31.696177-06:00",
           "match_reference": "próximo",
           "match": "Monterrey vs Club Tijuana",
           "home": "Monterrey",
@@ -131,7 +131,7 @@
           "emoji": "🦅",
           "crest_url": "https://media.api-sports.io/football/teams/495.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:14.677091-06:00",
+          "checked_at": "2026-10-31T14:01:31.696335-06:00",
           "match_reference": "próximo",
           "match": "Lecce vs Genoa",
           "home": "Lecce",
@@ -148,7 +148,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:14.677101-06:00"
+          "checked_at": "2026-10-31T14:01:31.696342-06:00"
         }
       }
     },
@@ -161,24 +161,378 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:16.264816-06:00"
+          "checked_at": "2026-10-31T14:01:31.917404-06:00"
         },
         "porto": {
           "label": "Porto",
           "emoji": "🐉",
           "crest_url": "https://media.api-sports.io/football/teams/212.png",
-          "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:16.264787-06:00",
-          "match_reference": "próximo",
+          "checked_at": "2026-10-31T14:01:31.917370-06:00",
+          "match_reference": "hoy",
+          "status": "banca",
           "match": "FC Porto vs Estoril",
+          "league": "Liga Portugal",
+          "league_logo": "https://media.api-sports.io/football/leagues/94.png",
+          "league_tipo": "liga",
+          "eventos": [],
+          "alineacion": {
+            "local": {
+              "nombre": "FC Porto",
+              "logo": "https://media.api-sports.io/football/teams/212.png",
+              "formacion": "4-2-3-1",
+              "color": null,
+              "color_num": null,
+              "titulares": [
+                {
+                  "id": 369,
+                  "n": "Diogo Costa",
+                  "num": 99,
+                  "pos": "G",
+                  "g": "1:1"
+                },
+                {
+                  "id": 330419,
+                  "n": "Alberto Baio",
+                  "num": 20,
+                  "pos": "D",
+                  "g": "2:4"
+                },
+                {
+                  "id": 2999,
+                  "n": "J. Bednarek",
+                  "num": 5,
+                  "pos": "D",
+                  "g": "2:3"
+                },
+                {
+                  "id": 61431,
+                  "n": "J. Kiwior",
+                  "num": 4,
+                  "pos": "D",
+                  "g": "2:2"
+                },
+                {
+                  "id": 126899,
+                  "n": "Z. Sanusi",
+                  "num": 12,
+                  "pos": "D",
+                  "g": "2:1"
+                },
+                {
+                  "id": 388872,
+                  "n": "Victor Mow Froholdt",
+                  "num": 8,
+                  "pos": "M",
+                  "g": "3:2"
+                },
+                {
+                  "id": 240,
+                  "n": "P. Rosario",
+                  "num": 13,
+                  "pos": "M",
+                  "g": "3:1"
+                },
+                {
+                  "id": 10500,
+                  "n": "Pepê Aquino",
+                  "num": 11,
+                  "pos": "F",
+                  "g": "4:3"
+                },
+                {
+                  "id": 182504,
+                  "n": "Gabri Veiga",
+                  "num": 10,
+                  "pos": "M",
+                  "g": "4:2"
+                },
+                {
+                  "id": 133453,
+                  "n": "Borja Sainz",
+                  "num": 17,
+                  "pos": "F",
+                  "g": "4:1"
+                },
+                {
+                  "id": 358628,
+                  "n": "Samu",
+                  "num": 9,
+                  "pos": "F",
+                  "g": "5:1"
+                }
+              ],
+              "suplentes": [
+                {
+                  "id": 30807,
+                  "n": "S. Fofana",
+                  "num": 42,
+                  "pos": "M",
+                  "g": null
+                },
+                {
+                  "id": 94562,
+                  "n": "S. Giménez",
+                  "num": 29,
+                  "pos": "F",
+                  "g": null,
+                  "mio": true
+                },
+                {
+                  "id": 2901,
+                  "n": "Hwang In-Beom",
+                  "num": 16,
+                  "pos": "M",
+                  "g": null
+                },
+                {
+                  "id": 41432,
+                  "n": "Cláudio Ramos",
+                  "num": 14,
+                  "pos": "G",
+                  "g": null
+                },
+                {
+                  "id": 340572,
+                  "n": "D. Prpić",
+                  "num": 21,
+                  "pos": "D",
+                  "g": null
+                },
+                {
+                  "id": 37,
+                  "n": "N. Pérez",
+                  "num": 18,
+                  "pos": "D",
+                  "g": null
+                },
+                {
+                  "id": 41966,
+                  "n": "Francisco Moura",
+                  "num": 74,
+                  "pos": "D",
+                  "g": null
+                },
+                {
+                  "id": 96476,
+                  "n": "Andorinha",
+                  "num": 24,
+                  "pos": "G",
+                  "g": null
+                },
+                {
+                  "id": 2063,
+                  "n": "André Silva",
+                  "num": 19,
+                  "pos": "F",
+                  "g": null
+                },
+                {
+                  "id": 278375,
+                  "n": "A. Varela",
+                  "num": 22,
+                  "pos": "M",
+                  "g": null
+                },
+                {
+                  "id": 414455,
+                  "n": "Souza",
+                  "num": 33,
+                  "pos": "D",
+                  "g": null
+                },
+                {
+                  "id": 507527,
+                  "n": "Gabriel Mec",
+                  "num": 37,
+                  "pos": "F",
+                  "g": null
+                }
+              ]
+            },
+            "visita": {
+              "nombre": "Estoril",
+              "logo": "https://media.api-sports.io/football/teams/230.png",
+              "formacion": "4-2-3-1",
+              "color": null,
+              "color_num": null,
+              "titulares": [
+                {
+                  "id": 289513,
+                  "n": "M. Turk",
+                  "num": 16,
+                  "pos": "G",
+                  "g": "1:1"
+                },
+                {
+                  "id": 179540,
+                  "n": "S. Andreou",
+                  "num": 25,
+                  "pos": "D",
+                  "g": "2:4"
+                },
+                {
+                  "id": 566,
+                  "n": "Ferro",
+                  "num": 4,
+                  "pos": "D",
+                  "g": "2:3"
+                },
+                {
+                  "id": 162531,
+                  "n": "Xavi Sintes",
+                  "num": 6,
+                  "pos": "M",
+                  "g": "2:2"
+                },
+                {
+                  "id": null,
+                  "n": "J. Arnolin",
+                  "num": 42,
+                  "pos": "D",
+                  "g": "2:1"
+                },
+                {
+                  "id": 393929,
+                  "n": "Tiago Parreira Parente",
+                  "num": 19,
+                  "pos": "D",
+                  "g": "3:2"
+                },
+                {
+                  "id": 138874,
+                  "n": "A. Tsoungui",
+                  "num": 5,
+                  "pos": "D",
+                  "g": "3:1"
+                },
+                {
+                  "id": 2209,
+                  "n": "R. Guitane",
+                  "num": 99,
+                  "pos": "F",
+                  "g": "4:3"
+                },
+                {
+                  "id": 427375,
+                  "n": "Peixinho",
+                  "num": 17,
+                  "pos": "F",
+                  "g": "4:2"
+                },
+                {
+                  "id": 381619,
+                  "n": "Pedro Carvalho",
+                  "num": 22,
+                  "pos": "D",
+                  "g": "4:1"
+                },
+                {
+                  "id": 313958,
+                  "n": "André Lacximicant",
+                  "num": 7,
+                  "pos": "F",
+                  "g": "5:1"
+                }
+              ],
+              "suplentes": [
+                {
+                  "id": 329209,
+                  "n": "A. Camblan",
+                  "num": 9,
+                  "pos": "M",
+                  "g": null
+                },
+                {
+                  "id": 19296,
+                  "n": "João Carvalho",
+                  "num": 12,
+                  "pos": "M",
+                  "g": null
+                },
+                {
+                  "id": 129728,
+                  "n": "J. Holsgrove",
+                  "num": 10,
+                  "pos": "M",
+                  "g": null
+                },
+                {
+                  "id": 162495,
+                  "n": "Fernando Medrano",
+                  "num": 3,
+                  "pos": "D",
+                  "g": null
+                },
+                {
+                  "id": 268110,
+                  "n": "N. Omerović",
+                  "num": 11,
+                  "pos": "D",
+                  "g": null
+                },
+                {
+                  "id": 191202,
+                  "n": "M. Robin",
+                  "num": 44,
+                  "pos": "M",
+                  "g": null
+                },
+                {
+                  "id": 330443,
+                  "n": "Isma Sierra",
+                  "num": 15,
+                  "pos": "D",
+                  "g": null
+                },
+                {
+                  "id": null,
+                  "n": "fletcher lowe",
+                  "num": 43,
+                  "pos": "G",
+                  "g": null
+                },
+                {
+                  "id": 22228,
+                  "n": "Xeka",
+                  "num": 8,
+                  "pos": "M",
+                  "g": null
+                },
+                {
+                  "id": 384981,
+                  "n": "S. Amissah",
+                  "num": 35,
+                  "pos": "D",
+                  "g": null
+                },
+                {
+                  "id": 162889,
+                  "n": "Ricard Sánchez",
+                  "num": 2,
+                  "pos": "D",
+                  "g": null
+                },
+                {
+                  "id": null,
+                  "n": "Kazim",
+                  "num": 41,
+                  "pos": "D",
+                  "g": null
+                }
+              ]
+            }
+          },
+          "score": "FC Porto 0-0 Estoril",
+          "goals": 0,
+          "assists": 0,
+          "penales": null,
+          "summary": null,
+          "kickoff": "2026-10-31T14:30:00-06:00",
           "home": "FC Porto",
           "away": "Estoril",
           "home_logo": "https://media.api-sports.io/football/teams/212.png",
           "away_logo": "https://media.api-sports.io/football/teams/230.png",
-          "league": "Liga Portugal",
-          "league_logo": "https://media.api-sports.io/football/leagues/94.png",
-          "league_tipo": "liga",
-          "kickoff": "2026-10-31T14:30:00-06:00"
+          "periodo": "NS"
         }
       }
     },
@@ -191,13 +545,13 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.958979-06:00"
+          "checked_at": "2026-10-31T14:01:32.207151-06:00"
         },
         "az_alkmaar": {
           "label": "AZ Alkmaar",
           "emoji": "🧀",
           "crest_url": "https://media.api-sports.io/football/teams/201.png",
-          "checked_at": "2026-10-31T14:00:17.958904-06:00",
+          "checked_at": "2026-10-31T14:01:32.207091-06:00",
           "match_reference": "hoy",
           "status": "banca",
           "match": "Ajax vs AZ Alkmaar",
@@ -575,14 +929,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.959206-06:00"
+          "checked_at": "2026-10-31T14:01:32.207390-06:00"
         },
         "atletico_madrid": {
           "label": "Atlético Madrid",
           "emoji": "🔴",
           "crest_url": "https://media.api-sports.io/football/teams/530.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.959194-06:00",
+          "checked_at": "2026-10-31T14:01:32.207378-06:00",
           "match_reference": "próximo",
           "match": "Atlético de Madrid vs Bayern München",
           "home": "Atlético de Madrid",
@@ -605,14 +959,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.959377-06:00"
+          "checked_at": "2026-10-31T14:01:32.207584-06:00"
         },
         "betis": {
           "label": "Real Betis",
           "emoji": "🌴",
           "crest_url": "https://media.api-sports.io/football/teams/543.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.959369-06:00"
+          "checked_at": "2026-10-31T14:01:32.207575-06:00"
         }
       }
     },
@@ -625,14 +979,14 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.959541-06:00"
+          "checked_at": "2026-10-31T14:01:32.207773-06:00"
         },
         "copenhague": {
           "label": "FC Copenhague",
           "emoji": "🦁",
           "crest_url": "https://media.api-sports.io/football/teams/400.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.959533-06:00",
+          "checked_at": "2026-10-31T14:01:32.207764-06:00",
           "match_reference": "próximo",
           "match": "Sonderjyske vs FC Copenhague",
           "home": "Sonderjyske",
@@ -655,7 +1009,7 @@
           "emoji": "🚂",
           "crest_url": "https://media.api-sports.io/football/teams/597.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.959688-06:00",
+          "checked_at": "2026-10-31T14:01:32.207953-06:00",
           "match_reference": "próximo",
           "match": "Lokomotiv Moscú vs Spartak Moscú",
           "home": "Lokomotiv Moscú",
@@ -672,7 +1026,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.959696-06:00"
+          "checked_at": "2026-10-31T14:01:32.207962-06:00"
         }
       }
     },
@@ -685,7 +1039,7 @@
           "emoji": "⚡",
           "crest_url": "https://media.api-sports.io/football/teams/1088.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.959839-06:00",
+          "checked_at": "2026-10-31T14:01:32.208126-06:00",
           "match_reference": "próximo",
           "match": "Fakel vs Dinamo Moscú",
           "home": "Fakel",
@@ -702,7 +1056,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.959847-06:00"
+          "checked_at": "2026-10-31T14:01:32.208134-06:00"
         }
       }
     },
@@ -715,7 +1069,7 @@
           "emoji": "⛰️",
           "crest_url": "https://media.api-sports.io/football/teams/2282.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.960000-06:00",
+          "checked_at": "2026-10-31T14:01:32.208294-06:00",
           "match_reference": "próximo",
           "match": "Monterrey vs Club Tijuana",
           "home": "Monterrey",
@@ -732,7 +1086,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.960008-06:00"
+          "checked_at": "2026-10-31T14:01:32.208303-06:00"
         }
       }
     },
@@ -745,7 +1099,7 @@
           "emoji": "🐐",
           "crest_url": "https://media.api-sports.io/football/teams/2278.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.960148-06:00",
+          "checked_at": "2026-10-31T14:01:32.208464-06:00",
           "match_reference": "próximo",
           "match": "Chivas vs Atlante FC",
           "home": "Chivas",
@@ -762,7 +1116,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.960156-06:00"
+          "checked_at": "2026-10-31T14:01:32.208473-06:00"
         }
       }
     },
@@ -775,7 +1129,7 @@
           "emoji": "🐐",
           "crest_url": "https://media.api-sports.io/football/teams/2278.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.960294-06:00",
+          "checked_at": "2026-10-31T14:01:32.208634-06:00",
           "match_reference": "próximo",
           "match": "Chivas vs Atlante FC",
           "home": "Chivas",
@@ -792,7 +1146,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.960301-06:00"
+          "checked_at": "2026-10-31T14:01:32.208642-06:00"
         }
       }
     },
@@ -805,7 +1159,7 @@
           "emoji": "🐐",
           "crest_url": "https://media.api-sports.io/football/teams/2278.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.960441-06:00",
+          "checked_at": "2026-10-31T14:01:32.208804-06:00",
           "match_reference": "próximo",
           "match": "Chivas vs Atlante FC",
           "home": "Chivas",
@@ -822,7 +1176,7 @@
           "emoji": "🇲🇽",
           "crest_url": "https://media.api-sports.io/football/teams/16.png",
           "status": "sin_partido",
-          "checked_at": "2026-10-31T14:00:17.960448-06:00"
+          "checked_at": "2026-10-31T14:01:32.208812-06:00"
         }
       }
     }
