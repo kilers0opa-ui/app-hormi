@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T13:55:20.384078-06:00",
+  "updated_at": "2026-10-31T14:00:25.912958-06:00",
   "cuota": {
     "fecha": "2026-10-31",
     "busquedas": 0,
@@ -79,8 +79,8 @@
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 1,
-      "ultima_noticia": "2026-10-31T19:30:25.587032+00:00",
+      "noticias_pasadas": 2,
+      "ultima_noticia": "2026-10-31T20:00:24.906975+00:00",
       "noticias": {
         "armando": [
           {
@@ -126,14 +126,42 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-31T20:00:24.906975+00:00",
+      "noticias": {
+        "fidalgo": [
+          {
+            "title": "Betis vs Málaga; la hora para VER EN VIVO a Álvaro Fidalgo en la Jornada 10 de LaLiga",
+            "source": "TV Azteca",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQU0ozX0V2RjJXdUVmM25BMGRzYVQ2NGNMWU1EQjVpUkpzXzBTZXNhNVFHb1Y2aHltM0RlLVVqczk5dV9XSDltTTMwaEtRUHp3VnhzdG1TV2hRSDIzNW9WRGNieEdpdnpyS3p5ZEtfMEFQalc1eFcxVGd2TjVNY2JFYWNfbGt2WUU4ZGtRQjNPaVVET096STdFMVhFOWdRd9IBngFBVV95cUxQU0ozX0V2RjJXdUVmM25BMGRzYVQ2NGNMWU1EQjVpUkpzXzBTZXNhNVFHb1Y2aHltM0RlLVVqczk5dV9XSDltTTMwaEtRUHp3VnhzdG1TV2hRSDIzNW9WRGNieEdpdnpyS3p5ZEtfMEFQalc1eFcxVGd2TjVNY2JFYWNfbGt2WUU4ZGtRQjNPaVVET096STdFMVhFOWdRdw?oc=5",
+            "published_at": "2026-10-30T15:10:01Z",
+            "dominio": "tvazteca.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "¡Pellegrini LANZA CONTUNDENTE MENSAJE a Álvaro Fidalgo en el Betis!",
+            "source": "MILENIO",
+            "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNUl8zdEJMSTdSbzY5RjlubUVjTkdpVUxfNjZoQ2lfaXFyR2tfUUx3WTNncThXOGZ3YzMwNnM4bnItaEtsMjhmMVRzMmNuWEZnb2M2ZEJONXNJaTg0RWRNX3lvZWZCVkZSNXdZaml3MnFmaV9tdkNCdGloV2VjbW5NU0FPUjhvNlZmR0NGS2RPRGFpeEVTcXduaUtaeWJKbmM3c05GS0F1amlvRHVxcDN5aDFfdlczT2xZTlHSAboBQVVfeXFMUDBGSzVNQVlaUGFEa2t1clFza2dXQ3JXaVE1TEw2QTVNUlZKTHZPc3h6aGFmeGVZa3JoeHBFZ21iekszNC1GVlJ0dE16RzI5UkpNWi1ITURHMXY3cFJmaHQxMHVWbl9oT3NqX2FkeGNVX1BDM2djYVJ6elFwSHlLX3VFOWNMNzZnbE52NTMxaXBmVFZ2TWJVeUhuMFd4LUt1QTFwN2IzbTF0WlZMSmJ5aHNyMWtUdGNTdGRn?oc=5",
+            "published_at": "2026-10-28T00:48:33Z",
+            "dominio": "milenio.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "Álvaro Fidalgo sigue sin consolidarse como titular en el Real Betis de Pellegrini",
+            "source": "ContraRéplica",
+            "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPVm9GMUtrVUU1ckxWNlNQVmljNjF6WDlsSFdycldWRDQ4T3JaUGZLMVB5SmZINXhuLTlTSTBBUi1oZDRRN3NKby10Mm84Rld0VkhWVjdaQXVzUHUwRkhpN0R0SjBHNnJYSWVfNnN1NEpqaXJoSjRXYlNjZzJ0YzVic1lCeEVZYnBtWDhiRm9ZUkhJbDhVMGsxdnNPSHdycDlBb256cmd4RmVFbzhjSThkUG9TRGxFT3EwUzg3QWZleXl3QzlGeXc?oc=5",
+            "published_at": "2026-10-26T15:52:32Z",
+            "dominio": "contrareplica.mx",
+            "edicion": "mx"
+          }
+        ]
+      },
+      "motivo": "ningún jugador tuvo minutos"
     }
   }
 }
