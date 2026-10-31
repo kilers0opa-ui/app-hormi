@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T09:55:18.126291-06:00",
+  "updated_at": "2026-10-31T13:00:31.601343-06:00",
   "cuota": {
     "fecha": "2026-10-31",
     "busquedas": 0,
@@ -100,7 +100,7 @@
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 4,
       "ultima_noticia": "2026-10-31T15:55:17.709993+00:00",
       "noticias": {
         "obed": [
@@ -131,6 +131,30 @@
         ]
       },
       "motivo": "ningún jugador tuvo minutos"
+    },
+    "1593347": {
+      "fixture_id": 1593347,
+      "home": "Kifisia",
+      "away": "Olympiakos",
+      "league": "Superliga de Grecia",
+      "score": "Kifisia 2-3 Olympiakos",
+      "final_seen_at": "2026-10-31T18:57:31.867824+00:00",
+      "jugadores": {
+        "armando": {
+          "team_key": "olympiacos",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
