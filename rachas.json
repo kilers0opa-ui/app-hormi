@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T13:59:46.654642-06:00",
+  "updated_at": "2026-10-31T16:00:45.962080-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -725,7 +725,7 @@
         "partidos_sel:25"
       ],
       "club": "Porto",
-      "partidos_revisados": 20
+      "partidos_revisados": 19
     },
     "chavez": {
       "rachas": [
@@ -740,8 +740,8 @@
             false,
             false,
             false,
-            true,
             false,
+            true,
             false
           ]
         },
@@ -764,14 +764,14 @@
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
-            true,
             false,
             true,
             false,
             true,
+            false,
             true,
             true,
             true
@@ -780,12 +780,12 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 1,
+          "actual": 2,
           "en_racha": false,
           "puntos": [
             true,
-            false,
             true,
+            false,
             true,
             true,
             true,
@@ -814,10 +814,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 130,
+          "valor": 131,
           "meta": 150,
           "previo": 100,
-          "texto": "A 20 partidos de 150"
+          "texto": "A 19 partidos de 150"
         },
         {
           "id": "goles_sel",
