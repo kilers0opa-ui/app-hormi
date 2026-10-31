@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T14:11:03.758444-06:00",
+  "updated_at": "2026-10-31T14:33:25.246954-06:00",
   "completa_at": "2026-10-31T11:54:14.571961-06:00",
   "desde": "2026-10-29",
   "hasta": "2026-11-07",
@@ -222,9 +222,9 @@
       "away_logo": "https://media.api-sports.io/football/teams/230.png",
       "league": "Liga Portugal",
       "league_logo": "https://media.api-sports.io/football/leagues/94.png",
-      "status": "NS",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "1H",
+      "home_goals": 0,
+      "away_goals": 0,
       "penales": null,
       "jugadores": [
         {
