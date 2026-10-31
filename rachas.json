@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T09:44:46.891138-06:00",
+  "updated_at": "2026-10-31T13:59:46.654642-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -11,12 +11,12 @@
           "puntos": [
             false,
             false,
+            false,
             true,
             false,
             false,
             false,
-            false,
-            true
+            false
           ]
         },
         {
@@ -27,12 +27,12 @@
           "puntos": [
             false,
             false,
+            false,
             true,
             false,
             false,
             false,
-            false,
-            true
+            false
           ]
         },
         {
@@ -42,13 +42,13 @@
           "en_racha": false,
           "puntos": [
             false,
+            false,
             true,
             false,
             false,
             false,
             false,
-            false,
-            true
+            false
           ]
         },
         {
@@ -58,12 +58,12 @@
           "en_racha": false,
           "puntos": [
             false,
+            false,
             true,
             true,
             true,
             true,
             false,
-            true,
             true
           ]
         }
@@ -136,7 +136,7 @@
             false,
             false,
             false,
-            true
+            false
           ]
         },
         {
@@ -152,7 +152,7 @@
             false,
             false,
             false,
-            true
+            false
           ]
         },
         {
@@ -167,8 +167,8 @@
             false,
             false,
             false,
-            true,
-            false
+            false,
+            true
           ]
         },
         {
@@ -183,7 +183,7 @@
             false,
             false,
             false,
-            true,
+            false,
             true
           ]
         }
@@ -239,7 +239,7 @@
         "partidos_sel:100"
       ],
       "club": "Wolves",
-      "partidos_revisados": 18
+      "partidos_revisados": 19
     },
     "quinones": {
       "rachas": [
@@ -1019,17 +1019,17 @@
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 1,
+          "actual": 0,
           "en_racha": false,
           "puntos": [
-            true,
             false,
             true,
             false,
-            false,
-            false,
             true,
-            false
+            false,
+            false,
+            false,
+            true
           ]
         }
       ],
@@ -1372,7 +1372,7 @@
             false,
             false,
             false,
-            true,
+            false,
             true
           ]
         },
@@ -1388,7 +1388,7 @@
             false,
             false,
             false,
-            true,
+            false,
             true
           ]
         }
@@ -1444,7 +1444,7 @@
         "partidos_sel:25"
       ],
       "club": "Dinamo Moscú",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "fimbres": {
       "rachas": [
