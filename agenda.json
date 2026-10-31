@@ -1,101 +1,9 @@
 {
-  "updated_at": "2026-10-30T15:08:22.603746-06:00",
-  "completa_at": "2026-10-30T15:08:22.603749-06:00",
-  "desde": "2026-10-28",
-  "hasta": "2026-11-06",
+  "updated_at": "2026-10-31T00:53:06.563024-06:00",
+  "completa_at": "2026-10-31T00:53:06.563028-06:00",
+  "desde": "2026-10-29",
+  "hasta": "2026-11-07",
   "partidos": [
-    {
-      "fixture_id": 1635507,
-      "kickoff": "2026-10-28T07:00:00-06:00",
-      "home": "Marko",
-      "away": "Olympiakos",
-      "home_id": 12403,
-      "away_id": 553,
-      "home_logo": "https://media.api-sports.io/football/teams/12403.png",
-      "away_logo": "https://media.api-sports.io/football/teams/553.png",
-      "league": "Copa de Grecia",
-      "league_logo": "https://media.api-sports.io/football/leagues/199.png",
-      "status": "FT",
-      "home_goals": 0,
-      "away_goals": 2,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "armando",
-          "team_key": "olympiacos",
-          "lado": "V"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1550171,
-      "kickoff": "2026-10-28T13:45:00-06:00",
-      "home": "Genoa",
-      "away": "Juventus",
-      "home_id": 495,
-      "away_id": 496,
-      "home_logo": "https://media.api-sports.io/football/teams/495.png",
-      "away_logo": "https://media.api-sports.io/football/teams/496.png",
-      "league": "Serie A",
-      "league_logo": "https://media.api-sports.io/football/leagues/135.png",
-      "status": "FT",
-      "home_goals": 2,
-      "away_goals": 0,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "vasquez",
-          "team_key": "genoa",
-          "lado": "L"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1589437,
-      "kickoff": "2026-10-28T14:30:00-06:00",
-      "home": "FC Porto",
-      "away": "Academico Viseu",
-      "home_id": 212,
-      "away_id": 238,
-      "home_logo": "https://media.api-sports.io/football/teams/212.png",
-      "away_logo": "https://media.api-sports.io/football/teams/238.png",
-      "league": "Copa de la Liga de Portugal",
-      "league_logo": "https://media.api-sports.io/football/leagues/97.png",
-      "status": "FT",
-      "home_goals": 1,
-      "away_goals": 0,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "gimenez",
-          "team_key": "porto",
-          "lado": "L"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1550952,
-      "kickoff": "2026-10-28T21:00:00-06:00",
-      "home": "Club America",
-      "away": "Club Tijuana",
-      "home_id": 2287,
-      "away_id": 2280,
-      "home_logo": "https://media.api-sports.io/football/teams/2287.png",
-      "away_logo": "https://media.api-sports.io/football/teams/2280.png",
-      "league": "Liga MX",
-      "league_logo": "https://media.api-sports.io/football/leagues/262.png",
-      "status": "FT",
-      "home_goals": 1,
-      "away_goals": 1,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "mora",
-          "team_key": "tijuana",
-          "lado": "V"
-        }
-      ]
-    },
     {
       "fixture_id": 1640475,
       "kickoff": "2026-10-29T06:30:00-06:00",
@@ -705,6 +613,75 @@
         {
           "key": "mora",
           "team_key": "tijuana",
+          "lado": "V"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1561437,
+      "kickoff": "2026-11-07T05:00:00-06:00",
+      "home": "Fakel",
+      "away": "Dinamo Moscú",
+      "home_id": 1993,
+      "away_id": 1088,
+      "home_logo": "https://media.api-sports.io/football/teams/1993.png",
+      "away_logo": "https://media.api-sports.io/football/teams/1088.png",
+      "league": "Liga Premier de Rusia",
+      "league_logo": "https://media.api-sports.io/football/leagues/235.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "luis_chavez",
+          "team_key": "dinamo",
+          "lado": "V"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1563262,
+      "kickoff": "2026-11-07T06:30:00-06:00",
+      "home": "Wrexham",
+      "away": "Wolves",
+      "home_id": 1837,
+      "away_id": 39,
+      "home_logo": "https://media.api-sports.io/football/teams/1837.png",
+      "away_logo": "https://media.api-sports.io/football/teams/39.png",
+      "league": "Championship",
+      "league_logo": "https://media.api-sports.io/football/leagues/40.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "raul",
+          "team_key": "wolves",
+          "lado": "V"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1551034,
+      "kickoff": "2026-11-07T19:00:00-06:00",
+      "home": "Toluca",
+      "away": "Monterrey",
+      "home_id": 2281,
+      "away_id": 2282,
+      "home_logo": "https://media.api-sports.io/football/teams/2281.png",
+      "away_logo": "https://media.api-sports.io/football/teams/2282.png",
+      "league": "Liga MX",
+      "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "fimbres",
+          "team_key": "monterrey",
           "lado": "V"
         }
       ]
