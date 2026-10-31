@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T08:55:17.769616-06:00",
+  "updated_at": "2026-10-31T09:25:18.420601-06:00",
   "cuota": {
     "fecha": "2026-10-31",
     "busquedas": 0,
@@ -95,14 +95,42 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "omitido",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-31T15:25:17.763682+00:00",
+      "noticias": {
+        "obed": [
+          {
+            "title": "Obed Vargas sin minutos en victoria del Atlético",
+            "source": "El Heraldo de México",
+            "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOU1pKTXpaOEY3cGduNlFFMl9oUTd3Wl9jekdON1V4cVVudVJlT3JkdzhuV0V1TWU2ZUZOUTRCVlZqVVgzSDYwZEFHNGd1R1liWm9mUFBScGFOeEdJTEhWeVBWdEtGZllTYVhCRWs4bjVkZ0tleTdjUGVsemZVUW9TTk1Oa2lQbTl3U0VrOGJLWWl2Z2xlTGpyM1RCb1oxclJtUFJQMjhhZ2cwODhkbk4wTQ?oc=5",
+            "published_at": "2026-10-24T23:13:00Z",
+            "dominio": "heraldodemexico.com.mx",
+            "edicion": "mx"
+          },
+          {
+            "title": "Obed Vargas es un fantasma para el Cholo Simeone: Resumen Atlético de Madrid vs Deportivo La Coruña",
+            "source": "MARCA",
+            "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPY29FZGNmeGdrcXBSeWo3RGpYVW9XdlFlWW1ZRE1LQ3BjaW5Fem5ES2k1NWphcmFGMDdGV2lEaVN1T3ZueVRGb2hZQ0RtVDAxeUtibTJVanJKM0hKcWZHYVZSRlBkZnI3Rk9KUkV6dTlUNFFYQ0hXMjNCcDFTeURZU3JBLUN0U2o4MURpTDJLM2V1NkthRXBqb1NfbXdERlJoM3F4TGdlQnlsdzJKZ1Z2U0J4dE9oS3YtY3JSU1BmQ29LMHNwN19fRmp1dnhOQkpRMUlfN3JZR2VGc2dKQzVVbzZGNkLSAeQBQVVfeXFMUEJJcHJIQTJhbzRsa1p6N2d6YzBkNGlCZTVCbE5uV1c5cDFjbm5FYmZCYVdxbWxCamVSQ3Y2MldLZ3c0NEhQakRaQk1VbG1ZT2FqTkttM2N1cWt5REJMMmFrUXotTGcxZWRrTDN1U2M1YjVrZ2Myeklkai1nVi1id2Nxdk8zY2lQdU1rVVdRcVJfMENEaWp4Y19RMTk5eWRvQ1BEWXJ2OXMwVjVrMHpvZzkxYm92dVViRGtMUXV2WVZkOTByS1NnZGZRWGhwMFlMZl9NVGl0OFQ0NnhheDY4UE9pU3di?oc=5",
+            "published_at": "2026-10-24T20:56:50Z",
+            "dominio": "marca.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "Lesiones del Atlético, pueden darle la titularidad a Obed Vargas",
+            "source": "88.9 Noticias | Noticias en Vivo | Información Que Sirve",
+            "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOTHNiNXBmWXpKVWxjaE95WnlRWURJaHFZbFRHejNtNDdGWVp1ZkNyRDNlWFN6aEQxQ3JoUFNaUTc5WExtTXVXeTNja1FLRm95R0UxNHh3aUdoNjlOMC05YzZ2eXlheFZidXFZendwSmdvX2NWSGRkeUxzMzR3MmZvSGhrT0VEQ1hFdTFSY3U3bmdlYjg4a0RuRE5HWThXNnlIcXJPS3lEYlg?oc=5",
+            "published_at": "2026-10-23T15:20:50Z",
+            "dominio": "889noticias.mx",
+            "edicion": "mx"
+          }
+        ]
+      },
+      "motivo": "ningún jugador tuvo minutos"
     }
   }
 }
