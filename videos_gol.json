@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T14:30:24.794020-06:00",
+  "updated_at": "2026-10-31T16:00:29.868031-06:00",
   "cuota": {
     "fecha": "2026-10-31",
     "busquedas": 0,
@@ -79,7 +79,7 @@
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 4,
       "ultima_noticia": "2026-10-31T20:00:24.906975+00:00",
       "noticias": {
         "armando": [
@@ -131,15 +131,15 @@
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 2,
-      "ultima_noticia": "2026-10-31T20:30:24.450430+00:00",
+      "noticias_pasadas": 3,
+      "ultima_noticia": "2026-10-31T22:00:29.473440+00:00",
       "noticias": {
         "fidalgo": [
           {
-            "title": "Real Betis DERROTA a Málaga con Álvaro Fidalgo en la banca: ¿cuánto minutos ha jugado el mexicano?",
+            "title": "Real Betis DERROTA a Málaga con Álvaro Fidalgo en la banca: ¿cuántos minutos ha jugado el mexicano?",
             "source": "Fox Sports",
             "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPLW5CcXMzektvdkdDak9wUzA4b1ZSQkF5ZFNQTFZIUldEZzc0S1htZFRnbVJFOFEyeHE2SmFXMk01RzF3YVF6QkM0alBRdU9HNEc3QldsdnFNMkRRb24yWjFjYms5Z1NISnlCdGV4WVFlMjFGaDNtZ0RhZ2pOWDlTeGh3VTR1VVhLbURRamRqZmNjUUdONWxQenk0QzEyM3M2elN0Z2NLNnZQeXZHRzNzS19wRWJfeXJNTTdMbHVXNWo5VkxfZ2N1S2s3eE91R3ZXUGc?oc=5",
-            "published_at": "2026-10-31T19:57:38Z",
+            "published_at": "2026-10-31T20:29:25Z",
             "dominio": "foxsports.com.mx",
             "edicion": "mx"
           },
@@ -162,6 +162,30 @@
         ]
       },
       "motivo": "ningún jugador tuvo minutos"
+    },
+    "1552210": {
+      "fixture_id": 1552210,
+      "home": "Ajax",
+      "away": "AZ Alkmaar",
+      "league": "Eredivisie",
+      "score": "Ajax 1-0 AZ Alkmaar",
+      "final_seen_at": "2026-10-31T21:56:32.231357+00:00",
+      "jugadores": {
+        "chavez": {
+          "team_key": "az_alkmaar",
+          "minutes": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
