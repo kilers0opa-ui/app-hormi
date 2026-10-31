@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-31T16:25:33.197953-06:00",
+  "updated_at": "2026-10-31T16:30:33.800604-06:00",
   "cuota": {
     "fecha": "2026-10-31",
-    "busquedas": 0,
-    "busquedas_resumen": 0
+    "busquedas": 1,
+    "busquedas_resumen": 1
   },
   "goles": {},
   "partidos": {
@@ -131,7 +131,7 @@
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 3,
+      "noticias_pasadas": 4,
       "ultima_noticia": "2026-10-31T22:00:29.473440+00:00",
       "noticias": {
         "fidalgo": [
@@ -174,6 +174,57 @@
         "chavez": {
           "team_key": "az_alkmaar",
           "minutes": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 1,
+      "fallos": 0,
+      "ultimo_intento": "2026-10-31T22:30:23.515336+00:00",
+      "video": null,
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-10-31T22:30:23.515336+00:00",
+      "noticias": {
+        "chavez": [
+          {
+            "title": "Mateo Chávez revela la difícil realidad que encontró al llegar a Europa",
+            "source": "TUDN",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOSmx6aDlBZU51WDBuampsZTQ3djBBMFZBRGFOYmZ1d0dDZXZoZVZWbFBfby1ndGlpZGtqUlh2eGRrcEk3c3Mza3FyQjh2bU15eVUtS2dhazJxSUp2M0JycjNhUTBrcEtCSzJHNWRvSFE2MF9HNkdRcjBicWFLaUlUMEJ0UlF5bVJTSjBvRW5tYk45SktRLXN3blJJTFhBTU9BVXF3R1hR?oc=5",
+            "published_at": "2026-10-28T02:03:00Z",
+            "dominio": "tudn.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "Mateo Chávez revela su primer y ambicioso objetivo en Europa",
+            "source": "TUDN",
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNM2szYWNsZnVNTmFibjg3Qm5lM2Eyc19EVlk1a25rMUNjMVppaVl5MGx5d1Q1SlhlV1ZJMjYzb2dpTlhCdS10Z0lyMUpXd2ZsODJjNWdfSHlQelpXNVplUGtpZWJJQl9PNDhUS0RKZjNjU0JkZWpScjVOWkZpZWdKVERMTmJJZDBiWS1BVUxaN1oxV1hmWE1PYzNXS3VITjROVEZlX1htaFFmVFJLcXc?oc=5",
+            "published_at": "2026-10-26T00:13:00Z",
+            "dominio": "tudn.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "Mateo Chávez y AZ Alkmaar sufren dolorosa derrota ante Twente con un hombre menos",
+            "source": "Récord",
+            "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQb1RSa0pXZ1ZvbjVuZ3FsVWdoTnIwUnVGMTdieVlpNlVaNVlXVmFhZkxVYVBWeGJ6eFdJUENjTDlKOV9DM2c1clFQclJKQ3FMeTJvck5BWkhPakpqcHJtdldtWEVxVXA2VENzMmQ3dUpuWkp5eHVuUlRXQXpPakJVUDF0OTJjWHdCQUtfNElnd0FxTzdVY2owbWNZVmxTQWtIYTdCRlRGVUFRejZ1aUtnYTdYQXFBdjRIS25kOGk4N0xjTmR6UjFIN3V1MnNoVXN5d3c?oc=5",
+            "published_at": "2026-10-26T00:13:00Z",
+            "dominio": "record.com.mx",
+            "edicion": "mx"
+          }
+        ]
+      }
+    },
+    "1575532": {
+      "fixture_id": 1575532,
+      "home": "FC Porto",
+      "away": "Estoril",
+      "league": "Liga Portugal",
+      "score": "FC Porto 4-0 Estoril",
+      "final_seen_at": "2026-10-31T22:26:43.807895+00:00",
+      "jugadores": {
+        "gimenez": {
+          "team_key": "porto",
+          "minutes": 0,
           "goals": 0,
           "assists": 0
         }
