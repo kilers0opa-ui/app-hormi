@@ -1,23 +1,11 @@
 {
-  "updated_at": "2026-10-31T13:30:26.185879-06:00",
+  "updated_at": "2026-10-31T13:50:21.793352-06:00",
   "cuota": {
     "fecha": "2026-10-31",
     "busquedas": 0,
     "busquedas_resumen": 0
   },
-  "goles": {
-    "quinones:al_qadsiah:1603077:goal:35532:1:gol": {
-      "player_key": "quinones",
-      "team_key": "al_qadsiah",
-      "goal_seen_at": "2026-10-29T19:46:44.879857+00:00",
-      "status": "omitido",
-      "intentos": 2,
-      "fallos": 0,
-      "ultimo_intento": "2026-10-29T20:20:27.199579+00:00",
-      "video": null,
-      "motivo": "sin video tras los intentos"
-    }
-  },
+  "goles": {},
   "partidos": {
     "1603077": {
       "fixture_id": 1603077,
