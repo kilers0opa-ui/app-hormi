@@ -5950,23 +5950,28 @@
         "goals": 0,
         "assists": 0,
         "tarjeta": {
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/chavez_partido.jpg?v=863d1ac7",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/chavez_partido.jpg?v=88ef1d31",
           "hasta": "2026-11-01T16:00:00-06:00",
-          "firma": "8ab3e24c24"
+          "firma": "c8c9713f99"
         },
         "stats": {
-          "rating": 6.5,
+          "rating": 6.7,
           "calif_fija": true,
-          "rating_api": 6.1,
+          "rating_api": 6.6,
           "tiros": 1,
           "tiros_puerta": 0,
-          "pases_pct": 67,
+          "pases_pct": 57,
           "duelos": 1,
           "duelos_ganados": 1,
+          "pases_clave": 2,
           "recuperaciones": 1,
           "lugar_equipo": 6,
           "de_equipo": 15,
           "pesos": [
+            {
+              "txt": "2 pases clave",
+              "pts": 0.32
+            },
             {
               "txt": "1 de 1 duelos ganados",
               "pts": 0.14
