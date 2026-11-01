@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-01T00:44:01.085814-06:00",
-  "completa_at": "2026-11-01T00:44:01.085817-06:00",
+  "updated_at": "2026-11-01T07:50:15.409827-06:00",
+  "completa_at": "2026-11-01T07:50:15.409830-06:00",
   "desde": "2026-10-30",
   "hasta": "2026-11-08",
   "partidos": [
@@ -342,6 +342,29 @@
       ]
     },
     {
+      "fixture_id": 1636324,
+      "kickoff": "2026-11-04T09:30:00-06:00",
+      "home": "Rennes",
+      "away": "Olympiakos",
+      "home_id": 94,
+      "away_id": 553,
+      "home_logo": "https://media.api-sports.io/football/teams/94.png",
+      "away_logo": "https://media.api-sports.io/football/teams/553.png",
+      "league": "Europa League",
+      "league_logo": "https://media.api-sports.io/football/leagues/3.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "armando",
+          "team_key": "olympiacos",
+          "lado": "V"
+        }
+      ]
+    },
+    {
       "fixture_id": 1563247,
       "kickoff": "2026-11-04T14:00:00-06:00",
       "home": "Bristol City",
@@ -430,29 +453,6 @@
           "key": "quinones",
           "team_key": "al_qadsiah",
           "lado": "L"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1636324,
-      "kickoff": "2026-11-05T11:45:00-06:00",
-      "home": "Rennes",
-      "away": "Olympiakos",
-      "home_id": 94,
-      "away_id": 553,
-      "home_logo": "https://media.api-sports.io/football/teams/94.png",
-      "away_logo": "https://media.api-sports.io/football/teams/553.png",
-      "league": "Europa League",
-      "league_logo": "https://media.api-sports.io/football/leagues/3.png",
-      "status": "NS",
-      "home_goals": null,
-      "away_goals": null,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "armando",
-          "team_key": "olympiacos",
-          "lado": "V"
         }
       ]
     },
