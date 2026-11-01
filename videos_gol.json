@@ -1,11 +1,22 @@
 {
-  "updated_at": "2026-10-31T17:30:25.838080-06:00",
+  "updated_at": "2026-10-31T19:20:33.307653-06:00",
   "cuota": {
     "fecha": "2026-10-31",
     "busquedas": 1,
     "busquedas_resumen": 1
   },
-  "goles": {},
+  "goles": {
+    "sandoval:chivas:1551024:goal:524762:1:gol": {
+      "player_key": "sandoval",
+      "team_key": "chivas",
+      "goal_seen_at": "2026-11-01T01:17:22.151658+00:00",
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null
+    }
+  },
   "partidos": {
     "1570439": {
       "fixture_id": 1570439,
@@ -192,7 +203,7 @@
         "embeddable": true,
         "bloqueado_en": []
       },
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 4,
       "ultima_noticia": "2026-10-31T23:00:29.992736+00:00",
       "noticias": {
         "chavez": [
@@ -243,8 +254,8 @@
       "fallos": 0,
       "ultimo_intento": null,
       "video": null,
-      "noticias_pasadas": 2,
-      "ultima_noticia": "2026-10-31T23:30:25.348319+00:00",
+      "noticias_pasadas": 3,
+      "ultima_noticia": "2026-11-01T01:20:23.325805+00:00",
       "noticias": {
         "gimenez": [
           {
