@@ -1,182 +1,6 @@
 {
-  "updated_at": "2026-11-01T03:42:04.398824-06:00",
+  "updated_at": "2026-11-01T10:54:37.034447-06:00",
   "partidos": {
-    "1561431": {
-      "fixture_id": 1561431,
-      "kickoff": "2026-11-01T10:45:00-06:00",
-      "home": "Lokomotiv Moscú",
-      "away": "Spartak Moscú",
-      "home_id": 597,
-      "away_id": 558,
-      "home_logo": "https://media.api-sports.io/football/teams/597.png",
-      "away_logo": "https://media.api-sports.io/football/teams/558.png",
-      "league": "Liga Premier de Rusia",
-      "tabla": {
-        "liga": "Liga Premier de Rusia",
-        "home": {
-          "rank": 13,
-          "pts": 11,
-          "pj": 12
-        },
-        "away": {
-          "rank": 5,
-          "pts": 23,
-          "pj": 12
-        }
-      },
-      "forma_home": [
-        {
-          "r": "G",
-          "rival": "Fakel",
-          "marcador": "5-0",
-          "fid": 1561405,
-          "local": false
-        },
-        {
-          "r": "P",
-          "rival": "Akron",
-          "marcador": "1-1",
-          "fid": 1563664,
-          "local": true
-        },
-        {
-          "r": "E",
-          "rival": "FC Krasnodar",
-          "marcador": "3-3",
-          "fid": 1561415,
-          "local": true
-        },
-        {
-          "r": "P",
-          "rival": "FC Rostov",
-          "marcador": "0-2",
-          "fid": 1561423,
-          "local": false
-        },
-        {
-          "r": "P",
-          "rival": "CSKA Moscú",
-          "marcador": "1-3",
-          "fid": 1563668,
-          "local": false
-        }
-      ],
-      "forma_away": [
-        {
-          "r": "E",
-          "rival": "Krylia Sovetov",
-          "marcador": "1-1",
-          "fid": 1561408,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Rodina Moskva",
-          "marcador": "4-2",
-          "fid": 1563665,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Rubin",
-          "marcador": "4-0",
-          "fid": 1561417,
-          "local": true
-        },
-        {
-          "r": "P",
-          "rival": "CSKA Moscú",
-          "marcador": "0-2",
-          "fid": 1561421,
-          "local": false
-        },
-        {
-          "r": "G",
-          "rival": "Rubin",
-          "marcador": "1-0",
-          "fid": 1563674,
-          "local": true
-        }
-      ],
-      "historial": [
-        {
-          "fecha": "2026-07-11",
-          "home": "Lokomotiv Moscú",
-          "away": "Spartak Moscú",
-          "home_id": 597,
-          "marcador": "2-0",
-          "ganador": 597
-        },
-        {
-          "fecha": "2026-04-05",
-          "home": "Spartak Moscú",
-          "away": "Lokomotiv Moscú",
-          "home_id": 558,
-          "marcador": "2-1",
-          "ganador": 558
-        },
-        {
-          "fecha": "2025-11-26",
-          "home": "Lokomotiv Moscú",
-          "away": "Spartak Moscú",
-          "home_id": 597,
-          "marcador": "2-3",
-          "ganador": 558
-        },
-        {
-          "fecha": "2025-11-06",
-          "home": "Spartak Moscú",
-          "away": "Lokomotiv Moscú",
-          "home_id": 558,
-          "marcador": "3-1",
-          "ganador": 558
-        },
-        {
-          "fecha": "2025-08-09",
-          "home": "Lokomotiv Moscú",
-          "away": "Spartak Moscú",
-          "home_id": 597,
-          "marcador": "4-2",
-          "ganador": 597
-        }
-      ],
-      "hecho": "2026-10-31T19:27:45.902280-06:00",
-      "v": 2,
-      "jugadores": [
-        {
-          "key": "montes",
-          "lado": "L",
-          "rachas": {},
-          "minutos": [
-            {
-              "rival": "Fakel",
-              "min": 90,
-              "goles": 1
-            },
-            {
-              "rival": "Akron",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "FC Krasnodar",
-              "min": 90,
-              "goles": 0
-            },
-            {
-              "rival": "FC Rostov",
-              "min": 0,
-              "goles": 0
-            },
-            {
-              "rival": "CSKA Moscú",
-              "min": 0,
-              "goles": 0
-            }
-          ]
-        }
-      ]
-    },
     "1550184": {
       "fixture_id": 1550184,
       "kickoff": "2026-11-01T11:00:00-06:00",
@@ -316,7 +140,7 @@
           "ganador": 495
         }
       ],
-      "hecho": "2026-10-31T19:27:45.902280-06:00",
+      "hecho": "2026-11-01T10:54:37.034447-06:00",
       "v": 2,
       "jugadores": [
         {
@@ -356,10 +180,327 @@
           ]
         }
       ]
+    },
+    "1549050": {
+      "fixture_id": 1549050,
+      "kickoff": "2026-11-02T12:00:00-06:00",
+      "home": "Sonderjyske",
+      "away": "FC Copenhague",
+      "home_id": 396,
+      "away_id": 400,
+      "home_logo": "https://media.api-sports.io/football/teams/396.png",
+      "away_logo": "https://media.api-sports.io/football/teams/400.png",
+      "league": "Superliga de Dinamarca",
+      "tabla": {
+        "liga": "Superliga",
+        "home": {
+          "rank": 12,
+          "pts": 8,
+          "pj": 12
+        },
+        "away": {
+          "rank": 2,
+          "pts": 26,
+          "pj": 12
+        }
+      },
+      "forma_home": [
+        {
+          "r": "P",
+          "rival": "AB Copenhagen",
+          "marcador": "1-3",
+          "fid": 1638201,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Randers FC",
+          "marcador": "4-2",
+          "fid": 1549026,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Aarhus",
+          "marcador": "0-3",
+          "fid": 1549028,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Silkeborg",
+          "marcador": "4-0",
+          "fid": 1549038,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "AC Horsens",
+          "marcador": "1-5",
+          "fid": 1549042,
+          "local": false
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "G",
+          "rival": "SC Braga",
+          "marcador": "3-0",
+          "fid": 1636406,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "Aarhus",
+          "marcador": "1-1",
+          "fid": 1549034,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "FK Crvena Zvezda",
+          "marcador": "2-2",
+          "fid": 1636397,
+          "local": false
+        },
+        {
+          "r": "E",
+          "rival": "Odense",
+          "marcador": "1-1",
+          "fid": 1549041,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Aarhus Fremad",
+          "marcador": "3-0",
+          "fid": 1640475,
+          "local": false
+        }
+      ],
+      "historial": [
+        {
+          "fecha": "2026-08-31",
+          "home": "FC Copenhague",
+          "away": "Sonderjyske",
+          "home_id": 400,
+          "marcador": "3-1",
+          "ganador": 400
+        },
+        {
+          "fecha": "2025-12-07",
+          "home": "FC Copenhague",
+          "away": "Sonderjyske",
+          "home_id": 400,
+          "marcador": "0-2",
+          "ganador": 396
+        },
+        {
+          "fecha": "2025-09-27",
+          "home": "Sonderjyske",
+          "away": "FC Copenhague",
+          "home_id": 396,
+          "marcador": "1-2",
+          "ganador": 400
+        },
+        {
+          "fecha": "2025-03-09",
+          "home": "FC Copenhague",
+          "away": "Sonderjyske",
+          "home_id": 400,
+          "marcador": "1-1",
+          "ganador": null
+        },
+        {
+          "fecha": "2024-10-30",
+          "home": "Sonderjyske",
+          "away": "FC Copenhague",
+          "home_id": 396,
+          "marcador": "1-2",
+          "ganador": 400
+        }
+      ],
+      "hecho": "2026-11-01T10:54:37.034447-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "huescas",
+          "lado": "V",
+          "rachas": {},
+          "minutos": [
+            {
+              "rival": "SC Braga",
+              "min": 20,
+              "goles": 0
+            },
+            {
+              "rival": "Aarhus",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "FK Crvena Zvezda",
+              "min": 62,
+              "goles": 0
+            },
+            {
+              "rival": "Odense",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Aarhus Fremad",
+              "min": 0,
+              "goles": 0
+            }
+          ]
+        }
+      ]
+    },
+    "1629963": {
+      "fixture_id": 1629963,
+      "kickoff": "2026-11-02T12:15:00-06:00",
+      "home": "Al-Gharafa",
+      "away": "Al-Qadsiah",
+      "home_id": 2903,
+      "away_id": 2933,
+      "home_logo": "https://media.api-sports.io/football/teams/2903.png",
+      "away_logo": "https://media.api-sports.io/football/teams/2933.png",
+      "league": "AFC Champions League",
+      "tabla": {
+        "liga": "AFC Champions League Elite",
+        "home": {
+          "rank": 15,
+          "pts": 0,
+          "pj": 3
+        },
+        "away": {
+          "rank": 7,
+          "pts": 5,
+          "pj": 3
+        }
+      },
+      "forma_home": [
+        {
+          "r": "P",
+          "rival": "Esteghlal FC",
+          "marcador": "1-2",
+          "fid": 1629930,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "Al-Rayyan SC",
+          "marcador": "0-0",
+          "fid": 1597939,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "Al Ahli Doha",
+          "marcador": "2-2",
+          "fid": 1597945,
+          "local": true
+        },
+        {
+          "r": "P",
+          "rival": "Al-Ahli Jeddah",
+          "marcador": "1-2",
+          "fid": 1629944,
+          "local": false
+        },
+        {
+          "r": "G",
+          "rival": "Qatar SC",
+          "marcador": "2-0",
+          "fid": 1597955,
+          "local": true
+        }
+      ],
+      "forma_away": [
+        {
+          "r": "G",
+          "rival": "Abha",
+          "marcador": "2-1",
+          "fid": 1603050,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Al Taawon",
+          "marcador": "1-0",
+          "fid": 1603061,
+          "local": false
+        },
+        {
+          "r": "P",
+          "rival": "Al-Hilal Saudi FC",
+          "marcador": "2-3",
+          "fid": 1603068,
+          "local": true
+        },
+        {
+          "r": "E",
+          "rival": "Al Sadd",
+          "marcador": "1-1",
+          "fid": 1629947,
+          "local": true
+        },
+        {
+          "r": "G",
+          "rival": "Al Riyadh",
+          "marcador": "6-0",
+          "fid": 1603077,
+          "local": false
+        }
+      ],
+      "historial": [],
+      "hecho": "2026-11-01T10:54:37.034447-06:00",
+      "v": 2,
+      "jugadores": [
+        {
+          "key": "quinones",
+          "lado": "V",
+          "rachas": {
+            "gol": 3,
+            "ga": 3,
+            "titular": 4,
+            "jugando": 4
+          },
+          "minutos": [
+            {
+              "rival": "Abha",
+              "min": 0,
+              "goles": 0
+            },
+            {
+              "rival": "Al Taawon",
+              "min": 90,
+              "goles": 0
+            },
+            {
+              "rival": "Al-Hilal Saudi FC",
+              "min": 90,
+              "goles": 1
+            },
+            {
+              "rival": "Al Sadd",
+              "min": 90,
+              "goles": 1
+            },
+            {
+              "rival": "Al Riyadh",
+              "min": 90,
+              "goles": 1
+            }
+          ]
+        }
+      ]
     }
   },
   "jugadores": {
-    "montes": 1561431,
-    "vasquez": 1550184
+    "vasquez": 1550184,
+    "huescas": 1549050,
+    "quinones": 1629963
   }
 }
