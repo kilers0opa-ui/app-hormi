@@ -1,78 +1,9 @@
 {
-  "updated_at": "2026-10-31T21:11:17.132895-06:00",
-  "completa_at": "2026-10-31T18:22:44.879027-06:00",
-  "desde": "2026-10-29",
-  "hasta": "2026-11-07",
+  "updated_at": "2026-11-01T00:44:01.085814-06:00",
+  "completa_at": "2026-11-01T00:44:01.085817-06:00",
+  "desde": "2026-10-30",
+  "hasta": "2026-11-08",
   "partidos": [
-    {
-      "fixture_id": 1640475,
-      "kickoff": "2026-10-29T06:30:00-06:00",
-      "home": "Aarhus Fremad",
-      "away": "FC Copenhague",
-      "home_id": 6004,
-      "away_id": 400,
-      "home_logo": "https://media.api-sports.io/football/teams/6004.png",
-      "away_logo": "https://media.api-sports.io/football/teams/400.png",
-      "league": "Copa de Dinamarca",
-      "league_logo": "https://media.api-sports.io/football/leagues/121.png",
-      "status": "FT",
-      "home_goals": 0,
-      "away_goals": 3,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "huescas",
-          "team_key": "copenhague",
-          "lado": "V"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1563668,
-      "kickoff": "2026-10-29T10:30:00-06:00",
-      "home": "CSKA Moscú",
-      "away": "Lokomotiv Moscú",
-      "home_id": 555,
-      "away_id": 597,
-      "home_logo": "https://media.api-sports.io/football/teams/555.png",
-      "away_logo": "https://media.api-sports.io/football/teams/597.png",
-      "league": "Copa de Rusia",
-      "league_logo": "https://media.api-sports.io/football/leagues/237.png",
-      "status": "FT",
-      "home_goals": 3,
-      "away_goals": 1,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "montes",
-          "team_key": "lokomotiv",
-          "lado": "V"
-        }
-      ]
-    },
-    {
-      "fixture_id": 1603077,
-      "kickoff": "2026-10-29T12:00:00-06:00",
-      "home": "Al Riyadh",
-      "away": "Al-Qadsiah",
-      "home_id": 10511,
-      "away_id": 2933,
-      "home_logo": "https://media.api-sports.io/football/teams/10511.png",
-      "away_logo": "https://media.api-sports.io/football/teams/2933.png",
-      "league": "Liga Profesional Saudí",
-      "league_logo": "https://media.api-sports.io/football/leagues/307.png",
-      "status": "FT",
-      "home_goals": 0,
-      "away_goals": 6,
-      "penales": null,
-      "jugadores": [
-        {
-          "key": "quinones",
-          "team_key": "al_qadsiah",
-          "lado": "V"
-        }
-      ]
-    },
     {
       "fixture_id": 1570439,
       "kickoff": "2026-10-31T07:00:00-06:00",
@@ -682,6 +613,200 @@
         {
           "key": "fimbres",
           "team_key": "monterrey",
+          "lado": "V"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1549053,
+      "kickoff": "2026-11-08T05:00:00-06:00",
+      "home": "FC Copenhague",
+      "away": "Brondby",
+      "home_id": 400,
+      "away_id": 407,
+      "home_logo": "https://media.api-sports.io/football/teams/400.png",
+      "away_logo": "https://media.api-sports.io/football/teams/407.png",
+      "league": "Superliga de Dinamarca",
+      "league_logo": "https://media.api-sports.io/football/leagues/119.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "huescas",
+          "team_key": "copenhague",
+          "lado": "L"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1570445,
+      "kickoff": "2026-11-08T07:00:00-06:00",
+      "home": "Elche",
+      "away": "Real Betis",
+      "home_id": 797,
+      "away_id": 543,
+      "home_logo": "https://media.api-sports.io/football/teams/797.png",
+      "away_logo": "https://media.api-sports.io/football/teams/543.png",
+      "league": "La Liga",
+      "league_logo": "https://media.api-sports.io/football/leagues/140.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "fidalgo",
+          "team_key": "betis",
+          "lado": "V"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1550190,
+      "kickoff": "2026-11-08T08:00:00-06:00",
+      "home": "Genoa",
+      "away": "AC Milan",
+      "home_id": 495,
+      "away_id": 489,
+      "home_logo": "https://media.api-sports.io/football/teams/495.png",
+      "away_logo": "https://media.api-sports.io/football/teams/489.png",
+      "league": "Serie A",
+      "league_logo": "https://media.api-sports.io/football/leagues/135.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "vasquez",
+          "team_key": "genoa",
+          "lado": "L"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1552224,
+      "kickoff": "2026-11-08T09:45:00-06:00",
+      "home": "AZ Alkmaar",
+      "away": "Groningen",
+      "home_id": 201,
+      "away_id": 202,
+      "home_logo": "https://media.api-sports.io/football/teams/201.png",
+      "away_logo": "https://media.api-sports.io/football/teams/202.png",
+      "league": "Eredivisie",
+      "league_logo": "https://media.api-sports.io/football/leagues/88.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "chavez",
+          "team_key": "az_alkmaar",
+          "lado": "L"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1575544,
+      "kickoff": "2026-11-08T12:00:00-06:00",
+      "home": "Vitória SC",
+      "away": "FC Porto",
+      "home_id": 224,
+      "away_id": 212,
+      "home_logo": "https://media.api-sports.io/football/teams/224.png",
+      "away_logo": "https://media.api-sports.io/football/teams/212.png",
+      "league": "Liga Portugal",
+      "league_logo": "https://media.api-sports.io/football/leagues/94.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "gimenez",
+          "team_key": "porto",
+          "lado": "V"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1593357,
+      "kickoff": "2026-11-08T13:00:00-06:00",
+      "home": "Olympiakos",
+      "away": "PAOK",
+      "home_id": 553,
+      "away_id": 619,
+      "home_logo": "https://media.api-sports.io/football/teams/553.png",
+      "away_logo": "https://media.api-sports.io/football/teams/619.png",
+      "league": "Superliga de Grecia",
+      "league_logo": "https://media.api-sports.io/football/leagues/197.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "armando",
+          "team_key": "olympiacos",
+          "lado": "L"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1570443,
+      "kickoff": "2026-11-08T14:00:00-06:00",
+      "home": "Atlético de Madrid",
+      "away": "Barcelona",
+      "home_id": 530,
+      "away_id": 529,
+      "home_logo": "https://media.api-sports.io/football/teams/530.png",
+      "away_logo": "https://media.api-sports.io/football/teams/529.png",
+      "league": "La Liga",
+      "league_logo": "https://media.api-sports.io/football/leagues/140.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "obed",
+          "team_key": "atletico_madrid",
+          "lado": "L"
+        }
+      ]
+    },
+    {
+      "fixture_id": 1551037,
+      "kickoff": "2026-11-08T20:00:00-06:00",
+      "home": "Leon",
+      "away": "Chivas",
+      "home_id": 2289,
+      "away_id": 2278,
+      "home_logo": "https://media.api-sports.io/football/teams/2289.png",
+      "away_logo": "https://media.api-sports.io/football/teams/2278.png",
+      "league": "Liga MX",
+      "league_logo": "https://media.api-sports.io/football/leagues/262.png",
+      "status": "NS",
+      "home_goals": null,
+      "away_goals": null,
+      "penales": null,
+      "jugadores": [
+        {
+          "key": "campillo",
+          "team_key": "chivas",
+          "lado": "V"
+        },
+        {
+          "key": "camberos",
+          "team_key": "chivas",
+          "lado": "V"
+        },
+        {
+          "key": "sandoval",
+          "team_key": "chivas",
           "lado": "V"
         }
       ]
