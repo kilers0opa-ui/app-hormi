@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T20:55:27.149117-06:00",
+  "updated_at": "2026-10-31T21:05:18.441062-06:00",
   "cuota": {
     "fecha": "2026-10-31",
     "busquedas": 4,
@@ -319,6 +319,42 @@
         ]
       },
       "motivo": "ningún jugador tuvo minutos"
+    },
+    "1551024": {
+      "fixture_id": 1551024,
+      "home": "Chivas",
+      "away": "Atlante FC",
+      "league": "Liga MX",
+      "score": "Chivas 4-2 Atlante FC",
+      "final_seen_at": "2026-11-01T03:04:21.668978+00:00",
+      "jugadores": {
+        "campillo": {
+          "team_key": "chivas",
+          "minutes": 90,
+          "goals": 0,
+          "assists": 0
+        },
+        "camberos": {
+          "team_key": "chivas",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        },
+        "sandoval": {
+          "team_key": "chivas",
+          "minutes": 64,
+          "goals": 2,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
