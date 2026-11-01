@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-31T21:30:39.602044-06:00",
+  "updated_at": "2026-10-31T21:35:28.174918-06:00",
   "cuota": {
     "fecha": "2026-10-31",
-    "busquedas": 4,
-    "busquedas_resumen": 1
+    "busquedas": 5,
+    "busquedas_resumen": 2
   },
   "goles": {
     "sandoval:chivas:1551024:goal:524762:1:gol": {
@@ -348,13 +348,92 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-11-01T03:35:20.505645+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-11-01T03:35:20.505645+00:00",
+      "noticias": {
+        "campillo": [
+          {
+            "title": "Discusión entre Diego Campillo y Oso González OBLIGA a Chivas a actuar; ¿qué decisión tomó?",
+            "source": "TV Azteca",
+            "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZlh5SnQ2NkJrQXF5S2JLd29wdVE5Vmhjd3FiVG1WRFk4alU5VjYyQ2lmRzNnb0xGMFdGanZUOUpVMUwxVEhQZmdCVkgtUTRpUjRZV09peVFWUU9hdW9XdUlsNlFjN2V4SEhfVFBkZjJ0YWhRai1UV3F3Q1pXMVJkUVNFUXZxZHZfdTlVcEctY0VvMUI0cUHSAaMBQVVfeXFMUE5aSzI2WjgtS1l0c2M4Rk82ZGIyZU5NOG5QYkJ4QnFhWjYyT0xrYkRyN1RYUks2Q18zcXJPbG5SakhxdlhRNzlJN0RSLVdTZGlDTW9hTEUzd0hicFFacnpBM0JFM3JlckdRcmcxeWRvVk14Z0RqeEhLNWxac1JvMnd2bWZvVnVHU2tYN3VWODFpanIyUFgxaW03MlF6V3RwbTFzOA?oc=5",
+            "published_at": "2026-10-28T14:30:37Z",
+            "dominio": "tvazteca.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "El gesto de Gabriel Milito con Diego Campillo que no se vio tras retarlo en pleno en Rayados vs. Chivas",
+            "source": "Rebaño Pasión",
+            "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNRWZoSlZ6Um9fRk1lREh3UlVKeFJZcHJacWN3LU1zVlVlQmhwT0RVZmdTdENDdFU4X19JbDB2VEZrN0dwLUVUWXBtLXRSa1lydC1DdXQxLW1JU1V1YU9KRGg5M0xpTFRkUVRqRUlFVTZ2NTBSOFRicEFJNUxYT2QzQWF0Tmg2WVVjR1lGbTN4Y3lhTFg0bDFqOERFMnFyejBTZm45MXY4Y3hmeUE3Uk5ORGhXc21saF9hSGpBX2tYcm9kOFFMNWF5czlBTzBaU2Rfb2JIcTRsNDdfY0N0UW1ZbtIB4AFBVV95cUxNRWZoSlZ6Um9fRk1lREh3UlVKeFJZcHJacWN3LU1zVlVlQmhwT0RVZmdTdENDdFU4X19JbDB2VEZrN0dwLUVUWXBtLXRSa1lydC1DdXQxLW1JU1V1YU9KRGg5M0xpTFRkUVRqRUlFVTZ2NTBSOFRicEFJNUxYT2QzQWF0Tmg2WVVjR1lGbTN4Y3lhTFg0bDFqOERFMnFyejBTZm45MXY4Y3hmeUE3Uk5ORGhXc21saF9hSGpBX2tYcm9kOFFMNWF5czlBTzBaU2Rfb2JIcTRsNDdfY0N0UW1Zbg?oc=5",
+            "published_at": "2026-10-27T23:38:46Z",
+            "dominio": "chivaspasion.bolavip.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "El mensaje de Chivas sobre la pelea entre Diego Campillo y Oso González en la victoria ante Rayados",
+            "source": "Rebaño Pasión",
+            "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNdWIwbTdDVVpIbXFmZ0kzZVE3aE9mWDllRS02b3RqWHZHdXBiY1RYai1xeHhTZXBLNUNVTEJyN25renFPbUpHYjZZQWFWNVZodzdFSU9CQ2N2U2hBMWJxTjVwLWJ0TzJkRmNGc0FkREJKelJFRnFEU3JsZTVvNnJCLXQ5S0dBNTdyT2s3c1N3Q1J6NTdUeVNXc0hqN2NONGZ1M2h3alJfeXozUDhtQkVDZ1VXVC1iVkthaUJERWhuanhJZ3hZWFdxZVgyakpRMmt2WnRTcUdNbVjSAdgBQVVfeXFMTXViMG03Q1VaSG1xZmdJM2VRN2hPZlg5ZUUtNm90alh2R3VwYmNUWGotcXh4U2VwSzVDVUxCcjdua3pxT21KR2I2WUFhVjVWaHc3RUlPQkNjdlNoQTFicU41cC1idE8yZEZjRnNBZERCSnpSRUZxRFNybGU1bzZyQi10OUtHQTU3ck9rN3NTd0NSejU3VHlTV3NIajdjTjRmdTNod2pSX3l6M1A4bUJFQ2dVV1QtYlZLYWlCREVobmp4SWd4WVhXcWVYMmpKUTJrdlp0U3FHTW1Y?oc=5",
+            "published_at": "2026-10-26T21:16:44Z",
+            "dominio": "chivaspasion.bolavip.com",
+            "edicion": "mx"
+          }
+        ],
+        "camberos": [
+          {
+            "title": "“De promesa a realidad…”: Selección Mexicana sorprende con mensaje sobre el presente de Hugo Camberos",
+            "source": "Rebaño Pasión",
+            "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQenFwc3NONHBWeVVxSm1xeHE1X253c09BSkVlVTU0X25OajNXOV9QMnlQb0l0MUZpSkRqV2ZCY2ltVVBfOXh1Y09Pb1ZYUy1DaHhkTmpqVGpQX3FKUHNueDJaVC1Edi1tQklrTk80WEoxd2tRd3NKX3RkZ0Rybks3OXdUZnlyOVM1dmk3QWo2M09wTV8yazRSVDU2TDNMUm5NU2s3ZlFZVzFfOFMzRi1vNXpPQW1jTXdMQmFjQ0o1bUp6a052MkoyM2d2cGdRQUhvdTRLdl9MMGp4NHBSbUhfZVF4MNIB4wFBVV95cUxQenFwc3NONHBWeVVxSm1xeHE1X253c09BSkVlVTU0X25OajNXOV9QMnlQb0l0MUZpSkRqV2ZCY2ltVVBfOXh1Y09Pb1ZYUy1DaHhkTmpqVGpQX3FKUHNueDJaVC1Edi1tQklrTk80WEoxd2tRd3NKX3RkZ0Rybks3OXdUZnlyOVM1dmk3QWo2M09wTV8yazRSVDU2TDNMUm5NU2s3ZlFZVzFfOFMzRi1vNXpPQW1jTXdMQmFjQ0o1bUp6a052MkoyM2d2cGdRQUhvdTRLdl9MMGp4NHBSbUhfZVF4MA?oc=5",
+            "published_at": "2026-10-30T21:50:33Z",
+            "dominio": "chivaspasion.bolavip.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "Noticias de Chivas HOY 30 de octubre: Hugo Camberos, Raúl Rangel, Estadio Akron, Chivasween y Mercado de Pases",
+            "source": "Rebaño Pasión",
+            "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNcDRrbm9DTEk3cWpzdkd2WlRuVGdGZDBaaG9BRHFkakkxaUJFd2lEZ2F6OE9fNk51V0VrYnU1c2RDSTBQTXV3TU9neUdxbmJCYl9zcFp2clZWMFk2WG91YUhHUFRmN3FlZXBSWXI4T1IwZUI5OGJnTFoxeFpBWHlrdGFkcGZZeU9BUTBiM2hGWWJJZHBsb0V0VktWdnZEdWI5YzREY2cyZmh2V19iV1NLeHlnUTdmaG5IT3AyODc3Ml9mNnBrTXpaYnhjUG9aSW9VYlVnUGg1cU5jY0pKOW5Qb25B0gHiAUFVX3lxTE1wNGtub0NMSTdxanN2R3ZaVG5UZ0ZkMFpob0FEcWRqSTFpQkV3aURnYXo4T182TnVXRWtidTVzZENJMFBNdXdNT2d5R3FuYkJiX3NwWnZyVlYwWTZYb3VhSEdQVGY3cWVlcFJZcjhPUjBlQjk4YmdMWjF4WkFYeWt0YWRwZll5T0FRMGIzaEZZYklkcGxvRXRWS1Z2dkR1YjljNERjZzJmaHZXX2JXU0t4eWdRN2ZobkhPcDI4NzcyX2Y2cGtNelpieGNQb1pJb1ViVWdQaDVxTmNjSko5blBvbkE?oc=5",
+            "published_at": "2026-10-30T14:48:43Z",
+            "dominio": "chivaspasion.bolavip.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "Hugo Camberos y la incógnita de su presente en el Guadalajara",
+            "source": "El Informador",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPdktfb3U4TFdVWHlaV0VNdXNFSW9iLWg0T3lmbVpTRXFKcDhYMXFFY0h0ZlY1ODZ2cFhtVkdqRzcwUVNOQ1Z2Q181N3R4ODh4WFNuNW83NkkxNmw2dmMwNjJPaG13ZkcwT05STnhRNlVkbkQ5VkdXc3V3WENHbkI0ZzM4bTJ1V0ZDVTRoVXMtanp4RlhJTTFSRTkxT2VmTkVTSFI0T2IyRllveGJMTjQzbGNJY0dqWFVVX2FINW1ha9IBxAFBVV95cUxOTXBvVUpTTDdGWnlHd0hQUkdnRkRyUklDejZEZ05hNkV2SEY3VUo3T2FidFZ2ZjRHQWNfeUJSWGNEcVE1UVVhY0hqREIwMWFhWGctR0NuT1BHcWMxeHVpcTI1a3Niek5Sd005Z3JCa2hMUEgwVmplMGthbENkRV9XcGtXUFVDakRKREZWaXNQT2xEalRWMUZJS1hLVndmZjdtRHBveTg1eHhyWHZrTFhXVUdsZ1N5QkdjN1lVbG4tUzZ4Smx6?oc=5",
+            "published_at": "2026-10-30T01:54:36Z",
+            "dominio": "informador.mx",
+            "edicion": "mx"
+          }
+        ],
+        "sandoval": [
+          {
+            "title": "¡Chivas está enrachado! Venció con autoridad a Atlante, con doblete de Santiago Sandoval incluido",
+            "source": "Fox Sports",
+            "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPVmJZRUFrd3lYc0dSN1lzdm5QS2poU2s3YmFRYTNSc25DYnRxTUJYcWJOY2dTRjVZWHZrU2lza1pBdjVxUjYtMkZTaUxRREVRLVNHOWx2N3F6V3JLWVlfa2loSjNMcC1UUWFOV1N3bzFMUnk3YVozSncwRGE2ak9oQWJSY0NVdjFYWjJsenlhNzFhZ2l2UUNWZkk1MEdvVXd4SnJtNGp6cnpEck1UeHNzb0FzWEh5RmoyMHZhYTRqdC1sMDc2ODM0NDZfaDB5SVRL?oc=5",
+            "published_at": "2026-11-01T03:06:00Z",
+            "dominio": "foxsports.com.mx",
+            "edicion": "mx"
+          },
+          {
+            "title": "Así fue el doblete de Santiago Sandoval que tiene a Chivas como líder general",
+            "source": "El Heraldo de México",
+            "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdnVNalptLS0zeWd0WDdhQ2lfS3FNZVZqYjUzT2p0dFFIYkRnemZNTjNsSGhmcmc2REd2ZWJUT0kxT0pHOFhsWUVhSU92X0J6b3p4OXM2Yjl1T2hINXI2RU4xSVlDU2ZfZFNpa2lyVEdSaHZBN1o2UThhSHF3bUJaWVdSTy1NQm5XZHNDS2s2NnpxLUlzd2RndUQwc2NjOWhIMWhUOGxXSFdncmpTYnNBcjJuWEF2MFZpRkdLTDRPLXR4X1lDT21mRWthRTRVanVsdE4zNg?oc=5",
+            "published_at": "2026-11-01T03:03:00Z",
+            "dominio": "heraldodemexico.com.mx",
+            "edicion": "mx"
+          },
+          {
+            "title": "¡Doblete de Sando! Santiago Sandoval selló la goleada sobre el Atlante en el Estadio Akron",
+            "source": "Rebaño Pasión",
+            "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPS3ZYWGcwSkpYQkg0WHFpOXdzcV8tcVJGLW9nb1NEbVpQQTlZdEpsQmVLdkxpVFdKeFlYMUxVNHZGOXpVY000cm5LWlFqQkNEdG9yeTRHVV9lcUFjRjBnX2NVQ3RLMi1KMmJTTlAzckE4QkJwd2VrTVV4ZlpWY1BaU2xlUVgzVldxekVaeVdNMXNRV2pqWUhkMklQTmhmRDZaMXRnODZkb21YMzZQdXZSRGdkdzl1X0dIZVNvS1hZQ0ZyQ0NVRng00gHHAUFVX3lxTE9LdlhYZzBKSlhCSDRYcWk5d3NxXy1xUkYtb2dvU0RtWlBBOVl0SmxCZUt2TGlUV0p4WVgxTFU0dkY5elVjTTRybktaUWpCQ0R0b3J5NEdVX2VxQWNGMGdfY1VDdEsyLUoyYlNOUDNyQThCQnB3ZWtNVXhmWlZjUFpTbGVRWDNWV3F6RVp5V00xc1FXampZSGQySVBOaGZENloxdGc4NmRvbVgzNlB1dlJEZ2R3OXVfR0hlU29LWFlDRnJDQ1VGeDQ?oc=5",
+            "published_at": "2026-11-01T02:31:09Z",
+            "dominio": "chivaspasion.bolavip.com",
+            "edicion": "mx"
+          }
+        ]
+      }
     },
     "1551025": {
       "fixture_id": 1551025,
