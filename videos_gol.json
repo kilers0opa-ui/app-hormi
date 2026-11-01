@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T19:35:28.318352-06:00",
+  "updated_at": "2026-10-31T20:25:18.679960-06:00",
   "cuota": {
     "fecha": "2026-10-31",
     "busquedas": 2,
@@ -23,7 +23,18 @@
         "url": "https://www.youtube.com/watch?v=V-bjAsuAR1A",
         "embeddable": true,
         "bloqueado_en": []
-      }
+      },
+      "verificado": "2026-11-01T02:25:18.546001+00:00"
+    },
+    "sandoval:chivas:1551024:goal:524762:2:gol": {
+      "player_key": "sandoval",
+      "team_key": "chivas",
+      "goal_seen_at": "2026-11-01T02:23:03.572872+00:00",
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null
     }
   },
   "partidos": {
