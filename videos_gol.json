@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T20:40:20.428936-06:00",
+  "updated_at": "2026-10-31T20:47:09.953980-06:00",
   "cuota": {
     "fecha": "2026-10-31",
     "busquedas": 3,
@@ -30,20 +30,16 @@
       "player_key": "sandoval",
       "team_key": "chivas",
       "goal_seen_at": "2026-11-01T02:23:03.572872+00:00",
-      "status": "resuelto",
+      "status": "pendiente",
       "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": "2026-11-01T02:40:19.586919+00:00",
-      "video": {
-        "id": "4jgVBFXZMX0",
-        "title": "¡Gol de Santiago Sandoval! 👏 | Chivas 1-0 Atlante | Jornada 15  Apertura 2026",
-        "channel": "Caro y Fabre",
-        "published_at": "2026-11-01T02:26:08Z",
-        "thumbnail": "https://i.ytimg.com/vi/4jgVBFXZMX0/hqdefault.jpg",
-        "url": "https://www.youtube.com/watch?v=4jgVBFXZMX0",
-        "embeddable": true,
-        "bloqueado_en": []
-      }
+      "ultimo_intento": null,
+      "video": null,
+      "verificado": "2026-11-01T02:47:09.953730+00:00",
+      "descartados": [
+        "4jgVBFXZMX0"
+      ],
+      "silencioso": true
     }
   },
   "partidos": {
