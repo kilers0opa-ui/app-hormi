@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-31T21:50:29.273155-06:00",
+  "updated_at": "2026-10-31T22:05:23.899280-06:00",
   "cuota": {
     "fecha": "2026-10-31",
-    "busquedas": 6,
-    "busquedas_resumen": 2
+    "busquedas": 7,
+    "busquedas_resumen": 3
   },
   "goles": {
     "sandoval:chivas:1551024:goal:524762:1:gol": {
@@ -24,7 +24,7 @@
         "embeddable": true,
         "bloqueado_en": []
       },
-      "verificado": "2026-11-01T03:30:31.193632+00:00"
+      "verificado": "2026-11-01T04:05:19.090681+00:00"
     },
     "sandoval:chivas:1551024:goal:524762:2:gol": {
       "player_key": "sandoval",
@@ -348,12 +348,12 @@
         }
       },
       "status": "pendiente",
-      "intentos": 1,
+      "intentos": 2,
       "fallos": 0,
-      "ultimo_intento": "2026-11-01T03:35:20.505645+00:00",
+      "ultimo_intento": "2026-11-01T04:05:19.090681+00:00",
       "video": null,
-      "noticias_pasadas": 1,
-      "ultima_noticia": "2026-11-01T03:35:20.505645+00:00",
+      "noticias_pasadas": 2,
+      "ultima_noticia": "2026-11-01T04:05:19.090681+00:00",
       "noticias": {
         "campillo": [
           {
@@ -409,6 +409,14 @@
         ],
         "sandoval": [
           {
+            "title": "Chivas: El Rebaño recupera la memoria goleadora y vence al Atlante con doblete de Santiago Sandoval",
+            "source": "El Universal",
+            "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNeHRRa2pNd2NTSDdkSm1hNWg4WEZwa0FGNGRERzNkb01oU2V2T05xQW1KYndwbldwd2RSOUkwVGZzT2RaQmNhYkpNMlRuWExzLUI5OWFQOGhHM1J6TUstaHZSYXoyU3R0alpvQkRNZXlzMDZCYVpNdi10NzBZdDJIZ3JoYlFfcjdoSXJQZ1RsanBsRjVhZ29ZdHdvMzFxRkpva2dLREk2MGNxX2I1NUN6UnkxQ053TTlkUGN3RXllQkR0dWxMTlhR0gHbAUFVX3lxTE1kakVRcUJUUmdTSWRQLWYzX2RkUXNBMVRHLXluTGJHMm4yT1FzV2pjX1dsSFc2SVN5b3ZMU2NTLVR6MHZxRHhFZ1JWQlV0MUVETktOTnVJZXlJNERHLXgydjg0MUhtYTlqWk1lOVZtc3VNaXFCc3VTdG0yc0lXMGdjVVhJcE9zVVJ0X2VvWVhqZmZrQ3B5Xzh1VmRjY1U2MzNFUm5JOW9GaDhDZWpfWVZidjdyOWlyUVNHRVhYMXNkeFprUnZRWXVsbUdBWEVUSDAyVXN4QXNsazItVQ?oc=5",
+            "published_at": "2026-11-01T03:44:00Z",
+            "dominio": "eluniversal.com.mx",
+            "edicion": "mx"
+          },
+          {
             "title": "¡Chivas está enrachado! Venció con autoridad a Atlante, con doblete de Santiago Sandoval incluido",
             "source": "Fox Sports",
             "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPVmJZRUFrd3lYc0dSN1lzdm5QS2poU2s3YmFRYTNSc25DYnRxTUJYcWJOY2dTRjVZWHZrU2lza1pBdjVxUjYtMkZTaUxRREVRLVNHOWx2N3F6V3JLWVlfa2loSjNMcC1UUWFOV1N3bzFMUnk3YVozSncwRGE2ak9oQWJSY0NVdjFYWjJsenlhNzFhZ2l2UUNWZkk1MEdvVXd4SnJtNGp6cnpEck1UeHNzb0FzWEh5RmoyMHZhYTRqdC1sMDc2ODM0NDZfaDB5SVRL?oc=5",
@@ -422,14 +430,6 @@
             "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdnVNalptLS0zeWd0WDdhQ2lfS3FNZVZqYjUzT2p0dFFIYkRnemZNTjNsSGhmcmc2REd2ZWJUT0kxT0pHOFhsWUVhSU92X0J6b3p4OXM2Yjl1T2hINXI2RU4xSVlDU2ZfZFNpa2lyVEdSaHZBN1o2UThhSHF3bUJaWVdSTy1NQm5XZHNDS2s2NnpxLUlzd2RndUQwc2NjOWhIMWhUOGxXSFdncmpTYnNBcjJuWEF2MFZpRkdLTDRPLXR4X1lDT21mRWthRTRVanVsdE4zNg?oc=5",
             "published_at": "2026-11-01T03:03:00Z",
             "dominio": "heraldodemexico.com.mx",
-            "edicion": "mx"
-          },
-          {
-            "title": "¡Doblete de Sando! Santiago Sandoval selló la goleada sobre el Atlante en el Estadio Akron",
-            "source": "Rebaño Pasión",
-            "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPS3ZYWGcwSkpYQkg0WHFpOXdzcV8tcVJGLW9nb1NEbVpQQTlZdEpsQmVLdkxpVFdKeFlYMUxVNHZGOXpVY000cm5LWlFqQkNEdG9yeTRHVV9lcUFjRjBnX2NVQ3RLMi1KMmJTTlAzckE4QkJwd2VrTVV4ZlpWY1BaU2xlUVgzVldxekVaeVdNMXNRV2pqWUhkMklQTmhmRDZaMXRnODZkb21YMzZQdXZSRGdkdzl1X0dIZVNvS1hZQ0ZyQ0NVRng00gHHAUFVX3lxTE9LdlhYZzBKSlhCSDRYcWk5d3NxXy1xUkYtb2dvU0RtWlBBOVl0SmxCZUt2TGlUV0p4WVgxTFU0dkY5elVjTTRybktaUWpCQ0R0b3J5NEdVX2VxQWNGMGdfY1VDdEsyLUoyYlNOUDNyQThCQnB3ZWtNVXhmWlZjUFpTbGVRWDNWV3F6RVp5V00xc1FXampZSGQySVBOaGZENloxdGc4NmRvbVgzNlB1dlJEZ2R3OXVfR0hlU29LWFlDRnJDQ1VGeDQ?oc=5",
-            "published_at": "2026-11-01T02:31:09Z",
-            "dominio": "chivaspasion.bolavip.com",
             "edicion": "mx"
           }
         ]
