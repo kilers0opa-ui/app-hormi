@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-31T19:30:28.907782-06:00",
+  "updated_at": "2026-10-31T19:35:28.318352-06:00",
   "cuota": {
     "fecha": "2026-10-31",
-    "busquedas": 1,
+    "busquedas": 2,
     "busquedas_resumen": 1
   },
   "goles": {
@@ -10,11 +10,20 @@
       "player_key": "sandoval",
       "team_key": "chivas",
       "goal_seen_at": "2026-11-01T01:17:22.151658+00:00",
-      "status": "pendiente",
-      "intentos": 0,
+      "status": "resuelto",
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
-      "video": null
+      "ultimo_intento": "2026-11-01T01:35:27.453700+00:00",
+      "video": {
+        "id": "V-bjAsuAR1A",
+        "title": "¡Gol de Chivas! Santiago Sandoval abre el marcador",
+        "channel": "Deportrece",
+        "published_at": "2026-11-01T01:21:35Z",
+        "thumbnail": "https://i.ytimg.com/vi/V-bjAsuAR1A/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=V-bjAsuAR1A",
+        "embeddable": true,
+        "bloqueado_en": []
+      }
     }
   },
   "partidos": {
