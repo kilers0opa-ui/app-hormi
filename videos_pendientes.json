@@ -15,89 +15,17 @@
   ],
   "finales": [
     {
-      "fixture_id": 1552210,
-      "home": "Ajax",
-      "away": "AZ Alkmaar",
-      "league": "Eredivisie",
-      "score": "Ajax 1-0 AZ Alkmaar",
-      "final_seen_at": "2026-10-31T21:56:32.231357+00:00",
+      "fixture_id": 1550184,
+      "home": "Lecce",
+      "away": "Genoa",
+      "league": "Serie A",
+      "score": "Lecce 1-2 Genoa",
+      "final_seen_at": "2026-11-01T18:57:59.311898+00:00",
       "jugadores": [
         {
-          "player_key": "chavez",
-          "team_key": "az_alkmaar",
-          "minutes": 12,
-          "goals": 0,
-          "assists": 0
-        }
-      ]
-    },
-    {
-      "fixture_id": 1575532,
-      "home": "FC Porto",
-      "away": "Estoril",
-      "league": "Liga Portugal",
-      "score": "FC Porto 4-0 Estoril",
-      "final_seen_at": "2026-10-31T22:26:43.807895+00:00",
-      "jugadores": [
-        {
-          "player_key": "gimenez",
-          "team_key": "porto",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        }
-      ]
-    },
-    {
-      "fixture_id": 1551024,
-      "home": "Chivas",
-      "away": "Atlante FC",
-      "league": "Liga MX",
-      "score": "Chivas 4-2 Atlante FC",
-      "final_seen_at": "2026-11-01T03:04:21.668978+00:00",
-      "jugadores": [
-        {
-          "player_key": "campillo",
-          "team_key": "chivas",
+          "player_key": "vasquez",
+          "team_key": "genoa",
           "minutes": 90,
-          "goals": 0,
-          "assists": 0
-        },
-        {
-          "player_key": "camberos",
-          "team_key": "chivas",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        },
-        {
-          "player_key": "sandoval",
-          "team_key": "chivas",
-          "minutes": 64,
-          "goals": 2,
-          "assists": 0
-        }
-      ]
-    },
-    {
-      "fixture_id": 1551025,
-      "home": "Monterrey",
-      "away": "Club Tijuana",
-      "league": "Liga MX",
-      "score": "Monterrey 3-3 Club Tijuana",
-      "final_seen_at": "2026-11-01T03:11:01.368453+00:00",
-      "jugadores": [
-        {
-          "player_key": "mora",
-          "team_key": "tijuana",
-          "minutes": 45,
-          "goals": 0,
-          "assists": 0
-        },
-        {
-          "player_key": "fimbres",
-          "team_key": "monterrey",
-          "minutes": 0,
           "goals": 0,
           "assists": 0
         }

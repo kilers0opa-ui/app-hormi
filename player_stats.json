@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T10:28:02.756044-06:00",
+  "updated_at": "2026-11-01T12:58:04.654442-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -2737,10 +2737,10 @@
             "team_id": 495,
             "team_name": "Genoa",
             "team_logo": "https://media.api-sports.io/football/teams/495.png",
-            "played": 8,
+            "played": 9,
             "goals": 1,
             "assists": 0,
-            "minutes": 701
+            "minutes": 791
           }
         ],
         "2017": [
@@ -2779,48 +2779,263 @@
           1550140,
           1550148,
           1550160,
-          1550171
+          1550171,
+          1550184
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1550171,
-        "kickoff": "2026-10-28T13:45:00-06:00",
-        "home": "Genoa",
-        "away": "Juventus",
-        "home_logo": "https://media.api-sports.io/football/teams/495.png",
-        "away_logo": "https://media.api-sports.io/football/teams/496.png",
-        "home_goals": 2,
-        "away_goals": 0,
+        "fixture_id": 1550184,
+        "kickoff": "2026-11-01T11:00:00-06:00",
+        "home": "Lecce",
+        "away": "Genoa",
+        "home_logo": "https://media.api-sports.io/football/teams/867.png",
+        "away_logo": "https://media.api-sports.io/football/teams/495.png",
+        "home_goals": 1,
+        "away_goals": 2,
         "penales": null,
         "league": "Serie A",
         "league_logo": "https://media.api-sports.io/football/leagues/135.png",
         "league_tipo": "liga",
         "eventos": [
           {
-            "min": "12'",
+            "min": "11'",
             "tipo": "gol",
-            "nombre": "Kingsley Ehizibue",
-            "lado": "L",
+            "nombre": "Milutin Osmajić",
+            "lado": "V",
             "mio": false
           },
           {
             "min": "28'",
             "tipo": "gol",
-            "nombre": "Tommaso Baldanzi",
+            "nombre": "Junior Messias",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "40'",
+            "tipo": "gol",
+            "nombre": "Youssef Maleh",
             "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "45+4'",
+            "tipo": "anulado",
+            "nombre": "Nikola Stulic",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "59'",
+            "tipo": "amarilla",
+            "nombre": "Mohamed Kaba",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "62'",
+            "tipo": "amarilla",
+            "nombre": "Hamed Junior Traorè",
+            "lado": "V",
             "mio": false
           },
           {
             "min": "70'",
             "tipo": "amarilla",
-            "nombre": "Edon Zhegrova",
-            "lado": "V",
+            "nombre": "Jamil Siebert",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "87'",
+            "tipo": "amarilla",
+            "nombre": "E. Di Francesco",
+            "lado": "L",
             "mio": false
           }
         ],
         "eventos_v": 6,
         "alineacion": {
           "local": {
+            "nombre": "Lecce",
+            "logo": "https://media.api-sports.io/football/teams/867.png",
+            "formacion": "4-3-3",
+            "color": null,
+            "color_num": null,
+            "titulares": [
+              {
+                "id": 56459,
+                "n": "W. Falcone",
+                "num": 30,
+                "pos": "G",
+                "g": "1:1"
+              },
+              {
+                "id": 161702,
+                "n": "Danilo Veiga",
+                "num": 17,
+                "pos": "D",
+                "g": "2:4"
+              },
+              {
+                "id": 203219,
+                "n": "J. Siebert",
+                "num": 5,
+                "pos": "D",
+                "g": "2:3",
+                "amarilla": "70'"
+              },
+              {
+                "id": 455316,
+                "n": "Tiago Gabriel",
+                "num": 44,
+                "pos": "D",
+                "g": "2:2"
+              },
+              {
+                "id": 31543,
+                "n": "A. Gallo",
+                "num": 25,
+                "pos": "D",
+                "g": "2:1"
+              },
+              {
+                "id": 387537,
+                "n": "Olaf Gorter",
+                "num": 28,
+                "pos": "M",
+                "g": "3:3",
+                "sale": "56'"
+              },
+              {
+                "id": 334925,
+                "n": "O. Ngom",
+                "num": 79,
+                "pos": "M",
+                "g": "3:2"
+              },
+              {
+                "id": 56560,
+                "n": "Y. Maleh",
+                "num": 14,
+                "pos": "M",
+                "g": "3:1",
+                "goles": 1,
+                "sale": "75'"
+              },
+              {
+                "id": 8643,
+                "n": "K. N’Dri",
+                "num": 11,
+                "pos": "F",
+                "g": "4:3",
+                "sale": "75'"
+              },
+              {
+                "id": 264122,
+                "n": "N. Štulić",
+                "num": 9,
+                "pos": "F",
+                "g": "4:2",
+                "anulado": 1,
+                "sale": "75'"
+              },
+              {
+                "id": 277862,
+                "n": "Joël Monteiro",
+                "num": 99,
+                "pos": "F",
+                "g": "4:1",
+                "sale": "59'"
+              }
+            ],
+            "suplentes": [
+              {
+                "id": 349232,
+                "n": "A. Dembélé",
+                "num": 2,
+                "pos": "D",
+                "g": null,
+                "entra": "75'"
+              },
+              {
+                "id": 345107,
+                "n": "A. Ahmed Fatah",
+                "num": 7,
+                "pos": "F",
+                "g": null,
+                "entra": "59'"
+              },
+              {
+                "id": 19738,
+                "n": "C. Ndaba",
+                "num": 3,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 31717,
+                "n": "M. Bleve",
+                "num": 1,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 42712,
+                "n": "A. Borbei",
+                "num": 32,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 589789,
+                "n": "Paco Esteban",
+                "num": 22,
+                "pos": "F",
+                "g": null,
+                "entra": "75'"
+              },
+              {
+                "id": 280431,
+                "n": "S. Fofana",
+                "num": 8,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 126974,
+                "n": "O. Gandelman",
+                "num": 16,
+                "pos": "M",
+                "g": null,
+                "entra": "75'"
+              },
+              {
+                "id": 23253,
+                "n": "G. Jean",
+                "num": 18,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 197779,
+                "n": "M. Kaba",
+                "num": 77,
+                "pos": "M",
+                "g": null,
+                "entra": "56'",
+                "amarilla": "59'"
+              },
+              {
+                "id": 434081,
+                "n": "E. Scott",
+                "num": 31,
+                "pos": "D",
+                "g": null
+              }
+            ]
+          },
+          "visita": {
             "nombre": "Genoa",
             "logo": "https://media.api-sports.io/football/teams/495.png",
             "formacion": "3-4-2-1",
@@ -2857,13 +3072,11 @@
                 "mio": true
               },
               {
-                "id": 36916,
-                "n": "K. Ehizibue",
-                "num": 3,
+                "id": 89520,
+                "n": "M. Ellertsson",
+                "num": 77,
                 "pos": "M",
-                "g": "3:4",
-                "goles": 1,
-                "sale": "69'"
+                "g": "3:4"
               },
               {
                 "id": 15881,
@@ -2873,37 +3086,40 @@
                 "g": "3:3"
               },
               {
-                "id": 405239,
-                "n": "Alexsandro Amorim",
-                "num": 4,
+                "id": 31057,
+                "n": "H. Traorè",
+                "num": 25,
                 "pos": "M",
                 "g": "3:2",
-                "sale": "82'"
+                "amarilla": "62'",
+                "sale": "80'"
               },
               {
-                "id": 89520,
-                "n": "M. Ellertsson",
-                "num": 77,
+                "id": 791,
+                "n": "S. El Shaarawy",
+                "num": 92,
                 "pos": "M",
                 "g": "3:1",
-                "sale": "41'"
+                "asist": 1,
+                "sale": "60'"
               },
               {
-                "id": 281408,
-                "n": "Vítinha",
-                "num": 9,
+                "id": 611384,
+                "n": "S. Wiafe",
+                "num": 71,
                 "pos": "M",
-                "g": "4:2"
+                "g": "4:2",
+                "sale": "60'"
               },
               {
-                "id": 288769,
-                "n": "T. Baldanzi",
-                "num": 8,
+                "id": 56396,
+                "n": "Junior Messias",
+                "num": 10,
                 "pos": "M",
                 "g": "4:1",
                 "asist": 1,
                 "goles": 1,
-                "sale": "69'"
+                "sale": "86'"
               },
               {
                 "id": 66761,
@@ -2911,31 +3127,32 @@
                 "num": 18,
                 "pos": "F",
                 "g": "5:1",
-                "sale": "82'"
+                "goles": 1,
+                "sale": "86'"
               }
             ],
             "suplentes": [
               {
-                "id": 31057,
-                "n": "H. Traorè",
-                "num": 25,
+                "id": 405239,
+                "n": "Alexsandro Amorim",
+                "num": 4,
                 "pos": "M",
                 "g": null
               },
               {
-                "id": 611384,
-                "n": "S. Wiafe",
-                "num": 71,
+                "id": 288769,
+                "n": "T. Baldanzi",
+                "num": 8,
                 "pos": "M",
-                "g": null,
-                "entra": "82'"
+                "g": null
               },
               {
-                "id": 791,
-                "n": "S. El Shaarawy",
-                "num": 92,
+                "id": 281408,
+                "n": "Vítinha",
+                "num": 9,
                 "pos": "F",
-                "g": null
+                "g": null,
+                "entra": "60'"
               },
               {
                 "id": 263481,
@@ -2943,15 +3160,36 @@
                 "num": 29,
                 "pos": "F",
                 "g": null,
-                "entra": "82'"
+                "entra": "86'"
               },
               {
-                "id": 56396,
-                "n": "Junior Messias",
-                "num": 10,
-                "pos": "F",
+                "id": 153411,
+                "n": "C. Drameh",
+                "num": 16,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 36916,
+                "n": "K. Ehizibue",
+                "num": 3,
+                "pos": "D",
                 "g": null,
-                "entra": "69'"
+                "entra": "60'"
+              },
+              {
+                "id": null,
+                "n": "Lukas Klišys",
+                "num": 14,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 387128,
+                "n": "S. Otoa",
+                "num": 34,
+                "pos": "D",
+                "g": null
               },
               {
                 "id": 475672,
@@ -2959,20 +3197,12 @@
                 "num": 11,
                 "pos": "M",
                 "g": null,
-                "entra": "69'"
+                "entra": "86'"
               },
               {
                 "id": 270613,
                 "n": "M. Mitaj",
                 "num": 2,
-                "pos": "D",
-                "g": null,
-                "entra": "41'"
-              },
-              {
-                "id": 387128,
-                "n": "S. Otoa",
-                "num": 34,
                 "pos": "D",
                 "g": null
               },
@@ -2984,31 +3214,10 @@
                 "g": null
               },
               {
-                "id": 197500,
-                "n": "Nikita Solodchenko",
-                "num": 21,
-                "pos": "F",
-                "g": null
-              },
-              {
                 "id": 31137,
                 "n": "S. Sabelli",
                 "num": 20,
                 "pos": "D",
-                "g": null
-              },
-              {
-                "id": 31445,
-                "n": "D. Sommariva",
-                "num": 39,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 957,
-                "n": "D. Sow",
-                "num": 97,
-                "pos": "M",
                 "g": null
               },
               {
@@ -3019,194 +3228,19 @@
                 "g": null
               },
               {
-                "id": null,
-                "n": "Lukas Klišys",
-                "num": 14,
-                "pos": "D",
-                "g": null
-              }
-            ]
-          },
-          "visita": {
-            "nombre": "Juventus",
-            "logo": "https://media.api-sports.io/football/teams/496.png",
-            "formacion": "3-4-2-1",
-            "color": null,
-            "color_num": null,
-            "titulares": [
-              {
-                "id": 31354,
-                "n": "G. Vicario",
-                "num": 25,
-                "pos": "G",
-                "g": "1:1"
-              },
-              {
-                "id": 268341,
-                "n": "F. Gatti",
-                "num": 4,
-                "pos": "D",
-                "g": "2:3",
-                "sale": "45'"
-              },
-              {
-                "id": 30497,
-                "n": "Bremer",
-                "num": 3,
-                "pos": "D",
-                "g": "2:2"
-              },
-              {
-                "id": 1929,
-                "n": "J. Lucumí",
-                "num": 26,
-                "pos": "D",
-                "g": "2:1"
-              },
-              {
-                "id": 162188,
-                "n": "P. Kalulu",
-                "num": 15,
+                "id": 957,
+                "n": "D. Sow",
+                "num": 97,
                 "pos": "M",
-                "g": "3:4"
-              },
-              {
-                "id": 47522,
-                "n": "Douglas Luiz",
-                "num": 12,
-                "pos": "M",
-                "g": "3:3",
-                "sale": "77'"
-              },
-              {
-                "id": 237129,
-                "n": "P. Sarr",
-                "num": 29,
-                "pos": "M",
-                "g": "3:2",
-                "sale": "59'"
-              },
-              {
-                "id": 127011,
-                "n": "A. Cambiaso",
-                "num": 20,
-                "pos": "M",
-                "g": "3:1",
-                "sale": "59'"
-              },
-              {
-                "id": 415,
-                "n": "W. McKennie",
-                "num": 22,
-                "pos": "M",
-                "g": "4:2"
-              },
-              {
-                "id": 395559,
-                "n": "Kerim-Sam Alajbegović",
-                "num": 17,
-                "pos": "M",
-                "g": "4:1",
-                "sale": "45'"
-              },
-              {
-                "id": 21104,
-                "n": "R. Kolo Muani",
-                "num": 9,
-                "pos": "F",
-                "g": "5:1"
-              }
-            ],
-            "suplentes": [
-              {
-                "id": 158054,
-                "n": "N. Woltemade",
-                "num": 27,
-                "pos": "F",
                 "g": null,
-                "entra": "45'"
+                "entra": "80'"
               },
               {
-                "id": 861,
-                "n": "D. Rugani",
-                "num": 24,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 850,
-                "n": "C. Pinsoglio",
-                "num": 23,
+                "id": 31445,
+                "n": "D. Sommariva",
+                "num": 39,
                 "pos": "G",
                 "g": null
-              },
-              {
-                "id": 410399,
-                "n": "F. Pagnucco",
-                "num": 43,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 436927,
-                "n": "A. Owusu",
-                "num": 41,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 912,
-                "n": "Neto",
-                "num": 33,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 36899,
-                "n": "T. Koopmeiners",
-                "num": 8,
-                "pos": "M",
-                "g": null,
-                "entra": "77'"
-              },
-              {
-                "id": 19263,
-                "n": "L. Kelly",
-                "num": 6,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 445447,
-                "n": "A. Durmiši",
-                "num": 47,
-                "pos": "F",
-                "g": null
-              },
-              {
-                "id": 125674,
-                "n": "J. Cabal",
-                "num": 32,
-                "pos": "D",
-                "g": null,
-                "entra": "59'"
-              },
-              {
-                "id": 30531,
-                "n": "J. Boga",
-                "num": 13,
-                "pos": "F",
-                "g": null,
-                "entra": "59'"
-              },
-              {
-                "id": 48392,
-                "n": "E. Zhegrova",
-                "num": 11,
-                "pos": "F",
-                "g": null,
-                "entra": "45'",
-                "amarilla": "70'"
               }
             ]
           }
@@ -3219,34 +3253,35 @@
         "goals": 0,
         "assists": 0,
         "tarjeta": {
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/vasquez_partido.jpg?v=183669f3",
-          "hasta": "2026-10-29T15:45:00-06:00",
-          "firma": "2f6286b157"
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/vasquez_partido.jpg?v=16e3059f",
+          "hasta": "2026-11-02T13:00:00-06:00",
+          "firma": "9dbbe51f61"
         },
         "stats": {
-          "rating": 8.3,
+          "rating": 8.4,
           "calif_fija": true,
-          "rating_api": 7.4,
+          "rating_api": 6.5,
           "tiros": 1,
           "tiros_puerta": 0,
-          "pases_pct": 86,
-          "duelos": 7,
-          "duelos_ganados": 7,
-          "recuperaciones": 5,
+          "pases_pct": 61,
+          "duelos": 17,
+          "duelos_ganados": 14,
+          "pases_clave": 1,
+          "recuperaciones": 14,
           "lugar_equipo": 2,
           "de_equipo": 14,
           "pesos": [
             {
-              "txt": "7 de 7 duelos ganados",
-              "pts": 0.97
+              "txt": "14 de 17 duelos ganados",
+              "pts": 1.04
             },
             {
-              "txt": "Portería en cero",
-              "pts": 0.4
+              "txt": "9 entradas",
+              "pts": 0.9
             },
             {
-              "txt": "3 entradas",
-              "pts": 0.3
+              "txt": "5 intercepciones",
+              "pts": 0.6
             }
           ]
         },
@@ -3254,16 +3289,16 @@
       },
       "deltas_vivos": [
         {
-          "fid": 1550160,
-          "season": "2026",
-          "league_id": 135,
-          "ts": "2026-10-25T09:54:36.543780-06:00"
-        },
-        {
           "fid": 1550171,
           "season": "2026",
           "league_id": 135,
           "ts": "2026-10-28T15:40:00.947219-06:00"
+        },
+        {
+          "fid": 1550184,
+          "season": "2026",
+          "league_id": 135,
+          "ts": "2026-11-01T12:58:01.083323-06:00"
         }
       ]
     },
