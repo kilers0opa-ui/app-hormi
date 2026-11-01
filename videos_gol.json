@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-31T22:15:36.599249-06:00",
+  "updated_at": "2026-11-01T13:00:27.582655-06:00",
   "cuota": {
-    "fecha": "2026-10-31",
-    "busquedas": 8,
-    "busquedas_resumen": 3
+    "fecha": "2026-11-01",
+    "busquedas": 0,
+    "busquedas_resumen": 0
   },
   "goles": {
     "sandoval:chivas:1551024:goal:524762:1:gol": {
@@ -24,7 +24,7 @@
         "embeddable": true,
         "bloqueado_en": []
       },
-      "verificado": "2026-11-01T04:05:19.090681+00:00"
+      "verificado": "2026-11-01T19:00:27.430755+00:00"
     },
     "sandoval:chivas:1551024:goal:524762:2:gol": {
       "player_key": "sandoval",
@@ -44,7 +44,7 @@
         "embeddable": true,
         "bloqueado_en": []
       },
-      "verificado": "2026-11-01T03:50:25.693172+00:00",
+      "verificado": "2026-11-01T19:00:27.430755+00:00",
       "descartados": [
         "4jgVBFXZMX0"
       ],
@@ -363,7 +363,7 @@
           "US"
         ]
       },
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 4,
       "ultima_noticia": "2026-11-01T04:05:19.090681+00:00",
       "noticias": {
         "campillo": [
@@ -495,7 +495,7 @@
           "US"
         ]
       },
-      "noticias_pasadas": 2,
+      "noticias_pasadas": 4,
       "ultima_noticia": "2026-11-01T04:15:31.459623+00:00",
       "noticias": {
         "mora": [
@@ -563,6 +563,30 @@
         }
       },
       "alt_buscado_US": true
+    },
+    "1550184": {
+      "fixture_id": 1550184,
+      "home": "Lecce",
+      "away": "Genoa",
+      "league": "Serie A",
+      "score": "Lecce 1-2 Genoa",
+      "final_seen_at": "2026-11-01T18:57:59.311898+00:00",
+      "jugadores": {
+        "vasquez": {
+          "team_key": "genoa",
+          "minutes": 90,
+          "goals": 0,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
     }
   }
 }
