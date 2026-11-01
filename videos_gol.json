@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-31T20:47:09.953980-06:00",
+  "updated_at": "2026-10-31T20:55:27.149117-06:00",
   "cuota": {
     "fecha": "2026-10-31",
-    "busquedas": 3,
+    "busquedas": 4,
     "busquedas_resumen": 1
   },
   "goles": {
@@ -24,17 +24,26 @@
         "embeddable": true,
         "bloqueado_en": []
       },
-      "verificado": "2026-11-01T02:25:18.546001+00:00"
+      "verificado": "2026-11-01T02:55:26.730042+00:00"
     },
     "sandoval:chivas:1551024:goal:524762:2:gol": {
       "player_key": "sandoval",
       "team_key": "chivas",
       "goal_seen_at": "2026-11-01T02:23:03.572872+00:00",
-      "status": "pendiente",
-      "intentos": 1,
+      "status": "resuelto",
+      "intentos": 2,
       "fallos": 0,
-      "ultimo_intento": null,
-      "video": null,
+      "ultimo_intento": "2026-11-01T02:55:26.730042+00:00",
+      "video": {
+        "id": "XSjZwShtQ7Q",
+        "title": "¡Gol de Chivas! Sandoval anota su doblete",
+        "channel": "Deportrece",
+        "published_at": "2026-11-01T02:38:03Z",
+        "thumbnail": "https://i.ytimg.com/vi/XSjZwShtQ7Q/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=XSjZwShtQ7Q",
+        "embeddable": true,
+        "bloqueado_en": []
+      },
       "verificado": "2026-11-01T02:47:09.953730+00:00",
       "descartados": [
         "4jgVBFXZMX0"
