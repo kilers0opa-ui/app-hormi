@@ -142,6 +142,30 @@ JSON:
     return r
 
 
+def baja(jugador, equipo, local, visita, fecha, desde):
+    """¿Está CONFIRMADO que el jugador se pierde (o está en duda para) ese partido? Para validar una nota de
+    "lesionado / no juega" antes de marcarlo en la app. {"estado": "lesion"|"suspension"|"duda"|"disponible", ...}
+    o None si no se encontró nada claro."""
+    prompt = f"""{REGLAS}
+
+Próximo partido: {local} vs {visita}, fecha {fecha} (dd/mm/aaaa). Su último partido fue el {desde} (dd/mm/aaaa).
+Pregunta: con noticias publicadas DESPUÉS del {desde}, ¿está confirmado que {jugador} ({equipo}) tiene una lesión,
+una suspensión, o que está en duda para el partido del {fecha}? No cuentes notas que solo especulan o preguntan
+("¿sigue lesionado?", "la razón por la que no juega") ni notas sobre partidos anteriores. Si jugó su último partido
+y no hay nada nuevo confirmado, está disponible.
+
+JSON:
+{{"estado": "lesion" | "suspension" | "duda" | "disponible" | "desconocido",
+  "sitio": "sitio de donde lo tomaste o null", "cita": "frase corta que lo confirma o null"}}"""
+    r, fuentes = preguntar(prompt)
+    _log(f"baja {jugador} ({local} vs {visita} {fecha}): {r}")
+    if not r or r.get("estado") not in ("lesion", "suspension", "duda", "disponible"):
+        return None
+    if r["estado"] != "disponible" and not (r.get("sitio") and r.get("cita")):
+        return None
+    return {"estado": r["estado"], "sitio": r.get("sitio"), "cita": r.get("cita")}
+
+
 def mvp(jugador, equipo, local, visita, fecha, liga):
     """{"sitio": ...} si una página nombra al jugador MVP / jugador del partido; None si no."""
     prompt = f"""{REGLAS}

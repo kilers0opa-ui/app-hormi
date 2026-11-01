@@ -68,6 +68,10 @@ DESCARTE = re.compile(r"\b(regres[ao]|vuelve|volver[aá]|recuper[ao]|recuperad[o
                       r"reaparece|de vuelta|descart[ao] lesi[oó]n|sin lesi[oó]n|baja california|partido suspendido)\b", re.I)
 
 
+# Titulares que preguntan o explican el pasado, no confirman una baja para el PRÓXIMO partido.
+PREGUNTA = re.compile(r"[¿?]|\b(la raz[oó]n (por la que|de que)|por qu[eé] no|qu[eé] le pas[oó]|qu[eé] pas[oó] con)\b", re.I)
+
+
 def _norm(s):
     return unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
 
@@ -146,8 +150,29 @@ def noticia_baja(p, jugo_en=None):
             continue
         if pub < limite or apellido not in _norm(t) or not CLAVE_BAJA.search(t) or DESCARTE.search(t):
             continue
+        if PREGUNTA.search(t):   # "¿Sigue lesionado?", "La razón por la que no juega": especulan, no confirman
+            continue
         buenas.append((pub, n))
     return max(buenas, key=lambda x: x[0])[1] if buenas else None
+
+
+GEMINI_CACHE = ha.Path("disponibilidad_gemini.json")   # {url: resultado} — una consulta por nota
+
+
+def verificar_baja(p, t, fx, jugo_en, nota, cache):
+    """True si Gemini confirma la baja/duda, False si dice que está disponible o no lo confirma, None si no se pudo
+    preguntar (sin llave): entonces se usa la nota como antes."""
+    import hormi_gemini as G
+    if not G.disponible():
+        return None
+    k = nota.get("url") or nota.get("title")
+    if k not in cache:
+        ko = datetime.fromtimestamp(fx["fixture"]["timestamp"], ha.LOCAL_TZ)
+        desde = datetime.fromisoformat(jugo_en).strftime("%d/%m/%Y") if jugo_en else "(sin dato)"
+        r = G.baja(p["name"], t["label"], ha.nombre_es(fx["teams"]["home"]["name"]),
+                   ha.nombre_es(fx["teams"]["away"]["name"]), ko.strftime("%d/%m/%Y"), desde)
+        cache[k] = r or {"estado": "desconocido"}
+    return cache[k].get("estado") in ("lesion", "suspension", "duda")
 
 
 def main():
@@ -209,6 +234,7 @@ def main():
     #    (2) noticias de las últimas 48 h con reglas estrictas, como "Posible baja" (con el enlace a la nota).
     stats = ha.load_json(ha.Path("player_stats.json"), {}) or {}
     cache_am = ha.load_json(AMARILLAS_CACHE, {}) or {}
+    cache_gem = ha.load_json(GEMINI_CACHE, {}) or {}
     for p in config["players"]:
         if p["key"] in archivados or p["key"] in out["players"]:
             continue
@@ -239,7 +265,19 @@ def main():
                    .get("targets") or {}).values():
             if tt.get("status") in ("titular", "banca", "en_cancha") and (tt.get("kickoff") or "") > (jugo_en or ""):
                 jugo_en = tt["kickoff"]
+        # Las notas publicadas antes de que terminara el ÚLTIMO partido de su equipo hablan de ese partido ("¿por qué no
+        # jugó?"), no del siguiente: tampoco cuentan (Camberos, 31-oct: en la banca sin entrar).
+        for pa in (ha.load_json(ha.Path("agenda.json"), {}) or {}).get("partidos") or []:
+            if pa.get("status") in ("FT", "AET", "PEN") and any(j.get("key") == p["key"] for j in pa.get("jugadores") or []) \
+                    and pa["kickoff"] > (jugo_en or "") and pa["kickoff"] < base["kickoff"]:
+                jugo_en = pa["kickoff"]
         nota = noticia_baja(p, jugo_en)
+        if nota:
+            # Se confirma con Gemini (búsqueda en Google) antes de marcarlo: una nota sola ya falló varias veces.
+            ver = verificar_baja(p, t, fx, jugo_en, nota, cache_gem)
+            if ver is False:
+                ha.log(f"{p['key']}: la nota «{nota['title']}» no se confirmó — no se marca")
+                nota = None
         if nota:
             t = nota["title"]
             estado = "lesion" if LESION_RE.search(t) else "suspension" if SUSP_RE.search(t) else "duda"
@@ -247,6 +285,7 @@ def main():
             out["players"][p["key"]] = {**base, "estado": estado, "motivo": "", "fuente_noticia": t, "url": nota["url"]}
 
     ha.save_json(AMARILLAS_CACHE, cache_am)
+    ha.save_json(GEMINI_CACHE, dict(list(cache_gem.items())[-200:]))
 
     # ── Bajas a mano (bajas_manual.json): mandan sobre la API y las noticias mientras no pase su fecha "hasta".
     #    estado: lesion | suspension | duda | disponible ("disponible" quita una baja equivocada).
