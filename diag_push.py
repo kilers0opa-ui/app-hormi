@@ -43,6 +43,9 @@ try:
                                         "body": "Si ves esto, el push real funciona.", "player_key": "",
                                         "team_key": "", "player_keys": ""},
                                "android": {"priority": "HIGH", "ttl": "600s"}}}
+        if os.environ.get("DIAG_SOLO_VALIDAR", "1") == "1":   # por defecto NO le llega nada a nadie
+            payload["validate_only"] = True
+            res["solo_validar"] = True
         req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers={
             "Content-Type": "application/json; charset=UTF-8", "Authorization": f"Bearer {s._token}"})
         try:
