@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-31T21:35:28.174918-06:00",
+  "updated_at": "2026-10-31T21:40:26.409898-06:00",
   "cuota": {
     "fecha": "2026-10-31",
-    "busquedas": 5,
+    "busquedas": 6,
     "busquedas_resumen": 2
   },
   "goles": {
@@ -456,14 +456,37 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "resuelto",
       "intentos": 0,
       "fallos": 0,
       "ultimo_intento": null,
-      "video": null,
+      "video": {
+        "id": "j_PW70Yhx5g",
+        "title": "RESUMEN Y GOLES I  Monterrey vs Tijuana | Liga MX - Jornada 15 Apertura 2026 | TUDN",
+        "channel": "TUDN México",
+        "published_at": "2026-11-01T03:37:48Z",
+        "thumbnail": "https://i.ytimg.com/vi/j_PW70Yhx5g/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=j_PW70Yhx5g",
+        "embeddable": true,
+        "bloqueado_en": [
+          "US"
+        ]
+      },
       "noticias_pasadas": 0,
       "ultima_noticia": null,
-      "noticias": {}
+      "noticias": {},
+      "alternativos": {
+        "US": {
+          "id": "7l6rAQUQovo",
+          "title": "MINI RESUMEN: Monterrey vs. Tijuana #shorts",
+          "channel": "Sábado Futbolero",
+          "published_at": "2026-11-01T03:19:24Z",
+          "thumbnail": "https://i.ytimg.com/vi/7l6rAQUQovo/hqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=7l6rAQUQovo",
+          "embeddable": true
+        }
+      },
+      "alt_buscado_US": true
     }
   }
 }
