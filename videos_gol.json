@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T21:05:18.441062-06:00",
+  "updated_at": "2026-10-31T21:15:29.276957-06:00",
   "cuota": {
     "fecha": "2026-10-31",
     "busquedas": 4,
@@ -344,6 +344,36 @@
           "team_key": "chivas",
           "minutes": 64,
           "goals": 2,
+          "assists": 0
+        }
+      },
+      "status": "pendiente",
+      "intentos": 0,
+      "fallos": 0,
+      "ultimo_intento": null,
+      "video": null,
+      "noticias_pasadas": 0,
+      "ultima_noticia": null,
+      "noticias": {}
+    },
+    "1551025": {
+      "fixture_id": 1551025,
+      "home": "Monterrey",
+      "away": "Club Tijuana",
+      "league": "Liga MX",
+      "score": "Monterrey 3-3 Club Tijuana",
+      "final_seen_at": "2026-11-01T03:11:01.368453+00:00",
+      "jugadores": {
+        "mora": {
+          "team_key": "tijuana",
+          "minutes": 45,
+          "goals": 0,
+          "assists": 0
+        },
+        "fimbres": {
+          "team_key": "monterrey",
+          "minutes": 0,
+          "goals": 0,
           "assists": 0
         }
       },
