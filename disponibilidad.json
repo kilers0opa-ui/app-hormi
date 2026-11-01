@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T18:26:20.213524-06:00",
+  "updated_at": "2026-11-01T00:51:24.327778-06:00",
   "players": {
     "raul": {
       "estado": "lesion",
@@ -9,6 +9,26 @@
       "fixture_id": 1563247,
       "kickoff": "2026-11-04T14:00:00-06:00",
       "team_key": "wolves"
+    },
+    "mora": {
+      "partido": "Necaxa vs Club Tijuana",
+      "fixture_id": 1551030,
+      "team_key": "tijuana",
+      "kickoff": "2026-11-06T19:00:00-06:00",
+      "estado": "lesion",
+      "motivo": "",
+      "fuente_noticia": "¿Gilberto Mora sigue lesionado? Sebastián Abreu revela qué está frenando a la joya de Xolos",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPZk84eVF3a3ZmYXk1RHo1WWpOWGNzYmtEVGhRVG5yM2xmaWlFemFmaHh6MFlqcEhKcTJJOUxXVHYtdjdodWJnRExzWWNMM2VhVkpucy0xZ18tOFJtZHV0SExUMGFwb2FuQnRyN3ZQYUJyMklYWXVDNGhZVWFoa0laSGowa0htSFlLOUpyZmdqTXNHVTB5RXBtNXVYY0RHSXUwVFJWdEJPU0V0dW5UMmtteGg1bVNSUTBzTGREaw?oc=5"
+    },
+    "camberos": {
+      "partido": "Leon vs Chivas",
+      "fixture_id": 1551037,
+      "team_key": "chivas",
+      "kickoff": "2026-11-08T20:00:00-06:00",
+      "estado": "duda",
+      "motivo": "",
+      "fuente_noticia": "La razón por la que Hugo Camberos no juega",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNcW8tdlB5S0RyRVMwZ25Yc3c3SjJ6MndTWmlkaVlTcDV5bGI2amVsZUlRenN5OXhXTGhRQm5BYlRrWEw5QWllenFuWnJXalU4VTdQajJzcGJjeEtWVzRhU2RyOTRuNzU2bEpENlp2dDl0OE0tc0kyalRRRlZtVjJkVU5wdTFlNzdwVTZBS3k2eFpndEE0bWxFc0ZlMA?oc=5"
     }
   },
   "manual_cerradas": {
