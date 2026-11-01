@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T21:08:34.309101-06:00",
+  "updated_at": "2026-10-31T21:15:14.146396-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -375,8 +375,8 @@
             false,
             false,
             false,
-            true,
-            false
+            false,
+            true
           ]
         },
         {
@@ -391,8 +391,8 @@
             false,
             false,
             false,
-            true,
-            false
+            false,
+            true
           ]
         },
         {
@@ -407,23 +407,23 @@
             false,
             false,
             false,
-            true,
+            false,
             true
           ]
         },
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 1,
+          "actual": 2,
           "en_racha": false,
           "puntos": [
             true,
-            false,
-            false,
-            false,
-            false,
-            false,
             true,
+            false,
+            false,
+            false,
+            false,
+            false,
             true
           ]
         }
@@ -448,10 +448,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 62,
+          "valor": 63,
           "meta": 75,
           "previo": 50,
-          "texto": "A 13 partidos de 75"
+          "texto": "A 12 partidos de 75"
         },
         {
           "id": "goles_sel",
@@ -479,7 +479,7 @@
         "partidos_sel:10"
       ],
       "club": "Tijuana",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "vasquez": {
       "rachas": [
@@ -1503,13 +1503,13 @@
           "en_racha": false,
           "puntos": [
             false,
-            true,
             false,
             true,
             false,
-            false,
             true,
-            false
+            false,
+            false,
+            true
           ]
         }
       ],
@@ -1563,7 +1563,7 @@
         "partidos_sel:1"
       ],
       "club": "Monterrey",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "campillo": {
       "rachas": [
