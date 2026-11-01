@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T20:39:13.626622-06:00",
+  "updated_at": "2026-10-31T21:04:26.384243-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -11970,10 +11970,10 @@
             "team_id": 2278,
             "team_name": "Guadalajara Chivas",
             "team_logo": "https://media.api-sports.io/football/teams/2278.png",
-            "played": 13,
+            "played": 14,
             "goals": 0,
             "assists": 0,
-            "minutes": 927
+            "minutes": 1017
           }
         ]
       },
@@ -11981,241 +11981,91 @@
         "chivas": [
           1550996,
           1551004,
-          1551014
+          1551014,
+          1551024
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1551014,
-        "kickoff": "2026-10-24T19:00:00-06:00",
-        "home": "Monterrey",
-        "away": "Chivas",
-        "home_logo": "https://media.api-sports.io/football/teams/2282.png",
-        "away_logo": "https://media.api-sports.io/football/teams/2278.png",
-        "home_goals": 0,
-        "away_goals": 1,
+        "fixture_id": 1551024,
+        "kickoff": "2026-10-31T19:07:00-06:00",
+        "home": "Chivas",
+        "away": "Atlante FC",
+        "home_logo": "https://media.api-sports.io/football/teams/2278.png",
+        "away_logo": "https://media.api-sports.io/football/teams/2312.png",
+        "home_goals": 4,
+        "away_goals": 2,
         "penales": null,
         "league": "Liga MX",
         "league_logo": "https://media.api-sports.io/football/leagues/262.png",
         "league_tipo": "liga",
         "eventos": [
           {
-            "min": "9'",
+            "min": "8'",
             "tipo": "gol",
-            "nombre": "Roberto Alvarado",
+            "nombre": "Santiago Sandoval",
+            "lado": "L",
+            "mio": false
+          },
+          {
+            "min": "28'",
+            "tipo": "amarilla",
+            "nombre": "Diogo Osmar Bagüí Tobar",
             "lado": "V",
             "mio": false
           },
           {
-            "min": "19'",
-            "tipo": "pen_fallado",
-            "nombre": "Lucas Ocampos",
+            "min": "36'",
+            "tipo": "autogol",
+            "nombre": "Diogo Osmar Bagüí Tobar",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "82'",
-            "tipo": "amarilla",
-            "nombre": "Paxon Levi Ruffin Tamez",
+            "min": "53'",
+            "tipo": "gol",
+            "nombre": "Santiago Sandoval",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "88'",
-            "tipo": "amarilla",
-            "nombre": "Diego Rossi",
+            "min": "53'",
+            "tipo": "var",
+            "nombre": "Gol confirmado · Santiago Sandoval",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "90'",
-            "tipo": "roja",
-            "nombre": "Orbelín Pineda",
+            "min": "60'",
+            "tipo": "gol",
+            "nombre": "Martín Sarrafiore",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "64'",
+            "tipo": "gol",
+            "nombre": "Efrain Alvarez",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "90+7'",
-            "tipo": "anulado",
-            "nombre": "Diego Rossi",
-            "lado": "L",
+            "min": "80'",
+            "tipo": "var",
+            "nombre": "Penal confirmado · Edgar Jiménez",
+            "lado": "V",
             "mio": false
           },
           {
-            "min": "90+9'",
-            "tipo": "roja",
-            "nombre": "Matías Jesús Almeyda",
-            "lado": "L",
+            "min": "83'",
+            "tipo": "pen",
+            "nombre": "Jhojan Julio",
+            "lado": "V",
             "mio": false
           }
         ],
         "eventos_v": 6,
         "alineacion": {
           "local": {
-            "nombre": "Monterrey",
-            "logo": "https://media.api-sports.io/football/teams/2282.png",
-            "formacion": "4-1-3-2",
-            "color": null,
-            "color_num": null,
-            "titulares": [
-              {
-                "id": 2462,
-                "n": "E. Andrada",
-                "num": 1,
-                "pos": "G",
-                "g": "1:1"
-              },
-              {
-                "id": 36471,
-                "n": "R. Chavez",
-                "num": 2,
-                "pos": "D",
-                "g": "2:4"
-              },
-              {
-                "id": 167014,
-                "n": "F. Ambriz",
-                "num": 5,
-                "pos": "D",
-                "g": "2:3",
-                "sale": "56'"
-              },
-              {
-                "id": 129943,
-                "n": "V. Guzman",
-                "num": 4,
-                "pos": "D",
-                "g": "2:2"
-              },
-              {
-                "id": 35774,
-                "n": "G. Arteaga",
-                "num": 3,
-                "pos": "D",
-                "g": "2:1"
-              },
-              {
-                "id": 445419,
-                "n": "C. Garza",
-                "num": 18,
-                "pos": "M",
-                "g": "3:1"
-              },
-              {
-                "id": 1911,
-                "n": "L. Ocampos",
-                "num": 7,
-                "pos": "M",
-                "g": "4:3"
-              },
-              {
-                "id": 35576,
-                "n": "O. Pineda",
-                "num": 25,
-                "pos": "M",
-                "g": "4:2",
-                "roja": "90'"
-              },
-              {
-                "id": 389,
-                "n": "J. Corona",
-                "num": 17,
-                "pos": "M",
-                "g": "4:1",
-                "sale": "79'"
-              },
-              {
-                "id": 51045,
-                "n": "D. Rossi",
-                "num": 9,
-                "pos": "F",
-                "g": "5:2",
-                "amarilla": "88'",
-                "anulado": 1
-              },
-              {
-                "id": 27104,
-                "n": "H. Cuypers",
-                "num": 99,
-                "pos": "F",
-                "g": "5:1"
-              }
-            ],
-            "suplentes": [
-              {
-                "id": 35536,
-                "n": "L. Cardenas",
-                "num": 22,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 35539,
-                "n": "S. Medina",
-                "num": 33,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 2877,
-                "n": "C. Salcedo",
-                "num": 13,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 35648,
-                "n": "E. Aguirre",
-                "num": 14,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 290648,
-                "n": "A. Aceves",
-                "num": 19,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 6369,
-                "n": "J. Rodriguez",
-                "num": 30,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 385,
-                "n": "O. Torres",
-                "num": 8,
-                "pos": "M",
-                "g": null,
-                "entra": "56'"
-              },
-              {
-                "id": 687725,
-                "n": "P. Ruffin",
-                "num": 244,
-                "pos": null,
-                "g": null
-              },
-              {
-                "id": 35669,
-                "n": "R. de la Rosa",
-                "num": 27,
-                "pos": "F",
-                "g": null
-              },
-              {
-                "id": 6063,
-                "n": "L. Orellano",
-                "num": 10,
-                "pos": "F",
-                "g": null,
-                "entra": "79'"
-              }
-            ]
-          },
-          "visita": {
             "nombre": "Chivas",
             "logo": "https://media.api-sports.io/football/teams/2278.png",
             "formacion": "3-4-2-1",
@@ -12224,7 +12074,7 @@
             "titulares": [
               {
                 "id": 270774,
-                "n": "R. Rangel",
+                "n": "J. Rangel",
                 "num": 1,
                 "pos": "G",
                 "g": "1:1"
@@ -12234,23 +12084,24 @@
                 "n": "D. Aguirre",
                 "num": 23,
                 "pos": "D",
-                "g": "2:3",
-                "sale": "79'"
-              },
-              {
-                "id": 297208,
-                "n": "L. Rey",
-                "num": 16,
-                "pos": "D",
-                "g": "2:2"
+                "g": "2:3"
               },
               {
                 "id": 141155,
-                "n": "D. Campillo Del Campo",
+                "n": "D. Campillo",
                 "num": 3,
                 "pos": "D",
-                "g": "2:1",
+                "g": "2:2",
                 "mio": true
+              },
+              {
+                "id": 35970,
+                "n": "L. Romo",
+                "num": 7,
+                "pos": "D",
+                "g": "2:1",
+                "asist": 1,
+                "sale": "64'"
               },
               {
                 "id": 102851,
@@ -12258,11 +12109,11 @@
                 "num": 37,
                 "pos": "M",
                 "g": "3:4",
-                "sale": "60'"
+                "sale": "86'"
               },
               {
                 "id": 35623,
-                "n": "F. Gonzalez",
+                "n": "R. González",
                 "num": 28,
                 "pos": "M",
                 "g": "3:3"
@@ -12273,114 +12124,288 @@
                 "num": 6,
                 "pos": "M",
                 "g": "3:2",
-                "sale": "66'"
+                "asist": 1,
+                "sale": "70'"
               },
               {
                 "id": 237060,
-                "n": "B. Gonzalez",
+                "n": "B. González",
                 "num": 5,
                 "pos": "M",
-                "g": "3:1",
-                "sale": "79'"
+                "g": "3:1"
               },
               {
                 "id": 2879,
                 "n": "R. Alvarado",
                 "num": 25,
                 "pos": "M",
-                "g": "4:2",
-                "goles": 1
+                "g": "4:2"
+              },
+              {
+                "id": 51068,
+                "n": "E. Álvarez",
+                "num": 10,
+                "pos": "M",
+                "g": "4:1",
+                "asist": 1,
+                "goles": 1,
+                "sale": "70'"
               },
               {
                 "id": 524762,
-                "n": "S. Sandoval",
+                "n": "Santiago Sandoval",
                 "num": 30,
-                "pos": "M",
-                "g": "4:1",
-                "asist": 1
-              },
-              {
-                "id": 35641,
-                "n": "R. Marin",
-                "num": 17,
                 "pos": "F",
                 "g": "5:1",
-                "sale": "66'"
+                "goles": 2,
+                "sale": "64'"
               }
             ],
             "suplentes": [
               {
-                "id": 15575,
-                "n": "O. Whalley",
-                "num": 13,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 414156,
-                "n": "A. Chavez",
-                "num": 56,
-                "pos": "D",
-                "g": null,
-                "entra": "79'"
-              },
-              {
-                "id": 632056,
-                "n": "C. Hernandez",
-                "num": 46,
-                "pos": "D",
-                "g": null
-              },
-              {
                 "id": 35716,
-                "n": "K. Castaneda",
+                "n": "K. Castañeda",
                 "num": 19,
                 "pos": "M",
                 "g": null,
-                "entra": "66'"
-              },
-              {
-                "id": 554827,
-                "n": "S. Inda",
-                "num": 59,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 51068,
-                "n": "E. Alvarez",
-                "num": 10,
-                "pos": "F",
-                "g": null,
-                "entra": "60'"
-              },
-              {
-                "id": 657237,
-                "n": "L. Calderon",
-                "num": 182,
-                "pos": "M",
-                "g": null,
-                "entra": "79'"
+                "entra": "70'"
               },
               {
                 "id": 195704,
                 "n": "J. Carrillo",
                 "num": 33,
                 "pos": "M",
-                "g": null
-              },
-              {
-                "id": 328826,
-                "n": "J. Hernandez",
-                "num": 57,
-                "pos": "F",
                 "g": null,
-                "entra": "66'"
+                "entra": "86'"
               },
               {
                 "id": 453887,
                 "n": "H. Camberos",
                 "num": 14,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 277189,
+                "n": "J. Castillo",
+                "num": 2,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 212233,
+                "n": "B. Gutiérrez",
+                "num": 11,
+                "pos": "M",
+                "g": null,
+                "entra": "70'"
+              },
+              {
+                "id": 328826,
+                "n": "J. Hernández",
+                "num": 57,
+                "pos": "F",
+                "g": null
+              },
+              {
+                "id": 35641,
+                "n": "R. Marín",
+                "num": 17,
+                "pos": "F",
+                "g": null,
+                "entra": "64'"
+              },
+              {
+                "id": 297208,
+                "n": "L. Rey",
+                "num": 16,
+                "pos": "D",
+                "g": null,
+                "entra": "64'"
+              },
+              {
+                "id": 35645,
+                "n": "Á. Sepúlveda",
+                "num": 9,
+                "pos": "F",
+                "g": null
+              },
+              {
+                "id": 15575,
+                "n": "Óscar Whalley",
+                "num": 13,
+                "pos": "G",
+                "g": null
+              }
+            ]
+          },
+          "visita": {
+            "nombre": "Atlante FC",
+            "logo": "https://media.api-sports.io/football/teams/2312.png",
+            "formacion": "5-3-2",
+            "color": null,
+            "color_num": null,
+            "titulares": [
+              {
+                "id": 35582,
+                "n": "Ó. Jiménez",
+                "num": 1,
+                "pos": "G",
+                "g": "1:1"
+              },
+              {
+                "id": 265899,
+                "n": "Walter Portales",
+                "num": 29,
+                "pos": "D",
+                "g": "2:5",
+                "sale": "90'"
+              },
+              {
+                "id": 554810,
+                "n": "J. N. Carrera",
+                "num": 6,
+                "pos": "D",
+                "g": "2:4"
+              },
+              {
+                "id": 410155,
+                "n": "D. Bagüí",
+                "num": 32,
+                "pos": "D",
+                "g": "2:3",
+                "amarilla": "28'",
+                "autogol": 1,
+                "sale": "45'"
+              },
+              {
+                "id": 310180,
+                "n": "A. Quiroz",
+                "num": 44,
+                "pos": "D",
+                "g": "2:2"
+              },
+              {
+                "id": 51549,
+                "n": "M. Fernández",
+                "num": 25,
+                "pos": "D",
+                "g": "2:1",
+                "sale": "70'"
+              },
+              {
+                "id": 195225,
+                "n": "E. Pizzuto",
+                "num": 8,
+                "pos": "M",
+                "g": "3:3",
+                "sale": "37'"
+              },
+              {
+                "id": 10397,
+                "n": "M. Sarrafiore",
+                "num": 30,
+                "pos": "M",
+                "g": "3:2",
+                "goles": 1,
+                "sale": "70'"
+              },
+              {
+                "id": 129939,
+                "n": "L. Calzadilla",
+                "num": 19,
+                "pos": "M",
+                "g": "3:1"
+              },
+              {
+                "id": 407366,
+                "n": "Joaquin Alejandro Moxica Chapa",
+                "num": 11,
+                "pos": "F",
+                "g": "4:2"
+              },
+              {
+                "id": 2580,
+                "n": "J. Julio",
+                "num": 7,
+                "pos": "F",
+                "g": "4:1",
+                "goles": 1
+              }
+            ],
+            "suplentes": [
+              {
+                "id": 311545,
+                "n": "Jairón Andrés Charcopa Cabezas",
+                "num": 15,
+                "pos": "F",
+                "g": null
+              },
+              {
+                "id": 70793,
+                "n": "W. Clar",
+                "num": 37,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 356972,
+                "n": "Jordan García",
+                "num": 33,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 351198,
+                "n": "M. García",
+                "num": 13,
+                "pos": "M",
+                "g": null,
+                "entra": "70'"
+              },
+              {
+                "id": 329148,
+                "n": "José González",
+                "num": 16,
+                "pos": "M",
+                "g": null,
+                "entra": "90'"
+              },
+              {
+                "id": 374973,
+                "n": "E. Jiménez",
+                "num": 34,
+                "pos": "M",
+                "g": null,
+                "entra": "37'"
+              },
+              {
+                "id": 237187,
+                "n": "L. Puente",
+                "num": 9,
+                "pos": "F",
+                "g": null,
+                "entra": "70'"
+              },
+              {
+                "id": 35542,
+                "n": "G. Sánchez",
+                "num": 3,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 35515,
+                "n": "E. Tercero",
+                "num": 4,
+                "pos": "D",
+                "g": null,
+                "entra": "45'"
+              },
+              {
+                "id": 552325,
+                "n": "O. Vazquez",
+                "num": 10,
                 "pos": "M",
                 "g": null
               }
@@ -12395,36 +12420,38 @@
         "goals": 0,
         "assists": 0,
         "tarjeta": {
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/campillo_partido.jpg?v=b408bed6",
-          "hasta": "2026-10-25T21:00:00-06:00",
-          "firma": "df08acc132"
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/campillo_partido.jpg?v=dd52f675",
+          "hasta": "2026-11-01T21:07:00-06:00",
+          "firma": "05efc7be9c"
         },
         "stats": {
-          "rating": 7.1,
-          "rating_api": 6.3,
-          "tiros": 1,
+          "rating": 7.0,
+          "calif_fija": true,
+          "rating_api": 6.7,
+          "tiros": 0,
           "tiros_puerta": 0,
-          "pases_pct": 79,
-          "duelos": 6,
-          "duelos_ganados": 4,
-          "recuperaciones": 3,
-          "lugar_equipo": 5,
-          "de_equipo": 16,
+          "pases_pct": 87,
+          "duelos": 9,
+          "duelos_ganados": 5,
+          "regates": 2,
+          "regates_ok": 1,
+          "recuperaciones": 5,
+          "lugar_equipo": 7,
+          "de_equipo": 15,
           "pesos": [
             {
-              "txt": "Portería en cero",
-              "pts": 0.4
+              "txt": "3 intercepciones",
+              "pts": 0.36
             },
             {
-              "txt": "2 intercepciones",
-              "pts": 0.24
+              "txt": "Victoria",
+              "pts": 0.3
             },
             {
-              "txt": "4 de 6 duelos ganados",
-              "pts": 0.14
+              "txt": "Su equipo recibió 2 goles",
+              "pts": -0.3
             }
-          ],
-          "calif_fija": true
+          ]
         },
         "stats_v": 2
       },
@@ -12434,6 +12461,12 @@
           "season": "2026",
           "league_id": 262,
           "ts": "2026-10-24T21:07:26.264264-06:00"
+        },
+        {
+          "fid": 1551024,
+          "season": "2026",
+          "league_id": 262,
+          "ts": "2026-10-31T21:04:22.781264-06:00"
         }
       ]
     },
@@ -13034,10 +13067,10 @@
             "team_id": 2278,
             "team_name": "Guadalajara Chivas",
             "team_logo": "https://media.api-sports.io/football/teams/2278.png",
-            "played": 11,
-            "goals": 2,
+            "played": 12,
+            "goals": 4,
             "assists": 1,
-            "minutes": 655
+            "minutes": 719
           }
         ]
       },
@@ -13045,241 +13078,98 @@
         "chivas": [
           1550996,
           1551004,
-          1551014
+          1551014,
+          1551024
         ]
       },
       "ultimo_partido": {
-        "fixture_id": 1551014,
-        "kickoff": "2026-10-24T19:00:00-06:00",
-        "home": "Monterrey",
-        "away": "Chivas",
-        "home_logo": "https://media.api-sports.io/football/teams/2282.png",
-        "away_logo": "https://media.api-sports.io/football/teams/2278.png",
-        "home_goals": 0,
-        "away_goals": 1,
+        "fixture_id": 1551024,
+        "kickoff": "2026-10-31T19:07:00-06:00",
+        "home": "Chivas",
+        "away": "Atlante FC",
+        "home_logo": "https://media.api-sports.io/football/teams/2278.png",
+        "away_logo": "https://media.api-sports.io/football/teams/2312.png",
+        "home_goals": 4,
+        "away_goals": 2,
         "penales": null,
         "league": "Liga MX",
         "league_logo": "https://media.api-sports.io/football/leagues/262.png",
         "league_tipo": "liga",
         "eventos": [
           {
-            "min": "9'",
+            "min": "8'",
             "tipo": "gol",
-            "nombre": "Roberto Alvarado",
+            "nombre": "Santiago Sandoval",
+            "lado": "L",
+            "mio": true
+          },
+          {
+            "min": "28'",
+            "tipo": "amarilla",
+            "nombre": "Diogo Osmar Bagüí Tobar",
             "lado": "V",
             "mio": false
           },
           {
-            "min": "19'",
-            "tipo": "pen_fallado",
-            "nombre": "Lucas Ocampos",
+            "min": "36'",
+            "tipo": "autogol",
+            "nombre": "Diogo Osmar Bagüí Tobar",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "82'",
-            "tipo": "amarilla",
-            "nombre": "Paxon Levi Ruffin Tamez",
+            "min": "53'",
+            "tipo": "gol",
+            "nombre": "Santiago Sandoval",
+            "lado": "L",
+            "mio": true
+          },
+          {
+            "min": "53'",
+            "tipo": "var",
+            "nombre": "Gol confirmado · Santiago Sandoval",
+            "lado": "L",
+            "mio": true
+          },
+          {
+            "min": "60'",
+            "tipo": "gol",
+            "nombre": "Martín Sarrafiore",
+            "lado": "V",
+            "mio": false
+          },
+          {
+            "min": "64'",
+            "tipo": "sale",
+            "nombre": "Santiago Sandoval",
+            "lado": "L",
+            "mio": true
+          },
+          {
+            "min": "64'",
+            "tipo": "gol",
+            "nombre": "Efrain Alvarez",
             "lado": "L",
             "mio": false
           },
           {
-            "min": "88'",
-            "tipo": "amarilla",
-            "nombre": "Diego Rossi",
-            "lado": "L",
+            "min": "80'",
+            "tipo": "var",
+            "nombre": "Penal confirmado · Edgar Jiménez",
+            "lado": "V",
             "mio": false
           },
           {
-            "min": "90'",
-            "tipo": "roja",
-            "nombre": "Orbelín Pineda",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "90+7'",
-            "tipo": "anulado",
-            "nombre": "Diego Rossi",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "90+9'",
-            "tipo": "roja",
-            "nombre": "Matías Jesús Almeyda",
-            "lado": "L",
+            "min": "83'",
+            "tipo": "pen",
+            "nombre": "Jhojan Julio",
+            "lado": "V",
             "mio": false
           }
         ],
         "eventos_v": 6,
         "alineacion": {
           "local": {
-            "nombre": "Monterrey",
-            "logo": "https://media.api-sports.io/football/teams/2282.png",
-            "formacion": "4-1-3-2",
-            "color": null,
-            "color_num": null,
-            "titulares": [
-              {
-                "id": 2462,
-                "n": "E. Andrada",
-                "num": 1,
-                "pos": "G",
-                "g": "1:1"
-              },
-              {
-                "id": 36471,
-                "n": "R. Chavez",
-                "num": 2,
-                "pos": "D",
-                "g": "2:4"
-              },
-              {
-                "id": 167014,
-                "n": "F. Ambriz",
-                "num": 5,
-                "pos": "D",
-                "g": "2:3",
-                "sale": "56'"
-              },
-              {
-                "id": 129943,
-                "n": "V. Guzman",
-                "num": 4,
-                "pos": "D",
-                "g": "2:2"
-              },
-              {
-                "id": 35774,
-                "n": "G. Arteaga",
-                "num": 3,
-                "pos": "D",
-                "g": "2:1"
-              },
-              {
-                "id": 445419,
-                "n": "C. Garza",
-                "num": 18,
-                "pos": "M",
-                "g": "3:1"
-              },
-              {
-                "id": 1911,
-                "n": "L. Ocampos",
-                "num": 7,
-                "pos": "M",
-                "g": "4:3"
-              },
-              {
-                "id": 35576,
-                "n": "O. Pineda",
-                "num": 25,
-                "pos": "M",
-                "g": "4:2",
-                "roja": "90'"
-              },
-              {
-                "id": 389,
-                "n": "J. Corona",
-                "num": 17,
-                "pos": "M",
-                "g": "4:1",
-                "sale": "79'"
-              },
-              {
-                "id": 51045,
-                "n": "D. Rossi",
-                "num": 9,
-                "pos": "F",
-                "g": "5:2",
-                "amarilla": "88'",
-                "anulado": 1
-              },
-              {
-                "id": 27104,
-                "n": "H. Cuypers",
-                "num": 99,
-                "pos": "F",
-                "g": "5:1"
-              }
-            ],
-            "suplentes": [
-              {
-                "id": 35536,
-                "n": "L. Cardenas",
-                "num": 22,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 35539,
-                "n": "S. Medina",
-                "num": 33,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 2877,
-                "n": "C. Salcedo",
-                "num": 13,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 35648,
-                "n": "E. Aguirre",
-                "num": 14,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 290648,
-                "n": "A. Aceves",
-                "num": 19,
-                "pos": "D",
-                "g": null
-              },
-              {
-                "id": 6369,
-                "n": "J. Rodriguez",
-                "num": 30,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 385,
-                "n": "O. Torres",
-                "num": 8,
-                "pos": "M",
-                "g": null,
-                "entra": "56'"
-              },
-              {
-                "id": 687725,
-                "n": "P. Ruffin",
-                "num": 244,
-                "pos": null,
-                "g": null
-              },
-              {
-                "id": 35669,
-                "n": "R. de la Rosa",
-                "num": 27,
-                "pos": "F",
-                "g": null
-              },
-              {
-                "id": 6063,
-                "n": "L. Orellano",
-                "num": 10,
-                "pos": "F",
-                "g": null,
-                "entra": "79'"
-              }
-            ]
-          },
-          "visita": {
             "nombre": "Chivas",
             "logo": "https://media.api-sports.io/football/teams/2278.png",
             "formacion": "3-4-2-1",
@@ -13288,7 +13178,7 @@
             "titulares": [
               {
                 "id": 270774,
-                "n": "R. Rangel",
+                "n": "J. Rangel",
                 "num": 1,
                 "pos": "G",
                 "g": "1:1"
@@ -13298,22 +13188,23 @@
                 "n": "D. Aguirre",
                 "num": 23,
                 "pos": "D",
-                "g": "2:3",
-                "sale": "79'"
+                "g": "2:3"
               },
               {
-                "id": 297208,
-                "n": "L. Rey",
-                "num": 16,
+                "id": 141155,
+                "n": "D. Campillo",
+                "num": 3,
                 "pos": "D",
                 "g": "2:2"
               },
               {
-                "id": 141155,
-                "n": "D. Campillo Del Campo",
-                "num": 3,
+                "id": 35970,
+                "n": "L. Romo",
+                "num": 7,
                 "pos": "D",
-                "g": "2:1"
+                "g": "2:1",
+                "asist": 1,
+                "sale": "64'"
               },
               {
                 "id": 102851,
@@ -13321,11 +13212,11 @@
                 "num": 37,
                 "pos": "M",
                 "g": "3:4",
-                "sale": "60'"
+                "sale": "86'"
               },
               {
                 "id": 35623,
-                "n": "F. Gonzalez",
+                "n": "R. González",
                 "num": 28,
                 "pos": "M",
                 "g": "3:3"
@@ -13336,115 +13227,289 @@
                 "num": 6,
                 "pos": "M",
                 "g": "3:2",
-                "sale": "66'"
+                "asist": 1,
+                "sale": "70'"
               },
               {
                 "id": 237060,
-                "n": "B. Gonzalez",
+                "n": "B. González",
                 "num": 5,
                 "pos": "M",
-                "g": "3:1",
-                "sale": "79'"
+                "g": "3:1"
               },
               {
                 "id": 2879,
                 "n": "R. Alvarado",
                 "num": 25,
                 "pos": "M",
-                "g": "4:2",
-                "goles": 1
+                "g": "4:2"
               },
               {
-                "id": 524762,
-                "n": "S. Sandoval",
-                "num": 30,
+                "id": 51068,
+                "n": "E. Álvarez",
+                "num": 10,
                 "pos": "M",
                 "g": "4:1",
                 "asist": 1,
-                "mio": true
+                "goles": 1,
+                "sale": "70'"
               },
               {
-                "id": 35641,
-                "n": "R. Marin",
-                "num": 17,
+                "id": 524762,
+                "n": "Santiago Sandoval",
+                "num": 30,
                 "pos": "F",
                 "g": "5:1",
-                "sale": "66'"
+                "goles": 2,
+                "sale": "64'",
+                "mio": true
               }
             ],
             "suplentes": [
               {
-                "id": 15575,
-                "n": "O. Whalley",
-                "num": 13,
-                "pos": "G",
-                "g": null
-              },
-              {
-                "id": 414156,
-                "n": "A. Chavez",
-                "num": 56,
-                "pos": "D",
-                "g": null,
-                "entra": "79'"
-              },
-              {
-                "id": 632056,
-                "n": "C. Hernandez",
-                "num": 46,
-                "pos": "D",
-                "g": null
-              },
-              {
                 "id": 35716,
-                "n": "K. Castaneda",
+                "n": "K. Castañeda",
                 "num": 19,
                 "pos": "M",
                 "g": null,
-                "entra": "66'"
-              },
-              {
-                "id": 554827,
-                "n": "S. Inda",
-                "num": 59,
-                "pos": "M",
-                "g": null
-              },
-              {
-                "id": 51068,
-                "n": "E. Alvarez",
-                "num": 10,
-                "pos": "F",
-                "g": null,
-                "entra": "60'"
-              },
-              {
-                "id": 657237,
-                "n": "L. Calderon",
-                "num": 182,
-                "pos": "M",
-                "g": null,
-                "entra": "79'"
+                "entra": "70'"
               },
               {
                 "id": 195704,
                 "n": "J. Carrillo",
                 "num": 33,
                 "pos": "M",
-                "g": null
-              },
-              {
-                "id": 328826,
-                "n": "J. Hernandez",
-                "num": 57,
-                "pos": "F",
                 "g": null,
-                "entra": "66'"
+                "entra": "86'"
               },
               {
                 "id": 453887,
                 "n": "H. Camberos",
                 "num": 14,
+                "pos": "M",
+                "g": null
+              },
+              {
+                "id": 277189,
+                "n": "J. Castillo",
+                "num": 2,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 212233,
+                "n": "B. Gutiérrez",
+                "num": 11,
+                "pos": "M",
+                "g": null,
+                "entra": "70'"
+              },
+              {
+                "id": 328826,
+                "n": "J. Hernández",
+                "num": 57,
+                "pos": "F",
+                "g": null
+              },
+              {
+                "id": 35641,
+                "n": "R. Marín",
+                "num": 17,
+                "pos": "F",
+                "g": null,
+                "entra": "64'"
+              },
+              {
+                "id": 297208,
+                "n": "L. Rey",
+                "num": 16,
+                "pos": "D",
+                "g": null,
+                "entra": "64'"
+              },
+              {
+                "id": 35645,
+                "n": "Á. Sepúlveda",
+                "num": 9,
+                "pos": "F",
+                "g": null
+              },
+              {
+                "id": 15575,
+                "n": "Óscar Whalley",
+                "num": 13,
+                "pos": "G",
+                "g": null
+              }
+            ]
+          },
+          "visita": {
+            "nombre": "Atlante FC",
+            "logo": "https://media.api-sports.io/football/teams/2312.png",
+            "formacion": "5-3-2",
+            "color": null,
+            "color_num": null,
+            "titulares": [
+              {
+                "id": 35582,
+                "n": "Ó. Jiménez",
+                "num": 1,
+                "pos": "G",
+                "g": "1:1"
+              },
+              {
+                "id": 265899,
+                "n": "Walter Portales",
+                "num": 29,
+                "pos": "D",
+                "g": "2:5",
+                "sale": "90'"
+              },
+              {
+                "id": 554810,
+                "n": "J. N. Carrera",
+                "num": 6,
+                "pos": "D",
+                "g": "2:4"
+              },
+              {
+                "id": 410155,
+                "n": "D. Bagüí",
+                "num": 32,
+                "pos": "D",
+                "g": "2:3",
+                "amarilla": "28'",
+                "autogol": 1,
+                "sale": "45'"
+              },
+              {
+                "id": 310180,
+                "n": "A. Quiroz",
+                "num": 44,
+                "pos": "D",
+                "g": "2:2"
+              },
+              {
+                "id": 51549,
+                "n": "M. Fernández",
+                "num": 25,
+                "pos": "D",
+                "g": "2:1",
+                "sale": "70'"
+              },
+              {
+                "id": 195225,
+                "n": "E. Pizzuto",
+                "num": 8,
+                "pos": "M",
+                "g": "3:3",
+                "sale": "37'"
+              },
+              {
+                "id": 10397,
+                "n": "M. Sarrafiore",
+                "num": 30,
+                "pos": "M",
+                "g": "3:2",
+                "goles": 1,
+                "sale": "70'"
+              },
+              {
+                "id": 129939,
+                "n": "L. Calzadilla",
+                "num": 19,
+                "pos": "M",
+                "g": "3:1"
+              },
+              {
+                "id": 407366,
+                "n": "Joaquin Alejandro Moxica Chapa",
+                "num": 11,
+                "pos": "F",
+                "g": "4:2"
+              },
+              {
+                "id": 2580,
+                "n": "J. Julio",
+                "num": 7,
+                "pos": "F",
+                "g": "4:1",
+                "goles": 1
+              }
+            ],
+            "suplentes": [
+              {
+                "id": 311545,
+                "n": "Jairón Andrés Charcopa Cabezas",
+                "num": 15,
+                "pos": "F",
+                "g": null
+              },
+              {
+                "id": 70793,
+                "n": "W. Clar",
+                "num": 37,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 356972,
+                "n": "Jordan García",
+                "num": 33,
+                "pos": "G",
+                "g": null
+              },
+              {
+                "id": 351198,
+                "n": "M. García",
+                "num": 13,
+                "pos": "M",
+                "g": null,
+                "entra": "70'"
+              },
+              {
+                "id": 329148,
+                "n": "José González",
+                "num": 16,
+                "pos": "M",
+                "g": null,
+                "entra": "90'"
+              },
+              {
+                "id": 374973,
+                "n": "E. Jiménez",
+                "num": 34,
+                "pos": "M",
+                "g": null,
+                "entra": "37'"
+              },
+              {
+                "id": 237187,
+                "n": "L. Puente",
+                "num": 9,
+                "pos": "F",
+                "g": null,
+                "entra": "70'"
+              },
+              {
+                "id": 35542,
+                "n": "G. Sánchez",
+                "num": 3,
+                "pos": "D",
+                "g": null
+              },
+              {
+                "id": 35515,
+                "n": "E. Tercero",
+                "num": 4,
+                "pos": "D",
+                "g": null,
+                "entra": "45'"
+              },
+              {
+                "id": 552325,
+                "n": "O. Vazquez",
+                "num": 10,
                 "pos": "M",
                 "g": null
               }
@@ -13455,43 +13520,45 @@
         "team_label": "Chivas",
         "emoji": "🐐",
         "crest_url": "https://media.api-sports.io/football/teams/2278.png",
-        "minutes": 90,
-        "goals": 0,
-        "assists": 1,
+        "minutes": 64,
+        "goals": 2,
+        "assists": 0,
         "tarjeta": {
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/sandoval_partido.jpg?v=ac551129",
-          "hasta": "2026-10-25T21:00:00-06:00",
-          "firma": "613f953fcf"
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/sandoval_partido.jpg?v=5a9942cd",
+          "hasta": "2026-11-01T21:07:00-06:00",
+          "firma": "e2fdcd648f"
         },
         "stats": {
-          "rating": 7.8,
-          "rating_api": 6.6,
-          "tiros": 2,
-          "tiros_puerta": 2,
-          "pases_pct": 67,
-          "duelos": 14,
-          "duelos_ganados": 9,
-          "regates": 1,
+          "rating": 9.3,
+          "calif_fija": true,
+          "rating_api": 9.3,
+          "tiros": 5,
+          "tiros_puerta": 3,
+          "pases_pct": 81,
+          "duelos": 16,
+          "duelos_ganados": 8,
+          "regates": 3,
           "regates_ok": 1,
-          "pases_clave": 1,
-          "recuperaciones": 2,
-          "lugar_equipo": 2,
-          "de_equipo": 16,
+          "pases_clave": 2,
+          "recuperaciones": 3,
+          "lugar_equipo": 1,
+          "de_equipo": 15,
+          "mejor_equipo": true,
+          "mvp": true,
           "pesos": [
             {
-              "txt": "1 asistencia",
-              "pts": 0.9
+              "txt": "2 goles",
+              "pts": 2.7
             },
             {
-              "txt": "6 faltas recibidas",
-              "pts": 0.3
+              "txt": "2 pases clave",
+              "pts": 0.36
             },
             {
-              "txt": "2 de 2 tiros a puerta",
-              "pts": 0.26
+              "txt": "Victoria",
+              "pts": 0.21
             }
-          ],
-          "calif_fija": true
+          ]
         },
         "stats_v": 2
       },
@@ -13501,6 +13568,12 @@
           "season": "2026",
           "league_id": 262,
           "ts": "2026-10-24T21:07:26.334968-06:00"
+        },
+        {
+          "fid": 1551024,
+          "season": "2026",
+          "league_id": 262,
+          "ts": "2026-10-31T21:04:25.283441-06:00"
         }
       ]
     }

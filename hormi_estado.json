@@ -509,6 +509,7 @@
     },
     "campillo": {
       "chivas": [
+        "agenda:1551024:fin:",
         "agenda:1551024:vivo:Chivas 0-0 Atlante FC",
         "agenda:1551024:vivo:Chivas 1-0 Atlante FC",
         "agenda:1551024:vivo:Chivas 2-0 Atlante FC",
@@ -533,6 +534,7 @@
         "campillo:chivas:1551014:medio",
         "campillo:chivas:1551014:segundo",
         "campillo:chivas:1551024:alineacion",
+        "campillo:chivas:1551024:final",
         "campillo:chivas:1551024:inicio",
         "campillo:chivas:1551024:medio",
         "campillo:chivas:1551024:segundo"
@@ -540,6 +542,7 @@
     },
     "camberos": {
       "chivas": [
+        "agenda:1551024:fin:",
         "agenda:1551024:vivo:Chivas 0-0 Atlante FC",
         "agenda:1551024:vivo:Chivas 1-0 Atlante FC",
         "agenda:1551024:vivo:Chivas 2-0 Atlante FC",
@@ -563,6 +566,7 @@
         "camberos:chivas:1551014:medio",
         "camberos:chivas:1551014:segundo",
         "camberos:chivas:1551024:alineacion",
+        "camberos:chivas:1551024:final",
         "camberos:chivas:1551024:inicio",
         "camberos:chivas:1551024:medio",
         "camberos:chivas:1551024:segundo"
@@ -570,6 +574,7 @@
     },
     "sandoval": {
       "chivas": [
+        "agenda:1551024:fin:",
         "agenda:1551024:vivo:Chivas 0-0 Atlante FC",
         "agenda:1551024:vivo:Chivas 1-0 Atlante FC",
         "agenda:1551024:vivo:Chivas 2-0 Atlante FC",
@@ -596,6 +601,7 @@
         "sandoval:chivas:1551014:medio",
         "sandoval:chivas:1551014:segundo",
         "sandoval:chivas:1551024:alineacion",
+        "sandoval:chivas:1551024:final",
         "sandoval:chivas:1551024:goal:524762:1:gol",
         "sandoval:chivas:1551024:goal:524762:2:gol",
         "sandoval:chivas:1551024:inicio",
@@ -682,6 +688,8 @@
     "1551007:fimbres",
     "1551014:campillo",
     "1551014:sandoval",
+    "1551024:campillo",
+    "1551024:sandoval",
     "1552195:chavez",
     "1552206:chavez",
     "1552210:chavez",

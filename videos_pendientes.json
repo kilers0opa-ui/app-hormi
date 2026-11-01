@@ -15,40 +15,6 @@
   ],
   "finales": [
     {
-      "fixture_id": 1593347,
-      "home": "Kifisia",
-      "away": "Olympiakos",
-      "league": "Superliga de Grecia",
-      "score": "Kifisia 2-3 Olympiakos",
-      "final_seen_at": "2026-10-31T18:57:31.867824+00:00",
-      "jugadores": [
-        {
-          "player_key": "armando",
-          "team_key": "olympiacos",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        }
-      ]
-    },
-    {
-      "fixture_id": 1570435,
-      "home": "Real Betis",
-      "away": "Malaga",
-      "league": "La Liga",
-      "score": "Real Betis 2-1 Malaga",
-      "final_seen_at": "2026-10-31T19:28:51.905948+00:00",
-      "jugadores": [
-        {
-          "player_key": "fidalgo",
-          "team_key": "betis",
-          "minutes": 0,
-          "goals": 0,
-          "assists": 0
-        }
-      ]
-    },
-    {
       "fixture_id": 1552210,
       "home": "Ajax",
       "away": "AZ Alkmaar",
@@ -78,6 +44,37 @@
           "team_key": "porto",
           "minutes": 0,
           "goals": 0,
+          "assists": 0
+        }
+      ]
+    },
+    {
+      "fixture_id": 1551024,
+      "home": "Chivas",
+      "away": "Atlante FC",
+      "league": "Liga MX",
+      "score": "Chivas 4-2 Atlante FC",
+      "final_seen_at": "2026-11-01T03:04:21.668978+00:00",
+      "jugadores": [
+        {
+          "player_key": "campillo",
+          "team_key": "chivas",
+          "minutes": 90,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "player_key": "camberos",
+          "team_key": "chivas",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "player_key": "sandoval",
+          "team_key": "chivas",
+          "minutes": 64,
+          "goals": 2,
           "assists": 0
         }
       ]
