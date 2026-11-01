@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T12:58:04.654442-06:00",
+  "updated_at": "2026-11-01T14:52:04.538079-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -12092,15 +12092,15 @@
           },
           {
             "min": "53'",
-            "tipo": "var",
-            "nombre": "Gol confirmado · Santiago Sandoval",
+            "tipo": "gol",
+            "nombre": "Santiago Sandoval",
             "lado": "L",
             "mio": false
           },
           {
             "min": "53'",
-            "tipo": "gol",
-            "nombre": "Santiago Sandoval",
+            "tipo": "var",
+            "nombre": "Gol confirmado · Santiago Sandoval",
             "lado": "L",
             "mio": false
           },
@@ -12492,7 +12492,7 @@
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/campillo_partido.jpg?v=dd52f675",
           "hasta": "2026-11-01T21:07:00-06:00",
-          "firma": "1c63ef50c5"
+          "firma": "05efc7be9c"
         },
         "stats": {
           "rating": 7.0,
@@ -13189,15 +13189,15 @@
           },
           {
             "min": "53'",
-            "tipo": "var",
-            "nombre": "Gol confirmado · Santiago Sandoval",
+            "tipo": "gol",
+            "nombre": "Santiago Sandoval",
             "lado": "L",
             "mio": true
           },
           {
             "min": "53'",
-            "tipo": "gol",
-            "nombre": "Santiago Sandoval",
+            "tipo": "var",
+            "nombre": "Gol confirmado · Santiago Sandoval",
             "lado": "L",
             "mio": true
           },
@@ -13210,17 +13210,17 @@
           },
           {
             "min": "64'",
-            "tipo": "gol",
-            "nombre": "Efrain Alvarez",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "64'",
             "tipo": "sale",
             "nombre": "Santiago Sandoval",
             "lado": "L",
             "mio": true
+          },
+          {
+            "min": "64'",
+            "tipo": "gol",
+            "nombre": "Efrain Alvarez",
+            "lado": "L",
+            "mio": false
           },
           {
             "min": "80'",
@@ -13596,7 +13596,7 @@
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/sandoval_partido.jpg?v=5a9942cd",
           "hasta": "2026-11-01T21:07:00-06:00",
-          "firma": "2046a0ca7c"
+          "firma": "e2fdcd648f"
         },
         "stats": {
           "rating": 9.3,
