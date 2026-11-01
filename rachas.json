@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T12:57:13.392065-06:00",
+  "updated_at": "2026-11-01T13:02:13.117063-06:00",
   "players": {
     "armando": {
       "rachas": [
@@ -486,12 +486,12 @@
         {
           "id": "cero",
           "titulo": "Partidos seguidos sin recibir gol",
-          "actual": 2,
-          "en_racha": true,
+          "actual": 0,
+          "en_racha": false,
           "puntos": [
-            true,
-            true,
             false,
+            true,
+            true,
             false,
             false,
             false,
@@ -511,39 +511,39 @@
             false,
             false,
             false,
-            true,
+            false,
             true
           ]
         },
         {
           "id": "titular",
           "titulo": "Partidos seguidos de titular",
-          "actual": 4,
-          "en_racha": false,
+          "actual": 5,
+          "en_racha": true,
           "puntos": [
             true,
             true,
             true,
             true,
+            true,
             false,
             false,
-            false,
-            true
+            false
           ]
         },
         {
           "id": "jugando",
           "titulo": "Partidos seguidos jugando",
-          "actual": 4,
-          "en_racha": false,
+          "actual": 5,
+          "en_racha": true,
           "puntos": [
             true,
             true,
             true,
             true,
-            false,
-            false,
             true,
+            false,
+            false,
             true
           ]
         }
@@ -568,10 +568,10 @@
         {
           "id": "partidos_club",
           "titulo": "Partidos con clubes",
-          "valor": 290,
+          "valor": 291,
           "meta": 300,
           "previo": 250,
-          "texto": "A 10 partidos de 300"
+          "texto": "A 9 partidos de 300"
         },
         {
           "id": "goles_sel",
@@ -600,7 +600,7 @@
         "partidos_sel:50"
       ],
       "club": "Genoa",
-      "partidos_revisados": 19
+      "partidos_revisados": 20
     },
     "gimenez": {
       "rachas": [
