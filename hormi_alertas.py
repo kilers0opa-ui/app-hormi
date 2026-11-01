@@ -1541,9 +1541,14 @@ def _ultimo_gol(snap):
     if not goles:
         return ""
     e = max(goles, key=lambda e: ((e.get("time") or {}).get("elapsed") or 0, (e.get("time") or {}).get("extra") or 0))
-    quien = (e.get("player") or {}).get("name") or "?"
+    # La API a veces publica el gol unos segundos antes que el nombre de quien lo metió: sin nombre no se pone "?"
+    # (se ve como error); el texto se completa en cuanto llega (enviar_vivo lo vuelve a mandar si cambia).
+    quien = (e.get("player") or {}).get("name")
     extra = " (pen.)" if e.get("detail") == "Penalty" else (" (a.g.)" if e.get("detail") == "Own Goal" else "")
-    return f"Último gol: {quien} {minute_txt(e['time'])}{extra} ({nombre_es((e.get('team') or {}).get('name') or '')})"
+    equipo = nombre_es((e.get("team") or {}).get("name") or "")
+    if not quien:
+        return f"Último gol: {equipo} {minute_txt(e['time'])}{extra}"
+    return f"Último gol: {quien} {minute_txt(e['time'])}{extra} ({equipo})"
 
 
 def anotar_vivo(player, snap, info):
@@ -1586,8 +1591,8 @@ def enviar_vivo(fcm):
         minuto = g["elapsed"] + g["extra"]
         marcador = f"{g['hg']}-{g['ag']}"
         if (prev and prev[0] == marcador and prev[1] == g["short"] and minuto - prev[2] < 3
-                and ahora - prev[3] < 300):
-            continue   # nada nuevo: no gastar batería del celular
+                and ahora - prev[3] < 300 and (len(prev) < 5 or prev[4] == g["ultimo"])):
+            continue   # nada nuevo: no gastar batería del celular (si ya llegó el nombre del goleador, sí se manda)
         minuto_txt = {"HT": "Medio tiempo", "BT": "Descanso", "P": "Penales", "INT": "Interrumpido"}.get(
             g["short"], f"{g['elapsed']}'" + (f"+{g['extra']}" if g["extra"] else ""))
         fcm.send("live", f"{g['home']} {g['hg']}-{g['ag']} {g['away']}", minuto_txt, None, None, keys,
@@ -1597,7 +1602,7 @@ def enviar_vivo(fcm):
                         "ultimo": g["ultimo"], "pen": g["pen"],
                         "jugadores": json.dumps(g["jug"], ensure_ascii=False, separators=(",", ":"))},
                  topic=LIVE_TOPIC, ttl="240s")
-        _VIVO_ENVIADO[fid] = (marcador, g["short"], minuto, ahora)
+        _VIVO_ENVIADO[fid] = (marcador, g["short"], minuto, ahora, g["ultimo"])
     _VIVO.clear()
 
 
