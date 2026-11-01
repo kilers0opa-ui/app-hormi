@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-01T13:00:27.582655-06:00",
+  "updated_at": "2026-11-01T13:30:33.363122-06:00",
   "cuota": {
     "fecha": "2026-11-01",
-    "busquedas": 0,
-    "busquedas_resumen": 0
+    "busquedas": 1,
+    "busquedas_resumen": 1
   },
   "goles": {
     "sandoval:chivas:1551024:goal:524762:1:gol": {
@@ -580,13 +580,40 @@
         }
       },
       "status": "pendiente",
-      "intentos": 0,
+      "intentos": 1,
       "fallos": 0,
-      "ultimo_intento": null,
+      "ultimo_intento": "2026-11-01T19:30:26.324869+00:00",
       "video": null,
-      "noticias_pasadas": 0,
-      "ultima_noticia": null,
-      "noticias": {}
+      "noticias_pasadas": 1,
+      "ultima_noticia": "2026-11-01T19:30:26.324869+00:00",
+      "noticias": {
+        "vasquez": [
+          {
+            "title": "‘Efecto Johan Vásquez’: tres al hilo para Genoa",
+            "source": "AS México",
+            "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQZnJuNkdCMTlzbkRnaGxsaV9TMHNuME9iM0diNWhMSTFHMzh3NE81N3paM1U4ZmxLU2dZUUhqVnhFV2FadFZ3UVhaanRwaGlfbnZuX3hoVXpsUEZEUDh0X1hBWUUwUGQycnNxbGh3M0k4RU1pUmxWM1M2c1VERklVSFU4TEVIRE5QVmxXWkd2NFo1MlI1R3FmYS1LNUVDbnYxQ1HSAbYBQVVfeXFMTlJjUE4zRG5IUy1GM1IzZDREcnluUm9CNnJfSlpZSWlGWG5fcGR5OHkzcTVRTWR6T0ptMDBsWUFLS3VJdVo0OHdreW40QmNwcDdtUzRJVHpDWXBUT3dibklNcXpIU1lWb1ViMzcyRjc4WkhyNi0tVDV5SF9xcmNwaGRoQXYwZHRScGRPbU5xY2EyaXZmbkwweFZoMlhkRmRnekV0cHNIcGNZUlBTLWZqT3h2RXdLeEE?oc=5",
+            "published_at": "2026-11-01T19:10:20Z",
+            "dominio": "mexico.as.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "Johan Vásquez se viste de héroe y encabeza el triunfo del Genoa sobre la Juventus en Serie A",
+            "source": "Infobae",
+            "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQLUpTMlUzdHEycC1JeXUyTWQ1cFJWaEpIQ2JaTkFaZ0lxSUZpZGVjd3UtbURQc1JtSFF1a1NWX2Y5S3JJTDhMNEVoWHVtWVMxVDRFWS0xbkVwVkxnUU04Q094VXcteVktWlo5NVI2WjZjd1pma2FQUy03WkFDbm5renFpUVphaXNzNEJlejdMdnFRbVZINklSR2RrOHJnQnlrZllwUzh2WFNKckwxa3M0TVF3VkF6bmxvVWZ3OHo4cGhjTUZza3daSEVrQlgwb0VMN1gwTGxlQUozSFl50gH3AUFVX3lxTE1qWFYtc1lyZUxSSkdXNmx1YzZSRHFFR3BYUndndjJ1bTdOeXcwYThxaVBBdG5sTmlKMmlEM3BrUXhpbzVxb2NmZUl5Y0pHcWV2T2VSdk9qRW1nYjI5VzlyNFJ1WHhwV1hBMUZUQ29LLW5DcWh5andJSVJzMFpKT3h0N0dZOWF6NzhxRFNDNjFFM2oxLUpvUzVRR0ctZDlQWU9LNDZnM2p1UVRsdjU1d2VVTTgwY3ZncVlZVUptLVZlNTEtbmVQRFlzN0J2LUZmRjFrdWh3dzUwbDJqZEhucy01dDRqM1pZR2otRXVwZmN5MlI5SGw2TzQ?oc=5",
+            "published_at": "2026-10-29T06:20:01Z",
+            "dominio": "infobae.com",
+            "edicion": "mx"
+          },
+          {
+            "title": "Johan Vásquez y su cátedra defensiva en el encuentro ante la Juventus",
+            "source": "Récord",
+            "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxObk42cGtTaHQwUGpCcHFIR0hYOUZpT0diTjhWUXY5QXBmd01lQU8zQ0ZUVE9NUDRfQUljWFJmQ2VEZW1CV3JtV0pMdEppV2lzazJCbk1CZ01WMUZMT2pzS0piM0xPSXd2ejEzX2dwc0h0WXN5a0ZhbWRjMjBsVzV0dW5WNU56OXZBVmszZnZqVTFRbS1obTd1Q3BBZWIyRmZvYkQ3c0xubnFTLVdqWndHRTZxeUU0REtTZFBuMzFsNTdzUQ?oc=5",
+            "published_at": "2026-10-29T01:00:00Z",
+            "dominio": "record.com.mx",
+            "edicion": "mx"
+          }
+        ]
+      }
     }
   }
 }
