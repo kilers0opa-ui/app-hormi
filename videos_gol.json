@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-01T13:35:31.473701-06:00",
+  "updated_at": "2026-11-01T13:45:32.015972-06:00",
   "cuota": {
     "fecha": "2026-11-01",
-    "busquedas": 1,
+    "busquedas": 2,
     "busquedas_resumen": 1
   },
   "goles": {
@@ -579,11 +579,22 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "resuelto",
       "intentos": 1,
       "fallos": 0,
       "ultimo_intento": "2026-11-01T19:30:26.324869+00:00",
-      "video": null,
+      "video": {
+        "id": "88WM64y8c44",
+        "title": "Lecce 1-2 Genoa | Johan VÁSQUEZ y Genoa salen VICTORIOSOS con CIERRE DRAMÁTICO incluido | Resumen",
+        "channel": "ESPN MX",
+        "published_at": "2026-11-01T19:41:28Z",
+        "thumbnail": "https://i.ytimg.com/vi/88WM64y8c44/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=88WM64y8c44",
+        "embeddable": true,
+        "bloqueado_en": [
+          "US"
+        ]
+      },
       "noticias_pasadas": 1,
       "ultima_noticia": "2026-11-01T19:30:26.324869+00:00",
       "noticias": {
@@ -613,7 +624,19 @@
             "edicion": "mx"
           }
         ]
-      }
+      },
+      "alternativos": {
+        "US": {
+          "id": "10ZlNSglp28",
+          "title": "Lecce - Genoa | 1-2 | Gli Highlights | Serie A 2026/27 | lecce genoa",
+          "channel": "UPires Futebol",
+          "published_at": "2026-11-01T18:57:10Z",
+          "thumbnail": "https://i.ytimg.com/vi/10ZlNSglp28/hqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=10ZlNSglp28",
+          "embeddable": true
+        }
+      },
+      "alt_buscado_US": true
     }
   }
 }
