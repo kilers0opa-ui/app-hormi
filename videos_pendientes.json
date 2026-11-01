@@ -78,6 +78,30 @@
           "assists": 0
         }
       ]
+    },
+    {
+      "fixture_id": 1551025,
+      "home": "Monterrey",
+      "away": "Club Tijuana",
+      "league": "Liga MX",
+      "score": "Monterrey 3-3 Club Tijuana",
+      "final_seen_at": "2026-11-01T03:11:01.368453+00:00",
+      "jugadores": [
+        {
+          "player_key": "mora",
+          "team_key": "tijuana",
+          "minutes": 45,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "player_key": "fimbres",
+          "team_key": "monterrey",
+          "minutes": 0,
+          "goals": 0,
+          "assists": 0
+        }
+      ]
     }
   ]
 }
