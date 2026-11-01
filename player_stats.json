@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T03:47:26.904779-06:00",
+  "updated_at": "2026-11-01T09:47:15.396818-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -169,18 +169,6 @@
             "minutes": 113
           },
           {
-            "league_id": 197,
-            "league_name": "Super League 1",
-            "league_logo": "https://media.api-sports.io/football/leagues/197.png",
-            "team_id": 553,
-            "team_name": "Olympiakos Piraeus",
-            "team_logo": "https://media.api-sports.io/football/teams/553.png",
-            "played": 6,
-            "goals": 0,
-            "assists": 0,
-            "minutes": 218
-          },
-          {
             "league_id": 262,
             "league_name": "Liga MX",
             "league_logo": "https://media.api-sports.io/football/leagues/262.png",
@@ -191,6 +179,18 @@
             "goals": 0,
             "assists": 0,
             "minutes": 195
+          },
+          {
+            "league_id": 197,
+            "league_name": "Super League 1",
+            "league_logo": "https://media.api-sports.io/football/leagues/197.png",
+            "team_id": 553,
+            "team_name": "Olympiakos Piraeus",
+            "team_logo": "https://media.api-sports.io/football/teams/553.png",
+            "played": 6,
+            "goals": 0,
+            "assists": 0,
+            "minutes": 218
           },
           {
             "league_id": 199,
