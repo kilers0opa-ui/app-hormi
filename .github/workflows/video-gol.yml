@@ -63,6 +63,10 @@ jobs:
           hay = False
 
           goles = out.get("goles", {})
+          # Un video quitado a mano (hormi_videos_fuentes.json → config.videos_descartados) se quita y se busca otro.
+          descart = set((load("hormi_videos_fuentes.json").get("config") or {}).get("videos_descartados") or [])
+          if any((st.get("video") or {}).get("id") in descart for st in goles.values()):
+              hay = True
           for g in pend.get("goles", []):
               if not age_ok(g.get("goal_seen_at"), now):
                   continue
