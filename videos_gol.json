@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-31T22:05:23.899280-06:00",
+  "updated_at": "2026-10-31T22:15:36.599249-06:00",
   "cuota": {
     "fecha": "2026-10-31",
-    "busquedas": 7,
+    "busquedas": 8,
     "busquedas_resumen": 3
   },
   "goles": {
@@ -347,11 +347,22 @@
           "assists": 0
         }
       },
-      "status": "pendiente",
+      "status": "resuelto",
       "intentos": 2,
       "fallos": 0,
       "ultimo_intento": "2026-11-01T04:05:19.090681+00:00",
-      "video": null,
+      "video": {
+        "id": "EqMj2lN_hK4",
+        "title": "¡TODOS LOS GOLES DEL PARTIDO! | CHIVAS vs ATLANTE J15 AP26",
+        "channel": "Chivas",
+        "published_at": "2026-11-01T04:13:36Z",
+        "thumbnail": "https://i.ytimg.com/vi/EqMj2lN_hK4/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=EqMj2lN_hK4",
+        "embeddable": true,
+        "bloqueado_en": [
+          "US"
+        ]
+      },
       "noticias_pasadas": 2,
       "ultima_noticia": "2026-11-01T04:05:19.090681+00:00",
       "noticias": {
@@ -433,7 +444,19 @@
             "edicion": "mx"
           }
         ]
-      }
+      },
+      "alternativos": {
+        "US": {
+          "id": "XaiE6CGH7lE",
+          "title": "Chivas vs Atlante | EL PALCO | Jornada 15 Apertura 2026 | Liga MX",
+          "channel": "Chivas",
+          "published_at": "2026-11-01T03:13:40Z",
+          "thumbnail": "https://i.ytimg.com/vi/XaiE6CGH7lE/hqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=XaiE6CGH7lE",
+          "embeddable": true
+        }
+      },
+      "alt_buscado_US": true
     },
     "1551025": {
       "fixture_id": 1551025,
@@ -472,8 +495,8 @@
           "US"
         ]
       },
-      "noticias_pasadas": 1,
-      "ultima_noticia": "2026-11-01T03:45:20.568423+00:00",
+      "noticias_pasadas": 2,
+      "ultima_noticia": "2026-11-01T04:15:31.459623+00:00",
       "noticias": {
         "mora": [
           {
