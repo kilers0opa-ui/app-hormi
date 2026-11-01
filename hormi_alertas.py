@@ -1054,8 +1054,10 @@ def analyze(data, player, target):
                     f"{label} · Gol de {e['player']['name']} · {score()}", 4)
         elif etype == "var" and pid == player_id and _var_texto(detail) in ("Roja anulada", "Tarjeta anulada"):
             add_evento(t, k, f"📺 El VAR le quita la roja a {nombre} {m}", f"{label} · {score()}", 4)
-        elif etype == "var" and "goal" in detail.lower() and player_id in (pid, aid):
-            add_evento(t, k, f"🚫 VAR anula jugada de gol de {nombre} {m}", f"{label} · {detail}")
+        elif etype == "var" and _es_var_anula_gol(detail) and player_id in (pid, aid):
+            # Solo cuando el VAR QUITA el gol. "Goal confirmed" (Chivas-Atlante 31-oct: el árbitro lo anuló por fuera de
+            # lugar y el VAR lo convalidó) ya no avisa nada: el aviso de ¡GOL! es el que vale.
+            add_evento(t, k, f"🚫 VAR anula gol de {nombre} {m}", f"{label} · {_var_texto(detail)} · {score()}")
         elif etype == "card" and pid == player_id and "red" in detail.lower():
             add_evento(t, f"red:{pid}", f"🟥 ¡Expulsan a {nombre}! {m}", f"{label} · {score()}", 5)
         elif etype == "subst" and player_id in (pid, aid):
