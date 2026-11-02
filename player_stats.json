@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T14:52:04.538079-06:00",
+  "updated_at": "2026-11-01T19:03:51.169486-06:00",
   "players": {
     "armando": {
       "seasons": {
@@ -8609,17 +8609,17 @@
           },
           {
             "min": "45'",
-            "tipo": "gol",
-            "nombre": "Hugo Cuypers",
-            "lado": "L",
-            "mio": false
-          },
-          {
-            "min": "45'",
             "tipo": "entra",
             "nombre": "Gilberto Mora",
             "lado": "V",
             "mio": true
+          },
+          {
+            "min": "45'",
+            "tipo": "gol",
+            "nombre": "Hugo Cuypers",
+            "lado": "L",
+            "mio": false
           },
           {
             "min": "45+4'",
@@ -9033,7 +9033,7 @@
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/mora_partido.jpg?v=ba1b08ba",
           "hasta": "2026-11-01T21:05:00-06:00",
-          "firma": "646cc2163e"
+          "firma": "8d6eeab3dd"
         },
         "stats": {
           "rating": 5.9,
@@ -12070,7 +12070,7 @@
         "league_tipo": "liga",
         "eventos": [
           {
-            "min": "8'",
+            "min": "9'",
             "tipo": "gol",
             "nombre": "Santiago Sandoval",
             "lado": "L",
@@ -12098,7 +12098,7 @@
             "mio": false
           },
           {
-            "min": "53'",
+            "min": "54'",
             "tipo": "var",
             "nombre": "Gol confirmado · Santiago Sandoval",
             "lado": "L",
@@ -12179,7 +12179,7 @@
                 "num": 37,
                 "pos": "M",
                 "g": "3:4",
-                "sale": "86'"
+                "sale": "85'"
               },
               {
                 "id": 35623,
@@ -12246,7 +12246,7 @@
                 "num": 33,
                 "pos": "M",
                 "g": null,
-                "entra": "86'"
+                "entra": "85'"
               },
               {
                 "id": 453887,
@@ -12369,7 +12369,7 @@
                 "num": 8,
                 "pos": "M",
                 "g": "3:3",
-                "sale": "37'"
+                "sale": "38'"
               },
               {
                 "id": 10397,
@@ -12447,7 +12447,7 @@
                 "num": 34,
                 "pos": "M",
                 "g": null,
-                "entra": "37'"
+                "entra": "38'"
               },
               {
                 "id": 237187,
@@ -12492,7 +12492,7 @@
         "tarjeta": {
           "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/campillo_partido.jpg?v=dd52f675",
           "hasta": "2026-11-01T21:07:00-06:00",
-          "firma": "05efc7be9c"
+          "firma": "1b21f7c27f"
         },
         "stats": {
           "rating": 7.0,
@@ -13167,7 +13167,7 @@
         "league_tipo": "liga",
         "eventos": [
           {
-            "min": "8'",
+            "min": "9'",
             "tipo": "gol",
             "nombre": "Santiago Sandoval",
             "lado": "L",
@@ -13195,7 +13195,7 @@
             "mio": true
           },
           {
-            "min": "53'",
+            "min": "54'",
             "tipo": "var",
             "nombre": "Gol confirmado · Santiago Sandoval",
             "lado": "L",
@@ -13282,7 +13282,7 @@
                 "num": 37,
                 "pos": "M",
                 "g": "3:4",
-                "sale": "86'"
+                "sale": "85'"
               },
               {
                 "id": 35623,
@@ -13350,7 +13350,7 @@
                 "num": 33,
                 "pos": "M",
                 "g": null,
-                "entra": "86'"
+                "entra": "85'"
               },
               {
                 "id": 453887,
@@ -13473,7 +13473,7 @@
                 "num": 8,
                 "pos": "M",
                 "g": "3:3",
-                "sale": "37'"
+                "sale": "38'"
               },
               {
                 "id": 10397,
@@ -13551,7 +13551,7 @@
                 "num": 34,
                 "pos": "M",
                 "g": null,
-                "entra": "37'"
+                "entra": "38'"
               },
               {
                 "id": 237187,
@@ -13594,9 +13594,9 @@
         "goals": 2,
         "assists": 0,
         "tarjeta": {
-          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/sandoval_partido.jpg?v=5a9942cd",
+          "url": "https://raw.githubusercontent.com/kilers0opa-ui/app-hormi/main/tarjetas/sandoval_partido.jpg?v=2280ca69",
           "hasta": "2026-11-01T21:07:00-06:00",
-          "firma": "e2fdcd648f"
+          "firma": "85f3b0a34a"
         },
         "stats": {
           "rating": 9.3,
