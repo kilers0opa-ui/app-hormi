@@ -866,6 +866,20 @@ def next_attempt(st, settings, now):
                 settings["gol_intentos_min"], settings, now, 10 ** 6 if st.get("sin_caducidad") else None)
 
 
+def marcador_coincide(title, marcador):
+    """True si el título no trae marcador, o trae el del gol (en cualquier orden: "1-0" = "0-1"). Sin marcador
+    guardado (goles viejos) no se filtra."""
+    if not marcador:
+        return True
+    goles = sorted(int(x) for x in marcador.split("-"))
+    # Marcadores "1-0" / "1 - 0" (no fechas como 31-10-2026 ni horas): números de 0 a 15.
+    vistos = [(a, b) for a, b in re.findall(r"(?<![\d:/\-–])(\d{1,2})\s*[-–]\s*(\d{1,2})(?![\d:/]|\s*[-–/]\s*\d)", title or "")
+              if int(a) <= 15 and int(b) <= 15]
+    if not vistos:
+        return True
+    return any(sorted((int(a), int(b))) == goles for a, b in vistos)
+
+
 def pick_goal_video(candidates, settings=None, team_pref=None):
     """El clip más probable: primero los de canales oficiales (televisoras/ligas de canales_confiables o el
     canal del propio equipo) — los de fans a veces no dejan reproducir dentro de la app aunque YouTube diga que
@@ -1265,7 +1279,7 @@ def _goals_step(out, config, settings, sources, notify, now):
         if key and key not in state and g.get("player_key") in players:
             state[key] = {
                 "player_key": g["player_key"], "team_key": g.get("team_key"),
-                "goal_seen_at": g.get("goal_seen_at"), "status": "pendiente",
+                "goal_seen_at": g.get("goal_seen_at"), "status": "pendiente", "marcador": g.get("marcador"),
                 "intentos": 0, "fallos": 0, "ultimo_intento": None, "video": None,
             }
             changed = True
@@ -1333,6 +1347,12 @@ def _goals_step(out, config, settings, sources, notify, now):
         for e in sin_gol:
             log(f"     ✗ no es el gol: {e.get('title')!r}")
         candidates = [e for e in candidates if es_clip_del_gol(e, rival_pref)]
+        # Si el título trae un marcador y no es el de ESTE gol, es el clip de otro gol (Sandoval 31-oct: el 2° gol
+        # se quedó con un video "Chivas 1-0 Atlante" del primero).
+        otro = [e for e in candidates if not marcador_coincide(e.get("title"), st.get("marcador"))]
+        for e in otro:
+            log(f"     ✗ marcador de otro gol (este fue {st.get('marcador')}): {e.get('title')!r}")
+        candidates = [e for e in candidates if e not in otro]
         candidates = filter_visibles(candidates, settings.get("region_visible"), settings.get("regiones_extra") or ())
         log(f"     {len(found)} resultados · {len(candidates)} válidos y visibles en {settings.get('region_visible')}")
         if candidates:

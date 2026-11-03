@@ -1335,7 +1335,12 @@ def apply_live_delta(player, target, snap, info):
         f"{row['goals']}G {row['assists']}A)")
 
 
-def register_goal_for_video(key, player_key, team_key):
+def _marcador_de(match_info):
+    m = re.search(r"(\d+)\s*-\s*(\d+)", (match_info or {}).get("score") or "")
+    return f"{m.group(1)}-{m.group(2)}" if m else None
+
+
+def register_goal_for_video(key, player_key, team_key, marcador=None):
     """Anota un gol recién alertado en videos_pendientes.json para que el
     workflow aparte video-gol.yml (hormi_videos.py --gol) le busque video a
     los ~15 y ~30 min.
@@ -1359,6 +1364,8 @@ def register_goal_for_video(key, player_key, team_key):
             "player_key": player_key,
             "team_key": team_key,
             "goal_seen_at": now.isoformat(),
+            # Marcador justo después del gol ("1-0"): el video cuyo título diga OTRO marcador es de otro gol.
+            **({"marcador": marcador} if marcador else {}),
         })
         tmp = PENDING_VIDEOS_FILE.with_suffix(".tmp")
         save_json(tmp, data)
@@ -1464,7 +1471,7 @@ def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None,
                 sent.add(key)
                 new += 1
                 if register_video and not getattr(notifier, "console_only", False) and key.endswith(":gol"):
-                    register_goal_for_video(key, player_key, team_key)
+                    register_goal_for_video(key, player_key, team_key, _marcador_de(match_info))
                 continue
             if grupo is not None and alert_type(key) in ("start", "final", "lineup", "halftime"):
                 grupo.append((key, title, message))
@@ -1480,7 +1487,7 @@ def dispatch(alerts, sent, notifier, fcm=None, player_key=None, team_key=None,
             # ni en modo solo-consola.
             if register_video and not getattr(notifier, "console_only", False):
                 if key.endswith(":gol"):
-                    register_goal_for_video(key, player_key, team_key)
+                    register_goal_for_video(key, player_key, team_key, _marcador_de(match_info))
                 elif key.endswith(":final") and match_info:
                     register_final_for_video(key, player_key, team_key, match_info)
     return new

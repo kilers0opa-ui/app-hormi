@@ -390,7 +390,7 @@ def tarjeta_partido(player, u, apodo, posicion=None):
     cajas = [(f"{u.get('minutes', 0)}'", "MINUTOS", None),
              (str(u.get("goals", 0)), "GOLES", (u.get("goals") or 0) > 0),
              (str(u.get("assists", 0)), "ASISTENCIAS", (u.get("assists") or 0) > 0)]
-    if st.get("tiros") is not None:
+    if st.get("tiros"):   # sin tiros (0/0) no se muestra el recuadro
         cajas.append((f"{st.get('tiros_puerta', 0)}/{st['tiros']}", "TIROS A PUERTA", None))
     if st.get("pases_pct") is not None:
         cajas.append((f"{st['pases_pct']}%", "PASES BUENOS", ("barra", st["pases_pct"] / 100)))
