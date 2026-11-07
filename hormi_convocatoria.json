@@ -1,10 +1,9 @@
 {
   "seleccion": {
-    "desde": "2026-11-14",
-    "hasta": "2026-11-17",
+    "desde": "2026-11-05",
+    "hasta": "2026-12-20",
     "jugadores_en_lista": 28,
-    "convocados": [],
-    "dudosos": [
+    "convocados": [
       "armando",
       "quinones",
       "mora",
@@ -18,6 +17,7 @@
       "campillo",
       "sandoval"
     ],
+    "dudosos": [],
     "no_convocados": [
       "raul",
       "luis_chavez",
@@ -25,211 +25,217 @@
       "camberos"
     ],
     "fuentes": [
-      "en"
+      "en",
+      "es"
     ],
-    "anunciada": null,
-    "partidos": [],
-    "motivo": null,
+    "anunciada": "5 de noviembre de 2026",
+    "partidos": [
+      {
+        "rival": "Jamaica",
+        "fecha": ""
+      }
+    ],
+    "motivo": "Liga de Naciones",
     "jugadores": [
       {
         "nombre": "Raúl Rangel",
         "pos": "Portero",
-        "club": "Guadalajara",
+        "club": "C. D. Guadalajara",
         "key": null,
-        "confirmado": false
+        "confirmado": true
       },
       {
         "nombre": "Óscar García",
         "pos": "Portero",
-        "club": "León",
+        "club": "C. León",
         "key": null,
-        "confirmado": false
+        "confirmado": true
       },
       {
-        "nombre": "Alex Padilla",
+        "nombre": "Álex Padilla",
         "pos": "Portero",
-        "club": "Athletic Bilbao",
+        "club": "Athletic Club",
         "key": null,
-        "confirmado": false
-      },
-      {
-        "nombre": "Jesús Gallardo",
-        "pos": "Defensa",
-        "club": "Toluca",
-        "key": null,
-        "confirmado": false
-      },
-      {
-        "nombre": "César Montes",
-        "pos": "Defensa",
-        "club": "Lokomotiv Moscow",
-        "key": "montes",
-        "confirmado": false
-      },
-      {
-        "nombre": "Johan Vásquez",
-        "pos": "Defensa",
-        "club": "Genoa",
-        "key": "vasquez",
-        "confirmado": false
-      },
-      {
-        "nombre": "Israel Reyes",
-        "pos": "Defensa",
-        "club": "América",
-        "key": null,
-        "confirmado": false
-      },
-      {
-        "nombre": "Kevin Álvarez",
-        "pos": "Defensa",
-        "club": "América",
-        "key": null,
-        "confirmado": false
-      },
-      {
-        "nombre": "Mateo Chávez",
-        "pos": "Defensa",
-        "club": "AZ",
-        "key": "chavez",
-        "confirmado": false
-      },
-      {
-        "nombre": "Jesús Orozco",
-        "pos": "Defensa",
-        "club": "Cruz Azul",
-        "key": null,
-        "confirmado": false
-      },
-      {
-        "nombre": "Diego Campillo",
-        "pos": "Defensa",
-        "club": "Guadalajara",
-        "key": "campillo",
-        "confirmado": false
+        "confirmado": true
       },
       {
         "nombre": "Rodrigo Huescas",
         "pos": "Defensa",
-        "club": "Copenhagen",
+        "club": "F. C. Copenhague",
         "key": "huescas",
-        "confirmado": false
+        "confirmado": true
+      },
+      {
+        "nombre": "Kevin Álvarez",
+        "pos": "Defensa",
+        "club": "C. América",
+        "key": null,
+        "confirmado": true
+      },
+      {
+        "nombre": "César Montes",
+        "pos": "Defensa",
+        "club": "FC Lokomotiv Moscú",
+        "key": "montes",
+        "confirmado": true
+      },
+      {
+        "nombre": "Israel Reyes",
+        "pos": "Defensa",
+        "club": "C. América",
+        "key": null,
+        "confirmado": true
+      },
+      {
+        "nombre": "Diego Campillo",
+        "pos": "Defensa",
+        "club": "C. D. Guadalajara",
+        "key": "campillo",
+        "confirmado": true
+      },
+      {
+        "nombre": "Johan Vásquez",
+        "pos": "Defensa",
+        "club": "Genoa C. F. C.",
+        "key": "vasquez",
+        "confirmado": true
+      },
+      {
+        "nombre": "Jesús Orozco Chiquete",
+        "pos": "Defensa",
+        "club": "Cruz Azul",
+        "key": null,
+        "confirmado": true
+      },
+      {
+        "nombre": "Jesús Gallardo",
+        "pos": "Defensa",
+        "club": "Deportivo Toluca F. C.",
+        "key": null,
+        "confirmado": true
+      },
+      {
+        "nombre": "Mateo Chávez",
+        "pos": "Defensa",
+        "club": "AZ Alkmaar",
+        "key": "chavez",
+        "confirmado": true
+      },
+      {
+        "nombre": "Erik Lira",
+        "pos": "Mediocampista",
+        "club": "Cruz Azul",
+        "key": null,
+        "confirmado": true
       },
       {
         "nombre": "Luis Romo",
         "pos": "Mediocampista",
-        "club": "Guadalajara",
+        "club": "C. D. Guadalajara",
         "key": null,
-        "confirmado": false
+        "confirmado": true
       },
       {
-        "nombre": "Érick Sánchez",
+        "nombre": "Erik Sánchez",
         "pos": "Mediocampista",
-        "club": "América",
+        "club": "C. América",
         "key": null,
-        "confirmado": false
-      },
-      {
-        "nombre": "Érik Lira",
-        "pos": "Mediocampista",
-        "club": "Cruz Azul",
-        "key": null,
-        "confirmado": false
-      },
-      {
-        "nombre": "Gilberto Mora",
-        "pos": "Mediocampista",
-        "club": "Tijuana",
-        "key": "mora",
-        "confirmado": false
+        "confirmado": true
       },
       {
         "nombre": "Obed Vargas",
         "pos": "Mediocampista",
-        "club": "Atlético Madrid",
+        "club": "Atlético de Madrid",
         "key": "obed",
-        "confirmado": false
+        "confirmado": true
       },
       {
         "nombre": "Álvaro Fidalgo",
         "pos": "Mediocampista",
-        "club": "Betis",
+        "club": "Real Betis Balompié",
         "key": "fidalgo",
-        "confirmado": false
+        "confirmado": true
       },
       {
-        "nombre": "Santiago Sandoval",
+        "nombre": "Gilberto Mora",
         "pos": "Mediocampista",
-        "club": "Guadalajara",
-        "key": "sandoval",
-        "confirmado": false
+        "club": "C. Tijuana",
+        "key": "mora",
+        "confirmado": true
       },
       {
         "nombre": "Andrés Montaño",
         "pos": "Mediocampista",
         "club": "Cruz Azul",
         "key": null,
-        "confirmado": false
+        "confirmado": true
       },
       {
-        "nombre": "Roberto Alvarado",
-        "pos": "Delantero",
-        "club": "Guadalajara",
-        "key": null,
-        "confirmado": false
-      },
-      {
-        "nombre": "Jesús Manuel Corona",
-        "pos": "Delantero",
-        "club": "Monterrey",
-        "key": null,
-        "confirmado": false
-      },
-      {
-        "nombre": "Santiago Giménez",
-        "pos": "Delantero",
-        "club": "Porto",
-        "key": "gimenez",
-        "confirmado": false
-      },
-      {
-        "nombre": "Alexis Vega",
-        "pos": "Delantero",
-        "club": "Toluca",
-        "key": null,
-        "confirmado": false
-      },
-      {
-        "nombre": "Julián Quiñones",
-        "pos": "Delantero",
-        "club": "Al-Qadsiah",
-        "key": "quinones",
-        "confirmado": false
-      },
-      {
-        "nombre": "Armando González",
-        "pos": "Delantero",
-        "club": "Olympiacos",
-        "key": "armando",
-        "confirmado": false
+        "nombre": "Santiago Sandoval",
+        "pos": "Mediocampista",
+        "club": "C. D. Guadalajara",
+        "key": "sandoval",
+        "confirmado": true
       },
       {
         "nombre": "Isaías Violante",
         "pos": "Delantero",
-        "club": "América",
+        "club": "C. América",
         "key": null,
-        "confirmado": false
+        "confirmado": true
       },
       {
-        "nombre": "Armando León",
+        "nombre": "Roberto Alvarado",
         "pos": "Delantero",
-        "club": "Osijek",
+        "club": "C. D. Guadalajara",
         "key": null,
-        "confirmado": false
+        "confirmado": true
+      },
+      {
+        "nombre": "Jesús Manuel Corona",
+        "pos": "Delantero",
+        "club": "C. F. Monterrey",
+        "key": null,
+        "confirmado": true
+      },
+      {
+        "nombre": "Alexis Vega",
+        "pos": "Delantero",
+        "club": "C. D. Toluca",
+        "key": null,
+        "confirmado": true
+      },
+      {
+        "nombre": "Armando León Reséndez",
+        "pos": "Delantero",
+        "club": "N. K. Osijek",
+        "key": null,
+        "confirmado": true
+      },
+      {
+        "nombre": "Julián Andrés Quiñones",
+        "pos": "Delantero",
+        "club": "Al-Qadisiyah F. C.",
+        "key": "quinones",
+        "confirmado": true
+      },
+      {
+        "nombre": "Santiago Giménez",
+        "pos": "Delantero",
+        "club": "F. C. Porto",
+        "key": "gimenez",
+        "confirmado": true
+      },
+      {
+        "nombre": "Armando González",
+        "pos": "Delantero",
+        "club": "Olympiakos F. C.",
+        "key": "armando",
+        "confirmado": true
       }
     ],
     "fuente": "https://en.wikipedia.org/wiki/Mexico_national_football_team#Current_squad · https://es.wikipedia.org/wiki/Selección_de_fútbol_de_México#Última_convocatoria",
-    "actualizado": "2026-11-06T14:26:01-06:00"
+    "actualizado": "2026-11-07T02:46:40-06:00"
   },
   "historial": [
     {
